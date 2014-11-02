@@ -1,0 +1,26 @@
+/**
+ *	MISC
+ */
+
+/**
+ * COLORS
+ */
+
+/* Styles die voor screen en voor print gelden */
+
+body,
+html {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #FFF;
+	color: #232323;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+}
+

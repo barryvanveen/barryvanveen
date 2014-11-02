@@ -1,0 +1,32 @@
+{
+  "name": "laravelinstall",
+  "version": "0.0.0",
+  "authors": [
+    "Barry van Veen <barryvanveen@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "Proprietary",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1",
+    "respond": "~1.4.2",
+    "bootstrap-sass-official": "~3.3.0",
+    "html5shiv": "~3.7.2",
+    "snackbarjs": "https://github.com/FezVrasta/snackbarjs.git"
+  },
+  "install": {
+    "path": "resources/assets/bower",
+    "ignore": [
+      "bootstrap-sass-official"
+    ]
+  }
+}

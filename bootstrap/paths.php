@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'public' => __DIR__.'/../public',
+	'public' => __DIR__.'/../public_html',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -52,6 +52,6 @@ return array(
 	|
 	*/
 
-	'storage' => __DIR__.'/../app/storage',
+	'storage' => __DIR__.'/../storage',
 
 );

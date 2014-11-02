@@ -122,7 +122,15 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-	),
+        /*
+		 * Vendor Service Providers
+		 */
+        'Flyingfoxx\CommandCenter\Laravel\CommandCenterServiceProvider',
+        'Laracasts\Flash\FlashServiceProvider',
+        'Laracasts\Utilities\UtilitiesServiceProvider',
+        'Laracasts\Validation\ValidationServiceProvider',
+
+    ),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -188,6 +196,11 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
+        /*
+		 * Vendor Aliases
+		 */
+        'Flash' 			=> 'Laracasts\Flash\Flash',
 
 	),
 
