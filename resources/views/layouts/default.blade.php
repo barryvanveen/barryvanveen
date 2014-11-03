@@ -2,7 +2,7 @@
 
 @section('body')
 
-	<div class="page__container">
+	<div class="container">
 		@yield('content')
 	</div>
 

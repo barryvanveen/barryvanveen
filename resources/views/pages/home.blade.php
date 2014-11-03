@@ -2,9 +2,13 @@
 
 @section('content')
 
-    <div class="page__row">
-        <div class="page__full-width">
-            <h1>Home</h1>
+    <div class="row">
+        <div class="page__content">
+            <div class="jumbotron">
+              <h1>Hello, world!</h1>
+              <p>...</p>
+              <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+            </div>
         </div>
     </div>
 

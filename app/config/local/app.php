@@ -46,7 +46,7 @@ return array(
           * Development service providers
           */
          'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
-         'Barryvdh\Debugbar\ServiceProvider',
+         //'Barryvdh\Debugbar\ServiceProvider',
          'Way\Generators\GeneratorsServiceProvider'
 
      ]),

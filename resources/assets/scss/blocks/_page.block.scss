@@ -1,19 +1,14 @@
 .page{
 }
-	.page__container {
-		@extend .container;
-        padding-top: 70px;
+
+	.page__content {
+		padding-top: 70px;
 	}
 
-	.page__row {
-		@extend .row;
-	}
-
-	.page__full-width {
-        @extend .col-sm-12;
+    .page__full-width {
     }
 
 	.page__half-width {
-		@extend .col-sm-6;
+
 	}
 
