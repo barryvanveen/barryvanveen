@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "25291ae47902bb5d23091407cf2d9d72",
+    "hash": "695f9007f651c7d333cad821d37dcaab",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -2617,12 +2617,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "9e5f46406d071d18238642287c5578b0fdc50348"
+                "reference": "d261bcdcf05e15dbe020e99fdd47dd999f2b793d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/9e5f46406d071d18238642287c5578b0fdc50348",
-                "reference": "9e5f46406d071d18238642287c5578b0fdc50348",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/d261bcdcf05e15dbe020e99fdd47dd999f2b793d",
+                "reference": "d261bcdcf05e15dbe020e99fdd47dd999f2b793d",
                 "shasum": ""
             },
             "require": {
@@ -2659,7 +2659,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2014-10-30 10:55:26"
+            "time": "2014-11-03 20:46:26"
         },
         {
             "name": "guzzlehttp/guzzle",

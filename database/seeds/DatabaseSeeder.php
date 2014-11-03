@@ -1,6 +1,26 @@
 <?php
 
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+
 class DatabaseSeeder extends Seeder {
+
+
+	/**
+	 * Tables that need to be truncated
+	 * @var array
+	 */
+	protected $tables = [
+	];
+
+
+	/**
+	 * Seeders that need to be called
+	 * @var array
+	 */
+	protected $seeders = [
+	];
+
 
 	/**
 	 * Run the database seeds.
@@ -9,9 +29,34 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		Eloquent::unguard();
 
-		// $this->call('UserTableSeeder');
+		Model::unguard();
+
+		$this->cleanDatabase();
+
+		foreach($this->seeders AS $seedClass) {
+			$this->call($seedClass);
+		}
+
 	}
+
+
+	/**
+	 * Truncate all necessary database tables
+	 */
+	private function cleanDatabase() {
+
+		DB::statement('SET FOREIGN_KEY_CHECKS=0');
+
+		foreach($this->tables AS $table) {
+            if (Schema::hasTable($table)) {
+                DB::table($table)->truncate();
+            }
+		}
+
+		DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
+	}
+
 
 }

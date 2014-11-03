@@ -1,5 +1,7 @@
 <?php
 
+use Laracasts\Utilities\JavaScript\Facades\JavaScript;
+
 class BaseController extends Controller {
 
 	/**
@@ -13,6 +15,12 @@ class BaseController extends Controller {
 		{
 			$this->layout = View::make($this->layout);
 		}
+
+        JavaScript::put([
+            'baseurl' => url(),
+            'loggedin' => (Auth::user()?true:false),
+        ]);
+
 	}
 
 }

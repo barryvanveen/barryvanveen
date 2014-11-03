@@ -12,3 +12,4 @@ _ide_helper_models.php
 composer.phar
 npm-debug.log
 Thumbs.db
+tests/_output/*

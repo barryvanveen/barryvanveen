@@ -35,21 +35,16 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 
 /*
 |--------------------------------------------------------------------------
-| Application Error Handler
+| Require The Errors File
 |--------------------------------------------------------------------------
 |
-| Here you may handle any errors that occur in your application, including
-| logging them or displaying custom views for specific errors. You may
-| even register several error handlers to handle different types of
-| exceptions. If nothing is returned, the default error view is
-| shown, which includes a detailed stack trace during debug.
+| Next we will load the errors file for the application. This gives us
+| a nice separate location to store our error handler
+| definitions instead of putting them all in the main routes file.
 |
 */
 
-App::error(function(Exception $exception, $code)
-{
-	Log::error($exception);
-});
+require app_path().'/errors.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +74,17 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+
+/*
+|--------------------------------------------------------------------------
+| Require The Events File
+|--------------------------------------------------------------------------
+|
+| Next we will load the events file for the application. This gives us
+| a nice separate location to store our event listener definitions
+| instead of putting them all in the main routes file.
+|
+*/
+
+require app_path().'/events.php';
