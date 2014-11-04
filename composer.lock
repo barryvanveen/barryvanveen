@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "695f9007f651c7d333cad821d37dcaab",
+    "hash": "927ea792a75053c01e97ad1996002d7d",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1538,6 +1538,42 @@
                 "mailer"
             ],
             "time": "2014-10-04 05:53:18"
+        },
+        {
+            "name": "swisnl/head",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swisnl/head.git",
+                "reference": "ae1561e6d47bb083f4cd4a8384ef14785e8c2cec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swisnl/head/zipball/ae1561e6d47bb083f4cd4a8384ef14785e8c2cec",
+                "reference": "ae1561e6d47bb083f4cd4a8384ef14785e8c2cec",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">=4.2",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Swisnl\\Head\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "swisnl",
+                    "email": "rogier@swis.nl"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/swisnl/head/tree/master",
+                "issues": "https://github.com/swisnl/head/issues"
+            },
+            "time": "2014-10-21 19:23:20"
         },
         {
             "name": "symfony/browser-kit",
@@ -3722,6 +3758,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "swisnl/head": 20,
         "barryvdh/laravel-ide-helper": 20,
         "codeception/codeception": 20,
         "fzaninotto/faker": 20

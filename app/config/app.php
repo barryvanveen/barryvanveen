@@ -129,6 +129,7 @@ return array(
         'Laracasts\Flash\FlashServiceProvider',
         'Laracasts\Utilities\UtilitiesServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
+        'Swisnl\Head\HeadServiceProvider',
 
     ),
 
@@ -201,6 +202,7 @@ return array(
 		 * Vendor Aliases
 		 */
         'Flash' 			=> 'Laracasts\Flash\Flash',
+        'Head' 				=> 'Swisnl\Head\Facades\Head',
 
 	),
 
