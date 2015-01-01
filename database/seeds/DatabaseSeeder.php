@@ -5,8 +5,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
-
-
     /**
      * Tables that need to be truncated
      * @var array
@@ -30,15 +28,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
         Model::unguard();
 
         $this->cleanDatabase();
 
-        foreach ($this->seeders AS $seedClass) {
+        foreach ($this->seeders as $seedClass) {
             $this->call($seedClass);
         }
-
     }
 
 
@@ -47,18 +43,14 @@ class DatabaseSeeder extends Seeder
      */
     private function cleanDatabase()
     {
-
         DB::statement('SET FOREIGN_KEY_CHECKS=0');
 
-        foreach ($this->tables AS $table) {
+        foreach ($this->tables as $table) {
             if (Schema::hasTable($table)) {
                 DB::table($table)->truncate();
             }
         }
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1');
-
     }
-
-
 }

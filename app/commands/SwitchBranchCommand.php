@@ -5,7 +5,6 @@ use Symfony\Component\Console\Input\InputOption;
 
 class SwitchBranchCommand extends Command
 {
-
     const OBJECT_ARGUMENT_SEPARATOR = ':';
 
 
@@ -50,7 +49,6 @@ class SwitchBranchCommand extends Command
      */
     public function fire()
     {
-
         if ($this->option('composer-update')) {
             $this->runTask("composer update");
         } else {
@@ -70,7 +68,6 @@ class SwitchBranchCommand extends Command
 
         $this->runTask("clearDatabase", getenv('DB_TESTING_NAME'));
         $this->runTask("php artisan migrate --env=testing");
-
     }
 
     /**
@@ -121,5 +118,4 @@ class SwitchBranchCommand extends Command
         DB::statement('DROP DATABASE IF EXISTS `' . $db . '`;');
         DB::statement('CREATE DATABASE `' . $db . '`;');
     }
-
 }

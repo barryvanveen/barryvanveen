@@ -44,7 +44,7 @@ App::error(function (MethodNotAllowedHttpException $exception, $code) {
         return null;
     }
 
-    Return Response::make(View::make('pages.403'), 403);
+    return Response::make(View::make('pages.403'), 403);
 });
 
 

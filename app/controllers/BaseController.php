@@ -4,7 +4,6 @@ use Laracasts\Utilities\JavaScript\Facades\JavaScript;
 
 class BaseController extends Controller
 {
-
     /**
      * Setup the layout used by the controller.
      *
@@ -20,7 +19,5 @@ class BaseController extends Controller
             'baseurl'  => url(),
             'loggedin' => (Auth::user() ? true : false),
         ]);
-
     }
-
 }

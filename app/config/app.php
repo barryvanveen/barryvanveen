@@ -66,6 +66,7 @@ return [
     */
 
     'fallback_locale' => 'en',
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
@@ -119,9 +120,10 @@ return [
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
+
         /*
-		 * Vendor Service Providers
-		 */
+         * Vendor Service Providers
+         */
         'Flyingfoxx\CommandCenter\Laravel\CommandCenterServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
         'Laracasts\Utilities\UtilitiesServiceProvider',
@@ -196,8 +198,8 @@ return [
         'View'              => 'Illuminate\Support\Facades\View',
 
         /*
-		 * Vendor Aliases
-		 */
+         * Vendor Aliases
+         */
         'Flash'             => 'Laracasts\Flash\Flash',
         'Head'              => 'Swisnl\Head\Facades\Head',
 
