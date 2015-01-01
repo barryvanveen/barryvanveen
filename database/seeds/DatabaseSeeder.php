@@ -3,60 +3,62 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
-class DatabaseSeeder extends Seeder {
+class DatabaseSeeder extends Seeder
+{
 
 
-	/**
-	 * Tables that need to be truncated
-	 * @var array
-	 */
-	protected $tables = [
-	];
+    /**
+     * Tables that need to be truncated
+     * @var array
+     */
+    protected $tables = [
+    ];
 
 
-	/**
-	 * Seeders that need to be called
-	 * @var array
-	 */
-	protected $seeders = [
-	];
+    /**
+     * Seeders that need to be called
+     * @var array
+     */
+    protected $seeders = [
+    ];
 
 
-	/**
-	 * Run the database seeds.
-	 *
-	 * @return void
-	 */
-	public function run()
-	{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
 
-		Model::unguard();
+        Model::unguard();
 
-		$this->cleanDatabase();
+        $this->cleanDatabase();
 
-		foreach($this->seeders AS $seedClass) {
-			$this->call($seedClass);
-		}
+        foreach ($this->seeders AS $seedClass) {
+            $this->call($seedClass);
+        }
 
-	}
+    }
 
 
-	/**
-	 * Truncate all necessary database tables
-	 */
-	private function cleanDatabase() {
+    /**
+     * Truncate all necessary database tables
+     */
+    private function cleanDatabase()
+    {
 
-		DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
 
-		foreach($this->tables AS $table) {
+        foreach ($this->tables AS $table) {
             if (Schema::hasTable($table)) {
                 DB::table($table)->truncate();
             }
-		}
+        }
 
-		DB::statement('SET FOREIGN_KEY_CHECKS=1');
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
 
-	}
+    }
 
 
 }

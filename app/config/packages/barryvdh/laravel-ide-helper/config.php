@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -11,8 +11,8 @@ return array(
     |
     */
 
-    'filename'  => '_ide_helper',
-    'format'    => 'php',
+    'filename'        => '_ide_helper',
+    'format'          => 'php',
 
     /*
     |--------------------------------------------------------------------------
@@ -25,10 +25,9 @@ return array(
     */
 
     'include_helpers' => false,
-
-    'helper_files' => array(
-        base_path().'/vendor/laravel/framework/src/Illuminate/Support/helpers.php',
-    ),
+    'helper_files'    => [
+        base_path() . '/vendor/laravel/framework/src/Illuminate/Support/helpers.php',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -40,10 +39,9 @@ return array(
     |
     */
 
-    'model_locations' => array(
+    'model_locations' => [
         'app/models',
-    ),
-
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -54,14 +52,13 @@ return array(
     |
     */
 
-    'extra' => array(
-        'Artisan' => array('Illuminate\Foundation\Artisan'),
-        'Eloquent' => array('Illuminate\Database\Eloquent\Builder', 'Illuminate\Database\Query\Builder'),
-        'Session' => array('Illuminate\Session\Store'),
-    ),
-
-    'magic' => array(
-        'Log' => array(
+    'extra'           => [
+        'Artisan'  => ['Illuminate\Foundation\Artisan'],
+        'Eloquent' => ['Illuminate\Database\Eloquent\Builder', 'Illuminate\Database\Query\Builder'],
+        'Session'  => ['Illuminate\Session\Store'],
+    ],
+    'magic'           => [
+        'Log' => [
             'debug'     => 'Monolog\Logger::addDebug',
             'info'      => 'Monolog\Logger::addInfo',
             'notice'    => 'Monolog\Logger::addNotice',
@@ -70,9 +67,9 @@ return array(
             'critical'  => 'Monolog\Logger::addCritical',
             'alert'     => 'Monolog\Logger::addAlert',
             'emergency' => 'Monolog\Logger::addEmergency',
-        )
-    ),
-    
+        ]
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Interface implementations
@@ -82,9 +79,9 @@ return array(
     | are detected by the helpers, others can be listed below.
     |
     */
-    
-    'interfaces' => array(
-        '\Illuminate\Auth\UserInterface' => '\User',
-    )
 
-);
+    'interfaces'      => [
+        '\Illuminate\Auth\UserInterface' => '\User',
+    ]
+
+];

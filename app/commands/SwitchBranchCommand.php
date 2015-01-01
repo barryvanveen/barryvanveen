@@ -3,7 +3,8 @@
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 
-class SwitchBranchCommand extends Command {
+class SwitchBranchCommand extends Command
+{
 
     const OBJECT_ARGUMENT_SEPARATOR = ':';
 
@@ -60,7 +61,7 @@ class SwitchBranchCommand extends Command {
         $this->runTask("php artisan migrate");
         $this->runTask("php artisan db:seed");
 
-        if(!getenv('DB_TESTING_NAME')) {
+        if (!getenv('DB_TESTING_NAME')) {
             $this->error("Zet DB_TESTING_NAME in .env.local.php om ook de testing-database te migraten");
             return;
         }
@@ -75,7 +76,8 @@ class SwitchBranchCommand extends Command {
      *
      * @param String $command
      */
-    protected function runTask($command, $value = null) {
+    protected function runTask($command, $value = null)
+    {
         $this->startOutput($command);
 
         if (method_exists($this, $command)) {
@@ -89,9 +91,11 @@ class SwitchBranchCommand extends Command {
 
     /**
      * Start the output of a task
+     *
      * @param null|string $line
      */
-    protected function startOutput($line = null) {
+    protected function startOutput($line = null)
+    {
         $this->info("=========================================");
         if (!empty($line)) {
             $this->info("Starting: " . $line);
@@ -101,7 +105,8 @@ class SwitchBranchCommand extends Command {
     /**
      * End the output of a sing task
      */
-    protected function endOutput() {
+    protected function endOutput()
+    {
         $this->info("\n\n");
     }
 
@@ -109,7 +114,8 @@ class SwitchBranchCommand extends Command {
     /**
      * Delete all tables from the current database
      */
-    protected function clearDatabase($db) {
+    protected function clearDatabase($db)
+    {
         DB::statement('DROP DATABASE IF EXISTS `' . $db . '`;');
         DB::statement('CREATE DATABASE `' . $db . '`;');
     }

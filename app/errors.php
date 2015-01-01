@@ -13,33 +13,41 @@
 |
 */
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
-App::error(function(Exception $exception, $code)
-{
-	Log::error($exception);
+App::error(function (Exception $exception, $code) {
+    Log::error($exception);
 
-	if (App::environment(['local', 'testing'])) {
-		return null;
-	}
+    if (App::environment(['local', 'testing'])) {
+        return null;
+    }
 
-	return Response::make(View::make('pages.404'), 404);
+    return Response::make(View::make('pages.500'), 500);
+});
+
+App::error(function (ModelNotFoundException $exception, $code) {
+    Log::error($exception);
+
+    if (App::environment(['local', 'testing'])) {
+        return null;
+    }
+
+    return Response::make(View::make('pages.404'), 404);
 });
 
 
-App::error(function(MethodNotAllowedHttpException $exception, $code)
-{
-	Log::error($exception);
+App::error(function (MethodNotAllowedHttpException $exception, $code) {
+    Log::error($exception);
 
-	if (App::environment(['local', 'testing'])) {
-		return null;
-	}
+    if (App::environment(['local', 'testing'])) {
+        return null;
+    }
 
-	Return Response::make(View::make('pages.403'), 403);
+    Return Response::make(View::make('pages.403'), 403);
 });
 
 
-App::error(function(Laracasts\Validation\FormValidationException $exception, $code)
-{
-	return Redirect::back()->withInput()->withErrors($exception->getErrors());
+App::error(function (Laracasts\Validation\FormValidationException $exception, $code) {
+    return Redirect::back()->withInput()->withErrors($exception->getErrors());
 });

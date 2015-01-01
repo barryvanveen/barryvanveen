@@ -1,19 +1,19 @@
 <?php
 
-return array(
+return [
 
-	/*
-	|--------------------------------------------------------------------------
-	| Application Debug Mode
-	|--------------------------------------------------------------------------
-	|
-	| When your application is in debug mode, detailed error messages with
-	| stack traces will be shown on every error that occurs within your
-	| application. If disabled, a simple generic error page is shown.
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Application Debug Mode
+    |--------------------------------------------------------------------------
+    |
+    | When your application is in debug mode, detailed error messages with
+    | stack traces will be shown on every error that occurs within your
+    | application. If disabled, a simple generic error page is shown.
+    |
+    */
 
-	'debug' => true,
+    'debug'     => true,
 
     /*
 	|--------------------------------------------------------------------------
@@ -26,8 +26,7 @@ return array(
 	|
 	*/
 
-    'url' => 'http://laravelinstall.app',
-
+    'url'       => 'http://laravelinstall.app',
 
     /*
     |--------------------------------------------------------------------------
@@ -42,14 +41,14 @@ return array(
 
     'providers' => append_config([
 
-         /*
-          * Development service providers
-          */
-         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
-         'Barryvdh\Debugbar\ServiceProvider',
-         'Way\Generators\GeneratorsServiceProvider'
+        /*
+         * Development service providers
+         */
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',
+        'Way\Generators\GeneratorsServiceProvider'
 
-     ]),
+    ]),
 
     /*
     |--------------------------------------------------------------------------
@@ -62,13 +61,13 @@ return array(
     |
     */
 
-    'aliases' => append_config([
+    'aliases'   => append_config([
 
-       /*
-        * Development aliases
-        */
-       'Debugbar' 	=> 'Barryvdh\Debugbar\Facade',
+        /*
+         * Development aliases
+         */
+        'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
     ])
 
-);
+];
