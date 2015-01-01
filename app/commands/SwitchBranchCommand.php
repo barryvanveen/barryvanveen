@@ -38,7 +38,7 @@ class SwitchBranchCommand extends Command
     {
         return [
 
-            ['no-composer-update', null, InputOption::VALUE_NONE, 'Do not run composer-update.']
+            ['composer-update', null, InputOption::VALUE_NONE, 'Run composer update instead of composer install.']
 
         ];
     }
@@ -51,8 +51,10 @@ class SwitchBranchCommand extends Command
     public function fire()
     {
 
-        if (!$this->option('no-composer-update')) {
+        if ($this->option('composer-update')) {
             $this->runTask("composer update");
+        } else {
+            $this->runTask("composer install");
         }
 
         $this->runTask("bower install");
