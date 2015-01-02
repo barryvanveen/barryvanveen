@@ -64,12 +64,29 @@ gulp.task('build-js', function () {
 		.pipe(gulp.dest('public_html/js'));
 });
 
+/**
+ * move the icomoon fonts
+ */
+gulp.task('build-icons', function () {
+	gulp.src('resources/assets/fonts/icomoon/fonts/*')
+		.pipe(gulp.dest('public_html/fonts'));
+});
+
+/**
+ * watch for changes in scss-files, then build-sass
+ */
 gulp.task('watch-sass', function(){
     gulp.watch('resources/assets/scss/**/*.scss', ['build-sass']);
 });
 
+/**
+ * watch for changes in js-files, then build-js
+ */
 gulp.task('watch-js', function(){
     gulp.watch('resources/assets/**/*.js', ['build-js']);
 });
 
+/**
+ * perform these tasks when running just 'gulp'
+ */
 gulp.task('default', ['build-sass', 'build-js', 'watch-sass', 'watch-js']);

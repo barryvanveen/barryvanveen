@@ -1,0 +1,25 @@
+
+/**
+ * Place a icon in :before, :after of both
+ **/
+@mixin icon($position: before, $icon: false, $styles: true, $icons-font: $icons-font) {
+	@if $position == both {
+		$position: 'before, &:after';
+	}
+	// Either a :before or :after pseudo-element, or both, defaulting to :before
+	&:#{$position} {
+		@if $icon {
+			// A particular icon has been specified
+			content: "#{$icon}";
+		}
+		@if $styles {
+			// Supportive icon styles required
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-family: $icons-font;
+		}
+		// Include any extra rules supplied for the pseudo-element
+		@content;
+	}
+}

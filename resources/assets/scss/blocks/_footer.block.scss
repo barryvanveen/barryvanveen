@@ -15,6 +15,19 @@
 		.footer__menu-item {
 
 		}
+
+			.footer__menu-item--up {
+				@include icon('before', $icon--caret-up);
+			}
+
+			.footer__menu-item--github {
+				@include icon('before', $icon--github-square);
+			}
+
+			.footer__menu-item--linkedin {
+				@include icon('before', $icon--linkedin-square);
+			}
+
 			.footer__menu-item-link {
 				color: $text-color;
 				&:hover {

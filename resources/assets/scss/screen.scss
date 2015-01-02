@@ -6,6 +6,8 @@
 /**/
 
 @import "variables";
+@import "mixins";
+@import "fonts";
 @import "bootstrap";
 @import "bootswatch";
 
@@ -13,9 +15,6 @@
 
 // Styles for screen and print
 @import "base";
-
-
-@import "font-awesome";
 
 // Styles for screen
 body {
