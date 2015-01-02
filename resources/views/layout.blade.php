@@ -27,6 +27,8 @@
 
 		@yield('body')
 
+		@include('layouts.partials.footer')
+
 		{{ HTML::script('js/main.min.js') }}
 
 	</body>

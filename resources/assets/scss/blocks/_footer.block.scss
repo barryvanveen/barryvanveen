@@ -1,0 +1,23 @@
+.footer {
+	background-color: #F5F5F5;
+	bottom: 0;
+	height: 80px;
+	position: absolute;
+	width: 100%;
+	padding: 20px 0;
+}
+
+	.footer__menu {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+		.footer__menu-item {
+
+		}
+			.footer__menu-item-link {
+				color: $text-color;
+				&:hover {
+					color: inherit;
+				}
+			}

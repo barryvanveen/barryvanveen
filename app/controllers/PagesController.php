@@ -2,9 +2,9 @@
 
 class PagesController extends BaseController
 {
-    public function home()
+    public function contact()
     {
-        return View::make('pages.home');
+        return View::make('pages.contact');
     }
 
     public function elements()
