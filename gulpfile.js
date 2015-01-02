@@ -42,9 +42,9 @@ gulp.task('build-sass', function () {
 		}))
 		.pipe(include())
 		.pipe(autoprefixer('last 5 versions'))
-		.pipe(cmq({
+		/*.pipe(cmq({
 			log: true
-		}))
+		}))*/
 		.pipe(gulp.dest('public_html/css'));
 
 });

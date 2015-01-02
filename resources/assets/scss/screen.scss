@@ -5,14 +5,16 @@
 = include ../../../../bower_components/snackbarjs/themes-css/material.css
 /**/
 
-@import 'variables';
-@import 'bootstrap';
+@import "variables";
+@import "bootstrap";
+@import "bootswatch";
 
 @import 'blocks';
 
+// Styles for screen and print
 @import "base";
 
-body{
-	overflow-x: hidden;
-	font-size: 15px;
+// Styles for screen
+body {
+	padding-top: 80px;
 }

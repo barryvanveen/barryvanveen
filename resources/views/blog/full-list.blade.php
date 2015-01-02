@@ -1,12 +1,13 @@
-@extends('layouts.full-width')
+@extends('layouts.default')
 
 @section('content')
 
     <div class="row">
-        <div class="col-xs-12">
+        <div class="page__content">
             <div class="jumbotron">
-                <h1>Deze pagina kan niet worden gevonden.</h1>
+              <h1>Blog full-list!</h1>
             </div>
         </div>
     </div>
+
 @stop

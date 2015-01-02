@@ -1,13 +1,12 @@
-@extends('layouts.default')
+@extends('layouts.full-width')
 
 @section('content')
 
-	<div class="row">
-        <div class="page__content">
+    <div class="row">
+        <div class="col-xs-12">
             <div class="jumbotron">
-                <h1>Je hebt geen toegang tot deze pagina.</h1>
+                <h1>Sorry, je hebt geen toegang tot deze pagina.</h1>
             </div>
         </div>
-	</div>
-
+    </div>
 @stop

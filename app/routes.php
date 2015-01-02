@@ -13,5 +13,20 @@
 
 Route::get('/', [
     'as'   => 'home',
-    'uses' => 'HomeController@index'
+    'uses' => 'PagesController@home'
+]);
+
+Route::get('/blog', [
+    'as'   => 'blog',
+    'uses' => 'BlogController@index'
+]);
+
+Route::get('/blog/{blog}', [
+    'as'   => 'blog-item',
+    'uses' => 'BlogController@show'
+]);
+
+Route::get('/elements', [
+    'as'   => 'elements',
+    'uses' => 'PagesController@elements'
 ]);

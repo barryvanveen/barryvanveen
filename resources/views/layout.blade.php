@@ -23,13 +23,9 @@
 	</head>
 	<body>
 
-		<div class="page">
+		@include('layouts.partials.header')
 
-			@include('layouts.partials.header')
-
-			@yield('body')
-
-		</div>
+		@yield('body')
 
 		{{ HTML::script('js/main.min.js') }}
 
