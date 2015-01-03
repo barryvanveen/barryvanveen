@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale'          => 'en',
+    'locale'          => 'nl',
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'nl',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key'             => 'XqQLGEdrbhBEFzNmjlQxu4PtESE9tf8q',
+    'key'             => 'cKnHOpv6MavlTYkFfDHLlTTuMrHhyQSz',
     'cipher'          => MCRYPT_RIJNDAEL_128,
 
     /*
@@ -122,12 +122,18 @@ return [
         'Illuminate\Workbench\WorkbenchServiceProvider',
 
         /*
+		 * Application Service Providers...
+		 */
+        'Barryvanveen\Providers\ComposerServiceProvider',
+
+        /*
          * Vendor Service Providers
          */
         'Flyingfoxx\CommandCenter\Laravel\CommandCenterServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
         'Laracasts\Utilities\UtilitiesServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
+        'Lavary\Menu\ServiceProvider',
         'Swisnl\Head\HeadServiceProvider',
 
     ),
@@ -202,6 +208,7 @@ return [
          */
         'Flash'             => 'Laracasts\Flash\Flash',
         'Head'              => 'Swisnl\Head\Facades\Head',
+        'Menu'              => 'Lavary\Menu\Facade',
 
     ),
 

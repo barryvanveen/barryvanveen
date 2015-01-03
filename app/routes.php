@@ -11,22 +11,37 @@
 |
 */
 
-Route::get('/', [
+Route::get('', [
+    'as'   => 'home',
+    'uses' => 'PagesController@home'
+]);
+
+Route::get('/blog', [
     'as'   => 'blog',
     'uses' => 'BlogController@index'
 ]);
 
-Route::get('/blog/{blog}', [
+Route::get('blog/{blog}', [
     'as'   => 'blog-item',
     'uses' => 'BlogController@show'
 ]);
 
-Route::get('/contact', [
-    'as'   => 'contact',
-    'uses' => 'PagesController@contact'
+Route::get('/projecten', [
+    'as'   => 'projects',
+    'uses' => 'ProjectsController@index'
 ]);
 
-Route::get('/elements', [
+Route::get('projecten/{project}', [
+    'as'   => 'project-item',
+    'uses' => 'ProjectsController@show'
+]);
+
+Route::get('over-mij', [
+    'as'   => 'over-mij',
+    'uses' => 'PagesController@overMij'
+]);
+
+Route::get('elements', [
     'as'   => 'elements',
     'uses' => 'PagesController@elements'
 ]);

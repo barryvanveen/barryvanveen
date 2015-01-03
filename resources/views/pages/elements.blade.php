@@ -1,4 +1,4 @@
-@extends('layouts.full-width-centered')
+@extends('layouts.full-width')
 
 @section('content')
 

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "927ea792a75053c01e97ad1996002d7d",
+    "hash": "b90172d11bfa5075b62dac620a943260",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -980,6 +980,48 @@
                 "laravel"
             ],
             "time": "2014-10-04 18:48:27"
+        },
+        {
+            "name": "lavary/laravel-menu",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lavary/laravel-menu.git",
+                "reference": "4db19768ed33a4b4de9a3ba3047e66dd3db85663"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lavary/laravel-menu/zipball/4db19768ed33a4b4de9a3ba3047e66dd3db85663",
+                "reference": "4db19768ed33a4b4de9a3ba3047e66dd3db85663",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.2",
+                "illuminate/view": ">=4.2",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Lavary\\Menu\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lavary",
+                    "email": "mrl.8081@gmail.com"
+                }
+            ],
+            "description": "A quick way to create menus in Laravel 4",
+            "homepage": "https://github.com/lavary/laravel-menu",
+            "keywords": [
+                "laravel"
+            ],
+            "time": "2014-10-11 12:30:04"
         },
         {
             "name": "monolog/monolog",
@@ -2410,22 +2452,22 @@
         },
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "dev-master",
+            "version": "v1.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "486d9d9c4d209720d490ac186f8493b3c0f6897c"
+                "reference": "9a67d9132f0e2b9ed5d668aaa8a2ebc7d4dd6d49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/486d9d9c4d209720d490ac186f8493b3c0f6897c",
-                "reference": "486d9d9c4d209720d490ac186f8493b3c0f6897c",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/9a67d9132f0e2b9ed5d668aaa8a2ebc7d4dd6d49",
+                "reference": "9a67d9132f0e2b9ed5d668aaa8a2ebc7d4dd6d49",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "4.x|5.0.x",
-                "illuminate/filesystem": "4.x|5.0.x",
-                "illuminate/support": "4.x|5.0.x",
+                "illuminate/console": "4.x",
+                "illuminate/filesystem": "4.x",
+                "illuminate/support": "4.x",
                 "php": ">=5.3.0",
                 "phpdocumentor/reflection-docblock": "2.0.x",
                 "symfony/class-loader": "~2.3"
@@ -2469,27 +2511,27 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2014-10-14 08:39:02"
+            "time": "2014-08-26 08:54:34"
         },
         {
             "name": "codeception/codeception",
-            "version": "2.0.x-dev",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "9ec4226cae0e1bfcb6601b8bceaf9653614117b1"
+                "reference": "0094191ac0d6e87821fba41de002103ebe79a279"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/9ec4226cae0e1bfcb6601b8bceaf9653614117b1",
-                "reference": "9ec4226cae0e1bfcb6601b8bceaf9653614117b1",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/0094191ac0d6e87821fba41de002103ebe79a279",
+                "reference": "0094191ac0d6e87821fba41de002103ebe79a279",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "facebook/webdriver": "~0.4",
-                "guzzlehttp/guzzle": "~4.0",
+                "guzzlehttp/guzzle": "~4.0|~5.0",
                 "php": ">=5.4.0",
                 "phpunit/phpunit": "~4.0",
                 "symfony/browser-kit": "~2.4",
@@ -2504,6 +2546,7 @@
                 "codeception/specify": "~0.3",
                 "codegyre/robo-ci": "@dev",
                 "facebook/php-sdk": "~3.2",
+                "flow/jsonpath": "~0.1",
                 "monolog/monolog": "~1.8",
                 "pda/pheanstalk": "~2.0",
                 "phpseclib/phpseclib": "~0.3.6",
@@ -2550,7 +2593,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2014-11-01 10:38:01"
+            "time": "2014-12-19 23:54:20"
         },
         {
             "name": "doctrine/instantiator",
@@ -2649,16 +2692,16 @@
         },
         {
             "name": "fzaninotto/faker",
-            "version": "dev-master",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "d261bcdcf05e15dbe020e99fdd47dd999f2b793d"
+                "reference": "010c7efedd88bf31141a02719f51fb44c732d5a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/d261bcdcf05e15dbe020e99fdd47dd999f2b793d",
-                "reference": "d261bcdcf05e15dbe020e99fdd47dd999f2b793d",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/010c7efedd88bf31141a02719f51fb44c732d5a0",
+                "reference": "010c7efedd88bf31141a02719f51fb44c732d5a0",
                 "shasum": ""
             },
             "require": {
@@ -2670,9 +2713,7 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "1.5.x-dev"
-                }
+                "branch-alias": []
             },
             "autoload": {
                 "psr-0": {
@@ -2695,7 +2736,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2014-11-03 20:46:26"
+            "time": "2014-06-04 14:43:02"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -3758,12 +3799,10 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "swisnl/head": 20,
-        "barryvdh/laravel-ide-helper": 20,
-        "codeception/codeception": 20,
-        "fzaninotto/faker": 20
+        "swisnl/head": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }

@@ -2,9 +2,14 @@
 
 class PagesController extends BaseController
 {
-    public function contact()
+    public function home()
     {
-        return View::make('pages.contact');
+        return View::make('pages.home');
+    }
+
+    public function overMij()
+    {
+        return View::make('pages.over-mij');
     }
 
     public function elements()
