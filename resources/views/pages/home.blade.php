@@ -24,7 +24,7 @@
             <li>Muziekliefhebber</li>
             <li>Lezer</li>
         </ul>
-        <a href="{{ route('blog-item', ['blog' => 'blog-titel']) }}" class="btn btn-primary btn-sm pull-right">Meer over mij</a>
+        <a href="{{ route('blog-item', ['blog' => 'blog-titel']) }}" class="about-preview__button">Meer over mij</a>
     </div>
 
 @stop

@@ -11,6 +11,6 @@ return [
     |
     */
 
-    'base_title' => 'Document',
+    'base_title' => 'Barry van Veen',
 
 ];

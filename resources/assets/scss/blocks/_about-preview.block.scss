@@ -1,3 +1,7 @@
 .about-preview {
-	overflow: hidden;
+	@extend %preview;
 }
+
+	.about-preview__button {
+		@extend %button;
+	}

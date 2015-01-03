@@ -41,6 +41,7 @@ Route::get('over-mij', [
     'uses' => 'PagesController@overMij'
 ]);
 
+// todo: remove when ready with initial design
 Route::get('elements', [
     'as'   => 'elements',
     'uses' => 'PagesController@elements'

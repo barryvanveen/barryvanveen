@@ -22,7 +22,10 @@
 		@extend %preview__meta;
 	}
 
+		.project-preview__meta-label {
+			@extend %preview__meta-label;
+		}
+
 	.project-preview__button {
 		@extend %button;
-		@extend %button--right;
 	}

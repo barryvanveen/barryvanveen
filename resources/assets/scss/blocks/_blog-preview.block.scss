@@ -22,7 +22,10 @@
 		@extend %preview__meta;
 	}
 
+		.blog-preview__meta-label {
+			@extend %preview__meta-label;
+		}
+
 	.blog-preview__button {
 		@extend %button;
-		@extend %button--right;
 	}

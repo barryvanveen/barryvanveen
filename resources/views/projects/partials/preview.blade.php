@@ -5,7 +5,9 @@
         </h2>
         <span class="project-preview__heading-label">Nieuwste project</span>
     </div>
-    <p class="project-preview__meta">3 weken geleden geplaatst</p>
+    <p>
+        <span class="project-preview__meta-label">Nieuwste project</span> <span class="project-preview__meta">3 weken geleden geplaatst</span>
+    </p>
     <p>De <em>Game Of Life</em> is eigenlijk geen spel dat je kunt spelen, maar fascinerend is het wel. Ik heb het spel gemaakt met JavaScript en het HTML5 canvas-element.</p>
     <a href="{{ route('project-item', ['project' => 'project-titel']) }}" class="project-preview__button">Bekijk dit project</a>
 </div>
