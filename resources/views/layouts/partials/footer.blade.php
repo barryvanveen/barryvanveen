@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                 <ul class="footer__menu">
                     <li class="footer__menu-item footer__menu-item--up pull-right">
-                        <a href="#top" class="footer__menu-item-link">Terug naar boven</a>
+                        <a href="{{ URL::current() }}#" class="footer__menu-item-link">Terug naar boven</a>
                     </li>
                     <li class="footer__menu-item footer__menu-item--linkedin">
                         <a href="https://www.linkedin.com/profile/view?id=70816233" class="footer__menu-item-link" target="_blank">LinkedIn</a>

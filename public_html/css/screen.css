@@ -4627,7 +4627,6 @@ button.close {
     margin-right: 0; }
   .navbar-nav > li > a {
     padding: 8px 12px;
-    color: red;
     margin: 12px 6px;
     border: 1px solid transparent;
     border-radius: 4px; }
@@ -4713,13 +4712,26 @@ legend {
 .modal .close {
   color: #333333; }
 
+.about-preview {
+  overflow: hidden; }
+
+.blog-preview {
+  overflow: hidden; }
+
+.blog-preview__heading {
+  display: block;
+  overflow: hidden; }
+
+.blog-preview__heading-label {
+  margin: 11px 0 0 15px; }
+
 .footer {
-  background-color: #F5F5F5;
+  position: absolute;
   bottom: 0;
   height: 80px;
-  position: absolute;
   width: 100%;
-  padding: 20px 0; }
+  padding: 20px 0;
+  background-color: #F5F5F5; }
 
 .footer__menu {
   list-style: none;
@@ -4752,6 +4764,21 @@ legend {
   .footer__menu-item-link:hover {
     color: inherit; }
 
+.project-preview {
+  overflow: hidden; }
+
+.project-preview__heading {
+  display: block;
+  overflow: hidden; }
+
+.project-preview__heading-label {
+  margin: 11px 0 0 15px; }
+
 /* Styles die voor screen en voor print gelden */
+html {
+  min-height: 100%;
+  position: relative; }
+
 body {
-  padding-top: 80px; }
+  padding-top: 80px;
+  padding-bottom: 90px !important; }

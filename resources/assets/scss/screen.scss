@@ -17,6 +17,12 @@
 @import "base";
 
 // Styles for screen
+html{
+	min-height: 100%;
+	position: relative;
+}
+
 body {
 	padding-top: 80px;
+	padding-bottom: 90px !important;
 }
