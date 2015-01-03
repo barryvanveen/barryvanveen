@@ -1,10 +1,28 @@
 .project-preview {
-	overflow: hidden;
+	@extend %preview;
 }
+
 	.project-preview__heading {
-		display: block;
-		overflow: hidden;
+		@extend %preview__heading;
 	}
-	.project-preview__heading-label {
-		margin: 11px 0 0 15px;
+
+		.project-preview__heading-title {
+			@extend %preview__heading-title;
+		}
+
+			.project-preview__heading-title-link {
+				@extend %preview__heading-title-link;
+			}
+
+		.project-preview__heading-label {
+			@extend %preview__heading-label;
+		}
+
+	.project-preview__meta {
+		@extend %preview__meta;
+	}
+
+	.project-preview__button {
+		@extend %button;
+		@extend %button--right;
 	}

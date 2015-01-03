@@ -6,6 +6,9 @@
 /**
  * Place a icon in :before, :after of both
  **/
+/**
+ * Default styles for a button
+ **/
 @font-face {
   font-family: "icons";
   src: url('../fonts/icomoon.eot?-ahpafn');
@@ -190,7 +193,7 @@ td, th {
     display: none; }
   .btn > .caret, .dropup > .btn > .caret {
     border-top-color: #000 !important; }
-  .label {
+  .label, .blog-preview__heading-label, .project-preview__heading-label {
     border: 1px solid #000; }
   .table {
     border-collapse: collapse !important; }
@@ -984,7 +987,7 @@ mark, .mark {
 .text-capitalize {
   text-transform: capitalize; }
 
-.text-muted {
+.text-muted, .blog-preview__meta, .project-preview__meta {
   color: #b3b3b3; }
 
 .text-primary {
@@ -3283,7 +3286,7 @@ tbody.collapse.in {
     background-color: #fff;
     cursor: not-allowed; }
 
-.label {
+.label, .blog-preview__heading-label, .project-preview__heading-label {
   display: inline;
   padding: 0.2em 0.6em 0.3em;
   font-size: 75%;
@@ -3294,20 +3297,20 @@ tbody.collapse.in {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 0.25em; }
-  .label:empty {
+  .label:empty, .blog-preview__heading-label:empty, .project-preview__heading-label:empty {
     display: none; }
-  .btn .label {
+  .btn .label, .btn %preview__heading-label, .btn .blog-preview__heading-label, .btn .project-preview__heading-label {
     position: relative;
     top: -1px; }
 
-a.label:hover, a.label:focus {
+a.label:hover, a.blog-preview__heading-label:hover, a.project-preview__heading-label:hover, a.label:focus, a.blog-preview__heading-label:focus, a.project-preview__heading-label:focus {
   color: #fff;
   text-decoration: none;
   cursor: pointer; }
 
-.label-default {
+.label-default, .blog-preview__heading-label, .project-preview__heading-label {
   background-color: #fff; }
-  .label-default[href]:hover, .label-default[href]:focus {
+  .label-default[href]:hover, [href].blog-preview__heading-label:hover, [href].project-preview__heading-label:hover, .label-default[href]:focus, [href].blog-preview__heading-label:focus, [href].project-preview__heading-label:focus {
     background-color: #e6e6e6; }
 
 .label-primary {
@@ -4685,10 +4688,10 @@ legend {
   color: #fff;
   text-decoration: underline; }
 
-.label {
+.label, .blog-preview__heading-label, .project-preview__heading-label {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal; }
-  .label-default {
+  .label-default, .blog-preview__heading-label, .project-preview__heading-label {
     border: 1px solid #ddd;
     color: #333333; }
 
@@ -4712,18 +4715,87 @@ legend {
 .modal .close {
   color: #333333; }
 
-.about-preview {
-  overflow: hidden; }
+.blog-preview__button, .project-preview__button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 8px 12px;
+  font-size: 16px;
+  line-height: 1.42857;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #fff;
+  background-color: #4582EC;
+  border-color: #4582EC;
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 3px; }
+  .blog-preview__button:focus, .project-preview__button:focus, .blog-preview__button.focus, .project-preview__button.focus, .blog-preview__button:active:focus, .project-preview__button:active:focus, .blog-preview__button:active.focus, .project-preview__button:active.focus, .blog-preview__button.active:focus, .project-preview__button.active:focus, .blog-preview__button.active.focus, .project-preview__button.active.focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px; }
+  .blog-preview__button:hover, .project-preview__button:hover, .blog-preview__button:focus, .project-preview__button:focus, .blog-preview__button.focus, .project-preview__button.focus {
+    color: #333333;
+    text-decoration: none; }
+  .blog-preview__button:active, .project-preview__button:active, .blog-preview__button.active, .project-preview__button.active {
+    outline: 0;
+    background-image: none;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+  .blog-preview__button.disabled, .project-preview__button.disabled, .blog-preview__button[disabled], .project-preview__button[disabled], fieldset[disabled] .blog-preview__button, fieldset[disabled] .project-preview__button {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    box-shadow: none; }
+  .blog-preview__button:hover, .project-preview__button:hover, .blog-preview__button:focus, .project-preview__button:focus, .blog-preview__button.focus, .project-preview__button.focus, .blog-preview__button:active, .project-preview__button:active, .blog-preview__button.active, .project-preview__button.active, .open > .blog-preview__button.dropdown-toggle, .open > .project-preview__button.dropdown-toggle {
+    color: #fff;
+    background-color: #1863e6;
+    border-color: #175fdd; }
+  .blog-preview__button:active, .project-preview__button:active, .blog-preview__button.active, .project-preview__button.active, .open > .blog-preview__button.dropdown-toggle, .open > .project-preview__button.dropdown-toggle {
+    background-image: none; }
+  .blog-preview__button.disabled, .project-preview__button.disabled, .blog-preview__button.disabled:hover, .project-preview__button.disabled:hover, .blog-preview__button.disabled:focus, .project-preview__button.disabled:focus, .blog-preview__button.disabled.focus, .project-preview__button.disabled.focus, .blog-preview__button.disabled:active, .project-preview__button.disabled:active, .blog-preview__button.disabled.active, .project-preview__button.disabled.active, .blog-preview__button[disabled], .project-preview__button[disabled], .blog-preview__button[disabled]:hover, .project-preview__button[disabled]:hover, .blog-preview__button[disabled]:focus, .project-preview__button[disabled]:focus, .blog-preview__button[disabled].focus, .project-preview__button[disabled].focus, .blog-preview__button[disabled]:active, .project-preview__button[disabled]:active, .blog-preview__button[disabled].active, .project-preview__button[disabled].active, fieldset[disabled] .blog-preview__button, fieldset[disabled] .project-preview__button, fieldset[disabled] .blog-preview__button:hover, fieldset[disabled] .project-preview__button:hover, fieldset[disabled] .blog-preview__button:focus, fieldset[disabled] .project-preview__button:focus, fieldset[disabled] .blog-preview__button.focus, fieldset[disabled] .project-preview__button.focus, fieldset[disabled] .blog-preview__button:active, fieldset[disabled] .project-preview__button:active, fieldset[disabled] .blog-preview__button.active, fieldset[disabled] .project-preview__button.active {
+    background-color: #4582EC;
+    border-color: #4582EC; }
+  .blog-preview__button .badge, .project-preview__button .badge {
+    color: #4582EC;
+    background-color: #fff; }
 
-.blog-preview {
-  overflow: hidden; }
+.blog-preview__button, .project-preview__button {
+  float: right; }
 
-.blog-preview__heading {
+.blog-preview, .project-preview {
   display: block;
   overflow: hidden; }
 
-.blog-preview__heading-label {
+.blog-preview__heading, .project-preview__heading {
+  display: block;
+  overflow: hidden; }
+
+.blog-preview__heading-title-link, .project-preview__heading-title-link {
+  float: left;
+  color: #333333; }
+  .blog-preview__heading-title-link:hover, .project-preview__heading-title-link:hover {
+    color: inherit; }
+
+.blog-preview__heading-label, .project-preview__heading-label {
+  float: left;
   margin: 11px 0 0 15px; }
+
+.about-preview {
+  overflow: hidden; }
 
 .footer {
   position: absolute;
@@ -4763,16 +4835,6 @@ legend {
   color: #333333; }
   .footer__menu-item-link:hover {
     color: inherit; }
-
-.project-preview {
-  overflow: hidden; }
-
-.project-preview__heading {
-  display: block;
-  overflow: hidden; }
-
-.project-preview__heading-label {
-  margin: 11px 0 0 15px; }
 
 /* Styles die voor screen en voor print gelden */
 html {

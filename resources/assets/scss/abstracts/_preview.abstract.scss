@@ -1,0 +1,32 @@
+%preview {
+	display: block;
+	overflow: hidden;
+}
+
+	%preview__heading {
+		display: block;
+		overflow: hidden;
+	}
+
+		%preview__heading-title {
+
+		}
+
+			%preview__heading-title-link {
+				float: left;
+				color: $text-color;
+				&:hover {
+					color: inherit;
+				}
+			}
+
+		%preview__heading-label {
+			float: left;
+			margin: 11px 0 0 15px;
+			@extend .label;
+			@extend .label-default;
+		}
+
+	%preview__meta {
+		@extend .text-muted;
+	}

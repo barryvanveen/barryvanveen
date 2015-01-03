@@ -1,10 +1,28 @@
 .blog-preview {
-	overflow: hidden;
+	@extend %preview;
 }
+
 	.blog-preview__heading {
-		display: block;
-		overflow: hidden;
+		@extend %preview__heading;
 	}
-	.blog-preview__heading-label {
-		margin: 11px 0 0 15px;
+
+		.blog-preview__heading-title {
+			@extend %preview__heading-title;
+		}
+
+			.blog-preview__heading-title-link {
+				@extend %preview__heading-title-link;
+			}
+
+		.blog-preview__heading-label {
+			@extend %preview__heading-label;
+		}
+
+	.blog-preview__meta {
+		@extend %preview__meta;
+	}
+
+	.blog-preview__button {
+		@extend %button;
+		@extend %button--right;
 	}
