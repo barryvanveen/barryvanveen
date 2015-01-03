@@ -1,7 +1,5 @@
 <?php
 
-use Laracasts\Utilities\JavaScript\Facades\JavaScript;
-
 class BaseController extends Controller
 {
     /**

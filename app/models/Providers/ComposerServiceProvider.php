@@ -6,15 +6,12 @@ use JavaScript;
 
 class ComposerServiceProvider extends ServiceProvider
 {
-
     public function register()
     {
-
     }
 
     public function boot()
     {
-
         // checkboxes met tags toevoegen aan views
         $this->app->view->composer('layouts.partials.header', MenuComposer::class);
 
@@ -26,7 +23,5 @@ class ComposerServiceProvider extends ServiceProvider
                                  ]
             ]);
         }
-
     }
-
 }

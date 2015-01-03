@@ -4,7 +4,6 @@ use Menu;
 
 class MenuComposer
 {
-
     public function compose()
     {
         Menu::make('MainNav', function ($menu) {
@@ -22,7 +21,5 @@ class MenuComposer
             $menu->add('Elements', ['route' => 'elements']);
 
         });
-
     }
-
 }

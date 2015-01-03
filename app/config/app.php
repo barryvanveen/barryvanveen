@@ -122,8 +122,8 @@ return [
         'Illuminate\Workbench\WorkbenchServiceProvider',
 
         /*
-		 * Application Service Providers...
-		 */
+         * Application Service Providers...
+         */
         'Barryvanveen\Providers\ComposerServiceProvider',
 
         /*
