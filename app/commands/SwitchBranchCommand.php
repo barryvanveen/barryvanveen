@@ -58,7 +58,7 @@ class SwitchBranchCommand extends Command
         $this->runTask("bower install");
 
         $this->runTask("clearDatabase", getenv('DB_NAME'));
-        $this->runTask("php artisan migrate");
+        $this->runTask("php artisan migrate --path=database/migrations");
         $this->runTask("php artisan db:seed");
 
         if (!getenv('DB_TESTING_NAME')) {

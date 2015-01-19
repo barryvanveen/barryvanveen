@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b90172d11bfa5075b62dac620a943260",
+    "hash": "c6d0f929bcf32352ce0f62666ae2d4f1",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -52,6 +52,56 @@
                 "preload"
             ],
             "time": "2014-03-12 00:05:31"
+        },
+        {
+            "name": "cviebrock/eloquent-sluggable",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cviebrock/eloquent-sluggable.git",
+                "reference": "fcc70e6f27b0d0ff116c7163ef428dd61c387b05"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/fcc70e6f27b0d0ff116c7163ef428dd61c387b05",
+                "reference": "fcc70e6f27b0d0ff116c7163ef428dd61c387b05",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "4.*",
+                "illuminate/database": "4.*",
+                "illuminate/support": "4.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "laravelbook/ardent": "dev-master",
+                "orchestra/testbench": "2.1.*",
+                "phpunit/phpunit": "4.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Cviebrock\\EloquentSluggable": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Colin Viebrock",
+                    "email": "colin@viebrock.ca"
+                }
+            ],
+            "description": "Easy creation of slugs for your Eloquent models in Laravel 4.",
+            "homepage": "https://github.com/cviebrock/eloquent-sluggable",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "slug"
+            ],
+            "time": "2014-11-13 20:05:40"
         },
         {
             "name": "d11wtq/boris",

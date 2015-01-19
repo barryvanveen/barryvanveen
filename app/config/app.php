@@ -129,6 +129,7 @@ return [
         /*
          * Vendor Service Providers
          */
+        'Cviebrock\EloquentSluggable\SluggableServiceProvider',
         'Flyingfoxx\CommandCenter\Laravel\CommandCenterServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
         'Laracasts\Utilities\UtilitiesServiceProvider',

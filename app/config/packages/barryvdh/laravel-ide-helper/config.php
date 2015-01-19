@@ -40,7 +40,7 @@ return [
     */
 
     'model_locations' => [
-        'app/models',
+        'app/models/Blogs',
     ],
 
     /*
