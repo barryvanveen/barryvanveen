@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c6d0f929bcf32352ce0f62666ae2d4f1",
+    "hash": "194edad2997e043a42363ff6a17500be",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1030,6 +1030,50 @@
                 "laravel"
             ],
             "time": "2014-10-04 18:48:27"
+        },
+        {
+            "name": "laravelrus/localized-carbon",
+            "version": "v1.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelRUS/localized-carbon.git",
+                "reference": "6c5c805be2aad83446f14d1c0b93a1673a7d2ff9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelRUS/localized-carbon/zipball/6c5c805be2aad83446f14d1c0b93a1673a7d2ff9",
+                "reference": "6c5c805be2aad83446f14d1c0b93a1673a7d2ff9",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.1.0",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Laravelrus\\LocalizedCarbon\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aleksandr Egorov",
+                    "email": "amego2006@gmail.com"
+                }
+            ],
+            "description": "A localizable version of Carbon",
+            "keywords": [
+                "carbon",
+                "date",
+                "datetime",
+                "laravel",
+                "time"
+            ],
+            "time": "2014-10-23 15:05:32"
         },
         {
             "name": "lavary/laravel-menu",

@@ -6,7 +6,10 @@
         <h1>Laatste updates</h1>
     </div>
 
-    @include('blog.partials.preview')
+    @foreach($blogs as $blog)
+        @include('blog.partials.preview')
+    @endforeach
+
     @include('projects.partials.preview')
 
 @stop

@@ -134,8 +134,10 @@ return [
         'Laracasts\Flash\FlashServiceProvider',
         'Laracasts\Utilities\UtilitiesServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
+        'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
         'Lavary\Menu\ServiceProvider',
-        'Swisnl\Head\HeadServiceProvider',
+        'Robbo\Presenter\PresenterServiceProvider',
+        'Swisnl\Head\HeadServiceProvider'
 
     ),
 
@@ -207,8 +209,10 @@ return [
         /*
          * Vendor Aliases
          */
+        'DiffFormatter'     => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
         'Flash'             => 'Laracasts\Flash\Flash',
         'Head'              => 'Swisnl\Head\Facades\Head',
+        'LocalizedCarbon'   => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
         'Menu'              => 'Lavary\Menu\Facade',
 
     ),

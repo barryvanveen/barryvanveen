@@ -1,12 +1,24 @@
 <?php
 
+use Barryvanveen\Blogs\BlogRepository;
+
 class PagesController extends BaseController
 {
+
+    /** @var BlogRepository */
+    protected $blogRepository;
+
+    public function __construct(BlogRepository $blogRepository) {
+        $this->blogRepository = $blogRepository;
+    }
+
     public function home()
     {
         Head::title('Blog, projecten en persoonlijke website van Barry van Veen', false);
 
-        return View::make('pages.home');
+        $blogs = $this->blogRepository->latest();
+
+        return View::make('pages.home', compact('blogs'));
     }
 
     public function overMij()

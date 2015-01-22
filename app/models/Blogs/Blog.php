@@ -4,6 +4,7 @@ use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
+use Robbo\Presenter\PresentableInterface;
 
 /**
  * Barryvanveen\Blogs\Blog
@@ -29,7 +30,7 @@ use Illuminate\Database\Query\Builder;
  * @method static Builder|Blog whereCreatedAt($value)
  * @method static Builder|Blog whereUpdatedAt($value)
  */
-class Blog extends Model implements SluggableInterface
+class Blog extends Model implements SluggableInterface, PresentableInterface
 {
 
     use SluggableTrait;
@@ -39,8 +40,7 @@ class Blog extends Model implements SluggableInterface
      *
      * @var string
      */
-    // todo: set Repository class name
-    //public $repository = DiscussionRepository::class;
+    public $repository = BlogRepository::class;
 
     /**
      * Which fields may be mass assigned
@@ -68,14 +68,46 @@ class Blog extends Model implements SluggableInterface
     ];
 
     /**
+     * select only blogs that are online
+     *
+     * @param Builder $query
+     *
+     * @return mixed
+     */
+    public function scopeOnline($query) {
+        return $query->where('online', '=', '1');
+    }
+
+    /**
+     * select only blogs that have a publication_date in the past
+     *
+     * @param Builder $query
+     *
+     * @return mixed
+     */
+    public function scopePast($query) {
+        return $query->where('publication_date', '<=', \DB::raw('NOW()'));
+    }
+
+    /**
+     * order the results by descending publication date
+     *
+     * @param Builder $query
+     *
+     * @return mixed
+     */
+    public function scopeOrderedDesc($query) {
+        return $query->orderBy('publication_date', 'DESC');
+    }
+
+    /**
      * Return a created presenter.
      *
-     * @return DiscussionPresenter
+     * @return BlogPresenter
      */
-    public function present()
+    public function getPresenter()
     {
-        // todo: return DiscussionPresenter
-        //return new DiscussionPresenter($this);
+        return new BlogPresenter($this);
     }
 
 }

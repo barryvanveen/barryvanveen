@@ -19,7 +19,7 @@ use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 App::error(function (Exception $exception, $code) {
     Log::error($exception);
 
-    if (App::environment(['local', 'testing'])) {
+    if (App::environment('local', 'testing')) {
         return null;
     }
 
@@ -29,7 +29,7 @@ App::error(function (Exception $exception, $code) {
 App::error(function (ModelNotFoundException $exception, $code) {
     Log::error($exception);
 
-    if (App::environment(['local', 'testing'])) {
+    if (App::environment('local', 'testing')) {
         return null;
     }
 
@@ -40,7 +40,7 @@ App::error(function (ModelNotFoundException $exception, $code) {
 App::error(function (MethodNotAllowedHttpException $exception, $code) {
     Log::error($exception);
 
-    if (App::environment(['local', 'testing'])) {
+    if (App::environment('local', 'testing')) {
         return null;
     }
 
