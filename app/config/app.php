@@ -137,7 +137,7 @@ return [
         'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
         'Lavary\Menu\ServiceProvider',
         'Robbo\Presenter\PresenterServiceProvider',
-        'Swisnl\Head\HeadServiceProvider'
+        'Swisnl\Head\HeadServiceProvider',
 
     ),
 
@@ -152,7 +152,7 @@ return [
     |
     */
 
-    'manifest'        => storage_path() . '/meta',
+    'manifest'        => storage_path().'/meta',
 
     /*
     |--------------------------------------------------------------------------

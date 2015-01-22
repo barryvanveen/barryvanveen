@@ -53,7 +53,7 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
         'text',
         'image',
         'publication_date',
-        'online'
+        'online',
     ];
 
     /**

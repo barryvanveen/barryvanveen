@@ -6,7 +6,6 @@
 
 
 use Codeception\Module\Filesystem;
-use Codeception\Module\FunctionalHelper;
 use Codeception\Module\Laravel4;
 use Codeception\Module\Asserts;
 
@@ -24,7 +23,7 @@ use Codeception\Module\Asserts;
  * @method void haveFriend($name, $actorClass = null)
  *
  * @SuppressWarnings(PHPMD)
-*/
+ */
 class FunctionalTester extends \Codeception\Actor
 {
     /**
@@ -41,7 +40,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Condition('amInPath', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -64,7 +62,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('openFile', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -84,7 +81,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('deleteFile', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -104,7 +100,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('deleteDir', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -125,7 +120,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('copyDir', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -170,7 +164,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeInThisFile', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -217,7 +210,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeFileContentsEqual', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -258,7 +250,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeInThisFile', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -270,7 +261,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('deleteThisFile', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -285,7 +275,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $filename
      * @param string $path
-     * Conditional Assertion: Test won't be stopped on fail
+     *                     Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Filesystem::seeFileFound()
      */
     public function canSeeFileFound($filename, $path = null)
@@ -313,7 +303,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeFileFound', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -321,7 +310,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $filename
      * @param string $path
-     * Conditional Assertion: Test won't be stopped on fail
+     *                     Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Filesystem::dontSeeFileFound()
      */
     public function cantSeeFileFound($filename, $path = null)
@@ -342,7 +331,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeFileFound', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -362,7 +350,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('cleanDir', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -377,7 +364,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('writeToFile', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -389,7 +375,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('haveEnabledFilters', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -401,7 +386,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('haveDisabledFilters', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -422,7 +406,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Condition('amOnRoute', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -443,7 +426,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Condition('amOnAction', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -456,7 +438,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      * @param $route
      * @param array $params
-     * Conditional Assertion: Test won't be stopped on fail
+     *                      Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Laravel4::seeCurrentRouteIs()
      */
     public function canSeeCurrentRouteIs($route, $params = null)
@@ -482,7 +464,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeCurrentRouteIs', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -496,7 +477,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $action
      * @param array $params
-     * Conditional Assertion: Test won't be stopped on fail
+     *                      Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Laravel4::seeCurrentActionIs()
      */
     public function canSeeCurrentActionIs($action, $params = null)
@@ -523,16 +504,15 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeCurrentActionIs', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Assert that the session has a given list of values.
      *
      * @param  string|array $key
-     * @param  mixed $value
+     * @param  mixed        $value
      * @return void
-     * Conditional Assertion: Test won't be stopped on fail
+     *                            Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Laravel4::seeInSession()
      */
     public function canSeeInSession($key, $value = null)
@@ -545,7 +525,7 @@ class FunctionalTester extends \Codeception\Actor
      * Assert that the session has a given list of values.
      *
      * @param  string|array $key
-     * @param  mixed $value
+     * @param  mixed        $value
      * @return void
      * @see \Codeception\Module\Laravel4::seeInSession()
      */
@@ -554,7 +534,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeInSession', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -562,7 +541,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param  array $bindings
      * @return void
-     * Conditional Assertion: Test won't be stopped on fail
+     *                        Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Laravel4::seeSessionHasValues()
      */
     public function canSeeSessionHasValues($bindings)
@@ -583,7 +562,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeSessionHasValues', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -602,7 +580,7 @@ class FunctionalTester extends \Codeception\Actor
      * ?>
      * ```
      * @param array $bindings
-     * Conditional Assertion: Test won't be stopped on fail
+     *                        Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Laravel4::seeSessionErrorMessage()
      */
     public function canSeeSessionErrorMessage($bindings)
@@ -634,14 +612,13 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeSessionErrorMessage', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
      * Assert that the session has errors bound.
      *
      * @return bool
-     * Conditional Assertion: Test won't be stopped on fail
+     *              Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Laravel4::seeSessionHasErrors()
      */
     public function canSeeSessionHasErrors()
@@ -661,7 +638,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeSessionHasErrors', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -669,7 +645,7 @@ class FunctionalTester extends \Codeception\Actor
      * Takes either `UserInterface` instance or array of credentials.
      *
      * @param  \Illuminate\Auth\UserInterface|array $user
-     * @param  string $driver
+     * @param  string                               $driver
      * @return void
      * @see \Codeception\Module\Laravel4::amLoggedAs()
      */
@@ -678,7 +654,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Condition('amLoggedAs', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -690,7 +665,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('logout', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -713,7 +687,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeAuthentication', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -736,7 +709,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeAuthentication', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -768,7 +740,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('grabService', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -781,7 +752,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      *
      * @param $model
-     * @param array $attributes
+     * @param  array $attributes
      * @return mixed
      * @see \Codeception\Module\Laravel4::haveRecord()
      */
@@ -790,7 +761,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('haveRecord', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -802,7 +772,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
-     * Conditional Assertion: Test won't be stopped on fail
+     *                          Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Laravel4::seeRecord()
      */
     public function canSeeRecord($model, $attributes = null)
@@ -827,7 +797,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeRecord', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -841,7 +810,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $model
      * @param array $attributes
-     * Conditional Assertion: Test won't be stopped on fail
+     *                          Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Module\Laravel4::dontSeeRecord()
      */
     public function cantSeeRecord($model, $attributes = null)
@@ -868,7 +837,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeRecord', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -881,7 +849,7 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      *
      * @param $model
-     * @param array $attributes
+     * @param  array $attributes
      * @return mixed
      * @see \Codeception\Module\Laravel4::grabRecord()
      */
@@ -890,7 +858,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('grabRecord', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -905,7 +872,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Condition('amHttpAuthenticated', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -928,7 +894,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Condition('amOnPage', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -968,7 +933,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('click', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -985,7 +949,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
-     * Conditional Assertion: Test won't be stopped on fail
+     *                       Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::see()
      */
     public function canSee($text, $selector = null)
@@ -1015,7 +979,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('see', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1032,7 +995,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
-     * Conditional Assertion: Test won't be stopped on fail
+     *                       Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSee()
      */
     public function cantSee($text, $selector = null)
@@ -1062,7 +1025,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSee', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1078,7 +1040,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $url
-     * Conditional Assertion: Test won't be stopped on fail
+     *                   Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeLink()
      */
     public function canSeeLink($text, $url = null)
@@ -1107,7 +1069,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeLink', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1123,7 +1084,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $text
      * @param null $url
-     * Conditional Assertion: Test won't be stopped on fail
+     *                  Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeLink()
      */
     public function cantSeeLink($text, $url = null)
@@ -1152,7 +1113,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeLink', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1197,7 +1157,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeInCurrentUrl', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1236,7 +1195,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeInCurrentUrl', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1279,7 +1237,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeCurrentUrlEquals', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1322,7 +1279,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeCurrentUrlEquals', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1363,7 +1319,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeCurrentUrlMatches', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1404,7 +1359,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeCurrentUrlMatches', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1429,7 +1383,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('grabFromCurrentUrl', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1472,7 +1425,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeCheckboxIsChecked', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1513,7 +1465,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeCheckboxIsChecked', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1566,7 +1517,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeInField', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1619,7 +1569,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeInField', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1684,7 +1633,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('submitForm', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1706,7 +1654,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('fillField', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1737,7 +1684,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('selectOption', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1757,7 +1703,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('checkOption', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1777,7 +1722,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('uncheckOption', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1799,7 +1743,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('attachFile', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1817,7 +1760,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('sendAjaxGetRequest', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1846,7 +1788,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('sendAjaxPostRequest', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1873,7 +1814,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('sendAjaxRequest', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1898,7 +1838,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('grabTextFrom', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1923,7 +1862,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('grabAttributeFrom', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1937,7 +1875,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('grabValueFrom', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1960,7 +1897,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('setCookie', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1976,7 +1912,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('grabCookie', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1991,7 +1926,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $cookie
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeCookie()
      */
     public function canSeeCookie($name)
@@ -2019,7 +1954,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeCookie', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2028,7 +1962,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $cookie
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeCookie()
      */
     public function cantSeeCookie($name)
@@ -2050,7 +1984,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeCookie', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2066,7 +1999,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('resetCookie', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2088,7 +2020,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $selector
      * @param array $attributes
      * @return
-     * Conditional Assertion: Test won't be stopped on fail
+     *                          Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeElement()
      */
     public function canSeeElement($selector, $attributes = null)
@@ -2123,7 +2055,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeElement', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2141,7 +2072,7 @@ class FunctionalTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
-     * Conditional Assertion: Test won't be stopped on fail
+     *                          Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeElement()
      */
     public function cantSeeElement($selector, $attributes = null)
@@ -2172,7 +2103,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeElement', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2186,9 +2116,9 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      * @param $selector
      * @param mixed $expected:
-     * - string: strict number
-     * - array: range of numbers [0,10]
-     * Conditional Assertion: Test won't be stopped on fail
+     *                         - string: strict number
+     *                         - array: range of numbers [0,10]
+     *                         Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeNumberOfElements()
      */
     public function canSeeNumberOfElements($selector, $expected)
@@ -2208,8 +2138,8 @@ class FunctionalTester extends \Codeception\Actor
      * ```
      * @param $selector
      * @param mixed $expected:
-     * - string: strict number
-     * - array: range of numbers [0,10]
+     *                         - string: strict number
+     *                         - array: range of numbers [0,10]
      * @see \Codeception\Lib\InnerBrowser::seeNumberOfElements()
      */
     public function seeNumberOfElements($selector, $expected)
@@ -2217,7 +2147,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeNumberOfElements', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2233,7 +2162,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeOptionIsSelected()
      */
     public function canSeeOptionIsSelected($select, $optionText)
@@ -2262,7 +2191,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeOptionIsSelected', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2278,7 +2206,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeOptionIsSelected()
      */
     public function cantSeeOptionIsSelected($select, $optionText)
@@ -2307,7 +2235,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeOptionIsSelected', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2330,7 +2257,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seePageNotFound', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2339,7 +2265,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $code
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIs()
      */
     public function canSeeResponseCodeIs($code)
@@ -2361,7 +2287,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeResponseCodeIs', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2376,7 +2301,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeInTitle()
      */
     public function canSeeInTitle($title)
@@ -2404,7 +2329,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeInTitle', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2413,7 +2337,7 @@ class FunctionalTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeInTitle()
      */
     public function cantSeeInTitle($title)
@@ -2435,7 +2359,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeInTitle', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2453,7 +2376,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertEquals', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2469,7 +2391,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertNotEquals', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2485,7 +2406,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertGreaterThan', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2497,7 +2417,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertGreaterThen', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2513,7 +2432,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertGreaterThanOrEqual', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2525,7 +2443,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertGreaterThenOrEqual', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2541,7 +2458,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertLessThan', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2557,7 +2473,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertLessThanOrEqual', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2573,7 +2488,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertContains', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2589,7 +2503,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertNotContains', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2604,7 +2517,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertEmpty', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2619,7 +2531,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertNotEmpty', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2634,7 +2545,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertNull', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2649,7 +2559,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertNotNull', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2664,7 +2573,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertTrue', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -2679,7 +2587,6 @@ class FunctionalTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertFalse', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *

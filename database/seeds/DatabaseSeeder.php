@@ -10,18 +10,16 @@ class DatabaseSeeder extends Seeder
      * @var array
      */
     protected $tables = [
-        'blogs'
+        'blogs',
     ];
-
 
     /**
      * Seeders that need to be called
      * @var array
      */
     protected $seeders = [
-        'BlogsTableSeeder'
+        'BlogsTableSeeder',
     ];
-
 
     /**
      * Run the database seeds.
@@ -38,7 +36,6 @@ class DatabaseSeeder extends Seeder
             $this->call($seedClass);
         }
     }
-
 
     /**
      * Truncate all necessary database tables

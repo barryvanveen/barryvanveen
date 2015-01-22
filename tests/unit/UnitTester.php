@@ -6,7 +6,6 @@
 
 
 use Codeception\Module\Asserts;
-use Codeception\Module\UnitHelper;
 
 /**
  * Inherited Methods
@@ -22,7 +21,7 @@ use Codeception\Module\UnitHelper;
  * @method void haveFriend($name, $actorClass = null)
  *
  * @SuppressWarnings(PHPMD)
-*/
+ */
 class UnitTester extends \Codeception\Actor
 {
     /**
@@ -42,7 +41,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertEquals', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -58,7 +56,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertNotEquals', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -74,7 +71,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertGreaterThan', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -86,7 +82,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertGreaterThen', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -102,7 +97,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertGreaterThanOrEqual', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -114,7 +108,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertGreaterThenOrEqual', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -130,7 +123,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertLessThan', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -146,7 +138,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertLessThanOrEqual', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -162,7 +153,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertContains', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -178,7 +168,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertNotContains', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -193,7 +182,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertEmpty', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -208,7 +196,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertNotEmpty', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -223,7 +210,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertNull', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -238,7 +224,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertNotNull', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -253,7 +238,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertTrue', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -268,7 +252,6 @@ class UnitTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('assertFalse', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *

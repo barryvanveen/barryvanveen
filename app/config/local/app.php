@@ -46,7 +46,7 @@ return [
          */
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
-        'Way\Generators\GeneratorsServiceProvider'
+        'Way\Generators\GeneratorsServiceProvider',
 
     ]),
 

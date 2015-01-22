@@ -13,7 +13,7 @@ class BlogsTableSeeder extends Seeder
         // destination for uploads
         $uploads = 'public_html/uploads/blogs';
         File::makeDirectory($uploads, 755, true, true);
-        array_map('unlink', glob($uploads . '/*.*'));
+        array_map('unlink', glob($uploads.'/*.*'));
 
         foreach (range(1, 10) as $index) {
             // pick a random upload to attach to blog
@@ -27,7 +27,7 @@ class BlogsTableSeeder extends Seeder
                 'image'            => $image,
                 'publication_date' => $faker->dateTimeBetween('-1 year', '+3 weeks'),
                 // 1 on 10 events is offline
-                'online'           => (rand(0, 10) % 10) ? 1 : 0
+                'online'           => (rand(0, 10) % 10) ? 1 : 0,
             ]);
         }
     }

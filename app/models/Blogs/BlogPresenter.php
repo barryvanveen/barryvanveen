@@ -23,6 +23,7 @@ class BlogPresenter extends Presenter
     public function presentPublicationDateFormatted()
     {
         $date = new LocalizedCarbon($this->publication_date);
+
         return $date->diffForHumans();
     }
 }

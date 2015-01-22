@@ -16,3 +16,8 @@ command performs the following actions:
 * run `bower install`
 * remove all tables from the database and run `php artisan migrate` and `php artisan db:seed`
 * remove all tables from the testing database and run `php artisan migrate --env=testing`
+
+## Cleaning up code
+
+Run `php-cs-fixer fix` to automatically cleanup all code to Symphony standards. All configurations are saved in a file 
+called .php_cs and documentation can be found at https://github.com/FriendsOfPHP/PHP-CS-Fixer 

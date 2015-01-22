@@ -20,7 +20,7 @@ App::error(function (Exception $exception, $code) {
     Log::error($exception);
 
     if (App::environment('local', 'testing')) {
-        return null;
+        return;
     }
 
     return Response::make(View::make('pages.500'), 500);
@@ -30,23 +30,21 @@ App::error(function (ModelNotFoundException $exception, $code) {
     Log::error($exception);
 
     if (App::environment('local', 'testing')) {
-        return null;
+        return;
     }
 
     return Response::make(View::make('pages.404'), 404);
 });
 
-
 App::error(function (MethodNotAllowedHttpException $exception, $code) {
     Log::error($exception);
 
     if (App::environment('local', 'testing')) {
-        return null;
+        return;
     }
 
     return Response::make(View::make('pages.403'), 403);
 });
-
 
 App::error(function (Laracasts\Validation\FormValidationException $exception, $code) {
     return Redirect::back()->withInput()->withErrors($exception->getErrors());

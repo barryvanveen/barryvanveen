@@ -6,7 +6,6 @@
 
 
 use Codeception\Module\PhpBrowser;
-use Codeception\Module\AcceptanceHelper;
 
 /**
  * Inherited Methods
@@ -22,7 +21,7 @@ use Codeception\Module\AcceptanceHelper;
  * @method void haveFriend($name, $actorClass = null)
  *
  * @SuppressWarnings(PHPMD)
-*/
+ */
 class AcceptanceTester extends \Codeception\Actor
 {
     /**
@@ -36,7 +35,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('setHeader', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -51,7 +49,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Condition('amHttpAuthenticated', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -74,7 +71,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Condition('amOnPage', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -93,7 +89,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Condition('amOnUrl', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -122,7 +117,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Condition('amOnSubdomain', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -150,7 +144,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('executeInGuzzle', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -190,7 +183,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('click', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -207,7 +199,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
-     * Conditional Assertion: Test won't be stopped on fail
+     *                       Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::see()
      */
     public function canSee($text, $selector = null)
@@ -237,7 +229,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('see', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -254,7 +245,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $selector
-     * Conditional Assertion: Test won't be stopped on fail
+     *                       Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSee()
      */
     public function cantSee($text, $selector = null)
@@ -284,7 +275,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSee', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -300,7 +290,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param      $text
      * @param null $url
-     * Conditional Assertion: Test won't be stopped on fail
+     *                   Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeLink()
      */
     public function canSeeLink($text, $url = null)
@@ -329,7 +319,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeLink', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -345,7 +334,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $text
      * @param null $url
-     * Conditional Assertion: Test won't be stopped on fail
+     *                  Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeLink()
      */
     public function cantSeeLink($text, $url = null)
@@ -374,7 +363,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeLink', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -419,7 +407,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeInCurrentUrl', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -458,7 +445,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeInCurrentUrl', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -501,7 +487,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeCurrentUrlEquals', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -544,7 +529,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeCurrentUrlEquals', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -585,7 +569,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeCurrentUrlMatches', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -626,7 +609,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeCurrentUrlMatches', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -651,7 +633,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('grabFromCurrentUrl', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -694,7 +675,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeCheckboxIsChecked', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -735,7 +715,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeCheckboxIsChecked', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -788,7 +767,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeInField', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -841,7 +819,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeInField', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -906,7 +883,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('submitForm', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -928,7 +904,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('fillField', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -959,7 +934,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('selectOption', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -979,7 +953,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('checkOption', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -999,7 +972,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('uncheckOption', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1021,7 +993,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('attachFile', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1039,7 +1010,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('sendAjaxGetRequest', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1068,7 +1038,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('sendAjaxPostRequest', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1095,7 +1064,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('sendAjaxRequest', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1120,7 +1088,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('grabTextFrom', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1145,7 +1112,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('grabAttributeFrom', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1159,7 +1125,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('grabValueFrom', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1182,7 +1147,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('setCookie', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1198,7 +1162,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('grabCookie', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1213,7 +1176,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $cookie
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeCookie()
      */
     public function canSeeCookie($name)
@@ -1241,7 +1204,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeCookie', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1250,7 +1212,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $cookie
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeCookie()
      */
     public function cantSeeCookie($name)
@@ -1272,7 +1234,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeCookie', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1288,7 +1249,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Action('resetCookie', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1310,7 +1270,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $selector
      * @param array $attributes
      * @return
-     * Conditional Assertion: Test won't be stopped on fail
+     *                          Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeElement()
      */
     public function canSeeElement($selector, $attributes = null)
@@ -1345,7 +1305,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeElement', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1363,7 +1322,7 @@ class AcceptanceTester extends \Codeception\Actor
      *
      * @param $selector
      * @param array $attributes
-     * Conditional Assertion: Test won't be stopped on fail
+     *                          Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeElement()
      */
     public function cantSeeElement($selector, $attributes = null)
@@ -1394,7 +1353,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeElement', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1408,9 +1366,9 @@ class AcceptanceTester extends \Codeception\Actor
      * ```
      * @param $selector
      * @param mixed $expected:
-     * - string: strict number
-     * - array: range of numbers [0,10]
-     * Conditional Assertion: Test won't be stopped on fail
+     *                         - string: strict number
+     *                         - array: range of numbers [0,10]
+     *                         Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeNumberOfElements()
      */
     public function canSeeNumberOfElements($selector, $expected)
@@ -1430,8 +1388,8 @@ class AcceptanceTester extends \Codeception\Actor
      * ```
      * @param $selector
      * @param mixed $expected:
-     * - string: strict number
-     * - array: range of numbers [0,10]
+     *                         - string: strict number
+     *                         - array: range of numbers [0,10]
      * @see \Codeception\Lib\InnerBrowser::seeNumberOfElements()
      */
     public function seeNumberOfElements($selector, $expected)
@@ -1439,7 +1397,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeNumberOfElements', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1455,7 +1412,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeOptionIsSelected()
      */
     public function canSeeOptionIsSelected($select, $optionText)
@@ -1484,7 +1441,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeOptionIsSelected', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1500,7 +1456,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $optionText
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeOptionIsSelected()
      */
     public function cantSeeOptionIsSelected($select, $optionText)
@@ -1529,7 +1485,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('dontSeeOptionIsSelected', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1552,7 +1507,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seePageNotFound', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1561,7 +1515,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $code
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeResponseCodeIs()
      */
     public function canSeeResponseCodeIs($code)
@@ -1583,7 +1537,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeResponseCodeIs', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1598,7 +1551,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::seeInTitle()
      */
     public function canSeeInTitle($title)
@@ -1626,7 +1579,6 @@ class AcceptanceTester extends \Codeception\Actor
         return $this->scenario->runStep(new \Codeception\Step\Assertion('seeInTitle', func_get_args()));
     }
 
- 
     /**
      * [!] Method is generated. Documentation taken from corresponding module.
      *
@@ -1635,7 +1587,7 @@ class AcceptanceTester extends \Codeception\Actor
      * @param $title
      *
      * @return mixed
-     * Conditional Assertion: Test won't be stopped on fail
+     *               Conditional Assertion: Test won't be stopped on fail
      * @see \Codeception\Lib\InnerBrowser::dontSeeInTitle()
      */
     public function cantSeeInTitle($title)

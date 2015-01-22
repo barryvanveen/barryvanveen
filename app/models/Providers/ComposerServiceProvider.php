@@ -16,11 +16,10 @@ class ComposerServiceProvider extends ServiceProvider
         $this->app->view->composer('layouts.partials.header', MenuComposer::class);
 
         if (\Session::has('flash_notification.message')) {
-            JavaScript::put(['alert' =>
-                                 [
+            JavaScript::put(['alert' => [
                                      'message' => \Session::get('flash_notification.message'),
                                      'level' => \Session::get('flash_notification.level'),
-                                 ]
+                                 ],
             ]);
         }
     }

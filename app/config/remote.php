@@ -52,7 +52,7 @@ return [
 
     'groups'      => [
 
-        'web' => ['production']
+        'web' => ['production'],
 
     ],
 

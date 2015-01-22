@@ -7,7 +7,6 @@ class SwitchBranchCommand extends Command
 {
     const OBJECT_ARGUMENT_SEPARATOR = ':';
 
-
     /**
      * The console command name.
      *
@@ -21,7 +20,6 @@ class SwitchBranchCommand extends Command
      * @var string
      */
     protected $description = 'All the procedures needed for switching a branch';
-
 
     public function __construct()
     {
@@ -63,6 +61,7 @@ class SwitchBranchCommand extends Command
 
         if (!getenv('DB_TESTING_NAME')) {
             $this->error("Zet DB_TESTING_NAME in .env.local.php om ook de testing-database te migraten");
+
             return;
         }
 
@@ -97,7 +96,7 @@ class SwitchBranchCommand extends Command
     {
         $this->info("=========================================");
         if (!empty($line)) {
-            $this->info("Starting: " . $line);
+            $this->info("Starting: ".$line);
         }
     }
 
@@ -109,13 +108,12 @@ class SwitchBranchCommand extends Command
         $this->info("\n\n");
     }
 
-
     /**
      * Delete all tables from the current database
      */
     protected function clearDatabase($db)
     {
-        DB::statement('DROP DATABASE IF EXISTS `' . $db . '`;');
-        DB::statement('CREATE DATABASE `' . $db . '`;');
+        DB::statement('DROP DATABASE IF EXISTS `'.$db.'`;');
+        DB::statement('CREATE DATABASE `'.$db.'`;');
     }
 }
