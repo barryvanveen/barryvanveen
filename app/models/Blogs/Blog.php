@@ -32,7 +32,6 @@ use Robbo\Presenter\PresentableInterface;
  */
 class Blog extends Model implements SluggableInterface, PresentableInterface
 {
-
     use SluggableTrait;
 
     /**
@@ -74,7 +73,8 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
      *
      * @return mixed
      */
-    public function scopeOnline($query) {
+    public function scopeOnline($query)
+    {
         return $query->where('online', '=', '1');
     }
 
@@ -85,7 +85,8 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
      *
      * @return mixed
      */
-    public function scopePast($query) {
+    public function scopePast($query)
+    {
         return $query->where('publication_date', '<=', \DB::raw('NOW()'));
     }
 
@@ -96,7 +97,8 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
      *
      * @return mixed
      */
-    public function scopeOrderedDesc($query) {
+    public function scopeOrderedDesc($query)
+    {
         return $query->orderBy('publication_date', 'DESC');
     }
 
@@ -109,5 +111,4 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
     {
         return new BlogPresenter($this);
     }
-
 }

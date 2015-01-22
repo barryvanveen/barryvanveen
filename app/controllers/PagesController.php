@@ -4,11 +4,11 @@ use Barryvanveen\Blogs\BlogRepository;
 
 class PagesController extends BaseController
 {
-
     /** @var BlogRepository */
     protected $blogRepository;
 
-    public function __construct(BlogRepository $blogRepository) {
+    public function __construct(BlogRepository $blogRepository)
+    {
         $this->blogRepository = $blogRepository;
     }
 

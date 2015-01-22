@@ -3,8 +3,8 @@
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class BlogRepository {
-
+class BlogRepository
+{
     /**
      * return limited amount of most recent blogposts
      *
@@ -12,7 +12,8 @@ class BlogRepository {
      *
      * @return Collection
      */
-    public function latest($amount = 2) {
+    public function latest($amount = 2)
+    {
         return Blog     ::online()
                         ->past()
                         ->orderedDesc()
@@ -25,7 +26,8 @@ class BlogRepository {
      *
      * @return Collection
      */
-    public function all() {
+    public function all()
+    {
         return Blog     ::online()
                         ->past()
                         ->orderedDesc()
@@ -40,11 +42,11 @@ class BlogRepository {
      * @return Blog
      * @throws ModelNotFoundException
      */
-    public function findById($id) {
+    public function findById($id)
+    {
         return Blog     ::online()
                         ->past()
                         ->whereId($id)
                         ->firstOrFail();
     }
-
 }

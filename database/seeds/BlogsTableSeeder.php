@@ -6,10 +6,8 @@ use Illuminate\Database\Seeder;
 
 class BlogsTableSeeder extends Seeder
 {
-
     public function run()
     {
-
         $faker = Faker::create('nl_NL');
 
         // destination for uploads
@@ -17,8 +15,7 @@ class BlogsTableSeeder extends Seeder
         File::makeDirectory($uploads, 755, true, true);
         array_map('unlink', glob($uploads . '/*.*'));
 
-        foreach (range(1, 10) AS $index) {
-
+        foreach (range(1, 10) as $index) {
             // pick a random upload to attach to blog
             $image = $faker->file('database/seeds/images/blogs', $uploads);
             $image = str_replace('public_html/', '', $image);
@@ -33,7 +30,5 @@ class BlogsTableSeeder extends Seeder
                 'online'           => (rand(0, 10) % 10) ? 1 : 0
             ]);
         }
-
     }
-
 }

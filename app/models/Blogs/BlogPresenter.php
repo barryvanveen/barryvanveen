@@ -3,14 +3,15 @@
 use Laravelrus\LocalizedCarbon\LocalizedCarbon;
 use Robbo\Presenter\Presenter;
 
-class BlogPresenter extends Presenter {
-
+class BlogPresenter extends Presenter
+{
     /**
      * Get date to blog-item
      *
      * @return string
      */
-    public function presentUrl() {
+    public function presentUrl()
+    {
         return route('blog-item', ['blog' => $this->slug]);
     }
 
@@ -19,9 +20,9 @@ class BlogPresenter extends Presenter {
      *
      * @return string
      */
-    public function presentPublicationDateFormatted() {
+    public function presentPublicationDateFormatted()
+    {
         $date = new LocalizedCarbon($this->publication_date);
         return $date->diffForHumans();
     }
-
 }
