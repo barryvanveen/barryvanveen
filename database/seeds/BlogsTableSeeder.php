@@ -22,8 +22,8 @@ class BlogsTableSeeder extends Seeder
 
             Blog::create([
                 'title'            => $faker->sentence(),
-                'summary'          => $faker->paragraph(),
-                'text'             => $faker->text(500),
+                'summary'          => $faker->text(500),
+                'text'             => $faker->text(2000),
                 'image'            => $image,
                 'publication_date' => $faker->dateTimeBetween('-1 year', '+3 weeks'),
                 // 1 on 10 events is offline

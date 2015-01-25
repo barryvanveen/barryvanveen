@@ -10,10 +10,10 @@
 	}
 
 		%preview__heading-title {
+			display: inline;
 		}
 
 			%preview__heading-title-link {
-				float: left;
 				color: $text-color;
 				&:hover {
 					color: inherit;
@@ -21,8 +21,9 @@
 			}
 
 		%preview__heading-label {
-			float: left;
-			margin: 11px 0 0 15px;
+			position: relative;
+			top: -7px;
+			left: 10px;
 			@extend .label;
 			@extend .label-default;
 		}

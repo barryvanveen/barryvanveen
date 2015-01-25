@@ -1,7 +1,7 @@
 <div class="project-preview">
     <div class="project-preview__heading">
         <h2 class="project-preview__heading-title">
-            <a href="{{ route('project-item', ['project' => 'project-titel']) }}" class="project-preview__heading-title-link">Conway's Game of Life</a>
+            <a href="{{ route('project-item', ['project' => 'project-titel']) }}" class="project-preview__heading-title-link">Conway's Game of Life zodat het precies langer dan een regel is.</a>
         </h2>
         <span class="project-preview__heading-label">Nieuwste project</span>
     </div>

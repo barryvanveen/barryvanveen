@@ -7,7 +7,7 @@
     </div>
 
     @foreach($blogs as $blog)
-        @include('blog.partials.preview')
+        @include('blog.partials.preview', ['latest' => true])
     @endforeach
 
     @include('projects.partials.preview')

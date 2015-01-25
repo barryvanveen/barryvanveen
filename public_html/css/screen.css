@@ -4782,15 +4782,18 @@ legend {
   display: block;
   overflow: hidden; }
 
+.blog-preview__heading-title, .project-preview__heading-title {
+  display: inline; }
+
 .blog-preview__heading-title-link, .project-preview__heading-title-link {
-  float: left;
   color: #333333; }
   .blog-preview__heading-title-link:hover, .project-preview__heading-title-link:hover {
     color: inherit; }
 
 .blog-preview__heading-label, .project-preview__heading-label {
-  float: left;
-  margin: 11px 0 0 15px; }
+  position: relative;
+  top: -7px;
+  left: 10px; }
 
 @media (max-width: 991px) {
   .blog-preview__heading-label, .project-preview__heading-label {
