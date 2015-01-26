@@ -193,7 +193,7 @@ td, th {
     display: none; }
   .btn > .caret, .dropup > .btn > .caret {
     border-top-color: #000 !important; }
-  .label, .blog-preview__heading-label, .project-preview__heading-label, .blog-preview__meta-label, .project-preview__meta-label {
+  .label {
     border: 1px solid #000; }
   .table {
     border-collapse: collapse !important; }
@@ -3286,7 +3286,7 @@ tbody.collapse.in {
     background-color: #fff;
     cursor: not-allowed; }
 
-.label, .blog-preview__heading-label, .project-preview__heading-label, .blog-preview__meta-label, .project-preview__meta-label {
+.label {
   display: inline;
   padding: 0.2em 0.6em 0.3em;
   font-size: 75%;
@@ -3297,20 +3297,20 @@ tbody.collapse.in {
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 0.25em; }
-  .label:empty, .blog-preview__heading-label:empty, .project-preview__heading-label:empty, .blog-preview__meta-label:empty, .project-preview__meta-label:empty {
+  .label:empty {
     display: none; }
-  .btn .label, .btn %preview__heading-label, .btn .blog-preview__heading-label, .btn .project-preview__heading-label, .btn %preview__meta-label, .btn .blog-preview__meta-label, .btn .project-preview__meta-label {
+  .btn .label {
     position: relative;
     top: -1px; }
 
-a.label:hover, a.blog-preview__heading-label:hover, a.project-preview__heading-label:hover, a.blog-preview__meta-label:hover, a.project-preview__meta-label:hover, a.label:focus, a.blog-preview__heading-label:focus, a.project-preview__heading-label:focus, a.blog-preview__meta-label:focus, a.project-preview__meta-label:focus {
+a.label:hover, a.label:focus {
   color: #fff;
   text-decoration: none;
   cursor: pointer; }
 
-.label-default, .blog-preview__heading-label, .project-preview__heading-label, .blog-preview__meta-label, .project-preview__meta-label {
+.label-default {
   background-color: #fff; }
-  .label-default[href]:hover, [href].blog-preview__heading-label:hover, [href].project-preview__heading-label:hover, [href].blog-preview__meta-label:hover, [href].project-preview__meta-label:hover, .label-default[href]:focus, [href].blog-preview__heading-label:focus, [href].project-preview__heading-label:focus, [href].blog-preview__meta-label:focus, [href].project-preview__meta-label:focus {
+  .label-default[href]:hover, .label-default[href]:focus {
     background-color: #e6e6e6; }
 
 .label-primary {
@@ -4688,10 +4688,10 @@ legend {
   color: #fff;
   text-decoration: underline; }
 
-.label, .blog-preview__heading-label, .project-preview__heading-label, .blog-preview__meta-label, .project-preview__meta-label {
+.label {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal; }
-  .label-default, .blog-preview__heading-label, .project-preview__heading-label, .blog-preview__meta-label, .project-preview__meta-label {
+  .label-default {
     border: 1px solid #ddd;
     color: #333333; }
 
@@ -4776,7 +4776,11 @@ legend {
 .about-preview, .blog-preview, .project-preview {
   display: block;
   overflow: hidden;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ddd; }
+  .about-preview:last-child, .blog-preview:last-child, .project-preview:last-child {
+    border-bottom: 0; }
 
 .blog-preview__heading, .project-preview__heading {
   display: block;
@@ -4789,19 +4793,6 @@ legend {
   color: #333333; }
   .blog-preview__heading-title-link:hover, .project-preview__heading-title-link:hover {
     color: inherit; }
-
-.blog-preview__heading-label, .project-preview__heading-label {
-  position: relative;
-  top: -7px;
-  left: 10px; }
-
-@media (max-width: 991px) {
-  .blog-preview__heading-label, .project-preview__heading-label {
-    display: none !important; } }
-
-@media (min-width: 992px) {
-  .blog-preview__meta-label, .project-preview__meta-label {
-    display: none !important; } }
 
 .footer {
   position: absolute;

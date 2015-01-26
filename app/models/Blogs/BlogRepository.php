@@ -35,18 +35,18 @@ class BlogRepository
     }
 
     /**
-     * retrieve a single blogpost by its id
+     * retrieve a single blogpost by its slug
      *
-     * @param $id
+     * @param $slug
      *
      * @return Blog
      * @throws ModelNotFoundException
      */
-    public function findById($id)
+    public function findBySlug($slug)
     {
         return Blog     ::online()
                         ->past()
-                        ->whereId($id)
+                        ->whereSlug($slug)
                         ->firstOrFail();
     }
 }

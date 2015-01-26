@@ -14,17 +14,10 @@
 				@extend %preview__heading-title-link;
 			}
 
-		.blog-preview__heading-label {
-			@extend %preview__heading-label;
-		}
 
 	.blog-preview__meta {
 		@extend %preview__meta;
 	}
-
-		.blog-preview__meta-label {
-			@extend %preview__meta-label;
-		}
 
 	.blog-preview__button {
 		@extend %button;

@@ -1,19 +1,46 @@
 <?php
 
+use Barryvanveen\Blogs\BlogRepository;
+
 class BlogController extends BaseController
 {
-    public function index()
-    {
-        Head::title('Blog');
+    /**
+     * @var BlogRepository
+     */
+    private $blogRepository;
 
-        return View::make('blog.full-list');
+    /**
+     * @param BlogRepository $blogRepository
+     */
+    public function __construct(BlogRepository $blogRepository) {
+        $this->blogRepository = $blogRepository;
     }
 
-    public function show()
+    /**
+     * display full-list of blog
+     *
+     * @return View
+     */
+    public function index()
     {
-        // todo: replace with actual title
-        Head::title('Blog titel');
+        $blogs = $this->blogRepository->all();
 
-        return View::make('blog.item');
+        Head::title('Blog');
+
+        return View::make('blog.full-list', compact('blogs'));
+    }
+
+    /**
+     * display blog item
+     *
+     * @return mixed
+     */
+    public function show($slug)
+    {
+        $blog = $this->blogRepository->findBySlug($slug);
+
+        Head::title($blog->title);
+
+        return View::make('blog.item', compact('blog'));
     }
 }

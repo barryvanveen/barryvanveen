@@ -2,6 +2,12 @@
 	display: block;
 	overflow: hidden;
 	margin-bottom: $grid-gutter-width;
+	padding-bottom: $grid-gutter-width;
+	border-bottom: 1px solid $page-header-border-color;
+
+	&:last-child {
+		border-bottom: 0;
+	}
 }
 
 	%preview__heading {
@@ -20,32 +26,6 @@
 				}
 			}
 
-		%preview__heading-label {
-			position: relative;
-			top: -7px;
-			left: 10px;
-			@extend .label;
-			@extend .label-default;
-		}
-
-		@media (max-width: $screen-sm-max) {
-			%preview__heading-label {
-				display: none !important;
-			}
-		}
-
 	%preview__meta {
 		@extend .text-muted;
 	}
-
-		%preview__meta-label {
-			@extend .label;
-			@extend .label-default;
-
-		}
-
-		@media (min-width: $screen-md-min) {
-			%preview__meta-label {
-				display: none !important;
-			}
-		}

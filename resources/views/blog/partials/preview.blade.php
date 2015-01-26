@@ -3,14 +3,8 @@
         <h2 class="blog-preview__heading-title">
             <a href="{{$blog->url}}" class="blog-preview__heading-title-link">{{$blog->title}}</a>
         </h2>
-        @if($latest)
-            <span class="blog-preview__heading-label">Laatste blog</span>
-        @endif
     </div>
     <p>
-        @if($latest)
-            <span class="blog-preview__meta-label">Laatste blog</span>
-        @endif
         <span class="blog-preview__meta">{{$blog->publication_date_formatted}}</span>
     </p>
     <p>{{$blog->summary}}</p>

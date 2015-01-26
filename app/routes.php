@@ -21,20 +21,20 @@ Route::get('/blog', [
     'uses' => 'BlogController@index'
 ]);
 
-Route::get('blog/{blog}', [
-    'as'   => 'blog-item',
-    'uses' => 'BlogController@show'
-]);
+    Route::get('blog/{blog}', [
+        'as'   => 'blog-item',
+        'uses' => 'BlogController@show'
+    ]);
 
 Route::get('/projecten', [
     'as'   => 'projects',
     'uses' => 'ProjectsController@index'
 ]);
 
-Route::get('projecten/{project}', [
-    'as'   => 'project-item',
-    'uses' => 'ProjectsController@show'
-]);
+    Route::get('projecten/{project}', [
+        'as'   => 'project-item',
+        'uses' => 'ProjectsController@show'
+    ]);
 
 Route::get('over-mij', [
     'as'   => 'over-mij',

@@ -15,7 +15,7 @@ class BlogsTableSeeder extends Seeder
         File::makeDirectory($uploads, 755, true, true);
         array_map('unlink', glob($uploads.'/*.*'));
 
-        foreach (range(1, 10) as $index) {
+        foreach (range(1, 20) as $index) {
             // pick a random upload to attach to blog
             $image = $faker->file('database/seeds/images/blogs', $uploads);
             $image = str_replace('public_html/', '', $image);

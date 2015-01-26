@@ -14,17 +14,9 @@
 				@extend %preview__heading-title-link;
 			}
 
-		.project-preview__heading-label {
-			@extend %preview__heading-label;
-		}
-
 	.project-preview__meta {
 		@extend %preview__meta;
 	}
-
-		.project-preview__meta-label {
-			@extend %preview__meta-label;
-		}
 
 	.project-preview__button {
 		@extend %button;
