@@ -1,6 +1,7 @@
 <?php
 
 use Barryvanveen\Blogs\Blog;
+use Barryvanveen\Faker\Providers\LoremHtml;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 
@@ -9,6 +10,7 @@ class BlogsTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('nl_NL');
+        $faker->addProvider(new LoremHtml($faker));
 
         // destination for uploads
         $uploads = 'public_html/uploads/blogs';
@@ -22,8 +24,8 @@ class BlogsTableSeeder extends Seeder
 
             Blog::create([
                 'title'            => $faker->sentence(),
-                'summary'          => $faker->text(500),
-                'text'             => $faker->text(2000),
+                'summary'          => $faker->htmlParagraph(5),
+                'text'             => $faker->htmlText(),
                 'image'            => $image,
                 'publication_date' => $faker->dateTimeBetween('-1 year', '+3 weeks'),
                 // 1 on 10 events is offline
