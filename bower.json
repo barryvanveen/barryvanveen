@@ -21,7 +21,8 @@
     "respond": "~1.4.2",
     "bootstrap-sass-official": "~3.3.0",
     "html5shiv": "~3.7.2",
-    "snackbarjs": "https://github.com/FezVrasta/snackbarjs.git"
+    "snackbarjs": "https://github.com/FezVrasta/snackbarjs.git",
+    "scrollup": "~2.4.0"
   },
   "install": {
     "path": "resources/assets/bower",

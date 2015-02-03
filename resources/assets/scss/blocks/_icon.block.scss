@@ -1,0 +1,15 @@
+.icon {
+	display: inline-block;
+	width: 26px;
+	height: 35px;
+	overflow: hidden;
+	font-size: 30px;
+}
+
+	.icon--github {
+		@include icon('before', $icon--github-square);
+	}
+
+	.icon--linkedIn {
+		@include icon('before', $icon--linkedin-square);
+	}

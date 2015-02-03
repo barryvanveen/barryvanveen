@@ -6,7 +6,6 @@ use Faker\Provider\Lorem;
 // todo: make pull request to faker?
 class LoremHtml extends Lorem
 {
-
     /**
      * insertions that can be
      *
@@ -15,23 +14,23 @@ class LoremHtml extends Lorem
     protected $insertions = [
         0 => [
             'probability' => 0.35,
-            'callback' => 'htmlHeading'
+            'callback' => 'htmlHeading',
         ],
         1 => [
             'probability' => 0.70,
-            'callback' => 'htmlList'
+            'callback' => 'htmlList',
         ],
         2 => [
             'probability' => 0.82,
-            'callback' => 'htmlBlockquote'
+            'callback' => 'htmlBlockquote',
         ],
         3 => [
             'probability' => 0.94,
-            'callback' => 'htmlCode'
+            'callback' => 'htmlCode',
         ],
         4 => [
             'probability' => 1.00,
-            'callback' => 'htmlPre'
+            'callback' => 'htmlPre',
         ],
     ];
 
@@ -42,7 +41,8 @@ class LoremHtml extends Lorem
      *
      * @param array $newInsertions
      */
-    public function setInsertions(Array $newInsertions) {
+    public function setInsertions(Array $newInsertions)
+    {
         $this->insertions = $newInsertions;
     }
 
@@ -59,7 +59,7 @@ class LoremHtml extends Lorem
         $paragraphs = self::htmlParagraphs($nbParagraphs);
 
         // add $nbParagraphs other html elements
-        for ($i=0; $i<$nbInsertions; $i++) {
+        for ($i = 0; $i < $nbInsertions; $i++) {
             $rand = $this->randomFloat(null, 0, 1);
 
             // add a html-element using Roulette Wheel Selection
@@ -101,7 +101,7 @@ class LoremHtml extends Lorem
             $paragraphs [] = static::htmlParagraph();
         }
 
-        return $asText ? join("\n\n", $paragraphs) : $paragraphs;
+        return $asText ? implode("\n\n", $paragraphs) : $paragraphs;
     }
 
     /**

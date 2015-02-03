@@ -26,7 +26,7 @@ Route::get('/blog', [
         'uses' => 'BlogController@show'
     ]);
 
-Route::get('/projecten', [
+/*Route::get('/projecten', [
     'as'   => 'projects',
     'uses' => 'ProjectsController@index'
 ]);
@@ -34,15 +34,14 @@ Route::get('/projecten', [
     Route::get('projecten/{project}', [
         'as'   => 'project-item',
         'uses' => 'ProjectsController@show'
-    ]);
+    ]);*/
 
 Route::get('over-mij', [
     'as'   => 'over-mij',
     'uses' => 'PagesController@overMij'
 ]);
 
-// todo: remove when ready with initial design
-Route::get('elements', [
+/*Route::get('elements', [
     'as'   => 'elements',
     'uses' => 'PagesController@elements'
-]);
+]);*/

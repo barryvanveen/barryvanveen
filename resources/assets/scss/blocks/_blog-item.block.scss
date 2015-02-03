@@ -1,0 +1,15 @@
+.blog-item {
+
+}
+
+	.blog-item__heading {
+		@extend .page-header;
+	}
+
+		.blog-item__heading-meta {
+			@extend .text-muted;
+		}
+
+	.blog-item__content {
+		padding-bottom: $grid-gutter-width;
+	}

@@ -14,10 +14,10 @@ class MenuComposer
             $menu->add('Home', ['route' => 'home']);
             $menu->add('Blog', ['route' => 'blog'])
                  ->active(route('blog', [], false).'/*');
-            $menu->add('Projecten', ['route' => 'projects'])
-                 ->active(route('projects', [], false).'/*');
+            /*$menu->add('Projecten', ['route' => 'projects'])
+                 ->active(route('projects', [], false).'/*');*/
             $menu->add('Over mij', ['route' => 'over-mij']);
-            $menu->add('Elements', ['route' => 'elements']);
+            /*$menu->add('Elements', ['route' => 'elements']);*/
 
         });
     }

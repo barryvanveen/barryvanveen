@@ -1,35 +1,15 @@
-@extends('layouts.two-columns-unequal')
+@extends('layouts.full-width-centered')
 
-@section('left-column')
+@section('content')
 
     <div class="page-header">
-        <h1>Laatste updates</h1>
+        <h1>Laatste update</h1>
     </div>
 
     <div class="previewContainer">
         @foreach($blogs as $blog)
             @include('blog.partials.preview')
         @endforeach
-
-        @include('projects.partials.preview')
-    </div>
-
-@stop
-
-@section('right-column')
-
-    <div class="page-header">
-        <h1>Over mij</h1>
-    </div>
-
-    <div class="about-preview">
-        <ul>
-            <li>Hardloper</li>
-            <li>Programmeur / Scrum Master</li>
-            <li>Muziekliefhebber</li>
-            <li>Lezer</li>
-        </ul>
-        <a href="{{ route('blog-item', ['blog' => 'blog-titel']) }}" class="about-preview__button">Meer over mij</a>
     </div>
 
 @stop

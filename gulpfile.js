@@ -2,7 +2,6 @@
 var gulp = require('gulp');
 
 var sass = require('gulp-sass');
-var cmq = require('gulp-combine-media-queries');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var autoprefixer = require('gulp-autoprefixer');
@@ -12,9 +11,10 @@ var include = require('gulp-include');
 var config = {
 	scripts: {
 		src: [
-			'bower_components/jquery/dist/jquery.js',
+			'bower_components/jquery/jquery.js',
 			'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
             'bower_components/snackbarjs/dist/snackbar.min.js',
+			'bower_components/scrollup/dist/jquery.scrollUp.js',
 			'resources/assets/js/main.js'
 		],
 		ie8: [

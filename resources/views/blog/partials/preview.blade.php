@@ -5,7 +5,7 @@
         </h2>
     </div>
     <p>
-        <span class="blog-preview__meta">{{$blog->publication_date_formatted}}</span>
+        <span class="blog-preview__meta" title="{{$blog->publication_date_formatted}}">{{$blog->publication_date_for_humans}}</span>
     </p>
     <p>{{$blog->summary}}</p>
     <a href="{{$blog->url}}" class="blog-preview__button">Lees verder</a>

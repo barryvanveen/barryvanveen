@@ -987,7 +987,7 @@ mark, .mark {
 .text-capitalize {
   text-transform: capitalize; }
 
-.text-muted, .blog-preview__meta, .project-preview__meta {
+.text-muted, .blog-preview__meta, .project-preview__meta, .blog-item__heading-meta {
   color: #b3b3b3; }
 
 .text-primary {
@@ -1053,7 +1053,7 @@ a.bg-warning:hover {
 a.bg-danger:hover {
   background-color: #e4b9b9; }
 
-.page-header {
+.page-header, .blog-item__heading {
   padding-bottom: 10px;
   margin: 44px 0 22px;
   border-bottom: 1px solid #ddd; }
@@ -4794,6 +4794,9 @@ legend {
   .blog-preview__heading-title-link:hover, .project-preview__heading-title-link:hover {
     color: inherit; }
 
+.blog-item__content {
+  padding-bottom: 30px; }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -4807,31 +4810,35 @@ legend {
   margin: 0;
   padding: 0; }
 
-.footer__menu-item--up:before {
-  content: "\e600";
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-family: "icons"; }
+.footer__menu-item {
+  float: left;
+  margin-right: 15px; }
 
-.footer__menu-item--github:before {
+.footer__menu-item-link {
+  color: #333333; }
+  .footer__menu-item-link:hover {
+    color: inherit; }
+
+.icon {
+  display: inline-block;
+  width: 26px;
+  height: 35px;
+  overflow: hidden;
+  font-size: 30px; }
+
+.icon--github:before {
   content: "\e601";
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-family: "icons"; }
 
-.footer__menu-item--linkedin:before {
+.icon--linkedIn:before {
   content: "\e602";
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-family: "icons"; }
-
-.footer__menu-item-link {
-  color: #333333; }
-  .footer__menu-item-link:hover {
-    color: inherit; }
 
 /* Styles die voor screen en voor print gelden */
 html {
@@ -4841,3 +4848,26 @@ html {
 body {
   padding-top: 80px;
   padding-bottom: 90px !important; }
+
+#scrollUp {
+  background-color: #E6E6E6;
+  background-image: -webkit-linear-gradient(top, #EBEBEB, #DEDEDE);
+  background-image: linear-gradient(to bottom, #EBEBEB, #DEDEDE);
+  background-repeat: repeat-x;
+  bottom: -10px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  color: #828282;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  height: 70px;
+  line-height: 20px;
+  padding: 10px 5px;
+  right: 30px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #FFFFFF;
+  -webkit-transition: bottom 150ms linear 0s;
+          transition: bottom 150ms linear 0s;
+  width: 90px; }
+  #scrollUp:hover {
+    bottom: 0; }
