@@ -1,6 +1,7 @@
 <?php
 
 use Barryvanveen\Blogs\BlogRepository;
+use Carbon\Carbon;
 
 class PagesController extends BaseController
 {
@@ -14,7 +15,7 @@ class PagesController extends BaseController
 
     public function home()
     {
-        Head::title('Blog, projecten en persoonlijke website van Barry van Veen', false);
+        Head::title('Home');
 
         $blogs = $this->blogRepository->latest();
 
@@ -23,9 +24,12 @@ class PagesController extends BaseController
 
     public function overMij()
     {
-        Head::title('Wie is Barry van Veen en hoe kun je contact met hem opnemen?', false);
+        Head::title('Over mij');
 
-        return View::make('pages.over-mij');
+        $age = Carbon::createFromDate(1987, 4, 16)->diffInYears();
+        $workingAtSwis = Carbon::createFromDate(2013, 1, 14)->diffInYears();
+
+        return View::make('pages.over-mij', compact('age', 'workingAtSwis'));
     }
 
     public function elements()

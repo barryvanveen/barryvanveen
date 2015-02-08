@@ -1,10 +1,15 @@
 .icon {
+	font-family: $icons-font;;
 	display: inline-block;
 	width: 26px;
 	height: 35px;
 	overflow: hidden;
 	font-size: 30px;
 }
+
+	.icon--caretUp {
+		@include icon('before', $icon--caret-up);
+	}
 
 	.icon--github {
 		@include icon('before', $icon--github-square);

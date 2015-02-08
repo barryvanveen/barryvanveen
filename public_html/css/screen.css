@@ -4820,11 +4820,19 @@ legend {
     color: inherit; }
 
 .icon {
+  font-family: "icons";
   display: inline-block;
   width: 26px;
   height: 35px;
   overflow: hidden;
   font-size: 30px; }
+
+.icon--caretUp:before {
+  content: "\e600";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "icons"; }
 
 .icon--github:before {
   content: "\e601";
@@ -4848,6 +4856,10 @@ html {
 body {
   padding-top: 80px;
   padding-bottom: 90px !important; }
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 50px; } }
 
 #scrollUp {
   background-color: #E6E6E6;
