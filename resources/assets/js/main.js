@@ -3,7 +3,6 @@ window.LaravelInstall = window.LaravelInstall || {};
 $('document').ready(function(){
 
 	window.LaravelInstall.smoothScrollToHash();
-	window.LaravelInstall.initSnackbar();
 	window.LaravelInstall.initScrollUp();
 
 });
@@ -40,23 +39,6 @@ window.LaravelInstall.smoothScrollToHash = function() {
 	});
 };
 
-/**
- * init snackbar-alerts
- */
-window.LaravelInstall.initSnackbar = function() {
-	if(typeof(LaravelInstall.alert) == 'undefined') {
-		return;
-	}
-
-	var options =  {
-		content: LaravelInstall.alert.message,
-		style: 'alert-' + LaravelInstall.alert.level,
-		timeout: 5000
-	};
-
-	$.snackbar(options);
-
-};
 
 /**
  * init scroll-to-top button with scrollup-plugin

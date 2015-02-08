@@ -1,10 +1,4 @@
 
-// Import assets (requires: gulp-include) (pipe after Sass)
-/*
-= include ../../../../bower_components/snackbarjs/dist/snackbar.min.css
-= include ../../../../bower_components/snackbarjs/themes-css/material.css
-/**/
-
 @import "variables";
 @import "mixins";
 @import "fonts";

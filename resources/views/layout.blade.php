@@ -21,6 +21,8 @@
 	</head>
 	<body>
 
+		@include('layouts.partials.analytics')
+
 		@include('layouts.partials.header')
 
 		@yield('body')

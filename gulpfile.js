@@ -13,8 +13,7 @@ var config = {
 		src: [
 			'bower_components/jquery/jquery.js',
 			'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
-            'bower_components/snackbarjs/dist/snackbar.min.js',
-			'bower_components/scrollup/dist/jquery.scrollUp.js',
+            'bower_components/scrollup/dist/jquery.scrollUp.js',
 			'resources/assets/js/main.js'
 		],
 		ie8: [

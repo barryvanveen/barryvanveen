@@ -2,7 +2,7 @@
 
 use Barryvanveen\Composers\MenuComposer;
 use Illuminate\Support\ServiceProvider;
-use JavaScript;
+use Illuminate\View\View;
 
 class ComposerServiceProvider extends ServiceProvider
 {
@@ -12,15 +12,13 @@ class ComposerServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        // checkboxes met tags toevoegen aan views
-        $this->app->view->composer('layouts.partials.header', MenuComposer::class);
+        // GA tracking code
+        $this->app->view->composer('layouts.partials.analytics', function ($view) {
+            /** @var View $view */
+            $view->with('ga_code', getenv('GA_CODE'));
+        });
 
-        if (\Session::has('flash_notification.message')) {
-            JavaScript::put(['alert' => [
-                                     'message' => \Session::get('flash_notification.message'),
-                                     'level'   => \Session::get('flash_notification.level'),
-                                 ],
-            ]);
-        }
+        // menu
+        $this->app->view->composer('layouts.partials.header', MenuComposer::class);
     }
 }
