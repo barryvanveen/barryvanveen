@@ -38,9 +38,9 @@
     "classmap": [
       "app/commands",
       "app/controllers",
-      "app/models",
-      "database/migrations",
-      "database/seeds"
+      "app/database/migrations",
+      "app/database/seeds",
+      "app/models"
     ],
     "psr-4": {
       "Barryvanveen\\": "app/models"

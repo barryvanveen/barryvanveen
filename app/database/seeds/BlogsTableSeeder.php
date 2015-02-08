@@ -19,7 +19,7 @@ class BlogsTableSeeder extends Seeder
 
         foreach (range(1, 20) as $index) {
             // pick a random upload to attach to blog
-            $image = $faker->file('database/seeds/images/blogs', $uploads);
+            $image = $faker->file('app/database/seeds/images/blogs', $uploads);
             $image = str_replace('public_html/', '', $image);
 
             Blog::create([

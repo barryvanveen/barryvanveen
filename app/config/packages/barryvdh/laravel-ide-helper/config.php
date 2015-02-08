@@ -41,6 +41,7 @@ return [
 
     'model_locations' => [
         'app/models/Blogs',
+        'app/models/Users',
     ],
 
     /*

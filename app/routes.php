@@ -11,6 +11,9 @@
 |
 */
 
+/**
+ * General routes
+ */
 Route::get('', [
     'as'   => 'home',
     'uses' => 'PagesController@home'
@@ -45,3 +48,37 @@ Route::get('over-mij', [
     'as'   => 'elements',
     'uses' => 'PagesController@elements'
 ]);*/
+
+/**
+ * Admin routes
+ */
+Route::group(['prefix' => 'admin'], function () {
+
+    Route::get('/login', function () {
+        echo 'login page for admin section';
+        exit;
+    });
+
+    /**
+     * Admin routes that require authorization
+     */
+    Route::group(['before' => 'auth'], function () {
+
+        Route::get('/', function () {
+            echo 'admin dashboard';
+            exit;
+        });
+
+        Route::get('/blog', function () {
+            echo 'admin dashboard';
+            exit;
+        });
+
+        Route::get('/pages', function () {
+            echo 'pages dashboard';
+            exit;
+        });
+
+    });
+
+});
