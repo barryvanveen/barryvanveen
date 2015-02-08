@@ -14,23 +14,23 @@ class LoremHtml extends Lorem
     protected $insertions = [
         0 => [
             'probability' => 0.35,
-            'callback' => 'htmlHeading',
+            'callback'    => 'htmlHeading',
         ],
         1 => [
             'probability' => 0.70,
-            'callback' => 'htmlList',
+            'callback'    => 'htmlList',
         ],
         2 => [
             'probability' => 0.82,
-            'callback' => 'htmlBlockquote',
+            'callback'    => 'htmlBlockquote',
         ],
         3 => [
             'probability' => 0.94,
-            'callback' => 'htmlCode',
+            'callback'    => 'htmlCode',
         ],
         4 => [
             'probability' => 1.00,
-            'callback' => 'htmlPre',
+            'callback'    => 'htmlPre',
         ],
     ];
 

@@ -44,9 +44,9 @@ return [
     |
     */
 
-    'connections' => array(
+    'connections' => [
 
-        'mysql' => array(
+        'mysql' => [
             'driver'    => 'mysql',
             'host'      => getenv('DB_HOST'),
             'database'  => getenv('DB_NAME'),
@@ -55,9 +55,9 @@ return [
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
-        ),
+        ],
 
-    ),
+    ],
 
     /*
     |--------------------------------------------------------------------------

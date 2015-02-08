@@ -92,7 +92,7 @@ return [
     |
     */
 
-    'providers'       => array(
+    'providers'       => [
 
         'Illuminate\Foundation\Providers\ArtisanServiceProvider',
         'Illuminate\Auth\AuthServiceProvider',
@@ -139,7 +139,7 @@ return [
         'Robbo\Presenter\PresenterServiceProvider',
         'Swisnl\Head\HeadServiceProvider',
 
-    ),
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -165,7 +165,7 @@ return [
     |
     */
 
-    'aliases'         => array(
+    'aliases'         => [
 
         'App'               => 'Illuminate\Support\Facades\App',
         'Artisan'           => 'Illuminate\Support\Facades\Artisan',
@@ -215,6 +215,6 @@ return [
         'LocalizedCarbon'   => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
         'Menu'              => 'Lavary\Menu\Facade',
 
-    ),
+    ],
 
 ];

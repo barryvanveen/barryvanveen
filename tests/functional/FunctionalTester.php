@@ -5,9 +5,9 @@
 // @codingStandardsIgnoreFile
 
 
+use Codeception\Module\Asserts;
 use Codeception\Module\Filesystem;
 use Codeception\Module\Laravel4;
-use Codeception\Module\Asserts;
 
 /**
  * Inherited Methods

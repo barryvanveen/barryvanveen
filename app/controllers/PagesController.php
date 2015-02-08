@@ -26,7 +26,7 @@ class PagesController extends BaseController
     {
         Head::title('Over mij');
 
-        $age = Carbon::createFromDate(1987, 4, 16)->diffInYears();
+        $age           = Carbon::createFromDate(1987, 4, 16)->diffInYears();
         $workingAtSwis = Carbon::createFromDate(2013, 1, 14)->diffInYears();
 
         return View::make('pages.over-mij', compact('age', 'workingAtSwis'));

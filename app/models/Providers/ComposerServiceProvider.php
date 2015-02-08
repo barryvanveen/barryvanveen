@@ -18,7 +18,7 @@ class ComposerServiceProvider extends ServiceProvider
         if (\Session::has('flash_notification.message')) {
             JavaScript::put(['alert' => [
                                      'message' => \Session::get('flash_notification.message'),
-                                     'level' => \Session::get('flash_notification.level'),
+                                     'level'   => \Session::get('flash_notification.level'),
                                  ],
             ]);
         }
