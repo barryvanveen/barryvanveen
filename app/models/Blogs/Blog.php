@@ -29,6 +29,9 @@ use Robbo\Presenter\PresentableInterface;
  * @method static Builder|Blog whereOnline($value)
  * @method static Builder|Blog whereCreatedAt($value)
  * @method static Builder|Blog whereUpdatedAt($value)
+ * @method static Builder|Blog online()
+ * @method static Builder|Blog past()
+ * @method static Builder|Blog orderedDesc()
  */
 class Blog extends Model implements SluggableInterface, PresentableInterface
 {

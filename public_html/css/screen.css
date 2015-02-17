@@ -4793,6 +4793,9 @@ legend {
 .blog-item__content {
   padding-bottom: 30px; }
 
+.form__label--errorMessage {
+  font-weight: normal; }
+
 .footer {
   position: absolute;
   bottom: 0;

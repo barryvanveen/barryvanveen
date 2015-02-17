@@ -14,7 +14,10 @@
 */
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Session\TokenMismatchException;
+use Laracasts\Validation\FormValidationException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 App::error(function (Exception $exception, $code) {
     Log::error($exception);
@@ -24,6 +27,16 @@ App::error(function (Exception $exception, $code) {
     }
 
     return Response::make(View::make('pages.500'), 500);
+});
+
+App::error(function (NotFoundHttpException $exception, $code) {
+    Log::error($exception);
+
+    if (App::environment('local', 'testing')) {
+        return;
+    }
+
+    return Response::make(View::make('pages.404'), 404);
 });
 
 App::error(function (ModelNotFoundException $exception, $code) {
@@ -46,6 +59,21 @@ App::error(function (MethodNotAllowedHttpException $exception, $code) {
     return Response::make(View::make('pages.403'), 403);
 });
 
-App::error(function (Laracasts\Validation\FormValidationException $exception, $code) {
+App::error(function (TokenMismatchException $exception, $code) {
+    Log::error($exception);
+
+    $errors = [
+        '_token' => [
+            trans('general.validation-token-mismatch')
+        ]
+    ];
+
+    Session::regenerateToken();
+
+    return Redirect::back()->withInput(Input::except('_token'))->withErrors($errors);
+});
+
+
+App::error(function (FormValidationException $exception, $code) {
     return Redirect::back()->withInput()->withErrors($exception->getErrors());
 });

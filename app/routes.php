@@ -19,7 +19,7 @@ Route::get('', [
     'uses' => 'PagesController@home'
 ]);
 
-Route::get('/blog', [
+Route::get('blog', [
     'as'   => 'blog',
     'uses' => 'BlogController@index'
 ]);
@@ -54,30 +54,31 @@ Route::get('over-mij', [
  */
 Route::group(['prefix' => 'admin'], function () {
 
-    Route::get('/login', function () {
-        echo 'login page for admin section';
-        exit;
-    });
+    Route::get('inloggen', [
+        'as'    => 'admin.login',
+        'uses'  => 'AdminLoginController@index'
+    ]);
+
+    Route::post('inloggen', [
+        'before' => 'csrf',
+        'as'    => 'admin.login',
+        'uses'  => 'AdminLoginController@store'
+    ]);
 
     /**
      * Admin routes that require authorization
      */
     Route::group(['before' => 'auth'], function () {
 
-        Route::get('/', function () {
-            echo 'admin dashboard';
-            exit;
-        });
+        Route::get('/', [
+            'as'    => 'admin.dashboard',
+            'uses'  => 'AdminDashboardController@index'
+        ]);
 
-        Route::get('/blog', function () {
-            echo 'admin dashboard';
-            exit;
-        });
-
-        Route::get('/pages', function () {
-            echo 'pages dashboard';
-            exit;
-        });
+        Route::get('blog', [
+            'as'    => 'admin.blog',
+            'uses'  => 'AdminBlogsController@index'
+        ]);
 
     });
 
