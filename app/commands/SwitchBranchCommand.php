@@ -35,7 +35,7 @@ class SwitchBranchCommand extends Command
     {
         return [
 
-            ['composer-update', null, InputOption::VALUE_NONE, 'Run composer update instead of composer install.']
+            ['composer-update', null, InputOption::VALUE_NONE, 'Run composer update instead of composer install.'],
 
         ];
     }

@@ -16,17 +16,17 @@
  */
 Route::get('', [
     'as'   => 'home',
-    'uses' => 'PagesController@home'
+    'uses' => 'PagesController@home',
 ]);
 
 Route::get('blog', [
     'as'   => 'blog',
-    'uses' => 'BlogController@index'
+    'uses' => 'BlogController@index',
 ]);
 
     Route::get('blog/{blog}', [
         'as'   => 'blog-item',
-        'uses' => 'BlogController@show'
+        'uses' => 'BlogController@show',
     ]);
 
 /*Route::get('/projecten', [
@@ -41,7 +41,7 @@ Route::get('blog', [
 
 Route::get('over-mij', [
     'as'   => 'over-mij',
-    'uses' => 'PagesController@overMij'
+    'uses' => 'PagesController@overMij',
 ]);
 
 /*Route::get('elements', [
@@ -56,13 +56,13 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::get('inloggen', [
         'as'    => 'admin.login',
-        'uses'  => 'AdminLoginController@index'
+        'uses'  => 'AdminLoginController@index',
     ]);
 
     Route::post('inloggen', [
         'before' => 'csrf',
-        'as'    => 'admin.login',
-        'uses'  => 'AdminLoginController@store'
+        'as'     => 'admin.login',
+        'uses'   => 'AdminLoginController@store',
     ]);
 
     /**
@@ -72,12 +72,12 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('/', [
             'as'    => 'admin.dashboard',
-            'uses'  => 'AdminDashboardController@index'
+            'uses'  => 'AdminDashboardController@index',
         ]);
 
         Route::get('blog', [
             'as'    => 'admin.blog',
-            'uses'  => 'AdminBlogsController@index'
+            'uses'  => 'AdminBlogsController@index',
         ]);
 
     });

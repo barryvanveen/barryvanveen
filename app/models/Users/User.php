@@ -11,14 +11,14 @@ use Illuminate\Database\Query\Builder;
 /**
  * Barryvanveen\Users\User
  *
- * @property integer $id 
- * @property string $firstname 
- * @property string $lastname 
- * @property string $email 
- * @property string $password 
- * @property string $remember_token 
- * @property \Carbon\Carbon $created_at 
- * @property \Carbon\Carbon $updated_at 
+ * @property integer $id
+ * @property string $firstname
+ * @property string $lastname
+ * @property string $email
+ * @property string $password
+ * @property string $remember_token
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
  * @method static Builder|User whereId($value)
  * @method static Builder|User whereFirstname($value)
  * @method static Builder|User whereLastname($value)
@@ -76,6 +76,4 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     {
         return new UserPresenter($this);
     }
-
-
 }

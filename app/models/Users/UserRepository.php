@@ -1,16 +1,17 @@
 <?php namespace Barryvanveen\Users;
 
-class UserRepository {
+class UserRepository
+{
 
     /**
      * Find a user by its email address
      *
-     * @param string $email
+     * @param  string $email
      * @return User
      */
-    public function findByEmail($email) {
-        return User::	whereEmail($email)
+    public function findByEmail($email)
+    {
+        return User::    whereEmail($email)
                         ->first();
     }
-
 }

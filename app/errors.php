@@ -64,15 +64,14 @@ App::error(function (TokenMismatchException $exception, $code) {
 
     $errors = [
         '_token' => [
-            trans('general.validation-token-mismatch')
-        ]
+            trans('general.validation-token-mismatch'),
+        ],
     ];
 
     Session::regenerateToken();
 
     return Redirect::back()->withInput(Input::except('_token'))->withErrors($errors);
 });
-
 
 App::error(function (FormValidationException $exception, $code) {
     return Redirect::back()->withInput()->withErrors($exception->getErrors());

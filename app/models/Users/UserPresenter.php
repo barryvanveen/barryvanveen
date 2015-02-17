@@ -4,5 +4,4 @@ use Robbo\Presenter\Presenter;
 
 class UserPresenter extends Presenter
 {
-
 }

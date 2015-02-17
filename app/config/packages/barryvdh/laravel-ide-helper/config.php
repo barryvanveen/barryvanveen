@@ -82,7 +82,7 @@ return [
     */
 
     'interfaces'      => [
-        '\Illuminate\Auth\UserInterface' => '\User',
-    ]
+        '\Illuminate\Auth\UserInterface' => '\Barryvanveen\Users\User',
+    ],
 
 ];

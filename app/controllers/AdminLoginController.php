@@ -41,24 +41,22 @@ class AdminLoginController extends BaseController
      */
     public function store()
     {
-
         $formData = Input::only('email', 'password');
 
         $this->adminLoginForm->validate($formData);
 
-        if (Auth::attempt($formData, (bool)Input::only('remember_me'))) {
+        if (Auth::attempt($formData, (bool) Input::only('remember_me'))) {
             Flash::success(trans('general.login-successful'));
+
             return Redirect::intended(route('admin.dashboard'));
         }
 
         $errors = [
             'password' => [
-                trans('general.invalid-login')
-            ]
+                trans('general.invalid-login'),
+            ],
         ];
 
         return Redirect::route('admin.login')->withInput()->withErrors($errors);
-
     }
-
 }

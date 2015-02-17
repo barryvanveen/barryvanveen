@@ -12,5 +12,4 @@ class AdminBlogController extends BaseController
 
         return View::make('pages.admin.blog');
     }
-
 }

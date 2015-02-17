@@ -7,7 +7,7 @@ class UsersTableSeeder extends Seeder
 {
     public function run()
     {
-        $user = new User;
+        $user = new User();
 
         $user->firstname = 'Your';
         $user->lastname  = 'Name';

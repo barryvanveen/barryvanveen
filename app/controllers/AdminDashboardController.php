@@ -12,5 +12,4 @@ class AdminDashboardController extends BaseController
 
         return View::make('pages.admin.dashboard');
     }
-
 }

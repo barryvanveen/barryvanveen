@@ -13,7 +13,7 @@ class AdminLoginForm extends FormValidator
      */
     protected $rules = [
         'email'    => 'required|email',
-        'password' => 'required'
+        'password' => 'required',
     ];
 
     protected $messages;
@@ -28,5 +28,4 @@ class AdminLoginForm extends FormValidator
             'password.required' => trans('general.validation-password-required'),
         ];
     }
-
 }

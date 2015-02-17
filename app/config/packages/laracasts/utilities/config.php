@@ -23,6 +23,6 @@ return [
     | That way, from your JS, you may do something like `Laracasts.myVar`.
     |
     */
-    'js_namespace'              => 'LaravelInstall'
+    'js_namespace'              => 'LaravelInstall',
 
 ];

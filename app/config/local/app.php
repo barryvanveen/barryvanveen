@@ -68,6 +68,6 @@ return [
          */
         'Debugbar' => 'Barryvdh\Debugbar\Facade',
 
-    ])
+    ]),
 
 ];
