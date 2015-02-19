@@ -33,6 +33,5 @@ class MenuComposer
                  ->active(route('admin.pages', [], false).'/*');
 
         });
-
     }
 }

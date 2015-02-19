@@ -14,5 +14,4 @@ class UserPresenter extends Presenter
     {
         return $this->firstname.' '.$this->lastname;
     }
-
 }

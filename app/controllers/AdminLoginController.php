@@ -68,5 +68,4 @@ class AdminLoginController extends BaseController
 
         return Redirect::route('home');
     }
-
 }
