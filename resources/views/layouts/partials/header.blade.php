@@ -15,7 +15,12 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                {{ $MainNav->asUl( ['class' => 'nav navbar-nav'] ) }}
+                @if($is_admin)
+                    {{ $AdminNav->asUl( ['class' => 'nav navbar-nav'] ) }}
+                    <p class="navbar-text navbar-right">Ingelogd als {{ $current_user->full_name }}. <a href="{{ route('admin.logout') }}">Uitloggen</a>.</p>
+                @else
+                    {{ $MainNav->asUl( ['class' => 'nav navbar-nav'] ) }}
+                @endif
             </div>
 
         </div>

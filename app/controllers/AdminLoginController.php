@@ -59,4 +59,14 @@ class AdminLoginController extends BaseController
 
         return Redirect::route('admin.login')->withInput()->withErrors($errors);
     }
+
+    public function destroy()
+    {
+        Auth::logout();
+
+        Flash::success(trans('general.logout-successful'));
+
+        return Redirect::route('home');
+    }
+
 }

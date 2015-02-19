@@ -65,6 +65,11 @@ Route::group(['prefix' => 'admin'], function () {
         'uses'   => 'AdminLoginController@store',
     ]);
 
+    Route::get('uitloggen', [
+        'as'    => 'admin.logout',
+        'uses'  => 'AdminLoginController@destroy',
+    ]);
+
     /**
      * Admin routes that require authorization
      */
@@ -77,7 +82,12 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('blog', [
             'as'    => 'admin.blog',
-            'uses'  => 'AdminBlogsController@index',
+            'uses'  => 'AdminBlogController@index',
+        ]);
+
+        Route::get('pages', [
+            'as'    => 'admin.pages',
+            'uses'  => 'AdminPagesController@index',
         ]);
 
     });

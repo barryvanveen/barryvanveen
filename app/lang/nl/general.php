@@ -20,6 +20,7 @@ return [
     'validation-token-mismatch'    => 'Dit is een ongeldig verzoek, probeer het nog eens...',
     'invalid-login'                => 'Sorry, dat lijkt niet het juiste wachtwoord voor dat e-mailadres. Probeer het nog een keertje.',
 
-    'login-successful'              => 'Je bent nu ingelogd',
+    'login-successful'             => 'Je bent nu ingelogd',
+    'logout-successful'            => 'Je bent weer uitgelogd',
 
 ];

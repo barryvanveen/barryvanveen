@@ -20,5 +20,19 @@ class MenuComposer
             /*$menu->add('Elements', ['route' => 'elements']);*/
 
         });
+
+        Menu::make('AdminNav', function ($menu) {
+
+            // fill the menu
+            // activate some items on all routes that start with the parents url
+            /** @var \Lavary\Menu\Item $menu */
+            $menu->add('Dashboard', ['route' => 'admin.dashboard']);
+            $menu->add('Blog', ['route' => 'admin.blog'])
+                 ->active(route('admin.blog', [], false).'/*');
+            $menu->add('Pages', ['route' => 'admin.pages'])
+                 ->active(route('admin.pages', [], false).'/*');
+
+        });
+
     }
 }

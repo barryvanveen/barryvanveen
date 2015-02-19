@@ -7,6 +7,7 @@ use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\UserTrait;
 use Illuminate\Database\Query\Builder;
+use Robbo\Presenter\PresentableInterface;
 
 /**
  * Barryvanveen\Users\User
@@ -28,7 +29,7 @@ use Illuminate\Database\Query\Builder;
  * @method static Builder|User whereCreatedAt($value)
  * @method static Builder|User whereUpdatedAt($value)
  */
-class User extends Eloquent implements UserInterface, RemindableInterface
+class User extends Eloquent implements UserInterface, RemindableInterface, PresentableInterface
 {
     use UserTrait, RemindableTrait;
 
@@ -72,7 +73,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
      *
      * @return UserPresenter
      */
-    public function present()
+    public function getPresenter()
     {
         return new UserPresenter($this);
     }
