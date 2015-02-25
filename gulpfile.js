@@ -1,12 +1,12 @@
 
 var gulp = require('gulp');
 
+var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
+var include = require('gulp-include');
+var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var autoprefixer = require('gulp-autoprefixer');
-var plumber = require('gulp-plumber');
-var include = require('gulp-include');
 
 var config = {
 	scripts: {
@@ -64,9 +64,10 @@ gulp.task('build-js', function () {
 });
 
 /**
- * move the icomoon fonts
+ * move some files around
  */
-gulp.task('build-icons', function () {
+gulp.task('move', function () {
+    // move favicon files to public_html
 	gulp.src('resources/assets/fonts/icomoon/fonts/*')
 		.pipe(gulp.dest('public_html/fonts'));
 });

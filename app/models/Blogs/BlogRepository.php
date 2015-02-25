@@ -26,11 +26,22 @@ class BlogRepository
      *
      * @return Collection
      */
-    public function all()
+    public function pastAndOnline()
     {
         return Blog     ::online()
                         ->past()
                         ->orderedDesc()
+                        ->get();
+    }
+
+    /**
+     * return all blogposts
+     *
+     * @return Collection
+     */
+    public function all()
+    {
+        return Blog     ::orderedDesc()
                         ->get();
     }
 

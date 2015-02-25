@@ -4847,6 +4847,19 @@ legend {
   font-weight: normal;
   font-family: "icons"; }
 
+.overview-table__row {
+  cursor: pointer; }
+
+.overview-table__row--online > td {
+  background-color: #dff0d8; }
+.overview-table__row--online:hover > td {
+  background-color: #d0e9c6; }
+
+.overview-table__row--offline > td {
+  background-color: #f2dede; }
+.overview-table__row--offline:hover td {
+  background-color: #ebcccc; }
+
 /* Styles die voor screen en voor print gelden */
 html {
   min-height: 100%;

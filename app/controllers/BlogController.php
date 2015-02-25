@@ -24,7 +24,7 @@ class BlogController extends BaseController
      */
     public function index()
     {
-        $blogs = $this->blogRepository->all();
+        $blogs = $this->blogRepository->pastAndOnline();
 
         Head::title('Blog');
 

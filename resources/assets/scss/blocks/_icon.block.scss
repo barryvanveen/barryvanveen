@@ -1,10 +1,10 @@
 .icon {
-	font-family: $icons-font;;
+	font-family: $icons-font;
 	display: inline-block;
 	width: 26px;
 	height: 35px;
 	overflow: hidden;
-	font-size: 30px;
+	font-size: $icon-fontsize-large;
 }
 
 	.icon--caretUp {
