@@ -29,25 +29,10 @@ Route::get('blog', [
         'uses' => 'BlogController@show',
     ]);
 
-/*Route::get('/projecten', [
-    'as'   => 'projects',
-    'uses' => 'ProjectsController@index'
-]);
-
-    Route::get('projecten/{project}', [
-        'as'   => 'project-item',
-        'uses' => 'ProjectsController@show'
-    ]);*/
-
 Route::get('over-mij', [
     'as'   => 'over-mij',
     'uses' => 'PagesController@overMij',
 ]);
-
-/*Route::get('elements', [
-    'as'   => 'elements',
-    'uses' => 'PagesController@elements'
-]);*/
 
 /**
  * Admin routes
@@ -84,6 +69,16 @@ Route::group(['prefix' => 'admin'], function () {
             'as'    => 'admin.blog',
             'uses'  => 'AdminBlogController@index',
         ]);
+
+            Route::get('blog/{blogId}/edit', [
+                'as'   => 'admin.blog-edit',
+                'uses' => 'AdminBlogController@edit',
+            ]);
+
+            Route::patch('blog/{blogId}', [
+                'as'   => 'admin.blog-update',
+                'uses' => 'AdminBlogController@update',
+            ]);
 
         Route::get('pages', [
             'as'    => 'admin.pages',

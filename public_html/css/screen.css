@@ -983,7 +983,7 @@ mark, .mark {
 .text-capitalize {
   text-transform: capitalize; }
 
-.text-muted, .blog-preview__meta, .project-preview__meta, .blog-item__heading-meta {
+.text-muted, .blog-preview__meta, .blog-item__heading-meta {
   color: #b3b3b3; }
 
 .text-primary {
@@ -4711,7 +4711,7 @@ legend {
 .modal .close {
   color: #333333; }
 
-.about-preview__button, .blog-preview__button, .project-preview__button {
+.about-preview__button, .blog-preview__button {
   display: inline-block;
   margin-bottom: 0;
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -4739,55 +4739,55 @@ legend {
   font-size: 14px;
   line-height: 1.5;
   border-radius: 3px; }
-  .about-preview__button:focus, .blog-preview__button:focus, .project-preview__button:focus, .about-preview__button.focus, .blog-preview__button.focus, .project-preview__button.focus, .about-preview__button:active:focus, .blog-preview__button:active:focus, .project-preview__button:active:focus, .about-preview__button:active.focus, .blog-preview__button:active.focus, .project-preview__button:active.focus, .about-preview__button.active:focus, .blog-preview__button.active:focus, .project-preview__button.active:focus, .about-preview__button.active.focus, .blog-preview__button.active.focus, .project-preview__button.active.focus {
+  .about-preview__button:focus, .blog-preview__button:focus, .about-preview__button.focus, .blog-preview__button.focus, .about-preview__button:active:focus, .blog-preview__button:active:focus, .about-preview__button:active.focus, .blog-preview__button:active.focus, .about-preview__button.active:focus, .blog-preview__button.active:focus, .about-preview__button.active.focus, .blog-preview__button.active.focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
-  .about-preview__button:hover, .blog-preview__button:hover, .project-preview__button:hover, .about-preview__button:focus, .blog-preview__button:focus, .project-preview__button:focus, .about-preview__button.focus, .blog-preview__button.focus, .project-preview__button.focus {
+  .about-preview__button:hover, .blog-preview__button:hover, .about-preview__button:focus, .blog-preview__button:focus, .about-preview__button.focus, .blog-preview__button.focus {
     color: #333333;
     text-decoration: none; }
-  .about-preview__button:active, .blog-preview__button:active, .project-preview__button:active, .about-preview__button.active, .blog-preview__button.active, .project-preview__button.active {
+  .about-preview__button:active, .blog-preview__button:active, .about-preview__button.active, .blog-preview__button.active {
     outline: 0;
     background-image: none;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-  .about-preview__button.disabled, .blog-preview__button.disabled, .project-preview__button.disabled, .about-preview__button[disabled], .blog-preview__button[disabled], .project-preview__button[disabled], fieldset[disabled] .about-preview__button, fieldset[disabled] .blog-preview__button, fieldset[disabled] .project-preview__button {
+  .about-preview__button.disabled, .blog-preview__button.disabled, .about-preview__button[disabled], .blog-preview__button[disabled], fieldset[disabled] .about-preview__button, fieldset[disabled] .blog-preview__button {
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0.65;
     filter: alpha(opacity=65);
     box-shadow: none; }
-  .about-preview__button:hover, .blog-preview__button:hover, .project-preview__button:hover, .about-preview__button:focus, .blog-preview__button:focus, .project-preview__button:focus, .about-preview__button.focus, .blog-preview__button.focus, .project-preview__button.focus, .about-preview__button:active, .blog-preview__button:active, .project-preview__button:active, .about-preview__button.active, .blog-preview__button.active, .project-preview__button.active, .open > .about-preview__button.dropdown-toggle, .open > .blog-preview__button.dropdown-toggle, .open > .project-preview__button.dropdown-toggle {
+  .about-preview__button:hover, .blog-preview__button:hover, .about-preview__button:focus, .blog-preview__button:focus, .about-preview__button.focus, .blog-preview__button.focus, .about-preview__button:active, .blog-preview__button:active, .about-preview__button.active, .blog-preview__button.active, .open > .about-preview__button.dropdown-toggle, .open > .blog-preview__button.dropdown-toggle {
     color: #fff;
     background-color: #1863e6;
     border-color: #175fdd; }
-  .about-preview__button:active, .blog-preview__button:active, .project-preview__button:active, .about-preview__button.active, .blog-preview__button.active, .project-preview__button.active, .open > .about-preview__button.dropdown-toggle, .open > .blog-preview__button.dropdown-toggle, .open > .project-preview__button.dropdown-toggle {
+  .about-preview__button:active, .blog-preview__button:active, .about-preview__button.active, .blog-preview__button.active, .open > .about-preview__button.dropdown-toggle, .open > .blog-preview__button.dropdown-toggle {
     background-image: none; }
-  .about-preview__button.disabled, .blog-preview__button.disabled, .project-preview__button.disabled, .about-preview__button.disabled:hover, .blog-preview__button.disabled:hover, .project-preview__button.disabled:hover, .about-preview__button.disabled:focus, .blog-preview__button.disabled:focus, .project-preview__button.disabled:focus, .about-preview__button.disabled.focus, .blog-preview__button.disabled.focus, .project-preview__button.disabled.focus, .about-preview__button.disabled:active, .blog-preview__button.disabled:active, .project-preview__button.disabled:active, .about-preview__button.disabled.active, .blog-preview__button.disabled.active, .project-preview__button.disabled.active, .about-preview__button[disabled], .blog-preview__button[disabled], .project-preview__button[disabled], .about-preview__button[disabled]:hover, .blog-preview__button[disabled]:hover, .project-preview__button[disabled]:hover, .about-preview__button[disabled]:focus, .blog-preview__button[disabled]:focus, .project-preview__button[disabled]:focus, .about-preview__button[disabled].focus, .blog-preview__button[disabled].focus, .project-preview__button[disabled].focus, .about-preview__button[disabled]:active, .blog-preview__button[disabled]:active, .project-preview__button[disabled]:active, .about-preview__button[disabled].active, .blog-preview__button[disabled].active, .project-preview__button[disabled].active, fieldset[disabled] .about-preview__button, fieldset[disabled] .blog-preview__button, fieldset[disabled] .project-preview__button, fieldset[disabled] .about-preview__button:hover, fieldset[disabled] .blog-preview__button:hover, fieldset[disabled] .project-preview__button:hover, fieldset[disabled] .about-preview__button:focus, fieldset[disabled] .blog-preview__button:focus, fieldset[disabled] .project-preview__button:focus, fieldset[disabled] .about-preview__button.focus, fieldset[disabled] .blog-preview__button.focus, fieldset[disabled] .project-preview__button.focus, fieldset[disabled] .about-preview__button:active, fieldset[disabled] .blog-preview__button:active, fieldset[disabled] .project-preview__button:active, fieldset[disabled] .about-preview__button.active, fieldset[disabled] .blog-preview__button.active, fieldset[disabled] .project-preview__button.active {
+  .about-preview__button.disabled, .blog-preview__button.disabled, .about-preview__button.disabled:hover, .blog-preview__button.disabled:hover, .about-preview__button.disabled:focus, .blog-preview__button.disabled:focus, .about-preview__button.disabled.focus, .blog-preview__button.disabled.focus, .about-preview__button.disabled:active, .blog-preview__button.disabled:active, .about-preview__button.disabled.active, .blog-preview__button.disabled.active, .about-preview__button[disabled], .blog-preview__button[disabled], .about-preview__button[disabled]:hover, .blog-preview__button[disabled]:hover, .about-preview__button[disabled]:focus, .blog-preview__button[disabled]:focus, .about-preview__button[disabled].focus, .blog-preview__button[disabled].focus, .about-preview__button[disabled]:active, .blog-preview__button[disabled]:active, .about-preview__button[disabled].active, .blog-preview__button[disabled].active, fieldset[disabled] .about-preview__button, fieldset[disabled] .blog-preview__button, fieldset[disabled] .about-preview__button:hover, fieldset[disabled] .blog-preview__button:hover, fieldset[disabled] .about-preview__button:focus, fieldset[disabled] .blog-preview__button:focus, fieldset[disabled] .about-preview__button.focus, fieldset[disabled] .blog-preview__button.focus, fieldset[disabled] .about-preview__button:active, fieldset[disabled] .blog-preview__button:active, fieldset[disabled] .about-preview__button.active, fieldset[disabled] .blog-preview__button.active {
     background-color: #4582EC;
     border-color: #4582EC; }
-  .about-preview__button .badge, .blog-preview__button .badge, .project-preview__button .badge {
+  .about-preview__button .badge, .blog-preview__button .badge {
     color: #4582EC;
     background-color: #fff; }
 
-.about-preview, .blog-preview, .project-preview {
+.about-preview, .blog-preview {
   display: block;
   overflow: hidden;
   margin-bottom: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid #ddd; }
-  .about-preview:last-child, .blog-preview:last-child, .project-preview:last-child {
+  .about-preview:last-child, .blog-preview:last-child {
     border-bottom: 0; }
 
-.blog-preview__heading, .project-preview__heading {
+.blog-preview__heading {
   display: block;
   overflow: hidden; }
 
-.blog-preview__heading-title, .project-preview__heading-title {
+.blog-preview__heading-title {
   display: inline; }
 
-.blog-preview__heading-title-link, .project-preview__heading-title-link {
+.blog-preview__heading-title-link {
   color: #333333; }
-  .blog-preview__heading-title-link:hover, .project-preview__heading-title-link:hover {
+  .blog-preview__heading-title-link:hover {
     color: inherit; }
 
 .blog-item__content {

@@ -18,6 +18,20 @@ class AdminBlogController extends BaseController
 
         $blogs = $this->blogRepository->all();
 
-        return View::make('pages.admin.blog', compact('blogs'));
+        return View::make('blog.admin.index', compact('blogs'));
+    }
+
+    public function edit($id)
+    {
+        Head::title('Blog');
+
+        $blog = $this->blogRepository->findAnyById($id);
+
+        return View::make('blog.admin.edit', compact('blog'));
+    }
+
+    public function update($slug)
+    {
+        dd($slug);
     }
 }

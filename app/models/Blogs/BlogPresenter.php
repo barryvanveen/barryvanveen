@@ -7,13 +7,22 @@ use Robbo\Presenter\Presenter;
 class BlogPresenter extends Presenter
 {
     /**
-     * Get date to blog-item
+     * Get route to blog-item
      *
      * @return string
      */
     public function presentUrl()
     {
         return route('blog-item', ['blog' => $this->slug]);
+    }
+
+    /**
+     * Get route to edit blog in admin section
+     *
+     * @return string
+     */
+    public function presentAdminEditUrl() {
+        return route('admin.blog-edit', [$this->id]);
     }
 
     /**

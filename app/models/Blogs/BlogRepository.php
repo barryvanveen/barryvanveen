@@ -26,7 +26,7 @@ class BlogRepository
      *
      * @return Collection
      */
-    public function pastAndOnline()
+    public function published()
     {
         return Blog     ::online()
                         ->past()
@@ -53,11 +53,24 @@ class BlogRepository
      * @return Blog
      * @throws ModelNotFoundException
      */
-    public function findBySlug($slug)
+    public function findPublishedBySlug($slug)
     {
         return Blog     ::online()
                         ->past()
                         ->whereSlug($slug)
                         ->firstOrFail();
+    }
+
+    /**
+     * retrieve any (possibly unpublished) blogpost by its id
+     *
+     * @param $id
+     *
+     * @return Blog
+     * @throws ModelNotFoundException
+     */
+    public function findAnyById($id)
+    {
+        return Blog     ::findOrFail($id);
     }
 }

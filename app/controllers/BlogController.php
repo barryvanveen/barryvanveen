@@ -24,7 +24,7 @@ class BlogController extends BaseController
      */
     public function index()
     {
-        $blogs = $this->blogRepository->pastAndOnline();
+        $blogs = $this->blogRepository->published();
 
         Head::title('Blog');
 
@@ -32,13 +32,13 @@ class BlogController extends BaseController
     }
 
     /**
-     * display blog item
+     * edit blog item
      *
      * @return mixed
      */
     public function show($slug)
     {
-        $blog = $this->blogRepository->findBySlug($slug);
+        $blog = $this->blogRepository->findPublishedBySlug($slug);
 
         Head::title($blog->title);
 

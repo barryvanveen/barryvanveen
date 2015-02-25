@@ -1,9 +1,10 @@
-window.LaravelInstall = window.LaravelInstall || {};
+window.Barryvanveen = window.Barryvanveen || {};
 
 $('document').ready(function(){
 
-	window.LaravelInstall.smoothScrollToHash();
-	window.LaravelInstall.initScrollUp();
+	window.Barryvanveen.smoothScrollToHash();
+	window.Barryvanveen.initScrollUp();
+	window.Barryvanveen.initClickableTableRows();
 
 });
 
@@ -11,7 +12,7 @@ $('document').ready(function(){
 /**
  * zet eventlisteners om geanimeerd te scrollen naar een anchor-link
  */
-window.LaravelInstall.smoothScrollToHash = function() {
+window.Barryvanveen.smoothScrollToHash = function() {
 
 	// luister naar clicks die naar een hash gaan
 	$('a[href*=#]:not([href=#]):not([noscroll])').click(function() {
@@ -43,7 +44,7 @@ window.LaravelInstall.smoothScrollToHash = function() {
 /**
  * init scroll-to-top button with scrollup-plugin
  */
-window.LaravelInstall.initScrollUp = function() {
+window.Barryvanveen.initScrollUp = function() {
 
      $.scrollUp({
 		 scrollName: 'scrollUp',      	// Element ID
@@ -61,5 +62,26 @@ window.LaravelInstall.initScrollUp = function() {
 		 activeOverlay: false,      	// Set CSS color to display scrollUp active point, e.g '#00FFFF'
 		 zIndex: 2147483647           	// Z-Index for the overlay
 	 });
+
+};
+
+
+/**
+ * init clickable table rows
+ */
+window.Barryvanveen.initClickableTableRows = function() {
+
+    $('.js-clickable-row').mousedown(function(e) {
+        e.preventDefault();
+        // middle mouseclick, open in new window
+        if (e.which == 2) {
+            var win = window.open($(this).data('href'), '_blank');
+            if (win) {
+                win.focus();
+            }
+            return;
+        }
+        window.document.location = $(this).data("href");
+    });
 
 };
