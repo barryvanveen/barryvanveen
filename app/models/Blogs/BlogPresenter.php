@@ -21,7 +21,8 @@ class BlogPresenter extends Presenter
      *
      * @return string
      */
-    public function presentAdminEditUrl() {
+    public function presentAdminEditUrl()
+    {
         return route('admin.blog-edit', [$this->id]);
     }
 
