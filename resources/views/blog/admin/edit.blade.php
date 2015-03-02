@@ -37,14 +37,28 @@
             </div>
         </div>
 
-        <div class="form-group @if($errors->has('summary')) has-error @endif">
-            {{ Form::label('summary', 'Samenvatting', ['class' => 'control-label form__label']) }}
-            {{ Form::textarea('summary', $blog->summary, ['class' => 'form-control']) }}
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group @if($errors->has('summary')) has-error @endif">
+                    {{ Form::label('summary', 'Samenvatting', ['class' => 'control-label form__label']) }}
+                    {{ Form::textarea('summary', $blog->summary, ['class' => 'form-control js-markdown-editor']) }}
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="js-markdown-preview" data-markdown-editor-name="summary"></div>
+            </div>
         </div>
 
-        <div class="form-group @if($errors->has('text')) has-error @endif">
-            {{ Form::label('text', 'Tekst', ['class' => 'control-label form__label']) }}
-            {{ Form::textarea('text', $blog->summary, ['class' => 'form-control']) }}
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="form-group @if($errors->has('text')) has-error @endif">
+                    {{ Form::label('text', 'Tekst', ['class' => 'control-label form__label']) }}
+                    {{ Form::textarea('text', $blog->text, ['class' => 'form-control js-markdown-editor']) }}
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="js-markdown-preview" data-markdown-editor-name="text"></div>
+            </div>
         </div>
 
     {{ Form::submit('Aanpassen', ['class' => 'btn btn-primary']); }}

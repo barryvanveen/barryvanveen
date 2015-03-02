@@ -14,6 +14,8 @@ var config = {
 			'bower_components/jquery/jquery.js',
 			'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
             'bower_components/scrollup/dist/jquery.scrollUp.js',
+            'bower_components/autosize/dest/autosize.js',
+            'bower_components/markdown-js/lib/markdown.js',
 			'resources/assets/js/main.js'
 		],
 		ie8: [
@@ -53,11 +55,17 @@ gulp.task('build-sass', function () {
  */
 gulp.task('build-js', function () {
 	gulp.src(config.scripts.src)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
 		.pipe(uglify())
 		.pipe(concat('main.min.js'))
 		.pipe(gulp.dest('public_html/js'));
 
 	gulp.src(config.scripts.ie8)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
 		.pipe(uglify())
 		.pipe(concat('main.ie8.min.js'))
 		.pipe(gulp.dest('public_html/js'));

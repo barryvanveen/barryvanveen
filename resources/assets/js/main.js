@@ -5,6 +5,8 @@ $('document').ready(function(){
 	window.Barryvanveen.smoothScrollToHash();
 	window.Barryvanveen.initScrollUp();
 	window.Barryvanveen.initClickableTableRows();
+    window.Barryvanveen.initAutosizeTextareas();
+	window.Barryvanveen.initMarkdownEditors();
 
 });
 
@@ -82,6 +84,50 @@ window.Barryvanveen.initClickableTableRows = function() {
             return;
         }
         window.document.location = $(this).data("href");
+    });
+
+};
+
+
+/**
+ * init autosize on textareas
+ */
+window.Barryvanveen.initAutosizeTextareas = function() {
+
+    autosize($('textarea'));
+
+};
+
+
+
+/**
+ * turn an element into a markdown editor
+ *
+ * @param element
+ */
+window.Barryvanveen.MarkdownEditor = function(element) {
+
+    var $input = $(element);
+    var $preview = $('div[data-markdown-editor-name=' + element.name + ']');
+
+    this.updateMarkdownEditor = function () {
+        $preview.html(markdown.toHTML($input.val()));
+    };
+
+    $input.keyup(this.updateMarkdownEditor);
+
+    this.updateMarkdownEditor();
+
+};
+
+
+/**
+ * init markdown editors
+ */
+window.Barryvanveen.initMarkdownEditors = function() {
+
+    $('textarea.js-markdown-editor').each(function(index, element) {
+        window.Barryvanveen.editor = new window.Barryvanveen.MarkdownEditor(element);
     });
 
 };
