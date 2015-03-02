@@ -7,6 +7,7 @@ $('document').ready(function(){
 	window.Barryvanveen.initClickableTableRows();
     window.Barryvanveen.initAutosizeTextareas();
 	window.Barryvanveen.initMarkdownEditors();
+    window.Barryvanveen.initDatetimepickers();
 
 });
 
@@ -128,6 +129,26 @@ window.Barryvanveen.initMarkdownEditors = function() {
 
     $('textarea.js-markdown-editor').each(function(index, element) {
         window.Barryvanveen.editor = new window.Barryvanveen.MarkdownEditor(element);
+    });
+
+};
+
+
+/**
+ * init datetimepicker fields
+ */
+window.Barryvanveen.initDatetimepickers = function() {
+
+    $('.js-datetimepicker').datetimepicker({
+        locale: 'nl',
+        icons: {
+            time:       "icon icon--clock",
+            date:       "icon icon--calendar",
+            up:         "icon icon--arrowUp",
+            down:       "icon icon--arrowDown",
+            previous:   "icon icon--arrowLeft",
+            next:       "icon icon--arrowRight"
+        }
     });
 
 };

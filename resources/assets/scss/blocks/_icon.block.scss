@@ -7,6 +7,36 @@
 	font-size: $icon-fontsize-large;
 }
 
+	.icon--arrowRight {
+		@include icon('before', $icon--arrow-right);
+		font-size: $icon-fontsize-small;
+	}
+
+	.icon--arrowLeft {
+		@include icon('before', $icon--arrow-left);
+		font-size: $icon-fontsize-small;
+	}
+
+	.icon--arrowDown {
+		@include icon('before', $icon--arrow-down);
+		font-size: $icon-fontsize-small;
+	}
+
+	.icon--arrowUp {
+		@include icon('before', $icon--arrow-up);
+		font-size: $icon-fontsize-small;
+	}
+
+	.icon--calendar {
+		@include icon('before', $icon--calendar);
+		font-size: $icon-fontsize-small;
+	}
+
+	.icon--clock {
+		@include icon('before', $icon--clock);
+		font-size: $icon-fontsize-small;
+	}
+
 	.icon--caretUp {
 		@include icon('before', $icon--caret-up);
 	}

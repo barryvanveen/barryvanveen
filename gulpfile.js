@@ -5,6 +5,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var include = require('gulp-include');
 var plumber = require('gulp-plumber');
+var rename = require("gulp-rename");
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 
@@ -12,10 +13,13 @@ var config = {
 	scripts: {
 		src: [
 			'bower_components/jquery/jquery.js',
+			'bower_components/moment/moment.js',
+			'bower_components/moment/locale/nl.js',
 			'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
             'bower_components/scrollup/dist/jquery.scrollUp.js',
             'bower_components/autosize/dest/autosize.js',
             'bower_components/markdown-js/lib/markdown.js',
+            'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
 			'resources/assets/js/main.js'
 		],
 		ie8: [
@@ -78,6 +82,10 @@ gulp.task('move', function () {
     // move favicon files to public_html
 	gulp.src('resources/assets/fonts/icomoon/fonts/*')
 		.pipe(gulp.dest('public_html/fonts'));
+
+    gulp.src('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')
+        .pipe(rename("bootstrap-datetimepicker.scss"))
+        .pipe(gulp.dest('resources/assets/scss/bower_components'));
 });
 
 /**

@@ -866,8 +866,15 @@ $hr-border:                   $gray-lighter;
 
 $icons-font: "icons";
 
-$icon--caret-up: 		"\e600";
-$icon--github-square: 	"\e601";
-$icon--linkedin-square: "\e602";
+$icon--arrow-right: 	"\e600";
+$icon--arrow-left: 		"\e601";
+$icon--arrow-down: 		"\e602";
+$icon--arrow-up: 		"\e603";
+$icon--calendar: 		"\e604";
+$icon--clock: 			"\e605";
+$icon--caret-up: 		"\e606";
+$icon--github-square: 	"\e607";
+$icon--linkedin-square: "\e608";
 
 $icon-fontsize-large: 	30px;
+$icon-fontsize-small: 	15px;

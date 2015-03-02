@@ -10,14 +10,22 @@
 
         @include('form.partials.errors', ['title' => 'Fouten in het formulier'])
 
-        <div class="form-group @if($errors->has('title')) has-error @endif">
-            {{ Form::label('title', 'Titel', ['class' => 'control-label form__label']) }}
-            {{ Form::text('title', $blog->title, ['class' => 'form-control']) }}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group @if($errors->has('title')) has-error @endif">
+                    {{ Form::label('title', 'Titel', ['class' => 'control-label form__label']) }}
+                    {{ Form::text('title', $blog->title, ['class' => 'form-control']) }}
+                </div>
+            </div>
         </div>
 
-        <div class="form-group @if($errors->has('publication_date')) has-error @endif">
-            {{ Form::label('publication_date', 'Datum', ['class' => 'control-label form__label']) }}
-            {{ Form::text('publication_date', $blog->publication_date, ['class' => 'form-control']) }}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group @if($errors->has('publication_date')) has-error @endif">
+                    {{ Form::label('publication_date', 'Datum', ['class' => 'control-label form__label']) }}
+                    {{ Form::text('publication_date', $blog->publication_date, ['class' => 'form-control js-datetimepicker']) }}
+                </div>
+            </div>
         </div>
 
         <div class="form-group @if($errors->has('online')) has-error @endif">

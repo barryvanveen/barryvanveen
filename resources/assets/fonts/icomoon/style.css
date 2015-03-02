@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?-ahpafn');
-	src:url('fonts/icomoon.eot?#iefix-ahpafn') format('embedded-opentype'),
-		url('fonts/icomoon.woff?-ahpafn') format('woff'),
-		url('fonts/icomoon.ttf?-ahpafn') format('truetype'),
-		url('fonts/icomoon.svg?-ahpafn#icomoon') format('svg');
+	src:url('fonts/icomoon.eot?5rs5uv');
+	src:url('fonts/icomoon.eot?#iefix5rs5uv') format('embedded-opentype'),
+		url('fonts/icomoon.woff?5rs5uv') format('woff'),
+		url('fonts/icomoon.ttf?5rs5uv') format('truetype'),
+		url('fonts/icomoon.svg?5rs5uv#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,15 +23,39 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-caret-up:before {
+.icon-arrow-right:before {
 	content: "\e600";
 }
 
-.icon-github-square:before {
+.icon-arrow-left:before {
 	content: "\e601";
 }
 
-.icon-linkedin-square:before {
+.icon-arrow-down:before {
 	content: "\e602";
+}
+
+.icon-arrow-up:before {
+	content: "\e603";
+}
+
+.icon-calendar-o:before {
+	content: "\e604";
+}
+
+.icon-clock-o:before {
+	content: "\e605";
+}
+
+.icon-caret-up:before {
+	content: "\e606";
+}
+
+.icon-github-square:before {
+	content: "\e607";
+}
+
+.icon-linkedin-square:before {
+	content: "\e608";
 }
 
