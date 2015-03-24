@@ -18,7 +18,7 @@ class BlogController extends BaseController
     }
 
     /**
-     * display full-list of blog
+     * display full-list of blog.
      *
      * @return View
      */
@@ -32,7 +32,7 @@ class BlogController extends BaseController
     }
 
     /**
-     * edit blog item
+     * edit blog item.
      *
      * @return mixed
      */

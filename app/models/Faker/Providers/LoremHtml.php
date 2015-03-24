@@ -7,7 +7,7 @@ use Faker\Provider\Lorem;
 class LoremHtml extends Lorem
 {
     /**
-     * insertions that can be
+     * insertions with their probabilities.
      *
      * @var array
      */
@@ -37,7 +37,7 @@ class LoremHtml extends Lorem
     /**
      * Set your own insertions:
      *   For each html-element that you want to have inserted, give its probability and callback function
-     *   Probabilities should be filled cumulative and up to 1.0
+     *   Probabilities should be filled cumulative and up to 1.0.
      *
      * @param array $newInsertions
      */
@@ -47,7 +47,7 @@ class LoremHtml extends Lorem
     }
 
     /**
-     * Generate a text with html-elements. You can influence the generated html with the setInsertions-method
+     * Generate a text with html-elements. You can influence the generated html with the setInsertions-method.
      *
      * @param int $nbParagraphs number of plain html-paragraphs
      * @param int $nbInsertions number of other html-elements to be inserted
@@ -77,7 +77,7 @@ class LoremHtml extends Lorem
     }
 
     /**
-     * Generate html paragraphs
+     * Generate html paragraphs.
      *
      * @example array('<p>Lorem ipsum</p>', '<p>Dolores delectus</p>')
      *
@@ -105,7 +105,7 @@ class LoremHtml extends Lorem
     }
 
     /**
-     * Generate a single html paragraph
+     * Generate a single html paragraph.
      *
      * @example '<p>Lorem ipsum</p>'
      *
@@ -127,7 +127,7 @@ class LoremHtml extends Lorem
     }
 
     /**
-     * Generate an heading tag containing a sentence
+     * Generate an heading tag containing a sentence.
      *
      * @example '<h2>Lorem ipsum</h2>'
      *
@@ -145,7 +145,7 @@ class LoremHtml extends Lorem
     }
 
     /**
-     * Generate an ordered or unordered list of sentences
+     * Generate an ordered or unordered list of sentences.
      *
      * @example '<ul><li>Lorem ipsum</li><li>Lorem ipsum</li></ul>'
      *
@@ -176,7 +176,7 @@ class LoremHtml extends Lorem
     }
 
     /**
-     * Generate a blockquote containing a sentence and possible an author (Bootstrap-style)
+     * Generate a blockquote containing a sentence and possible an author (Bootstrap-style).
      *
      * @example '<blockquote>Lorem ipsum<footer>Cicero</footer>'
      *
@@ -193,7 +193,7 @@ class LoremHtml extends Lorem
     }
 
     /**
-     * Generate a code tag containing some sentences
+     * Generate a code tag containing some sentences.
      *
      * @example '<code>Lorem ipsum</code>'
      *
@@ -205,7 +205,7 @@ class LoremHtml extends Lorem
     }
 
     /**
-     * Generate html pre-tag containing some sentences
+     * Generate html pre-tag containing some sentences.
      *
      * @example '<pre>Lorem ipsum</pre>'
      *

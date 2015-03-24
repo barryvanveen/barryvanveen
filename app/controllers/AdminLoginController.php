@@ -24,7 +24,7 @@ class AdminLoginController extends BaseController
     }
 
     /**
-     * Display the AdminLoginForm form
+     * Display the AdminLoginForm form.
      */
     public function index()
     {
@@ -34,9 +34,10 @@ class AdminLoginController extends BaseController
     }
 
     /**
-     * Handle a login request for the admin pages
+     * Handle a login request for the admin pages.
      *
      * @return $this|RedirectResponse
+     *
      * @throws FormValidationException
      */
     public function store()

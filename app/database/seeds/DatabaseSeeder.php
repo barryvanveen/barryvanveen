@@ -6,7 +6,8 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Tables that need to be truncated
+     * Tables that need to be truncated.
+     *
      * @var array
      */
     protected $tables = [
@@ -15,7 +16,8 @@ class DatabaseSeeder extends Seeder
     ];
 
     /**
-     * Seeders that need to be called
+     * Seeders that need to be called.
+     *
      * @var array
      */
     protected $seeders = [
@@ -25,8 +27,6 @@ class DatabaseSeeder extends Seeder
 
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run()
     {
@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
     }
 
     /**
-     * Truncate all necessary database tables
+     * Truncate all necessary database tables.
      */
     private function cleanDatabase()
     {

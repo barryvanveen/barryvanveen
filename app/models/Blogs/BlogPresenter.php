@@ -7,7 +7,7 @@ use Robbo\Presenter\Presenter;
 class BlogPresenter extends Presenter
 {
     /**
-     * Get route to blog-item
+     * Get route to blog-item.
      *
      * @return string
      */
@@ -17,7 +17,7 @@ class BlogPresenter extends Presenter
     }
 
     /**
-     * Get route to edit blog in admin section
+     * Get route to edit blog in admin section.
      *
      * @return string
      */
@@ -27,7 +27,7 @@ class BlogPresenter extends Presenter
     }
 
     /**
-     * Get publication date in proper Dutch format
+     * Get publication date in proper Dutch format.
      *
      * @return string
      */
@@ -39,7 +39,7 @@ class BlogPresenter extends Presenter
     }
 
     /**
-     * Get publication date in a diffForHumans format
+     * Get publication date in a diffForHumans format.
      *
      * @return string
      */

@@ -12,7 +12,7 @@
 */
 
 /**
- * General routes
+ * General routes.
  */
 Route::get('', [
     'as'   => 'home',
@@ -34,7 +34,7 @@ Route::get('over-mij', [
     'uses' => 'PagesController@overMij',
 ]);
 
-/**
+/*
  * Admin routes
  */
 Route::group(['prefix' => 'admin'], function () {
@@ -55,7 +55,7 @@ Route::group(['prefix' => 'admin'], function () {
         'uses'  => 'AdminLoginController@destroy',
     ]);
 
-    /**
+    /*
      * Admin routes that require authorization
      */
     Route::group(['before' => 'auth'], function () {

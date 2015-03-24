@@ -7,7 +7,7 @@ use Illuminate\Database\Query\Builder;
 use Robbo\Presenter\PresentableInterface;
 
 /**
- * Barryvanveen\Blogs\Blog
+ * Barryvanveen\Blogs\Blog.
  *
  * @property integer $id
  * @property string $title
@@ -19,6 +19,7 @@ use Robbo\Presenter\PresentableInterface;
  * @property boolean $online
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ *
  * @method static Builder|Blog whereId($value)
  * @method static Builder|Blog whereTitle($value)
  * @method static Builder|Blog whereSlug($value)
@@ -38,14 +39,14 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
     use SluggableTrait;
 
     /**
-     * Repository class name
+     * Repository class name.
      *
      * @var string
      */
     public $repository = BlogRepository::class;
 
     /**
-     * Which fields may be mass assigned
+     * Which fields may be mass assigned.
      *
      * @var array
      */
@@ -60,7 +61,7 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
     ];
 
     /**
-     * Config for automatically creating a unique slug
+     * Config for automatically creating a unique slug.
      *
      * @var array
      */
@@ -70,7 +71,7 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
     ];
 
     /**
-     * select only blogs that are online
+     * select only blogs that are online.
      *
      * @param Builder $query
      *
@@ -82,7 +83,7 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
     }
 
     /**
-     * select only blogs that have a publication_date in the past
+     * select only blogs that have a publication_date in the past.
      *
      * @param Builder $query
      *
@@ -94,7 +95,7 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
     }
 
     /**
-     * order the results by descending publication date
+     * order the results by descending publication date.
      *
      * @param Builder $query
      *

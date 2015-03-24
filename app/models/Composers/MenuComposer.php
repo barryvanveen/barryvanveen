@@ -10,7 +10,7 @@ class MenuComposer
 
             // fill the menu
             // activate some items on all routes that start with the parents url
-            /** @var \Lavary\Menu\Item $menu */
+            /* @var \Lavary\Menu\Item $menu */
             $menu->add('Home', ['route' => 'home']);
             $menu->add('Blog', ['route' => 'blog'])
                  ->active(route('blog', [], false).'/*');
@@ -25,7 +25,7 @@ class MenuComposer
 
             // fill the menu
             // activate some items on all routes that start with the parents url
-            /** @var \Lavary\Menu\Item $menu */
+            /* @var \Lavary\Menu\Item $menu */
             $menu->add('Dashboard', ['route' => 'admin.dashboard']);
             $menu->add('Blog', ['route' => 'admin.blog'])
                  ->active(route('admin.blog', [], false).'/*');

@@ -70,7 +70,7 @@ class SwitchBranchCommand extends Command
     }
 
     /**
-     * Run the given method or command
+     * Run the given method or command.
      *
      * @param String $command
      */
@@ -88,7 +88,7 @@ class SwitchBranchCommand extends Command
     }
 
     /**
-     * Start the output of a task
+     * Start the output of a task.
      *
      * @param null|string $line
      */
@@ -101,7 +101,7 @@ class SwitchBranchCommand extends Command
     }
 
     /**
-     * End the output of a sing task
+     * End the output of a sing task.
      */
     protected function endOutput()
     {
@@ -109,7 +109,7 @@ class SwitchBranchCommand extends Command
     }
 
     /**
-     * Delete all tables from the current database
+     * Delete all tables from the current database.
      */
     protected function clearDatabase($db)
     {

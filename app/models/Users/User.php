@@ -10,7 +10,7 @@ use Illuminate\Database\Query\Builder;
 use Robbo\Presenter\PresentableInterface;
 
 /**
- * Barryvanveen\Users\User
+ * Barryvanveen\Users\User.
  *
  * @property integer $id
  * @property string $firstname
@@ -20,6 +20,7 @@ use Robbo\Presenter\PresentableInterface;
  * @property string $remember_token
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ *
  * @method static Builder|User whereId($value)
  * @method static Builder|User whereFirstname($value)
  * @method static Builder|User whereLastname($value)
@@ -48,7 +49,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface, Prese
     protected $hidden = ['password', 'remember_token'];
 
     /**
-     * Which fields may be mass assigned
+     * Which fields may be mass assigned.
      *
      * @var array
      */
@@ -59,7 +60,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface, Prese
     ];
 
     /**
-     * Passwords must always be hashed
+     * Passwords must always be hashed.
      *
      * @param $password string
      */
@@ -69,7 +70,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface, Prese
     }
 
     /**
-     * Get the Presenter for User
+     * Get the Presenter for User.
      *
      * @return UserPresenter
      */

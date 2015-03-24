@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class BlogRepository
 {
     /**
-     * return limited amount of most recent blogposts
+     * return limited amount of most recent blogposts.
      *
      * @param int $amount
      *
@@ -22,7 +22,7 @@ class BlogRepository
     }
 
     /**
-     * return all published blogposts
+     * return all published blogposts.
      *
      * @return Collection
      */
@@ -35,7 +35,7 @@ class BlogRepository
     }
 
     /**
-     * return all blogposts
+     * return all blogposts.
      *
      * @return Collection
      */
@@ -46,11 +46,12 @@ class BlogRepository
     }
 
     /**
-     * retrieve a single blogpost by its slug
+     * retrieve a single blogpost by its slug.
      *
      * @param $slug
      *
      * @return Blog
+     *
      * @throws ModelNotFoundException
      */
     public function findPublishedBySlug($slug)
@@ -62,11 +63,12 @@ class BlogRepository
     }
 
     /**
-     * retrieve any (possibly unpublished) blogpost by its id
+     * retrieve any (possibly unpublished) blogpost by its id.
      *
      * @param $id
      *
      * @return Blog
+     *
      * @throws ModelNotFoundException
      */
     public function findAnyById($id)

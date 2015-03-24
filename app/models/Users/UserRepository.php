@@ -2,11 +2,11 @@
 
 class UserRepository
 {
-
     /**
-     * Find a user by its email address
+     * Find a user by its email address.
      *
-     * @param  string $email
+     * @param string $email
+     *
      * @return User
      */
     public function findByEmail($email)

@@ -5,9 +5,8 @@ use Laracasts\Validation\FormValidator;
 
 class AdminLoginForm extends FormValidator
 {
-
     /**
-     * Validation rules for the login form
+     * Validation rules for the login form.
      *
      * @var array
      */
