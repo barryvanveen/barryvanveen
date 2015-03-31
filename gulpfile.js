@@ -12,7 +12,7 @@ var uglify = require('gulp-uglify');
 var config = {
 	scripts: {
 		src: [
-			'bower_components/jquery/jquery.js',
+			'bower_components/jquery/dist/jquery.js',
 			'bower_components/moment/moment.js',
 			'bower_components/moment/locale/nl.js',
 			'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',

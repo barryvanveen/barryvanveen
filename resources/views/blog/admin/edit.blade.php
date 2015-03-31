@@ -6,7 +6,7 @@
         <h1>Blog</h1>
     </div>
 
-    {{ Form::open(['route' => ['admin.blog-edit', $blog->id]]) }}
+    {{ Form::open(['route' => ['admin.blog-update', $blog->id], 'method' => 'PATCH']) }}
 
         @include('form.partials.errors', ['title' => 'Fouten in het formulier'])
 
@@ -23,7 +23,7 @@
             <div class="col-md-6">
                 <div class="form-group @if($errors->has('publication_date')) has-error @endif">
                     {{ Form::label('publication_date', 'Datum', ['class' => 'control-label form__label']) }}
-                    {{ Form::text('publication_date', $blog->publication_date, ['class' => 'form-control js-datetimepicker']) }}
+                    {{ Form::text('publication_date', $blog->publication_date_formatted, ['class' => 'form-control js-datetimepicker']) }}
                 </div>
             </div>
         </div>

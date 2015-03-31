@@ -1,5 +1,6 @@
 <?php namespace Barryvanveen\Blogs;
 
+use App;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -113,6 +114,7 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
      */
     public function getPresenter()
     {
-        return new BlogPresenter($this);
+        $commandBus = App::make('Flyingfoxx\CommandCenter\CommandBus');
+        return new BlogPresenter($this, $commandBus);
     }
 }

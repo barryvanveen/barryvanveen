@@ -1,6 +1,8 @@
 <?php namespace Barryvanveen\Users;
 
-class UserRepository
+use Barryvanveen\Database\EloquentRepository;
+
+class UserRepository extends EloquentRepository
 {
     /**
      * Find a user by its email address.

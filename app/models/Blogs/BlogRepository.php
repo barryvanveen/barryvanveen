@@ -1,9 +1,10 @@
 <?php namespace Barryvanveen\Blogs;
 
+use Barryvanveen\Database\EloquentRepository;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class BlogRepository
+class BlogRepository extends EloquentRepository
 {
     /**
      * return limited amount of most recent blogposts.

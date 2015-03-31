@@ -1,11 +1,22 @@
 <?php namespace Barryvanveen\Blogs;
 
+use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
 use Carbon\Carbon;
+use Flyingfoxx\CommandCenter\CommandBus;
 use Laravelrus\LocalizedCarbon\LocalizedCarbon;
 use Robbo\Presenter\Presenter;
 
 class BlogPresenter extends Presenter
 {
+
+    protected $commandBus;
+
+    public function __construct(Blog $blog, CommandBus $commandBus)
+    {
+        parent::__construct($blog);
+        $this->commandBus = $commandBus;
+    }
+
     /**
      * Get route to blog-item.
      *
@@ -49,4 +60,33 @@ class BlogPresenter extends Presenter
 
         return $date->diffForHumans();
     }
+
+    /**
+     * Retrieve the html belonging to the summary markdown.
+     *
+     * @return string
+     */
+    public function presentHtmlSummary()
+    {
+        return $this->commandBus->execute(
+            new MarkdownToHtmlCommand(
+                $this->summary
+            )
+        );
+    }
+
+    /**
+     * Retrieve the html belonging to the text markdown.
+     *
+     * @return string
+     */
+    public function presentHtmlText()
+    {
+        return $this->commandBus->execute(
+            new MarkdownToHtmlCommand(
+                $this->text
+            )
+        );
+    }
+
 }
