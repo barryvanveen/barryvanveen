@@ -13,7 +13,7 @@ class UpdateBlogHandler implements CommandHandler
      *
      * @see UpdateBlogCommand
      */
-    function __construct(BlogRepository $blogRepository)
+    public function __construct(BlogRepository $blogRepository)
     {
         $this->blogRepository = $blogRepository;
     }
@@ -22,22 +22,21 @@ class UpdateBlogHandler implements CommandHandler
      * Handle a command.
      *
      * @param UpdateBlogCommand $command
+     *
      * @return mixed
      */
     public function handle($command)
     {
-
         $blog = $this->blogRepository->findAnyById($command->id);
 
         $publication_date = date("Y-m-d H:i:s", strtotime($command->publication_date));
 
-        $blog->title = $command->title;
-        $blog->summary = $command->summary;
-        $blog->text = $command->text;
+        $blog->title            = $command->title;
+        $blog->summary          = $command->summary;
+        $blog->text             = $command->text;
         $blog->publication_date = $publication_date;
-        $blog->online = $command->online;
+        $blog->online           = $command->online;
 
         $this->blogRepository->save($blog);
-
     }
 }

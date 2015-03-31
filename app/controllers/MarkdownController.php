@@ -5,7 +5,6 @@ use Flyingfoxx\CommandCenter\CommandBus;
 
 class MarkdownController extends BaseController
 {
-
     /** @var CommandBus $commandBus */
     protected $commandBus;
 
@@ -23,6 +22,5 @@ class MarkdownController extends BaseController
                 'asdasd'
             )
         );
-
     }
 }

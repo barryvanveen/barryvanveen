@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class EloquentRepository {
-
+class EloquentRepository
+{
     /**
      * @param Model $model
      *
@@ -15,5 +15,4 @@ class EloquentRepository {
 
         return $model;
     }
-
 }

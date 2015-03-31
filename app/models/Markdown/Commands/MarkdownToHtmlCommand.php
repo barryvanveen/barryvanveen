@@ -2,7 +2,6 @@
 
 class MarkdownToHtmlCommand
 {
-
     public $markdown;
 
     /**
@@ -10,9 +9,8 @@ class MarkdownToHtmlCommand
      *
      * @see MarkdownToHtmlHandler
      */
-    function __construct($markdown)
+    public function __construct($markdown)
     {
         $this->markdown = $markdown;
     }
-
 }

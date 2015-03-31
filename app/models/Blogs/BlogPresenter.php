@@ -8,7 +8,6 @@ use Robbo\Presenter\Presenter;
 
 class BlogPresenter extends Presenter
 {
-
     protected $commandBus;
 
     public function __construct(Blog $blog, CommandBus $commandBus)
@@ -88,5 +87,4 @@ class BlogPresenter extends Presenter
             )
         );
     }
-
 }

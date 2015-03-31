@@ -2,7 +2,6 @@
 
 class UpdateBlogCommand
 {
-
     public $id;
     public $title;
     public $summary;
@@ -19,14 +18,13 @@ class UpdateBlogCommand
      *
      * @see UpdateBlogHandler
      */
-    function __construct($id, $title, $summary, $text, $publication_date, $online)
+    public function __construct($id, $title, $summary, $text, $publication_date, $online)
     {
-        $this->id = $id;
-        $this->title = $title;
-        $this->summary = $summary;
-        $this->text = $text;
+        $this->id               = $id;
+        $this->title            = $title;
+        $this->summary          = $summary;
+        $this->text             = $text;
         $this->publication_date = $publication_date;
-        $this->online = $online;
+        $this->online           = $online;
     }
-
 }

@@ -20,14 +20,14 @@ class AdminBlogController extends BaseController
 
     /**
      * @param BlogRepository $blogRepository
-     * @param CommandBus $commandBus
-     * @param AdminBlogForm $adminBlogForm
+     * @param CommandBus     $commandBus
+     * @param AdminBlogForm  $adminBlogForm
      */
     public function __construct(BlogRepository $blogRepository, CommandBus $commandBus, AdminBlogForm $adminBlogForm)
     {
         $this->blogRepository = $blogRepository;
-        $this->commandBus = $commandBus;
-        $this->adminBlogForm = $adminBlogForm;
+        $this->commandBus     = $commandBus;
+        $this->adminBlogForm  = $adminBlogForm;
     }
 
     /**

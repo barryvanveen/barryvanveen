@@ -31,7 +31,7 @@ class LoremMarkdown extends Lorem
         4 => [
             'probability' => 1.00,
             'callback'    => 'markdownCode',
-        ]
+        ],
     ];
 
     /**
@@ -173,7 +173,7 @@ class LoremMarkdown extends Lorem
 
         $items = [];
         for ($i = 0; $i < $nbItems; $i++) {
-            $items[] = $listItemPrefix . static::sentence();
+            $items[] = $listItemPrefix.static::sentence();
         }
 
         return implode("\n", $items);
@@ -189,7 +189,7 @@ class LoremMarkdown extends Lorem
      */
     public static function markdownBlockquote()
     {
-        $quote = '> ' . static::sentence() . "\n";
+        $quote = '> '.static::sentence()."\n";
 
         if (self::randomFloat(null, 0, 1) <= 0.5) {
             $quote .= "\n> \\- *".self::words(2, true).'*';
@@ -240,5 +240,4 @@ class LoremMarkdown extends Lorem
 
         return "```\n".implode("\n", $items)."\n```";
     }
-
 }

@@ -87,7 +87,7 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::post('markdown-to-html', [
             'as'    => 'admin.markdown-to-html',
-            'uses'  => 'MarkdownController@parse'
+            'uses'  => 'MarkdownController@parse',
         ]);
 
     });

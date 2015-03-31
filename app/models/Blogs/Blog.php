@@ -115,6 +115,7 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
     public function getPresenter()
     {
         $commandBus = App::make('Flyingfoxx\CommandCenter\CommandBus');
+
         return new BlogPresenter($this, $commandBus);
     }
 }

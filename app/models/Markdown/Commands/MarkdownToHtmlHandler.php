@@ -5,7 +5,6 @@ use Flyingfoxx\CommandCenter\CommandHandler;
 
 class MarkdownToHtmlHandler implements CommandHandler
 {
-
     protected $parser;
 
     /**
@@ -13,14 +12,13 @@ class MarkdownToHtmlHandler implements CommandHandler
      *
      * @see MarkdownToHtmlCommand
      */
-    function __construct(GithubMarkdown $parser)
+    public function __construct(GithubMarkdown $parser)
     {
         $this->parser = $parser;
     }
 
-
     /**
-     * Handle the command
+     * Handle the command.
      *
      * @param MarkdownToHtmlCommand $command
      *
@@ -28,11 +26,9 @@ class MarkdownToHtmlHandler implements CommandHandler
      */
     public function handle($command)
     {
-
-        $this->parser->html5 = true;
+        $this->parser->html5               = true;
         $this->parser->keepListStartNumber = true;
-        $this->parser->enableNewlines = true; // only available for GithubMarkdown
+        $this->parser->enableNewlines      = true; // only available for GithubMarkdown
         return $this->parser->parse($command->markdown);
-
     }
 }
