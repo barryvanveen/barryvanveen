@@ -21,10 +21,14 @@ class LoremMarkdown extends Lorem
             'callback'    => 'markdownList',
         ],
         2 => [
-            'probability' => 0.82,
+            'probability' => 0.80,
             'callback'    => 'markdownBlockquote',
         ],
         3 => [
+            'probability' => 0.90,
+            'callback'    => 'markdownPre',
+        ],
+        4 => [
             'probability' => 1.00,
             'callback'    => 'markdownCode',
         ]
@@ -185,7 +189,7 @@ class LoremMarkdown extends Lorem
      */
     public static function markdownBlockquote()
     {
-        $quote = '>' . static::sentence() . "\n";
+        $quote = '> ' . static::sentence() . "\n";
 
         if (self::randomFloat(null, 0, 1) <= 0.5) {
             $quote .= "\n> \\- *".self::words(2, true).'*';
@@ -195,7 +199,7 @@ class LoremMarkdown extends Lorem
     }
 
     /**
-     * Generate a code tag containing some sentences.
+     * Generate a syntax highlighted text some sentences.
      *
      * @example '    Lorem ipsum
      *               Lorel ipsum'
@@ -204,14 +208,37 @@ class LoremMarkdown extends Lorem
      */
     public static function markdownCode()
     {
-        $nbItems = self::randomizeNbElements(2);
-
-        $items = [];
-        for ($i = 0; $i < $nbItems; $i++) {
-            $items[] = '    ' . static::sentence();
-        }
+        $items = [
+            '```php',
+            '$foo = 1;',
+            '$bar = 2;',
+            '$baz = $foo + $bar;',
+            '',
+            '// do some logic',
+            'if ($foo >= $bar) {',
+            '   $baz++;',
+            '}',
+            '',
+            'return $baz;',
+            '```',
+        ];
 
         return implode("\n", $items);
+    }
+
+    /**
+     * Generate a preformatted text containing some sentences.
+     *
+     * @example '    Lorem ipsum
+     *               Lorel ipsum'
+     *
+     * @return string
+     */
+    public static function markdownPre()
+    {
+        $items = static::sentences(self::randomizeNbElements(2));
+
+        return "```\n".implode("\n", $items)."\n```";
     }
 
 }
