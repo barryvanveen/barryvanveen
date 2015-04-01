@@ -5347,6 +5347,9 @@ legend {
 .form__label--errorMessage {
   font-weight: normal; }
 
+.form__preview {
+  margin-top: 20px; }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -5472,7 +5475,7 @@ html {
 
 body {
   padding-top: 80px;
-  padding-bottom: 90px !important; }
+  padding-bottom: 120px !important; }
 
 @media (max-width: 768px) {
   body {

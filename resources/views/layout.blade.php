@@ -29,7 +29,9 @@
 
 		@include('layouts.partials.footer')
 
-		{{ HTML::script('js/main.min.js') }}
+        @include('layouts.partials.javascript')
+
+		{{ HTML::script('js/main.min.js?123') }}
 
 	</body>
 </html>

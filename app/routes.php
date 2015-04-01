@@ -86,8 +86,9 @@ Route::group(['prefix' => 'admin'], function () {
         ]);
 
         Route::post('markdown-to-html', [
-            'as'    => 'admin.markdown-to-html',
-            'uses'  => 'MarkdownController@parse',
+            'before' => 'post-ajax-json',
+            'as'     => 'admin.markdown-to-html',
+            'uses'   => 'MarkdownController@parse',
         ]);
 
     });

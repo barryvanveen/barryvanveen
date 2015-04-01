@@ -46,6 +46,12 @@
         </div>
 
         <div class="row">
+            <div class="col-sm-12">
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="form-group @if($errors->has('summary')) has-error @endif">
                     {{ Form::label('summary', 'Samenvatting', ['class' => 'control-label form__label']) }}
@@ -53,9 +59,16 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6">
-                <div class="js-markdown-preview" data-markdown-editor-name="summary"></div>
+                <div class="js-markdown-preview form__preview" data-markdown-editor-name="summary"></div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <hr>
+            </div>
+        </div>
+
 
         <div class="row">
             <div class="col-sm-12 col-md-6">
@@ -65,13 +78,19 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-6">
-                <div class="js-markdown-preview" data-markdown-editor-name="text"></div>
+                <div class="js-markdown-preview form__preview" data-markdown-editor-name="text"></div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <hr>
+            </div>
+        </div>
+
 
     {{ Form::submit('Aanpassen', ['class' => 'btn btn-primary']); }}
 
     {{ Form::close() }}
-
 
 @stop

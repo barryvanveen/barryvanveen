@@ -100,6 +100,15 @@ window.Barryvanveen.initAutosizeTextareas = function() {
 };
 
 
+/**
+ * cancel all posts to a named queue
+ */
+window.Barryvanveen.abortPostQueue = function(queue) {
+
+    $.ajaxq.abort(queue);
+
+};
+
 
 /**
  * turn an element into a markdown editor
@@ -108,15 +117,29 @@ window.Barryvanveen.initAutosizeTextareas = function() {
  */
 window.Barryvanveen.MarkdownEditor = function(element) {
 
+    // store elements
     var $input = $(element);
     var $preview = $('div[data-markdown-editor-name=' + element.name + ']');
 
+    // update the html-preview
     this.updateMarkdownEditor = function () {
-        $preview.html(markdown.toHTML($input.val()));
+
+        // abort all pending requests for this input field
+        Barryvanveen.abortPostQueue($input.attr('name'));
+
+        // make a new ajax post to retrieve html for this markdown
+        $.postq($input.attr('name'), Barryvanveen.markdownToHtmlRoute, {markdown: $input.val()}, function(data) {
+
+            // update the preview with retrieved html
+            $preview.html(data.html);
+
+        }, 'json');
     };
 
+    // update the html preview on keyUp
     $input.keyup(this.updateMarkdownEditor);
 
+    // start with filling the preview
     this.updateMarkdownEditor();
 
 };

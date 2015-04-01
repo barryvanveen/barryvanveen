@@ -11,9 +11,15 @@ class BaseController extends Controller
             $this->layout = View::make($this->layout);
         }
 
-        JavaScript::put([
+        $javascript_vars = [
             'baseurl'  => url(),
             'loggedin' => (Auth::user() ? true : false),
-        ]);
+        ];
+
+        if (Auth::check()) {
+            $javascript_vars['markdownToHtmlRoute'] = route('admin.markdown-to-html');
+        }
+
+        JavaScript::put($javascript_vars);
     }
 }

@@ -12,7 +12,7 @@
                 </button>
                 <a class="navbar-brand" href="{{ route('home') }}">
                     @if($is_admin)
-                        Admin Panel
+                        Beheeromgeving
                     @else
                         Barry van Veen
                     @endif</a>

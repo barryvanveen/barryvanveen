@@ -18,8 +18,8 @@ var config = {
 			'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
             'bower_components/scrollup/dist/jquery.scrollUp.js',
             'bower_components/autosize/dest/autosize.js',
-            'bower_components/markdown-js/lib/markdown.js',
             'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+            'bower_components/ajaxq/ajaxq.js',
 			'resources/assets/js/main.js'
 		],
 		ie8: [

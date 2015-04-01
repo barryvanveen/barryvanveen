@@ -77,3 +77,19 @@ Route::filter('csrf', function () {
         throw new Illuminate\Session\TokenMismatchException();
     }
 });
+
+/*
+|--------------------------------------------------------------------------
+| Ajax Filter
+|--------------------------------------------------------------------------
+|
+| Make sure this route can only be called using an AJAX POST request
+| for JSON output. Otherwise return a 401 Unauthorized response.
+|
+*/
+
+Route::filter('post-ajax-json', function () {
+    if (!Request::isMethod('post') || !Request::ajax() || !Request::wantsJson()) {
+        return Response::make('Unauthorized', 401);
+    }
+});

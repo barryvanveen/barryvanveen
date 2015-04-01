@@ -8,19 +8,25 @@ class MarkdownController extends BaseController
     /** @var CommandBus $commandBus */
     protected $commandBus;
 
+    /**
+     * @param CommandBus $commandBus
+     */
     public function __construct(CommandBus $commandBus)
     {
         $this->commandBus = $commandBus;
     }
 
+    /**
+     * Return json-object containing parsed html from the given markdown
+     */
     public function parse()
     {
-        dd(Input::get('markdown'));
-
         $html = $this->commandBus->execute(
             new MarkdownToHtmlCommand(
-                'asdasd'
+                Input::get('markdown', '')
             )
         );
+
+        return Response::json(array('html' => $html));
     }
 }
