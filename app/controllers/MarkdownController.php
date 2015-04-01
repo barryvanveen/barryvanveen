@@ -17,7 +17,7 @@ class MarkdownController extends BaseController
     }
 
     /**
-     * Return json-object containing parsed html from the given markdown
+     * Return json-object containing parsed html from the given markdown.
      */
     public function parse()
     {
@@ -27,6 +27,6 @@ class MarkdownController extends BaseController
             )
         );
 
-        return Response::json(array('html' => $html));
+        return Response::json(['html' => $html]);
     }
 }
