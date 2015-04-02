@@ -2,6 +2,9 @@ window.Barryvanveen = window.Barryvanveen || {};
 
 $('document').ready(function(){
 
+    // timers to keep track of ajax-calls that are scheduled
+    window.Barryvanveen.callTimer = [];
+
 	window.Barryvanveen.smoothScrollToHash();
 	window.Barryvanveen.initScrollUp();
 	window.Barryvanveen.initClickableTableRows();
@@ -120,20 +123,33 @@ window.Barryvanveen.MarkdownEditor = function(element) {
     // store elements
     var $input = $(element);
     var $preview = $('div[data-markdown-editor-name=' + element.name + ']');
+    var inputname = $input.attr('name');
 
     // update the html-preview
     this.updateMarkdownEditor = function () {
 
-        // abort all pending requests for this input field
-        Barryvanveen.abortPostQueue($input.attr('name'));
+        // clear any timers for this inputname
+        if (typeof(window.Barryvanveen.callTimer[inputname]) !== "undefined") {
+            clearTimeout(window.Barryvanveen.callTimer[inputname]);
+        }
 
-        // make a new ajax post to retrieve html for this markdown
-        $.postq($input.attr('name'), Barryvanveen.markdownToHtmlRoute, {markdown: $input.val()}, function(data) {
+        // start a timer for this particular input, once the timer runs out
+        // the html will be requested from the server
+        window.Barryvanveen.callTimer[inputname] = setTimeout(function() {
 
-            // update the preview with retrieved html
-            $preview.html(data.html);
+            // abort all pending requests for this input field
+            Barryvanveen.abortPostQueue($input.attr('name'));
 
-        }, 'json');
+            // make a new ajax post to retrieve html for this markdown
+            $.postq(inputname, Barryvanveen.markdownToHtmlRoute, {markdown: $input.val()}, function(data) {
+
+                // update the preview with retrieved html
+                $preview.html(data.html);
+
+            }, 'json');
+
+        }, 1000);
+
     };
 
     // update the html preview on keyUp
