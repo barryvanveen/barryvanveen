@@ -15,6 +15,7 @@ return [
     */
 
     'blog-aangepast'                       => 'De aanpassingen aan dit blogbericht zijn opgeslagen',
+    'blog-toegevoegd'                      => 'Het nieuwe blogbericht is aangemaakt',
     'validation-email-required'            => 'Je bent je e-mailadres vergeten',
     'validation-email-email'               => 'Dit is geen valide e-mailadres',
     'validation-online-required'           => 'Geen aan of dit item online of offline staat',

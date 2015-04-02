@@ -1,6 +1,8 @@
 <?php
 
+use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
+use Barryvanveen\Blogs\Commands\CreateBlogCommand;
 use Barryvanveen\Blogs\Commands\UpdateBlogCommand;
 use Barryvanveen\Forms\AdminBlogForm;
 use Flyingfoxx\CommandCenter\CommandBus;
@@ -45,7 +47,54 @@ class AdminBlogController extends BaseController
     }
 
     /**
-     * Return blogpost by its id.
+     * Create blogpost
+     *
+     * @return View
+     */
+    public function create()
+    {
+        Head::title('Blog');
+
+        // empty blog to populate form
+        $blog = new Blog();
+
+        return View::make('blog.admin.create', compact('blog'));
+    }
+
+    /**
+     * Store a new blogpost
+     *
+     * @return View
+     */
+    public function store()
+    {
+        Head::title('Blog');
+
+        $this->adminBlogForm->validate(Request::only([
+            'title',
+            'summary',
+            'text',
+            'publication_date',
+            'online',
+        ]));
+
+        $this->commandBus->execute(
+            new CreateBlogCommand(
+                Request::get('title'),
+                Request::get('summary'),
+                Request::get('text'),
+                Request::get('publication_date'),
+                Request::get('online')
+            )
+        );
+
+        Flash::success(trans('general.blog-toegevoegd'));
+
+        return Redirect::route('admin.blog');
+    }
+
+    /**
+     * Edit blogpost by its id.
      *
      * @param $id
      *

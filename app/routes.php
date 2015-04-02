@@ -70,14 +70,26 @@ Route::group(['prefix' => 'admin'], function () {
             'uses'  => 'AdminBlogController@index',
         ]);
 
+            Route::get('blog/new', [
+                'as'   => 'admin.blog-new',
+                'uses' => 'AdminBlogController@create',
+            ]);
+
+            Route::post('blog/new', [
+                'before' => 'csrf',
+                'as'     => 'admin.blog-new',
+                'uses'   => 'AdminBlogController@store',
+            ]);
+
             Route::get('blog/{blogId}/edit', [
                 'as'   => 'admin.blog-edit',
                 'uses' => 'AdminBlogController@edit',
             ]);
 
             Route::patch('blog/{blogId}', [
-                'as'   => 'admin.blog-update',
-                'uses' => 'AdminBlogController@update',
+                'before' => 'csrf',
+                'as'     => 'admin.blog-update',
+                'uses'   => 'AdminBlogController@update',
             ]);
 
         Route::get('pages', [

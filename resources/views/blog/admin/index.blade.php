@@ -3,7 +3,14 @@
 @section('content')
 
     <div class="page-header">
-        <h1>Blog</h1>
+        <div class="row">
+            <div class="col-sm-6">
+                <h1 class="overview-heading">Blog</h1>
+            </div>
+            <div class="col-sm-6 text-right">
+                <a href="{{ route('admin.blog-new') }}" class="btn btn-default btn-lg">Toevoegen</a>
+            </div>
+        </div>
     </div>
 
     <div class="bs-component">

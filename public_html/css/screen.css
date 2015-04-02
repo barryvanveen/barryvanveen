@@ -5455,6 +5455,9 @@ legend {
   font-weight: normal;
   font-family: "icons"; }
 
+.overview-heading {
+  margin-top: 0; }
+
 .overview-table__row {
   cursor: pointer; }
 
