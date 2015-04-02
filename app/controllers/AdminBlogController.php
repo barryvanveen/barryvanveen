@@ -39,7 +39,7 @@ class AdminBlogController extends BaseController
      */
     public function index()
     {
-        Head::title('Blog');
+        Head::title('Blog -- overzicht');
 
         $blogs = $this->blogRepository->all();
 
@@ -47,13 +47,13 @@ class AdminBlogController extends BaseController
     }
 
     /**
-     * Create blogpost
+     * Create blogpost.
      *
      * @return View
      */
     public function create()
     {
-        Head::title('Blog');
+        Head::title('Blog -- toevoegen');
 
         // empty blog to populate form
         $blog = new Blog();
@@ -62,14 +62,12 @@ class AdminBlogController extends BaseController
     }
 
     /**
-     * Store a new blogpost
+     * Store a new blogpost.
      *
      * @return View
      */
     public function store()
     {
-        Head::title('Blog');
-
         $this->adminBlogForm->validate(Request::only([
             'title',
             'summary',
@@ -102,7 +100,7 @@ class AdminBlogController extends BaseController
      */
     public function edit($id)
     {
-        Head::title('Blog');
+        Head::title('Blog -- aanpassen');
 
         $blog = $this->blogRepository->findAnyById($id);
 
