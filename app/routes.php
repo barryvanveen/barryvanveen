@@ -93,9 +93,31 @@ Route::group(['prefix' => 'admin'], function () {
             ]);
 
         Route::get('pages', [
-            'as'    => 'admin.pages',
-            'uses'  => 'AdminPagesController@index',
+            'as'    => 'admin.page',
+            'uses'  => 'AdminPageController@index',
         ]);
+
+            Route::get('pages/new', [
+                'as'   => 'admin.page-new',
+                'uses' => 'AdminPageController@create',
+            ]);
+
+            Route::post('pages/new', [
+                'before' => 'csrf',
+                'as'     => 'admin.page-new',
+                'uses'   => 'AdminPageController@store',
+            ]);
+
+            Route::get('pages/{pageId}/edit', [
+                'as'   => 'admin.page-edit',
+                'uses' => 'AdminPageController@edit',
+            ]);
+
+            Route::patch('pages/{pageId}', [
+                'before' => 'csrf',
+                'as'     => 'admin.page-update',
+                'uses'   => 'AdminPageController@update',
+            ]);
 
         Route::post('markdown-to-html', [
             'before' => 'post-ajax-json',

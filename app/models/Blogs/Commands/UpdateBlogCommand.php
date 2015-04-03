@@ -10,6 +10,7 @@ class UpdateBlogCommand
     public $online;
 
     /**
+     * @param $id
      * @param $title
      * @param $summary
      * @param $text

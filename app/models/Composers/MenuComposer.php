@@ -15,10 +15,7 @@ class MenuComposer
             $menu->add('Home', ['route' => 'home']);
             $menu->add('Blog', ['route' => 'blog'])
                  ->active(route('blog', [], false).'/*');
-            /*$menu->add('Projecten', ['route' => 'projects'])
-                 ->active(route('projects', [], false).'/*');*/
             $menu->add('Over mij', ['route' => 'over-mij']);
-            /*$menu->add('Elements', ['route' => 'elements']);*/
 
         });
 
@@ -30,8 +27,8 @@ class MenuComposer
             $menu->add('Dashboard', ['route' => 'admin.dashboard']);
             $menu->add('Blog', ['route' => 'admin.blog'])
                  ->active(route('admin.blog', [], false).'/*');
-            $menu->add('Pages', ['route' => 'admin.pages'])
-                 ->active(route('admin.pages', [], false).'/*');
+            $menu->add('Pages', ['route' => 'admin.page'])
+                 ->active(route('admin.page', [], false).'/*');
 
         });
     }

@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     protected $tables = [
         'blogs',
+        'pages',
         'users',
     ];
 
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder
      */
     protected $seeders = [
         'BlogsTableSeeder',
+        'PagesTableSeeder',
         'UsersTableSeeder',
     ];
 

@@ -26,7 +26,7 @@ App::error(function (Exception $exception, $code) {
         return;
     }
 
-    return Response::make(View::make('pages.500'), 500);
+    return Response::make(View::make('templates.500'), 500);
 });
 
 App::error(function (NotFoundHttpException $exception, $code) {
@@ -36,7 +36,7 @@ App::error(function (NotFoundHttpException $exception, $code) {
         return;
     }
 
-    return Response::make(View::make('pages.404'), 404);
+    return Response::make(View::make('templates.404'), 404);
 });
 
 App::error(function (ModelNotFoundException $exception, $code) {
@@ -46,7 +46,7 @@ App::error(function (ModelNotFoundException $exception, $code) {
         return;
     }
 
-    return Response::make(View::make('pages.404'), 404);
+    return Response::make(View::make('templates.404'), 404);
 });
 
 App::error(function (MethodNotAllowedHttpException $exception, $code) {
@@ -56,7 +56,7 @@ App::error(function (MethodNotAllowedHttpException $exception, $code) {
         return;
     }
 
-    return Response::make(View::make('pages.403'), 403);
+    return Response::make(View::make('templates.403'), 403);
 });
 
 App::error(function (TokenMismatchException $exception, $code) {

@@ -10,6 +10,6 @@ class AdminDashboardController extends BaseController
     {
         Head::title('Dashboard');
 
-        return View::make('pages.admin.dashboard');
+        return View::make('templates.admin.dashboard');
     }
 }

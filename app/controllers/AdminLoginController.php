@@ -30,7 +30,7 @@ class AdminLoginController extends BaseController
     {
         Head::title('Log In');
 
-        return View::make('pages.admin.login');
+        return View::make('templates.admin.login');
     }
 
     /**

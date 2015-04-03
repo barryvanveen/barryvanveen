@@ -1,15 +1,24 @@
 <?php
 
 use Barryvanveen\Blogs\BlogRepository;
+use Barryvanveen\Pages\PageRepository;
 use Carbon\Carbon;
 
 class PagesController extends BaseController
 {
-    /** @var BlogRepository */
-    protected $blogRepository;
+    /** @var PageRepository */
+    protected $pageRepository;
 
-    public function __construct(BlogRepository $blogRepository)
+    /** @var BlogRepository */
+    private $blogRepository;
+
+    /**
+     * @param PageRepository $pageRepository
+     * @param BlogRepository $blogRepository
+     */
+    public function __construct(PageRepository $pageRepository, BlogRepository $blogRepository)
     {
+        $this->pageRepository = $pageRepository;
         $this->blogRepository = $blogRepository;
     }
 
@@ -24,12 +33,17 @@ class PagesController extends BaseController
 
     public function overMij()
     {
-        Head::title('Over mij');
+        $page = $this->pageRepository->findPublishedBySlug('over-mij');
 
+        Head::title($page->title);
+
+        // todo: replace placeholders in html with these values
+        /*
         $age           = Carbon::createFromDate(1987, 4, 16)->diffInYears();
         $workingAtSwis = Carbon::createFromDate(2013, 1, 14)->diffInYears();
+        */
 
-        return View::make('pages.over-mij', compact('age', 'workingAtSwis'));
+        return View::make('pages.item', compact('page'));
     }
 
     public function elements()

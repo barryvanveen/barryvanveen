@@ -20,7 +20,6 @@ use Robbo\Presenter\PresentableInterface;
  * @property boolean $online
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- *
  * @method static Builder|Blog whereId($value)
  * @method static Builder|Blog whereTitle($value)
  * @method static Builder|Blog whereSlug($value)
@@ -44,7 +43,7 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
      *
      * @var string
      */
-    public $repository = BlogRepository::class;
+    public $repository = 'Barryvanveen\Blogs\BlogRepository';
 
     /**
      * Which fields may be mass assigned.

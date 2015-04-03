@@ -20,7 +20,6 @@ use Robbo\Presenter\PresentableInterface;
  * @property string $remember_token
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- *
  * @method static Builder|User whereId($value)
  * @method static Builder|User whereFirstname($value)
  * @method static Builder|User whereLastname($value)

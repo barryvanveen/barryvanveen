@@ -10,6 +10,10 @@ class BlogPresenter extends Presenter
 {
     protected $commandBus;
 
+    /**
+     * @param Blog       $blog
+     * @param CommandBus $commandBus
+     */
     public function __construct(Blog $blog, CommandBus $commandBus)
     {
         parent::__construct($blog);

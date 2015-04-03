@@ -6,6 +6,6 @@
         <h1>Inloggen</h1>
     </div>
 
-    @include('pages.admin.partials.admin-login-form')
+    @include('templates.admin.partials.admin-login-form')
 
 @stop
