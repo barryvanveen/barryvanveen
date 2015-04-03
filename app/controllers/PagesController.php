@@ -2,7 +2,6 @@
 
 use Barryvanveen\Blogs\BlogRepository;
 use Barryvanveen\Pages\PageRepository;
-use Carbon\Carbon;
 
 class PagesController extends BaseController
 {

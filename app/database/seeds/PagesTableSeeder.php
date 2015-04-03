@@ -1,7 +1,7 @@
 <?php
 
-use Barryvanveen\Pages\Page;
 use Barryvanveen\Faker\Providers\LoremMarkdown;
+use Barryvanveen\Pages\Page;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 

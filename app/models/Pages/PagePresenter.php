@@ -52,7 +52,6 @@ class PagePresenter extends Presenter
         return $date->format('d-m-Y H:i');
     }
 
-
     /**
      * Get date of latest update in a diffForHumans format.
      *

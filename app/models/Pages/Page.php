@@ -8,17 +8,17 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Query\Builder;
 use Robbo\Presenter\PresentableInterface;
 
-
 /**
- * Barryvanveen\Pages\Page
+ * Barryvanveen\Pages\Page.
  *
- * @property integer $id 
- * @property string $title 
- * @property string $slug 
- * @property string $text 
- * @property boolean $online 
+ * @property integer $id
+ * @property string $title
+ * @property string $slug
+ * @property string $text
+ * @property boolean $online
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ *
  * @method static Builder|Page whereId($value)
  * @method static Builder|Page whereTitle($value)
  * @method static Builder|Page whereSlug($value)
@@ -75,7 +75,6 @@ class Page extends Model implements SluggableInterface, PresentableInterface
     {
         return $query->where('online', '=', '1');
     }
-
 
     /**
      * order the results by ascending title.

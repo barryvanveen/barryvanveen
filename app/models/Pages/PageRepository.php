@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PageRepository extends EloquentRepository
 {
-
     /**
      * return all pages.
      *

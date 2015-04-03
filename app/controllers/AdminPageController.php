@@ -28,8 +28,8 @@ class AdminPageController extends BaseController
     public function __construct(PageRepository $pagesRepository, CommandBus $commandBus, AdminPageForm $adminPageForm)
     {
         $this->pagesRepository = $pagesRepository;
-        $this->commandBus     = $commandBus;
-        $this->adminPageForm  = $adminPageForm;
+        $this->commandBus      = $commandBus;
+        $this->adminPageForm   = $adminPageForm;
     }
 
     /**
