@@ -31,7 +31,7 @@
 
         @include('layouts.partials.javascript')
 
-		{{ HTML::script('js/main.min.js?123') }}
+		{{ HTML::script('js/main.min.js') }}
 
 	</body>
 </html>

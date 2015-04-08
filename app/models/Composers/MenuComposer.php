@@ -29,6 +29,7 @@ class MenuComposer
                  ->active(route('admin.blog', [], false).'/*');
             $menu->add('Pages', ['route' => 'admin.page'])
                  ->active(route('admin.page', [], false).'/*');
+            $menu->add('Logs', ['route' => 'admin.logs']);
 
         });
     }

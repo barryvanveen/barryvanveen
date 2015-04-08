@@ -11,6 +11,7 @@ $('document').ready(function(){
     window.Barryvanveen.initAutosizeTextareas();
 	window.Barryvanveen.initMarkdownEditors();
     window.Barryvanveen.initDatetimepickers();
+    window.Barryvanveen.initLogModal();
 
 });
 
@@ -189,5 +190,33 @@ window.Barryvanveen.initDatetimepickers = function() {
             next:       "icon icon--arrowRight"
         }
     });
+
+};
+
+
+/**
+ * init log table
+ */
+window.Barryvanveen.initLogModal = function() {
+
+    // handle clicks to open a bootstrap modal with full exception stack
+    $('#logModal').on('show.bs.modal', function (event) {
+
+        // Button that triggered the modal
+        var button = $(event.relatedTarget);
+
+        // Extract info from data-* attributes
+        var level = button.data('level');
+        var text = button.data('text');
+        var file = button.data('file');
+        var stack = button.data('stack');
+
+        // Update the modal's content
+        var modal = $(this);
+        modal.find('.modal-title').html(level + ": " + text);
+        modal.find('.modal-body').html("<small>In file " + file + "<br><br>" + stack + "</small>");
+
+    })
+
 
 };

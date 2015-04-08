@@ -136,6 +136,7 @@ return [
         'Laracasts\Validation\ValidationServiceProvider',
         'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
         'Lavary\Menu\ServiceProvider',
+        'Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider',
         'Robbo\Presenter\PresenterServiceProvider',
         'Swisnl\Head\HeadServiceProvider',
 

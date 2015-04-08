@@ -125,6 +125,11 @@ Route::group(['prefix' => 'admin'], function () {
             'uses'   => 'MarkdownController@parse',
         ]);
 
+        Route::get('logs', [
+            'as'   => 'admin.logs',
+            'uses' => '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index',
+        ]);
+
     });
 
 });
