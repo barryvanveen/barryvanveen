@@ -5471,6 +5471,12 @@ legend {
 .overview-table__row--offline:hover td {
   background-color: #ebcccc; }
 
+.page__content {
+  padding-bottom: 30px; }
+
+.page__last-updated {
+  margin-top: 30px; }
+
 /* Styles die voor screen en voor print gelden */
 html {
   min-height: 100%;
