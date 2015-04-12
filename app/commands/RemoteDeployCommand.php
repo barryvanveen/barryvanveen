@@ -25,7 +25,6 @@ class RemoteDeployCommand extends Command
         parent::__construct();
     }
 
-
     /**
      * Execute the console command.
      *
@@ -33,9 +32,9 @@ class RemoteDeployCommand extends Command
      */
     public function fire()
     {
-        if (!$this->confirm('Wil je echt deployen? [yes|no]', false))
-        {
+        if (!$this->confirm('Wil je echt deployen? [yes|no]', false)) {
             $this->info('Niet gedeployed. Klaar!');
+
             return;
         }
 
@@ -73,7 +72,6 @@ class RemoteDeployCommand extends Command
         if (!empty($line)) {
             $this->info("Starting: ".$line);
         }
-
     }
 
     /**
@@ -85,10 +83,10 @@ class RemoteDeployCommand extends Command
     }
 
     /**
-     * Deploy to the production environment using SSH
+     * Deploy to the production environment using SSH.
      */
-    protected function deploy() {
-
+    protected function deploy()
+    {
         SSH::into('production')->run([
             'php artisan down',
             'git pull origin master',
@@ -99,9 +97,7 @@ class RemoteDeployCommand extends Command
         SSH::into('production')->run([
             'composer install --no-dev',
             'php artisan migrate --force',
-            'php artisan up'
+            'php artisan up',
         ]);
-
     }
-
 }

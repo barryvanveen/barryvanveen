@@ -9,7 +9,7 @@ class Recipient
     public $name;
 
     /**
-     * Construct an email recipient
+     * Construct an email recipient.
      *
      * @param string $email
      * @param string $name
@@ -17,6 +17,6 @@ class Recipient
     public function __construct($email, $name)
     {
         $this->email = $email;
-        $this->name = $name;
+        $this->name  = $name;
     }
 }

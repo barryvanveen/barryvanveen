@@ -9,13 +9,13 @@ use View;
 
 class Logger
 {
-
     /**
-     * Handle an exeption (logging, email, response)
+     * Handle an exeption (logging, email, response).
      *
      * @param $exception
      * @param $template
      * @param $responseCode
+     *
      * @return \Illuminate\Http\Response|void
      */
     public static function log($exception, $template, $responseCode)
@@ -34,5 +34,4 @@ class Logger
 
         return Response::make(View::make($template), $responseCode);
     }
-
 }

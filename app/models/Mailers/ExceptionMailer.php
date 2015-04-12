@@ -5,16 +5,14 @@ use Exception;
 
 class ExceptionMailer extends Mailer
 {
-
     /**
      * @param Exception $exception
      */
     public function sendExceptionMail(Exception $exception)
     {
-
         $recipient = new Recipient('barryvanveen@gmail.com', 'Barry van Veen');
-        $subject = '[barryvanveen.nl] '.get_class($exception);
-        $view = 'emails.exception';
+        $subject   = '[barryvanveen.nl] '.get_class($exception);
+        $view      = 'emails.exception';
 
         $this->send($recipient, $subject, $view, [
             'environment'       => \App::environment(),
@@ -25,5 +23,4 @@ class ExceptionMailer extends Mailer
             'exception_message' => $exception->getMessage(),
         ]);
     }
-
 }

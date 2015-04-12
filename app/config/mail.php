@@ -56,7 +56,7 @@ return [
 
     'from'       => [
         'address' => getenv('SMTP_FROM_ADDRESS'),
-        'name'    => getenv('SMTP_FROM_NAME')
+        'name'    => getenv('SMTP_FROM_NAME'),
     ],
 
     /*
