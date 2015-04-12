@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'host'       => 'smtp.mailgun.org',
+    'host'       => getenv('SMTP_HOST'),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'port'       => 587,
+    'port'       => getenv('SMTP_PORT'),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,10 @@ return [
     |
     */
 
-    'from'       => ['address' => null, 'name' => null],
+    'from'       => [
+        'address' => getenv('SMTP_FROM_ADDRESS'),
+        'name'    => getenv('SMTP_FROM_NAME')
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -68,6 +71,7 @@ return [
     */
 
     'encryption' => 'tls',
+
     /*
     |--------------------------------------------------------------------------
     | SMTP Server Username
@@ -79,7 +83,7 @@ return [
     |
     */
 
-    'username'   => null,
+    'username'   => getenv('SMTP_USERNAME'),
 
     /*
     |--------------------------------------------------------------------------
@@ -92,20 +96,7 @@ return [
     |
     */
 
-    'password'   => null,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Sendmail System Path
-    |--------------------------------------------------------------------------
-    |
-    | When using the "sendmail" driver to send e-mails, we will need to know
-    | the path to where Sendmail lives on this server. A default path has
-    | been provided here, which will work well on most of your systems.
-    |
-    */
-
-    'sendmail'   => '/usr/sbin/sendmail -bs',
+    'password'   => getenv('SMTP_PASSWORD'),
 
     /*
     |--------------------------------------------------------------------------

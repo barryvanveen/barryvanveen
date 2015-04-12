@@ -24,9 +24,9 @@
                         @if ($log['stack'])
                             <button type="button" class="pull-right btn btn-sm btn-{{{$log['level_class']}}}"
                                     data-toggle="modal"
-                                    data-target="#logModal" data-level="{{$log['level']}}"
-                                    data-text="{{$log['text']}}"
-                                    data-file="{{$log['in_file']}}" data-stack="{{$log['stack']}}">
+                                    data-target="#logModal" data-level="{{{$log['level']}}}"
+                                    data-text="{{{$log['text']}}}"
+                                    data-file="{{{$log['in_file']}}}" data-stack="{{{$log['stack']}}}">
                                 Show stack
                             </button>
                         @endif

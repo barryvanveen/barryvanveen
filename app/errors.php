@@ -13,6 +13,7 @@
 |
 */
 
+use Barryvanveen\Logs\Logger;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Session\TokenMismatchException;
 use Laracasts\Validation\FormValidationException;
@@ -20,43 +21,19 @@ use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 App::error(function (Exception $exception, $code) {
-    Log::error($exception);
-
-    if (Config::get('app.debug')) {
-        return;
-    }
-
-    return Response::make(View::make('templates.500'), 500);
+    return Logger::log($exception, 'templates.500', 500);
 });
 
 App::error(function (NotFoundHttpException $exception, $code) {
-    Log::error($exception);
-
-    if (Config::get('app.debug')) {
-        return;
-    }
-
-    return Response::make(View::make('templates.404'), 404);
+    return Logger::log($exception, 'templates.404', 404);
 });
 
 App::error(function (ModelNotFoundException $exception, $code) {
-    Log::error($exception);
-
-    if (Config::get('app.debug')) {
-        return;
-    }
-
-    return Response::make(View::make('templates.404'), 404);
+    return Logger::log($exception, 'templates.404', 404);
 });
 
 App::error(function (MethodNotAllowedHttpException $exception, $code) {
-    Log::error($exception);
-
-    if (Config::get('app.debug')) {
-        return;
-    }
-
-    return Response::make(View::make('templates.403'), 403);
+    return Logger::log($exception, 'templates.403', 403);
 });
 
 App::error(function (TokenMismatchException $exception, $code) {
