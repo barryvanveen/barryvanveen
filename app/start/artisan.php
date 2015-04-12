@@ -11,4 +11,7 @@
 |
 */
 
-Artisan::resolve('SwitchBranchCommand');
+if (App::detectEnvironment(['local'])) {
+    Artisan::resolve('SwitchBranchCommand');
+    Artisan::resolve('RemoteDeployCommand');
+}

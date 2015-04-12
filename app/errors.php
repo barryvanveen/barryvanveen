@@ -22,7 +22,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 App::error(function (Exception $exception, $code) {
     Log::error($exception);
 
-    if (App::environment('local', 'testing')) {
+    if (Config::get('app.debug')) {
         return;
     }
 
@@ -32,7 +32,7 @@ App::error(function (Exception $exception, $code) {
 App::error(function (NotFoundHttpException $exception, $code) {
     Log::error($exception);
 
-    if (App::environment('local', 'testing')) {
+    if (Config::get('app.debug')) {
         return;
     }
 
@@ -42,7 +42,7 @@ App::error(function (NotFoundHttpException $exception, $code) {
 App::error(function (ModelNotFoundException $exception, $code) {
     Log::error($exception);
 
-    if (App::environment('local', 'testing')) {
+    if (Config::get('app.debug')) {
         return;
     }
 
@@ -52,7 +52,7 @@ App::error(function (ModelNotFoundException $exception, $code) {
 App::error(function (MethodNotAllowedHttpException $exception, $code) {
     Log::error($exception);
 
-    if (App::environment('local', 'testing')) {
+    if (Config::get('app.debug')) {
         return;
     }
 

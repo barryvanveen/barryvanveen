@@ -29,12 +29,12 @@ return [
     'connections' => [
 
         'production' => [
-            'host'      => '',
-            'username'  => '',
-            'password'  => '',
+            'host'      => getenv('SSH_HOST'),
+            'username'  => getenv('SSH_USERNAME'),
+            'password'  => getenv('SSH_PASSWORD'),
             'key'       => '',
             'keyphrase' => '',
-            'root'      => '/var/www',
+            'root'      => getenv('SSH_ROOT'),
         ],
 
     ],
