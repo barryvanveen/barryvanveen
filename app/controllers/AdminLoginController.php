@@ -40,7 +40,6 @@ class AdminLoginController extends BaseController
      * @return $this|RedirectResponse
      *
      * @throws FormValidationException
-     *
      * @throws InvalidLoginException
      */
     public function store()

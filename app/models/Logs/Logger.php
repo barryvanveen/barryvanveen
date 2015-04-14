@@ -51,7 +51,7 @@ class Logger
     }
 
     /**
-     * Mail an exception to keep the webmaster informed
+     * Mail an exception to keep the webmaster informed.
      *
      * @param $exception
      */
@@ -67,7 +67,6 @@ class Logger
     /**
      * Return nothing in case debugging is enabled.
      * This will display the Whoops error page with full debugging info.
-     *
      */
     public static function returnIfDebuggingEnabled()
     {
@@ -75,5 +74,4 @@ class Logger
             return;
         }
     }
-
 }

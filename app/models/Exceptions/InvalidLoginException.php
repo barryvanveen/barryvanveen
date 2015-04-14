@@ -2,6 +2,6 @@
 
 use Exception;
 
-class InvalidLoginException extends Exception {
-
+class InvalidLoginException extends Exception
+{
 }
