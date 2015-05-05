@@ -14,14 +14,14 @@ return [
     |
     */
 
-    'mailgun'  => [
+    'mailgun' => [
         'domain' => '',
         'secret' => '',
     ],
     'mandrill' => [
         'secret' => '',
     ],
-    'stripe'   => [
+    'stripe' => [
         'model'  => 'User',
         'secret' => '',
     ],

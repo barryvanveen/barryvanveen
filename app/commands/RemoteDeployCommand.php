@@ -68,9 +68,9 @@ class RemoteDeployCommand extends Command
      */
     protected function startOutput($line = null)
     {
-        $this->info("=========================================");
+        $this->info('=========================================');
         if (!empty($line)) {
-            $this->info("Starting: ".$line);
+            $this->info('Starting: '.$line);
         }
     }
 

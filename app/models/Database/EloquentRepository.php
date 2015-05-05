@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Database;
+<?php
+namespace Barryvanveen\Database;
 
 use Illuminate\Database\Eloquent\Model;
 

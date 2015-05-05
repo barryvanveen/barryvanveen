@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug'     => true,
+    'debug' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url'       => 'http://barryvanveen.app',
+    'url' => 'http://barryvanveen.app',
 
     /*
     |--------------------------------------------------------------------------
@@ -61,7 +61,7 @@ return [
     |
     */
 
-    'aliases'   => append_config([
+    'aliases' => append_config([
 
         /*
          * Development aliases

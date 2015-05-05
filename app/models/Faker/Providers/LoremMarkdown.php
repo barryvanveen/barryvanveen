@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Faker\Providers;
+<?php
+namespace Barryvanveen\Faker\Providers;
 
 use Faker\Provider\Lorem;
 
@@ -166,9 +167,9 @@ class LoremMarkdown extends Lorem
             $nbItems = self::randomizeNbElements($nbItems);
         }
 
-        $listItemPrefix = "* "; // unordered list prefix
+        $listItemPrefix = '* '; // unordered list prefix
         if (self::randomFloat(null, 0, 1) <= 0.5) {
-            $listItemPrefix = "1. "; // ordered list prefix
+            $listItemPrefix = '1. '; // ordered list prefix
         }
 
         $items = [];

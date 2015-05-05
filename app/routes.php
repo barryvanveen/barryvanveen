@@ -40,8 +40,8 @@ Route::get('over-mij', [
 Route::group(['prefix' => 'admin'], function () {
 
     Route::get('inloggen', [
-        'as'    => 'admin.login',
-        'uses'  => 'AdminLoginController@index',
+        'as'   => 'admin.login',
+        'uses' => 'AdminLoginController@index',
     ]);
 
     Route::post('inloggen', [
@@ -51,8 +51,8 @@ Route::group(['prefix' => 'admin'], function () {
     ]);
 
     Route::get('uitloggen', [
-        'as'    => 'admin.logout',
-        'uses'  => 'AdminLoginController@destroy',
+        'as'   => 'admin.logout',
+        'uses' => 'AdminLoginController@destroy',
     ]);
 
     /*
@@ -61,13 +61,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::group(['before' => 'auth'], function () {
 
         Route::get('/', [
-            'as'    => 'admin.dashboard',
-            'uses'  => 'AdminDashboardController@index',
+            'as'   => 'admin.dashboard',
+            'uses' => 'AdminDashboardController@index',
         ]);
 
         Route::get('blog', [
-            'as'    => 'admin.blog',
-            'uses'  => 'AdminBlogController@index',
+            'as'   => 'admin.blog',
+            'uses' => 'AdminBlogController@index',
         ]);
 
             Route::get('blog/new', [
@@ -93,8 +93,8 @@ Route::group(['prefix' => 'admin'], function () {
             ]);
 
         Route::get('pages', [
-            'as'    => 'admin.page',
-            'uses'  => 'AdminPageController@index',
+            'as'   => 'admin.page',
+            'uses' => 'AdminPageController@index',
         ]);
 
             Route::get('pages/new', [

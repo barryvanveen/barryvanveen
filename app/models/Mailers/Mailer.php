@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Mailers;
+<?php
+namespace Barryvanveen\Mailers;
 
 use Barryvanveen\Recipients\Recipient;
 use Illuminate\Mail\Mailer as Mail;

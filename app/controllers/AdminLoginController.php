@@ -54,7 +54,7 @@ class AdminLoginController extends BaseController
             return Redirect::intended(route('admin.dashboard'));
         }
 
-        throw new InvalidLoginException("Invalid login credentials given");
+        throw new InvalidLoginException('Invalid login credentials given');
     }
 
     public function destroy()

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug'     => true,
+    'debug' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -26,6 +26,6 @@ return [
     |
     */
 
-    'url'       => 'http://barryvanveen.app',
+    'url' => 'http://barryvanveen.app',
 
 ];

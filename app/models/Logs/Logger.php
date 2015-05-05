@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Logs;
+<?php
+namespace Barryvanveen\Logs;
 
 use App;
 use Barryvanveen\Mailers\ExceptionMailer;

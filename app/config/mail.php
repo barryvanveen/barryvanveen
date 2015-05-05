@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'driver'     => 'smtp',
+    'driver' => 'smtp',
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'host'       => getenv('SMTP_HOST'),
+    'host' => getenv('SMTP_HOST'),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
     |
     */
 
-    'port'       => getenv('SMTP_PORT'),
+    'port' => getenv('SMTP_PORT'),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from'       => [
+    'from' => [
         'address' => getenv('SMTP_FROM_ADDRESS'),
         'name'    => getenv('SMTP_FROM_NAME'),
     ],
@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'username'   => getenv('SMTP_USERNAME'),
+    'username' => getenv('SMTP_USERNAME'),
 
     /*
     |--------------------------------------------------------------------------
@@ -96,7 +96,7 @@ return [
     |
     */
 
-    'password'   => getenv('SMTP_PASSWORD'),
+    'password' => getenv('SMTP_PASSWORD'),
 
     /*
     |--------------------------------------------------------------------------
@@ -109,6 +109,6 @@ return [
     |
     */
 
-    'pretend'    => false,
+    'pretend' => false,
 
 ];

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default'     => 'production',
+    'default' => 'production',
 
     /*
     |--------------------------------------------------------------------------
@@ -50,7 +50,7 @@ return [
     |
     */
 
-    'groups'      => [
+    'groups' => [
 
         'web' => ['production'],
 

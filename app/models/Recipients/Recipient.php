@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Recipients;
+<?php
+namespace Barryvanveen\Recipients;
 
 class Recipient
 {

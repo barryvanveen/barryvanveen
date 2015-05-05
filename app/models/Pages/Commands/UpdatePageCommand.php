@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Pages\Commands;
+<?php
+namespace Barryvanveen\Pages\Commands;
 
 class UpdatePageCommand
 {
@@ -17,9 +18,9 @@ class UpdatePageCommand
      */
     public function __construct($id, $title, $text, $online)
     {
-        $this->id               = $id;
-        $this->title            = $title;
-        $this->text             = $text;
-        $this->online           = $online;
+        $this->id     = $id;
+        $this->title  = $title;
+        $this->text   = $text;
+        $this->online = $online;
     }
 }

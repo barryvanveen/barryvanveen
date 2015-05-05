@@ -28,7 +28,6 @@ class BlogsTableSeeder extends Seeder
                 'text'             => $faker->markdownText(),
                 'image'            => $image,
                 'publication_date' => $faker->dateTimeBetween('-1 year', '+3 weeks'),
-                // 1 on 10 blogs is offline
                 'online'           => (rand(0, 10) % 10) ? 1 : 0,
             ]);
         }
