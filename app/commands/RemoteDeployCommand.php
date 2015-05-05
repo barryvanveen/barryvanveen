@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Console\Command;
+use Symfony\Component\Console\Input\InputArgument;
 
 class RemoteDeployCommand extends Command
 {
@@ -20,9 +21,16 @@ class RemoteDeployCommand extends Command
      */
     protected $description = 'All the procedures needed for deploying the website';
 
-    public function __construct()
+    /**
+     * Return the arguments for this command
+     *
+     * @return array
+     */
+    protected function getArguments()
     {
-        parent::__construct();
+        return array(
+            ['versie', InputArgument::REQUIRED, 'Versie die je wilt deployen, bijvoorbeeld v1.0.0']
+        );
     }
 
     /**
@@ -38,9 +46,15 @@ class RemoteDeployCommand extends Command
             return;
         }
 
+        $versie = $this->argument('versie');
+
+        $this->info('Deploy versie '.$versie);
+        Log::info('Deploy versie '.$versie);
+
         $this->runTask('deploy');
 
-        $this->info('Klaar!');
+        $this->info('Klaar met deployen van versie '.$versie.'!');
+        Log::info('Klaar met deployen van versie '.$versie.'!');
     }
 
     /**
@@ -87,17 +101,21 @@ class RemoteDeployCommand extends Command
      */
     protected function deploy()
     {
-        SSH::into('production')->run([
-            'php artisan down',
-            'git pull origin master',
-        ]);
+        SSH::into('production')->run(
+            [
+                'php artisan down',
+                'git pull origin master '.$this->argument('versie'),
+            ]
+        );
 
         SSH::put('.env.production.php', '.env.php');
 
-        SSH::into('production')->run([
-            'composer install --no-dev',
-            'php artisan migrate --force',
-            'php artisan up',
-        ]);
+        SSH::into('production')->run(
+            [
+                'composer install --no-dev',
+                'php artisan migrate --force',
+                'php artisan up',
+            ]
+        );
     }
 }
