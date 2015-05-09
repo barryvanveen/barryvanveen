@@ -48,25 +48,25 @@ class SwitchBranchCommand extends Command
     public function fire()
     {
         if ($this->option('composer-update')) {
-            $this->runTask("composer update");
+            $this->runTask('composer update');
         } else {
-            $this->runTask("composer install");
+            $this->runTask('composer install');
         }
 
-        $this->runTask("bower install");
+        $this->runTask('bower install');
 
-        $this->runTask("clearDatabase", getenv('DB_NAME'));
-        $this->runTask("php artisan migrate");
-        $this->runTask("php artisan db:seed");
+        $this->runTask('clearDatabase', getenv('DB_NAME'));
+        $this->runTask('php artisan migrate');
+        $this->runTask('php artisan db:seed');
 
         if (!getenv('DB_TESTING_NAME')) {
-            $this->error("Zet DB_TESTING_NAME in .env.local.php om ook de testing-database te migraten");
+            $this->error('Zet DB_TESTING_NAME in .env.local.php om ook de testing-database te migraten');
 
             return;
         }
 
-        $this->runTask("clearDatabase", getenv('DB_TESTING_NAME'));
-        $this->runTask("php artisan migrate --env=testing");
+        $this->runTask('clearDatabase', getenv('DB_TESTING_NAME'));
+        $this->runTask('php artisan migrate --env=testing');
     }
 
     /**
@@ -94,9 +94,9 @@ class SwitchBranchCommand extends Command
      */
     protected function startOutput($line = null)
     {
-        $this->info("=========================================");
+        $this->info('=========================================');
         if (!empty($line)) {
-            $this->info("Starting: ".$line);
+            $this->info('Starting: '.$line);
         }
     }
 

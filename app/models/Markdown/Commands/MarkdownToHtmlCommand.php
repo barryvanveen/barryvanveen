@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Markdown\Commands;
+<?php
+namespace Barryvanveen\Markdown\Commands;
 
 class MarkdownToHtmlCommand
 {

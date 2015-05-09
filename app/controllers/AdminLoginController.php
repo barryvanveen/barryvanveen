@@ -1,5 +1,6 @@
 <?php
 
+use Barryvanveen\Exceptions\InvalidLoginException;
 use Barryvanveen\Forms\AdminLoginForm;
 use Barryvanveen\Users\UserRepository;
 use Illuminate\Http\RedirectResponse;
@@ -39,6 +40,7 @@ class AdminLoginController extends BaseController
      * @return $this|RedirectResponse
      *
      * @throws FormValidationException
+     * @throws InvalidLoginException
      */
     public function store()
     {
@@ -52,13 +54,7 @@ class AdminLoginController extends BaseController
             return Redirect::intended(route('admin.dashboard'));
         }
 
-        $errors = [
-            'password' => [
-                trans('general.invalid-login'),
-            ],
-        ];
-
-        return Redirect::route('admin.login')->withInput()->withErrors($errors);
+        throw new InvalidLoginException('Invalid login credentials given');
     }
 
     public function destroy()

@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Pages\Commands;
+<?php
+namespace Barryvanveen\Pages\Commands;
 
 use Barryvanveen\Pages\PageRepository;
 use Flyingfoxx\CommandCenter\CommandHandler;
@@ -29,9 +30,9 @@ class UpdatePageHandler implements CommandHandler
     {
         $page = $this->pageRepository->findAnyById($command->id);
 
-        $page->title            = $command->title;
-        $page->text             = $command->text;
-        $page->online           = $command->online;
+        $page->title  = $command->title;
+        $page->text   = $command->text;
+        $page->online = $command->online;
 
         $this->pageRepository->save($page);
     }

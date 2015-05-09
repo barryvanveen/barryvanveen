@@ -14,10 +14,9 @@ class PagesTableSeeder extends Seeder
 
         foreach (range(1, 5) as $index) {
             Page::create([
-                'title'            => $faker->sentence(),
-                'text'             => $faker->markdownText(),
-                // 1 on 10 pages is offline
-                'online'           => (rand(0, 10) % 10) ? 1 : 0,
+                'title'  => $faker->sentence(),
+                'text'   => $faker->markdownText(),
+                'online' => (rand(0, 10) % 10) ? 1 : 0,
             ]);
         }
     }

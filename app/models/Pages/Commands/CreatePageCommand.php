@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Pages\Commands;
+<?php
+namespace Barryvanveen\Pages\Commands;
 
 class CreatePageCommand
 {
@@ -15,8 +16,8 @@ class CreatePageCommand
      */
     public function __construct($title, $text, $online)
     {
-        $this->title            = $title;
-        $this->text             = $text;
-        $this->online           = $online;
+        $this->title  = $title;
+        $this->text   = $text;
+        $this->online = $online;
     }
 }

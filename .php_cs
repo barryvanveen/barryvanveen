@@ -2,6 +2,9 @@
 
 $finder = Symfony\CS\Finder\DefaultFinder::create()
                                          ->exclude(['bower_components', 'node_modules', 'storage', 'vendor'])
+                                         ->notName('AcceptanceTester.php')
+                                         ->notName('FunctionalTester.php')
+                                         ->notName('UnitTester.php')
                                          ->in(__DIR__);
 
 return Symfony\CS\Config\Config::create()

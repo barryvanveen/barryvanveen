@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Faker\Providers;
+<?php
+namespace Barryvanveen\Faker\Providers;
 
 use Faker\Provider\Lorem;
 

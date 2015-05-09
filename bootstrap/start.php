@@ -25,7 +25,8 @@ $app = new Illuminate\Foundation\Application();
 */
 
 $env = $app->detectEnvironment([
-    'local' => ['homestead'],
+    'local'      => ['homestead'],
+    'production' => ['s5'],
 ]);
 
 /*

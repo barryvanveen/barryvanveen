@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Composers;
+<?php
+namespace Barryvanveen\Composers;
 
 use Lavary\Menu\Item;
 use Menu;

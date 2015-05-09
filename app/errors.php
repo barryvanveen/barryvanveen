@@ -13,6 +13,8 @@
 |
 */
 
+use Barryvanveen\Exceptions\InvalidLoginException;
+use Barryvanveen\Logs\Logger;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Session\TokenMismatchException;
 use Laracasts\Validation\FormValidationException;
@@ -20,47 +22,23 @@ use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 App::error(function (Exception $exception, $code) {
-    Log::error($exception);
-
-    if (App::environment('local', 'testing')) {
-        return;
-    }
-
-    return Response::make(View::make('templates.500'), 500);
+    return Logger::logAndRedirectToView($exception, 'templates.500', 500);
 });
 
 App::error(function (NotFoundHttpException $exception, $code) {
-    Log::error($exception);
-
-    if (App::environment('local', 'testing')) {
-        return;
-    }
-
-    return Response::make(View::make('templates.404'), 404);
+    return Logger::logAndRedirectToView($exception, 'templates.404', 404);
 });
 
 App::error(function (ModelNotFoundException $exception, $code) {
-    Log::error($exception);
-
-    if (App::environment('local', 'testing')) {
-        return;
-    }
-
-    return Response::make(View::make('templates.404'), 404);
+    return Logger::logAndRedirectToView($exception, 'templates.404', 404);
 });
 
 App::error(function (MethodNotAllowedHttpException $exception, $code) {
-    Log::error($exception);
-
-    if (App::environment('local', 'testing')) {
-        return;
-    }
-
-    return Response::make(View::make('templates.403'), 403);
+    return Logger::logAndRedirectToView($exception, 'templates.403', 403);
 });
 
 App::error(function (TokenMismatchException $exception, $code) {
-    Log::error($exception);
+    Session::regenerateToken();
 
     $errors = [
         '_token' => [
@@ -68,9 +46,19 @@ App::error(function (TokenMismatchException $exception, $code) {
         ],
     ];
 
-    Session::regenerateToken();
+    return Logger::logAndRedirectBackWithErrors($exception, Input::except('_token'), $errors);
+});
 
-    return Redirect::back()->withInput(Input::except('_token'))->withErrors($errors);
+App::error(function (InvalidLoginException $exception, $code) {
+    sleep(3);
+
+    $errors = [
+        'password' => [
+            trans('general.invalid-login'),
+        ],
+    ];
+
+    return Logger::logAndRedirectBackWithErrors($exception, null, $errors);
 });
 
 App::error(function (FormValidationException $exception, $code) {

@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Pages;
+<?php
+namespace Barryvanveen\Pages;
 
 use App;
 use Cviebrock\EloquentSluggable\SluggableInterface;

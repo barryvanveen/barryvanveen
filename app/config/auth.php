@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model'  => 'Barryvanveen\Users\User',
+    'model' => 'Barryvanveen\Users\User',
 
     /*
     |--------------------------------------------------------------------------
@@ -41,6 +41,6 @@ return [
     |
     */
 
-    'table'  => 'users',
+    'table' => 'users',
 
 ];

@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Blogs\Commands;
+<?php
+namespace Barryvanveen\Blogs\Commands;
 
 class UpdateBlogCommand
 {

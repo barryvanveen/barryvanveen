@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Providers;
+<?php
+namespace Barryvanveen\Providers;
 
 use Auth;
 use Barryvanveen\Composers\MenuComposer;
