@@ -106,6 +106,7 @@ class DeployCommand extends Command
 
         SSH::into('production')->run(
             [
+                'php artisan version'.$redirecttofile,
                 'php artisan down'.$redirecttofile,
                 'git pull origin master '.$this->argument('versie').$redirecttofile,
             ]
