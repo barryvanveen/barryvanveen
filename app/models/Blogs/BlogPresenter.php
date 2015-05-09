@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Blogs;
+<?php
+namespace Barryvanveen\Blogs;
 
 use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
 use Carbon\Carbon;

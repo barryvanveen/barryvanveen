@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Blogs\Commands;
+<?php
+namespace Barryvanveen\Blogs\Commands;
 
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
@@ -30,7 +31,7 @@ class CreateBlogHandler implements CommandHandler
     {
         $blog = new Blog();
 
-        $publication_date = date("Y-m-d H:i:s", strtotime($command->publication_date));
+        $publication_date = date('Y-m-d H:i:s', strtotime($command->publication_date));
 
         $blog->title            = $command->title;
         $blog->summary          = $command->summary;

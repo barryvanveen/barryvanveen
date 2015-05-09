@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug'           => false,
+    'debug' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,18 @@ return [
     |
     */
 
-    'url'             => 'http://barryvanveen.app',
+    'url' => 'http://barryvanveen.nl',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application version
+    |--------------------------------------------------------------------------
+    |
+    | This is the current version number of our application
+    |
+    */
+
+    'version' => 'v1.0.0',
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +50,7 @@ return [
     |
     */
 
-    'timezone'        => 'UTC',
+    'timezone' => 'Europe/Amsterdam',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +63,7 @@ return [
     |
     */
 
-    'locale'          => 'nl',
+    'locale' => 'nl',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,8 +89,8 @@ return [
     |
     */
 
-    'key'             => 'cKnHOpv6MavlTYkFfDHLlTTuMrHhyQSz',
-    'cipher'          => MCRYPT_RIJNDAEL_128,
+    'key'    => 'cKnHOpv6MavlTYkFfDHLlTTuMrHhyQSz',
+    'cipher' => MCRYPT_RIJNDAEL_128,
 
     /*
     |--------------------------------------------------------------------------
@@ -92,7 +103,7 @@ return [
     |
     */
 
-    'providers'       => [
+    'providers' => [
 
         'Illuminate\Foundation\Providers\ArtisanServiceProvider',
         'Illuminate\Auth\AuthServiceProvider',
@@ -153,7 +164,7 @@ return [
     |
     */
 
-    'manifest'        => storage_path().'/meta',
+    'manifest' => storage_path().'/meta',
 
     /*
     |--------------------------------------------------------------------------
@@ -166,7 +177,7 @@ return [
     |
     */
 
-    'aliases'         => [
+    'aliases' => [
 
         'App'               => 'Illuminate\Support\Facades\App',
         'Artisan'           => 'Illuminate\Support\Facades\Artisan',
@@ -210,11 +221,11 @@ return [
         /*
          * Vendor Aliases
          */
-        'DiffFormatter'     => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
-        'Flash'             => 'Laracasts\Flash\Flash',
-        'Head'              => 'Swisnl\Head\Facades\Head',
-        'LocalizedCarbon'   => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
-        'Menu'              => 'Lavary\Menu\Facade',
+        'DiffFormatter'   => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
+        'Flash'           => 'Laracasts\Flash\Flash',
+        'Head'            => 'Swisnl\Head\Facades\Head',
+        'LocalizedCarbon' => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
+        'Menu'            => 'Lavary\Menu\Facade',
 
     ],
 

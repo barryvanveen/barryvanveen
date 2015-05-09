@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Pages;
+<?php
+namespace Barryvanveen\Pages;
 
 use Barryvanveen\Database\EloquentRepository;
 use Illuminate\Database\Eloquent\Collection;

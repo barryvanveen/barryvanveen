@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Users;
+<?php
+namespace Barryvanveen\Users;
 
 use Robbo\Presenter\Presenter;
 

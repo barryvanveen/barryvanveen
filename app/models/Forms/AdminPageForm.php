@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Forms;
+<?php
+namespace Barryvanveen\Forms;
 
 use Laracasts\Validation\FactoryInterface as ValidatorFactory;
 use Laracasts\Validation\FormValidator;
@@ -11,9 +12,9 @@ class AdminPageForm extends FormValidator
      * @var array
      */
     protected $rules = [
-        'title'            => 'required',
-        'text'             => 'required',
-        'online'           => 'required',
+        'title'  => 'required',
+        'text'   => 'required',
+        'online' => 'required',
     ];
 
     protected $messages;
@@ -23,9 +24,9 @@ class AdminPageForm extends FormValidator
         parent::__construct($validator);
 
         $this->messages = [
-            'title.required'            => trans('general.validation-title-required'),
-            'text.required'             => trans('general.validation-text-required'),
-            'online.required'           => trans('general.validation-online-required'),
+            'title.required'  => trans('general.validation-title-required'),
+            'text.required'   => trans('general.validation-text-required'),
+            'online.required' => trans('general.validation-online-required'),
         ];
     }
 }

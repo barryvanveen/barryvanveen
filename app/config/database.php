@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'fetch'       => PDO::FETCH_CLASS,
+    'fetch' => PDO::FETCH_CLASS,
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default'     => 'mysql',
+    'default' => 'mysql',
 
     /*
     |--------------------------------------------------------------------------
@@ -70,6 +70,6 @@ return [
     |
     */
 
-    'migrations'  => 'migrations',
+    'migrations' => 'migrations',
 
 ];

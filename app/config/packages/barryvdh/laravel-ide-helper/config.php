@@ -11,8 +11,8 @@ return [
     |
     */
 
-    'filename'        => '_ide_helper',
-    'format'          => 'php',
+    'filename' => '_ide_helper',
+    'format'   => 'php',
 
     /*
     |--------------------------------------------------------------------------
@@ -54,12 +54,12 @@ return [
     |
     */
 
-    'extra'           => [
+    'extra' => [
         'Artisan'  => ['Illuminate\Foundation\Artisan'],
         'Eloquent' => ['Illuminate\Database\Eloquent\Builder', 'Illuminate\Database\Query\Builder'],
         'Session'  => ['Illuminate\Session\Store'],
     ],
-    'magic'           => [
+    'magic' => [
         'Log' => [
             'debug'     => 'Monolog\Logger::addDebug',
             'info'      => 'Monolog\Logger::addInfo',
@@ -82,7 +82,7 @@ return [
     |
     */
 
-    'interfaces'      => [
+    'interfaces' => [
         '\Illuminate\Auth\UserInterface' => '\Barryvanveen\Users\User',
     ],
 

@@ -11,4 +11,8 @@
 |
 */
 
-Artisan::resolve('SwitchBranchCommand');
+if (App::environment('local')) {
+    Artisan::resolve('DeployCommand');
+    Artisan::resolve('SwitchBranchCommand');
+    Artisan::resolve('VersionCommand');
+}

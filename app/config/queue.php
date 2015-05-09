@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default'     => 'sync',
+    'default' => 'sync',
 
     /*
     |--------------------------------------------------------------------------
@@ -30,7 +30,7 @@ return [
 
     'connections' => [
 
-        'sync'       => [
+        'sync' => [
             'driver' => 'sync',
         ],
         'beanstalkd' => [
@@ -39,14 +39,14 @@ return [
             'queue'  => 'default',
             'ttr'    => 60,
         ],
-        'sqs'        => [
+        'sqs' => [
             'driver' => 'sqs',
             'key'    => 'your-public-key',
             'secret' => 'your-secret-key',
             'queue'  => 'your-queue-url',
             'region' => 'us-east-1',
         ],
-        'iron'       => [
+        'iron' => [
             'driver'  => 'iron',
             'host'    => 'mq-aws-us-east-1.iron.io',
             'token'   => 'your-token',
@@ -54,7 +54,7 @@ return [
             'queue'   => 'your-queue-name',
             'encrypt' => true,
         ],
-        'redis'      => [
+        'redis' => [
             'driver' => 'redis',
             'queue'  => 'default',
         ],
@@ -72,7 +72,7 @@ return [
     |
     */
 
-    'failed'      => [
+    'failed' => [
 
         'database' => 'mysql',
         'table'    => 'failed_jobs',

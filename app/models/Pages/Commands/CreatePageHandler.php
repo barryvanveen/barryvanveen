@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Pages\Commands;
+<?php
+namespace Barryvanveen\Pages\Commands;
 
 use Barryvanveen\Pages\Page;
 use Barryvanveen\Pages\PageRepository;
@@ -30,9 +31,9 @@ class CreatePageHandler implements CommandHandler
     {
         $page = new Page();
 
-        $page->title            = $command->title;
-        $page->text             = $command->text;
-        $page->online           = $command->online;
+        $page->title  = $command->title;
+        $page->text   = $command->text;
+        $page->online = $command->online;
 
         $this->pageRepository->save($page);
     }
