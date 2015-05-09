@@ -101,10 +101,13 @@ class RemoteDeployCommand extends Command
      */
     protected function deploy()
     {
+        $logfile = 'storage/logs/'.date('YmdHis').'.log';
+        $redirecttofile = ' | tee -a '.$logfile.' 2>&1';
+
         SSH::into('production')->run(
             [
-                'php artisan down',
-                'git pull origin master '.$this->argument('versie'),
+                'php artisan down'.$redirecttofile,
+                'git pull origin master '.$this->argument('versie').$redirecttofile,
             ]
         );
 
@@ -112,9 +115,9 @@ class RemoteDeployCommand extends Command
 
         SSH::into('production')->run(
             [
-                'composer install --no-dev',
-                'php artisan migrate --force',
-                'php artisan up',
+                'composer install --no-dev'.$redirecttofile,
+                'php artisan migrate --force'.$redirecttofile,
+                'php artisan up'.$redirecttofile,
             ]
         );
     }
