@@ -3,7 +3,7 @@
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
 
-class RemoteDeployCommand extends Command
+class DeployCommand extends Command
 {
     const OBJECT_ARGUMENT_SEPARATOR = ':';
 
@@ -12,7 +12,7 @@ class RemoteDeployCommand extends Command
      *
      * @var string
      */
-    protected $name = 'remote:deploy';
+    protected $name = 'deploy';
 
     /**
      * The console command description.
@@ -22,15 +22,15 @@ class RemoteDeployCommand extends Command
     protected $description = 'All the procedures needed for deploying the website';
 
     /**
-     * Return the arguments for this command
+     * Return the arguments for this command.
      *
      * @return array
      */
     protected function getArguments()
     {
-        return array(
-            ['versie', InputArgument::REQUIRED, 'Versie die je wilt deployen, bijvoorbeeld v1.0.0']
-        );
+        return [
+            ['versie', InputArgument::REQUIRED, 'Versie die je wilt deployen, bijvoorbeeld v1.0.0'],
+        ];
     }
 
     /**
@@ -101,7 +101,7 @@ class RemoteDeployCommand extends Command
      */
     protected function deploy()
     {
-        $logfile = 'storage/logs/'.date('YmdHis').'.log';
+        $logfile        = 'storage/logs/'.date('YmdHis').'.log';
         $redirecttofile = ' | tee -a '.$logfile.' 2>&1';
 
         SSH::into('production')->run(

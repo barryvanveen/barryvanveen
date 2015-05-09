@@ -12,6 +12,7 @@
 */
 
 if (App::environment('local')) {
+    Artisan::resolve('DeployCommand');
     Artisan::resolve('SwitchBranchCommand');
-    Artisan::resolve('RemoteDeployCommand');
+    Artisan::resolve('VersionCommand');
 }

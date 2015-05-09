@@ -146,6 +146,8 @@ window.Barryvanveen.MarkdownEditor = function(element) {
 
                 // update the preview with retrieved html
                 $preview.html(data.html);
+                // use Prism for syntax highlighting in preview
+                Prism.highlightAll();
 
             }, 'json');
 
