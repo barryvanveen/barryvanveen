@@ -49,51 +49,10 @@ class DeployCommand extends Command
         $versie = $this->argument('versie');
 
         $this->info('Deploy versie '.$versie);
-        Log::info('Deploy versie '.$versie);
 
-        $this->runTask('deploy');
+        $this->deploy();
 
         $this->info('Klaar met deployen van versie '.$versie.'!');
-        Log::info('Klaar met deployen van versie '.$versie.'!');
-    }
-
-    /**
-     * Run the given method or command.
-     *
-     * @param String $command
-     */
-    protected function runTask($command, $value = null)
-    {
-        $this->startOutput($command);
-
-        if (method_exists($this, $command)) {
-            $this->$command($value);
-        } else {
-            passthru($command, $output);
-        }
-
-        $this->endOutput();
-    }
-
-    /**
-     * Start the output of a task.
-     *
-     * @param null|string $line
-     */
-    protected function startOutput($line = null)
-    {
-        $this->info('=========================================');
-        if (!empty($line)) {
-            $this->info('Starting: '.$line);
-        }
-    }
-
-    /**
-     * End the output of a sing task.
-     */
-    protected function endOutput()
-    {
-        $this->info("\n\n");
     }
 
     /**
