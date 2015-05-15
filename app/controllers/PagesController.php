@@ -40,5 +40,4 @@ class PagesController extends BaseController
 
         return View::make('pages.item', compact('page'));
     }
-
 }
