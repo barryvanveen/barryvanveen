@@ -13,10 +13,10 @@ class MenuComposer
             // fill the menu
             // activate some items on all routes that start with the parents url
             /* @var Item $menu */
-            $menu->add('Home', ['route' => 'home']);
-            $menu->add('Blog', ['route' => 'blog'])
-                 ->active(route('blog', [], false).'/*');
-            $menu->add('Over mij', ['route' => 'over-mij']);
+            $menu->add('Blog', ['route' => 'home'])
+                 ->active('blog/*');
+            $menu->add('Over mij', ['route' => 'over-mij'])
+                 ->active('over-mij/*');
 
         });
 
