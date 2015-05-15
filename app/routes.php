@@ -16,11 +16,6 @@
  */
 Route::get('', [
     'as'   => 'home',
-    'uses' => 'PagesController@home',
-]);
-
-Route::get('blog', [
-    'as'   => 'blog',
     'uses' => 'BlogController@index',
 ]);
 
@@ -33,6 +28,11 @@ Route::get('over-mij', [
     'as'   => 'over-mij',
     'uses' => 'PagesController@overMij',
 ]);
+
+    Route::get('over-mij/boeken-die-ik-heb-gelezen', [
+        'as'   => 'boeken',
+        'uses' => 'PagesController@boeken',
+    ]);
 
 /*
  * Admin routes

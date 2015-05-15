@@ -27,6 +27,8 @@ class BlogController extends BaseController
         $blogs = $this->blogRepository->published();
 
         Head::title('Blog');
+        Head::description('Een blog van Barry van Veen over programmeren, PHP, Laravel Framework en aanverwante zaken
+        .');
 
         return View::make('blog.full-list', compact('blogs'));
     }
@@ -41,6 +43,7 @@ class BlogController extends BaseController
         $blog = $this->blogRepository->findPublishedBySlug($slug);
 
         Head::title($blog->title);
+        Head::description($blog->summary);
 
         return View::make('blog.item', compact('blog'));
     }
