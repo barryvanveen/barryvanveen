@@ -42,6 +42,11 @@ class BlogController extends BaseController
     {
         $blog = $this->blogRepository->findPublishedBySlug($slug);
 
+        // redirect to url with valid slug
+        if ($slug !== $blog->slug) {
+            return Redirect::route('blog-item', ['blog'=>$blog->slug], 301);
+        }
+
         Head::title($blog->title);
         Head::description($blog->summary);
 

@@ -4,6 +4,7 @@ namespace Barryvanveen\Blogs;
 use Barryvanveen\Database\EloquentRepository;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Redirect;
 
 class BlogRepository extends EloquentRepository
 {
@@ -50,7 +51,7 @@ class BlogRepository extends EloquentRepository
     /**
      * retrieve a single blogpost by its slug.
      *
-     * @param $slug
+     * @param string $slug
      *
      * @return Blog
      *
@@ -58,16 +59,36 @@ class BlogRepository extends EloquentRepository
      */
     public function findPublishedBySlug($slug)
     {
+        $id = substr($slug, 0, stripos($slug, '-'));
+
+        // if this slug begins with an id, use it to find a blogpost
+        if (is_numeric($id) && intval($id) > 0) {
+            return $this->findPublishedById($id);
+        }
+
+        throw new ModelNotFoundException('Slug of blog does not contain an id');
+    }
+
+    /**
+    * retrieve a single blogpost by its id.
+    *
+    * @param int $id
+    *
+    * @return Blog
+    *
+    * @throws ModelNotFoundException
+    */
+    public function findPublishedById($id)
+    {
         return Blog     ::online()
                         ->past()
-                        ->whereSlug($slug)
-                        ->firstOrFail();
+                        ->findOrFail($id);
     }
 
     /**
      * retrieve any (possibly unpublished) blogpost by its id.
      *
-     * @param $id
+     * @param int $id
      *
      * @return Blog
      *
