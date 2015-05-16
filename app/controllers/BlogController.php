@@ -44,7 +44,7 @@ class BlogController extends BaseController
 
         // redirect to url with valid slug
         if ($slug !== $blog->slug) {
-            return Redirect::route('blog-item', ['blog'=>$blog->slug], 301);
+            return Redirect::route('blog-item', ['blog' => $blog->slug], 301);
         }
 
         Head::title($blog->title);

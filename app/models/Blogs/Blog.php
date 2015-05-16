@@ -68,7 +68,7 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
      * @var array
      */
     protected $sluggable = [
-        'build_from' => array('id', 'title'),
+        'build_from' => ['id', 'title'],
         'save_to'    => 'slug',
         'on_update'  => true,
     ];
