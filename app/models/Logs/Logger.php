@@ -22,7 +22,7 @@ class Logger
      */
     public static function logAndRedirectToView($exception, $template, $responseCode)
     {
-        Log::error($exception);
+        Log::error($exception, self::getContext());
 
         self::mailException($exception);
 
@@ -42,7 +42,7 @@ class Logger
      */
     public static function logAndRedirectBackWithErrors($exception, $input = null, $errors)
     {
-        Log::info($exception);
+        Log::info($exception, self::getContext());
 
         self::mailException($exception);
 
@@ -74,5 +74,14 @@ class Logger
         if (Config::get('app.debug')) {
             return;
         }
+    }
+
+    protected static function getContext()
+    {
+        return [
+            'referer' => \URL::previous(),
+            'url' => \URL::current(),
+            'ip' => \Request::ip(),
+        ];
     }
 }
