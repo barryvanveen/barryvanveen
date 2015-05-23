@@ -28,7 +28,7 @@ class BlogPresenter extends Presenter
      */
     public function presentUrl()
     {
-        return route('blog-item', ['blog' => $this->slug]);
+        return route('blog-item', ['id' => $this->id, 'slug' => $this->slug]);
     }
 
     /**

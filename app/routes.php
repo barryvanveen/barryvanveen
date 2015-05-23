@@ -19,7 +19,7 @@ Route::get('', [
     'uses' => 'BlogController@index',
 ]);
 
-    Route::get('blog/{blog}', [
+    Route::get('blog/{id}-{slug}', [
         'as'   => 'blog-item',
         'uses' => 'BlogController@show',
     ]);

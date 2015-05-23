@@ -18,7 +18,7 @@ class BlogController extends BaseController
     }
 
     /**
-     * display full-list of blog.
+     * display full-list of blog items.
      *
      * @return View
      */
@@ -34,17 +34,17 @@ class BlogController extends BaseController
     }
 
     /**
-     * edit blog item.
+     * display blog item.
      *
      * @return mixed
      */
-    public function show($slug)
+    public function show($id, $slug)
     {
-        $blog = $this->blogRepository->findPublishedBySlug($slug);
+        $blog = $this->blogRepository->findPublishedById($id);
 
         // redirect to url with valid slug
         if ($slug !== $blog->slug) {
-            return Redirect::route('blog-item', ['blog' => $blog->slug], 301);
+            return Redirect::route('blog-item', ['id' => $id, 'slug' => $blog->slug], 301);
         }
 
         Head::title($blog->title);
