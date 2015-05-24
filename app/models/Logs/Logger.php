@@ -80,8 +80,8 @@ class Logger
     {
         return [
             'referer' => \URL::previous(),
-            'url' => \URL::current(),
-            'ip' => \Request::ip(),
+            'url'     => \URL::current(),
+            'ip'      => \Request::ip(),
         ];
     }
 }

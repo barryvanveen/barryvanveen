@@ -16,7 +16,7 @@ class BlogController extends BaseController
 
     /**
      * @param BlogRepository $blogRepository
-     * @param CommandBus $commandBus
+     * @param CommandBus     $commandBus
      */
     public function __construct(BlogRepository $blogRepository, CommandBus $commandBus)
     {

@@ -34,22 +34,22 @@ class CreateRssFeedHandler implements CommandHandler
         $rss->feed('2.0', 'UTF-8');
 
         $rss->channel([
-            'title' => trans('general.rss-title'),
+            'title'       => trans('general.rss-title'),
             'description' => trans('general.description'),
-            'link' => url()
+            'link'        => url(),
         ]);
 
         $blogs = $this->blogRepository->published();
 
         /** @var Blog $blog */
-        foreach($blogs as $blog) {
+        foreach ($blogs as $blog) {
             $link = route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]);
 
             $rss->item([
-                'title' => $blog->title,
+                'title'             => $blog->title,
                 'description|cdata' => $blog->getPresenter()->presentHtmlSummary(),
-                'link' => $link,
-                'guid' => $link,
+                'link'              => $link,
+                'guid'              => $link,
             ]);
         }
 

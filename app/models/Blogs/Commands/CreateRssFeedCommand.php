@@ -3,7 +3,6 @@ namespace Barryvanveen\Blogs\Commands;
 
 class CreateRssFeedCommand
 {
-
     /**
      * @see CreateRssFeedHandler
      */

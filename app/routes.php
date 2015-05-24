@@ -26,7 +26,7 @@ Route::get('', [
 
     Route::get('rss', [
         'as'   => 'blog-rss',
-        'uses' => 'BlogController@rss'
+        'uses' => 'BlogController@rss',
     ]);
 
 Route::get('over-mij', [
