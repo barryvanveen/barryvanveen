@@ -8,8 +8,9 @@ class ExceptionMailer extends Mailer
 {
     /**
      * @param Exception $exception
+     * @param Array     $context
      */
-    public function sendExceptionMail(Exception $exception)
+    public function sendExceptionMail(Exception $exception, $context)
     {
         $recipient = new Recipient('barryvanveen@gmail.com', 'Barry van Veen');
         $subject   = '[barryvanveen.nl] '.get_class($exception);
@@ -22,6 +23,7 @@ class ExceptionMailer extends Mailer
             'exception_file'    => $exception->getFile(),
             'exception_line'    => $exception->getLine(),
             'exception_message' => $exception->getMessage(),
+            'context'           => $context,
         ]);
     }
 }

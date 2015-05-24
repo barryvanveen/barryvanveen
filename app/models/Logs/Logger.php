@@ -61,7 +61,7 @@ class Logger
         if (!App::environment('local')) {
             /** @var ExceptionMailer $mailer */
             $mailer = App::make('Barryvanveen\Mailers\ExceptionMailer');
-            $mailer->sendExceptionMail($exception);
+            $mailer->sendExceptionMail($exception, self::getContext());
         }
     }
 
