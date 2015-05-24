@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9dcb33629e47be5156c1033c710509a1",
+    "hash": "5441da191fb6c9a9f3b457237a704cff",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -2610,6 +2610,48 @@
             "description": "Symfony Translation Component",
             "homepage": "http://symfony.com",
             "time": "2015-01-03 15:23:51"
+        },
+        {
+            "name": "thujohn/rss",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thujohn/rss-l4.git",
+                "reference": "b65908ca63101b0f6bf53972b0245b0d0454d5ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thujohn/rss-l4/zipball/b65908ca63101b0f6bf53972b0245b0d0454d5ca",
+                "reference": "b65908ca63101b0f6bf53972b0245b0d0454d5ca",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.*|5.*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Thujohn\\Rss\\": "src/Thujohn/Rss/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "thujohn",
+                    "email": "jonathan.thuau@gmail.com"
+                }
+            ],
+            "description": "RSS builder for Laravel 4",
+            "keywords": [
+                "laravel",
+                "laravel4",
+                "rss"
+            ],
+            "time": "2014-12-22 21:07:19"
         }
     ],
     "packages-dev": [

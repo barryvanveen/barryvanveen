@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'version' => 'v1.2.3',
+    'version' => 'v1.3.0',
 
     /*
     |--------------------------------------------------------------------------
@@ -150,6 +150,7 @@ return [
         'Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider',
         'Robbo\Presenter\PresenterServiceProvider',
         'Swisnl\Head\HeadServiceProvider',
+        'Thujohn\Rss\RssServiceProvider',
 
     ],
 
@@ -226,6 +227,7 @@ return [
         'Head'            => 'Swisnl\Head\Facades\Head',
         'LocalizedCarbon' => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
         'Menu'            => 'Lavary\Menu\Facade',
+        'Rss'             => 'Thujohn\Rss\RssFacade',
 
     ],
 

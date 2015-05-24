@@ -19,7 +19,8 @@
     "lavary/laravel-menu": "1.*",
     "rap2hpoutre/laravel-log-viewer": "0.2.*",
     "robclancy/presenter": "1.3.*",
-    "swisnl/head": "dev-master"
+    "swisnl/head": "dev-master",
+    "thujohn/rss": "1.*"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "1.*",

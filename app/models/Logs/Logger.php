@@ -61,7 +61,7 @@ class Logger
         if (!App::environment('local')) {
             /** @var ExceptionMailer $mailer */
             $mailer = App::make('Barryvanveen\Mailers\ExceptionMailer');
-            $mailer->sendExceptionMail($exception);
+            $mailer->sendExceptionMail($exception, self::getContext());
         }
     }
 
@@ -80,8 +80,8 @@ class Logger
     {
         return [
             'referer' => \URL::previous(),
-            'url' => \URL::current(),
-            'ip' => \Request::ip(),
+            'url'     => \URL::current(),
+            'ip'      => \Request::ip(),
         ];
     }
 }

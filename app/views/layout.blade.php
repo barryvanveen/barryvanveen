@@ -9,6 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+        <link href="{{ route('blog-rss') }}" rel="alternate" type="application/rss+xml" title="{{ trans('general.rss-title') }}" />
+        <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+
         {{ HTML::style('css/screen.css', ['media' => 'screen']) }}
         {{ HTML::style('css/print.css', ['media' => 'print']) }}
 
