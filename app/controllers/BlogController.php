@@ -1,6 +1,8 @@
 <?php
 
 use Barryvanveen\Blogs\BlogRepository;
+use Barryvanveen\Blogs\Commands\CreateRssFeedCommand;
+use Flyingfoxx\CommandCenter\CommandBus;
 
 class BlogController extends BaseController
 {
@@ -9,12 +11,17 @@ class BlogController extends BaseController
      */
     private $blogRepository;
 
+    /** @var CommandBus */
+    private $commandBus;
+
     /**
      * @param BlogRepository $blogRepository
+     * @param CommandBus $commandBus
      */
-    public function __construct(BlogRepository $blogRepository)
+    public function __construct(BlogRepository $blogRepository, CommandBus $commandBus)
     {
         $this->blogRepository = $blogRepository;
+        $this->commandBus     = $commandBus;
     }
 
     /**
@@ -51,5 +58,19 @@ class BlogController extends BaseController
         Head::description($blog->summary);
 
         return View::make('blog.item', compact('blog'));
+    }
+
+    /**
+     * display RSS feed of all blog items.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function rss()
+    {
+        $rss = $this->commandBus->execute(
+            new CreateRssFeedCommand()
+        );
+
+        return Response::make($rss, 200, ['Content-Type' => 'text/xml']);
     }
 }
