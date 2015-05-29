@@ -30,7 +30,7 @@ return [
     'invalid-login'                        => 'Sorry, dat lijkt niet het juiste wachtwoord voor dat e-mailadres. Probeer het nog een keertje.',
     'login-successful'                     => 'Je bent nu ingelogd',
     'logout-successful'                    => 'Je bent weer uitgelogd',
-    'rss-title'                            => 'Barry van Veen\'s blog',
+    'rss-title'                            => 'Barry\'s blog',
     'rss-description'                      => 'Een blog over programmeren, PHP, Laravel Framework en aanverwante zaken.',
 
 ];

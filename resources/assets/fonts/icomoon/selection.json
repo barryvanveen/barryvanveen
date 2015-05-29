@@ -4,6 +4,35 @@
 		{
 			"icon": {
 				"paths": [
+					"M219.429 768q0 45.714-32 77.714t-77.714 32-77.714-32-32-77.714 32-77.714 77.714-32 77.714 32 32 77.714zM512 838.286q1.143 16-9.714 27.429-10.286 12-26.857 12h-77.143q-14.286 0-24.571-9.429t-11.429-23.714q-12.571-130.857-105.429-223.714t-223.714-105.429q-14.286-1.143-23.714-11.429t-9.429-24.571v-77.143q0-16.571 12-26.857 9.714-9.714 24.571-9.714h2.857q91.429 7.429 174.857 46t148 103.714q65.143 64.571 103.714 148t46 174.857zM804.571 839.429q1.143 15.429-10.286 26.857-10.286 11.429-26.286 11.429h-81.714q-14.857 0-25.429-10t-11.143-24.286q-6.857-122.857-57.714-233.429t-132.286-192-192-132.286-233.429-58.286q-14.286-0.571-24.286-11.143t-10-24.857v-81.714q0-16 11.429-26.286 10.286-10.286 25.143-10.286h1.714q149.714 7.429 286.571 68.571t243.143 168q106.857 106.286 168 243.143t68.571 286.571z"
+				],
+				"attrs": [
+					{}
+				],
+				"isMulticolor": false,
+				"width": 805,
+				"tags": [
+					"rss"
+				],
+				"grid": 14
+			},
+			"attrs": [
+				{}
+			],
+			"properties": {
+				"order": 1,
+				"id": 0,
+				"prevSize": 28,
+				"code": 58889,
+				"name": "rss"
+			},
+			"setIdx": 1,
+			"setId": 3,
+			"iconIdx": 0
+		},
+		{
+			"icon": {
+				"paths": [
 					"M841.143 548.571q0 30.857-21.143 52l-372 372q-22.286 21.143-52 21.143-29.143 0-51.429-21.143l-42.857-42.857q-21.714-21.714-21.714-52t21.714-52l167.429-167.429h-402.286q-29.714 0-48.286-21.429t-18.571-51.714v-73.143q0-30.286 18.571-51.714t48.286-21.429h402.286l-167.429-168q-21.714-20.571-21.714-51.429t21.714-51.429l42.857-42.857q21.714-21.714 51.429-21.714 30.286 0 52 21.714l372 372q21.143 20 21.143 51.429z"
 				],
 				"attrs": [
@@ -30,7 +59,8 @@
 				"code": 58880,
 				"name": "arrow-right"
 			},
-			"setIdx": 0,
+			"setIdx": 3,
+			"setId": 1,
 			"iconIdx": 0
 		},
 		{
@@ -62,7 +92,8 @@
 				"code": 58881,
 				"name": "arrow-left"
 			},
-			"setIdx": 0,
+			"setIdx": 3,
+			"setId": 1,
 			"iconIdx": 1
 		},
 		{
@@ -95,7 +126,8 @@
 				"code": 58882,
 				"name": "arrow-down"
 			},
-			"setIdx": 0,
+			"setIdx": 3,
+			"setId": 1,
 			"iconIdx": 2
 		},
 		{
@@ -128,7 +160,8 @@
 				"code": 58883,
 				"name": "arrow-up"
 			},
-			"setIdx": 0,
+			"setIdx": 3,
+			"setId": 1,
 			"iconIdx": 3
 		},
 		{
@@ -161,7 +194,8 @@
 				"name": "calendar-o",
 				"code": 58884
 			},
-			"setIdx": 0,
+			"setIdx": 3,
+			"setId": 1,
 			"iconIdx": 4
 		},
 		{
@@ -193,7 +227,8 @@
 				"name": "clock-o",
 				"code": 58885
 			},
-			"setIdx": 0,
+			"setIdx": 3,
+			"setId": 1,
 			"iconIdx": 5
 		},
 		{
@@ -222,8 +257,9 @@
 				"name": "caret-up",
 				"ligatures": "caret-up"
 			},
-			"setIdx": 1,
-			"iconIdx": 0
+			"setIdx": 3,
+			"setId": 1,
+			"iconIdx": 6
 		},
 		{
 			"icon": {
@@ -250,8 +286,9 @@
 				"name": "github-square",
 				"ligatures": ""
 			},
-			"setIdx": 1,
-			"iconIdx": 1
+			"setIdx": 3,
+			"setId": 1,
+			"iconIdx": 7
 		},
 		{
 			"icon": {
@@ -277,8 +314,9 @@
 				"code": 58888,
 				"name": "linkedin-square"
 			},
-			"setIdx": 1,
-			"iconIdx": 2
+			"setIdx": 3,
+			"setId": 1,
+			"iconIdx": 8
 		}
 	],
 	"height": 1024,
@@ -303,12 +341,12 @@
 				"whitespace": 50
 			},
 			"resetPoint": 58880,
-			"showSelector": false,
+			"showSelector": true,
 			"selector": "class",
 			"classSelector": ".icon",
-			"showMetrics": false,
-			"showMetadata": false,
-			"showVersion": false
+			"showMetrics": true,
+			"showMetadata": true,
+			"showVersion": true
 		},
 		"imagePref": {
 			"prefix": "icon-",
@@ -320,6 +358,7 @@
 		},
 		"historySize": 100,
 		"showCodes": true,
-		"showLiga": false
+		"showLiga": false,
+		"gridSize": 16
 	}
 }

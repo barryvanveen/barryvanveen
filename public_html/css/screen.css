@@ -7,8 +7,8 @@
  **/
 @font-face {
   font-family: "icons";
-  src: url('../fonts/icomoon.eot?5rs5uv');
-  src: url('../fonts/icomoon.eot?#iefix5rs5uv') format('embedded-opentype'), url('../fonts/icomoon.woff?5rs5uv') format('woff'), url('../fonts/icomoon.ttf?5rs5uv') format('truetype'), url('../fonts/icomoon.svg?5rs5uv#icomoon') format('svg');
+  src: url('../fonts/icomoon.eot?-y1owus');
+  src: url('../fonts/icomoon.eot?#iefix-y1owus') format('embedded-opentype'), url('../fonts/icomoon.woff?-y1owus') format('woff'), url('../fonts/icomoon.ttf?-y1owus') format('truetype'), url('../fonts/icomoon.svg?-y1owus#icomoon') format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -5449,13 +5449,25 @@ pre[class*="language-"] {
   .footer__menu-item-link:hover {
     color: inherit; }
 
+.header__rssIconContainer {
+  margin-bottom: 0; }
+
 .icon {
   font-family: "icons";
   display: inline-block;
   width: 26px;
   height: 35px;
   overflow: hidden;
-  font-size: 30px; }
+  font-size: 30px;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 .icon--arrowRight {
   font-size: 15px; }
@@ -5531,6 +5543,18 @@ pre[class*="language-"] {
   font-style: normal;
   font-weight: normal;
   font-family: "icons"; }
+
+.icon--rss {
+  width: auto;
+  height: auto;
+  font-size: 24px;
+  color: #FF6600; }
+  .icon--rss:before {
+    content: "\e609";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-family: "icons"; }
 
 .overview-heading {
   margin-top: 0; }
