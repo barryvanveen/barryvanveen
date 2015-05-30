@@ -25,6 +25,11 @@
                     <p class="navbar-text navbar-right">Ingelogd als {{ $current_user->full_name }}. <a href="{{ route('admin.logout') }}">Uitloggen</a>.</p>
                 @else
                     {{ $MainNav->asUl( ['class' => 'nav navbar-nav'] ) }}
+                    <p class="navbar-text navbar-right header__rssIconContainer">
+                        <a href="{{route('blog-rss')}}" title="Abonneer je op de RSS feed van mijn blog">
+                            <i class="icon icon--rss"></i>
+                        </a>
+                    </p>
                 @endif
             </div>
 

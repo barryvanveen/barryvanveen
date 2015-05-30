@@ -5,6 +5,17 @@
 	height: 35px;
 	overflow: hidden;
 	font-size: $icon-fontsize-large;
+
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 	.icon--arrowRight {
@@ -48,3 +59,11 @@
 	.icon--linkedIn {
 		@include icon('before', $icon--linkedin-square);
 	}
+
+    .icon--rss {
+      @include icon('before', $icon--rss);
+      width: auto;
+      height: auto;
+      font-size: 24px;
+      color: #FF6600;
+    }
