@@ -39,10 +39,9 @@ return [
 
         'dropbox' => [
             'driver' => 'dropbox',
-            'token'  => 'Ir0GdmwCK44AAAAAAAANlHBWAqZ_U6Mpx3ypl1lcrbkTasrUqprkut_VwICrLiM8',
-            'app'    => '6ue9r33re5dbtfj',
-            'prefix' => 'websites/barryvanveen',
-            'cache'  => 'flysystem.json',
+            'token'  => getenv('DROPBOX_TOKEN'),
+            'app'    => getenv('DROPBOX_APP'),
+            'prefix' => getenv('DROPBOX_PREFIX'),
         ],
 
         'local' => [
