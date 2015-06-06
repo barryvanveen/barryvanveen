@@ -29,6 +29,30 @@ body {
 	}
 }
 
+/**
+ * style figures
+ */
+.form__preview figure,
+.blog-item figure {
+    text-align: center;
+    margin: $grid-gutter-width auto;
+    img {
+        border: 1px solid $gray-light;
+    }
+    img:hover {
+        box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.25);
+        cursor: zoom-in;
+    }
+    figcaption {
+        font-size: 0.8em;
+        font-style: italic;
+        margin-top: $padding-base-vertical;
+    }
+}
+
+/**
+ * back-to-top button
+ */
 #scrollUp {
 	background-color: #E6E6E6;
 	background-image: linear-gradient(to bottom, #EBEBEB, #DEDEDE);

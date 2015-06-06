@@ -5421,20 +5421,6 @@ pre[class*="language-"] {
 .blog-item__content {
   padding-bottom: 30px; }
 
-.blog-item figure {
-  text-align: center;
-  margin: 30px auto; }
-  .blog-item figure img {
-    border: 1px solid #b3b3b3; }
-  .blog-item figure img:hover {
-    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.25);
-    cursor: -webkit-zoom-in;
-    cursor: zoom-in; }
-  .blog-item figure figcaption {
-    font-size: 0.8em;
-    font-style: italic;
-    margin-top: 8px; }
-
 .form__label--errorMessage {
   font-weight: normal; }
 
@@ -5605,6 +5591,26 @@ body {
   body {
     padding-top: 50px; } }
 
+/**
+ * style figures
+ */
+.form__preview figure, .blog-item figure {
+  text-align: center;
+  margin: 30px auto; }
+  .form__preview figure img, .blog-item figure img {
+    border: 1px solid #b3b3b3; }
+  .form__preview figure img:hover, .blog-item figure img:hover {
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.25);
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in; }
+  .form__preview figure figcaption, .blog-item figure figcaption {
+    font-size: 0.8em;
+    font-style: italic;
+    margin-top: 8px; }
+
+/**
+ * back-to-top button
+ */
 #scrollUp {
   background-color: #E6E6E6;
   background-image: linear-gradient(to bottom, #EBEBEB, #DEDEDE);
