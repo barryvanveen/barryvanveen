@@ -20,7 +20,10 @@
     "rap2hpoutre/laravel-log-viewer": "0.2.*",
     "robclancy/presenter": "1.3.*",
     "swisnl/head": "dev-master",
-    "thujohn/rss": "1.*"
+    "thujohn/rss": "1.*",
+    "graham-campbell/flysystem": "1.*",
+    "league/flysystem-dropbox": "1.*",
+    "league/glide": "^0.3.5"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "1.*",

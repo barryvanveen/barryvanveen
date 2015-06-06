@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'version' => 'v1.3.1',
+    'version' => 'v1.4.0',
 
     /*
     |--------------------------------------------------------------------------
@@ -142,6 +142,7 @@ return [
          */
         'Cviebrock\EloquentSluggable\SluggableServiceProvider',
         'Flyingfoxx\CommandCenter\Laravel\CommandCenterServiceProvider',
+        'GrahamCampbell\Flysystem\FlysystemServiceProvider',
         'Laracasts\Flash\FlashServiceProvider',
         'Laracasts\Utilities\UtilitiesServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
@@ -224,6 +225,7 @@ return [
          */
         'DiffFormatter'   => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
         'Flash'           => 'Laracasts\Flash\Flash',
+        'Flysystem'       => 'GrahamCampbell\Flysystem\Facades\Flysystem',
         'Head'            => 'Swisnl\Head\Facades\Head',
         'LocalizedCarbon' => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
         'Menu'            => 'Lavary\Menu\Facade',
