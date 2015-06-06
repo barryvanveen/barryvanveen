@@ -21,11 +21,6 @@ class SwitchBranchCommand extends Command
      */
     protected $description = 'All the procedures needed for switching a branch';
 
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
     /**
      * Get the console command options.
      *

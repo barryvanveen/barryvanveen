@@ -16,4 +16,5 @@ if (App::environment('local')) {
     Artisan::resolve('SwitchBranchCommand');
 }
 
+Artisan::resolve('UpdateLuckyTvRssFeedCommand');
 Artisan::resolve('VersionCommand');

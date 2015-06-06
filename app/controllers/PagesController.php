@@ -40,4 +40,18 @@ class PagesController extends BaseController
 
         return View::make('pages.item', compact('page'));
     }
+
+    public function luckytv()
+    {
+        $file = storage_path('storage').'/luckytv.xml';
+
+        if (!File::exists($file)) {
+            // todo: call artisan command
+            Artisan::call(UpdateLuckyTvRssFeedCommand::class);
+        };
+
+        $rss = File::get($file);
+
+        return Response::make($rss, 200, ['Content-Type' => 'text/xml']);
+    }
 }
