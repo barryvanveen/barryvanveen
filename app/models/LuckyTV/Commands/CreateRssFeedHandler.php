@@ -1,6 +1,8 @@
 <?php
 namespace Barryvanveen\LuckyTV\Commands;
 
+use Cache;
+use Carbon\Carbon;
 use Flyingfoxx\CommandCenter\CommandHandler;
 use Symfony\Component\DomCrawler\Crawler;
 use Thujohn\Rss\Rss;
@@ -29,7 +31,6 @@ class CreateRssFeedHandler implements CommandHandler
     {
 
         // todo: handle exceptions, timeouts, errors
-        // todo: read all pages from luckytv website?
 
         $html = $this->getHtmlFromUrl(self::URL);
 
@@ -37,7 +38,7 @@ class CreateRssFeedHandler implements CommandHandler
 
         $rss = $this->createRssFeedFromPosts($posts);
 
-        $rss->save(storage_path('cache').'/luckytv.xml');
+        Cache::forever('luckytv-rss', $rss);
     }
 
     protected function getHtmlFromUrl($url)
@@ -78,15 +79,15 @@ class CreateRssFeedHandler implements CommandHandler
         $rss->channel([
             'title'       => 'LuckyTV RSS feed',
             'description' => 'Alle afleveringen van LuckyTV op een rijtje',
-            'link'        => 'hier-moet-de-url-komen',
+            'link'        => route('luckytv-rss'),
         ]);
 
         foreach ($posts as $post) {
             $rss->item([
-                'title'             => $post['title'],
-                'link'              => $post['link'],
-                'guid'              => $post['link'],
-                // todo: add date
+                'title'   => $post['title'],
+                'link'    => $post['link'],
+                'guid'    => $post['link'],
+                'pubDate' => Carbon::createFromFormat('d-m-Y', $post['date'])->format('D, d M Y H:i:s O'),
             ]);
         }
 

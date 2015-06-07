@@ -43,14 +43,12 @@ class PagesController extends BaseController
 
     public function luckytv()
     {
-        $file = storage_path('storage').'/luckytv.xml';
-
-        if (!File::exists($file)) {
-            // todo: call artisan command
-            Artisan::call(UpdateLuckyTvRssFeedCommand::class);
+        if (!Cache::has('luckytv-rss')) {
+            Artisan::call('update-luckytv-rss-feed');
         };
 
-        $rss = File::get($file);
+        /** @var Rss $rss */
+        $rss = Cache::get('luckytv-rss');
 
         return Response::make($rss, 200, ['Content-Type' => 'text/xml']);
     }

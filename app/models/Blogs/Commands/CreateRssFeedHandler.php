@@ -3,6 +3,7 @@ namespace Barryvanveen\Blogs\Commands;
 
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
+use Carbon\Carbon;
 use Flyingfoxx\CommandCenter\CommandHandler;
 use Thujohn\Rss\Rss;
 
@@ -50,6 +51,8 @@ class CreateRssFeedHandler implements CommandHandler
                 'description|cdata' => $blog->getPresenter()->presentHtmlSummary(),
                 'link'              => $link,
                 'guid'              => $link,
+                'pubDate'           => Carbon::createFromFormat('Y-m-d H:i:s', $blog['publication_date'])
+                                           ->format('D, d M Y H:i:s O'),
             ]);
         }
 

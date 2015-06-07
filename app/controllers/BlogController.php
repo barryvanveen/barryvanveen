@@ -67,6 +67,7 @@ class BlogController extends BaseController
      */
     public function rss()
     {
+        /** @var Rss $rss */
         $rss = $this->commandBus->execute(
             new CreateRssFeedCommand()
         );
