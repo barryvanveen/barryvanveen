@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Rss;
+<?php
+namespace Barryvanveen\Rss;
 
 class ItemData
 {

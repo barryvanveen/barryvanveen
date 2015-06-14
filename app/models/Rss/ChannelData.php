@@ -1,6 +1,8 @@
-<?php namespace Barryvanveen\Rss;
+<?php
+namespace Barryvanveen\Rss;
 
-class ChannelData {
+class ChannelData
+{
     /** @var string */
     public $title;
 
@@ -31,12 +33,12 @@ class ChannelData {
      */
     public function __construct($title, $description, $link, $lastBuildDate, $language = 'dut', $ttl = 60)
     {
-        $this->title = $title;
-        $this->description = $description;
-        $this->link = $link;
+        $this->title         = $title;
+        $this->description   = $description;
+        $this->link          = $link;
         $this->lastBuildDate = $lastBuildDate;
-        $this->language = $language;
-        $this->ttl = $ttl;
+        $this->language      = $language;
+        $this->ttl           = $ttl;
     }
 
     /**

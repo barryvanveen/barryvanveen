@@ -15,7 +15,6 @@ use Thujohn\Rss\Rss;
 
 class CreateLuckyTVRssFeedHandler implements CommandHandler
 {
-
     const URL = 'http://www.luckymedia.nl/luckytv/category/dwdd/';
 
     /** @var string */
@@ -59,7 +58,7 @@ class CreateLuckyTVRssFeedHandler implements CommandHandler
     {
         $client = new Client([
             'connect_timeout' => 10,
-            'timeout' => 10,
+            'timeout'         => 10,
         ]);
 
         $response = $client->get(self::URL);

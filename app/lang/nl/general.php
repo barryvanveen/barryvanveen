@@ -3,8 +3,7 @@
 return [
     'blog-aangepast'                       => 'De aanpassingen aan dit blogbericht zijn opgeslagen',
     'blog-rss-title'                       => 'Barry\'s blog',
-    'blog-rss-description'                 => 'Een blog over programmeren, PHP, Laravel Framework en aanverwante
-    zaken.',
+    'blog-rss-description'                 => 'Een blog over programmeren, PHP, Laravel Framework en aanverwante zaken.',
     'blog-toegevoegd'                      => 'Het nieuwe blogbericht is aangemaakt',
     'pagina-aangepast'                     => 'De aanpassingen aan deze pagina zijn opgeslagen',
     'pagina-toegevoegd'                    => 'De nieuwe pagina is aangemaakt',

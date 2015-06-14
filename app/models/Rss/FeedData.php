@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Rss;
+<?php
+namespace Barryvanveen\Rss;
 
 class FeedData
 {
@@ -14,7 +15,7 @@ class FeedData
      */
     public function __construct($version = '2.0', $encoding = 'UTF-8')
     {
-        $this->version = $version;
+        $this->version  = $version;
         $this->encoding = $encoding;
     }
 }

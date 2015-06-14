@@ -7,7 +7,6 @@ use Thujohn\Rss\Rss;
 
 class CreateRssFeedHandler implements CommandHandler
 {
-
     /**
      * @see CreateRssFeedCommand
      */
@@ -34,7 +33,7 @@ class CreateRssFeedHandler implements CommandHandler
         $rss->channel($command->channelData->getData());
 
         foreach ($command->itemDataArray as $itemData) {
-            /** @var ItemData $itemData */
+            /* @var ItemData $itemData */
             $rss->item($itemData->getData());
         }
 

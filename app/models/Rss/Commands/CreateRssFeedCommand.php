@@ -24,8 +24,8 @@ class CreateRssFeedCommand
      */
     public function __construct(FeedData $feedData, ChannelData $channelData, array $itemDataArray)
     {
-        $this->feedData = $feedData;
-        $this->channelData = $channelData;
+        $this->feedData      = $feedData;
+        $this->channelData   = $channelData;
         $this->itemDataArray = $itemDataArray;
     }
 }

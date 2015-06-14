@@ -103,7 +103,8 @@ class BlogRepository extends EloquentRepository
      *
      * @return array
      */
-    public function lastUpdatedAt() {
+    public function lastUpdatedAt()
+    {
         return Blog     ::online()
                         ->past()
                         ->latest('updated_at')
