@@ -1,10 +1,10 @@
 <?php
 namespace Barryvanveen\LuckyTv\Commands;
 
-class CreateRssFeedCommand
+class CreateLuckyTVRssFeedCommand
 {
     /**
-     * @see CreateRssFeedHandler
+     * @see CreateLuckyTVRssFeedHandler
      */
     public function __construct()
     {

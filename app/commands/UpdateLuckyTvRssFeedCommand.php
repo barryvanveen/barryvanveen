@@ -1,6 +1,6 @@
 <?php
 
-use Barryvanveen\LuckyTv\Commands\CreateRssFeedCommand;
+use Barryvanveen\LuckyTv\Commands\CreateLuckyTVRssFeedCommand;
 use Flyingfoxx\CommandCenter\CommandBus;
 use Illuminate\Console\Command;
 
@@ -42,6 +42,6 @@ class UpdateLuckyTvRssFeedCommand extends Command
      */
     public function fire()
     {
-        $this->commandBus->execute(new CreateRssFeedCommand());
+        $this->commandBus->execute(new CreateLuckyTVRssFeedCommand());
     }
 }
