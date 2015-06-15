@@ -1,5 +1,5 @@
 <?php
-namespace Barryvanveen\LuckyTv\Commands;
+namespace Barryvanveen\LuckyTV\Commands;
 
 class CreateLuckyTVRssFeedCommand
 {
