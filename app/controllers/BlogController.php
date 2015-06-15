@@ -1,7 +1,7 @@
 <?php
 
 use Barryvanveen\Blogs\BlogRepository;
-use Barryvanveen\Blogs\Commands\CreateRssFeedCommand;
+use Barryvanveen\Blogs\Commands\CreateBlogRssFeedCommand;
 use Flyingfoxx\CommandCenter\CommandBus;
 
 class BlogController extends BaseController
@@ -67,8 +67,9 @@ class BlogController extends BaseController
      */
     public function rss()
     {
+        /** @var Rss $rss */
         $rss = $this->commandBus->execute(
-            new CreateRssFeedCommand()
+            new CreateBlogRssFeedCommand()
         );
 
         return Response::make($rss, 200, ['Content-Type' => 'text/xml']);

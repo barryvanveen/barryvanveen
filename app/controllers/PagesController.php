@@ -40,4 +40,16 @@ class PagesController extends BaseController
 
         return View::make('pages.item', compact('page'));
     }
+
+    public function luckytv()
+    {
+        if (!Cache::has('luckytv-rss')) {
+            Artisan::call('update-luckytv-rss-feed');
+        };
+
+        /** @var Rss $rss */
+        $rss = Cache::get('luckytv-rss');
+
+        return Response::make($rss, 200, ['Content-Type' => 'text/xml']);
+    }
 }

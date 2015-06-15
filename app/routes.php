@@ -39,6 +39,11 @@ Route::get('over-mij', [
         'uses' => 'PagesController@boeken',
     ]);
 
+Route::get('luckytv-rss', [
+    'as'   => 'luckytv-rss',
+    'uses' => 'PagesController@luckytv',
+]);
+
 Route::get('images/{filename}', [
     'as'   => 'images',
     'uses' => 'ImagesController@show',

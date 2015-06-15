@@ -1,10 +1,10 @@
 <?php
 namespace Barryvanveen\Blogs\Commands;
 
-class CreateRssFeedCommand
+class CreateBlogRssFeedCommand
 {
     /**
-     * @see CreateRssFeedHandler
+     * @see CreateBlogRssFeedHandler
      */
     public function __construct()
     {

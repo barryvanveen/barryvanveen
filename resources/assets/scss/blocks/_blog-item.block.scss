@@ -13,20 +13,3 @@
 	.blog-item__content {
 		padding-bottom: $grid-gutter-width;
 	}
-
-    .blog-item figure {
-        text-align: center;
-        margin: $grid-gutter-width auto;
-        img {
-            border: 1px solid $gray-light;
-        }
-        img:hover {
-            box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.25);
-            cursor: zoom-in;
-        }
-        figcaption {
-            font-size: 0.8em;
-            font-style: italic;
-            margin-top: $padding-base-vertical;
-        }
-    }

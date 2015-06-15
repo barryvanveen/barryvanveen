@@ -1,20 +1,9 @@
 <?php
 
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Pagination Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used by the application to fill in
-    | certain labels. This is an easy way to make your code independent
-    | of any textual changes. It also makes in easier to translate your
-    | application in to another language if necessary.
-    |
-    */
-
     'blog-aangepast'                       => 'De aanpassingen aan dit blogbericht zijn opgeslagen',
+    'blog-rss-title'                       => 'Barry\'s blog',
+    'blog-rss-description'                 => 'Een blog over programmeren, PHP, Laravel Framework en aanverwante zaken.',
     'blog-toegevoegd'                      => 'Het nieuwe blogbericht is aangemaakt',
     'pagina-aangepast'                     => 'De aanpassingen aan deze pagina zijn opgeslagen',
     'pagina-toegevoegd'                    => 'De nieuwe pagina is aangemaakt',
@@ -30,7 +19,6 @@ return [
     'invalid-login'                        => 'Sorry, dat lijkt niet het juiste wachtwoord voor dat e-mailadres. Probeer het nog een keertje.',
     'login-successful'                     => 'Je bent nu ingelogd',
     'logout-successful'                    => 'Je bent weer uitgelogd',
-    'rss-title'                            => 'Barry\'s blog',
-    'rss-description'                      => 'Een blog over programmeren, PHP, Laravel Framework en aanverwante zaken.',
-
+    'luckytv-rss-title'                    => 'LuckyTV RSS feed',
+    'luckytv-rss-description'              => 'Alle afleveringen van LuckyTV op een rijtje',
 ];

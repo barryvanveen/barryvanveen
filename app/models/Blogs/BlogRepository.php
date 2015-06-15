@@ -97,4 +97,17 @@ class BlogRepository extends EloquentRepository
     {
         return Blog     ::findOrFail($id);
     }
+
+    /**
+     * retrieve the most recently updated blogpost.
+     *
+     * @return array
+     */
+    public function lastUpdatedAt()
+    {
+        return Blog     ::online()
+                        ->past()
+                        ->latest('updated_at')
+                        ->first();
+    }
 }
