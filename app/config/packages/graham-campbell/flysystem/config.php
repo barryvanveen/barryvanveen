@@ -41,7 +41,7 @@ return [
             'driver' => 'dropbox',
             'token'  => getenv('DROPBOX_TOKEN'),
             'app'    => getenv('DROPBOX_APP'),
-            'prefix' => getenv('DROPBOX_PREFIX'),
+            'prefix' => '',
         ],
 
         'local' => [

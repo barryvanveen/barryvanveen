@@ -1,6 +1,6 @@
 <?php
 
-use Barryvanveen\LuckyTv\Commands\CreateLuckyTVRssFeedCommand;
+use Barryvanveen\LuckyTV\Commands\CreateLuckyTVRssFeedCommand;
 use Flyingfoxx\CommandCenter\CommandBus;
 use Illuminate\Console\Command;
 
