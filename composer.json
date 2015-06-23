@@ -18,7 +18,6 @@
     "laracasts/utilities": "1.*",
     "laravel/framework": "4.2.*",
     "laravelrus/localized-carbon": "1.*",
-    "lavary/laravel-menu": "1.*",
     "league/flysystem-dropbox": "1.*",
     "league/glide": "^0.3.5",
     "rap2hpoutre/laravel-log-viewer": "0.2.*",

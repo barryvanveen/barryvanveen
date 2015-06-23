@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b8e4d4024c47c184fcf4370dcf176544",
+    "hash": "edcbc54bfa4a5a104e10ff5cc5823683",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -950,6 +950,61 @@
                 "manager"
             ],
             "time": "2015-01-11 17:18:42"
+        },
+        {
+            "name": "graham-campbell/navigation",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BootstrapCMS/Navigation.git",
+                "reference": "6ba5a7dee8a46bdb91568de96ffbf377f14de8d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BootstrapCMS/Navigation/zipball/6ba5a7dee8a46bdb91568de96ffbf377f14de8d8",
+                "reference": "6ba5a7dee8a46bdb91568de96ffbf377f14de8d8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/events": "~4.2",
+                "illuminate/http": "~4.2",
+                "illuminate/routing": "~4.2",
+                "illuminate/support": "~4.2",
+                "illuminate/view": "~4.2",
+                "php": ">=5.4.7"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\Navigation\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@mineuk.com"
+                }
+            ],
+            "description": "Navigation Is A Navigation Bar Generator For Laravel 4.2",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel Navigation",
+                "Laravel-Navigation",
+                "framework",
+                "laravel",
+                "navigation",
+                "navigation bar",
+                "navigation generator"
+            ],
+            "time": "2015-01-11 18:09:59"
         },
         {
             "name": "guzzlehttp/guzzle",

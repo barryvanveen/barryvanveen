@@ -147,7 +147,6 @@ return [
         'Laracasts\Utilities\UtilitiesServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
         'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
-        'Lavary\Menu\ServiceProvider',
         'Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider',
         'Robbo\Presenter\PresenterServiceProvider',
         'Swisnl\Head\HeadServiceProvider',
@@ -228,7 +227,6 @@ return [
         'Flysystem'       => 'GrahamCampbell\Flysystem\Facades\Flysystem',
         'Head'            => 'Swisnl\Head\Facades\Head',
         'LocalizedCarbon' => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
-        'Menu'            => 'Lavary\Menu\Facade',
         'Rss'             => 'Thujohn\Rss\RssFacade',
 
     ],

@@ -1,37 +1,98 @@
 <?php
 namespace Barryvanveen\Composers;
 
-use Lavary\Menu\Item;
-use Menu;
+use Illuminate\View\View;
+use Route;
 
 class MenuComposer
 {
-    public function compose()
+    /** @var  View */
+    protected $view;
+
+    /**
+     * @param View $view
+     */
+    public function compose($view)
     {
-        Menu::make('MainNav', function ($menu) {
+        $this->view = $view;
 
-            // fill the menu
-            // activate some items on all routes that start with the parents url
-            /* @var Item $menu */
-            $menu->add('Blog', ['route' => 'home'])
-                 ->active('blog/*');
-            $menu->add('Over mij', ['route' => 'over-mij'])
-                 ->active('over-mij/*');
+        $this->buildDefaultNavigation();
 
-        });
+        $this->buildAdminNavigation();
+    }
 
-        Menu::make('AdminNav', function ($menu) {
+    private function buildDefaultNavigation()
+    {
+        $menu = [
+            [
+                'slug'    => route('home'),
+                'title'   => 'Blog',
+                'routes'  => ['home', 'blog-item'],
+                'classnames' => '',
+            ],
+            [
+                'slug'    => route('over-mij'),
+                'title'   => 'Over mij',
+                'routes'  => ['over-mij', 'boeken'],
+                'classnames' => '',
+            ],
+        ];
 
-            // fill the menu
-            // activate some items on all routes that start with the parents url
-            /* @var Item $menu */
-            $menu->add('Dashboard', ['route' => 'admin.dashboard']);
-            $menu->add('Blog', ['route' => 'admin.blog'])
-                 ->active(route('admin.blog', [], false).'/*');
-            $menu->add('Pages', ['route' => 'admin.page'])
-                 ->active(route('admin.page', [], false).'/*');
-            $menu->add('Logs', ['route' => 'admin.logs']);
+        $menu = $this->setActiveMenuItem($menu);
 
-        });
+        $this->view->with('mainnav', $menu);
+    }
+
+    private function buildAdminNavigation()
+    {
+        $menu = [
+            [
+                'slug'    => route('admin.dashboard'),
+                'title'   => 'Dashboard',
+                'routes'  => ['admin.dashboard'],
+                'classnames' => '',
+            ],
+            [
+                'slug'    => route('admin.blog'),
+                'title'   => 'Blog',
+                'routes'  => ['admin.blog', 'admin.blog-new', 'admin.blog-edit'],
+                'classnames' => '',
+            ],
+            [
+                'slug'    => route('admin.page'),
+                'title'   => 'Pages',
+                'routes'  => ['admin.page', 'admin.page-new', 'admin.page-edit'],
+                'classnames' => '',
+            ],
+            [
+                'slug'    => route('admin.logs'),
+                'title'   => 'Logs',
+                'routes'  => ['admin.logs'],
+                'classnames' => '',
+            ],
+        ];
+
+        $menu = $this->setActiveMenuItem($menu);
+
+        $this->view->with('adminnav', $menu);
+    }
+
+    /**
+     * Set one menuitem as active based on the routes it belongs to.
+     *
+     * @param array $menu
+     *
+     * @return array
+     */
+    private function setActiveMenuItem($menu)
+    {
+        foreach($menu as $key=>$menuitem) {
+            if (in_array(Route::currentRouteName(), $menuitem['routes'])) {
+                $menu[$key]['classnames'] .= ' active';
+                break;
+            }
+        }
+
+        return $menu;
     }
 }
