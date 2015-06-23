@@ -25,15 +25,15 @@ class MenuComposer
     {
         $menu = [
             [
-                'slug'    => route('home'),
-                'title'   => 'Blog',
-                'routes'  => ['home', 'blog-item'],
+                'slug'       => route('home'),
+                'title'      => 'Blog',
+                'routes'     => ['home', 'blog-item'],
                 'classnames' => '',
             ],
             [
-                'slug'    => route('over-mij'),
-                'title'   => 'Over mij',
-                'routes'  => ['over-mij', 'boeken'],
+                'slug'       => route('over-mij'),
+                'title'      => 'Over mij',
+                'routes'     => ['over-mij', 'boeken'],
                 'classnames' => '',
             ],
         ];
@@ -47,27 +47,27 @@ class MenuComposer
     {
         $menu = [
             [
-                'slug'    => route('admin.dashboard'),
-                'title'   => 'Dashboard',
-                'routes'  => ['admin.dashboard'],
+                'slug'       => route('admin.dashboard'),
+                'title'      => 'Dashboard',
+                'routes'     => ['admin.dashboard'],
                 'classnames' => '',
             ],
             [
-                'slug'    => route('admin.blog'),
-                'title'   => 'Blog',
-                'routes'  => ['admin.blog', 'admin.blog-new', 'admin.blog-edit'],
+                'slug'       => route('admin.blog'),
+                'title'      => 'Blog',
+                'routes'     => ['admin.blog', 'admin.blog-new', 'admin.blog-edit'],
                 'classnames' => '',
             ],
             [
-                'slug'    => route('admin.page'),
-                'title'   => 'Pages',
-                'routes'  => ['admin.page', 'admin.page-new', 'admin.page-edit'],
+                'slug'       => route('admin.page'),
+                'title'      => 'Pages',
+                'routes'     => ['admin.page', 'admin.page-new', 'admin.page-edit'],
                 'classnames' => '',
             ],
             [
-                'slug'    => route('admin.logs'),
-                'title'   => 'Logs',
-                'routes'  => ['admin.logs'],
+                'slug'       => route('admin.logs'),
+                'title'      => 'Logs',
+                'routes'     => ['admin.logs'],
                 'classnames' => '',
             ],
         ];
@@ -86,7 +86,7 @@ class MenuComposer
      */
     private function setActiveMenuItem($menu)
     {
-        foreach($menu as $key=>$menuitem) {
+        foreach ($menu as $key => $menuitem) {
             if (in_array(Route::currentRouteName(), $menuitem['routes'])) {
                 $menu[$key]['classnames'] .= ' active';
                 break;
