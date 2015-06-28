@@ -14,11 +14,11 @@ class BlogPresenter extends BasePresenter
     protected $commandBus;
 
     /**
-     * @param Blog       $blog
+     * @param Blog $blog
      */
     public function __construct(Blog $blog)
     {
-        $this->resource   = $blog;
+        $this->resource = $blog;
 
         $this->commandBus = App::make(CommandBus::class);
     }

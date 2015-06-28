@@ -20,8 +20,7 @@ class AdminLogController extends BaseController
         return View::make('laravel-log-viewer::log', [
             'logs'         => $logs,
             'files'        => LaravelLogViewer::getFiles(true),
-            'current_file' => LaravelLogViewer::getFileName()
+            'current_file' => LaravelLogViewer::getFileName(),
         ]);
     }
-
 }

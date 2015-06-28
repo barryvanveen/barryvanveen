@@ -8,7 +8,7 @@ class UserPresenter extends BasePresenter
     /**
      * @param User $user
      */
-    function __construct(User $user)
+    public function __construct(User $user)
     {
         $this->resource = $user;
     }

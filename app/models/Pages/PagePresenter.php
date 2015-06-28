@@ -14,11 +14,11 @@ class PagePresenter extends BasePresenter
     protected $commandBus;
 
     /**
-     * @param Page       $page
+     * @param Page $page
      */
     public function __construct(Page $page)
     {
-        $this->resource   = $page;
+        $this->resource = $page;
 
         $this->commandBus = App::make(CommandBus::class);
     }

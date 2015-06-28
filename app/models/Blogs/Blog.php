@@ -117,5 +117,4 @@ class Blog extends Model implements SluggableInterface, PresenterInterface
     {
         return BlogPresenter::class;
     }
-
 }

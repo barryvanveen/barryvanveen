@@ -35,7 +35,8 @@ class BaseController extends Controller
      * @param $title
      * @param bool $append
      */
-    protected function setPageTitle($title, $append = true) {
+    protected function setPageTitle($title, $append = true)
+    {
         if ($append) {
             $old_title = Meta::title();
 
@@ -50,7 +51,8 @@ class BaseController extends Controller
      *
      * @param $description
      */
-    protected function setMetaDescription($description) {
+    protected function setMetaDescription($description)
+    {
         $description = strip_tags($description);
 
         Meta::meta('description', $description);
