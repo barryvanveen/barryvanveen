@@ -5,9 +5,9 @@ use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
 use Carbon\Carbon;
 use Flyingfoxx\CommandCenter\CommandBus;
 use Laravelrus\LocalizedCarbon\LocalizedCarbon;
-use Robbo\Presenter\Presenter;
+use McCool\LaravelAutoPresenter\BasePresenter;
 
-class PagePresenter extends Presenter
+class PagePresenter extends BasePresenter
 {
     protected $commandBus;
 
@@ -17,7 +17,7 @@ class PagePresenter extends Presenter
      */
     public function __construct(Page $page, CommandBus $commandBus)
     {
-        parent::__construct($page);
+        $this->resource   = $page;
         $this->commandBus = $commandBus;
     }
 
@@ -26,9 +26,9 @@ class PagePresenter extends Presenter
      *
      * @return string
      */
-    public function presentUrl()
+    public function url()
     {
-        return route('page-item', ['page' => $this->slug]);
+        return route('page-item', ['page' => $this->resource->slug]);
     }
 
     /**
@@ -36,9 +36,9 @@ class PagePresenter extends Presenter
      *
      * @return string
      */
-    public function presentAdminEditUrl()
+    public function admin_edit_url()
     {
-        return route('admin.page-edit', [$this->id]);
+        return route('admin.page-edit', [$this->resource->id]);
     }
 
     /**
@@ -46,9 +46,9 @@ class PagePresenter extends Presenter
      *
      * @return string
      */
-    public function presentUpdatedAtFormatted()
+    public function updated_at_formatted()
     {
-        $date = new Carbon($this->updated_at);
+        $date = new Carbon($this->resource->updated_at);
 
         return $date->format('d-m-Y H:i');
     }
@@ -58,9 +58,9 @@ class PagePresenter extends Presenter
      *
      * @return string
      */
-    public function presentUpdatedAtForHumans()
+    public function updated_at_for_humans()
     {
-        $date = new LocalizedCarbon($this->updated_at);
+        $date = new LocalizedCarbon($this->resource->updated_at);
 
         return $date->diffForHumans();
     }
@@ -70,11 +70,11 @@ class PagePresenter extends Presenter
      *
      * @return string
      */
-    public function presentHtmlText()
+    public function html_text()
     {
         return $this->commandBus->execute(
             new MarkdownToHtmlCommand(
-                $this->text
+                $this->resource->text
             )
         );
     }

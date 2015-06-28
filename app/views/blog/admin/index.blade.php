@@ -26,7 +26,7 @@
                 @foreach($blogs as $blog)
                     <tr class="js-clickable-row overview-table__row @if ($blog->online) overview-table__row--online @else overview-table__row--offline @endif" data-href="{{$blog->admin_edit_url}}">
                         <td>{{$blog->id}}</td>
-                        <td>{{$blog->publicationDateFormatted}}</td>
+                        <td>{{$blog->publication_date_formatted}}</td>
                         <td>{{$blog->title}}</td>
                     </tr>
                 @endforeach

@@ -28,7 +28,7 @@
                             overview-table__row--offline @endif" data-href="{{$page->admin_edit_url}}">
                         <td>{{$page->id}}</td>
                         <td>{{$page->title}}</td>
-                        <td>{{$page->updatedAtFormatted}}</td>
+                        <td>{{$page->updated_at_formatted}}</td>
                     </tr>
                 @endforeach
             </tbody>

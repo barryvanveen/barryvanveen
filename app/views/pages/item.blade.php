@@ -7,7 +7,7 @@
             <h1>{{$page->title}}</h1>
         </div>
 
-        {{$page->htmlText}}
+        {{$page->html_text}}
 
         @if ($page->updated_at > $page->publication_date)
             <div class="well well-sm page__last-updated">
