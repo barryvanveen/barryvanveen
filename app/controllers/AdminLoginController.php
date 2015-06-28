@@ -22,6 +22,8 @@ class AdminLoginController extends BaseController
     {
         $this->adminLoginForm = $adminLoginForm;
         $this->userRepository = $userRepository;
+
+        parent::__construct();
     }
 
     /**
@@ -29,7 +31,7 @@ class AdminLoginController extends BaseController
      */
     public function index()
     {
-        Head::title('Log In');
+        $this->setPageTitle('Log In');
 
         return View::make('templates.admin.login');
     }

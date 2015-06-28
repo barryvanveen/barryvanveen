@@ -10,6 +10,7 @@
     "cebe/markdown": "~1.1.0",
     "cviebrock/eloquent-sluggable": "2.*",
     "doctrine/dbal": "2.*",
+    "eusonlito/laravel-meta": "4.2.x-dev",
     "flyingfoxx/commandcenter": "1.2.*",
     "graham-campbell/flysystem": "1.*",
     "guzzlehttp/guzzle": "5.*",
