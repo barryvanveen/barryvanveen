@@ -23,7 +23,6 @@
     "league/glide": "^0.3.5",
     "mccool/laravel-auto-presenter": "2.*",
     "rap2hpoutre/laravel-log-viewer": "0.2.*",
-    "swisnl/head": "dev-master",
     "thujohn/rss": "1.*"
   },
   "require-dev": {
@@ -35,12 +34,6 @@
     "phpunit/phpunit": "4.*",
     "way/generators": "2.*"
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "git@github.com:swisnl/head.git"
-    }
-  ],
   "autoload": {
     "classmap": [
       "app/commands",

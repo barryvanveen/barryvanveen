@@ -150,7 +150,6 @@ return [
         'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
         'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
         'Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider',
-        'Swisnl\Head\HeadServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
 
     ],
@@ -226,7 +225,6 @@ return [
         'DiffFormatter'   => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
         'Flash'           => 'Laracasts\Flash\Flash',
         'Flysystem'       => 'GrahamCampbell\Flysystem\Facades\Flysystem',
-        'Head'            => 'Swisnl\Head\Facades\Head',
         'LocalizedCarbon' => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
         'Rss'             => 'Thujohn\Rss\RssFacade',
 

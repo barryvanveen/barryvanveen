@@ -6,9 +6,6 @@ class BaseController extends Controller
     {
         // default page title
         $this->setPageTitle('Barry van Veen', false);
-
-        // default robots meta tag
-        $this->setMetaRobots('index,follow');
     }
 
     /**
@@ -57,14 +54,5 @@ class BaseController extends Controller
         $description = strip_tags($description);
 
         Meta::meta('description', $description);
-    }
-
-    /**
-     * Set the meta robots tag.
-     *
-     * @param $robots
-     */
-    protected function setMetaRobots($robots) {
-        Meta::meta('robots', $robots);
     }
 }

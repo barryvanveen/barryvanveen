@@ -10,7 +10,6 @@
         <title>{{ Meta::meta('title') }}</title>
         {{ Meta::tag('title'); }}
         {{ Meta::tag('description'); }}
-        {{ Meta::tagMetaName('robots'); }}
 
         {{ Meta::tagMetaProperty('site_name', 'Barry van Veen'); }}
         {{ Meta::tagMetaProperty('url', Request::url()); }}
