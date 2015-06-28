@@ -1,6 +1,7 @@
 <?php
 namespace Barryvanveen\Pages;
 
+use App;
 use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
 use Carbon\Carbon;
 use Flyingfoxx\CommandCenter\CommandBus;
@@ -9,16 +10,17 @@ use McCool\LaravelAutoPresenter\BasePresenter;
 
 class PagePresenter extends BasePresenter
 {
+    /** @var  CommandBus */
     protected $commandBus;
 
     /**
      * @param Page       $page
-     * @param CommandBus $commandBus
      */
-    public function __construct(Page $page, CommandBus $commandBus)
+    public function __construct(Page $page)
     {
         $this->resource   = $page;
-        $this->commandBus = $commandBus;
+
+        $this->commandBus = App::make(CommandBus::class);
     }
 
     /**

@@ -1,13 +1,12 @@
 <?php
 namespace Barryvanveen\Pages;
 
-use App;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Query\Builder;
-use Robbo\Presenter\PresentableInterface;
+use McCool\LaravelAutoPresenter\PresenterInterface;
 
 /**
  * Barryvanveen\Pages\Page.
@@ -32,7 +31,7 @@ use Robbo\Presenter\PresentableInterface;
  * @method static ModelNotFoundException|Page firstOrFail()
  * @method static Page get()
  */
-class Page extends Model implements SluggableInterface, PresentableInterface
+class Page extends Model implements SluggableInterface, PresenterInterface
 {
     use SluggableTrait;
 
@@ -96,8 +95,6 @@ class Page extends Model implements SluggableInterface, PresentableInterface
      */
     public function getPresenter()
     {
-        $commandBus = App::make('Flyingfoxx\CommandCenter\CommandBus');
-
-        return new PagePresenter($this, $commandBus);
+        return PagePresenter::class;
     }
 }

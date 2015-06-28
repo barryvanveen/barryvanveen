@@ -149,7 +149,6 @@ return [
         'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
         'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
         'Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider',
-        'Robbo\Presenter\PresenterServiceProvider',
         'Swisnl\Head\HeadServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
 

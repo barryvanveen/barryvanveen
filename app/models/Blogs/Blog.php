@@ -1,12 +1,11 @@
 <?php
 namespace Barryvanveen\Blogs;
 
-use App;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
-use Robbo\Presenter\PresentableInterface;
+use McCool\LaravelAutoPresenter\PresenterInterface;
 
 /**
  * Barryvanveen\Blogs\Blog.
@@ -36,7 +35,7 @@ use Robbo\Presenter\PresentableInterface;
  * @method static Builder|Blog past()
  * @method static Builder|Blog orderedDesc()
  */
-class Blog extends Model implements SluggableInterface, PresentableInterface
+class Blog extends Model implements SluggableInterface, PresenterInterface
 {
     use SluggableTrait;
 
@@ -116,8 +115,7 @@ class Blog extends Model implements SluggableInterface, PresentableInterface
      */
     public function getPresenter()
     {
-        $commandBus = App::make('Flyingfoxx\CommandCenter\CommandBus');
-
-        return new BlogPresenter($this, $commandBus);
+        return BlogPresenter::class;
     }
+
 }

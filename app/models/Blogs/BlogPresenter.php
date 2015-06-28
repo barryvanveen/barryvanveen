@@ -1,6 +1,7 @@
 <?php
 namespace Barryvanveen\Blogs;
 
+use App;
 use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
 use Carbon\Carbon;
 use Flyingfoxx\CommandCenter\CommandBus;
@@ -9,16 +10,17 @@ use McCool\LaravelAutoPresenter\BasePresenter;
 
 class BlogPresenter extends BasePresenter
 {
+    /** @var  CommandBus */
     protected $commandBus;
 
     /**
      * @param Blog       $blog
-     * @param CommandBus $commandBus
      */
-    public function __construct(Blog $blog, CommandBus $commandBus)
+    public function __construct(Blog $blog)
     {
         $this->resource   = $blog;
-        $this->commandBus = $commandBus;
+
+        $this->commandBus = App::make(CommandBus::class);
     }
 
     /**
