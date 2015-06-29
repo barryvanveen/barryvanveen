@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'version' => 'v1.5.3',
+    'version' => 'v1.6.0',
 
     /*
     |--------------------------------------------------------------------------
@@ -146,11 +146,10 @@ return [
         'Laracasts\Flash\FlashServiceProvider',
         'Laracasts\Utilities\UtilitiesServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
+        'Laravel\Meta\MetaServiceProvider',
         'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
-        'Lavary\Menu\ServiceProvider',
+        'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
         'Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider',
-        'Robbo\Presenter\PresenterServiceProvider',
-        'Swisnl\Head\HeadServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
 
     ],
@@ -226,9 +225,7 @@ return [
         'DiffFormatter'   => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
         'Flash'           => 'Laracasts\Flash\Flash',
         'Flysystem'       => 'GrahamCampbell\Flysystem\Facades\Flysystem',
-        'Head'            => 'Swisnl\Head\Facades\Head',
         'LocalizedCarbon' => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
-        'Menu'            => 'Lavary\Menu\Facade',
         'Rss'             => 'Thujohn\Rss\RssFacade',
 
     ],

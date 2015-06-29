@@ -9,7 +9,7 @@
         </div>
 
         <div class="blog-item__content">
-            {{$blog->htmlText}}
+            {{$blog->html_text}}
         </div>
     </div>
 

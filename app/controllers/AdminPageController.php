@@ -30,6 +30,8 @@ class AdminPageController extends BaseController
         $this->pagesRepository = $pagesRepository;
         $this->commandBus      = $commandBus;
         $this->adminPageForm   = $adminPageForm;
+
+        parent::__construct();
     }
 
     /**
@@ -39,7 +41,7 @@ class AdminPageController extends BaseController
      */
     public function index()
     {
-        Head::title('Pagina\'s -- overzicht');
+        $this->setPageTitle('Pagina\'s -- overzicht');
 
         $pages = $this->pagesRepository->all();
 
@@ -53,7 +55,7 @@ class AdminPageController extends BaseController
      */
     public function create()
     {
-        Head::title('Pagina\'s -- toevoegen');
+        $this->setPageTitle('Pagina\'s -- toevoegen');
 
         // empty oage to populate form
         $page = new Page();
@@ -96,7 +98,7 @@ class AdminPageController extends BaseController
      */
     public function edit($id)
     {
-        Head::title('Pagina\'s -- aanpassen');
+        $this->setPageTitle('Pagina\'s -- aanpassen');
 
         $page = $this->pagesRepository->findAnyById($id);
 

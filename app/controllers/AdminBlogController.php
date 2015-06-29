@@ -30,6 +30,8 @@ class AdminBlogController extends BaseController
         $this->blogRepository = $blogRepository;
         $this->commandBus     = $commandBus;
         $this->adminBlogForm  = $adminBlogForm;
+
+        parent::__construct();
     }
 
     /**
@@ -39,7 +41,7 @@ class AdminBlogController extends BaseController
      */
     public function index()
     {
-        Head::title('Blog -- overzicht');
+        $this->setPageTitle('Blog -- overzicht');
 
         $blogs = $this->blogRepository->all();
 
@@ -53,7 +55,7 @@ class AdminBlogController extends BaseController
      */
     public function create()
     {
-        Head::title('Blog -- toevoegen');
+        $this->setPageTitle('Blog -- toevoegen');
 
         // empty blog to populate form
         $blog = new Blog();
@@ -100,7 +102,7 @@ class AdminBlogController extends BaseController
      */
     public function edit($id)
     {
-        Head::title('Blog -- aanpassen');
+        $this->setPageTitle('Blog -- aanpassen');
 
         $blog = $this->blogRepository->findAnyById($id);
 

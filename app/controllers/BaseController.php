@@ -2,6 +2,12 @@
 
 class BaseController extends Controller
 {
+    public function __construct()
+    {
+        // default page title
+        $this->setPageTitle('Barry van Veen', false);
+    }
+
     /**
      * Setup the layout used by the controller.
      */
@@ -21,5 +27,34 @@ class BaseController extends Controller
         }
 
         JavaScript::put($javascript_vars);
+    }
+
+    /**
+     * Set the page title.
+     *
+     * @param $title
+     * @param bool $append
+     */
+    protected function setPageTitle($title, $append = true)
+    {
+        if ($append) {
+            $old_title = Meta::title();
+
+            $title = $title.' - '.$old_title;
+        }
+
+        Meta::title($title);
+    }
+
+    /**
+     * Set the meta description tag.
+     *
+     * @param $description
+     */
+    protected function setMetaDescription($description)
+    {
+        $description = strip_tags($description);
+
+        Meta::meta('description', $description);
     }
 }

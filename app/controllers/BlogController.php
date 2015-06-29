@@ -2,6 +2,7 @@
 
 use Barryvanveen\Blogs\BlogRepository;
 use Barryvanveen\Blogs\Commands\CreateBlogRssFeedCommand;
+use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
 use Flyingfoxx\CommandCenter\CommandBus;
 
 class BlogController extends BaseController
@@ -22,6 +23,8 @@ class BlogController extends BaseController
     {
         $this->blogRepository = $blogRepository;
         $this->commandBus     = $commandBus;
+
+        parent::__construct();
     }
 
     /**
@@ -33,9 +36,9 @@ class BlogController extends BaseController
     {
         $blogs = $this->blogRepository->published();
 
-        Head::title('Blog');
-        Head::description('Een blog van Barry van Veen over programmeren, PHP, Laravel Framework en aanverwante zaken
-        .');
+        $this->setPageTitle('Blog');
+        $this->setMetaDescription('Een blog van Barry van Veen over programmeren, PHP, Laravel
+        Framework en aanverwante zaken.');
 
         return View::make('blog.full-list', compact('blogs'));
     }
@@ -54,8 +57,13 @@ class BlogController extends BaseController
             return Redirect::route('blog-item', ['id' => $id, 'slug' => $blog->slug], 301);
         }
 
-        Head::title($blog->title);
-        Head::description($blog->summary);
+        $summary_html = $this->commandBus->execute(
+            new MarkdownToHtmlCommand($blog->summary)
+        );
+
+        $this->setPageTitle('Blog');
+        $this->setPageTitle($blog->title);
+        $this->setMetaDescription($summary_html);
 
         return View::make('blog.item', compact('blog'));
     }

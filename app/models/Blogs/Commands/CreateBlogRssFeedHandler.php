@@ -3,6 +3,7 @@ namespace Barryvanveen\Blogs\Commands;
 
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
+use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
 use Barryvanveen\Rss\ChannelData;
 use Barryvanveen\Rss\Commands\CreateRssFeedCommand;
 use Barryvanveen\Rss\FeedData;
@@ -92,12 +93,16 @@ class CreateBlogRssFeedHandler implements CommandHandler
         foreach ($blogs as $blog) {
             $link = route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]);
 
+            $summary_html = $this->commandBus->execute(
+                new MarkdownToHtmlCommand($blog->summary)
+            );
+
             $items[] = new ItemData(
                 $blog->title,
                 $link,
                 $link,
                 Carbon::createFromFormat('Y-m-d H:i:s', $blog['updated_at'])->format('D, d M Y H:i:s O'),
-                $blog->getPresenter()->presentHtmlSummary()
+                $summary_html
             );
         }
 

@@ -1,24 +1,26 @@
 <?php
 namespace Barryvanveen\Blogs;
 
+use App;
 use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
 use Carbon\Carbon;
 use Flyingfoxx\CommandCenter\CommandBus;
 use Laravelrus\LocalizedCarbon\LocalizedCarbon;
-use Robbo\Presenter\Presenter;
+use McCool\LaravelAutoPresenter\BasePresenter;
 
-class BlogPresenter extends Presenter
+class BlogPresenter extends BasePresenter
 {
+    /** @var  CommandBus */
     protected $commandBus;
 
     /**
-     * @param Blog       $blog
-     * @param CommandBus $commandBus
+     * @param Blog $blog
      */
-    public function __construct(Blog $blog, CommandBus $commandBus)
+    public function __construct(Blog $blog)
     {
-        parent::__construct($blog);
-        $this->commandBus = $commandBus;
+        $this->resource = $blog;
+
+        $this->commandBus = App::make(CommandBus::class);
     }
 
     /**
@@ -26,9 +28,9 @@ class BlogPresenter extends Presenter
      *
      * @return string
      */
-    public function presentUrl()
+    public function url()
     {
-        return route('blog-item', ['id' => $this->id, 'slug' => $this->slug]);
+        return route('blog-item', ['id' => $this->resource->id, 'slug' => $this->resource->slug]);
     }
 
     /**
@@ -36,9 +38,9 @@ class BlogPresenter extends Presenter
      *
      * @return string
      */
-    public function presentAdminEditUrl()
+    public function admin_edit_url()
     {
-        return route('admin.blog-edit', [$this->id]);
+        return route('admin.blog-edit', [$this->resource->id]);
     }
 
     /**
@@ -46,9 +48,9 @@ class BlogPresenter extends Presenter
      *
      * @return string
      */
-    public function presentPublicationDateFormatted()
+    public function publication_date_formatted()
     {
-        $date = new Carbon($this->publication_date);
+        $date = new Carbon($this->resource->publication_date);
 
         return $date->format('d-m-Y H:i');
     }
@@ -58,9 +60,9 @@ class BlogPresenter extends Presenter
      *
      * @return string
      */
-    public function presentPublicationDateForHumans()
+    public function publication_date_for_humans()
     {
-        $date = new LocalizedCarbon($this->publication_date);
+        $date = new LocalizedCarbon($this->resource->publication_date);
 
         return $date->diffForHumans();
     }
@@ -70,11 +72,11 @@ class BlogPresenter extends Presenter
      *
      * @return string
      */
-    public function presentHtmlSummary()
+    public function html_summary()
     {
         return $this->commandBus->execute(
             new MarkdownToHtmlCommand(
-                $this->summary
+                $this->resource->summary
             )
         );
     }
@@ -84,11 +86,11 @@ class BlogPresenter extends Presenter
      *
      * @return string
      */
-    public function presentHtmlText()
+    public function html_text()
     {
         return $this->commandBus->execute(
             new MarkdownToHtmlCommand(
-                $this->text
+                $this->resource->text
             )
         );
     }
