@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Barryvanveen\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
@@ -17,8 +17,7 @@ class RedirectIfAuthenticated
     /**
      * Create a new filter instance.
      *
-     * @param  Guard  $auth
-     * @return void
+     * @param  Guard $auth
      */
     public function __construct(Guard $auth)
     {

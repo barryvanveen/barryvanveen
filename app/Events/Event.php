@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Barryvanveen\Events;
 
 abstract class Event
 {

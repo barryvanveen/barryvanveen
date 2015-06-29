@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exceptions;
+namespace Barryvanveen\Exceptions;
 
 use Exception;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -27,7 +27,7 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $e)
     {
-        return parent::report($e);
+        parent::report($e);
     }
 
     /**
