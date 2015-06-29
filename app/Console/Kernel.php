@@ -13,7 +13,11 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \Barryvanveen\Console\Commands\Inspire::class,
+        // todo: drop Command postfox from names
+        \Barryvanveen\Console\Commands\DeployCommand::class,
+        \Barryvanveen\Console\Commands\SwitchBranchCommand::class,
+        \Barryvanveen\Console\Commands\UpdateLuckyTvRssFeedCommand::class,
+        \Barryvanveen\Console\Commands\VersionCommand::class,
     ];
 
     /**
@@ -24,7 +28,6 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('inspire')
-                 ->hourly();
+
     }
 }

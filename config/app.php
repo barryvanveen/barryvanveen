@@ -141,8 +141,21 @@ return [
          * Application Service Providers...
          */
         Barryvanveen\Providers\AppServiceProvider::class,
+        Barryvanveen\Providers\ComposerServiceProvider::class,
         Barryvanveen\Providers\EventServiceProvider::class,
         Barryvanveen\Providers\RouteServiceProvider::class,
+
+        /*
+         * Vendor Service Providers
+         */
+        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavascriptServiceProvider::class,
+        Eusonlito\LaravelMeta\MetaServiceProvider::class,
+        Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider::class,
+        McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        //Thujohn\Rss\RssServiceProvider::class,
 
     ],
 
@@ -191,6 +204,14 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Vendor Aliases
+         */
+        'DiffFormatter'   => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
+        'Flash'           => 'Laracasts\Flash\Flash',
+        'LocalizedCarbon' => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
+        //'Rss'             => 'Thujohn\Rss\RssFacade',
 
     ],
 
