@@ -1,0 +1,6 @@
+%button {
+	@include btn-primary-sm();
+}
+	%button--right {
+		float: right;
+	}

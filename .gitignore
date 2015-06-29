@@ -1,4 +1,15 @@
-/vendor
+/.idea/
+/bootstrap/compiled.php
+/bower_components
 /node_modules
-Homestead.yaml
+/vendor/
+/tests/_output/*
+.DS_Store
 .env
+.env.*.php
+_ide_helper.php
+_ide_helper_models.php
+composer.phar
+Homestead.yaml
+npm-debug.log
+Thumbs.db

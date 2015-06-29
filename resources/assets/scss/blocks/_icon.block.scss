@@ -1,0 +1,69 @@
+.icon {
+	font-family: $icons-font;
+	display: inline-block;
+	width: 26px;
+	height: 35px;
+	overflow: hidden;
+	font-size: $icon-fontsize-large;
+
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+	.icon--arrowRight {
+		@include icon('before', $icon--arrow-right);
+		font-size: $icon-fontsize-small;
+	}
+
+	.icon--arrowLeft {
+		@include icon('before', $icon--arrow-left);
+		font-size: $icon-fontsize-small;
+	}
+
+	.icon--arrowDown {
+		@include icon('before', $icon--arrow-down);
+		font-size: $icon-fontsize-small;
+	}
+
+	.icon--arrowUp {
+		@include icon('before', $icon--arrow-up);
+		font-size: $icon-fontsize-small;
+	}
+
+	.icon--calendar {
+		@include icon('before', $icon--calendar);
+		font-size: $icon-fontsize-small;
+	}
+
+	.icon--clock {
+		@include icon('before', $icon--clock);
+		font-size: $icon-fontsize-small;
+	}
+
+	.icon--caretUp {
+		@include icon('before', $icon--caret-up);
+	}
+
+	.icon--github {
+		@include icon('before', $icon--github-square);
+	}
+
+	.icon--linkedIn {
+		@include icon('before', $icon--linkedin-square);
+	}
+
+    .icon--rss {
+      @include icon('before', $icon--rss);
+      width: auto;
+      height: auto;
+      font-size: 24px;
+      color: #FF6600;
+    }

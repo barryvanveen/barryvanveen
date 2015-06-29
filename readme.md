@@ -1,27 +1,23 @@
-## Laravel PHP Framework
+## Getting started
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+* checkout `master`
+* create a file called `.env.local.php` and a file called `.env.testing.php`
+* run `composer install` to download all PHP packages to /vendor
+* run `bower install` to download all Javascript components to /bower_components
+* run `sudo npm install --no-bin-links` to install all nodejs dependencies
+* run `gulp` to build all CSS and Javascript files
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## Staying up to date
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Use `php artisan switch-branch` to update your project. This is mostly needed when you switch to a different branch. This
+command performs the following actions:
 
-## Official Documentation
+* run `composer install`, use the `--composer-update` option to perform `composer update`
+* run `bower install`
+* remove all tables from the database and run `php artisan migrate` and `php artisan db:seed`
+* remove all tables from the testing database and run `php artisan migrate --env=testing`
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## Cleaning up code
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Run `php-cs-fixer fix` to automatically cleanup all code to Symphony standards. All configurations are saved in a file 
+called .php_cs and documentation can be found at https://github.com/FriendsOfPHP/PHP-CS-Fixer 

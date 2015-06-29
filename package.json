@@ -1,10 +1,25 @@
 {
+  "name": "laravelinstall",
+  "version": "0.0.0",
+  "description": "",
+  "license": "proprietary",
   "private": true,
-  "devDependencies": {
-    "gulp": "^3.8.8"
+  "author": {
+    "name": "Barry van Veen",
+    "email": "barryvanveen@gmail.com",
+    "url": ""
   },
-  "dependencies": {
-    "laravel-elixir": "^2.0.0",
-    "bootstrap-sass": "^3.0.0"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "gulp": "3.9.*",
+    "gulp-autoprefixer": "2.3.*",
+    "gulp-concat": "2.6.*",
+    "gulp-include": "1.1.*",
+    "gulp-plumber": "1.0.*",
+    "gulp-rename": "1.2.*",
+    "gulp-sass": "2.0.*",
+    "gulp-uglify": "1.2.*"
   }
 }

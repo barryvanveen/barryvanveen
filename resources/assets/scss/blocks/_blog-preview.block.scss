@@ -1,0 +1,24 @@
+.blog-preview {
+	@extend %preview;
+}
+
+	.blog-preview__heading {
+		@extend %preview__heading;
+	}
+
+		.blog-preview__heading-title {
+			@extend %preview__heading-title;
+		}
+
+			.blog-preview__heading-title-link {
+				@extend %preview__heading-title-link;
+			}
+
+
+	.blog-preview__meta {
+		@extend %preview__meta;
+	}
+
+	.blog-preview__button {
+		@extend %button;
+	}
