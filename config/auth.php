@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => Barryvanveen\User::class,
+    'model' => Barryvanveen\Users\User::class,
 
     /*
     |--------------------------------------------------------------------------

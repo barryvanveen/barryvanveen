@@ -3,8 +3,9 @@ namespace Barryvanveen\LuckyTV\Commands;
 
 class CreateLuckyTVRssFeedCommand
 {
+
     /**
-     * @see CreateLuckyTVRssFeedHandler
+     * @see CreateLuckyTVRssFeedCommandHandler
      */
     public function __construct()
     {

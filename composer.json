@@ -16,6 +16,7 @@
     "laracasts/flash": "1.3.*",
     "laracasts/utilities": "2.*",
     "laravel/framework": "5.1.*",
+    "laravelcollective/remote": "5.1.*",
     "laravelrus/localized-carbon": "dev-master",
     "league/flysystem-dropbox": "1.*",
     "league/glide": "0.3.*",

@@ -7,13 +7,12 @@ use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
 use Cache;
 use Carbon\Carbon;
-use Flyingfoxx\CommandCenter\CommandBus;
-use Flyingfoxx\CommandCenter\CommandHandler;
 use GuzzleHttp\Client;
+use Illuminate\Contracts\Bus\Dispatcher;
 use Symfony\Component\DomCrawler\Crawler;
 use Thujohn\Rss\Rss;
 
-class CreateLuckyTVRssFeedHandler implements CommandHandler
+class CreateLuckyTVRssFeedCommandHandler
 {
     const URL = 'http://www.luckymedia.nl/luckytv/category/dwdd/';
 
@@ -23,17 +22,17 @@ class CreateLuckyTVRssFeedHandler implements CommandHandler
     /** @var array */
     protected $posts;
 
-    /** @var CommandBus */
-    protected $commandBus;
+    /** @var Dispatcher */
+    protected $dispatcher;
 
     /**
      * @see CreateLuckyTVRssFeedCommand
      *
-     * @param CommandBus $commandBus
+     * @param Dispatcher $dispatcher
      */
-    public function __construct(CommandBus $commandBus)
+    public function __construct(Dispatcher $dispatcher)
     {
-        $this->commandBus = $commandBus;
+        $this->dispatcher = $dispatcher;
     }
 
     /**
@@ -43,7 +42,7 @@ class CreateLuckyTVRssFeedHandler implements CommandHandler
      *
      * @return Rss
      */
-    public function handle($command)
+    public function handle(CreateLuckyTVRssFeedCommand $command)
     {
         $this->html = $this->getHtmlFromUrl();
 
@@ -83,7 +82,7 @@ class CreateLuckyTVRssFeedHandler implements CommandHandler
 
     protected function createRssFeedFromPosts()
     {
-        return $this->commandBus->execute(
+        return $this->dispatcher->dispatch(
             new CreateRssFeedCommand(
                 $this->getFeedData(),
                 $this->getChannelData(),

@@ -2,10 +2,9 @@
 namespace Barryvanveen\Rss\Commands;
 
 use Barryvanveen\Rss\ItemData;
-use Flyingfoxx\CommandCenter\CommandHandler;
 use Thujohn\Rss\Rss;
 
-class CreateRssFeedHandler implements CommandHandler
+class CreateRssFeedCommandHandler
 {
     /**
      * @see CreateRssFeedCommand
@@ -21,7 +20,7 @@ class CreateRssFeedHandler implements CommandHandler
      *
      * @return Rss
      */
-    public function handle($command)
+    public function handle(CreateRssFeedCommand $command)
     {
         $rss = new Rss();
 

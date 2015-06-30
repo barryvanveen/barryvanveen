@@ -1,11 +1,12 @@
 <?php namespace Barryvanveen\Console\Commands;
 
 use Barryvanveen\LuckyTV\Commands\CreateLuckyTVRssFeedCommand;
-use Flyingfoxx\CommandCenter\CommandBus;
 use Illuminate\Console\Command;
+use Illuminate\Contracts\Bus\Dispatcher;
 
 class UpdateLuckyTvRssFeedCommand extends Command
 {
+
     const OBJECT_ARGUMENT_SEPARATOR = ':';
 
     /**
@@ -22,17 +23,17 @@ class UpdateLuckyTvRssFeedCommand extends Command
      */
     protected $description = 'Update the LuckyTV RSS feed';
 
-    /** @var CommandBus $commandBus */
-    private $commandBus;
+    /** @var Dispatcher $dispatcher */
+    private $dispatcher;
 
     /**
-     * @param CommandBus $commandBus
+     * @param Dispatcher $dispatcher
      */
-    public function __construct(CommandBus $commandBus)
+    public function __construct(Dispatcher $dispatcher)
     {
         parent::__construct();
 
-        $this->commandBus = $commandBus;
+        $this->dispatcher = $dispatcher;
     }
 
     /**
@@ -42,6 +43,6 @@ class UpdateLuckyTvRssFeedCommand extends Command
      */
     public function handle()
     {
-        $this->commandBus->execute(new CreateLuckyTVRssFeedCommand());
+        $this->dispatcher->dispatch(new CreateLuckyTVRssFeedCommand());
     }
 }

@@ -20,7 +20,7 @@ class CreateRssFeedCommand
      * @param ChannelData $channelData
      * @param array       $itemDataArray
      *
-     * @see CreateRssFeedHandler
+     * @see CreateRssFeedCommandHandler
      */
     public function __construct(FeedData $feedData, ChannelData $channelData, array $itemDataArray)
     {

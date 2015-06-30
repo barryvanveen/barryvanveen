@@ -26,7 +26,18 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://barryvanveen.nl',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application version
+    |--------------------------------------------------------------------------
+    |
+    | This is the current version number of our application
+    |
+    */
+
+    'version' => 'v2.0.0',
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +50,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Amsterdam',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +63,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'nl',
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +76,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'nl',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +89,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY', 'KMHSMoKvumDvnnYawtNfFAu6m3gVJ5eA'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -148,10 +159,11 @@ return [
         /*
          * Vendor Service Providers
          */
+        Collective\Remote\RemoteServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        Eusonlito\LaravelMeta\MetaServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavascriptServiceProvider::class,
-        Eusonlito\LaravelMeta\MetaServiceProvider::class,
         Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider::class,
         McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
@@ -208,10 +220,11 @@ return [
         /*
          * Vendor Aliases
          */
-        'DiffFormatter'   => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
-        'Flash'           => 'Laracasts\Flash\Flash',
-        'LocalizedCarbon' => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
-        //'Rss'             => 'Thujohn\Rss\RssFacade',
+        'DiffFormatter'   => Laravelrus\LocalizedCarbon\DiffFactoryFacade::class,
+        'Flash'           => Laracasts\Flash\Flash::class,
+        'LocalizedCarbon' => Laravelrus\LocalizedCarbon\LocalizedCarbon::class,
+        //'Rss'             => Thujohn\Rss\RssFacade::class,
+        'SSH'             => Collective\Remote\RemoteFacade::class,
 
     ],
 
