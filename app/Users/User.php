@@ -1,14 +1,12 @@
 <?php
 namespace Barryvanveen\Users;
 
-use Eloquent;
 use Hash;
-use Illuminate\Auth\Reminders\RemindableInterface;
-use Illuminate\Auth\Reminders\RemindableTrait;
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\UserTrait;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
-use McCool\LaravelAutoPresenter\PresenterInterface;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
  * Barryvanveen\Users\User.
@@ -31,9 +29,9 @@ use McCool\LaravelAutoPresenter\PresenterInterface;
  * @method static Builder|User whereCreatedAt($value)
  * @method static Builder|User whereUpdatedAt($value)
  */
-class User extends Eloquent implements UserInterface, RemindableInterface, PresenterInterface
+class User extends Model implements AuthenticatableContract, HasPresenter
 {
-    use UserTrait, RemindableTrait;
+    use Authenticatable;
 
     /**
      * The database table used by the model.
@@ -75,7 +73,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface, Prese
      *
      * @return UserPresenter
      */
-    public function getPresenter()
+    public function getPresenterClass()
     {
         return UserPresenter::class;
     }

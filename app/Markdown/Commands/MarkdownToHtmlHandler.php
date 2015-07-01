@@ -2,9 +2,8 @@
 namespace Barryvanveen\Markdown\Commands;
 
 use cebe\markdown\GithubMarkdown;
-use Flyingfoxx\CommandCenter\CommandHandler;
 
-class MarkdownToHtmlHandler implements CommandHandler
+class MarkdownToHtmlHandler
 {
     protected $parser;
 

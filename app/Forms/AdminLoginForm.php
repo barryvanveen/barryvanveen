@@ -4,6 +4,7 @@ namespace Barryvanveen\Forms;
 use Laracasts\Validation\FactoryInterface as ValidatorFactory;
 use Laracasts\Validation\FormValidator;
 
+// todo: rewrite AdminLoginForm to new validation
 class AdminLoginForm extends FormValidator
 {
     /**

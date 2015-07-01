@@ -15,19 +15,21 @@ class ComposerServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        /** @var \Illuminate\View\Factory $view */
+        $view = view();
 
         // Build menus
-        $this->app->view->composer('layouts.partials.header', MenuComposer::class);
+        $view->composer('layouts.partials.header', MenuComposer::class);
 
         // Header must know if this route is within the admin section
-        $this->app->view->composer('layouts.partials.header', function ($view) {
+        $view->composer('layouts.partials.header', function ($view) {
             /* @var View $view */
             $view->with('is_admin', (Request::segment(1) === 'admin' && Request::segment(2) !== 'inloggen'))
                  ->with('current_user', Auth::user());
         });
 
         // GA tracking code
-        $this->app->view->composer('layouts.partials.analytics', function ($view) {
+        $view->composer('layouts.partials.analytics', function ($view) {
             /* @var View $view */
             $view->with('ga_code', getenv('GA_CODE'));
         });

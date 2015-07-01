@@ -6,7 +6,7 @@ use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Query\Builder;
-use McCool\LaravelAutoPresenter\PresenterInterface;
+use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
  * Barryvanveen\Pages\Page.
@@ -31,7 +31,7 @@ use McCool\LaravelAutoPresenter\PresenterInterface;
  * @method static ModelNotFoundException|Page firstOrFail()
  * @method static Page get()
  */
-class Page extends Model implements SluggableInterface, PresenterInterface
+class Page extends Model implements SluggableInterface, HasPresenter
 {
     use SluggableTrait;
 
@@ -89,11 +89,11 @@ class Page extends Model implements SluggableInterface, PresenterInterface
     }
 
     /**
-     * Return a created presenter.
+     * Get the presenter class.
      *
-     * @return PagePresenter
+     * @return string
      */
-    public function getPresenter()
+    public function getPresenterClass()
     {
         return PagePresenter::class;
     }

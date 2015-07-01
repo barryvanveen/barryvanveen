@@ -64,7 +64,6 @@ class DeployCommand extends Command
         $logfile        = 'storage/logs/'.date('YmdHis').'.log';
         $redirecttofile = ' | tee -a '.$logfile.' 2>&1';
 
-        // todo: include SSH
         SSH::into('production')->run(
             [
                 'php artisan version'.$redirecttofile,

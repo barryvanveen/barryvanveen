@@ -2,9 +2,8 @@
 namespace Barryvanveen\Blogs\Commands;
 
 use Barryvanveen\Blogs\BlogRepository;
-use Flyingfoxx\CommandCenter\CommandHandler;
 
-class UpdateBlogHandler implements CommandHandler
+class UpdateBlogHandler
 {
     /** @var BlogRepository */
     private $blogRepository;

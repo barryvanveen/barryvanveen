@@ -5,7 +5,7 @@ use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
-use McCool\LaravelAutoPresenter\PresenterInterface;
+use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
  * Barryvanveen\Blogs\Blog.
@@ -35,7 +35,7 @@ use McCool\LaravelAutoPresenter\PresenterInterface;
  * @method static Builder|Blog past()
  * @method static Builder|Blog orderedDesc()
  */
-class Blog extends Model implements SluggableInterface, PresenterInterface
+class Blog extends Model implements SluggableInterface, HasPresenter
 {
     use SluggableTrait;
 
@@ -109,11 +109,11 @@ class Blog extends Model implements SluggableInterface, PresenterInterface
     }
 
     /**
-     * Return a created presenter.
+     * Get the presenter class.
      *
-     * @return BlogPresenter
+     * @return string
      */
-    public function getPresenter()
+    public function getPresenterClass()
     {
         return BlogPresenter::class;
     }

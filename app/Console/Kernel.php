@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        // todo: drop Command postfox from names
+        // todo: move all Commands to /jobs
+        // todo: move all Hanlders to /listeners
         \Barryvanveen\Console\Commands\DeployCommand::class,
         \Barryvanveen\Console\Commands\SwitchBranchCommand::class,
         \Barryvanveen\Console\Commands\UpdateLuckyTvRssFeedCommand::class,

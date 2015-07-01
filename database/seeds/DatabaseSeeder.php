@@ -1,21 +1,59 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Tables that need to be truncated.
      *
-     * @return void
+     * @var array
+     */
+    protected $tables = [
+        'blogs',
+        'pages',
+        'users',
+    ];
+
+    /**
+     * Seeders that need to be called.
+     *
+     * @var array
+     */
+    protected $seeders = [
+        'BlogsTableSeeder',
+        'PagesTableSeeder',
+        'UsersTableSeeder',
+    ];
+
+    /**
+     * Run the database seeds.
      */
     public function run()
     {
         Model::unguard();
 
-        // $this->call(UserTableSeeder::class);
+        $this->cleanDatabase();
 
-        Model::reguard();
+        foreach ($this->seeders as $seedClass) {
+            $this->call($seedClass);
+        }
+    }
+
+    /**
+     * Truncate all necessary database tables.
+     */
+    private function cleanDatabase()
+    {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+
+        foreach ($this->tables as $table) {
+            if (Schema::hasTable($table)) {
+                DB::table($table)->truncate();
+            }
+        }
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }

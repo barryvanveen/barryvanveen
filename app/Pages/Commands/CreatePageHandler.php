@@ -3,9 +3,8 @@ namespace Barryvanveen\Pages\Commands;
 
 use Barryvanveen\Pages\Page;
 use Barryvanveen\Pages\PageRepository;
-use Flyingfoxx\CommandCenter\CommandHandler;
 
-class CreatePageHandler implements CommandHandler
+class CreatePageHandler
 {
     /** @var PageRepository */
     private $pageRepository;

@@ -9,28 +9,24 @@ use Barryvanveen\Rss\Commands\CreateRssFeedCommand;
 use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
 use Carbon\Carbon;
-use Flyingfoxx\CommandCenter\CommandBus;
-use Flyingfoxx\CommandCenter\CommandHandler;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Thujohn\Rss\Rss;
 
-class CreateBlogRssFeedHandler implements CommandHandler
+class CreateBlogRssFeedHandler
 {
+    use DispatchesJobs;
+
     /** @var BlogRepository */
     private $blogRepository;
 
-    /** @var CommandBus */
-    private $commandBus;
-
     /**
      * @param BlogRepository $blogRepository
-     * @param CommandBus     $commandBus
      *
      * @see CreateBlogRssFeedCommand
      */
-    public function __construct(BlogRepository $blogRepository, CommandBus $commandBus)
+    public function __construct(BlogRepository $blogRepository)
     {
         $this->blogRepository = $blogRepository;
-        $this->commandBus     = $commandBus;
     }
 
     /**
@@ -42,7 +38,7 @@ class CreateBlogRssFeedHandler implements CommandHandler
      */
     public function handle($command)
     {
-        return $this->commandBus->execute(
+        return $this->dispatch(
             new CreateRssFeedCommand(
                 $this->getFeedData(),
                 $this->getChannelData(),
@@ -93,7 +89,7 @@ class CreateBlogRssFeedHandler implements CommandHandler
         foreach ($blogs as $blog) {
             $link = route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]);
 
-            $summary_html = $this->commandBus->execute(
+            $summary_html = $this->dispatch(
                 new MarkdownToHtmlCommand($blog->summary)
             );
 

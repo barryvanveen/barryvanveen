@@ -1,17 +1,15 @@
 <?php
 namespace Barryvanveen\Pages;
 
-use App;
 use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
 use Carbon\Carbon;
-use Flyingfoxx\CommandCenter\CommandBus;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Laravelrus\LocalizedCarbon\LocalizedCarbon;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
 class PagePresenter extends BasePresenter
 {
-    /** @var  CommandBus */
-    protected $commandBus;
+    use DispatchesJobs;
 
     /**
      * @param Page $page
@@ -19,8 +17,6 @@ class PagePresenter extends BasePresenter
     public function __construct(Page $page)
     {
         $this->resource = $page;
-
-        $this->commandBus = App::make(CommandBus::class);
     }
 
     /**
@@ -74,7 +70,7 @@ class PagePresenter extends BasePresenter
      */
     public function html_text()
     {
-        return $this->commandBus->execute(
+        return $this->dispatch(
             new MarkdownToHtmlCommand(
                 $this->resource->text
             )

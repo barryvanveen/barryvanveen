@@ -153,7 +153,9 @@ return [
          */
         Barryvanveen\Providers\AppServiceProvider::class,
         Barryvanveen\Providers\ComposerServiceProvider::class,
+        Barryvanveen\Providers\DropboxServiceProvider::class,
         Barryvanveen\Providers\EventServiceProvider::class,
+        Barryvanveen\Providers\GlideServiceProvider::class,
         Barryvanveen\Providers\RouteServiceProvider::class,
 
         /*
@@ -223,6 +225,7 @@ return [
         'DiffFormatter'   => Laravelrus\LocalizedCarbon\DiffFactoryFacade::class,
         'Flash'           => Laracasts\Flash\Flash::class,
         'LocalizedCarbon' => Laravelrus\LocalizedCarbon\LocalizedCarbon::class,
+        'Meta'            => Eusonlito\LaravelMeta\Facade::class,
         //'Rss'             => Thujohn\Rss\RssFacade::class,
         'SSH'             => Collective\Remote\RemoteFacade::class,
 

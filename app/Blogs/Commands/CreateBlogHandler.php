@@ -3,9 +3,8 @@ namespace Barryvanveen\Blogs\Commands;
 
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
-use Flyingfoxx\CommandCenter\CommandHandler;
 
-class CreateBlogHandler implements CommandHandler
+class CreateBlogHandler
 {
     /** @var BlogRepository */
     private $blogRepository;

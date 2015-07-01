@@ -11,7 +11,7 @@
     "cebe/markdown": "1.1.*",
     "cviebrock/eloquent-sluggable": "3.0.0-beta",
     "doctrine/dbal": "2.*",
-    "eusonlito/laravel-meta": "2.0.*",
+    "eusonlito/laravel-meta": "dev-master",
     "guzzlehttp/guzzle": "6.*",
     "laracasts/flash": "1.3.*",
     "laracasts/utilities": "2.*",

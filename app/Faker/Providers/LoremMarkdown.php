@@ -3,8 +3,6 @@ namespace Barryvanveen\Faker\Providers;
 
 use Faker\Provider\Lorem;
 
-// todo: add tests for all functions?
-// todo: make pull request to faker?
 class LoremMarkdown extends Lorem
 {
     /**

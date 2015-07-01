@@ -2,9 +2,8 @@
 namespace Barryvanveen\Pages\Commands;
 
 use Barryvanveen\Pages\PageRepository;
-use Flyingfoxx\CommandCenter\CommandHandler;
 
-class UpdatePageHandler implements CommandHandler
+class UpdatePageHandler
 {
     /** @var PageRepository */
     private $pageRepository;
