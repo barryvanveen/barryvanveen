@@ -1,5 +1,4 @@
 <?php
-
 namespace Barryvanveen\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
@@ -12,6 +11,6 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        'admin/markdown-to-html'
+        'admin/markdown-to-html',
     ];
 }

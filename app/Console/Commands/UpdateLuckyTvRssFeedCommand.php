@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Console\Commands;
+<?php
+namespace Barryvanveen\Console\Commands;
 
 use Barryvanveen\LuckyTV\Commands\CreateLuckyTVRssFeedCommand;
 use Illuminate\Console\Command;
@@ -6,7 +7,6 @@ use Illuminate\Contracts\Bus\Dispatcher;
 
 class UpdateLuckyTvRssFeedCommand extends Command
 {
-
     const OBJECT_ARGUMENT_SEPARATOR = ':';
 
     /**

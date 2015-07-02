@@ -1,5 +1,7 @@
-<?php namespace Barryvanveen\Console\Commands;
+<?php
+namespace Barryvanveen\Console\Commands;
 
+use DB;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 

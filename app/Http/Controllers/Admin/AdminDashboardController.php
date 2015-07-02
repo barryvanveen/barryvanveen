@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Http\Controllers\Admin;
+<?php
+namespace Barryvanveen\Http\Controllers\Admin;
 
 use Barryvanveen\Http\Controllers\Controller;
 use View;

@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Http\Controllers;
+<?php
+namespace Barryvanveen\Http\Controllers;
 
 use Artisan;
 use Barryvanveen\Blogs\BlogRepository;

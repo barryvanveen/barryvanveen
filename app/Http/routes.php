@@ -61,8 +61,8 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::post('inloggen', [
         'middleware' => 'csrf',
-        'as'     => 'admin.login',
-        'uses'   => 'AdminLoginController@store',
+        'as'         => 'admin.login',
+        'uses'       => 'AdminLoginController@store',
     ]);
 
     Route::get('uitloggen', [
@@ -96,8 +96,8 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::post('blog/new', [
             'middleware' => 'csrf',
-            'as'     => 'admin.blog-new',
-            'uses'   => 'AdminBlogController@store',
+            'as'         => 'admin.blog-new',
+            'uses'       => 'AdminBlogController@store',
         ]);
 
         Route::get('blog/{blogId}/edit', [
@@ -107,8 +107,8 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::patch('blog/{blogId}', [
             'middleware' => 'csrf',
-            'as'     => 'admin.blog-update',
-            'uses'   => 'AdminBlogController@update',
+            'as'         => 'admin.blog-update',
+            'uses'       => 'AdminBlogController@update',
         ]);
 
         Route::get('pages', [
@@ -123,8 +123,8 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::post('pages/new', [
             'middleware' => 'csrf',
-            'as'     => 'admin.page-new',
-            'uses'   => 'AdminPageController@store',
+            'as'         => 'admin.page-new',
+            'uses'       => 'AdminPageController@store',
         ]);
 
         Route::get('pages/{pageId}/edit', [
@@ -134,14 +134,14 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::patch('pages/{pageId}', [
             'middleware' => 'csrf',
-            'as'     => 'admin.page-update',
-            'uses'   => 'AdminPageController@update',
+            'as'         => 'admin.page-update',
+            'uses'       => 'AdminPageController@update',
         ]);
 
         Route::post('markdown-to-html', [
             'middleware' => 'post-ajax-json',
-            'as'     => 'admin.markdown-to-html',
-            'uses'   => 'MarkdownController@parse',
+            'as'         => 'admin.markdown-to-html',
+            'uses'       => 'MarkdownController@parse',
         ]);
 
         Route::get('logs', [

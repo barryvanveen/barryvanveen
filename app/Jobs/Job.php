@@ -1,5 +1,4 @@
 <?php
-
 namespace Barryvanveen\Jobs;
 
 use Illuminate\Bus\Queueable;

@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Http\Controllers;
+<?php
+namespace Barryvanveen\Http\Controllers;
 
 use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
 use Input;

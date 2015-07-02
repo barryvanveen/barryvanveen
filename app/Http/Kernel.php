@@ -1,5 +1,4 @@
 <?php
-
 namespace Barryvanveen\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -26,8 +25,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Barryvanveen\Http\Middleware\Authenticate::class,
+        'auth'       => \Barryvanveen\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \Barryvanveen\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest'      => \Barryvanveen\Http\Middleware\RedirectIfAuthenticated::class,
     ];
 }

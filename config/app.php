@@ -230,7 +230,7 @@ return [
         'LocalizedCarbon' => Laravelrus\LocalizedCarbon\LocalizedCarbon::class,
         'Meta'            => Eusonlito\LaravelMeta\Facade::class,
         //'Rss'             => Thujohn\Rss\RssFacade::class,
-        'SSH'             => Collective\Remote\RemoteFacade::class,
+        'SSH' => Collective\Remote\RemoteFacade::class,
 
     ],
 

@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Console\Commands;
+<?php
+namespace Barryvanveen\Console\Commands;
 
 use Illuminate\Console\Command;
 

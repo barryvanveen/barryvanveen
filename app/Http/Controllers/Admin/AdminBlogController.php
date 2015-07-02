@@ -1,4 +1,5 @@
-<?php namespace Barryvanveen\Http\Controllers\Admin;
+<?php
+namespace Barryvanveen\Http\Controllers\Admin;
 
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
@@ -38,7 +39,7 @@ class AdminBlogController extends Controller
     public function __construct(BlogRepository $blogRepository, Request $request)
     {
         $this->blogRepository = $blogRepository;
-        $this->request = $request;
+        $this->request        = $request;
 
         $this->messages = [
             'title.required'            => trans('general.validation-title-required'),

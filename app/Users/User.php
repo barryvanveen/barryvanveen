@@ -2,10 +2,10 @@
 namespace Barryvanveen\Users;
 
 use Hash;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Query\Builder;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
