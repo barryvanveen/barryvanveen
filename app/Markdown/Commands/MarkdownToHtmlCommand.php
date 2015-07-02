@@ -8,7 +8,7 @@ class MarkdownToHtmlCommand
     /**
      * @param $markdown
      *
-     * @see MarkdownToHtmlHandler
+     * @see MarkdownToHtmlCommandHandler
      */
     public function __construct($markdown)
     {

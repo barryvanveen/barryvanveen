@@ -1,6 +1,5 @@
 <?php namespace Barryvanveen\Http\Controllers\Admin;
 
-use Barryvanveen\Forms\AdminPageForm;
 use Barryvanveen\Http\Controllers\Controller;
 use Barryvanveen\Pages\Commands\CreatePageCommand;
 use Barryvanveen\Pages\Commands\UpdatePageCommand;
@@ -8,8 +7,8 @@ use Barryvanveen\Pages\Page;
 use Barryvanveen\Pages\PageRepository;
 use Flash;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Redirect;
-use Request;
 use View;
 
 class AdminPageController extends Controller
@@ -17,17 +16,33 @@ class AdminPageController extends Controller
     /** @var PageRepository */
     private $pagesRepository;
 
-    /** @var AdminPageForm */
-    private $adminPageForm;
+    /** @var Request */
+    private $request;
+
+    /** @var array */
+    protected $rules = [
+        'title'  => 'required',
+        'text'   => 'required',
+        'online' => 'required',
+    ];
+
+    /** @var  array */
+    protected $messages;
 
     /**
      * @param PageRepository $pagesRepository
-     * @param AdminPageForm  $adminPageForm
+     * @param Request        $request
      */
-    public function __construct(PageRepository $pagesRepository, AdminPageForm $adminPageForm)
+    public function __construct(PageRepository $pagesRepository, Request $request)
     {
         $this->pagesRepository = $pagesRepository;
-        $this->adminPageForm   = $adminPageForm;
+        $this->request = $request;
+
+        $this->messages = [
+            'title.required'  => trans('general.validation-title-required'),
+            'text.required'   => trans('general.validation-text-required'),
+            'online.required' => trans('general.validation-online-required'),
+        ];
 
         parent::__construct();
     }
@@ -68,17 +83,13 @@ class AdminPageController extends Controller
      */
     public function store()
     {
-        $this->adminPageForm->validate(Request::only([
-            'title',
-            'text',
-            'online',
-        ]));
+        $this->validate($this->request, $this->rules, $this->messages);
 
         $this->dispatch(
             new CreatePageCommand(
-                Request::get('title'),
-                Request::get('text'),
-                Request::get('online')
+                $this->request->get('title'),
+                $this->request->get('text'),
+                $this->request->get('online')
             )
         );
 
@@ -109,23 +120,17 @@ class AdminPageController extends Controller
      * @param $id
      *
      * @return RedirectResponse
-     *
-     * @throws FormValidationException
      */
     public function update($id)
     {
-        $this->adminPageForm->validate(Request::only([
-            'title',
-            'text',
-            'online',
-        ]));
+        $this->validate($this->request, $this->rules, $this->messages);
 
         $this->dispatch(
             new UpdatePageCommand(
                 $id,
-                Request::get('title'),
-                Request::get('text'),
-                Request::get('online')
+                $this->request->get('title'),
+                $this->request->get('text'),
+                $this->request->get('online')
             )
         );
 

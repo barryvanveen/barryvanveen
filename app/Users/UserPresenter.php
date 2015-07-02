@@ -6,11 +6,11 @@ use McCool\LaravelAutoPresenter\BasePresenter;
 class UserPresenter extends BasePresenter
 {
     /**
-     * @param User $user
+     * @param User $resource
      */
-    public function __construct(User $user)
+    public function __construct(User $resource)
     {
-        $this->resource = $user;
+        $this->resource = $resource;
     }
 
     /**

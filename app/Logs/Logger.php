@@ -3,7 +3,6 @@ namespace Barryvanveen\Logs;
 
 use App;
 use Barryvanveen\Mailers\ExceptionMailer;
-use Config;
 use Log;
 use Redirect;
 use Response;
@@ -71,7 +70,7 @@ class Logger
      */
     public static function returnIfDebuggingEnabled()
     {
-        if (Config::get('app.debug')) {
+        if (config('app.debug')) {
             return;
         }
     }

@@ -3,7 +3,7 @@ namespace Barryvanveen\Markdown\Commands;
 
 use cebe\markdown\GithubMarkdown;
 
-class MarkdownToHtmlHandler
+class MarkdownToHtmlCommandHandler
 {
     protected $parser;
 

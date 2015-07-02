@@ -2,31 +2,45 @@
 
 use Auth;
 use Barryvanveen\Exceptions\InvalidLoginException;
-use Barryvanveen\Forms\AdminLoginForm;
 use Barryvanveen\Http\Controllers\Controller;
 use Barryvanveen\Users\UserRepository;
 use Flash;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Input;
 use Redirect;
 use View;
 
 class AdminLoginController extends Controller
 {
-    /** @var AdminLoginForm */
-    private $adminLoginForm;
-
     /** @var UserRepository */
     private $userRepository;
 
+    /** @var Request */
+    private $request;
+
+    /** @var array */
+    private $rules = [
+        'email'    => 'required|email',
+        'password' => 'required',
+    ];
+
+    /** @var array */
+    private $messages;
+
     /**
-     * @param AdminLoginForm $adminLoginForm
      * @param UserRepository $userRepository
      */
-    public function __construct(AdminLoginForm $adminLoginForm, UserRepository $userRepository)
+    public function __construct(UserRepository $userRepository, Request $request)
     {
-        $this->adminLoginForm = $adminLoginForm;
         $this->userRepository = $userRepository;
+        $this->request        = $request;
+
+        $this->messages = [
+            'email.required'    => trans('general.validation-email-required'),
+            'email.email'       => trans('general.validation-email-email'),
+            'password.required' => trans('general.validation-password-required'),
+        ];
 
         parent::__construct();
     }
@@ -46,14 +60,13 @@ class AdminLoginController extends Controller
      *
      * @return $this|RedirectResponse
      *
-     * @throws FormValidationException
      * @throws InvalidLoginException
      */
     public function store()
     {
-        $formData = Input::only('email', 'password');
+        $this->validate($this->request, $this->rules, $this->messages);
 
-        $this->adminLoginForm->validate($formData);
+        $formData = Input::only('email', 'password');
 
         if (Auth::attempt($formData, (bool) Input::only('remember_me'))) {
             Flash::success(trans('general.login-successful'));

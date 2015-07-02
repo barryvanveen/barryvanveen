@@ -12,11 +12,19 @@ class BlogPresenter extends BasePresenter
     use DispatchesJobs;
 
     /**
-     * @param Blog $blog
+     * @param Blog $resource
      */
-    public function __construct(Blog $blog)
+    public function __construct(Blog $resource)
     {
-        $this->resource = $blog;
+        $this->resource = $resource;
+    }
+
+    /**
+     * @return string
+     */
+    public function title()
+    {
+        return $this->resource->title;
     }
 
     /**

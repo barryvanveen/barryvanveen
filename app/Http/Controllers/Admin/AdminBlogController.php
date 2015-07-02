@@ -4,12 +4,11 @@ use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
 use Barryvanveen\Blogs\Commands\CreateBlogCommand;
 use Barryvanveen\Blogs\Commands\UpdateBlogCommand;
-use Barryvanveen\Forms\AdminBlogForm;
 use Barryvanveen\Http\Controllers\Controller;
 use Flash;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Redirect;
-use Request;
 use View;
 
 class AdminBlogController extends Controller
@@ -17,17 +16,37 @@ class AdminBlogController extends Controller
     /** @var BlogRepository */
     private $blogRepository;
 
-    /** @var AdminBlogForm */
-    private $adminBlogForm;
+    /** @var Request */
+    private $request;
+
+    /** @var array */
+    private $rules = [
+        'title'            => 'required',
+        'summary'          => 'required',
+        'text'             => 'required',
+        'publication_date' => 'required',
+        'online'           => 'required',
+    ];
+
+    /** @var array */
+    private $messages;
 
     /**
      * @param BlogRepository $blogRepository
-     * @param AdminBlogForm  $adminBlogForm
+     * @param Request        $request
      */
-    public function __construct(BlogRepository $blogRepository, AdminBlogForm $adminBlogForm)
+    public function __construct(BlogRepository $blogRepository, Request $request)
     {
         $this->blogRepository = $blogRepository;
-        $this->adminBlogForm  = $adminBlogForm;
+        $this->request = $request;
+
+        $this->messages = [
+            'title.required'            => trans('general.validation-title-required'),
+            'summary.required'          => trans('general.validation-summary-required'),
+            'text.required'             => trans('general.validation-text-required'),
+            'publication_date.required' => trans('general.validation-publication-date-required'),
+            'online.required'           => trans('general.validation-online-required'),
+        ];
 
         parent::__construct();
     }
@@ -68,21 +87,15 @@ class AdminBlogController extends Controller
      */
     public function store()
     {
-        $this->adminBlogForm->validate(Request::only([
-            'title',
-            'summary',
-            'text',
-            'publication_date',
-            'online',
-        ]));
+        $this->validate($this->request,  $this->rules, $this->messages);
 
         $this->dispatch(
             new CreateBlogCommand(
-                Request::get('title'),
-                Request::get('summary'),
-                Request::get('text'),
-                Request::get('publication_date'),
-                Request::get('online')
+                $this->request->get('title'),
+                $this->request->get('summary'),
+                $this->request->get('text'),
+                $this->request->get('publication_date'),
+                $this->request->get('online')
             )
         );
 
@@ -113,28 +126,19 @@ class AdminBlogController extends Controller
      * @param $id
      *
      * @return RedirectResponse
-     *
-     * @throws FormValidationException
      */
     public function update($id)
     {
-        // todo: omschrijven naar nieuwe validatie
-        $this->adminBlogForm->validate(Request::only([
-            'title',
-            'summary',
-            'text',
-            'publication_date',
-            'online',
-        ]));
+        $this->validate($this->request,  $this->rules, $this->messages);
 
         $this->dispatch(
             new UpdateBlogCommand(
                 $id,
-                Request::get('title'),
-                Request::get('summary'),
-                Request::get('text'),
-                Request::get('publication_date'),
-                Request::get('online')
+                $this->request->get('title'),
+                $this->request->get('summary'),
+                $this->request->get('text'),
+                $this->request->get('publication_date'),
+                $this->request->get('online')
             )
         );
 

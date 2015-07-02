@@ -12,11 +12,11 @@ class PagePresenter extends BasePresenter
     use DispatchesJobs;
 
     /**
-     * @param Page $page
+     * @param Page $resource
      */
-    public function __construct(Page $page)
+    public function __construct(Page $resource)
     {
-        $this->resource = $page;
+        $this->resource = $resource;
     }
 
     /**

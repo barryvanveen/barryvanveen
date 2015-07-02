@@ -161,6 +161,7 @@ return [
         /*
          * Vendor Service Providers
          */
+        Collective\Html\HtmlServiceProvider::class,
         Collective\Remote\RemoteServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         Eusonlito\LaravelMeta\MetaServiceProvider::class,
@@ -224,6 +225,8 @@ return [
          */
         'DiffFormatter'   => Laravelrus\LocalizedCarbon\DiffFactoryFacade::class,
         'Flash'           => Laracasts\Flash\Flash::class,
+        'Form'            => Collective\Html\FormFacade::class,
+        'Html'            => Collective\Html\HtmlFacade::class,
         'LocalizedCarbon' => Laravelrus\LocalizedCarbon\LocalizedCarbon::class,
         'Meta'            => Eusonlito\LaravelMeta\Facade::class,
         //'Rss'             => Thujohn\Rss\RssFacade::class,
