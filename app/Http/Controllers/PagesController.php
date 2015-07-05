@@ -3,10 +3,11 @@ namespace Barryvanveen\Http\Controllers;
 
 use Artisan;
 use Barryvanveen\Blogs\BlogRepository;
-use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
+use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Barryvanveen\Pages\PageRepository;
 use Cache;
 use Response;
+use Thujohn\Rss\Rss;
 use View;
 
 class PagesController extends Controller
@@ -34,7 +35,7 @@ class PagesController extends Controller
         $page = $this->pageRepository->findPublishedBySlug('over-mij');
 
         $text_html = $this->dispatch(
-            new MarkdownToHtmlCommand($page->text)
+            new MarkdownToHtml($page->text)
         );
 
         $this->setPageTitle($page->title);
@@ -48,7 +49,7 @@ class PagesController extends Controller
         $page = $this->pageRepository->findPublishedBySlug('boeken-die-ik-heb-gelezen');
 
         $text_html = $this->dispatch(
-            new MarkdownToHtmlCommand($page->text)
+            new MarkdownToHtml($page->text)
         );
 
         $this->setPageTitle($page->title);

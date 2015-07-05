@@ -2,8 +2,8 @@
 namespace Barryvanveen\Http\Controllers\Admin;
 
 use Barryvanveen\Http\Controllers\Controller;
-use Barryvanveen\Pages\Commands\CreatePageCommand;
-use Barryvanveen\Pages\Commands\UpdatePageCommand;
+use Barryvanveen\Jobs\Pages\CreatePage;
+use Barryvanveen\Jobs\Pages\UpdatePage;
 use Barryvanveen\Pages\Page;
 use Barryvanveen\Pages\PageRepository;
 use Flash;
@@ -87,7 +87,7 @@ class AdminPageController extends Controller
         $this->validate($this->request, $this->rules, $this->messages);
 
         $this->dispatch(
-            new CreatePageCommand(
+            new CreatePage(
                 $this->request->get('title'),
                 $this->request->get('text'),
                 $this->request->get('online')
@@ -127,7 +127,7 @@ class AdminPageController extends Controller
         $this->validate($this->request, $this->rules, $this->messages);
 
         $this->dispatch(
-            new UpdatePageCommand(
+            new UpdatePage(
                 $id,
                 $this->request->get('title'),
                 $this->request->get('text'),

@@ -1,7 +1,7 @@
 <?php
 namespace Barryvanveen\Blogs;
 
-use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
+use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Carbon\Carbon;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Laravelrus\LocalizedCarbon\LocalizedCarbon;
@@ -79,7 +79,7 @@ class BlogPresenter extends BasePresenter
     public function html_summary()
     {
         return $this->dispatch(
-            new MarkdownToHtmlCommand(
+            new MarkdownToHtml(
                 $this->resource->summary
             )
         );
@@ -93,7 +93,7 @@ class BlogPresenter extends BasePresenter
     public function html_text()
     {
         return $this->dispatch(
-            new MarkdownToHtmlCommand(
+            new MarkdownToHtml(
                 $this->resource->text
             )
         );

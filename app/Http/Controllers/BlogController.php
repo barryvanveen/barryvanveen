@@ -2,10 +2,11 @@
 namespace Barryvanveen\Http\Controllers;
 
 use Barryvanveen\Blogs\BlogRepository;
-use Barryvanveen\Blogs\Commands\CreateBlogRssFeedCommand;
-use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
+use Barryvanveen\Jobs\Blogs\CreateBlogRssFeed;
+use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Redirect;
 use Response;
+use Thujohn\Rss\Rss;
 use View;
 
 class BlogController extends Controller
@@ -57,7 +58,7 @@ class BlogController extends Controller
         }
 
         $summary_html = $this->dispatch(
-            new MarkdownToHtmlCommand($blog->summary)
+            new MarkdownToHtml($blog->summary)
         );
 
         $this->setPageTitle('Blog');
@@ -77,7 +78,7 @@ class BlogController extends Controller
         // todo: fix RSS
         /** @var Rss $rss */
         $rss = $this->dispatch(
-            new CreateBlogRssFeedCommand()
+            new CreateBlogRssFeed()
         );
 
         return Response::make($rss, 200, ['Content-Type' => 'text/xml']);

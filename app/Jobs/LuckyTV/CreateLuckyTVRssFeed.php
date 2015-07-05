@@ -1,19 +1,22 @@
 <?php
-namespace Barryvanveen\LuckyTV\Commands;
+namespace Barryvanveen\Jobs\LuckyTV;
 
+use Barryvanveen\Jobs\Rss\CreateRssFeed;
 use Barryvanveen\Rss\ChannelData;
-use Barryvanveen\Rss\Commands\CreateRssFeedCommand;
 use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
 use Cache;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
-use Illuminate\Contracts\Bus\Dispatcher;
+use Illuminate\Contracts\Bus\SelfHandling;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Symfony\Component\DomCrawler\Crawler;
 use Thujohn\Rss\Rss;
 
-class CreateLuckyTVRssFeedCommandHandler
+class CreateLuckyTVRssFeed implements SelfHandling
 {
+    use DispatchesJobs;
+
     const URL = 'http://www.luckymedia.nl/luckytv/category/dwdd/';
 
     /** @var string */
@@ -22,27 +25,13 @@ class CreateLuckyTVRssFeedCommandHandler
     /** @var array */
     protected $posts;
 
-    /** @var Dispatcher */
-    protected $dispatcher;
-
-    /**
-     * @see CreateLuckyTVRssFeedCommand
-     *
-     * @param Dispatcher $dispatcher
-     */
-    public function __construct(Dispatcher $dispatcher)
-    {
-        $this->dispatcher = $dispatcher;
-    }
-
     /**
      * Handle a command.
      *
-     * @param CreateLuckyTVRssFeedCommand $command
-     *
+     * // todo: fix RSS
      * @return Rss
      */
-    public function handle(CreateLuckyTVRssFeedCommand $command)
+    public function handle()
     {
         $this->html = $this->getHtmlFromUrl();
 
@@ -82,8 +71,8 @@ class CreateLuckyTVRssFeedCommandHandler
 
     protected function createRssFeedFromPosts()
     {
-        return $this->dispatcher->dispatch(
-            new CreateRssFeedCommand(
+        return $this->dispatch(
+            new CreateRssFeed(
                 $this->getFeedData(),
                 $this->getChannelData(),
                 $this->getItemDataArray()

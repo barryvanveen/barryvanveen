@@ -1,45 +1,38 @@
 <?php
-namespace Barryvanveen\Blogs\Commands;
+namespace Barryvanveen\Jobs\Blogs;
 
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
-use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
+use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
+use Barryvanveen\Jobs\Rss\CreateRssFeed;
 use Barryvanveen\Rss\ChannelData;
-use Barryvanveen\Rss\Commands\CreateRssFeedCommand;
 use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
 use Carbon\Carbon;
+use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Thujohn\Rss\Rss;
 
-class CreateBlogRssFeedHandler
+class CreateBlogRssFeed implements SelfHandling
 {
     use DispatchesJobs;
 
-    /** @var BlogRepository */
+    /** @var  BlogRepository */
     private $blogRepository;
 
     /**
+     * Handle the CreateBlogRssFeed command.
+     *
      * @param BlogRepository $blogRepository
      *
-     * @see CreateBlogRssFeedCommand
+     * @return Rss|mixed
      */
-    public function __construct(BlogRepository $blogRepository)
+    public function handle(BlogRepository $blogRepository)
     {
         $this->blogRepository = $blogRepository;
-    }
 
-    /**
-     * Handle the CreateBlogRssFeedCommand command.
-     *
-     * @param CreateBlogRssFeedCommand $command
-     *
-     * @return mixed|Rss
-     */
-    public function handle($command)
-    {
         return $this->dispatch(
-            new CreateRssFeedCommand(
+            new CreateRssFeed(
                 $this->getFeedData(),
                 $this->getChannelData(),
                 $this->getItemDataArray()
@@ -90,7 +83,7 @@ class CreateBlogRssFeedHandler
             $link = route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]);
 
             $summary_html = $this->dispatch(
-                new MarkdownToHtmlCommand($blog->summary)
+                new MarkdownToHtml($blog->summary)
             );
 
             $items[] = new ItemData(

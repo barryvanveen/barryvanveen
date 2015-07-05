@@ -3,9 +3,9 @@ namespace Barryvanveen\Http\Controllers\Admin;
 
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
-use Barryvanveen\Blogs\Commands\CreateBlogCommand;
-use Barryvanveen\Blogs\Commands\UpdateBlogCommand;
 use Barryvanveen\Http\Controllers\Controller;
+use Barryvanveen\Jobs\Blogs\CreateBlog;
+use Barryvanveen\Jobs\Blogs\UpdateBlog;
 use Flash;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -91,7 +91,7 @@ class AdminBlogController extends Controller
         $this->validate($this->request,  $this->rules, $this->messages);
 
         $this->dispatch(
-            new CreateBlogCommand(
+            new CreateBlog(
                 $this->request->get('title'),
                 $this->request->get('summary'),
                 $this->request->get('text'),
@@ -133,7 +133,7 @@ class AdminBlogController extends Controller
         $this->validate($this->request,  $this->rules, $this->messages);
 
         $this->dispatch(
-            new UpdateBlogCommand(
+            new UpdateBlog(
                 $id,
                 $this->request->get('title'),
                 $this->request->get('summary'),

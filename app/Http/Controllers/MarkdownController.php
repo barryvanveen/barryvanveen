@@ -1,7 +1,7 @@
 <?php
 namespace Barryvanveen\Http\Controllers;
 
-use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
+use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Input;
 use Response;
 
@@ -13,7 +13,7 @@ class MarkdownController extends Controller
     public function parse()
     {
         $html = $this->dispatch(
-            new MarkdownToHtmlCommand(
+            new MarkdownToHtml(
                 Input::get('markdown', '')
             )
         );
