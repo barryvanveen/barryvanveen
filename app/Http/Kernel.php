@@ -25,8 +25,9 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth'       => \Barryvanveen\Http\Middleware\Authenticate::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest'      => \Barryvanveen\Http\Middleware\RedirectIfAuthenticated::class,
+        'auth'                => \Barryvanveen\Http\Middleware\Authenticate::class,
+        'auth.basic'          => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'auth-post-ajax-json' => \Barryvanveen\Http\Middleware\AuthPostAjaxJson::class,
+        'guest'               => \Barryvanveen\Http\Middleware\RedirectIfAuthenticated::class,
     ];
 }

@@ -134,9 +134,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         ]);
 
         Route::post('markdown-to-html', [
-            'middleware' => 'post-ajax-json',
+            'middleware' => 'auth-post-ajax-json',
             'as'         => 'admin.markdown-to-html',
-            'uses'       => 'MarkdownController@parse',
+            'uses'       => 'AdminMarkdownController@parse',
         ]);
 
         Route::get('logs', [

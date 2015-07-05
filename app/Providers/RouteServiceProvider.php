@@ -3,8 +3,6 @@ namespace Barryvanveen\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
-use Request;
-use Response;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -24,13 +22,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        // todo: rewrite to middleware
-        $router->filter('post-ajax-json', function () {
-            if (!Request::isMethod('post') || !Request::ajax() || !Request::wantsJson()) {
-                return Response::make('Unauthorized', 401);
-            }
-        });
-
         parent::boot($router);
     }
 
