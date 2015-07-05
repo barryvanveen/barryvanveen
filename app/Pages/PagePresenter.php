@@ -43,16 +43,43 @@ class PagePresenter extends BasePresenter
         );
     }
 
-    public function publication_date()
+    /**
+     * @return int
+     */
+    public function id()
     {
-        return $this->resource->publication_date;
+        return $this->resource->id;
     }
 
+    /**
+     * @return bool
+     */
+    public function online()
+    {
+        return $this->resource->online;
+    }
+
+    /**
+     * Retrieve text markdown.
+     *
+     * @return string
+     */
+    public function text()
+    {
+        return $this->resource->text;
+    }
+
+    /**
+     * @return string
+     */
     public function title()
     {
         return $this->resource->title;
     }
 
+    /**
+     * @return Carbon
+     */
     public function updated_at()
     {
         return $this->resource->updated_at;

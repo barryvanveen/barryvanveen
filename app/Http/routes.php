@@ -52,7 +52,7 @@ Route::get('images/{filename}', [
 /*
  * Admin routes
  */
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
     Route::get('inloggen', [
         'as'   => 'admin.login',
@@ -60,7 +60,6 @@ Route::group(['prefix' => 'admin'], function () {
     ]);
 
     Route::post('inloggen', [
-        'middleware' => 'csrf',
         'as'         => 'admin.login',
         'uses'       => 'AdminLoginController@store',
     ]);
@@ -77,7 +76,7 @@ Route::group(['prefix' => 'admin'], function () {
      * - the auth-middleware
      * - the \Barryvanveen\Http\Controllers\Admin namespace
      */
-    Route::group(['middleware' => 'auth', 'namespace' => 'Admin'], function () {
+    Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/', [
             'as'   => 'admin.dashboard',
@@ -95,7 +94,6 @@ Route::group(['prefix' => 'admin'], function () {
         ]);
 
         Route::post('blog/new', [
-            'middleware' => 'csrf',
             'as'         => 'admin.blog-new',
             'uses'       => 'AdminBlogController@store',
         ]);
@@ -106,7 +104,6 @@ Route::group(['prefix' => 'admin'], function () {
         ]);
 
         Route::patch('blog/{blogId}', [
-            'middleware' => 'csrf',
             'as'         => 'admin.blog-update',
             'uses'       => 'AdminBlogController@update',
         ]);
@@ -122,7 +119,6 @@ Route::group(['prefix' => 'admin'], function () {
         ]);
 
         Route::post('pages/new', [
-            'middleware' => 'csrf',
             'as'         => 'admin.page-new',
             'uses'       => 'AdminPageController@store',
         ]);
@@ -133,7 +129,6 @@ Route::group(['prefix' => 'admin'], function () {
         ]);
 
         Route::patch('pages/{pageId}', [
-            'middleware' => 'csrf',
             'as'         => 'admin.page-update',
             'uses'       => 'AdminPageController@update',
         ]);

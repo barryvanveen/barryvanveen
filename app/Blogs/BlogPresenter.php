@@ -58,6 +58,22 @@ class BlogPresenter extends BasePresenter
     }
 
     /**
+     * @return int
+     */
+    public function id()
+    {
+        return $this->resource->id;
+    }
+
+    /**
+     * @return bool
+     */
+    public function online()
+    {
+        return $this->resource->online;
+    }
+
+    /**
      * Get publication date in proper Dutch format.
      *
      * @return string
@@ -79,6 +95,26 @@ class BlogPresenter extends BasePresenter
         $date = new LocalizedCarbon($this->resource->publication_date);
 
         return $date->diffForHumans();
+    }
+
+    /**
+     * Retrieve summary markdown.
+     *
+     * @return string
+     */
+    public function summary()
+    {
+        return $this->resource->summary;
+    }
+
+    /**
+     * Retrieve text markdown.
+     *
+     * @return string
+     */
+    public function text()
+    {
+        return $this->resource->text;
     }
 
     /**

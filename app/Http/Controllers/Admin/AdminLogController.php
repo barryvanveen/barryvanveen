@@ -20,7 +20,7 @@ class AdminLogController extends Controller
 
         $logs = LaravelLogViewer::all();
 
-        return View::make('laravel-log-viewer::log', [
+        return View::make('packages.rap2hpoutre.laravel-log-viewer.log', [
             'logs'         => $logs,
             'files'        => LaravelLogViewer::getFiles(true),
             'current_file' => LaravelLogViewer::getFileName(),
