@@ -20,24 +20,6 @@ class BlogPresenter extends BasePresenter
     }
 
     /**
-     * @return string
-     */
-    public function title()
-    {
-        return $this->resource->title;
-    }
-
-    /**
-     * Get route to blog-item.
-     *
-     * @return string
-     */
-    public function url()
-    {
-        return route('blog-item', ['id' => $this->resource->id, 'slug' => $this->resource->slug]);
-    }
-
-    /**
      * Get route to edit blog in admin section.
      *
      * @return string
@@ -45,30 +27,6 @@ class BlogPresenter extends BasePresenter
     public function admin_edit_url()
     {
         return route('admin.blog-edit', [$this->resource->id]);
-    }
-
-    /**
-     * Get publication date in proper Dutch format.
-     *
-     * @return string
-     */
-    public function publication_date_formatted()
-    {
-        $date = new Carbon($this->resource->publication_date);
-
-        return $date->format('d-m-Y H:i');
-    }
-
-    /**
-     * Get publication date in a diffForHumans format.
-     *
-     * @return string
-     */
-    public function publication_date_for_humans()
-    {
-        $date = new LocalizedCarbon($this->resource->publication_date);
-
-        return $date->diffForHumans();
     }
 
     /**
@@ -97,5 +55,47 @@ class BlogPresenter extends BasePresenter
                 $this->resource->text
             )
         );
+    }
+
+    /**
+     * Get publication date in proper Dutch format.
+     *
+     * @return string
+     */
+    public function publication_date_formatted()
+    {
+        $date = new Carbon($this->resource->publication_date);
+
+        return $date->format('d-m-Y H:i');
+    }
+
+    /**
+     * Get publication date in a diffForHumans format.
+     *
+     * @return string
+     */
+    public function publication_date_for_humans()
+    {
+        $date = new LocalizedCarbon($this->resource->publication_date);
+
+        return $date->diffForHumans();
+    }
+
+    /**
+     * @return string
+     */
+    public function title()
+    {
+        return $this->resource->title;
+    }
+
+    /**
+     * Get route to blog-item.
+     *
+     * @return string
+     */
+    public function url()
+    {
+        return route('blog-item', ['id' => $this->resource->id, 'slug' => $this->resource->slug]);
     }
 }

@@ -7,6 +7,6 @@
     <p>
         <span class="blog-preview__meta" title="{{$blog->publication_date_formatted}}">{{$blog->publication_date_for_humans}}</span>
     </p>
-    <p>{{$blog->html_summary}}</p>
+    <p>{!! $blog->html_summary !!}</p>
     <a href="{{$blog->url}}" class="blog-preview__button">Lees verder</a>
 </div>

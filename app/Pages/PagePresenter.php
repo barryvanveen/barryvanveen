@@ -1,7 +1,7 @@
 <?php
 namespace Barryvanveen\Pages;
 
-use Barryvanveen\Markdown\Commands\MarkdownToHtmlCommand;
+use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Carbon\Carbon;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Laravelrus\LocalizedCarbon\LocalizedCarbon;
@@ -20,16 +20,6 @@ class PagePresenter extends BasePresenter
     }
 
     /**
-     * Get route to page-item.
-     *
-     * @return string
-     */
-    public function url()
-    {
-        return route('page-item', ['page' => $this->resource->slug]);
-    }
-
-    /**
      * Get route to edit page in admin section.
      *
      * @return string
@@ -37,6 +27,35 @@ class PagePresenter extends BasePresenter
     public function admin_edit_url()
     {
         return route('admin.page-edit', [$this->resource->id]);
+    }
+
+    /**
+     * Retrieve the html belonging to the text markdown.
+     *
+     * @return string
+     */
+    public function html_text()
+    {
+        return $this->dispatch(
+            new MarkdownToHtml(
+                $this->resource->text
+            )
+        );
+    }
+
+    public function publication_date()
+    {
+        return $this->resource->publication_date;
+    }
+
+    public function title()
+    {
+        return $this->resource->title;
+    }
+
+    public function updated_at()
+    {
+        return $this->resource->updated_at;
     }
 
     /**
@@ -64,16 +83,12 @@ class PagePresenter extends BasePresenter
     }
 
     /**
-     * Retrieve the html belonging to the text markdown.
+     * Get route to page-item.
      *
      * @return string
      */
-    public function html_text()
+    public function url()
     {
-        return $this->dispatch(
-            new MarkdownToHtmlCommand(
-                $this->resource->text
-            )
-        );
+        return route('page-item', ['page' => $this->resource->slug]);
     }
 }

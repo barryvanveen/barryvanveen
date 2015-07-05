@@ -9,7 +9,7 @@
         </div>
 
         <div class="blog-item__content">
-            {{$blog->html_text}}
+            {!! $blog->html_text !!}
         </div>
     </div>
 
