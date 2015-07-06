@@ -67,7 +67,6 @@ class PagePresenter extends BasePresenter
         return $this->resource->publication_date;
     }
 
-
     /**
      * Retrieve text markdown.
      *

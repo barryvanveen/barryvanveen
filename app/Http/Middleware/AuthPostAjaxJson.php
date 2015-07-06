@@ -1,5 +1,4 @@
 <?php
-
 namespace Barryvanveen\Http\Middleware;
 
 use Closure;
@@ -12,8 +11,8 @@ class AuthPostAjaxJson
     /**
      * Handle an incoming request.
      *
-     * @param  Request  $request
-     * @param  \Closure  $next
+     * @param Request  $request
+     * @param \Closure $next
      *
      * @throws HttpException
      *

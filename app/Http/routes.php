@@ -60,8 +60,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     ]);
 
     Route::post('inloggen', [
-        'as'         => 'admin.login',
-        'uses'       => 'AdminLoginController@store',
+        'as'   => 'admin.login',
+        'uses' => 'AdminLoginController@store',
     ]);
 
     Route::get('uitloggen', [
@@ -94,8 +94,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         ]);
 
         Route::post('blog/new', [
-            'as'         => 'admin.blog-new',
-            'uses'       => 'AdminBlogController@store',
+            'as'   => 'admin.blog-new',
+            'uses' => 'AdminBlogController@store',
         ]);
 
         Route::get('blog/{blogId}/edit', [
@@ -104,8 +104,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         ]);
 
         Route::patch('blog/{blogId}', [
-            'as'         => 'admin.blog-update',
-            'uses'       => 'AdminBlogController@update',
+            'as'   => 'admin.blog-update',
+            'uses' => 'AdminBlogController@update',
         ]);
 
         Route::get('pages', [
@@ -119,8 +119,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         ]);
 
         Route::post('pages/new', [
-            'as'         => 'admin.page-new',
-            'uses'       => 'AdminPageController@store',
+            'as'   => 'admin.page-new',
+            'uses' => 'AdminPageController@store',
         ]);
 
         Route::get('pages/{pageId}/edit', [
@@ -129,8 +129,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         ]);
 
         Route::patch('pages/{pageId}', [
-            'as'         => 'admin.page-update',
-            'uses'       => 'AdminPageController@update',
+            'as'   => 'admin.page-update',
+            'uses' => 'AdminPageController@update',
         ]);
 
         Route::post('markdown-to-html', [
