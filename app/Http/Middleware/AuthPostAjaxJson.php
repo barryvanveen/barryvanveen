@@ -3,8 +3,9 @@
 namespace Barryvanveen\Http\Middleware;
 
 use Closure;
+use HttpException;
 use Illuminate\Http\Request;
-use Response;
+use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 
 class AuthPostAjaxJson
 {
@@ -13,12 +14,15 @@ class AuthPostAjaxJson
      *
      * @param  Request  $request
      * @param  \Closure  $next
+     *
+     * @throws HttpException
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
         if (!$request->isMethod('post') || !$request->ajax() || !$request->wantsJson()) {
-            return Response::make('Unauthorized', 401);
+            throw new MethodNotAllowedException([]);
         }
 
         return $next($request);

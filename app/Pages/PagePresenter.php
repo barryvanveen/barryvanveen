@@ -60,6 +60,15 @@ class PagePresenter extends BasePresenter
     }
 
     /**
+     * @return Carbon
+     */
+    public function publication_date()
+    {
+        return $this->resource->publication_date;
+    }
+
+
+    /**
      * Retrieve text markdown.
      *
      * @return string
