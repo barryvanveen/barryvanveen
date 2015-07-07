@@ -24,7 +24,6 @@
     "php": ">=5.5.9",
     "rap2hpoutre/laravel-log-viewer": "0.3.*",
     "roumen/feed": "2.9.*",
-    "thujohn/rss": "1.0.*",
     "laravelcollective/html": "5.1.*"
   },
   "require-dev": {

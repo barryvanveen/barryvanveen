@@ -38,16 +38,16 @@ class CreateRssFeed implements SelfHandling
     public function handle()
     {
         // make a feed
-        $feed = Feed::make();
+        $feed          = Feed::make();
         $feed->charset = $this->feedData->encoding;
-        $feed->ctype = $this->feedData->ctype;
+        $feed->ctype   = $this->feedData->ctype;
 
         // configure channel
         $feed->description = $this->channelData->description;
-        $feed->lang = $this->channelData->language;
-        $feed->link = $this->channelData->link;
-        $feed->pubdate = $this->channelData->lastBuildDate;
-        $feed->title = $this->channelData->title;
+        $feed->lang        = $this->channelData->language;
+        $feed->link        = $this->channelData->link;
+        $feed->pubdate     = $this->channelData->lastBuildDate;
+        $feed->title       = $this->channelData->title;
 
         // add items
         foreach ($this->itemDataArray as $itemData) {

@@ -11,7 +11,6 @@ use Barryvanveen\Rss\ItemData;
 use Carbon\Carbon;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Thujohn\Rss\Rss;
 
 class CreateBlogRssFeed implements SelfHandling
 {
@@ -25,7 +24,7 @@ class CreateBlogRssFeed implements SelfHandling
      *
      * @param BlogRepository $blogRepository
      *
-     * @return Rss|mixed
+     * @return string
      */
     public function handle(BlogRepository $blogRepository)
     {

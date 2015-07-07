@@ -11,7 +11,6 @@ use GuzzleHttp\Client;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Symfony\Component\DomCrawler\Crawler;
-use Thujohn\Rss\Rss;
 
 class CreateLuckyTVRssFeed implements SelfHandling
 {
@@ -28,7 +27,7 @@ class CreateLuckyTVRssFeed implements SelfHandling
     /**
      * Handle a command.
      *
-     * @return Rss
+     * @return string
      */
     public function handle()
     {
