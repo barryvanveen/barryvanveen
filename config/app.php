@@ -170,7 +170,7 @@ return [
         Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider::class,
         McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
-        //Thujohn\Rss\RssServiceProvider::class,
+        Roumen\Feed\FeedServiceProvider::class,
 
     ],
 
@@ -224,12 +224,12 @@ return [
          * Vendor Aliases
          */
         'DiffFormatter'   => Laravelrus\LocalizedCarbon\DiffFactoryFacade::class,
+        'Feed'            => Roumen\Feed\Facades\Feed::class,
         'Flash'           => Laracasts\Flash\Flash::class,
         'Form'            => Collective\Html\FormFacade::class,
         'Html'            => Collective\Html\HtmlFacade::class,
         'LocalizedCarbon' => Laravelrus\LocalizedCarbon\LocalizedCarbon::class,
         'Meta'            => Eusonlito\LaravelMeta\Facade::class,
-        //'Rss'             => Thujohn\Rss\RssFacade::class,
         'SSH' => Collective\Remote\RemoteFacade::class,
 
     ],

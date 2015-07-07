@@ -4,9 +4,10 @@ namespace Barryvanveen\Jobs\Rss;
 use Barryvanveen\Rss\ChannelData;
 use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
-use Thujohn\Rss\Rss;
+use Feed;
+use Illuminate\Contracts\Bus\SelfHandling;
 
-class CreateRssFeed
+class CreateRssFeed implements SelfHandling
 {
     /** @var FeedData */
     public $feedData;
@@ -21,8 +22,6 @@ class CreateRssFeed
      * @param FeedData    $feedData
      * @param ChannelData $channelData
      * @param array       $itemDataArray
-     *
-     * @see CreateRssFeedCommandHandler
      */
     public function __construct(FeedData $feedData, ChannelData $channelData, array $itemDataArray)
     {
@@ -34,24 +33,38 @@ class CreateRssFeed
     /**
      * Handle a command.
      *
-     * @return Rss
+     * @return string
      */
     public function handle()
     {
-        $rss = new Rss();
+        // make a feed
+        $feed = Feed::make();
+        $feed->charset = $this->feedData->encoding;
+        $feed->ctype = $this->feedData->ctype;
 
-        $rss->feed(
-            $this->feedData->version,
-            $this->feedData->encoding
-        );
+        // configure channel
+        $feed->description = $this->channelData->description;
+        $feed->lang = $this->channelData->language;
+        $feed->link = $this->channelData->link;
+        $feed->pubdate = $this->channelData->lastBuildDate;
+        $feed->title = $this->channelData->title;
 
-        $rss->channel($this->channelData->getData());
-
+        // add items
         foreach ($this->itemDataArray as $itemData) {
             /* @var ItemData $itemData */
-            $rss->item($itemData->getData());
+            $feed->add(
+                $itemData->title,
+                null,
+                $itemData->link,
+                $itemData->pubDate,
+                $itemData->description
+            );
         }
 
-        return $rss;
+        // select custom view
+        $feed->setView('templates.rss');
+
+        // return xml
+        return $feed->render('rss', -1);
     }
 }

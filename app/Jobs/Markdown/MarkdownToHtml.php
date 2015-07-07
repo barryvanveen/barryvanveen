@@ -10,8 +10,6 @@ class MarkdownToHtml implements SelfHandling
 
     /**
      * @param $markdown
-     *
-     * @see MarkdownToHtmlCommandHandler
      */
     public function __construct($markdown)
     {

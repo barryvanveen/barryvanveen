@@ -6,7 +6,6 @@ use Barryvanveen\Jobs\Blogs\CreateBlogRssFeed;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Redirect;
 use Response;
-use Thujohn\Rss\Rss;
 use View;
 
 class BlogController extends Controller
@@ -75,12 +74,10 @@ class BlogController extends Controller
      */
     public function rss()
     {
-        // todo: fix RSS
-        /** @var Rss $rss */
-        $rss = $this->dispatch(
+        $xml = $this->dispatch(
             new CreateBlogRssFeed()
         );
 
-        return Response::make($rss, 200, ['Content-Type' => 'text/xml']);
+        return Response::make($xml, 200, ['Content-Type' => 'text/xml']);
     }
 }

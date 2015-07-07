@@ -90,7 +90,7 @@ class CreateBlogRssFeed implements SelfHandling
                 $blog->title,
                 $link,
                 $link,
-                Carbon::createFromFormat('Y-m-d H:i:s', $blog['updated_at'])->format('D, d M Y H:i:s O'),
+                $blog['updated_at'],
                 $summary_html
             );
         }

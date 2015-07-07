@@ -20,8 +20,6 @@ class UpdateBlog implements SelfHandling
      * @param $text
      * @param $publication_date
      * @param $online
-     *
-     * @see UpdateBlogHandler
      */
     public function __construct($id, $title, $summary, $text, $publication_date, $online)
     {

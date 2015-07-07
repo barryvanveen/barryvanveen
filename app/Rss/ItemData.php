@@ -19,11 +19,11 @@ class ItemData
     public $description;
 
     /**
-     * @param string $title       character data that provides the item's headline
-     * @param string $link        the URL of a web page associated with the item
-     * @param string $guid        string that uniquely identifies the item
-     * @param string $pubDate     the publication date and time of the item in format 'D, d M Y H:i:s O'
-     * @param bool   $description character data that contains the item's full content or a summary of its contents
+     * @param string $title character data that provides the item's headline
+     * @param string $link the URL of a web page associated with the item
+     * @param string $guid string that uniquely identifies the item
+     * @param string $pubDate the publication date and time of the item in format 'D, d M Y H:i:s O'
+     * @param bool $description character data that contains the item's full content or a summary of its contents
      */
     public function __construct($title, $link, $guid, $pubDate, $description = false)
     {
@@ -32,26 +32,5 @@ class ItemData
         $this->guid        = $guid;
         $this->pubDate     = $pubDate;
         $this->description = $description;
-    }
-
-    /**
-     * Get the data of this itemData as an array.
-     *
-     * @return array
-     */
-    public function getData()
-    {
-        $item = [
-            'title'   => $this->title,
-            'link'    => $this->link,
-            'guid'    => $this->guid,
-            'pubDate' => $this->pubDate,
-        ];
-
-        if (!empty($this->description)) {
-            $item['description'] = $this->description;
-        }
-
-        return $item;
     }
 }

@@ -4,18 +4,18 @@ namespace Barryvanveen\Rss;
 class FeedData
 {
     /** @var  string */
-    public $version;
-
-    /** @var  string */
     public $encoding;
 
+    /** @var string  */
+    public $ctype;
+
     /**
-     * @param string $version
      * @param string $encoding
+     * @param string $ctype
      */
-    public function __construct($version = '2.0', $encoding = 'UTF-8')
+    public function __construct($encoding = 'UTF-8', $ctype = 'application/rss+xml')
     {
-        $this->version  = $version;
         $this->encoding = $encoding;
+        $this->ctype = $ctype;
     }
 }

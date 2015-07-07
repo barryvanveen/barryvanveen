@@ -15,8 +15,6 @@ class CreatePage implements SelfHandling
      * @param $title
      * @param $text
      * @param $online
-     *
-     * @see CreatePageHandler
      */
     public function __construct($title, $text, $online)
     {

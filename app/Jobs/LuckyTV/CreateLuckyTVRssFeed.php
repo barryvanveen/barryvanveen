@@ -28,8 +28,6 @@ class CreateLuckyTVRssFeed implements SelfHandling
     /**
      * Handle a command.
      *
-     * // todo: fix RSS
-     *
      * @return Rss
      */
     public function handle()

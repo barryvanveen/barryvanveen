@@ -7,7 +7,6 @@ use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Barryvanveen\Pages\PageRepository;
 use Cache;
 use Response;
-use Thujohn\Rss\Rss;
 use View;
 
 class PagesController extends Controller
@@ -64,10 +63,8 @@ class PagesController extends Controller
             Artisan::call('update-luckytv-rss-feed');
         };
 
-        // todo: fix RSS
-        /** @var Rss $rss */
-        $rss = Cache::get('luckytv-rss');
+        $xml = Cache::get('luckytv-rss');
 
-        return Response::make($rss, 200, ['Content-Type' => 'text/xml']);
+        return Response::make($xml, 200, ['Content-Type' => 'text/xml']);
     }
 }
