@@ -52,12 +52,12 @@ class SwitchBranchCommand extends Command
 
         $this->runTask('bower install');
 
-        $this->runTask('clearDatabase', getenv('DB_NAME'));
+        $this->runTask('clearDatabase', getenv('DB_DATABASE'));
         $this->runTask('php artisan migrate');
         $this->runTask('php artisan db:seed');
 
         if (!getenv('DB_TESTING_NAME')) {
-            $this->error('Zet DB_TESTING_NAME in .env.local.php om ook de testing-database te migraten');
+            $this->error('Zet DB_TESTING_NAME in .env om ook de testing-database te migraten');
 
             return;
         }

@@ -12,6 +12,12 @@ class PagesTableSeeder extends Seeder
         $faker = Faker::create('nl_NL');
         $faker->addProvider(new LoremMarkdown($faker));
 
+        Page::create([
+            'title'  => 'Over mij',
+            'text'   => $faker->markdownText(),
+            'online' => 1,
+        ]);
+
         foreach (range(1, 5) as $index) {
             Page::create([
                 'title'  => $faker->sentence(),
