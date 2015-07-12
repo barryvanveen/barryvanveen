@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Barryvanveen
+        psr4_prefix: Barryvanveen
+        src_path: app
