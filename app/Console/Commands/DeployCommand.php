@@ -42,7 +42,7 @@ class DeployCommand extends Command
      */
     public function handle()
     {
-        if (!$this->confirm('Wil je echt deployen? [yes|no]', false)) {
+        if (!$this->confirm('Wil je echt deployen?', false)) {
             $this->info('Niet gedeployed. Klaar!');
 
             return;
