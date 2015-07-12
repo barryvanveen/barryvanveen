@@ -90,7 +90,7 @@ class Handler extends ExceptionHandler
                 ],
             ];
 
-            return Redirect::back()->withInput(Input::get('email'))->withErrors($errors);
+            return Redirect::back()->withInput(['email' => Input::get('email')])->withErrors($errors);
         }
 
         // route not found
