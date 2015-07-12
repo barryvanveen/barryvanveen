@@ -1,4 +1,3 @@
-
 var gulp = require('gulp');
 
 var autoprefixer = require('gulp-autoprefixer');
@@ -10,23 +9,23 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 
 var config = {
-	scripts: {
-		src: [
-			'bower_components/jquery/dist/jquery.js',
-			'bower_components/moment/moment.js',
-			'bower_components/moment/locale/nl.js',
-			'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
+    scripts: {
+        src: [
+            'bower_components/jquery/dist/jquery.js',
+            'bower_components/moment/moment.js',
+            'bower_components/moment/locale/nl.js',
+            'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
             'bower_components/scrollup/dist/jquery.scrollUp.js',
             'bower_components/autosize/dest/autosize.js',
             'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
             'bower_components/ajaxq/ajaxq.js',
             'bower_components/prism/prism.custom.min.js',
-			'resources/assets/js/main.js'
-		],
-		ie8: [
-			'bower_components/html5shiv/dist/html5shiv.js',
-			'bower_components/respond/dest/respond.matchmedia.addListener.src.js'
-		],
+            'resources/assets/js/main.js'
+        ],
+        ie8: [
+            'bower_components/html5shiv/dist/html5shiv.js',
+            'bower_components/respond/dest/respond.matchmedia.addListener.src.js'
+        ],
         prism: [
             // default
             'bower_components/prism/components/prism-core.js',
@@ -47,31 +46,31 @@ var config = {
             'bower_components/prism/plugins/autolinker/prism-autolinker.js',
             'bower_components/prism/plugins/line-numbers/prism-line-numbers.js'
         ]
-	}
+    }
 };
 
 var onError = function (err) {
-	console.log(err);
+    console.log(err);
 };
 
 /**
  * build all sass files into css files
  */
 gulp.task('build-sass', function () {
-	gulp.src('resources/assets/scss/*.scss')
-		.pipe(plumber({
-			errorHandler: onError
-		}))
-		.pipe(sass({
-			unixNewlines: true,
-			style: 'expanded'
-		}))
-		.pipe(include())
-		.pipe(autoprefixer('last 5 versions'))
-		/*.pipe(cmq({
-			log: true
-		}))*/
-		.pipe(gulp.dest('public_html/css'));
+    gulp.src('resources/assets/scss/*.scss')
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(sass({
+            unixNewlines: true,
+            style: 'expanded'
+        }))
+        .pipe(include())
+        .pipe(autoprefixer('last 5 versions'))
+        /*.pipe(cmq({
+         log: true
+         }))*/
+        .pipe(gulp.dest('public_html/css'));
 
 });
 
@@ -79,13 +78,13 @@ gulp.task('build-sass', function () {
  * concatenate all js files
  */
 gulp.task('build-js', function () {
-	gulp.src(config.scripts.prism)
+    gulp.src(config.scripts.prism)
         .pipe(plumber({
             errorHandler: onError
         }))
-		.pipe(uglify())
-		.pipe(concat('prism.custom.min.js'))
-		.pipe(gulp.dest('bower_components/prism'));
+        .pipe(uglify())
+        .pipe(concat('prism.custom.min.js'))
+        .pipe(gulp.dest('bower_components/prism'));
 
     gulp.src(config.scripts.ie8)
         .pipe(plumber({
@@ -109,8 +108,8 @@ gulp.task('build-js', function () {
  */
 gulp.task('move', function () {
     // move favicon files to public_html
-	gulp.src('resources/assets/fonts/icomoon/fonts/*')
-		.pipe(gulp.dest('public_html/fonts'));
+    gulp.src('resources/assets/fonts/icomoon/fonts/*')
+        .pipe(gulp.dest('public_html/fonts'));
 
     gulp.src('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')
         .pipe(rename("bootstrap-datetimepicker.scss"))

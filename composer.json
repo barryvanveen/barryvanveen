@@ -6,54 +6,60 @@
     "laravel"
   ],
   "license": "MIT",
+  "type": "project",
   "require": {
-    "cebe/markdown": "~1.1.0",
-    "cviebrock/eloquent-sluggable": "2.*",
+    "cebe/markdown": "1.1.*",
+    "cviebrock/eloquent-sluggable": "3.0.0-beta",
     "doctrine/dbal": "2.*",
-    "eusonlito/laravel-meta": "4.2.x-dev",
-    "flyingfoxx/commandcenter": "1.2.*",
-    "graham-campbell/flysystem": "1.*",
-    "guzzlehttp/guzzle": "5.*",
-    "laracasts/flash": " 1.2",
-    "laracasts/validation": "1.*",
-    "laracasts/utilities": "1.*",
-    "laravel/framework": "4.2.*",
-    "laravelrus/localized-carbon": "1.*",
+    "eusonlito/laravel-meta": "dev-master",
+    "guzzlehttp/guzzle": "6.*",
+    "laracasts/flash": "1.3.*",
+    "laracasts/utilities": "2.*",
+    "laravel/framework": "5.1.*",
+    "laravelcollective/remote": "5.1.*",
+    "laravelrus/localized-carbon": "dev-master",
     "league/flysystem-dropbox": "1.*",
-    "league/glide": "^0.3.5",
-    "mccool/laravel-auto-presenter": "2.*",
-    "rap2hpoutre/laravel-log-viewer": "0.2.*",
-    "thujohn/rss": "1.*"
+    "league/glide": "0.3.*",
+    "mccool/laravel-auto-presenter": "3.1.*",
+    "php": ">=5.5.9",
+    "rap2hpoutre/laravel-log-viewer": "0.3.*",
+    "roumen/feed": "2.9.*",
+    "laravelcollective/html": "5.1.*"
   },
   "require-dev": {
-    "barryvdh/laravel-debugbar": "1.*",
-    "barryvdh/laravel-ide-helper": "1.*",
-    "codeception/codeception": "2.0.*",
-    "fzaninotto/faker": "1.4.*",
-    "laracasts/testdummy": "1.*",
-    "phpunit/phpunit": "4.*",
-    "way/generators": "2.*"
+    "barryvdh/laravel-debugbar": "2.0.*",
+    "barryvdh/laravel-ide-helper": "2.0.*",
+    "fzaninotto/faker": "~1.4",
+    "mockery/mockery": "0.9.*",
+    "phpspec/phpspec": "~2.1",
+    "phpunit/phpunit": "~4.0"
   },
   "autoload": {
     "classmap": [
-      "app/commands",
-      "app/controllers",
-      "app/database/migrations",
-      "app/database/seeds",
-      "app/models"
+      "database"
     ],
     "psr-4": {
-      "Barryvanveen\\": "app/models"
+      "Barryvanveen\\": "app/"
     }
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
   },
   "scripts": {
     "post-install-cmd": [
       "php artisan clear-compiled",
       "php artisan optimize"
     ],
+    "pre-update-cmd": [
+      "php artisan clear-compiled"
+    ],
     "post-update-cmd": [
-      "php artisan clear-compiled",
       "php artisan optimize"
+    ],
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
     ],
     "post-create-project-cmd": [
       "php artisan key:generate"
@@ -61,6 +67,5 @@
   },
   "config": {
     "preferred-install": "dist"
-  },
-  "minimum-stability": "stable"
+  }
 }

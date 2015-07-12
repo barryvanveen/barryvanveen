@@ -1,7 +1,7 @@
 ## Getting started
 
 * checkout `master`
-* create a file called `.env.local.php` and a file called `.env.testing.php`
+* create a file called `.env`
 * run `composer install` to download all PHP packages to /vendor
 * run `bower install` to download all Javascript components to /bower_components
 * run `sudo npm install --no-bin-links` to install all nodejs dependencies
