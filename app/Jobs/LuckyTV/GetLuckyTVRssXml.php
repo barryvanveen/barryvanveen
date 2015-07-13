@@ -1,7 +1,7 @@
 <?php
 namespace Barryvanveen\Jobs\LuckyTV;
 
-use Barryvanveen\Jobs\Rss\CreateRssFeed;
+use Barryvanveen\Jobs\Rss\GetRssXml;
 use Barryvanveen\Rss\ChannelData;
 use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
@@ -12,7 +12,7 @@ use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Symfony\Component\DomCrawler\Crawler;
 
-class CreateLuckyTVRssFeed implements SelfHandling
+class GetLuckyTVRssXml implements SelfHandling
 {
     use DispatchesJobs;
 
@@ -70,7 +70,7 @@ class CreateLuckyTVRssFeed implements SelfHandling
     protected function createRssFeedFromPosts()
     {
         return $this->dispatch(
-            new CreateRssFeed(
+            new GetRssXml(
                 $this->getFeedData(),
                 $this->getChannelData(),
                 $this->getItemDataArray()

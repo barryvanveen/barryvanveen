@@ -7,7 +7,7 @@ use Barryvanveen\Rss\ItemData;
 use Feed;
 use Illuminate\Contracts\Bus\SelfHandling;
 
-class CreateRssFeed implements SelfHandling
+class GetRssXml implements SelfHandling
 {
     /** @var FeedData */
     public $feedData;
