@@ -120,7 +120,8 @@ class GetSitemapXml implements SelfHandling
     }
 
     /**
-     * Get a ISO-8601 formatted datetime string from a standard datetime string.
+     * Get a formatted datetime string from a standard datetime string.
+     * Format is 2015-07-13T22:20:15+02:00
      *
      * @param string $date
      *
@@ -128,6 +129,6 @@ class GetSitemapXml implements SelfHandling
      */
     protected function getFormattedDatetime($date)
     {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->toIso8601String();
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d\TH:i:sP');
     }
 }
