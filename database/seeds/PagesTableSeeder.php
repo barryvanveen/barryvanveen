@@ -18,6 +18,12 @@ class PagesTableSeeder extends Seeder
             'online' => 1,
         ]);
 
+        Page::create([
+            'title'  => 'Boeken die ik heb gelezen',
+            'text'   => $faker->markdownText(),
+            'online' => 1,
+        ]);
+
         foreach (range(1, 5) as $index) {
             Page::create([
                 'title'  => $faker->sentence(),

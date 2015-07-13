@@ -101,7 +101,7 @@ class BlogRepository extends EloquentRepository
     /**
      * retrieve the most recently updated blogpost.
      *
-     * @return array
+     * @return Blog
      */
     public function lastUpdatedAt()
     {

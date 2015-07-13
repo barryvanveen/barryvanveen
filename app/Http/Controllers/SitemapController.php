@@ -21,6 +21,6 @@ class SitemapController extends Controller
             new CreateSitemap()
         );
 
-        return Response::make($xml, 200, 'text/xml');
+        return Response::make($xml, 200, ['Content-Type', 'text/xml']);
     }
 }

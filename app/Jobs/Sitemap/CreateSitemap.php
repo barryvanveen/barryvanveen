@@ -1,41 +1,72 @@
 <?php
 namespace Barryvanveen\Jobs\Sitemap;
 
+use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
+use Barryvanveen\Pages\PageRepository;
+use Carbon\Carbon;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Route;
+use View;
 
 class CreateSitemap implements SelfHandling
 {
     /** @var array  */
-    protected $sitemap_routes = [];
+    protected $items = [];
+
+    /** @var array  */
+    protected $lastmod = [];
 
     /** @var BlogRepository */
     private $blogRepository;
 
-    /**
-     * @param BlogRepository $blogRepository
-     */
-    public function __construct(BlogRepository $blogRepository)
-    {
-        $this->blogRepository = $blogRepository;
-    }
+    /** @var PageRepository */
+    private $pageRepository;
 
     /**
      * Handle a command.
      *
+     * @param BlogRepository $blogRepository
+     * @param PageRepository $pageRepository
+     *
      * @return string
      */
-    public function handle()
+    public function handle(BlogRepository $blogRepository, PageRepository $pageRepository)
     {
-        $this->getRoutes();
+        $this->blogRepository = $blogRepository;
+        $this->pageRepository = $pageRepository;
 
-        dd($this->sitemap);
+        $this->getLastmodData();
 
-        return 'asd';
+        $this->getStaticRoutes();
+
+        $this->getDynamicRoutes();
+
+        return View::make('templates.sitemap', ['items' => $this->items]);
     }
 
-    protected function getRoutes()
+    /**
+     * Collect last modification dates for static routes.
+     */
+    protected function getLastmodData()
+    {
+        // home
+        $blog = $this->blogRepository->lastUpdatedAt();
+        $this->lastmod['home'] = $this->getFormattedDatetime($blog->updated_at);
+
+        // over-mij
+        $page = $this->pageRepository->findPublishedBySlug('over-mij');
+        $this->lastmod['over-mij'] = $this->getFormattedDatetime($page->updated_at);
+
+        // boeken
+        $page = $this->pageRepository->findPublishedBySlug('boeken-die-ik-heb-gelezen');
+        $this->lastmod['boeken'] = $this->getFormattedDatetime($page->updated_at);
+    }
+
+    /**
+     * Get sitemap data for static routes
+     */
+    protected function getStaticRoutes()
     {
         $routes = Route::getRoutes();
 
@@ -65,14 +96,38 @@ class CreateSitemap implements SelfHandling
             }
 
             // otherwise, add this route to the sitemap
-            $this->sitemap_routes[] = [
+            $this->items[] = [
                 'loc' => url($route->getUri()),
+                'lastmod' => in_array($route->getName(), $this->lastmod) ? $this->lastmod[$route->getName()] : false,
             ];
         }
     }
 
-    protected function addBlogRoutes()
+    /**
+     * Get sitemap data for dynamic routes.
+     */
+    protected function getDynamicRoutes()
     {
+        $blogs = $this->blogRepository->published();
 
+        /** @var Blog $blog */
+        foreach($blogs as $blog) {
+            $this->items[] = [
+                'loc' => url(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug])),
+                'lastmod' => $this->getFormattedDatetime($blog->updated_at),
+            ];
+        }
+    }
+
+    /**
+     * Get a ISO-8601 formatted datetime string from a standard datetime string.
+     *
+     * @param string $date
+     *
+     * @return string
+     */
+    protected function getFormattedDatetime($date)
+    {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->toIso8601String();
     }
 }
