@@ -2,7 +2,7 @@
 namespace Barryvanveen\Http\Controllers;
 
 use Barryvanveen\Blogs\BlogRepository;
-use Barryvanveen\Jobs\Blogs\CreateBlogRssFeed;
+use Barryvanveen\Jobs\Blogs\GetBlogRssXml;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Redirect;
 use Response;
@@ -75,7 +75,7 @@ class BlogController extends Controller
     public function rss()
     {
         $xml = $this->dispatch(
-            new CreateBlogRssFeed()
+            new GetBlogRssXml()
         );
 
         return Response::make($xml, 200, ['Content-Type' => 'text/xml']);

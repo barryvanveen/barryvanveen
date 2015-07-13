@@ -49,10 +49,15 @@ Route::get('images/{filename}', [
     'uses' => 'ImagesController@show',
 ]);
 
+Route::get('sitemap.xml', [
+    'as'   => 'sitemap',
+    'uses' => 'SitemapController@index',
+]);
+
 /*
  * Admin routes
  */
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'sitemap' => ['hidden' => true]], function () {
 
     Route::get('inloggen', [
         'as'   => 'admin.login',
