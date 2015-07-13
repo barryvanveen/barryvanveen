@@ -4,7 +4,7 @@ namespace Barryvanveen\Jobs\Blogs;
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
-use Barryvanveen\Jobs\Rss\CreateRssFeed;
+use Barryvanveen\Jobs\Rss\GetRssXml;
 use Barryvanveen\Rss\ChannelData;
 use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
@@ -12,7 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 
-class CreateBlogRssFeed implements SelfHandling
+class GetBlogRssXml implements SelfHandling
 {
     use DispatchesJobs;
 
@@ -20,7 +20,7 @@ class CreateBlogRssFeed implements SelfHandling
     private $blogRepository;
 
     /**
-     * Handle the CreateBlogRssFeed command.
+     * Handle the GetBlogRssXml command.
      *
      * @param BlogRepository $blogRepository
      *
@@ -31,7 +31,7 @@ class CreateBlogRssFeed implements SelfHandling
         $this->blogRepository = $blogRepository;
 
         return $this->dispatch(
-            new CreateRssFeed(
+            new GetRssXml(
                 $this->getFeedData(),
                 $this->getChannelData(),
                 $this->getItemDataArray()

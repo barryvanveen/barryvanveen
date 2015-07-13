@@ -9,7 +9,7 @@ use Illuminate\Contracts\Bus\SelfHandling;
 use Route;
 use View;
 
-class CreateSitemap implements SelfHandling
+class GetSitemapXml implements SelfHandling
 {
     /** @var array  */
     protected $items = [];
@@ -51,27 +51,27 @@ class CreateSitemap implements SelfHandling
     protected function getLastmodData()
     {
         // home
-        $blog = $this->blogRepository->lastUpdatedAt();
+        $blog                  = $this->blogRepository->lastUpdatedAt();
         $this->lastmod['home'] = $this->getFormattedDatetime($blog->updated_at);
 
         // over-mij
-        $page = $this->pageRepository->findPublishedBySlug('over-mij');
+        $page                      = $this->pageRepository->findPublishedBySlug('over-mij');
         $this->lastmod['over-mij'] = $this->getFormattedDatetime($page->updated_at);
 
         // boeken
-        $page = $this->pageRepository->findPublishedBySlug('boeken-die-ik-heb-gelezen');
+        $page                    = $this->pageRepository->findPublishedBySlug('boeken-die-ik-heb-gelezen');
         $this->lastmod['boeken'] = $this->getFormattedDatetime($page->updated_at);
     }
 
     /**
-     * Get sitemap data for static routes
+     * Get sitemap data for static routes.
      */
     protected function getStaticRoutes()
     {
         $routes = Route::getRoutes();
 
         /** @var \Illuminate\Routing\Route $route */
-        foreach($routes->getIterator() as $route) {
+        foreach ($routes->getIterator() as $route) {
             $action = $route->getAction();
 
             // if this is not a GET-route
@@ -97,7 +97,7 @@ class CreateSitemap implements SelfHandling
 
             // otherwise, add this route to the sitemap
             $this->items[] = [
-                'loc' => url($route->getUri()),
+                'loc'     => url($route->getUri()),
                 'lastmod' => in_array($route->getName(), $this->lastmod) ? $this->lastmod[$route->getName()] : false,
             ];
         }
@@ -111,9 +111,9 @@ class CreateSitemap implements SelfHandling
         $blogs = $this->blogRepository->published();
 
         /** @var Blog $blog */
-        foreach($blogs as $blog) {
+        foreach ($blogs as $blog) {
             $this->items[] = [
-                'loc' => url(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug])),
+                'loc'     => url(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug])),
                 'lastmod' => $this->getFormattedDatetime($blog->updated_at),
             ];
         }

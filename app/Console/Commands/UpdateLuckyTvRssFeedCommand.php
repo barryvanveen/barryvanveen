@@ -1,7 +1,7 @@
 <?php
 namespace Barryvanveen\Console\Commands;
 
-use Barryvanveen\Jobs\LuckyTV\CreateLuckyTVRssFeed;
+use Barryvanveen\Jobs\LuckyTV\GetLuckyTVRssXml;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Bus\Dispatcher;
 
@@ -43,6 +43,6 @@ class UpdateLuckyTvRssFeedCommand extends Command
      */
     public function handle()
     {
-        $this->dispatcher->dispatch(new CreateLuckyTVRssFeed());
+        $this->dispatcher->dispatch(new GetLuckyTVRssXml());
     }
 }
