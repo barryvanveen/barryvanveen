@@ -5411,6 +5411,7 @@ pre[class*="language-"] {
   overflow: hidden; }
 
 .blog-preview__heading-title {
+  font-size: 34px;
   display: inline; }
 
 .blog-preview__heading-title-link {

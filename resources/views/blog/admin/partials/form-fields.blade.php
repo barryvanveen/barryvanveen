@@ -15,6 +15,7 @@
             {!! Form::label('publication_date', 'Datum', ['class' => 'control-label form__label']) !!}
             {!! Form::text('publication_date', $blog->publication_date_formatted, ['class' => 'form-control
             js-datetimepicker']) !!}
+            {{-- todo: switchen naar html5 type=datetime? --}}
         </div>
     </div>
 </div>

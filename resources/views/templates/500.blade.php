@@ -2,10 +2,10 @@
 
 @section('content')
 
-    <div class="page__content">
-        <div class="page-header">
+    <article class="page__content">
+        <header class="page-header">
             <h1>Oeps!</h1>
-        </div>
+        </header>
 
         <p>Sorry, er lijkt iets heel erg mis te gaan. Je ziet deze pagina omdat er een onbekende fout is opgetreden.
             Deze foutmelding wordt opgeslagen en ik ga uitzoeken hoe we dit in de toekomst kunnen voorkomen.</p>
@@ -15,6 +15,6 @@
             opgelost.</p>
 
         <p><a href="{{ route('home') }}">Ga naar de homepage</a>.</p>
-    </div>
+    </article>
 
 @stop
