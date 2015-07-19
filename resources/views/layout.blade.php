@@ -25,8 +25,6 @@
 
         <!--[if lte IE 8]>
             {!! Html::script('js/main.ie8.min.js') !!}
-            {{-- todo: testen van html5 in < ie9 --}}
-            {{-- todo: html5 valideren --}}
         <![endif]-->
 
 	</head>
