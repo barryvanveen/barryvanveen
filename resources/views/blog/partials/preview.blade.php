@@ -8,6 +8,5 @@
         </p>
     </header>
     {!! $blog->html_summary !!}
-    {{-- todo: link in een footer-element? --}}
     <a href="{{$blog->url}}" class="blog-preview__button">Lees verder</a>
 </article>

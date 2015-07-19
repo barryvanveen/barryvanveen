@@ -2,7 +2,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                {{-- todo: nav maken? --}}
                 <ul class="footer__menu">
                     <li class="footer__menu-item">
                         <a href="https://www.linkedin.com/profile/view?id=70816233" class="footer__menu-item-link" target="_blank"><i class="icon icon--linkedIn">LinkedIn</i></a>

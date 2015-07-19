@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <main role="main">
+    <main>
         <article class="page__content">
             <header class="page-header">
                 <h1>{{$page->title}}</h1>
