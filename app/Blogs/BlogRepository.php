@@ -16,11 +16,10 @@ class BlogRepository extends EloquentRepository
      */
     public function latest($amount = 2)
     {
-        return Blog     ::online()
-                        ->past()
-                        ->orderedDesc()
-                        ->take($amount)
-                        ->get();
+        return Blog ::published()
+                    ->orderedNewToOld()
+                    ->take($amount)
+                    ->get();
     }
 
     /**
@@ -30,10 +29,9 @@ class BlogRepository extends EloquentRepository
      */
     public function published()
     {
-        return Blog     ::online()
-                        ->past()
-                        ->orderedDesc()
-                        ->get();
+        return Blog ::published()
+                    ->orderedNewToOld()
+                    ->get();
     }
 
     /**
@@ -43,8 +41,8 @@ class BlogRepository extends EloquentRepository
      */
     public function all()
     {
-        return Blog     ::orderedDesc()
-                        ->get();
+        return Blog ::orderedNewToOld()
+                    ->get();
     }
 
     /**
@@ -79,9 +77,8 @@ class BlogRepository extends EloquentRepository
      */
     public function findPublishedById($id)
     {
-        return Blog     ::online()
-                        ->past()
-                        ->findOrFail($id);
+        return Blog ::published()
+                    ->findOrFail($id);
     }
 
     /**
@@ -95,8 +92,39 @@ class BlogRepository extends EloquentRepository
      */
     public function findAnyById($id)
     {
-        return Blog     ::findOrFail($id);
+        return Blog ::findOrFail($id);
     }
+
+    /**
+     * retrieve the next blogpost based on publication_date.
+     *
+     * @param string $date
+     *
+     * @return Blog
+     */
+    public function findNextByPublicationDate($date)
+    {
+        return Blog ::published()
+                    ->orderedOldToNew()
+                    ->publishedAfter($date)
+                    ->first();
+    }
+
+    /**
+     * retrieve the previous blogpost based on publication_date.
+     *
+     * @param string $date
+     *
+     * @return Blog
+     */
+    public function findPreviousByPublicationDate($date)
+    {
+        return Blog ::published()
+                    ->orderedNewToOld()
+                    ->publishedBefore($date)
+                    ->first();
+    }
+
 
     /**
      * retrieve the most recently updated blogpost.
@@ -105,9 +133,8 @@ class BlogRepository extends EloquentRepository
      */
     public function lastUpdatedAt()
     {
-        return Blog     ::online()
-                        ->past()
-                        ->latest('updated_at')
-                        ->first();
+        return Blog ::published()
+                    ->latest('updated_at')
+                    ->first();
     }
 }

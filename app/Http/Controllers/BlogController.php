@@ -64,7 +64,10 @@ class BlogController extends Controller
         $this->setPageTitle($blog->title);
         $this->setMetaDescription($summary_html);
 
-        return View::make('blog.item', compact('blog'));
+        $next_blog = $this->blogRepository->findNextByPublicationDate($blog->publication_date);
+        $prev_blog = $this->blogRepository->findPreviousByPublicationDate($blog->publication_date);
+
+        return View::make('blog.item', compact('blog', 'next_blog', 'prev_blog'));
     }
 
     /**
