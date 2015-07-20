@@ -1,0 +1,58 @@
+.prevnext {
+	display: table;
+	position: fixed;
+	bottom: 80px;
+	width: 100%;
+	padding: $padding-large-vertical $padding-large-horizontal;
+	background: rgba(255, 0, 0, 0.3);
+	overflow: hidden;
+	clear: both;
+}
+
+
+
+	.prevnext__prev {
+		display: table-row;
+		max-width: 300px;
+		float: left;
+	}
+		.prevnext__prevIconHolder {
+			display: table-cell;
+			vertical-align: middle;
+			padding-right: $padding-large-horizontal;
+		}
+			.prevnext__prevIcon {
+				width: auto;
+				height: auto;
+				font-size: $icon-fontsize-large;
+			}
+		.prevnext__prevLink {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+	.prevnext__next {
+		display: table-row;
+		max-width: 300px;
+		float: right;
+	}
+		.prevnext__nextIconHolder {
+			display: table-cell;
+			vertical-align: middle;
+			padding-left: $padding-large-horizontal;
+		}
+			.prevnext__nextIcon {
+				width: auto;
+				height: auto;
+				font-size: $icon-fontsize-large;
+			}
+		.prevnext__nextLink {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+/**
+todo: position absolute until screen-lg-min
+todo: padding-bottom om blogpost until screen-lg-min
+todo: position fixed from screen-lg-min
+**/

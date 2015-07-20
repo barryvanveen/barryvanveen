@@ -13,4 +13,6 @@
 		</div>
 	</div>
 
+	@yield('full-width')
+
 @stop

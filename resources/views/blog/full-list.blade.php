@@ -4,7 +4,7 @@
 
     <section class="previewContainer">
         <div class="page-header">
-            <h1>Blog</h1>
+            <h1>Alle artikelen</h1>
         </div>
 
         @foreach($blogs as $blog)
