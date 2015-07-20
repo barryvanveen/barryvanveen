@@ -21,7 +21,7 @@
                 <title>{!! $item['title'] !!}</title>
                 <link>{{ $item['link'] }}</link>
                 <guid isPermaLink="true">{{ $item['link'] }}</guid>
-                <description><![CDATA[[{!! $item['description'] !!}]]></description>
+                <description><![CDATA[{!! $item['description'] !!}]]></description>
                 @if (!empty($item['content']))
                     <content:encoded><![CDATA[{!! $item['content'] !!}]]></content:encoded>
                 @endif
