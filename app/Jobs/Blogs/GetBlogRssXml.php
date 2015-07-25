@@ -85,6 +85,8 @@ class GetBlogRssXml implements SelfHandling
                 new MarkdownToHtml($blog->summary)
             );
 
+            $summary_html .= '<p>Lees verder op de website.</p>';
+
             $items[] = new ItemData(
                 $blog->title,
                 $link,
