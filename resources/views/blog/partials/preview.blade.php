@@ -8,5 +8,7 @@
         </p>
     </header>
     {!! $blog->html_summary !!}
-    <a href="{{$blog->url}}" class="blog-preview__button">Lees verder</a>
+    <footer>
+        <a href="{{$blog->url}}" class="blog-preview__button">Lees verder</a>
+    </footer>
 </article>
