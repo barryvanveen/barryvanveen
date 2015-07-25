@@ -33,8 +33,6 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @method static Builder|Blog published()
  * @method static Builder|Blog orderedNewToOld()
  * @method static Builder|Blog orderedOldToNew()
- * @method static Builder|Blog publishedAfter($date)
- * @method static Builder|Blog publishedBefore($date)
  */
 class Blog extends Model implements SluggableInterface, HasPresenter
 {
@@ -108,32 +106,6 @@ class Blog extends Model implements SluggableInterface, HasPresenter
     public function scopeOrderedOldToNew($query)
     {
         return $query->orderBy('publication_date', 'ASC');
-    }
-
-    /**
-     * select only blogs that have a publication_date greater than $date.
-     *
-     * @param Builder $query
-     * @param string  $date
-     *
-     * @return mixed
-     */
-    public function scopePublishedAfter($query, $date)
-    {
-        return $query->where('publication_date', '>', $date);
-    }
-
-    /**
-     * select only blogs that have a publication_date smaller than $date.
-     *
-     * @param Builder $query
-     * @param string  $date
-     *
-     * @return mixed
-     */
-    public function scopePublishedBefore($query, $date)
-    {
-        return $query->where('publication_date', '<', $date);
     }
 
     /**

@@ -46,27 +46,6 @@ class BlogRepository extends EloquentRepository
     }
 
     /**
-     * retrieve a single blogpost by its slug.
-     *
-     * @param string $slug
-     *
-     * @return Blog
-     *
-     * @throws ModelNotFoundException
-     */
-    public function findPublishedBySlug($slug)
-    {
-        $id = substr($slug, 0, stripos($slug, '-'));
-
-        // if this slug begins with an id, use it to find a blogpost
-        if (is_numeric($id) && intval($id) > 0) {
-            return $this->findPublishedById($id);
-        }
-
-        throw new ModelNotFoundException('Slug of blog does not contain an id');
-    }
-
-    /**
      * retrieve a single blogpost by its id.
      *
      * @param int $id
@@ -94,37 +73,6 @@ class BlogRepository extends EloquentRepository
     {
         return Blog ::findOrFail($id);
     }
-
-    /**
-     * retrieve the next blogpost based on publication_date.
-     *
-     * @param string $date
-     *
-     * @return Blog
-     */
-    public function findNextByPublicationDate($date)
-    {
-        return Blog ::published()
-                    ->orderedOldToNew()
-                    ->publishedAfter($date)
-                    ->first();
-    }
-
-    /**
-     * retrieve the previous blogpost based on publication_date.
-     *
-     * @param string $date
-     *
-     * @return Blog
-     */
-    public function findPreviousByPublicationDate($date)
-    {
-        return Blog ::published()
-                    ->orderedNewToOld()
-                    ->publishedBefore($date)
-                    ->first();
-    }
-
 
     /**
      * retrieve the most recently updated blogpost.
