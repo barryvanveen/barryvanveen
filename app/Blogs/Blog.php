@@ -20,6 +20,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @property boolean $online
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ *
  * @method static Builder|Blog whereId($value)
  * @method static Builder|Blog whereTitle($value)
  * @method static Builder|Blog whereSlug($value)
@@ -80,7 +81,7 @@ class Blog extends Model implements SluggableInterface, HasPresenter
      */
     public function scopePublished($query)
     {
-        return $query   ->where('online', '=', '1')
+        return $query->where('online', '=', '1')
                         ->where('publication_date', '<=', \DB::raw('NOW()'));
     }
 
