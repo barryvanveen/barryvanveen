@@ -26,7 +26,7 @@
 				"code": 58889,
 				"name": "rss"
 			},
-			"setIdx": 1,
+			"setIdx": 2,
 			"setId": 3,
 			"iconIdx": 0
 		},
@@ -59,7 +59,7 @@
 				"code": 58880,
 				"name": "arrow-right"
 			},
-			"setIdx": 3,
+			"setIdx": 4,
 			"setId": 1,
 			"iconIdx": 0
 		},
@@ -86,13 +86,13 @@
 				{}
 			],
 			"properties": {
-				"order": 2,
+				"order": 11,
 				"id": 4,
 				"prevSize": 28,
 				"code": 58881,
 				"name": "arrow-left"
 			},
-			"setIdx": 3,
+			"setIdx": 4,
 			"setId": 1,
 			"iconIdx": 1
 		},
@@ -126,7 +126,7 @@
 				"code": 58882,
 				"name": "arrow-down"
 			},
-			"setIdx": 3,
+			"setIdx": 4,
 			"setId": 1,
 			"iconIdx": 2
 		},
@@ -160,7 +160,7 @@
 				"code": 58883,
 				"name": "arrow-up"
 			},
-			"setIdx": 3,
+			"setIdx": 4,
 			"setId": 1,
 			"iconIdx": 3
 		},
@@ -194,7 +194,7 @@
 				"name": "calendar-o",
 				"code": 58884
 			},
-			"setIdx": 3,
+			"setIdx": 4,
 			"setId": 1,
 			"iconIdx": 4
 		},
@@ -227,7 +227,7 @@
 				"name": "clock-o",
 				"code": 58885
 			},
-			"setIdx": 3,
+			"setIdx": 4,
 			"setId": 1,
 			"iconIdx": 5
 		},
@@ -257,7 +257,7 @@
 				"name": "caret-up",
 				"ligatures": "caret-up"
 			},
-			"setIdx": 3,
+			"setIdx": 4,
 			"setId": 1,
 			"iconIdx": 6
 		},
@@ -286,7 +286,7 @@
 				"name": "github-square",
 				"ligatures": ""
 			},
-			"setIdx": 3,
+			"setIdx": 4,
 			"setId": 1,
 			"iconIdx": 7
 		},
@@ -314,7 +314,7 @@
 				"code": 58888,
 				"name": "linkedin-square"
 			},
-			"setIdx": 3,
+			"setIdx": 4,
 			"setId": 1,
 			"iconIdx": 8
 		}
@@ -346,7 +346,8 @@
 			"classSelector": ".icon",
 			"showMetrics": true,
 			"showMetadata": true,
-			"showVersion": true
+			"showVersion": true,
+			"embed": false
 		},
 		"imagePref": {
 			"prefix": "icon-",
@@ -354,7 +355,10 @@
 			"useClassSelector": true,
 			"color": 4473924,
 			"bgColor": 16777215,
-			"classSelector": ".icon"
+			"classSelector": ".icon",
+			"columns": 16,
+			"margin": 16,
+			"height": 32
 		},
 		"historySize": 100,
 		"showCodes": true,

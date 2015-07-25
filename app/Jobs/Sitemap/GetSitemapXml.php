@@ -121,7 +121,7 @@ class GetSitemapXml implements SelfHandling
 
     /**
      * Get a formatted datetime string from a standard datetime string.
-     * Format is 2015-07-13T22:20:15+02:00
+     * Format is 2015-07-13T22:20:15+02:00.
      *
      * @param string $date
      *

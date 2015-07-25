@@ -31,9 +31,9 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @method static Builder|Blog whereOnline($value)
  * @method static Builder|Blog whereCreatedAt($value)
  * @method static Builder|Blog whereUpdatedAt($value)
- * @method static Builder|Blog online()
- * @method static Builder|Blog past()
- * @method static Builder|Blog orderedDesc()
+ * @method static Builder|Blog published()
+ * @method static Builder|Blog orderedNewToOld()
+ * @method static Builder|Blog orderedOldToNew()
  */
 class Blog extends Model implements SluggableInterface, HasPresenter
 {
@@ -73,27 +73,16 @@ class Blog extends Model implements SluggableInterface, HasPresenter
     ];
 
     /**
-     * select only blogs that are online.
+     * select only blogs that are online and have a publication_date in the past.
      *
      * @param Builder $query
      *
      * @return mixed
      */
-    public function scopeOnline($query)
+    public function scopePublished($query)
     {
-        return $query->where('online', '=', '1');
-    }
-
-    /**
-     * select only blogs that have a publication_date in the past.
-     *
-     * @param Builder $query
-     *
-     * @return mixed
-     */
-    public function scopePast($query)
-    {
-        return $query->where('publication_date', '<=', \DB::raw('NOW()'));
+        return $query->where('online', '=', '1')
+                        ->where('publication_date', '<=', \DB::raw('NOW()'));
     }
 
     /**
@@ -103,9 +92,21 @@ class Blog extends Model implements SluggableInterface, HasPresenter
      *
      * @return mixed
      */
-    public function scopeOrderedDesc($query)
+    public function scopeOrderedNewToOld($query)
     {
         return $query->orderBy('publication_date', 'DESC');
+    }
+
+    /**
+     * order the results by descending publication date.
+     *
+     * @param Builder $query
+     *
+     * @return mixed
+     */
+    public function scopeOrderedOldToNew($query)
+    {
+        return $query->orderBy('publication_date', 'ASC');
     }
 
     /**

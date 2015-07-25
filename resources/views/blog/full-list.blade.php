@@ -2,14 +2,14 @@
 
 @section('content')
 
-    <div class="page-header">
-        <h1>Blog</h1>
-    </div>
+    <section class="previewContainer">
+        <div class="page-header">
+            <h1>Alle artikelen</h1>
+        </div>
 
-    <div class="previewContainer">
         @foreach($blogs as $blog)
             @include('blog.partials.preview')
         @endforeach
-    </div>
+    </section>
 
 @stop

@@ -7,8 +7,8 @@
  **/
 @font-face {
   font-family: "icons";
-  src: url('../fonts/icomoon.eot?-y1owus');
-  src: url('../fonts/icomoon.eot?#iefix-y1owus') format('embedded-opentype'), url('../fonts/icomoon.woff?-y1owus') format('woff'), url('../fonts/icomoon.ttf?-y1owus') format('truetype'), url('../fonts/icomoon.svg?-y1owus#icomoon') format('svg');
+  src: url('../fonts/icomoon.eot?-spjz1m');
+  src: url('../fonts/icomoon.eot?#iefix-spjz1m') format('embedded-opentype'), url('../fonts/icomoon.woff?-spjz1m') format('woff'), url('../fonts/icomoon.ttf?-spjz1m') format('truetype'), url('../fonts/icomoon.svg?-spjz1m#icomoon') format('svg');
   font-weight: normal;
   font-style: normal; }
 
@@ -5339,7 +5339,7 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help; }
 
-.about-preview__button, .blog-preview__button {
+.blog-preview__button {
   display: inline-block;
   margin-bottom: 0;
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -5367,43 +5367,43 @@ pre[class*="language-"] {
   font-size: 14px;
   line-height: 1.5;
   border-radius: 3px; }
-  .about-preview__button:focus, .blog-preview__button:focus, .about-preview__button.focus, .blog-preview__button.focus, .about-preview__button:active:focus, .blog-preview__button:active:focus, .about-preview__button:active.focus, .blog-preview__button:active.focus, .about-preview__button.active:focus, .blog-preview__button.active:focus, .about-preview__button.active.focus, .blog-preview__button.active.focus {
+  .blog-preview__button:focus, .blog-preview__button.focus, .blog-preview__button:active:focus, .blog-preview__button:active.focus, .blog-preview__button.active:focus, .blog-preview__button.active.focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
-  .about-preview__button:hover, .blog-preview__button:hover, .about-preview__button:focus, .blog-preview__button:focus, .about-preview__button.focus, .blog-preview__button.focus {
+  .blog-preview__button:hover, .blog-preview__button:focus, .blog-preview__button.focus {
     color: #333333;
     text-decoration: none; }
-  .about-preview__button:active, .blog-preview__button:active, .about-preview__button.active, .blog-preview__button.active {
+  .blog-preview__button:active, .blog-preview__button.active {
     outline: 0;
     background-image: none;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-  .about-preview__button.disabled, .blog-preview__button.disabled, .about-preview__button[disabled], .blog-preview__button[disabled], fieldset[disabled] .about-preview__button, fieldset[disabled] .blog-preview__button {
+  .blog-preview__button.disabled, .blog-preview__button[disabled], fieldset[disabled] .blog-preview__button {
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0.65;
     filter: alpha(opacity=65);
     box-shadow: none; }
-  .about-preview__button:hover, .blog-preview__button:hover, .about-preview__button:focus, .blog-preview__button:focus, .about-preview__button.focus, .blog-preview__button.focus, .about-preview__button:active, .blog-preview__button:active, .about-preview__button.active, .blog-preview__button.active, .open > .about-preview__button.dropdown-toggle, .open > .blog-preview__button.dropdown-toggle {
+  .blog-preview__button:hover, .blog-preview__button:focus, .blog-preview__button.focus, .blog-preview__button:active, .blog-preview__button.active, .open > .blog-preview__button.dropdown-toggle {
     color: #fff;
     background-color: #1863e6;
     border-color: #175fdd; }
-  .about-preview__button:active, .blog-preview__button:active, .about-preview__button.active, .blog-preview__button.active, .open > .about-preview__button.dropdown-toggle, .open > .blog-preview__button.dropdown-toggle {
+  .blog-preview__button:active, .blog-preview__button.active, .open > .blog-preview__button.dropdown-toggle {
     background-image: none; }
-  .about-preview__button.disabled, .blog-preview__button.disabled, .about-preview__button.disabled:hover, .blog-preview__button.disabled:hover, .about-preview__button.disabled:focus, .blog-preview__button.disabled:focus, .about-preview__button.disabled.focus, .blog-preview__button.disabled.focus, .about-preview__button.disabled:active, .blog-preview__button.disabled:active, .about-preview__button.disabled.active, .blog-preview__button.disabled.active, .about-preview__button[disabled], .blog-preview__button[disabled], .about-preview__button[disabled]:hover, .blog-preview__button[disabled]:hover, .about-preview__button[disabled]:focus, .blog-preview__button[disabled]:focus, .about-preview__button[disabled].focus, .blog-preview__button[disabled].focus, .about-preview__button[disabled]:active, .blog-preview__button[disabled]:active, .about-preview__button[disabled].active, .blog-preview__button[disabled].active, fieldset[disabled] .about-preview__button, fieldset[disabled] .blog-preview__button, fieldset[disabled] .about-preview__button:hover, fieldset[disabled] .blog-preview__button:hover, fieldset[disabled] .about-preview__button:focus, fieldset[disabled] .blog-preview__button:focus, fieldset[disabled] .about-preview__button.focus, fieldset[disabled] .blog-preview__button.focus, fieldset[disabled] .about-preview__button:active, fieldset[disabled] .blog-preview__button:active, fieldset[disabled] .about-preview__button.active, fieldset[disabled] .blog-preview__button.active {
+  .blog-preview__button.disabled, .blog-preview__button.disabled:hover, .blog-preview__button.disabled:focus, .blog-preview__button.disabled.focus, .blog-preview__button.disabled:active, .blog-preview__button.disabled.active, .blog-preview__button[disabled], .blog-preview__button[disabled]:hover, .blog-preview__button[disabled]:focus, .blog-preview__button[disabled].focus, .blog-preview__button[disabled]:active, .blog-preview__button[disabled].active, fieldset[disabled] .blog-preview__button, fieldset[disabled] .blog-preview__button:hover, fieldset[disabled] .blog-preview__button:focus, fieldset[disabled] .blog-preview__button.focus, fieldset[disabled] .blog-preview__button:active, fieldset[disabled] .blog-preview__button.active {
     background-color: #4582EC;
     border-color: #4582EC; }
-  .about-preview__button .badge, .blog-preview__button .badge {
+  .blog-preview__button .badge {
     color: #4582EC;
     background-color: #fff; }
 
-.about-preview, .blog-preview {
+.blog-preview {
   display: block;
   overflow: hidden;
   margin-bottom: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid #ddd; }
-  .about-preview:last-child, .blog-preview:last-child {
+  .blog-preview:last-child {
     border-bottom: 0; }
 
 .blog-preview__heading {
@@ -5411,6 +5411,7 @@ pre[class*="language-"] {
   overflow: hidden; }
 
 .blog-preview__heading-title {
+  font-size: 34px;
   display: inline; }
 
 .blog-preview__heading-title-link {
@@ -5584,12 +5585,12 @@ html {
   position: relative; }
 
 body {
-  padding-top: 80px;
-  padding-bottom: 120px !important; }
+  padding-top: 50px;
+  padding-bottom: 80px !important; }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   body {
-    padding-top: 50px; } }
+    padding-top: 80px; } }
 
 /**
  * style figures

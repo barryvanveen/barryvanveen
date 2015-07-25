@@ -16,11 +16,10 @@ class BlogRepository extends EloquentRepository
      */
     public function latest($amount = 2)
     {
-        return Blog     ::online()
-                        ->past()
-                        ->orderedDesc()
-                        ->take($amount)
-                        ->get();
+        return Blog ::published()
+                    ->orderedNewToOld()
+                    ->take($amount)
+                    ->get();
     }
 
     /**
@@ -30,10 +29,9 @@ class BlogRepository extends EloquentRepository
      */
     public function published()
     {
-        return Blog     ::online()
-                        ->past()
-                        ->orderedDesc()
-                        ->get();
+        return Blog ::published()
+                    ->orderedNewToOld()
+                    ->get();
     }
 
     /**
@@ -43,29 +41,8 @@ class BlogRepository extends EloquentRepository
      */
     public function all()
     {
-        return Blog     ::orderedDesc()
-                        ->get();
-    }
-
-    /**
-     * retrieve a single blogpost by its slug.
-     *
-     * @param string $slug
-     *
-     * @return Blog
-     *
-     * @throws ModelNotFoundException
-     */
-    public function findPublishedBySlug($slug)
-    {
-        $id = substr($slug, 0, stripos($slug, '-'));
-
-        // if this slug begins with an id, use it to find a blogpost
-        if (is_numeric($id) && intval($id) > 0) {
-            return $this->findPublishedById($id);
-        }
-
-        throw new ModelNotFoundException('Slug of blog does not contain an id');
+        return Blog ::orderedNewToOld()
+                    ->get();
     }
 
     /**
@@ -79,9 +56,8 @@ class BlogRepository extends EloquentRepository
      */
     public function findPublishedById($id)
     {
-        return Blog     ::online()
-                        ->past()
-                        ->findOrFail($id);
+        return Blog ::published()
+                    ->findOrFail($id);
     }
 
     /**
@@ -95,7 +71,7 @@ class BlogRepository extends EloquentRepository
      */
     public function findAnyById($id)
     {
-        return Blog     ::findOrFail($id);
+        return Blog ::findOrFail($id);
     }
 
     /**
@@ -105,9 +81,8 @@ class BlogRepository extends EloquentRepository
      */
     public function lastUpdatedAt()
     {
-        return Blog     ::online()
-                        ->past()
-                        ->latest('updated_at')
-                        ->first();
+        return Blog ::published()
+                    ->latest('updated_at')
+                    ->first();
     }
 }
