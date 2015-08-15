@@ -107,8 +107,12 @@ gulp.task('build-js', function () {
  * move some files around
  */
 gulp.task('move', function () {
-    // move favicon files to public_html
+    // move Icomoon font files to public_html
     gulp.src('resources/assets/fonts/icomoon/fonts/*')
+        .pipe(gulp.dest('public_html/fonts'));
+
+    // move bootstrap font files to public_html
+    gulp.src('bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*')
         .pipe(gulp.dest('public_html/fonts'));
 
     gulp.src('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')
