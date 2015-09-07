@@ -5,15 +5,19 @@
     <main>
         <article class="page__content">
             <header class="page-header">
-                <h1>{{$page->title}}</h1>
+                <h1 itemprop="name">{{$page->title}}</h1>
             </header>
 
-            {!! $page->html_text !!}
+            <div itemprop="text">
+                {!! $page->html_text !!}
+            </div>
 
             @if ($page->updated_at > $page->publication_date)
                 <footer class="well well-sm page__last-updated">
-                    {{-- todo: <time itemprop="published" datetime="2009-08-29">two days ago</time> --}}
-                    Laatste aanpassing: {{$page->updated_at_formatted}}
+                    Laatste aanpassing:
+                    <time itemprop="lastReviewed" content="{{$page->updated_at_formatted_rfc3339}}">
+                        {{$page->updated_at_formatted_rfc3339}}
+                    </time>
                 </footer>
             @endif
         </article>

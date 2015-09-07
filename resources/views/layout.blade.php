@@ -29,7 +29,7 @@
         <![endif]-->
 
 	</head>
-	<body>
+	<body itemscope itemtype="http://schema.org/WebPage">
 
 		@include('layouts.partials.analytics')
 

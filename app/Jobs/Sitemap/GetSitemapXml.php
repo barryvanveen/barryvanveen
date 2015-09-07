@@ -129,6 +129,6 @@ class GetSitemapXml implements SelfHandling
      */
     protected function getFormattedDatetime($date)
     {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->format('Y-m-d\TH:i:sP');
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->toRfc3339String();
     }
 }

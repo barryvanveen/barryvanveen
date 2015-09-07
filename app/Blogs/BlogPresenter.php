@@ -86,6 +86,18 @@ class BlogPresenter extends BasePresenter
     }
 
     /**
+     * Get publication date in RFC-3339 format, which is used for schema.org microdata.
+     *
+     * @return string
+     */
+    public function publication_date_formatted_rfc3339()
+    {
+        $date = new Carbon($this->resource->publication_date);
+
+        return $date->toRfc3339String();
+    }
+
+    /**
      * Get publication date in a diffForHumans format.
      *
      * @return string

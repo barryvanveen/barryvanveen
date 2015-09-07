@@ -106,6 +106,18 @@ class PagePresenter extends BasePresenter
     }
 
     /**
+     * Get date of last update in RFC-3339 format, which is used for schema.org microdata.
+     *
+     * @return string
+     */
+    public function updated_at_formatted_rfc3339()
+    {
+        $date = new Carbon($this->resource->updated_at);
+
+        return $date->toRfc3339String();
+    }
+
+    /**
      * Get date of latest update in a diffForHumans format.
      *
      * @return string
