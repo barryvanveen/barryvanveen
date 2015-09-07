@@ -14,5 +14,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Added schema.org microdata to blog posts
 - Added this changelog
 
+### Fixed
+- Added glyphicon font files to /public_html/fonts 
+
 ## Older versions
 This changelog was introduced in version 2.2.1
