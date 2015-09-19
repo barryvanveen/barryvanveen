@@ -62,7 +62,7 @@ class GetBlogRssXml implements SelfHandling
             trans('general.blog-rss-title'),
             trans('general.blog-rss-description'),
             url(),
-            Carbon::createFromFormat('Y-m-d H:i:s', $last_updated_blog['updated_at'])->format('D, d M Y H:i:s O')
+            Carbon::createFromFormat('Y-m-d H:i:s', $last_updated_blog['updated_at'])->toRfc2822String()
         );
     }
 

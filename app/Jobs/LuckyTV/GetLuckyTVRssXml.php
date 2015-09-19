@@ -99,7 +99,7 @@ class GetLuckyTVRssXml implements SelfHandling
             trans('general.luckytv-rss-title'),
             trans('general.luckytv-rss-description'),
             route('luckytv-rss'),
-            Carbon::now()->format('D, d M Y H:i:s O')
+            Carbon::now()->toRfc2822String()
         );
     }
 
@@ -117,7 +117,7 @@ class GetLuckyTVRssXml implements SelfHandling
                 $post['title'],
                 $post['link'],
                 $post['link'],
-                Carbon::createFromFormat('d-m-Y', $post['date'])->format('D, d M Y H:i:s O')
+                Carbon::createFromFormat('d-m-Y', $post['date'])->toRfc2822String()
             );
         }
 
