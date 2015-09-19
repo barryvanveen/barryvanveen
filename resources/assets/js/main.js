@@ -12,6 +12,7 @@ $('document').ready(function(){
 	window.Barryvanveen.initMarkdownEditors();
     window.Barryvanveen.initDatetimepickers();
     window.Barryvanveen.initLogModal();
+    window.Barryvanveen.initOutgoingLinkListeners();
 
 });
 
@@ -218,7 +219,33 @@ window.Barryvanveen.initLogModal = function() {
         modal.find('.modal-title').html(level + ": " + text);
         modal.find('.modal-body').html("<small>In file " + file + "<br><br>" + stack + "</small>");
 
-    })
+    });
 
+};
+
+
+/**
+ * init listeners for outgoing links
+ */
+window.Barryvanveen.initOutgoingLinkListeners = function() {
+
+    $(window).click(function(e) {
+        // ignore clicks on all elements excepts links
+        if (e.target.nodeName != 'A') {
+            return;
+        }
+
+        // ignore clicks on links to this website
+        if (e.target.href.indexOf(Barryvanveen.baseurl) == 0) {
+            return;
+        }
+
+        // track clicks to external websites
+        ga('send', 'event', 'outbound', 'click', e.target.href, {'hitCallback':
+            function () {
+                document.location = e.target.href;
+            }
+        });
+    });
 
 };
