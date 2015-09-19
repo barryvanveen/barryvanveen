@@ -56,12 +56,18 @@ class GetLuckyTVRssXml implements SelfHandling
     {
         $crawler = new Crawler($this->html);
 
-        $posts = $crawler->filter('div#content div.post div.meta')->each(function (Crawler $node) {
-            $title = $node->filter('h3.title a')->text();
-            $link = $node->filter('h3.title a')->attr('href');
-            $date = $node->filter('div.date')->text();
+        $posts = $crawler->filter('div#content div.post')->each(function (Crawler $node) {
+            $title = $node->filter('div.meta h3.title a')->text();
+            $link = $node->filter('div.meta h3.title a')->attr('href');
+            $date = $node->filter('div.meta div.date')->text();
+            $image = $node->filter('a img')->attr('src');
 
-            return compact('title', 'link', 'date');
+            // derive original image from thumbnail
+            $original_start = strpos($image, '?src=')+5;
+            $original_end = strpos($image, '&w=');
+            $image = substr($image, $original_start, $original_end-$original_start);
+
+            return compact('title', 'link', 'date', 'image');
         });
 
         return $posts;
@@ -117,7 +123,8 @@ class GetLuckyTVRssXml implements SelfHandling
                 $post['title'],
                 $post['link'],
                 $post['link'],
-                Carbon::createFromFormat('d-m-Y', $post['date'])->toRfc2822String()
+                Carbon::createFromFormat('d-m-Y', $post['date'])->toRfc2822String(),
+                $post['image']
             );
         }
 
