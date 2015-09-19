@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <div class="bs-component">
+    <div class="page__content bs-component">
         <table class="table table-striped table-hover overview-table">
             <thead>
                 <tr>
