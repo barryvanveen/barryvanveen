@@ -3,9 +3,11 @@ namespace Barryvanveen\Users;
 
 use Hash;
 use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
+use Illuminate\Foundation\Auth\Access\Authorizable;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**
@@ -29,9 +31,9 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @method static Builder|User whereCreatedAt($value)
  * @method static Builder|User whereUpdatedAt($value)
  */
-class User extends Model implements AuthenticatableContract, HasPresenter
+class User extends Model implements AuthenticatableContract, AuthorizableContract, HasPresenter
 {
-    use Authenticatable;
+    use Authenticatable, Authorizable;
 
     /**
      * The database table used by the model.
