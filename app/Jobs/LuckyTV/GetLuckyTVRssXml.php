@@ -66,6 +66,7 @@ class GetLuckyTVRssXml implements SelfHandling
             $original_start = strpos($image, '?src=')+5;
             $original_end = strpos($image, '&w=');
             $image = substr($image, $original_start, $original_end-$original_start);
+            $image = '<img src="'.$image.'" alt="'.$title.'">';
 
             return compact('title', 'link', 'date', 'image');
         });
