@@ -77,19 +77,26 @@ class GetBlogRssXml implements SelfHandling
 
         $blogs = $this->blogRepository->published();
 
+        $analytics_parameters = '?'.implode('&', [
+            'utm_source=rss',
+            'utm_medium=rss',
+            'utm_campaign=rss',
+        ]);
+
         /** @var Blog $blog */
         foreach ($blogs as $blog) {
             $link = route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]);
+            $link_including_analytics = $link.$analytics_parameters;
 
             $summary_html = $this->dispatch(
                 new MarkdownToHtml($blog->summary)
             );
 
-            $summary_html .= '<p>Lees verder op de website.</p>';
+            $summary_html .= '<p><a href="'.$link_including_analytics.'">Lees verder op de website</a>.</p>';
 
             $items[] = new ItemData(
                 $blog->title,
-                $link,
+                $link_including_analytics,
                 $link,
                 $blog['updated_at'],
                 $summary_html
