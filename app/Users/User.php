@@ -13,7 +13,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 /**
  * Barryvanveen\Users\User.
  *
- * @property integer $id
+ * @property int $id
  * @property string $firstname
  * @property string $lastname
  * @property string $email

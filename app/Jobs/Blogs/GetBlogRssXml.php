@@ -85,7 +85,7 @@ class GetBlogRssXml implements SelfHandling
 
         /** @var Blog $blog */
         foreach ($blogs as $blog) {
-            $link = route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]);
+            $link                     = route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]);
             $link_including_analytics = $link.$analytics_parameters;
 
             $summary_html = $this->dispatch(

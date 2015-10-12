@@ -12,11 +12,10 @@
 */
 
 /** @var Illuminate\Database\Eloquent\Factory $factory */
-
 use Illuminate\Support\Str;
 
 $factory->define(Barryvanveen\Users\User::class, function ($faker) {
-    /** @var Faker\Generator $faker */
+    /* @var Faker\Generator $faker */
     return [
         'firstname'      => $faker->firstName,
         'lastname'       => $faker->lastName,
@@ -27,7 +26,7 @@ $factory->define(Barryvanveen\Users\User::class, function ($faker) {
 });
 
 $factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
-    /** @var Faker\Generator $faker */
+    /* @var Faker\Generator $faker */
     $title = $faker->sentence;
 
     return [
@@ -41,13 +40,13 @@ $factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
 });
 
 $factory->define(Barryvanveen\Pages\Page::class, function ($faker) {
-    /** @var Faker\Generator $faker */
+    /* @var Faker\Generator $faker */
     $title = $faker->sentence;
 
     return [
-        'title'            => $title,
-        'slug'             => Str::slug($title),
-        'text'             => $faker->paragraph,
-        'online'           => $faker->boolean(),
+        'title'  => $title,
+        'slug'   => Str::slug($title),
+        'text'   => $faker->paragraph,
+        'online' => $faker->boolean(),
     ];
 });

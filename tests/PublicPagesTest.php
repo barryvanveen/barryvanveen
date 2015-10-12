@@ -8,12 +8,11 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class PublicPagesTest extends TestCase
 {
-
     use DatabaseMigrations;
     use DatabaseTransactions;
 
     /**
-     * Test visiting the blog overview and an item page
+     * Test visiting the blog overview and an item page.
      */
     public function testBlogOverviewAndItem()
     {
@@ -22,7 +21,7 @@ class PublicPagesTest extends TestCase
         $blog = factory(Barryvanveen\Blogs\Blog::class)->create(
             [
                 'publication_date' => Carbon::now()->subDay()->toDateTimeString(),
-                'online' => 1,
+                'online'           => 1,
             ]
         );
 
@@ -37,7 +36,7 @@ class PublicPagesTest extends TestCase
             route(
                 'blog-item',
                 [
-                    'id' => $blog->id,
+                    'id'   => $blog->id,
                     'slug' => $blog->slug,
                 ]
             )
@@ -45,11 +44,10 @@ class PublicPagesTest extends TestCase
 
         $this->see($blog->title)
             ->see($blog->text);
-
     }
 
     /**
-     * Test visiting the blogs RSS feed
+     * Test visiting the blogs RSS feed.
      */
     public function testBlogRssFeed()
     {
@@ -58,7 +56,7 @@ class PublicPagesTest extends TestCase
         $blog = factory(Barryvanveen\Blogs\Blog::class)->create(
             [
                 'publication_date' => Carbon::now()->subDay()->toDateTimeString(),
-                'online' => 1,
+                'online'           => 1,
             ]
         );
 
@@ -66,12 +64,10 @@ class PublicPagesTest extends TestCase
 
         $this->see('<rss version="2.0"')
             ->see('<title>'.$blog->title.'</title>');
-
     }
 
-
     /**
-     * Test visiting the over-mij page
+     * Test visiting the over-mij page.
      */
     public function testOverMij()
     {
@@ -79,7 +75,7 @@ class PublicPagesTest extends TestCase
         /** @var Page $page */
         $page = factory(Barryvanveen\Pages\Page::class)->create(
             [
-                'slug' => 'over-mij',
+                'slug'   => 'over-mij',
                 'online' => 1,
             ]
         );
@@ -88,11 +84,10 @@ class PublicPagesTest extends TestCase
 
         $this->see($page->title);
         $this->see($page->text);
-
     }
 
     /**
-     * Test visiting the boeken page
+     * Test visiting the boeken page.
      */
     public function testOverMijBoeken()
     {
@@ -100,7 +95,7 @@ class PublicPagesTest extends TestCase
         /** @var Page $page */
         $page = factory(Barryvanveen\Pages\Page::class)->create(
             [
-                'slug' => 'boeken-die-ik-heb-gelezen',
+                'slug'   => 'boeken-die-ik-heb-gelezen',
                 'online' => 1,
             ]
         );
@@ -109,23 +104,20 @@ class PublicPagesTest extends TestCase
 
         $this->see($page->title);
         $this->see($page->text);
-
     }
 
     /**
-     * Test visiting the blogs RSS feed
+     * Test visiting the blogs RSS feed.
      */
     public function testLuckyTvRssFeed()
     {
-
         $this->visit(route('luckytv-rss'));
 
         $this->see('<rss version="2.0"');
-
     }
 
     /**
-     * Test visiting the sitemap
+     * Test visiting the sitemap.
      */
     public function testSitemap()
     {
@@ -134,20 +126,20 @@ class PublicPagesTest extends TestCase
         $blog = factory(Barryvanveen\Blogs\Blog::class)->create(
             [
                 'publication_date' => Carbon::now()->subDay()->toDateTimeString(),
+                'online'           => 1,
+            ]
+        );
+
+        factory(Barryvanveen\Pages\Page::class)->create(
+            [
+                'slug'   => 'over-mij',
                 'online' => 1,
             ]
         );
 
         factory(Barryvanveen\Pages\Page::class)->create(
             [
-                'slug' => 'over-mij',
-                'online' => 1,
-            ]
-        );
-
-        factory(Barryvanveen\Pages\Page::class)->create(
-            [
-                'slug' => 'boeken-die-ik-heb-gelezen',
+                'slug'   => 'boeken-die-ik-heb-gelezen',
                 'online' => 1,
             ]
         );
@@ -155,12 +147,10 @@ class PublicPagesTest extends TestCase
         $this->visit(route('sitemap'))
              ->see('<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
              ->see(route('blog-item', [
-                 'id' => $blog->id,
+                 'id'   => $blog->id,
                  'slug' => $blog->slug,
              ]))
              ->see(route('over-mij'))
              ->see(route('boeken'));
-
     }
-
 }
