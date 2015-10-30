@@ -9,6 +9,24 @@ class PrivatePagesTest extends TestCase
     use DatabaseTransactions;
 
     /**
+     * Test if authorization works properly on the admin section
+     */
+    public function testAuthorizationNeeded()
+    {
+        $user = factory(Barryvanveen\Users\User::class)->create();
+        $blog = factory(Barryvanveen\Blogs\Blog::class)->create();
+
+        $this->visit(route('admin.blog'))
+            ->seePageIs(route('admin.login'));
+
+        $this->actingAs($user);
+
+        $this->visit(route('admin.blog'))
+            ->seePageIs(route('admin.blog'))
+            ->see($blog->title);
+    }
+
+    /**
      * Test logging in to the admin section
      */
     public function testLoginForm()
