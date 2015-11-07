@@ -6,7 +6,8 @@
 /tests/_output/*
 .DS_Store
 .env
-.env.*.php
+.env.production
+.env.testing
 _ide_helper.php
 _ide_helper_models.php
 composer.phar

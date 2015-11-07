@@ -3,12 +3,10 @@
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Pages\Page;
 use Carbon\Carbon;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class PublicPagesTest extends TestCase
 {
-    use DatabaseMigrations;
     use DatabaseTransactions;
 
     /**
