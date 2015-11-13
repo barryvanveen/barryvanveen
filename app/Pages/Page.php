@@ -11,11 +11,11 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 /**
  * Barryvanveen\Pages\Page.
  *
- * @property integer $id
+ * @property int $id
  * @property string $title
  * @property string $slug
  * @property string $text
- * @property boolean $online
+ * @property bool $online
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *

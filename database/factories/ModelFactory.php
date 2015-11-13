@@ -11,11 +11,42 @@
 |
 */
 
+/** @var Illuminate\Database\Eloquent\Factory $factory */
+use Illuminate\Support\Str;
+
 $factory->define(Barryvanveen\Users\User::class, function ($faker) {
+    /* @var Faker\Generator $faker */
     return [
-        'name'           => $faker->name,
-        'email'          => $faker->email,
+        'firstname'      => $faker->firstName,
+        'lastname'       => $faker->lastName,
+        'email'          => $faker->safeEmail,
         'password'       => str_random(10),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
+    /* @var Faker\Generator $faker */
+    $title = $faker->sentence;
+
+    return [
+        'title'            => $title,
+        'slug'             => Str::slug($title),
+        'summary'          => $faker->paragraph,
+        'text'             => $faker->paragraph,
+        'publication_date' => $faker->dateTimeBetween('-1 month', '+1 month'),
+        'online'           => $faker->boolean(),
+    ];
+});
+
+$factory->define(Barryvanveen\Pages\Page::class, function ($faker) {
+    /* @var Faker\Generator $faker */
+    $title = $faker->sentence;
+
+    return [
+        'title'  => $title,
+        'slug'   => Str::slug($title),
+        'text'   => $faker->paragraph,
+        'online' => $faker->boolean(),
     ];
 });

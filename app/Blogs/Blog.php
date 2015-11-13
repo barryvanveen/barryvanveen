@@ -10,14 +10,14 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 /**
  * Barryvanveen\Blogs\Blog.
  *
- * @property integer $id
+ * @property int $id
  * @property string $title
  * @property string $slug
  * @property string $summary
  * @property string $text
  * @property string $image
  * @property string $publication_date
- * @property boolean $online
+ * @property bool $online
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *
