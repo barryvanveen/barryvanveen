@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'version' => 'v2.2.2',
+    'version' => 'v2.2.3',
 
     /*
     |--------------------------------------------------------------------------
@@ -152,6 +152,7 @@ return [
          * Application Service Providers...
          */
         Barryvanveen\Providers\AppServiceProvider::class,
+        Barryvanveen\Providers\AuthServiceProvider::class,
         Barryvanveen\Providers\ComposerServiceProvider::class,
         Barryvanveen\Providers\DropboxServiceProvider::class,
         Barryvanveen\Providers\EventServiceProvider::class,
@@ -200,6 +201,7 @@ return [
         'Eloquent'  => Illuminate\Database\Eloquent\Model::class,
         'Event'     => Illuminate\Support\Facades\Event::class,
         'File'      => Illuminate\Support\Facades\File::class,
+        'Gate'      => Illuminate\Support\Facades\Gate::class,
         'Hash'      => Illuminate\Support\Facades\Hash::class,
         'Input'     => Illuminate\Support\Facades\Input::class,
         'Inspiring' => Illuminate\Foundation\Inspiring::class,

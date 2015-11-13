@@ -14,7 +14,7 @@ class UserRepository extends EloquentRepository
      */
     public function findByEmail($email)
     {
-        return User::    whereEmail($email)
-                        ->first();
+        return User ::whereEmail($email)
+                    ->first();
     }
 }

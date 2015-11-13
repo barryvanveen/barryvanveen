@@ -73,7 +73,7 @@ class DeployCommand extends Command
             ]
         );
 
-        SSH::put('.env.production.php', '.env');
+        SSH::put('.env.production', '.env');
 
         SSH::into('production')->run(
             [

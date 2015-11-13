@@ -7,7 +7,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
      *
      * @var string
      */
-    protected $baseUrl = 'http://localhost';
+    protected $baseUrl = 'http://barryvanveen.app';
 
     /**
      * Creates the application.
@@ -17,6 +17,8 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
     public function createApplication()
     {
         $app = require __DIR__.'/../bootstrap/app.php';
+
+        Dotenv::load(dirname(__DIR__), '.env.testing');
 
         $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
