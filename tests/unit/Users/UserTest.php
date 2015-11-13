@@ -7,7 +7,7 @@ class UserTest extends TestCase
 {
     public function testPasswordIsHashed()
     {
-        $user = new User();
+        $user           = new User();
         $user->password = 'secret';
 
         $this->assertNotEquals('secret', $user->password);

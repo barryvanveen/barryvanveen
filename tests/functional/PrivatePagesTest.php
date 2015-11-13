@@ -7,7 +7,7 @@ class PrivatePagesTest extends TestCase
     use DatabaseTransactions;
 
     /**
-     * Test if authorization works properly on the admin section
+     * Test if authorization works properly on the admin section.
      */
     public function testAuthorizationNeeded()
     {
@@ -25,16 +25,16 @@ class PrivatePagesTest extends TestCase
     }
 
     /**
-     * Test logging in to the admin section
+     * Test logging in to the admin section.
      */
     public function testLoginForm()
     {
-        $email = 'mymail@example.org';
+        $email    = 'mymail@example.org';
         $password = 'secret';
 
         /** @var Barryvanveen\Users\User $user */
         $user = factory(Barryvanveen\Users\User::class)->create([
-            'email' => $email,
+            'email'    => $email,
             'password' => $password,
         ]);
 
@@ -52,7 +52,7 @@ class PrivatePagesTest extends TestCase
     }
 
     /**
-     * Test logging out of the admin section
+     * Test logging out of the admin section.
      */
     public function testLogoutAction()
     {

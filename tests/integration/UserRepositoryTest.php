@@ -8,7 +8,8 @@ class UserRepositoryTest extends TestCase
 {
     use DatabaseTransactions;
 
-    public function testFindsUserByEmail() {
+    public function testFindsUserByEmail()
+    {
         /** @var User $user */
         $user = factory(User::class)->create();
 
@@ -19,7 +20,8 @@ class UserRepositoryTest extends TestCase
         $this->assertEquals($user->email, $userFromRepository->email);
     }
 
-    public function testReturnsFalseForNonExistingUser() {
+    public function testReturnsFalseForNonExistingUser()
+    {
         $repository = new UserRepository();
 
         $user = $repository->findByEmail('nonexisting-email@example.org');

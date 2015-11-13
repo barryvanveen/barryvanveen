@@ -5,7 +5,8 @@ use Barryvanveen\Users\UserPresenter;
 
 class UserPresenterTest extends TestCase
 {
-    public function testGetFullName() {
+    public function testGetFullName()
+    {
         /** @var User $user */
         $user = factory(User::class)->make();
 
