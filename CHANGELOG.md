@@ -9,6 +9,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.2.3] - 2015-09-19
+### Added
+- Added GA parameters to urls in blog rss feed 
+- Added functional, integration and unit tests with PHPUnit
+- Added php-cs-fixer to dev-dependecies of Composer
+ 
+### Changed
+- Updated to Laravel 5.1.11
+- Changed example configuration files 
+ 
+### Fixed
+- Fixed image in LuckyTV rss feed item description 
+
 ## [2.2.2] - 2015-09-19
 ### Added
 - Added Javascript function for tracking clicks on outbound links in Google Analytics
