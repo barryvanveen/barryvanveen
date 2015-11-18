@@ -9,7 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
-## [2.2.3] - 2015-09-19
+## [2.3.0] - 2015-09-19
 ### Added
 - Added GA parameters to urls in blog rss feed 
 - Added functional, integration and unit tests with PHPUnit
