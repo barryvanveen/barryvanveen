@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Deprecated
 ### Removed
 ### Fixed
+- Fixed date notation of the last update at the end of a text page
 
 ## [2.3.0] - 2015-09-19
 ### Added
