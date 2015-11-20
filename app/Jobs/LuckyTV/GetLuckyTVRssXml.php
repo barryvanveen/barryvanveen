@@ -125,7 +125,7 @@ class GetLuckyTVRssXml implements SelfHandling
                 $post['link'],
                 $post['link'],
                 Carbon::createFromFormat('d-m-Y', $post['date'])->toRfc2822String(),
-                $post['image']
+                '<a href="'.$post['link'].'">'.$post['image'].'</a>'
             );
         }
 
