@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 ### Changed
+- Images in the LuckyTV RSS feed now link to the video on the LuckyTV website
 ### Deprecated
 ### Removed
 ### Fixed
