@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Images in the LuckyTV RSS feed now link to the video on the LuckyTV website
 ### Deprecated
 ### Removed
+- Removed unused Barryvanveen\Logs\Logger
 ### Fixed
 - Fixed date notation of the last update at the end of a text page
 
