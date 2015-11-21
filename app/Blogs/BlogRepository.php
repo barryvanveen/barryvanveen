@@ -13,7 +13,7 @@ class BlogRepository extends EloquentRepository
      *
      * @return Paginator
      */
-    public function published($perPage = 5)
+    public function published($perPage = 10)
     {
         return Blog ::published()
                     ->orderedNewToOld()
