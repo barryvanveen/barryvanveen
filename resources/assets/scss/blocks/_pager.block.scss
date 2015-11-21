@@ -1,0 +1,12 @@
+.pager {
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+
+    .pager :first-child {
+        float: left;
+    }
+
+    .pager :last-child {
+        float: right;
+    }

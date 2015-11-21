@@ -66,7 +66,7 @@ gulp.task('build-sass', function () {
             style: 'expanded'
         }))
         .pipe(include())
-        .pipe(autoprefixer('last 5 versions'))
+        .pipe(autoprefixer('> 5%'))
         /*.pipe(cmq({
          log: true
          }))*/
