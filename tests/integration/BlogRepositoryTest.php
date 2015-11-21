@@ -5,40 +5,40 @@ use Barryvanveen\Blogs\BlogRepository;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Pagination\Paginator;
 
 class BlogRepositoryTest extends TestCase
 {
     use DatabaseTransactions;
 
-    public function testLatestReturnsTheLatestBlogposts()
+    /** @var BlogRepository $repository */
+    private $repository;
+
+    public function setUp()
     {
-        /** @var Blog $blog1 */
-        $blog1 = factory(Barryvanveen\Blogs\Blog::class)->create([
+        parent::setUp();
+
+        $this->repository = App::make(BlogRepository::class);
+    }
+
+    public function testPublishedReturnsPaginator()
+    {
+        $blogs = $this->repository->published();
+
+        $this->assertInstanceOf(Paginator::class, $blogs);
+    }
+
+    public function testPublishedPaginatesResults()
+    {
+        factory(Barryvanveen\Blogs\Blog::class, 20)->create([
             'publication_date' => '2015-01-01 12:00:00',
             'online'           => 1,
         ]);
 
-        /** @var Blog $blog2 */
-        $blog2 = factory(Barryvanveen\Blogs\Blog::class)->create([
-            'publication_date' => '2015-01-02 12:00:00',
-            'online'           => 1,
-        ]);
+        $paginator = $this->repository->published(5);
 
-        /** @var Blog $blog3 */
-        $blog3 = factory(Barryvanveen\Blogs\Blog::class)->create([
-            'publication_date' => '2015-01-03 12:00:00',
-            'online'           => 1,
-        ]);
-
-        /** @var BlogRepository $repository */
-        $repository = App::make(BlogRepository::class);
-
-        $blogs = $repository->latest(2)->toArray();
-
-        $this->assertCount(2, $blogs);
-        $this->assertEquals($blog3->title, $blogs[0]['title']);
-        $this->assertEquals($blog2->title, $blogs[1]['title']);
-        $this->assertNotContains($blog1, $blogs);
+        $this->assertCount(5, $paginator->items());
+        $this->assertTrue($paginator->hasMorePages());
     }
 
     public function testPublishedReturnsOnlyPublishedArticlesInTheRightOrder()
@@ -61,10 +61,7 @@ class BlogRepositoryTest extends TestCase
             'online'           => 1,
         ]);
 
-        /** @var BlogRepository $repository */
-        $repository = App::make(BlogRepository::class);
-
-        $blogs = $repository->published()->toArray();
+        $blogs = $this->repository->published(5)->items();
 
         $this->assertCount(2, $blogs);
         $this->assertEquals($blog3->title, $blogs[0]['title']);
@@ -92,10 +89,7 @@ class BlogRepositoryTest extends TestCase
             'online'           => 1,
         ]);
 
-        /** @var BlogRepository $repository */
-        $repository = App::make(BlogRepository::class);
-
-        $blogs = $repository->all()->toArray();
+        $blogs = $this->repository->all()->toArray();
 
         $this->assertCount(3, $blogs);
         $this->assertEquals($blog1->title, $blogs[0]['title']);
@@ -111,10 +105,7 @@ class BlogRepositoryTest extends TestCase
             'online'           => 1,
         ]);
 
-        /** @var BlogRepository $repository */
-        $repository = App::make(BlogRepository::class);
-
-        $blogFromRepository = $repository->findPublishedById($blog->id);
+        $blogFromRepository = $this->repository->findPublishedById($blog->id);
 
         $this->assertEquals($blog->id, $blogFromRepository->id);
     }
@@ -127,12 +118,9 @@ class BlogRepositoryTest extends TestCase
             'online'           => 0,
         ]);
 
-        /** @var BlogRepository $repository */
-        $repository = App::make(BlogRepository::class);
-
         $this->setExpectedException(ModelNotFoundException::class);
 
-        $repository->findPublishedById($blog->id);
+        $this->repository->findPublishedById($blog->id);
     }
 
     public function testFindPublishedByIdThrowsErrorForUnpublishedBlogpost()
@@ -143,12 +131,9 @@ class BlogRepositoryTest extends TestCase
             'online'           => 1,
         ]);
 
-        /** @var BlogRepository $repository */
-        $repository = App::make(BlogRepository::class);
-
         $this->setExpectedException(ModelNotFoundException::class);
 
-        $repository->findPublishedById($blog->id);
+        $this->repository->findPublishedById($blog->id);
     }
 
     public function testFindAnyByIdFindsUnpublishedBlogpost()
@@ -159,10 +144,7 @@ class BlogRepositoryTest extends TestCase
             'online'           => 0,
         ]);
 
-        /** @var BlogRepository $repository */
-        $repository = App::make(BlogRepository::class);
-
-        $blogFromRepository = $repository->findAnyById($blog->id);
+        $blogFromRepository = $this->repository->findAnyById($blog->id);
 
         $this->assertEquals($blog->id, $blogFromRepository->id);
     }
@@ -194,10 +176,7 @@ class BlogRepositoryTest extends TestCase
             'online'           => 0,
         ]);
 
-        /** @var BlogRepository $repository */
-        $repository = App::make(BlogRepository::class);
-
-        $blogFromRepository = $repository->lastUpdatedAt();
+        $blogFromRepository = $this->repository->lastUpdatedAt();
 
         $this->assertEquals($blog1->id, $blogFromRepository->id);
     }

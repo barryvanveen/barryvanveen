@@ -2,36 +2,22 @@
 namespace Barryvanveen\Blogs;
 
 use Barryvanveen\Database\EloquentRepository;
+use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class BlogRepository extends EloquentRepository
 {
     /**
-     * return limited amount of most recent blogposts.
-     *
-     * @param int $amount
-     *
-     * @return Collection
-     */
-    public function latest($amount = 2)
-    {
-        return Blog ::published()
-                    ->orderedNewToOld()
-                    ->take($amount)
-                    ->get();
-    }
-
-    /**
      * return all published blogposts.
      *
-     * @return Collection
+     * @return Paginator
      */
-    public function published()
+    public function published($perPage = 5)
     {
         return Blog ::published()
                     ->orderedNewToOld()
-                    ->get();
+                    ->simplePaginate($perPage);
     }
 
     /**
