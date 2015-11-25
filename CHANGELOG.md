@@ -4,16 +4,25 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
-- Added MIT licence
 ### Changed
-- Images in the LuckyTV RSS feed now link to the video on the LuckyTV website
 ### Deprecated
 ### Removed
+### Fixed
+
+## [2.3.1] - 2015-11-25
+### Added
+- Added MIT licence
+
+### Changed
+- Images in the LuckyTV RSS feed now link to the video on the LuckyTV website
+
+### Removed
 - Removed unused Barryvanveen\Logs\Logger
+
 ### Fixed
 - Fixed date notation of the last update at the end of a text page
 
-## [2.3.0] - 2015-09-19
+## [2.3.0] - 2015-11-18
 ### Added
 - Added GA parameters to urls in blog rss feed 
 - Added functional, integration and unit tests with PHPUnit
