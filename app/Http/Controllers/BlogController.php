@@ -4,6 +4,7 @@ namespace Barryvanveen\Http\Controllers;
 use Barryvanveen\Blogs\BlogRepository;
 use Barryvanveen\Jobs\Blogs\GetBlogRssXml;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
+use Barryvanveen\Pagination\SimplePaginatorPresenter;
 use Redirect;
 use Response;
 use View;
@@ -31,12 +32,13 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = $this->blogRepository->published();
+        $presenter = new SimplePaginatorPresenter($blogs);
 
         $this->setPageTitle('Blog');
         $this->setMetaDescription('Een blog van Barry van Veen over programmeren, PHP, Laravel
         Framework en aanverwante zaken.');
 
-        return View::make('blog.full-list', compact('blogs'));
+        return View::make('blog.full-list', compact('blogs', 'presenter'));
     }
 
     /**

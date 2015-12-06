@@ -1,5 +1,9 @@
 .blog-preview {
 	@extend %preview;
+
+	&:last-of-type {
+		border-bottom: none;
+	}
 }
 
 	.blog-preview__heading {

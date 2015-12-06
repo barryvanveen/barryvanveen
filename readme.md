@@ -10,7 +10,7 @@ a try and then use the following steps to set everything up for further developm
 * create a file called `.env` and substitute all placeholders with real values 
 * run `composer install` to download all PHP packages to /vendor
 * run `bower install` to download all CSS and Javascript components to /bower_components
-* run `sudo npm install --no-bin-links` to install all nodejs dependencies
+* run `npm install` (in my case on Windows because in the Homestead VM this will cause trouble)
 * run `gulp` to build all CSS and Javascript files
 
 ## Staying up to date
