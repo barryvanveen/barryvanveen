@@ -11,6 +11,8 @@
         @foreach($blogs as $blog)
             @include('blog.partials.preview')
         @endforeach
+
+        {!! $presenter->render() !!}
     </section>
 
 @stop
