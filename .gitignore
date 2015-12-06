@@ -2,6 +2,11 @@
 /bootstrap/compiled.php
 /bower_components
 /node_modules
+/public_html/uploads/*
+/storage/cache/*
+/storage/meta/*
+/storage/sessions/*
+/storage/views/*
 /vendor/
 /tests/_output/*
 .DS_Store
