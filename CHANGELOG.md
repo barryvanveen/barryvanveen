@@ -9,6 +9,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.4.0] - 2015-12-06
+### Added
+- Added pagination to the blog
+### Changed
+- Improved .gitignore file
+### Deprecated
+### Removed
+### Fixed
+
 ## [2.3.1] - 2015-11-25
 ### Added
 - Added MIT licence
