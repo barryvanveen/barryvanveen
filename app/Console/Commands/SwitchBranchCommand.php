@@ -5,6 +5,8 @@ use DB;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 
+// todo: translations
+
 class SwitchBranchCommand extends Command
 {
     const OBJECT_ARGUMENT_SEPARATOR = ':';

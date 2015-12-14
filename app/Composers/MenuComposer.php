@@ -4,6 +4,9 @@ namespace Barryvanveen\Composers;
 use Illuminate\View\View;
 use Route;
 
+// todo: change over-mij urls
+// todo: translations for page titles
+
 class MenuComposer
 {
     /** @var  View */

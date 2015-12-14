@@ -3,6 +3,8 @@ namespace Barryvanveen\Console\Commands;
 
 use Illuminate\Console\Command;
 
+// todo: translations
+
 class VersionCommand extends Command
 {
     const OBJECT_ARGUMENT_SEPARATOR = ':';

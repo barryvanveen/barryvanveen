@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="page-header">
-        <h1 class="overview-heading">Pagina's -- aanpassen</h1>
+        <h1 class="overview-heading">{{ trans('page-admin.header-edit') }}</h1>
     </div>
 
     <div class="page__content">
@@ -11,7 +11,7 @@
 
         @include('pages.admin.partials.form-fields')
 
-        {!! Form::submit('Aanpassen', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit(trans('general.edit'), ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
     </div>

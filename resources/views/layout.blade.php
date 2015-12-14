@@ -8,12 +8,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <title>{{ Meta::meta('title') }}</title>
-        {!! Meta::tag('title'); !!}
-        {!! Meta::tag('description'); !!}
+        {!! Meta::tag('title') !!}
+        {!! Meta::tag('description') !!}
 
-        {!! Meta::tagMetaProperty('site_name', 'Barry van Veen'); !!}
-        {!! Meta::tagMetaProperty('url', Request::url()); !!}
-        {!! Meta::tagMetaProperty('locale', 'nl_NL'); !!}
+        {!! Meta::tagMetaProperty('site_name', 'Barry van Veen') !!}
+        {!! Meta::tagMetaProperty('url', Request::url()) !!}
+        {!! Meta::tagMetaProperty('locale', 'nl_NL') !!}
 
         <link href="{{ route('blog-rss') }}" rel="alternate" type="application/rss+xml" title="{{ trans('general.rss-title') }}" />
         <link rel="shortcut icon" type="image/ico" href="{{ url('favicon.ico') }}">

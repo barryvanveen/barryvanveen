@@ -5,10 +5,10 @@
     <div class="page-header">
         <div class="row">
             <div class="col-sm-6">
-                <h1 class="overview-heading">Blog</h1>
+                <h1 class="overview-heading">{{ trans('blog-admin.header-overview') }}</h1>
             </div>
             <div class="col-sm-6 text-right">
-                <a href="{{ route('admin.blog-new') }}" class="btn btn-default btn-lg">Toevoegen</a>
+                <a href="{{ route('admin.blog-new') }}" class="btn btn-default btn-lg">{{ trans('general.add') }}</a>
             </div>
         </div>
     </div>
@@ -17,9 +17,9 @@
         <table class="table table-striped table-hover overview-table">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Publication date</th>
-                    <th>Title</th>
+                    <th>{{ trans('blog-admin.id-short') }}</th>
+                    <th>{{ trans('blog-admin.date') }}</th>
+                    <th>{{ trans('blog-admin.title') }}</th>
                 </tr>
             </thead>
             <tbody>

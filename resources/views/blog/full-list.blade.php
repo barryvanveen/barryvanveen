@@ -4,8 +4,8 @@
 
     <section class="previewContainer" itemscope itemtype="https://schema.org/Blog">
         <div class="page-header">
-            <h1>Alle artikelen</h1>
-            <p class="lead" itemprop="about">een blog over Laravel en webdevelopment</p>
+            <h1>{{ trans('general.homepage-title') }}</h1>
+            <p class="lead" itemprop="about">{{ trans('general.homepage-subtitle') }}</p>
         </div>
 
         @foreach($blogs as $blog)

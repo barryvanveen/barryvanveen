@@ -4,7 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
+- Added translations for all static texts
 ### Changed
+- Changed the locale of the application to English
+- Changed all existing translations to the English language
 ### Deprecated
 ### Removed
 ### Fixed

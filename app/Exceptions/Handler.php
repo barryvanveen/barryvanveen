@@ -18,6 +18,8 @@ use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use View;
 
+// todo: translations
+
 class Handler extends ExceptionHandler
 {
     /**

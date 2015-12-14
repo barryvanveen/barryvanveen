@@ -5,6 +5,8 @@ use Illuminate\Console\Command;
 use SSH;
 use Symfony\Component\Console\Input\InputArgument;
 
+// todo: translations
+
 class DeployCommand extends Command
 {
     const OBJECT_ARGUMENT_SEPARATOR = ':';
