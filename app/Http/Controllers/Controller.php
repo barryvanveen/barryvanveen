@@ -16,7 +16,7 @@ abstract class Controller extends BaseController
     public function __construct()
     {
         // default page title
-        $this->setPageTitle('Barry van Veen', false);
+        $this->setPageTitle(trans('meta.pagetitle-default'), false);
 
         // default javascript variables
         $javascript_vars = [

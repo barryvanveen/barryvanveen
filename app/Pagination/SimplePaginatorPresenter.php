@@ -21,8 +21,8 @@ class SimplePaginatorPresenter extends SimpleBootstrapThreePresenter implements 
 
         return sprintf(
             '<ul class="pager">%s %s</ul>',
-            $this->getPreviousButton('&laquo; nieuwer'),
-            $this->getNextButton('ouder &raquo;')
+            $this->getPreviousButton(trans('general.paginator-previous')),
+            $this->getNextButton(trans('general.paginator-next'))
         );
     }
 }

@@ -11,6 +11,9 @@ class PagePresenter extends BasePresenter
 {
     use DispatchesJobs;
 
+    /** @var Page $resource */
+    protected $resource;
+    
     /**
      * @param Page $resource
      */

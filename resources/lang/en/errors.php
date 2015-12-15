@@ -13,5 +13,5 @@ return [
         occured. This eror will be logged and I\'m going to try and prevent this in the future.</p>
         <p>If you want to help me out, please <a href="mailto:barryvanveen@gmail.com">send me an email</a> and tell
          me how you got to see this error. I\'ll let you know what the problem was and how it was solved.</p>',
-    'return-to-the-homepage' => 'Return to the homepage'
+    'return-to-the-homepage' => 'Return to the homepage',
 ];

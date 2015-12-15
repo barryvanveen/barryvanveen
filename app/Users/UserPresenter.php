@@ -5,6 +5,9 @@ use McCool\LaravelAutoPresenter\BasePresenter;
 
 class UserPresenter extends BasePresenter
 {
+    /** @var User $resource */
+    protected $resource;
+
     /**
      * @param User $resource
      */

@@ -8,10 +8,13 @@ class ExceptionMailer extends Mailer
 {
     /**
      * @param Exception $exception
-     * @param Array     $context
+     * @param array     $context
      */
     public function sendExceptionMail(Exception $exception, $context)
     {
+
+        // todo: rewrite static email and name to an environment variable
+        // todo: rewrite domain name to an url()?
         $recipient = new Recipient('barryvanveen@gmail.com', 'Barry van Veen');
         $subject   = '[barryvanveen.nl] '.get_class($exception);
         $view      = 'emails.exception';

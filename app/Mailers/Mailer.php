@@ -34,6 +34,7 @@ class Mailer
 
             $message->subject($subject);
 
+            // todo: rewrite sender to an environment variable
             $message->from('no-reply@barryvanveen.nl', 'barryvanveen.nl');
 
             $message->to($to->email, $to->name);

@@ -9,7 +9,7 @@ class BlogsTableSeeder extends Seeder
 {
     public function run()
     {
-        $faker = Faker::create('nl_NL');
+        $faker = Faker::create('en_EN');
         $faker->addProvider(new LoremMarkdown($faker));
 
         // destination for uploads

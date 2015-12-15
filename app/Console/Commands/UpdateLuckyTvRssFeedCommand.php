@@ -5,8 +5,6 @@ use Barryvanveen\Jobs\LuckyTV\GetLuckyTVRssXml;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Bus\Dispatcher;
 
-// todo: translations
-
 class UpdateLuckyTvRssFeedCommand extends Command
 {
     const OBJECT_ARGUMENT_SEPARATOR = ':';

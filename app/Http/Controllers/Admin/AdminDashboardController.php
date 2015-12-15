@@ -8,7 +8,7 @@ class AdminDashboardController extends Controller
 {
     public function index()
     {
-        $this->setPageTitle('Dashboard');
+        $this->setPageTitle(trans('meta.pagetitle-admin-dashboard'));
 
         return View::make('templates.admin.dashboard');
     }

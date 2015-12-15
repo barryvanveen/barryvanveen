@@ -11,6 +11,9 @@ class BlogPresenter extends BasePresenter
 {
     use DispatchesJobs;
 
+    /** Blog $resource */
+    protected $resource;
+
     /**
      * @param Blog $resource
      */

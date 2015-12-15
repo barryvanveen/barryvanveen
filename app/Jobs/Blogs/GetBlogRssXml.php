@@ -60,7 +60,7 @@ class GetBlogRssXml implements SelfHandling
 
         return new ChannelData(
             trans('general.blog-rss-title'),
-            trans('general.blog-rss-description'),
+            trans('general.blog-description'),
             url(),
             Carbon::createFromFormat('Y-m-d H:i:s', $last_updated_blog['updated_at'])->toRfc2822String()
         );
@@ -92,7 +92,7 @@ class GetBlogRssXml implements SelfHandling
                 new MarkdownToHtml($blog->summary)
             );
 
-            $summary_html .= '<p><a href="'.$link_including_analytics.'">Lees verder op de website</a>.</p>';
+            $summary_html .= '<p><a href="'.$link_including_analytics.'">'.trans('general.read-more-on-the-website').'</a>.</p>';
 
             $items[] = new ItemData(
                 $blog->title,
