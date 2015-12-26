@@ -31,9 +31,9 @@ class MenuComposer
                 'classnames' => '',
             ],
             [
-                'slug'       => route('over-mij'),
+                'slug'       => route('about-me'),
                 'title'      => trans('routes.about-me'),
-                'routes'     => ['over-mij', 'boeken'],
+                'routes'     => ['about-me', 'books'],
                 'classnames' => '',
             ],
         ];

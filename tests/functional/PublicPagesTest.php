@@ -24,7 +24,7 @@ class PublicPagesTest extends TestCase
         );
 
         $this->visit(route('home'))
-            ->see('Alle artikelen')
+            ->see(trans('general.homepage-title'))
             ->see($blog->title)
             ->see($blog->summary);
 
@@ -65,40 +65,40 @@ class PublicPagesTest extends TestCase
     }
 
     /**
-     * Test visiting the over-mij page.
+     * Test visiting the about-me page.
      */
-    public function testOverMij()
+    public function testAboutMe()
     {
 
         /** @var Page $page */
         $page = factory(Barryvanveen\Pages\Page::class)->create(
             [
-                'slug'   => 'over-mij',
+                'slug'   => 'about-me',
                 'online' => 1,
             ]
         );
 
-        $this->visit(route('over-mij'));
+        $this->visit(route('about-me'));
 
         $this->see($page->title);
         $this->see($page->text);
     }
 
     /**
-     * Test visiting the boeken page.
+     * Test visiting the books page.
      */
-    public function testOverMijBoeken()
+    public function testAboutMeBooks()
     {
 
         /** @var Page $page */
         $page = factory(Barryvanveen\Pages\Page::class)->create(
             [
-                'slug'   => 'boeken-die-ik-heb-gelezen',
+                'slug'   => 'books-that-i-have-read',
                 'online' => 1,
             ]
         );
 
-        $this->visit(route('boeken'));
+        $this->visit(route('books'));
 
         $this->see($page->title);
         $this->see($page->text);
@@ -130,14 +130,14 @@ class PublicPagesTest extends TestCase
 
         factory(Barryvanveen\Pages\Page::class)->create(
             [
-                'slug'   => 'over-mij',
+                'slug'   => 'about-me',
                 'online' => 1,
             ]
         );
 
         factory(Barryvanveen\Pages\Page::class)->create(
             [
-                'slug'   => 'boeken-die-ik-heb-gelezen',
+                'slug'   => 'books-that-i-have-read',
                 'online' => 1,
             ]
         );
@@ -148,7 +148,7 @@ class PublicPagesTest extends TestCase
                  'id'   => $blog->id,
                  'slug' => $blog->slug,
              ]))
-             ->see(route('over-mij'))
-             ->see(route('boeken'));
+             ->see(route('about-me'))
+             ->see(route('books'));
     }
 }

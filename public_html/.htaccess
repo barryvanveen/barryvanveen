@@ -9,7 +9,9 @@
     RewriteCond %{HTTP_HOST} !(^barryvanveen\.app|^barryvanveen\.nl)$ [NC]
     RewriteRule ^(.*)$ http://barryvanveen.nl/$1 [R=301,L]
 
-    # todo: redirect dutch urls to english urls
+    # Redirect old Dutch urls to English urls
+    RewriteRule ^over-mij$ http://barryvanveen.nl/about-me [L,R=301]
+    RewriteRule ^over-mij/boeken-die-ik-heb-gelezen$ about-me/books-that-i-have-read [L,R=301]
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d

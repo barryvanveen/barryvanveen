@@ -39,14 +39,14 @@ class PrivatePagesTest extends TestCase
         ]);
 
         $this->visit(route('admin.login'))
-             ->see('Inloggen');
+             ->see(trans('login.button'));
 
         $this->type($email, 'email')
              ->type($password, 'password')
-             ->press('Inloggen');
+             ->press(trans('login.button'));
 
         $this->seePageIs(route('admin.dashboard'))
-             ->see('Ingelogd als '.$user->firstname.' '.$user->lastname);
+             ->see(trans('nav.signed-in-as').' '.$user->firstname.' '.$user->lastname);
 
         $this->assertTrue(Auth::check());
     }
@@ -61,11 +61,11 @@ class PrivatePagesTest extends TestCase
         $this->actingAs($user);
 
         $this->visit(route('admin.dashboard'))
-             ->see('Uitloggen');
+             ->see(trans('nav.sign-out'));
 
         $this->assertTrue(Auth::check());
 
-        $this->click('Uitloggen')
+        $this->click(trans('nav.sign-out'))
              ->seePageIs(route('home'));
 
         $this->assertFalse(Auth::check());

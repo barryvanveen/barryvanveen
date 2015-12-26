@@ -11,8 +11,6 @@
 |
 */
 
-// todo: change over-mij urls
-
 /**
  * General routes.
  */
@@ -31,14 +29,14 @@ Route::get('rss', [
     'uses' => 'BlogController@rss',
 ]);
 
-Route::get('over-mij', [
-    'as'   => 'over-mij',
-    'uses' => 'PagesController@overMij',
+Route::get('about-me', [
+    'as'   => 'about-me',
+    'uses' => 'PagesController@aboutMe',
 ]);
 
-Route::get('over-mij/boeken-die-ik-heb-gelezen', [
-    'as'   => 'boeken',
-    'uses' => 'PagesController@boeken',
+Route::get('about-me/books-that-i-have-read', [
+    'as'   => 'books',
+    'uses' => 'PagesController@books',
 ]);
 
 Route::get('luckytv-rss', [

@@ -13,13 +13,13 @@ class PagesTableSeeder extends Seeder
         $faker->addProvider(new LoremMarkdown($faker));
 
         Page::create([
-            'title'  => 'Over mij',
+            'title'  => 'About me',
             'text'   => $faker->markdownText(),
             'online' => 1,
         ]);
 
         Page::create([
-            'title'  => 'Boeken die ik heb gelezen',
+            'title'  => 'Books that I have read',
             'text'   => $faker->markdownText(),
             'online' => 1,
         ]);
