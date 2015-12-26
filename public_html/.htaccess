@@ -10,7 +10,7 @@
     RewriteRule ^(.*)$ http://barryvanveen.nl/$1 [R=301,L]
 
     # Redirect old Dutch urls to English urls
-    RewriteRule ^over-mij$ http://barryvanveen.nl/about-me [L,R=301]
+    RewriteRule ^over-mij$ about-me [L,R=301]
     RewriteRule ^over-mij/boeken-die-ik-heb-gelezen$ about-me/books-that-i-have-read [L,R=301]
 
     # Redirect Trailing Slashes If Not A Folder...
