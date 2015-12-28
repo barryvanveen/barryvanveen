@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'title' => 'Logs',
-    'level' => 'Level',
-    'date' => 'Date',
-    'content' => 'Content',
+    'content'    => 'Content',
+    'date'       => 'Date',
+    'level'      => 'Level',
     'show-stack' => 'Show stack',
+    'title'      => 'Logs',
 ];

@@ -7,14 +7,15 @@ return [
 
     'pagetitle-default' => 'Barry van Veen',
 
-    'pagetitle-blog' => 'Blog',
-    'pagetitle-admin-blog' => 'Blog -- overzicht',
+    'pagetitle-admin-blog'        => 'Blog -- overzicht',
     'pagetitle-admin-blog-create' => 'Blog -- toevoegen',
-    'pagetitle-admin-blog-edit' => 'Blog -- aanpassen',
-    'pagetitle-admin-page' => 'Pagina\'s -- overzicht',
+    'pagetitle-admin-blog-edit'   => 'Blog -- aanpassen',
+    'pagetitle-admin-dashboard'   => 'Dashboard',
+    'pagetitle-admin-login'       => 'Log In',
+    'pagetitle-admin-logs'        => 'Logs',
+    'pagetitle-admin-page'        => 'Pagina\'s -- overzicht',
     'pagetitle-admin-page-create' => 'Pagina\'s -- toevoegen',
-    'pagetitle-admin-page-edit' => 'Pagina\'s -- aanpassen',
-    'pagetitle-admin-dashboard' => 'Dashboard',
-    'pagetitle-admin-logs' => 'Logs',
-    'pagetitle-admin-login' => 'Log In',
+    'pagetitle-admin-page-edit'   => 'Pagina\'s -- aanpassen',
+
+    'pagetitle-blog'              => 'Blog',
 ];

@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'home' => 'Blog',
-    'about-me' => 'About me',
+    'about-me'        => 'About me',
+    'admin-blog'      => 'Blog',
     'admin-dashboard' => 'Dashboard',
-    'admin-blog' => 'Blog',
-    'admin-pages' => 'Pages',
-    'admin-logs' => 'Logs',
+    'admin-logs'      => 'Logs',
+    'admin-pages'     => 'Pages',
+    'home'            => 'Blog',
 ];

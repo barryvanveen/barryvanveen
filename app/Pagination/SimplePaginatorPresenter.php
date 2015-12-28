@@ -1,13 +1,11 @@
 <?php
-
 namespace Barryvanveen\Pagination;
 
-use Illuminate\Pagination\SimpleBootstrapThreePresenter;
 use Illuminate\Contracts\Pagination\Presenter as PresenterContract;
+use Illuminate\Pagination\SimpleBootstrapThreePresenter;
 
 class SimplePaginatorPresenter extends SimpleBootstrapThreePresenter implements PresenterContract
 {
-
     /**
      * Convert the URL window into Bootstrap HTML.
      *
