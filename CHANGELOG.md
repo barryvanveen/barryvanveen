@@ -4,22 +4,26 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
-- Added translations for all static texts
 ### Changed
-- Changed the locale of the application to English
-- Changed all existing translations to the English language
 ### Deprecated
 ### Removed
 ### Fixed
+
+## [2.5.0] - 2015-12-28
+### Added
+- Added translations for all static texts
+- Added redirects to htaccess for old Dutch urls
+### Changed
+- Changed the locale of the application to English
+- Changed all existing translations to the English language
+- Changed urls for /over-mij and /over-mij/boeken-die-ik-gelezen-heb to English
+- Updated version of gulp-include 
 
 ## [2.4.0] - 2015-12-06
 ### Added
 - Added pagination to the blog
 ### Changed
 - Improved .gitignore file
-### Deprecated
-### Removed
-### Fixed
 
 ## [2.3.1] - 2015-11-25
 ### Added
