@@ -13,6 +13,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Added translations for all static texts
 - Added redirects to htaccess for old Dutch urls
+
 ### Changed
 - Changed the locale of the application to English
 - Changed all existing translations to the English language
@@ -22,6 +23,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [2.4.0] - 2015-12-06
 ### Added
 - Added pagination to the blog
+
 ### Changed
 - Improved .gitignore file
 
