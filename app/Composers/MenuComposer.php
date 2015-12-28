@@ -26,14 +26,14 @@ class MenuComposer
         $menu = [
             [
                 'slug'       => route('home'),
-                'title'      => 'Blog',
+                'title'      => trans('routes.home'),
                 'routes'     => ['home', 'blog-item'],
                 'classnames' => '',
             ],
             [
-                'slug'       => route('over-mij'),
-                'title'      => 'Over mij',
-                'routes'     => ['over-mij', 'boeken'],
+                'slug'       => route('about-me'),
+                'title'      => trans('routes.about-me'),
+                'routes'     => ['about-me', 'books'],
                 'classnames' => '',
             ],
         ];
@@ -48,25 +48,25 @@ class MenuComposer
         $menu = [
             [
                 'slug'       => route('admin.dashboard'),
-                'title'      => 'Dashboard',
+                'title'      => trans('routes.admin-dashboard'),
                 'routes'     => ['admin.dashboard'],
                 'classnames' => '',
             ],
             [
                 'slug'       => route('admin.blog'),
-                'title'      => 'Blog',
+                'title'      => trans('routes.admin-blog'),
                 'routes'     => ['admin.blog', 'admin.blog-new', 'admin.blog-edit'],
                 'classnames' => '',
             ],
             [
                 'slug'       => route('admin.page'),
-                'title'      => 'Pages',
+                'title'      => trans('routes.admin-pages'),
                 'routes'     => ['admin.page', 'admin.page-new', 'admin.page-edit'],
                 'classnames' => '',
             ],
             [
                 'slug'       => route('admin.logs'),
-                'title'      => 'Logs',
+                'title'      => trans('routes.admin-logs'),
                 'routes'     => ['admin.logs'],
                 'classnames' => '',
             ],

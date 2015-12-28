@@ -14,7 +14,7 @@
 
             @if ($page->updated_at > $page->publication_date)
                 <footer class="well well-sm page__last-updated">
-                    Laatste aanpassing:
+                    {{ trans('general.last-update') }}
                     <time itemprop="lastReviewed" content="{{$page->updated_at_formatted_rfc3339}}">
                         {{$page->updated_at_formatted}}
                     </time>

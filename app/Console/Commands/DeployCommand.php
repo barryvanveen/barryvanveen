@@ -31,7 +31,7 @@ class DeployCommand extends Command
     protected function getArguments()
     {
         return [
-            ['versie', InputArgument::REQUIRED, 'Versie die je wilt deployen, bijvoorbeeld v1.0.0'],
+            ['version', InputArgument::REQUIRED, 'Version that you want to deploy. For example: v1.2.3'],
         ];
     }
 
@@ -42,19 +42,19 @@ class DeployCommand extends Command
      */
     public function handle()
     {
-        if (!$this->confirm('Wil je echt deployen?', false)) {
-            $this->info('Niet gedeployed. Klaar!');
+        if (!$this->confirm('Do you really want to deploy?', false)) {
+            $this->info('Deploy cancelled.');
 
             return;
         }
 
-        $versie = $this->argument('versie');
+        $version = $this->argument('version');
 
-        $this->info('Deploy versie '.$versie);
+        $this->info('Deploying version '.$version);
 
         $this->deploy();
 
-        $this->info('Klaar met deployen van versie '.$versie.'!');
+        $this->info('Deployed version '.$version.'!');
     }
 
     /**
@@ -69,7 +69,7 @@ class DeployCommand extends Command
             [
                 'php artisan version'.$redirecttofile,
                 'php artisan down'.$redirecttofile,
-                'git pull origin master '.$this->argument('versie').$redirecttofile,
+                'git pull origin master '.$this->argument('version').$redirecttofile,
             ]
         );
 

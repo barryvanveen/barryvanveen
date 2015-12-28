@@ -9,17 +9,17 @@ class PagesTableSeeder extends Seeder
 {
     public function run()
     {
-        $faker = Faker::create('nl_NL');
+        $faker = Faker::create('en_EN');
         $faker->addProvider(new LoremMarkdown($faker));
 
         Page::create([
-            'title'  => 'Over mij',
+            'title'  => 'About me',
             'text'   => $faker->markdownText(),
             'online' => 1,
         ]);
 
         Page::create([
-            'title'  => 'Boeken die ik heb gelezen',
+            'title'  => 'Books that I have read',
             'text'   => $faker->markdownText(),
             'online' => 1,
         ]);

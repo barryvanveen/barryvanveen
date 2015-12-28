@@ -40,9 +40,9 @@ class AdminPageController extends Controller
         $this->request         = $request;
 
         $this->messages = [
-            'title.required'  => trans('general.validation-title-required'),
-            'text.required'   => trans('general.validation-text-required'),
-            'online.required' => trans('general.validation-online-required'),
+            'title.required'  => trans('validation.title-required'),
+            'text.required'   => trans('validation.text-required'),
+            'online.required' => trans('validation.online-required'),
         ];
 
         parent::__construct();
@@ -55,7 +55,7 @@ class AdminPageController extends Controller
      */
     public function index()
     {
-        $this->setPageTitle('Pagina\'s -- overzicht');
+        $this->setPageTitle(trans('meta.pagetitle-admin-page'));
 
         $pages = $this->pagesRepository->all();
 
@@ -69,9 +69,9 @@ class AdminPageController extends Controller
      */
     public function create()
     {
-        $this->setPageTitle('Pagina\'s -- toevoegen');
+        $this->setPageTitle(trans('meta.pagetitle-admin-page-create'));
 
-        // empty oage to populate form
+        // empty page to populate form
         $page = new Page();
 
         return View::make('pages.admin.create', compact('page'));
@@ -94,7 +94,7 @@ class AdminPageController extends Controller
             )
         );
 
-        Flash::success(trans('general.pagina-toegevoegd'));
+        Flash::success(trans('flash.page-created'));
 
         return Redirect::route('admin.page');
     }
@@ -108,7 +108,7 @@ class AdminPageController extends Controller
      */
     public function edit($id)
     {
-        $this->setPageTitle('Pagina\'s -- aanpassen');
+        $this->setPageTitle(trans('meta.pagetitle-admin-page-edit'));
 
         $page = $this->pagesRepository->findAnyById($id);
 
@@ -135,7 +135,7 @@ class AdminPageController extends Controller
             )
         );
 
-        Flash::success(trans('general.pagina-aangepast'));
+        Flash::success(trans('flash.page-updated'));
 
         return Redirect::route('admin.page');
     }

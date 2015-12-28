@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="page-header">
-        <h1 class="overview-heading">Blog -- toevoegen</h1>
+        <h1 class="overview-heading">{{ trans('blog-admin.header-add') }}</h1>
     </div>
 
     <div class="page__content">
@@ -11,7 +11,7 @@
 
         @include('blog.admin.partials.form-fields')
 
-        {!! Form::submit('Toevoegen', ['class' => 'btn btn-primary']) !!}
+        {!! Form::submit(trans('general.add'), ['class' => 'btn btn-primary']) !!}
 
         {!! Form::close() !!}
     </div>

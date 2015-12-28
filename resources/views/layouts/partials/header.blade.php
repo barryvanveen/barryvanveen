@@ -12,9 +12,9 @@
                 </button>
                 <a class="navbar-brand" href="{{ route('home') }}">
                     @if($is_admin)
-                        Beheeromgeving
+                        {{ trans('nav.title-admin') }}
                     @else
-                        Barry van Veen
+                        {{ trans('nav.title-public') }}
                     @endif</a>
             </div>
 
@@ -28,7 +28,9 @@
                             </li>
                         @endforeach
                     </ul>
-                    <p class="navbar-text navbar-right">Ingelogd als {{ $current_user->full_name }}. <a href="{{ route('admin.logout') }}">Uitloggen</a>.</p>
+                    <p class="navbar-text navbar-right">
+                        {{ trans('nav.signed-in-as') }} {{ $current_user->full_name }}.
+                        <a href="{{ route('admin.logout') }}">{{ trans('nav.sign-out') }}</a>.</p>
                 @else
                     <ul class="nav navbar-nav">
                         @foreach($mainnav as $navitem)
@@ -38,7 +40,7 @@
                         @endforeach
                     </ul>
                     <p class="navbar-text navbar-right header__rssIconContainer">
-                        <a href="{{route('blog-rss')}}" title="Abonneer je op de RSS feed van mijn blog">
+                        <a href="{{route('blog-rss')}}" title="{{ trans('nav.rss-title') }}">
                             <i class="icon icon--rss"></i>
                         </a>
                     </p>

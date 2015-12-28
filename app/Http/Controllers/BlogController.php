@@ -34,9 +34,8 @@ class BlogController extends Controller
         $blogs = $this->blogRepository->published();
         $presenter = new SimplePaginatorPresenter($blogs);
 
-        $this->setPageTitle('Blog');
-        $this->setMetaDescription('Een blog van Barry van Veen over programmeren, PHP, Laravel
-        Framework en aanverwante zaken.');
+        $this->setPageTitle(trans('meta.pagetitle-blog'));
+        $this->setMetaDescription(trans('general.blog-description'));
 
         return View::make('blog.full-list', compact('blogs', 'presenter'));
     }
@@ -62,7 +61,7 @@ class BlogController extends Controller
             new MarkdownToHtml($blog->summary)
         );
 
-        $this->setPageTitle('Blog');
+        $this->setPageTitle(trans('meta.pagetitle-blog'));
         $this->setPageTitle($blog->title);
         $this->setMetaDescription($summary_html);
 

@@ -13,6 +13,6 @@
         {!! $blog->html_summary !!}
     </div>
     <footer>
-        <a href="{{$blog->url}}" class="blog-preview__button" itemprop="url">Lees verder</a>
+        <a href="{{$blog->url}}" class="blog-preview__button" itemprop="url">{{ trans('general.read-more') }}</a>
     </footer>
 </article>

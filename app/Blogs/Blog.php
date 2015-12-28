@@ -82,7 +82,7 @@ class Blog extends Model implements SluggableInterface, HasPresenter
     public function scopePublished($query)
     {
         return $query->where('online', '=', '1')
-                        ->where('publication_date', '<=', \DB::raw('NOW()'));
+                     ->where('publication_date', '<=', \DB::raw('NOW()'));
     }
 
     /**

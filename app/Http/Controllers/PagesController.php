@@ -29,9 +29,9 @@ class PagesController extends Controller
         parent::__construct();
     }
 
-    public function overMij()
+    public function aboutMe()
     {
-        $page = $this->pageRepository->findPublishedBySlug('over-mij');
+        $page = $this->pageRepository->findPublishedBySlug('about-me');
 
         $text_html = $this->dispatch(
             new MarkdownToHtml($page->text)
@@ -43,9 +43,9 @@ class PagesController extends Controller
         return View::make('pages.item', compact('page'));
     }
 
-    public function boeken()
+    public function books()
     {
-        $page = $this->pageRepository->findPublishedBySlug('boeken-die-ik-heb-gelezen');
+        $page = $this->pageRepository->findPublishedBySlug('books-that-i-have-read');
 
         $text_html = $this->dispatch(
             new MarkdownToHtml($page->text)

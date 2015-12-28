@@ -38,9 +38,9 @@ class AdminLoginController extends Controller
         $this->request        = $request;
 
         $this->messages = [
-            'email.required'    => trans('general.validation-email-required'),
-            'email.email'       => trans('general.validation-email-email'),
-            'password.required' => trans('general.validation-password-required'),
+            'email.required'    => trans('validation.email-required'),
+            'email.email'       => trans('validation.email-email'),
+            'password.required' => trans('validation.password-required'),
         ];
 
         parent::__construct();
@@ -51,7 +51,7 @@ class AdminLoginController extends Controller
      */
     public function index()
     {
-        $this->setPageTitle('Log In');
+        $this->setPageTitle(trans('meta.pagetitle-admin-login'));
 
         return View::make('templates.admin.login');
     }
@@ -70,7 +70,7 @@ class AdminLoginController extends Controller
         $formData = Input::only('email', 'password');
 
         if (Auth::attempt($formData, (bool) Input::only('remember_me'))) {
-            Flash::success(trans('general.login-successful'));
+            Flash::success(trans('flash.login-successful'));
 
             return Redirect::intended(route('admin.dashboard'));
         }
@@ -82,7 +82,7 @@ class AdminLoginController extends Controller
     {
         Auth::logout();
 
-        Flash::success(trans('general.logout-successful'));
+        Flash::success(trans('flash.logout-successful'));
 
         return Redirect::route('home');
     }

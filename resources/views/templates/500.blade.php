@@ -4,17 +4,12 @@
 
     <article class="page__content">
         <header class="page-header">
-            <h1>Oeps!</h1>
+            <h1>{{ trans('errors.500-title') }}</h1>
         </header>
 
-        <p>Sorry, er lijkt iets heel erg mis te gaan. Je ziet deze pagina omdat er een onbekende fout is opgetreden.
-            Deze foutmelding wordt opgeslagen en ik ga uitzoeken hoe we dit in de toekomst kunnen voorkomen.</p>
+        {!! trans('errors.500-text') !!}
 
-        <p>Als je me wilt helpen kun je me <a href="mailto:barryvanveen@gmail.com">een mailtje sturen</a> en uitleggen
-            hoe je deze foutmelding te zien kreeg. Dan kan ik je ook laten weten wat er fout ging en wanneer het is
-            opgelost.</p>
-
-        <p><a href="{{ route('home') }}">Ga naar de homepage</a>.</p>
+        <p><a href="{{ route('home') }}">{{ trans('errors.return-to-the-homepage') }}</a>.</p>
     </article>
 
 @stop
