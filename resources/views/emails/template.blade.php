@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- So that mobile will display zoomed in -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- enable media queries for windows phone 8 -->
     <meta name="format-detection" content="telephone=no"> <!-- disable auto telephone linking in iOS -->
-    <title>Single Column</title>
+    <title>{{ $subject }}</title>
 
     <style type="text/css">
         body {
@@ -101,7 +101,7 @@
                 <tr>
                     <td class="container-padding footer-text" align="left" style="font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:16px;color:#aaaaaa;padding-left:24px;padding-right:24px">
                         <br>
-                        verzonden vanaf <a href="http://barryvanveen.nl" style="color:#aaaaaa">barryvanveen.nl</a>
+                        {{ trans('email.sent-from') }} <a href="http://barryvanveen.nl" style="color:#aaaaaa">barryvanveen.nl</a>
                         <br><br>
                     </td>
                 </tr>

@@ -54,13 +54,13 @@ class GetSitemapXml implements SelfHandling
         $blog                  = $this->blogRepository->lastUpdatedAt();
         $this->lastmod['home'] = $this->getFormattedDatetime($blog->updated_at);
 
-        // over-mij
-        $page                      = $this->pageRepository->findPublishedBySlug('over-mij');
-        $this->lastmod['over-mij'] = $this->getFormattedDatetime($page->updated_at);
+        // about-me
+        $page                      = $this->pageRepository->findPublishedBySlug('about-me');
+        $this->lastmod['about-me'] = $this->getFormattedDatetime($page->updated_at);
 
-        // boeken
-        $page                    = $this->pageRepository->findPublishedBySlug('boeken-die-ik-heb-gelezen');
-        $this->lastmod['boeken'] = $this->getFormattedDatetime($page->updated_at);
+        // books
+        $page                   = $this->pageRepository->findPublishedBySlug('books-that-i-have-read');
+        $this->lastmod['books'] = $this->getFormattedDatetime($page->updated_at);
     }
 
     /**

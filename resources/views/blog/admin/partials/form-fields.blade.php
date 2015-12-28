@@ -1,9 +1,9 @@
-@include('form.partials.errors', ['title' => 'Fouten in het formulier'])
+@include('form.partials.errors', ['title' => trans('blog-admin.errors-title')])
 
 <div class="row">
     <div class="col-md-6">
         <div class="form-group @if($errors->has('title')) has-error @endif">
-            {!! Form::label('title', 'Titel', ['class' => 'control-label form__label']) !!}
+            {!! Form::label('title', trans('blog-admin.title'), ['class' => 'control-label form__label']) !!}
             {!! Form::text('title', $blog->title, ['class' => 'form-control']) !!}
         </div>
     </div>
@@ -12,7 +12,7 @@
 <div class="row">
     <div class="col-md-6">
         <div class="form-group @if($errors->has('publication_date')) has-error @endif">
-            {!! Form::label('publication_date', 'Datum', ['class' => 'control-label form__label']) !!}
+            {!! Form::label('publication_date', trans('blog-admin.date'), ['class' => 'control-label form__label']) !!}
             {!! Form::text('publication_date', $blog->publication_date_formatted, ['class' => 'form-control
             js-datetimepicker']) !!}
         </div>
@@ -20,18 +20,18 @@
 </div>
 
 <div class="form-group @if($errors->has('online')) has-error @endif">
-    {!! Form::label('online', 'Status', ['class' => 'control-label form__label']) !!}
+    {!! Form::label('online', trans('blog-admin.status'), ['class' => 'control-label form__label']) !!}
 
     <div class="radio">
         <label>
             {!! Form::radio('online', '0', ($blog->online == 0)) !!}
-            Offline
+            {{ trans('general.offline') }}
         </label>
     </div>
     <div class="radio">
         <label>
             {!! Form::radio('online', '1', ($blog->online == 1)) !!}
-            Online
+            {{ trans('general.online') }}
         </label>
     </div>
 </div>
@@ -45,7 +45,7 @@
 <div class="row">
     <div class="col-sm-12 col-md-6">
         <div class="form-group @if($errors->has('summary')) has-error @endif">
-            {!! Form::label('summary', 'Samenvatting', ['class' => 'control-label form__label']) !!}
+            {!! Form::label('summary', trans('blog-admin.summary'), ['class' => 'control-label form__label']) !!}
             {!! Form::textarea('summary', $blog->summary, ['class' => 'form-control js-markdown-editor']) !!}
         </div>
     </div>
@@ -63,7 +63,7 @@
 <div class="row">
     <div class="col-sm-12 col-md-6">
         <div class="form-group @if($errors->has('text')) has-error @endif">
-            {!! Form::label('text', 'Tekst', ['class' => 'control-label form__label']) !!}
+            {!! Form::label('text', trans('blog-admin.text'), ['class' => 'control-label form__label']) !!}
             {!! Form::textarea('text', $blog->text, ['class' => 'form-control js-markdown-editor']) !!}
         </div>
     </div>

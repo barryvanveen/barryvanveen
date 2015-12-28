@@ -4,13 +4,12 @@
 
     <article class="page__content">
         <header class="page-header">
-            <h1>Oh snap!</h1>
+            <h1>{{ trans('errors.403-title') }}</h1>
         </header>
 
-        <p>Sorry maar je hebt geen toegang tot deze pagina. Als je denkt dat dit niet klopt, stuur me dan <a
-            href="mailto:barryvanveen@gmail.com">een mailtje</a> om te vragen waarom je deze melding ziet.</p>
+        {!! trans('errors.403-text') !!}
 
-        <p><a href="{{ route('home') }}">Ga naar de homepage</a>.</p>
+        <p><a href="{{ route('home') }}">{{ trans('errors.return-to-the-homepage') }}</a>.</p>
     </article>
 
 @stop

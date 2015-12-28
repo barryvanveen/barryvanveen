@@ -28,6 +28,6 @@ class VersionCommand extends Command
      */
     public function fire()
     {
-        $this->info('Huidige versie: '.config('app.version'));
+        $this->info('Current version: '.config('app.version'));
     }
 }

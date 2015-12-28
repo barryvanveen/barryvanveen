@@ -57,7 +57,7 @@ class SwitchBranchCommand extends Command
         $this->runTask('php artisan db:seed');
 
         if (!getenv('DB_TESTING_DATABASE')) {
-            $this->error('Zet DB_TESTING_DATABASE in .env om ook de testing-database te migraten');
+            $this->error('Put a variable DB_TESTING_DATABASE in .env to automatically migrate the testing database.');
 
             return;
         }

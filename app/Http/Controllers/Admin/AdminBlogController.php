@@ -42,11 +42,11 @@ class AdminBlogController extends Controller
         $this->request        = $request;
 
         $this->messages = [
-            'title.required'            => trans('general.validation-title-required'),
-            'summary.required'          => trans('general.validation-summary-required'),
-            'text.required'             => trans('general.validation-text-required'),
-            'publication_date.required' => trans('general.validation-publication-date-required'),
-            'online.required'           => trans('general.validation-online-required'),
+            'title.required'            => trans('validation.title-required'),
+            'summary.required'          => trans('validation.summary-required'),
+            'text.required'             => trans('validation.text-required'),
+            'publication_date.required' => trans('validation.publication-date-required'),
+            'online.required'           => trans('validation.online-required'),
         ];
 
         parent::__construct();
@@ -59,7 +59,7 @@ class AdminBlogController extends Controller
      */
     public function index()
     {
-        $this->setPageTitle('Blog -- overzicht');
+        $this->setPageTitle(trans('meta.pagetitle-admin-blog'));
 
         $blogs = $this->blogRepository->all();
 
@@ -73,7 +73,7 @@ class AdminBlogController extends Controller
      */
     public function create()
     {
-        $this->setPageTitle('Blog -- toevoegen');
+        $this->setPageTitle(trans('meta.pagetitle-admin-blog-create'));
 
         // empty blog to populate form
         $blog = new Blog();
@@ -100,7 +100,7 @@ class AdminBlogController extends Controller
             )
         );
 
-        Flash::success(trans('general.blog-toegevoegd'));
+        Flash::success(trans('flash.blog-created'));
 
         return Redirect::route('admin.blog');
     }
@@ -114,7 +114,7 @@ class AdminBlogController extends Controller
      */
     public function edit($id)
     {
-        $this->setPageTitle('Blog -- aanpassen');
+        $this->setPageTitle(trans('meta.pagetitle-admin-blog-edite'));
 
         $blog = $this->blogRepository->findAnyById($id);
 
@@ -143,7 +143,7 @@ class AdminBlogController extends Controller
             )
         );
 
-        Flash::success(trans('general.blog-aangepast'));
+        Flash::success(trans('flash.blog-updated'));
 
         return Redirect::route('admin.blog');
     }

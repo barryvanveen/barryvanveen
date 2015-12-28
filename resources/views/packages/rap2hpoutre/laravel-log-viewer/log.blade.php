@@ -3,16 +3,16 @@
 @section('content')
 
     <div class="page-header">
-        <h1 class="overview-heading">Logs</h1>
+        <h1 class="overview-heading">{{ trans('laravel-log-viewer.title') }}</h1>
     </div>
 
     <div class="bs-component">
         <table class="table table-striped table-hover">
             <thead>
             <tr>
-                <th>Level</th>
-                <th>Date</th>
-                <th>Content</th>
+                <th>{{ trans('laravel-log-viewer.level') }}</th>
+                <th>{{ trans('laravel-log-viewer.date') }}</th>
+                <th>{{ trans('laravel-log-viewer.content') }}</th>
             </tr>
             </thead>
             <tbody>
@@ -27,7 +27,7 @@
                                     data-target="#logModal" data-level="{{{$log['level']}}}"
                                     data-text="{{{$log['text']}}}"
                                     data-file="{{{$log['in_file']}}}" data-stack="{{{$log['stack']}}}">
-                                Show stack
+                                {{ trans('laravel-log-viewer.show-stack') }}
                             </button>
                         @endif
                         {{{$log['text']}}}

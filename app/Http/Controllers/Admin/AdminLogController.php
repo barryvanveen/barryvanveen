@@ -12,7 +12,7 @@ class AdminLogController extends Controller
      */
     public function index()
     {
-        $this->setPageTitle('Logs');
+        $this->setPageTitle(trans('meta.pagetitle-admin-logs'));
 
         if (\Input::get('l')) {
             LaravelLogViewer::setFile(base64_decode(\Input::get('l')));

@@ -73,7 +73,7 @@ class Handler extends ExceptionHandler
 
             $errors = [
                 '_token' => [
-                    trans('general.validation-token-mismatch'),
+                    trans('validation.token-mismatch'),
                 ],
             ];
 
@@ -86,7 +86,7 @@ class Handler extends ExceptionHandler
 
             $errors = [
                 'password' => [
-                    trans('general.invalid-login'),
+                    trans('validation.invalid-login'),
                 ],
             ];
 
@@ -95,27 +95,27 @@ class Handler extends ExceptionHandler
 
         // route not found
         if ($e instanceof NotFoundHttpException) {
-            Meta::title('Pagina niet gevonden - Barry van Veen');
+            Meta::title(trans('meta.pagetitle-404'));
 
             return Response::make(View::make('templates.404'), 404);
         }
 
         // model not found
         if ($e instanceof ModelNotFoundException) {
-            Meta::title('Pagina niet gevonden - Barry van Veen');
+            Meta::title(trans('meta.pagetitle-404'));
 
             return Response::make(View::make('templates.404'), 404);
         }
 
         // not authorized to see this route
         if ($e instanceof MethodNotAllowedHttpException) {
-            Meta::title('Geen toegang - Barry van Veen');
+            Meta::title(trans('meta.pagetitle-403'));
 
             return Response::make(View::make('templates.403'), 403);
         }
 
         // general error
-        Meta::title('Onbekende fout - Barry van Veen');
+        Meta::title(trans('meta.pagetitle-500'));
 
         return Response::make(View::make('templates.500'), 500);
     }
