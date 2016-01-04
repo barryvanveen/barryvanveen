@@ -4,8 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
+- Added sourcemaps for css files
 ### Changed
 - Exception's email recipient now comes from environment configuration
+- Minified css files
 ### Deprecated
 ### Removed
 ### Fixed

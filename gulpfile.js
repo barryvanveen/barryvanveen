@@ -6,6 +6,7 @@ var include = require('gulp-include');
 var plumber = require('gulp-plumber');
 var rename = require("gulp-rename");
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 
 var config = {
@@ -61,15 +62,14 @@ gulp.task('build-sass', function () {
         .pipe(plumber({
             errorHandler: onError
         }))
+        .pipe(sourcemaps.init())
         .pipe(sass({
             unixNewlines: true,
-            style: 'expanded'
+            style: 'compressed'
         }))
         .pipe(include())
         .pipe(autoprefixer('> 5%'))
-        /*.pipe(cmq({
-         log: true
-         }))*/
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('public_html/css'));
 
 });
