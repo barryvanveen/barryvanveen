@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.5.1] - 2015-01-04
+### Fixed
+- Fixed htaccess redirects from Dutch to English urls
+
 ## [2.5.0] - 2015-12-28
 ### Added
 - Added translations for all static texts
