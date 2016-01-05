@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 ### Changed
 - Exception's email recipient now comes from environment configuration
+- Changed translations for page titles
 ### Deprecated
 ### Removed
 ### Fixed

@@ -114,7 +114,7 @@ class AdminBlogController extends Controller
      */
     public function edit($id)
     {
-        $this->setPageTitle(trans('meta.pagetitle-admin-blog-edite'));
+        $this->setPageTitle(trans('meta.pagetitle-admin-blog-edit'));
 
         $blog = $this->blogRepository->findAnyById($id);
 
