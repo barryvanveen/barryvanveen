@@ -17,6 +17,7 @@
     "gulp-autoprefixer": "3.1.*",
     "gulp-concat": "2.6.*",
     "gulp-include": "2.1.*",
+    "gulp-merge-media-queries": "0.2.*",
     "gulp-plumber": "1.0.*",
     "gulp-rename": "1.2.*",
     "gulp-sass": "2.1.*",

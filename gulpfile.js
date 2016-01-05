@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var include = require('gulp-include');
+var mmq = require('gulp-merge-media-queries');
 var plumber = require('gulp-plumber');
 var rename = require("gulp-rename");
 var sass = require('gulp-sass');
@@ -54,6 +55,11 @@ var onError = function (err) {
     console.log(err);
 };
 
+// todo: cachebusting toevoegen aan css en js
+// todo: cachebusting toevoegen aan fonts
+// todo: critical path css toevoegen aan head-html
+// todo: remove unused css with gulp-uncss
+
 /**
  * build all sass files into css files
  */
@@ -69,6 +75,9 @@ gulp.task('build-sass', function () {
         }))
         .pipe(include())
         .pipe(autoprefixer('> 5%'))
+        .pipe(mmq({
+            log: true
+        }))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('public_html/css'));
 
