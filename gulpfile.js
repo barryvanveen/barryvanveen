@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 
 var autoprefixer = require('gulp-autoprefixer');
+var buster = require('gulp-buster');
 var concat = require('gulp-concat');
 var include = require('gulp-include');
 var mmq = require('gulp-merge-media-queries');
@@ -15,7 +16,6 @@ var config = {
         src: [
             'bower_components/jquery/dist/jquery.js',
             'bower_components/moment/moment.js',
-            'bower_components/moment/locale/nl.js',
             'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
             'bower_components/scrollup/dist/jquery.scrollUp.js',
             'bower_components/autosize/dest/autosize.js',
@@ -48,6 +48,12 @@ var config = {
             'bower_components/prism/plugins/autolinker/prism-autolinker.js',
             'bower_components/prism/plugins/line-numbers/prism-line-numbers.js'
         ]
+    },
+    outputDirs: {
+        base:   'public_html/dist',
+        css:    'public_html/dist/css',
+        fonts:  'public_html/dist/fonts',
+        js:     'public_html/dist/js'
     }
 };
 
@@ -56,7 +62,6 @@ var onError = function (err) {
 };
 
 // todo: cachebusting toevoegen aan css en js
-// todo: cachebusting toevoegen aan fonts
 // todo: critical path css toevoegen aan head-html
 // todo: remove unused css with gulp-uncss
 
@@ -75,12 +80,11 @@ gulp.task('build-sass', function () {
         }))
         .pipe(include())
         .pipe(autoprefixer('> 5%'))
-        .pipe(mmq({
-            log: true
-        }))
+        .pipe(mmq())
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('public_html/css'));
-
+        .pipe(gulp.dest(config.outputDirs.css))
+        .pipe(buster())
+        .pipe(gulp.dest(config.outputDirs.base));
 });
 
 /**
@@ -93,23 +97,31 @@ gulp.task('build-js', function () {
         }))
         .pipe(uglify())
         .pipe(concat('prism.custom.min.js'))
-        .pipe(gulp.dest('bower_components/prism'));
+        .pipe(gulp.dest('bower_components/prims'));
 
     gulp.src(config.scripts.ie8)
         .pipe(plumber({
             errorHandler: onError
         }))
+        .pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(concat('main.ie8.min.js'))
-        .pipe(gulp.dest('public_html/js'));
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.outputDirs.js))
+        .pipe(buster())
+        .pipe(gulp.dest(config.outputDirs.base));
 
     gulp.src(config.scripts.src)
         .pipe(plumber({
             errorHandler: onError
         }))
+        .pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(concat('main.min.js'))
-        .pipe(gulp.dest('public_html/js'));
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.outputDirs.js))      // write files and sourcemaps
+        .pipe(buster())
+        .pipe(gulp.dest(config.outputDirs.base));
 });
 
 /**
@@ -118,11 +130,11 @@ gulp.task('build-js', function () {
 gulp.task('move', function () {
     // move Icomoon font files to public_html
     gulp.src('resources/assets/fonts/icomoon/fonts/*')
-        .pipe(gulp.dest('public_html/fonts'));
+        .pipe(gulp.dest(config.outputDirs.fonts));
 
     // move bootstrap font files to public_html
     gulp.src('bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*')
-        .pipe(gulp.dest('public_html/fonts'));
+        .pipe(gulp.dest(config.outputDirs.fonts));
 
     gulp.src('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')
         .pipe(rename("bootstrap-datetimepicker.scss"))

@@ -15,6 +15,7 @@
   "devDependencies": {
     "gulp": "3.9.*",
     "gulp-autoprefixer": "3.1.*",
+    "gulp-buster": "^1.0.0",
     "gulp-concat": "2.6.*",
     "gulp-include": "2.1.*",
     "gulp-merge-media-queries": "0.2.*",
