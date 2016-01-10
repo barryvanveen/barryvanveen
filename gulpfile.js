@@ -4,7 +4,6 @@ var autoprefixer = require('gulp-autoprefixer');
 var buster = require('gulp-buster');
 var concat = require('gulp-concat');
 var include = require('gulp-include');
-var mmq = require('gulp-merge-media-queries');
 var plumber = require('gulp-plumber');
 var rename = require("gulp-rename");
 var sass = require('gulp-sass');
@@ -61,7 +60,6 @@ var onError = function (err) {
     console.log(err);
 };
 
-// todo: cachebusting toevoegen aan css en js
 // todo: critical path css toevoegen aan head-html
 // todo: remove unused css with gulp-uncss
 
@@ -80,11 +78,8 @@ gulp.task('build-sass', function () {
         }))
         .pipe(include())
         .pipe(autoprefixer('> 5%'))
-        .pipe(mmq())
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest(config.outputDirs.css))
-        .pipe(buster())
-        .pipe(gulp.dest(config.outputDirs.base));
+        .pipe(gulp.dest(config.outputDirs.css));
 });
 
 /**
@@ -105,11 +100,9 @@ gulp.task('build-js', function () {
         }))
         .pipe(sourcemaps.init())
         .pipe(uglify())
-        .pipe(concat('main.ie8.min.js'))
+        .pipe(concat('main.ie8.js'))
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest(config.outputDirs.js))
-        .pipe(buster())
-        .pipe(gulp.dest(config.outputDirs.base));
+        .pipe(gulp.dest(config.outputDirs.js));
 
     gulp.src(config.scripts.src)
         .pipe(plumber({
@@ -117,11 +110,9 @@ gulp.task('build-js', function () {
         }))
         .pipe(sourcemaps.init())
         .pipe(uglify())
-        .pipe(concat('main.min.js'))
+        .pipe(concat('main.js'))
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest(config.outputDirs.js))      // write files and sourcemaps
-        .pipe(buster())
-        .pipe(gulp.dest(config.outputDirs.base));
+        .pipe(gulp.dest(config.outputDirs.js));
 });
 
 /**
@@ -162,4 +153,4 @@ gulp.task('watch-js', function(){
 /**
  * perform these tasks when running just 'gulp'
  */
-gulp.task('default', ['move', 'build-sass', 'build-js', 'watch-sass', 'watch-js']);
+gulp.task('default', ['build-sass', 'build-js', 'watch-sass', 'watch-js']);

@@ -13,6 +13,11 @@
     RewriteRule ^over-mij$ http://barryvanveen.nl/about-me [L,R=301]
     RewriteRule ^over-mij/boeken-die-ik-heb-gelezen$ http://barryvanveen.nl/about-me/books-that-i-have-read [L,R=301]
 
+    # Redirect assets with filehash in name to actual filename
+    # todo: test regex
+    RewriteRule ^dist/css/([a-z.]+)\.([a-z0-9]+)\.css /dist/css/$1.css
+    RewriteRule ^dist/js/([a-z.]+)\.([a-z0-9]+)\.js /dist/js/$1.css
+
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)/$ /$1 [L,R=301]
