@@ -24,10 +24,10 @@ class AssetComposer
     {
         $this->view = $view;
 
-        /*if (env('APP_ENV') != 'production') {
+        if (env('APP_ENV') != 'production') {
             $this->view->with('assets', $this->assets);
             return;
-        }*/
+        }
 
         if (Cache::has('assets')) {
             $this->view->with('assets', Cache::get('assets'));
