@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
+- Added a Bing Webmaster Tools verification file
 ### Changed
 - Exception's email recipient now comes from environment configuration
 - Changed translations for page titles
