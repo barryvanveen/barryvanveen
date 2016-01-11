@@ -5,9 +5,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 - Added sourcemaps for css files
+- Added AssetComposer to create file hashes for cachebusting
+- Added Cache-Control headers for css and js
 ### Changed
 - Exception's email recipient now comes from environment configuration
 - Minified css files
+- Moved all assets (css/js/fonts) to /public_html/dist directory
 ### Deprecated
 ### Removed
 ### Fixed
