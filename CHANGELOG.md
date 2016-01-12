@@ -4,6 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+
+## [2.6.0] - 2015-01-12
+### Added
 - Added a Bing Webmaster Tools verification file
 - Added sourcemaps for css files
 - Added AssetComposer to create file hashes for cachebusting
@@ -13,9 +20,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Changed translations for page titles
 - Minified css files
 - Moved all assets (css/js/fonts) to /public_html/dist directory
-### Deprecated
-### Removed
-### Fixed
 
 ## [2.5.1] - 2015-01-04
 ### Fixed
