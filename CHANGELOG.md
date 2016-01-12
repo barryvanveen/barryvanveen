@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.6.2] - 2015-01-12
+### Fixed
+- Fixed references to js files in template
+
 ## [2.6.1] - 2015-01-12
 ### Changed
 - Minified css with gulp-cssnano instead of gulp-sass
