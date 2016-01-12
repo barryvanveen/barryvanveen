@@ -25,7 +25,7 @@
         @include('layouts.partials.javascript')
 
         <!--[if lte IE 8]>
-            <script src="{!! url($assets['dist/js/main.ie8.min.js']) !!}"></script>
+            <script src="{!! url($assets['dist/js/main.ie8.js']) !!}"></script>
         <![endif]-->
 
 	</head>
@@ -41,7 +41,7 @@
 
         @include('layouts.partials.javascript')
 
-        <script src="{!! url($assets['dist/js/main.min.js']) !!}"></script>
+        <script src="{!! url($assets['dist/js/main.js']) !!}"></script>
 
 	</body>
 </html>
