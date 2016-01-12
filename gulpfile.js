@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var buster = require('gulp-buster');
 var concat = require('gulp-concat');
-var include = require('gulp-include');
+var cssnano = require('gulp-cssnano');
 var plumber = require('gulp-plumber');
 var rename = require("gulp-rename");
 var sass = require('gulp-sass');
@@ -73,11 +73,10 @@ gulp.task('build-sass', function () {
         }))
         .pipe(sourcemaps.init())
         .pipe(sass({
-            unixNewlines: true,
-            style: 'compressed'
+            unixNewlines: true
         }))
-        .pipe(include())
         .pipe(autoprefixer('> 5%'))
+        .pipe(cssnano())
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(config.outputDirs.css));
 });

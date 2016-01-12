@@ -9,6 +9,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.6.1] - 2015-01-12
+### Changed
+- Minified css with gulp-cssnano instead of gulp-sass
+### Fixed
+- Fixed htaccess expire and cache-control headers
+- Fixed references to js files in AssetComposer
+
 ## [2.6.0] - 2015-01-12
 ### Added
 - Added a Bing Webmaster Tools verification file

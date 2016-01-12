@@ -11,10 +11,10 @@ class AssetComposer
 
     /** @var  array */
     protected $assets = [
-        'dist/css/print.css'      => 'dist/css/print.css',
-        'dist/css/screen.css'     => 'dist/css/screen.css',
-        'dist/js/main.ie8.min.js' => 'dist/js/main.ie8.js',
-        'dist/js/main.min.js'     => 'dist/js/main.js',
+        'dist/css/print.css'    => 'dist/css/print.css',
+        'dist/css/screen.css'   => 'dist/css/screen.css',
+        'dist/js/main.ie8.js'   => 'dist/js/main.ie8.js',
+        'dist/js/main.js'       => 'dist/js/main.js',
     ];
 
     /**
