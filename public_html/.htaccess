@@ -3,6 +3,20 @@
         Options -MultiViews
     </IfModule>
 
+    # set Expire and Cache Control headers for css and js
+    <IfModule mod_expires.c>
+        ExpiresActive On
+        ExpiresDefault "access"
+        ExpiresByType text/css "access plus 1 year"
+        ExpiresByType application/javascript "access plus 1 year"
+
+        ExpiresByType font/truetype "access plus 1 month"
+        ExpiresByType font/opentype "access plus 1 month"
+        ExpiresByType application/x-font-woff "access plus 1 month"
+        ExpiresByType image/svg+xml "access plus 1 month"
+        ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+    </IfModule>
+
     RewriteEngine On
 
     # Redirect to preferred domain

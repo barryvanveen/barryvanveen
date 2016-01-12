@@ -1,4 +1,0 @@
-# cache all js files for 1 year
-<FilesMatch "\.(js)$">
-    Header set Cache-Control "max-age=290304000, public"
-</FilesMatch>
