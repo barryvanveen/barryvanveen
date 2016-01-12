@@ -249,3 +249,5 @@ window.Barryvanveen.initOutgoingLinkListeners = function() {
     });
 
 };
+
+// todo: opsplitsen in main.js en admin.js

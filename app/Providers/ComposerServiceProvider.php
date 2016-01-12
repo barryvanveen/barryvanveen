@@ -2,6 +2,7 @@
 namespace Barryvanveen\Providers;
 
 use Auth;
+use Barryvanveen\Composers\AssetComposer;
 use Barryvanveen\Composers\MenuComposer;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\View;
@@ -17,6 +18,9 @@ class ComposerServiceProvider extends ServiceProvider
     {
         /** @var \Illuminate\View\Factory $view */
         $view = view();
+
+        // Produce cachebusting links to assets
+        $view->composer('layout', AssetComposer::class);
 
         // Build menus
         $view->composer('layouts.partials.header', MenuComposer::class);
