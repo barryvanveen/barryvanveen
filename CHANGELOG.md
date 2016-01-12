@@ -9,6 +9,18 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.6.0] - 2015-01-12
+### Added
+- Added a Bing Webmaster Tools verification file
+- Added sourcemaps for css files
+- Added AssetComposer to create file hashes for cachebusting
+- Added Cache-Control headers for css and js
+### Changed
+- Exception's email recipient now comes from environment configuration
+- Changed translations for page titles
+- Minified css files
+- Moved all assets (css/js/fonts) to /public_html/dist directory
+
 ## [2.5.1] - 2015-01-04
 ### Fixed
 - Fixed htaccess redirects from Dutch to English urls

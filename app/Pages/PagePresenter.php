@@ -13,7 +13,7 @@ class PagePresenter extends BasePresenter
 
     /** @var Page $resource */
     protected $resource;
-    
+
     /**
      * @param Page $resource
      */

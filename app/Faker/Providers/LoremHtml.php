@@ -40,7 +40,7 @@ class LoremHtml extends Lorem
      *
      * @param array $newInsertions
      */
-    public function setInsertions(Array $newInsertions)
+    public function setInsertions(array $newInsertions)
     {
         $this->insertions = $newInsertions;
     }

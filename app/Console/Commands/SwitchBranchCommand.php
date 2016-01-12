@@ -69,7 +69,7 @@ class SwitchBranchCommand extends Command
     /**
      * Run the given method or command.
      *
-     * @param String $command
+     * @param string $command
      */
     protected function runTask($command, $value = null)
     {

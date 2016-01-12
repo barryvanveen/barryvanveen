@@ -12,11 +12,10 @@ class ExceptionMailer extends Mailer
      */
     public function sendExceptionMail(Exception $exception, $context)
     {
+        $url = str_replace(['http://', 'https://'], '', url());
 
-        // todo: rewrite static email and name to an environment variable
-        // todo: rewrite domain name to an url()?
-        $recipient = new Recipient('barryvanveen@gmail.com', 'Barry van Veen');
-        $subject   = '[barryvanveen.nl] '.get_class($exception);
+        $recipient = new Recipient(env('MAIL_EXCEPTION_TO_ADDRESS'), env('MAIL_EXCEPTION_TO_NAME'));
+        $subject   = '['.$url.'] '.get_class($exception);
         $view      = 'emails.exception';
 
         $this->send($recipient, $subject, $view, [

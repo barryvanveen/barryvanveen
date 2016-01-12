@@ -79,6 +79,7 @@ class DeployCommand extends Command
             [
                 'composer install --no-dev'.$redirecttofile,
                 'php artisan migrate --force'.$redirecttofile,
+                'php artisan cache:clear'.$redirecttofile,
                 'php artisan config:cache'.$redirecttofile,
                 'php artisan route:cache'.$redirecttofile,
                 'php artisan up'.$redirecttofile,

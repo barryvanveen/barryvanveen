@@ -19,13 +19,13 @@
         <link rel="shortcut icon" type="image/ico" href="{{ url('favicon.ico') }}">
         <link rel="author" href="{{ url(route('about-me')) }}">
 
-        {!! Html::style('css/screen.css', ['media' => 'screen']) !!}
-        {!! Html::style('css/print.css', ['media' => 'print']) !!}
+        <link media="screen" type="text/css" rel="stylesheet" href="{!! url($assets['dist/css/screen.css']) !!}">
+        <link media="print" type="text/css" rel="stylesheet" href="{!! url($assets['dist/css/print.css']) !!}">
 
         @include('layouts.partials.javascript')
 
         <!--[if lte IE 8]>
-            {!! Html::script('js/main.ie8.min.js') !!}
+            <script src="{!! url($assets['dist/js/main.ie8.min.js']) !!}"></script>
         <![endif]-->
 
 	</head>
@@ -41,7 +41,7 @@
 
         @include('layouts.partials.javascript')
 
-		{!! Html::script('js/main.min.js') !!}
+        <script src="{!! url($assets['dist/js/main.min.js']) !!}"></script>
 
 	</body>
 </html>

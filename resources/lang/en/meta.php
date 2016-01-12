@@ -1,20 +1,21 @@
 <?php
 
 return [
-    'pagetitle-403' => 'Geen toegang - Barry van Veen',
-    'pagetitle-404' => 'Pagina niet gevonden - Barry van Veen',
-    'pagetitle-500' => 'Onbekende fout - Barry van Veen',
+    'pagetitle-403' => 'Access denied - Barry van Veen',
+    'pagetitle-404' => 'Page not found - Barry van Veen',
+    'pagetitle-500' => 'Unknown error - Barry van Veen',
 
     'pagetitle-default' => 'Barry van Veen',
 
-    'pagetitle-blog' => 'Blog',
-    'pagetitle-admin-blog' => 'Blog -- overzicht',
-    'pagetitle-admin-blog-create' => 'Blog -- toevoegen',
-    'pagetitle-admin-blog-edit' => 'Blog -- aanpassen',
-    'pagetitle-admin-page' => 'Pagina\'s -- overzicht',
-    'pagetitle-admin-page-create' => 'Pagina\'s -- toevoegen',
-    'pagetitle-admin-page-edit' => 'Pagina\'s -- aanpassen',
-    'pagetitle-admin-dashboard' => 'Dashboard',
-    'pagetitle-admin-logs' => 'Logs',
-    'pagetitle-admin-login' => 'Log In',
+    'pagetitle-admin-blog'        => 'Blog -- overview',
+    'pagetitle-admin-blog-create' => 'Blog -- add',
+    'pagetitle-admin-blog-edit'   => 'Blog -- edit',
+    'pagetitle-admin-dashboard'   => 'Dashboard',
+    'pagetitle-admin-login'       => 'Log In',
+    'pagetitle-admin-logs'        => 'Logs',
+    'pagetitle-admin-page'        => 'Pagina\'s -- overview',
+    'pagetitle-admin-page-create' => 'Pagina\'s -- add',
+    'pagetitle-admin-page-edit'   => 'Pagina\'s -- edit',
+
+    'pagetitle-blog'              => 'Blog',
 ];
