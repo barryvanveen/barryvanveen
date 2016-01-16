@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 ### Changed
+- Updated to Bootstrap 3.3.6 and corresponding version of Bootswatch Readable
 ### Deprecated
 ### Removed
 - Removed image column from blogs table
