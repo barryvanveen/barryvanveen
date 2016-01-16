@@ -15,7 +15,6 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @property string $slug
  * @property string $summary
  * @property string $text
- * @property string $image
  * @property string $publication_date
  * @property bool $online
  * @property \Carbon\Carbon $created_at
@@ -26,7 +25,6 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @method static Builder|Blog whereSlug($value)
  * @method static Builder|Blog whereSummary($value)
  * @method static Builder|Blog whereText($value)
- * @method static Builder|Blog whereImage($value)
  * @method static Builder|Blog wherePublicationDate($value)
  * @method static Builder|Blog whereOnline($value)
  * @method static Builder|Blog whereCreatedAt($value)
@@ -56,7 +54,6 @@ class Blog extends Model implements SluggableInterface, HasPresenter
         'slug',
         'summary',
         'text',
-        'image',
         'publication_date',
         'online',
     ];

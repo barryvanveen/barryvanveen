@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Deprecated
 ### Removed
+- Removed image column from blogs table
 ### Fixed
 
 ## [2.6.2] - 2015-01-12
