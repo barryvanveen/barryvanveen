@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 - Removed image column from blogs table
 ### Fixed
+- Fixed bootstrap-datetimepicker problem with lo
 
 ## [2.6.2] - 2015-01-12
 ### Fixed

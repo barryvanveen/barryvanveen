@@ -183,7 +183,6 @@ window.Barryvanveen.initMarkdownEditors = function() {
 window.Barryvanveen.initDatetimepickers = function() {
 
     $('.js-datetimepicker').datetimepicker({
-        locale: 'nl',
         icons: {
             time:       "icon icon--clock",
             date:       "icon icon--calendar",
