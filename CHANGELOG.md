@@ -4,8 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
+- Added lazyloading for JS files
 ### Changed
 - Updated to Bootstrap 3.3.6 and corresponding version of Bootswatch Readable
+- Split JS in main.js and admin.js 
 ### Deprecated
 ### Removed
 - Removed image column from blogs table

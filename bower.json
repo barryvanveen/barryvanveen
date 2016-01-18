@@ -17,7 +17,6 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~1",
     "respond": "~1.4.2",
     "bootstrap-sass-official": "3.3.6",
     "html5shiv": "~3.7.2",
