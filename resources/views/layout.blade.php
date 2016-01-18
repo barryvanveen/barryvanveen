@@ -22,11 +22,7 @@
         <link media="screen" type="text/css" rel="stylesheet" href="{!! url($assets['dist/css/screen.css']) !!}">
         <link media="print" type="text/css" rel="stylesheet" href="{!! url($assets['dist/css/print.css']) !!}">
 
-        @include('layouts.partials.javascript')
-
-        <!--[if lte IE 8]>
-            <script src="{!! url($assets['dist/js/main.ie8.js']) !!}"></script>
-        <![endif]-->
+        <script type="text/javascript" src="{!! url($assets['dist/js/lazyload.js']) !!}"></script>
 
 	</head>
 	<body itemscope itemtype="http://schema.org/WebPage">
@@ -41,7 +37,22 @@
 
         @include('layouts.partials.javascript')
 
-        <script src="{!! url($assets['dist/js/main.js']) !!}"></script>
+        <script type="text/javascript">
+            LazyLoad.js([
+                'https://code.jquery.com/jquery-1.11.2.min.js',
+                '{!! url($assets['dist/js/main.js']) !!}'
+            ],function () {
+                window.Barryvanveen.main();
+
+                if (Barryvanveen.loggedin) {
+                    LazyLoad.js([
+                        '{!! url($assets['dist/js/admin.js']) !!}'
+                    ],function () {
+                        window.Barryvanveen.admin();
+                    });
+                }
+            });
+        </script>
 
 	</body>
 </html>

@@ -13,8 +13,9 @@ class AssetComposer
     protected $assets = [
         'dist/css/print.css'  => 'dist/css/print.css',
         'dist/css/screen.css' => 'dist/css/screen.css',
-        'dist/js/main.ie8.js' => 'dist/js/main.ie8.js',
+        'dist/js/lazyload.js' => 'dist/js/lazyload.js',
         'dist/js/main.js'     => 'dist/js/main.js',
+        'dist/js/admin.js'     => 'dist/js/admin.js',
     ];
 
     /**
