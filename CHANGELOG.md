@@ -4,10 +4,21 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
-### Changed
+### Changed 
 ### Deprecated
 ### Removed
 ### Fixed
+
+## [2.7.0] - 2015-01-19
+### Added
+- Added lazyloading for JS files
+### Changed
+- Updated to Bootstrap 3.3.6 and corresponding version of Bootswatch Readable
+- Split JS in main.js and admin.js 
+### Removed
+- Removed image column from blogs table
+### Fixed
+- Fixed bootstrap-datetimepicker problem with locale
 
 ## [2.6.2] - 2015-01-12
 ### Fixed

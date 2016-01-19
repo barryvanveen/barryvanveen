@@ -12,20 +12,23 @@ var uglify = require('gulp-uglify');
 
 var config = {
     scripts: {
-        src: [
-            'bower_components/jquery/dist/jquery.js',
+        lazyload: [
+            'resources/assets/js/lazyload.js'
+        ],
+        main: [
+            'bower_components/html5shiv/dist/html5shiv.js',
+            'bower_components/respond/dest/respond.matchmedia.addListener.src.js',
             'bower_components/moment/moment.js',
             'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
             'bower_components/scrollup/dist/jquery.scrollUp.js',
-            'bower_components/autosize/dest/autosize.js',
-            'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
-            'bower_components/ajaxq/ajaxq.js',
             'bower_components/prism/prism.custom.min.js',
             'resources/assets/js/main.js'
         ],
-        ie8: [
-            'bower_components/html5shiv/dist/html5shiv.js',
-            'bower_components/respond/dest/respond.matchmedia.addListener.src.js'
+        admin: [
+            'bower_components/autosize/dest/autosize.js',
+            'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+            'bower_components/ajaxq/ajaxq.js',
+            'resources/assets/js/admin.js'
         ],
         prism: [
             // default
@@ -61,7 +64,6 @@ var onError = function (err) {
 };
 
 // todo: critical path css toevoegen aan head-html
-// todo: remove unused css with gulp-uncss
 
 /**
  * build all sass files into css files
@@ -93,23 +95,31 @@ gulp.task('build-js', function () {
         .pipe(concat('prism.custom.min.js'))
         .pipe(gulp.dest('bower_components/prims'));
 
-    gulp.src(config.scripts.ie8)
+    gulp.src(config.scripts.lazyload)
         .pipe(plumber({
             errorHandler: onError
         }))
-        .pipe(sourcemaps.init())
         .pipe(uglify())
-        .pipe(concat('main.ie8.js'))
-        .pipe(sourcemaps.write('./maps'))
+        .pipe(concat('lazyload.js'))
         .pipe(gulp.dest(config.outputDirs.js));
 
-    gulp.src(config.scripts.src)
+    gulp.src(config.scripts.main)
         .pipe(plumber({
             errorHandler: onError
         }))
         .pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(concat('main.js'))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.outputDirs.js));
+
+    gulp.src(config.scripts.admin)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(concat('admin.js'))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(config.outputDirs.js));
 });

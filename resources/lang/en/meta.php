@@ -17,5 +17,5 @@ return [
     'pagetitle-admin-page-create' => 'Pagina\'s -- add',
     'pagetitle-admin-page-edit'   => 'Pagina\'s -- edit',
 
-    'pagetitle-blog'              => 'Blog',
+    'pagetitle-blog' => 'Blog',
 ];

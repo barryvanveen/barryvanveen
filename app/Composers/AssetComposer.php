@@ -11,10 +11,11 @@ class AssetComposer
 
     /** @var  array */
     protected $assets = [
-        'dist/css/print.css'    => 'dist/css/print.css',
-        'dist/css/screen.css'   => 'dist/css/screen.css',
-        'dist/js/main.ie8.js'   => 'dist/js/main.ie8.js',
-        'dist/js/main.js'       => 'dist/js/main.js',
+        'dist/css/print.css'  => 'dist/css/print.css',
+        'dist/css/screen.css' => 'dist/css/screen.css',
+        'dist/js/lazyload.js' => 'dist/js/lazyload.js',
+        'dist/js/main.js'     => 'dist/js/main.js',
+        'dist/js/admin.js'     => 'dist/js/admin.js',
     ];
 
     /**
@@ -26,11 +27,13 @@ class AssetComposer
 
         if (env('APP_ENV') != 'production') {
             $this->view->with('assets', $this->assets);
+
             return;
         }
 
         if (Cache::has('assets')) {
             $this->view->with('assets', Cache::get('assets'));
+
             return;
         }
 
@@ -42,26 +45,25 @@ class AssetComposer
     }
 
     /**
-     * Create a short file hash for each asset
+     * Create a short file hash for each asset.
      *
      * @param $assets
      */
-    protected function createFileHashes($assets) {
-
-        foreach($assets as $key=>$asset) {
+    protected function createFileHashes($assets)
+    {
+        foreach ($assets as $key => $asset) {
             $path = public_path().'/'.$key;
 
             if (!file_exists($path)) {
                 continue;
             }
 
-            $hash = hash_file ('crc32', $path);
-            $dot = strripos($asset, '.');
+            $hash = hash_file('crc32', $path);
+            $dot  = strripos($asset, '.');
 
-            $assets[$key] = substr($asset, 0, $dot+1).$hash.substr($asset, $dot);
+            $assets[$key] = substr($asset, 0, $dot + 1).$hash.substr($asset, $dot);
         }
 
         return $assets;
-
     }
 }

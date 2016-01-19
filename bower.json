@@ -17,13 +17,12 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~1",
     "respond": "~1.4.2",
-    "bootstrap-sass-official": "3.3.4",
+    "bootstrap-sass-official": "3.3.6",
     "html5shiv": "~3.7.2",
     "scrollup": "~2.4.0",
     "autosize": "~2.0.0",
-    "eonasdan-bootstrap-datetimepicker": "~4.0.0",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.37",
     "ajaxq": "~0.0.2",
     "prism": "*"
   },
