@@ -21,9 +21,6 @@
 
         <link media="screen" type="text/css" rel="stylesheet" href="{!! url($assets['dist/css/screen.css']) !!}">
         <link media="print" type="text/css" rel="stylesheet" href="{!! url($assets['dist/css/print.css']) !!}">
-
-        <script type="text/javascript" src="{!! url($assets['dist/js/lazyload.js']) !!}"></script>
-
 	</head>
 	<body itemscope itemtype="http://schema.org/WebPage">
 
@@ -36,6 +33,8 @@
 		@include('layouts.partials.footer')
 
         @include('layouts.partials.javascript')
+
+        <script type="text/javascript" src="{!! url($assets['dist/js/lazyload.js']) !!}"></script>
 
         <script type="text/javascript">
             LazyLoad.js([
