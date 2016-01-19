@@ -8,8 +8,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Deprecated
 ### Removed
 ### Fixed
-- Fixed position of lazyload.js script 
-- Fixed Prism highlighting on blog
+
+## [2.7.2] - 2015-01-19
+### Changed
+- Include jQuery in main.js, do not load it from CDN
 
 ## [2.7.1] - 2015-01-19
 ### Fixed
