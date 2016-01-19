@@ -6,6 +6,8 @@ window.Barryvanveen.main = function() {
 	window.Barryvanveen.initScrollUp();
 	window.Barryvanveen.initOutgoingLinkListeners();
 
+	Prism.highlightAll();
+
 };
 
 /**
