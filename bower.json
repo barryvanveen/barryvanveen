@@ -24,7 +24,8 @@
     "autosize": "~2.0.0",
     "eonasdan-bootstrap-datetimepicker": "~4.17.37",
     "ajaxq": "~0.0.2",
-    "prism": "*"
+    "prism": "*",
+    "jquery": "1.11.2"
   },
   "install": {
     "path": "resources/assets/bower",

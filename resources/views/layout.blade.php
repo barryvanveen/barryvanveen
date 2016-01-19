@@ -38,7 +38,6 @@
 
         <script type="text/javascript">
             LazyLoad.js([
-                'https://code.jquery.com/jquery-1.11.2.min.js',
                 '{!! url($assets['dist/js/main.js']) !!}'
             ],function () {
                 window.Barryvanveen.main();
