@@ -16,6 +16,7 @@ var config = {
             'resources/assets/js/lazyload.js'
         ],
         main: [
+            'bower_components/jquery/dist/jquery.js',
             'bower_components/html5shiv/dist/html5shiv.js',
             'bower_components/respond/dest/respond.matchmedia.addListener.src.js',
             'bower_components/moment/moment.js',
