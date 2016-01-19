@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Deprecated
 ### Removed
 ### Fixed
+- Fixed position of lazyload.js script 
 
 ## [2.7.0] - 2015-01-19
 ### Added
