@@ -13,7 +13,6 @@ class AssetComposer
     protected $assets = [
         'dist/css/print.css'  => 'dist/css/print.css',
         'dist/css/screen.css' => 'dist/css/screen.css',
-        'dist/js/lazyload.js' => 'dist/js/lazyload.js',
         'dist/js/main.js'     => 'dist/js/main.js',
         'dist/js/admin.js'     => 'dist/js/admin.js',
     ];
@@ -25,6 +24,25 @@ class AssetComposer
     {
         $this->view = $view;
 
+        $this->getLazyloadContents();
+
+        $this->getAssets();
+    }
+
+    protected function getLazyloadContents()
+    {
+        if (Cache::has('lazyload')) {
+            $lazyload_js = Cache::get('lazyload');
+        } else {
+            $lazyload_js = file_get_contents(public_path().'/dist/js/lazyload.js');
+            Cache::forever('lazyload', $lazyload_js);
+        }
+
+        $this->view->with('lazyload_js', $lazyload_js);
+    }
+
+    protected function getAssets()
+    {
         if (env('APP_ENV') != 'production') {
             $this->view->with('assets', $this->assets);
 
@@ -32,14 +50,11 @@ class AssetComposer
         }
 
         if (Cache::has('assets')) {
-            $this->view->with('assets', Cache::get('assets'));
-
-            return;
+            $this->assets = Cache::get('assets');
+        } else {
+            $this->assets = $this->createFileHashes($this->assets);
+            Cache::forever('assets', $this->assets);
         }
-
-        $this->assets = $this->createFileHashes($this->assets);
-
-        Cache::forever('assets', $this->assets);
 
         $this->view->with('assets', $this->assets);
     }

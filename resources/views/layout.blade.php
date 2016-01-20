@@ -34,22 +34,26 @@
 
         @include('layouts.partials.javascript')
 
-        <script type="text/javascript" src="{!! url($assets['dist/js/lazyload.js']) !!}"></script>
-
         <script type="text/javascript">
-            LazyLoad.js([
-                '{!! url($assets['dist/js/main.js']) !!}'
-            ],function () {
-                window.Barryvanveen.main();
+            {!! $lazyload_js !!}
 
-                if (Barryvanveen.loggedin) {
-                    LazyLoad.js([
-                        '{!! url($assets['dist/js/admin.js']) !!}'
-                    ],function () {
-                        window.Barryvanveen.admin();
-                    });
-                }
-            });
+            var lazyloadCallback = function() {
+                LazyLoad.js([
+                    '{!! url($assets['dist/js/main.js']) !!}'
+                ],function () {
+                    window.Barryvanveen.main();
+
+                    if (Barryvanveen.loggedin) {
+                        LazyLoad.js([
+                            '{!! url($assets['dist/js/admin.js']) !!}'
+                        ],function () {
+                            window.Barryvanveen.admin();
+                        });
+                    }
+                });
+            };
+
+            window.addEventListener('load', lazyloadCallback);
         </script>
 
 	</body>
