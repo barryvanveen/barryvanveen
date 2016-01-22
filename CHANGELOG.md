@@ -9,6 +9,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.7.4] - 2015-01-22
+### Added
+- Added cache control headers for fonts
+### Changed
+- Changed font file names for cache busting
+
+## [2.7.3] - 2015-01-22
+### Changed
+- Changed lazyloading to run after loading the page
+
 ## [2.7.2] - 2015-01-19
 ### Changed
 - Include jQuery in main.js, do not load it from CDN
