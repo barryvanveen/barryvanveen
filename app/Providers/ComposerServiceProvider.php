@@ -26,7 +26,7 @@ class ComposerServiceProvider extends ServiceProvider
         $view->composer('layouts.partials.header', MenuComposer::class);
 
         // Header must know if this route is within the admin section
-        $view->composer('layouts.partials.header', function ($view) {
+        $view->composer(['layout', 'layouts.partials.header'], function ($view) {
             /* @var View $view */
             $view->with('is_admin', (Request::segment(1) === 'admin' && Request::segment(2) !== 'inloggen'))
                  ->with('current_user', Auth::user());

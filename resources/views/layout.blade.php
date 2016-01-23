@@ -40,17 +40,10 @@
             var lazyloadCallback = function() {
                 LazyLoad.js([
                     '{!! url($assets['dist/js/main.js']) !!}'
-                ],function () {
-                    window.Barryvanveen.main();
-
-                    if (Barryvanveen.loggedin) {
-                        LazyLoad.js([
-                            '{!! url($assets['dist/js/admin.js']) !!}'
-                        ],function () {
-                            window.Barryvanveen.admin();
-                        });
-                    }
-                });
+                    @if($is_admin)
+                        ,'{!! url($assets['dist/js/admin.js']) !!}'
+                    @endif
+                ]);
             };
 
             window.addEventListener('load', lazyloadCallback);

@@ -155,3 +155,8 @@ window.Barryvanveen.initLogModal = function() {
     });
 
 };
+
+/**
+ * start scripts
+ */
+window.Barryvanveen.admin();

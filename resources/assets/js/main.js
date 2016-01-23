@@ -1,7 +1,6 @@
 window.Barryvanveen = window.Barryvanveen || {};
 
 window.Barryvanveen.main = function() {
-
 	window.Barryvanveen.smoothScrollToHash();
 	window.Barryvanveen.initScrollUp();
 	window.Barryvanveen.initOutgoingLinkListeners();
@@ -92,3 +91,8 @@ window.Barryvanveen.initOutgoingLinkListeners = function() {
     });
 
 };
+
+/**
+ * start scripts
+ */
+window.Barryvanveen.main();
