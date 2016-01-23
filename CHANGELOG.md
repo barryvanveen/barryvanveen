@@ -5,11 +5,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 ### Changed
-- Changed lazyloading for JS files
-- Changed RSS icon and moved it to the footer
 ### Deprecated
 ### Removed
 ### Fixed
+
+## [2.7.5] - 2015-01-23
+### Changed
+- Changed lazyloading for JS files
+- Changed RSS icon and moved it to the footer
 
 ## [2.7.4] - 2015-01-22
 ### Added
