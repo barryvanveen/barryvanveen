@@ -4,6 +4,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var buster = require('gulp-buster');
 var concat = require('gulp-concat');
 var cssnano = require('gulp-cssnano');
+var critical = require('critical');
 var plumber = require('gulp-plumber');
 var rename = require("gulp-rename");
 var sass = require('gulp-sass');
@@ -82,6 +83,28 @@ gulp.task('build-sass', function () {
         .pipe(cssnano())
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(config.outputDirs.css));
+});
+
+gulp.task('critical', function() {
+    // XS
+    critical.generate({
+        src: 'http://barryvanveen.nl',
+        css: 'public_html/dist/css/screen.css',
+        width: 360,
+        height: 640,
+        dest: 'public_html/dist/css/critical.xs.css',
+        minify: true
+    });
+
+    // LG
+    critical.generate({
+        src: 'http://barryvanveen.nl',
+        css: 'public_html/dist/css/screen.css',
+        width: 1280,
+        height: 600,
+        dest: 'public_html/dist/css/critical.lg.css',
+        minify: true
+    });
 });
 
 /**
