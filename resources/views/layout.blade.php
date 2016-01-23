@@ -39,6 +39,7 @@
 
             var lazyloadCallback = function() {
                 LazyLoad.js([
+                    '//code.jquery.com/jquery-1.11.2.min.js',
                     '{!! url($assets['dist/js/main.js']) !!}'
                     @if($is_admin)
                         ,'{!! url($assets['dist/js/admin.js']) !!}'

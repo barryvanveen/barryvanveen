@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.7.6] - 2015-01-23
+### Changed
+- Load jQuery from CDN
+
 ## [2.7.5] - 2015-01-23
 ### Changed
 - Changed lazyloading for JS files
