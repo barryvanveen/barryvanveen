@@ -1,55 +1,57 @@
 @font-face {
-	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot?-spjz1m');
-	src:url('fonts/icomoon.eot?#iefix-spjz1m') format('embedded-opentype'),
-		url('fonts/icomoon.ttf?-spjz1m') format('truetype'),
-		url('fonts/icomoon.woff?-spjz1m') format('woff'),
-		url('fonts/icomoon.svg?-spjz1m#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?dd6r5d');
+    src:    url('fonts/icomoon.eot?dd6r5d#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?dd6r5d') format('truetype'),
+        url('fonts/icomoon.woff?dd6r5d') format('woff'),
+        url('fonts/icomoon.svg?dd6r5d#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .icon {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
 
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-rss:before {
-	content: "\e609";
+.icon-rss-square:before {
+    content: "\f143";
 }
 .icon-arrow-right:before {
-	content: "\e600";
+    content: "\e600";
 }
 .icon-arrow-left:before {
-	content: "\e601";
+    content: "\e601";
 }
 .icon-arrow-down:before {
-	content: "\e602";
+    content: "\e602";
 }
 .icon-arrow-up:before {
-	content: "\e603";
+    content: "\e603";
 }
 .icon-calendar-o:before {
-	content: "\e604";
+    content: "\e604";
 }
 .icon-clock-o:before {
-	content: "\e605";
+    content: "\e605";
 }
 .icon-caret-up:before {
-	content: "\e606";
+    content: "\e606";
 }
 .icon-github-square:before {
-	content: "\e607";
+    content: "\e607";
 }
 .icon-linkedin-square:before {
-	content: "\e608";
+    content: "\e608";
 }
+

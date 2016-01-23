@@ -5,7 +5,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 ### Changed
-- Changed lazyloading for JS files 
+- Changed lazyloading for JS files
+- Changed RSS icon and moved it to the footer
 ### Deprecated
 ### Removed
 ### Fixed
