@@ -65,8 +65,6 @@ var onError = function (err) {
     console.log(err);
 };
 
-// todo: critical path css toevoegen aan head-html
-
 /**
  * build all sass files into css files
  */
@@ -86,23 +84,12 @@ gulp.task('build-sass', function () {
 });
 
 gulp.task('critical', function() {
-    // XS
     critical.generate({
-        src: 'http://barryvanveen.nl',
-        css: 'public_html/dist/css/screen.css',
-        width: 360,
-        height: 640,
-        dest: 'public_html/dist/css/critical.xs.css',
-        minify: true
-    });
-
-    // LG
-    critical.generate({
-        src: 'http://barryvanveen.nl',
-        css: 'public_html/dist/css/screen.css',
+        src: 'http://barryvanveen.app',
+        css: config.outputDirs.css+'/screen.css',
         width: 1280,
         height: 600,
-        dest: 'public_html/dist/css/critical.lg.css',
+        dest: 'public_html/dist/css/critical.css',
         minify: true
     });
 });
@@ -173,7 +160,7 @@ gulp.task('move', function () {
  * watch for changes in scss-files, then build-sass
  */
 gulp.task('watch-sass', function(){
-    gulp.watch('resources/assets/scss/**/*.scss', ['build-sass']);
+    gulp.watch('resources/assets/scss/**/*.scss', ['build-sass', 'critical']);
 });
 
 /**
@@ -186,4 +173,4 @@ gulp.task('watch-js', function(){
 /**
  * perform these tasks when running just 'gulp'
  */
-gulp.task('default', ['build-sass', 'build-js', 'watch-sass', 'watch-js']);
+gulp.task('default', ['build-sass', 'build-js', 'critical', 'watch-sass', 'watch-js']);
