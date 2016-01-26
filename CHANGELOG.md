@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.8.0] - 2015-01-26
+### Added
+- Added inlined critical path CSS
+### Changed
+- Load screen.css after page load using lazyloading
+### Fixed
+- Fixed public_path() in tests
+
 ## [2.7.6] - 2015-01-23
 ### Changed
 - Load jQuery from CDN
