@@ -19,7 +19,8 @@
         <link rel="shortcut icon" type="image/ico" href="{{ url('favicon.ico') }}">
         <link rel="author" href="{{ url(route('about-me')) }}">
 
-        <link media="screen" type="text/css" rel="stylesheet" href="{!! url($assets['dist/css/screen.css']) !!}">
+        <style type="text/css" media="screen">{!! $critical_css !!}</style>
+
         <link media="print" type="text/css" rel="stylesheet" href="{!! url($assets['dist/css/print.css']) !!}">
 	</head>
 	<body itemscope itemtype="http://schema.org/WebPage">
@@ -38,6 +39,7 @@
             {!! $lazyload_js !!}
 
             var lazyloadCallback = function() {
+                LazyLoad.css('{!! url($assets['dist/css/screen.css']) !!}');
                 LazyLoad.js([
                     '//code.jquery.com/jquery-1.11.2.min.js',
                     '{!! url($assets['dist/js/main.js']) !!}'

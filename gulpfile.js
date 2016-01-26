@@ -4,6 +4,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var buster = require('gulp-buster');
 var concat = require('gulp-concat');
 var cssnano = require('gulp-cssnano');
+var critical = require('critical');
 var plumber = require('gulp-plumber');
 var rename = require("gulp-rename");
 var sass = require('gulp-sass');
@@ -64,8 +65,6 @@ var onError = function (err) {
     console.log(err);
 };
 
-// todo: critical path css toevoegen aan head-html
-
 /**
  * build all sass files into css files
  */
@@ -82,6 +81,17 @@ gulp.task('build-sass', function () {
         .pipe(cssnano())
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(config.outputDirs.css));
+});
+
+gulp.task('critical', function() {
+    critical.generate({
+        src: 'http://barryvanveen.app',
+        css: config.outputDirs.css+'/screen.css',
+        width: 1280,
+        height: 600,
+        dest: 'public_html/dist/css/critical.css',
+        minify: true
+    });
 });
 
 /**
@@ -150,7 +160,7 @@ gulp.task('move', function () {
  * watch for changes in scss-files, then build-sass
  */
 gulp.task('watch-sass', function(){
-    gulp.watch('resources/assets/scss/**/*.scss', ['build-sass']);
+    gulp.watch('resources/assets/scss/**/*.scss', ['build-sass', 'critical']);
 });
 
 /**
@@ -163,4 +173,4 @@ gulp.task('watch-js', function(){
 /**
  * perform these tasks when running just 'gulp'
  */
-gulp.task('default', ['build-sass', 'build-js', 'watch-sass', 'watch-js']);
+gulp.task('default', ['build-sass', 'build-js', 'critical', 'watch-sass', 'watch-js']);
