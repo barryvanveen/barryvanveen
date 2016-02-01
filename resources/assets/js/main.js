@@ -85,7 +85,10 @@ window.Barryvanveen.initOutgoingLinkListeners = function() {
         // track clicks to external websites
         ga('send', 'event', 'outbound', 'click', e.target.href, {'hitCallback':
             function () {
-                document.location = e.target.href;
+                // redirect if it was a normal mouseclick
+                if (e.which == 1)  {
+                    document.location = e.target.href;
+                }
             }
         });
     });
