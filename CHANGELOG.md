@@ -9,6 +9,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.8.1] - 2015-02-01
+### Added
+- Added Expire header for favicon
+### Fixed
+- Fixed opening links with middle-clicks
+
 ## [2.8.0] - 2015-01-26
 ### Added
 - Added inlined critical path CSS
