@@ -67,5 +67,10 @@
             window.addEventListener('load', lazyloadCallback);
         </script>
 
-	</body>
+        <noscript>
+            <style type="text/css" media="all">@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");</style>
+            <link href="{!! url($assets['dist/css/screen.css']) !!}" rel="stylesheet" type="text/css" media="screen">
+        </noscript>
+
+    </body>
 </html>
