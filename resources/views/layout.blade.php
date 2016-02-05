@@ -25,6 +25,21 @@
 	</head>
 	<body itemscope itemtype="http://schema.org/WebPage">
 
+        <script type="text/javascript">
+            WebFontConfig = {
+                google: { families: [ 'Raleway:400,700:latin' ] }
+            };
+            (function() {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+            })();
+        </script>
+
 		@include('layouts.partials.analytics')
 
 		@include('layouts.partials.header')
@@ -52,5 +67,10 @@
             window.addEventListener('load', lazyloadCallback);
         </script>
 
-	</body>
+        <noscript>
+            <style type="text/css" media="all">@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");</style>
+            <link href="{!! url($assets['dist/css/screen.css']) !!}" rel="stylesheet" type="text/css" media="screen">
+        </noscript>
+
+    </body>
 </html>
