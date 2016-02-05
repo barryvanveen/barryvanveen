@@ -9,6 +9,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.9.0] - 2015-02-05
+### Added
+- Added fallback for loading CSS on browsers without Javascript support
+- Added gulp-clean to remove temporary files created by critical
+### Changed
+- Webfont is now loaded asynchronously 
+- Inlined lazyload.js in main template instead of loading it from the AssetComposer
+- Updated critical.css
+
 ## [2.8.1] - 2015-02-01
 ### Added
 - Added Expire header for favicon

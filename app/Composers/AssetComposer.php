@@ -26,8 +26,6 @@ class AssetComposer
 
         $this->view->with('critical_css', file_get_contents(public_path().'/dist/css/critical.css'));
 
-        $this->view->with('lazyload_js', file_get_contents(public_path().'/dist/js/lazyload.js'));
-
         $this->getAssets();
     }
 
