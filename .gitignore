@@ -19,3 +19,4 @@ composer.phar
 Homestead.yaml
 npm-debug.log
 Thumbs.db
+tmp-*.html

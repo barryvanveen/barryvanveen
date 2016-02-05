@@ -2,6 +2,7 @@ var gulp = require('gulp');
 
 var autoprefixer = require('gulp-autoprefixer');
 var buster = require('gulp-buster');
+var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var cssnano = require('gulp-cssnano');
 var critical = require('critical');
@@ -17,7 +18,6 @@ var config = {
             'resources/assets/js/lazyload.js'
         ],
         main: [
-            //'bower_components/jquery/dist/jquery.js',
             'bower_components/html5shiv/dist/html5shiv.js',
             'bower_components/respond/dest/respond.matchmedia.addListener.src.js',
             'bower_components/moment/moment.js',
@@ -94,6 +94,11 @@ gulp.task('critical', function() {
     });
 });
 
+gulp.task('clean', function() {
+    gulp.src('tmp-*.html', {read: false})
+        .pipe(clean());
+});
+
 /**
  * concatenate all js files
  */
@@ -105,14 +110,6 @@ gulp.task('build-js', function () {
         .pipe(uglify())
         .pipe(concat('prism.custom.min.js'))
         .pipe(gulp.dest('bower_components/prims'));
-
-    gulp.src(config.scripts.lazyload)
-        .pipe(plumber({
-            errorHandler: onError
-        }))
-        .pipe(uglify())
-        .pipe(concat('lazyload.js'))
-        .pipe(gulp.dest(config.outputDirs.js));
 
     gulp.src(config.scripts.main)
         .pipe(plumber({
@@ -173,4 +170,4 @@ gulp.task('watch-js', function(){
 /**
  * perform these tasks when running just 'gulp'
  */
-gulp.task('default', ['build-sass', 'build-js', 'critical', 'watch-sass', 'watch-js']);
+gulp.task('default', ['clean', 'build-sass', 'build-js', 'critical', 'watch-sass', 'watch-js']);
