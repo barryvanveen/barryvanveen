@@ -5,8 +5,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 ### Changed
+- Changed date format blog to English format
 ### Deprecated
 ### Removed
+- Removed datetimepicker Javascript plugin
 ### Fixed
 
 ## [2.9.0] - 2015-02-05

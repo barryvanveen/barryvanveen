@@ -28,7 +28,6 @@ var config = {
         ],
         admin: [
             'bower_components/autosize/dest/autosize.js',
-            'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
             'bower_components/ajaxq/ajaxq.js',
             'resources/assets/js/admin.js'
         ],

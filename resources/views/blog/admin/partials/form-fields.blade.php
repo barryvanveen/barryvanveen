@@ -13,8 +13,7 @@
     <div class="col-md-6">
         <div class="form-group @if($errors->has('publication_date')) has-error @endif">
             {!! Form::label('publication_date', trans('blog-admin.date'), ['class' => 'control-label form__label']) !!}
-            {!! Form::text('publication_date', $blog->publication_date_formatted, ['class' => 'form-control
-            js-datetimepicker']) !!}
+            {!! Form::text('publication_date', $blog->publication_date, ['class' => 'form-control', 'placeholder' => 'yyyy-mm-dd hh:mm:ss']) !!}
         </div>
     </div>
 </div>
