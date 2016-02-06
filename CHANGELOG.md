@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 ### Changed
 - Changed date format blog to English format
+- Redirect all traffic to https
 ### Deprecated
 ### Removed
 - Removed datetimepicker Javascript plugin

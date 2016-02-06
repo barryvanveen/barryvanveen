@@ -22,11 +22,16 @@
 
     # Redirect to preferred domain
     RewriteCond %{HTTP_HOST} !(^barryvanveen\.app|^barryvanveen\.nl)$ [NC]
-    RewriteRule ^(.*)$ http://barryvanveen.nl/$1 [R=301,L]
+    RewriteRule ^(.*)$ https://barryvanveen.nl/$1 [R=301,L]
 
     # Redirect old Dutch urls to English urls
-    RewriteRule ^over-mij$ http://barryvanveen.nl/about-me [L,R=301]
-    RewriteRule ^over-mij/boeken-die-ik-heb-gelezen$ http://barryvanveen.nl/about-me/books-that-i-have-read [L,R=301]
+    RewriteRule ^over-mij$ https://barryvanveen.nl/about-me [L,R=301]
+    RewriteRule ^over-mij/boeken-die-ik-heb-gelezen$ https://barryvanveen.nl/about-me/books-that-i-have-read [L,R=301]
+
+    # Redirect to HTTPS domain
+    RewriteCond %{HTTP_HOST} ^barryvanveen.nl$ [NC]
+    RewriteCond %{HTTPS} !=on [NC]
+    RewriteRule ^(.*)$ https://barryvanveen.nl/$1 [R=301,L]
 
     # Redirect assets with filehash in name to actual filename
     RewriteRule ^dist/css/(.*)\.[0-9a-f]{8}\.css$ /dist/css/$1.css [L]
