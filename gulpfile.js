@@ -1,30 +1,35 @@
 var gulp = require('gulp');
 
 var autoprefixer = require('gulp-autoprefixer');
+var buster = require('gulp-buster');
+var clean = require('gulp-clean');
 var concat = require('gulp-concat');
-var include = require('gulp-include');
+var cssnano = require('gulp-cssnano');
+var critical = require('critical');
 var plumber = require('gulp-plumber');
 var rename = require("gulp-rename");
 var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 
 var config = {
     scripts: {
-        src: [
-            'bower_components/jquery/dist/jquery.js',
+        lazyload: [
+            'resources/assets/js/lazyload.js'
+        ],
+        main: [
+            'bower_components/html5shiv/dist/html5shiv.js',
+            'bower_components/respond/dest/respond.matchmedia.addListener.src.js',
             'bower_components/moment/moment.js',
-            'bower_components/moment/locale/nl.js',
             'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
             'bower_components/scrollup/dist/jquery.scrollUp.js',
-            'bower_components/autosize/dest/autosize.js',
-            'bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
-            'bower_components/ajaxq/ajaxq.js',
             'bower_components/prism/prism.custom.min.js',
             'resources/assets/js/main.js'
         ],
-        ie8: [
-            'bower_components/html5shiv/dist/html5shiv.js',
-            'bower_components/respond/dest/respond.matchmedia.addListener.src.js'
+        admin: [
+            'bower_components/autosize/dest/autosize.js',
+            'bower_components/ajaxq/ajaxq.js',
+            'resources/assets/js/admin.js'
         ],
         prism: [
             // default
@@ -46,6 +51,12 @@ var config = {
             'bower_components/prism/plugins/autolinker/prism-autolinker.js',
             'bower_components/prism/plugins/line-numbers/prism-line-numbers.js'
         ]
+    },
+    outputDirs: {
+        base:   'public_html/dist',
+        css:    'public_html/dist/css',
+        fonts:  'public_html/dist/fonts',
+        js:     'public_html/dist/js'
     }
 };
 
@@ -61,17 +72,30 @@ gulp.task('build-sass', function () {
         .pipe(plumber({
             errorHandler: onError
         }))
+        .pipe(sourcemaps.init())
         .pipe(sass({
-            unixNewlines: true,
-            style: 'expanded'
+            unixNewlines: true
         }))
-        .pipe(include())
         .pipe(autoprefixer('> 5%'))
-        /*.pipe(cmq({
-         log: true
-         }))*/
-        .pipe(gulp.dest('public_html/css'));
+        .pipe(cssnano())
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.outputDirs.css));
+});
 
+gulp.task('critical', function() {
+    critical.generate({
+        src: 'http://barryvanveen.app',
+        css: config.outputDirs.css+'/screen.css',
+        width: 1280,
+        height: 600,
+        dest: 'public_html/dist/css/critical.css',
+        minify: true
+    });
+});
+
+gulp.task('clean', function() {
+    gulp.src('tmp-*.html', {read: false})
+        .pipe(clean());
 });
 
 /**
@@ -84,23 +108,27 @@ gulp.task('build-js', function () {
         }))
         .pipe(uglify())
         .pipe(concat('prism.custom.min.js'))
-        .pipe(gulp.dest('bower_components/prism'));
+        .pipe(gulp.dest('bower_components/prims'));
 
-    gulp.src(config.scripts.ie8)
+    gulp.src(config.scripts.main)
         .pipe(plumber({
             errorHandler: onError
         }))
+        .pipe(sourcemaps.init())
         .pipe(uglify())
-        .pipe(concat('main.ie8.min.js'))
-        .pipe(gulp.dest('public_html/js'));
+        .pipe(concat('main.js'))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.outputDirs.js));
 
-    gulp.src(config.scripts.src)
+    gulp.src(config.scripts.admin)
         .pipe(plumber({
             errorHandler: onError
         }))
+        .pipe(sourcemaps.init())
         .pipe(uglify())
-        .pipe(concat('main.min.js'))
-        .pipe(gulp.dest('public_html/js'));
+        .pipe(concat('admin.js'))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.outputDirs.js));
 });
 
 /**
@@ -109,11 +137,11 @@ gulp.task('build-js', function () {
 gulp.task('move', function () {
     // move Icomoon font files to public_html
     gulp.src('resources/assets/fonts/icomoon/fonts/*')
-        .pipe(gulp.dest('public_html/fonts'));
+        .pipe(gulp.dest(config.outputDirs.fonts));
 
     // move bootstrap font files to public_html
     gulp.src('bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*')
-        .pipe(gulp.dest('public_html/fonts'));
+        .pipe(gulp.dest(config.outputDirs.fonts));
 
     gulp.src('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')
         .pipe(rename("bootstrap-datetimepicker.scss"))
@@ -128,7 +156,7 @@ gulp.task('move', function () {
  * watch for changes in scss-files, then build-sass
  */
 gulp.task('watch-sass', function(){
-    gulp.watch('resources/assets/scss/**/*.scss', ['build-sass']);
+    gulp.watch('resources/assets/scss/**/*.scss', ['build-sass', 'critical']);
 });
 
 /**
@@ -141,4 +169,4 @@ gulp.task('watch-js', function(){
 /**
  * perform these tasks when running just 'gulp'
  */
-gulp.task('default', ['move', 'build-sass', 'build-js', 'watch-sass', 'watch-js']);
+gulp.task('default', ['clean', 'build-sass', 'build-js', 'critical', 'watch-sass', 'watch-js']);

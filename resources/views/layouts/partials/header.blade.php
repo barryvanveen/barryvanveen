@@ -39,11 +39,6 @@
                             </li>
                         @endforeach
                     </ul>
-                    <p class="navbar-text navbar-right header__rssIconContainer">
-                        <a href="{{route('blog-rss')}}" title="{{ trans('nav.rss-title') }}">
-                            <i class="icon icon--rss"></i>
-                        </a>
-                    </p>
                 @endif
             </div>
 

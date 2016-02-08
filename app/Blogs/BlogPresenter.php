@@ -77,7 +77,15 @@ class BlogPresenter extends BasePresenter
     }
 
     /**
-     * Get publication date in proper Dutch format.
+     * @return string
+     */
+    public function publication_date()
+    {
+        return $this->resource->publication_date;
+    }
+
+    /**
+     * Get publication date in "Feb 6, 2016" format
      *
      * @return string
      */
@@ -85,7 +93,7 @@ class BlogPresenter extends BasePresenter
     {
         $date = new Carbon($this->resource->publication_date);
 
-        return $date->format('d-m-Y H:i');
+        return $date->toFormattedDateString();
     }
 
     /**

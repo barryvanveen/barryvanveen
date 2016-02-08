@@ -3,15 +3,39 @@
         Options -MultiViews
     </IfModule>
 
+    # set Expire and Cache Control headers for css and js
+    <IfModule mod_expires.c>
+        ExpiresActive On
+        ExpiresDefault "access"
+        ExpiresByType text/css "access plus 1 year"
+        ExpiresByType application/javascript "access plus 1 year"
+
+        ExpiresByType font/truetype "access plus 1 year"
+        ExpiresByType font/opentype "access plus 1 year"
+        ExpiresByType application/x-font-woff "access plus 1 year"
+        ExpiresByType image/svg+xml "access plus 1 year"
+        ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+        ExpiresByType image/vnd.microsoft.icon "access plus 1 month"
+    </IfModule>
+
     RewriteEngine On
 
     # Redirect to preferred domain
     RewriteCond %{HTTP_HOST} !(^barryvanveen\.app|^barryvanveen\.nl)$ [NC]
-    RewriteRule ^(.*)$ http://barryvanveen.nl/$1 [R=301,L]
+    RewriteRule ^(.*)$ https://barryvanveen.nl/$1 [R=301,L]
 
     # Redirect old Dutch urls to English urls
-    RewriteRule ^over-mij$ about-me [L,R=301]
-    RewriteRule ^over-mij/boeken-die-ik-heb-gelezen$ about-me/books-that-i-have-read [L,R=301]
+    RewriteRule ^over-mij$ https://barryvanveen.nl/about-me [L,R=301]
+    RewriteRule ^over-mij/boeken-die-ik-heb-gelezen$ https://barryvanveen.nl/about-me/books-that-i-have-read [L,R=301]
+
+    # Redirect to HTTPS domain
+    RewriteCond %{HTTP_HOST} ^barryvanveen.nl$ [NC]
+    RewriteCond %{HTTPS} !=on [NC]
+    RewriteRule ^(.*)$ https://barryvanveen.nl/$1 [R=301,L]
+
+    # Redirect assets with filehash in name to actual filename
+    RewriteRule ^dist/css/(.*)\.[0-9a-f]{8}\.css$ /dist/css/$1.css [L]
+    RewriteRule ^dist/js/(.*)\.[0-9a-f]{8}\.js$ /dist/js/$1.js [L]
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d

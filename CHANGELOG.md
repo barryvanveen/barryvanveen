@@ -5,10 +5,108 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 ### Changed
-- Exception's email recipient now comes from environment configuration
+- Changed date format blog to English format
+- Redirect all traffic to https
 ### Deprecated
 ### Removed
+- Removed datetimepicker Javascript plugin
 ### Fixed
+
+## [2.9.1] - 2015-02-08
+### Changed
+- Changed date format blog to English format
+- Redirect all traffic to https
+### Removed
+- Removed datetimepicker Javascript plugin
+
+## [2.9.0] - 2015-02-05
+### Added
+- Added fallback for loading CSS on browsers without Javascript support
+- Added gulp-clean to remove temporary files created by critical
+### Changed
+- Webfont is now loaded asynchronously 
+- Inlined lazyload.js in main template instead of loading it from the AssetComposer
+- Updated critical.css
+
+## [2.8.1] - 2015-02-01
+### Added
+- Added Expire header for favicon
+### Fixed
+- Fixed opening links with middle-clicks
+
+## [2.8.0] - 2015-01-26
+### Added
+- Added inlined critical path CSS
+### Changed
+- Load screen.css after page load using lazyloading
+### Fixed
+- Fixed public_path() in tests
+
+## [2.7.6] - 2015-01-23
+### Changed
+- Load jQuery from CDN
+
+## [2.7.5] - 2015-01-23
+### Changed
+- Changed lazyloading for JS files
+- Changed RSS icon and moved it to the footer
+
+## [2.7.4] - 2015-01-22
+### Added
+- Added cache control headers for fonts
+### Changed
+- Changed font file names for cache busting
+
+## [2.7.3] - 2015-01-22
+### Changed
+- Changed lazyloading to run after loading the page
+
+## [2.7.2] - 2015-01-19
+### Changed
+- Include jQuery in main.js, do not load it from CDN
+
+## [2.7.1] - 2015-01-19
+### Fixed
+- Fixed position of lazyload.js script 
+- Fixed Prism highlighting on blog
+
+## [2.7.0] - 2015-01-19
+### Added
+- Added lazyloading for JS files
+### Changed
+- Updated to Bootstrap 3.3.6 and corresponding version of Bootswatch Readable
+- Split JS in main.js and admin.js 
+### Removed
+- Removed image column from blogs table
+### Fixed
+- Fixed bootstrap-datetimepicker problem with locale
+
+## [2.6.2] - 2015-01-12
+### Fixed
+- Fixed references to js files in template
+
+## [2.6.1] - 2015-01-12
+### Changed
+- Minified css with gulp-cssnano instead of gulp-sass
+### Fixed
+- Fixed htaccess expire and cache-control headers
+- Fixed references to js files in AssetComposer
+
+## [2.6.0] - 2015-01-12
+### Added
+- Added a Bing Webmaster Tools verification file
+- Added sourcemaps for css files
+- Added AssetComposer to create file hashes for cachebusting
+- Added Cache-Control headers for css and js
+### Changed
+- Exception's email recipient now comes from environment configuration
+- Changed translations for page titles
+- Minified css files
+- Moved all assets (css/js/fonts) to /public_html/dist directory
+
+## [2.5.1] - 2015-01-04
+### Fixed
+- Fixed htaccess redirects from Dutch to English urls
 
 ## [2.5.0] - 2015-12-28
 ### Added

@@ -61,9 +61,5 @@
 	}
 
     .icon--rss {
-      @include icon('before', $icon--rss);
-      width: auto;
-      height: auto;
-      font-size: 24px;
-      color: #FF6600;
+		@include icon('before', $icon--rss-square);
     }

@@ -18,6 +18,11 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
     {
         $app = require __DIR__.'/../bootstrap/app.php';
 
+        // set the public path to this directory
+        $app->bind('path.public', function () {
+            return __DIR__.'/../public_html';
+        });
+
         Dotenv::load(dirname(__DIR__), '.env.testing');
 
         $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();

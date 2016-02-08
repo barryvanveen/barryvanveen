@@ -37,7 +37,7 @@ return [
     |
     */
 
-    'version' => 'v2.5.0',
+    'version' => 'v2.9.1',
 
     // todo: update composer packages
 
