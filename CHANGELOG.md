@@ -12,6 +12,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Removed datetimepicker Javascript plugin
 ### Fixed
 
+## [2.9.1] - 2015-02-08
+### Changed
+- Changed date format blog to English format
+- Redirect all traffic to https
+### Removed
+- Removed datetimepicker Javascript plugin
+
 ## [2.9.0] - 2015-02-05
 ### Added
 - Added fallback for loading CSS on browsers without Javascript support
