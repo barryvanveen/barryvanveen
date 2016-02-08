@@ -5,9 +5,19 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 ### Changed
+- Changed date format blog to English format
+- Redirect all traffic to https
 ### Deprecated
 ### Removed
+- Removed datetimepicker Javascript plugin
 ### Fixed
+
+## [2.9.1] - 2015-02-08
+### Changed
+- Changed date format blog to English format
+- Redirect all traffic to https
+### Removed
+- Removed datetimepicker Javascript plugin
 
 ## [2.9.0] - 2015-02-05
 ### Added
