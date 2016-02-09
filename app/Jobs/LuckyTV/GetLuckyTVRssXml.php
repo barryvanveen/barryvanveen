@@ -8,11 +8,10 @@ use Barryvanveen\Rss\ItemData;
 use Cache;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
-use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Symfony\Component\DomCrawler\Crawler;
 
-class GetLuckyTVRssXml implements SelfHandling
+class GetLuckyTVRssXml
 {
     use DispatchesJobs;
 

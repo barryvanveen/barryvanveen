@@ -9,10 +9,9 @@ use Barryvanveen\Rss\ChannelData;
 use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
 use Carbon\Carbon;
-use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 
-class GetBlogRssXml implements SelfHandling
+class GetBlogRssXml
 {
     use DispatchesJobs;
 
@@ -61,7 +60,7 @@ class GetBlogRssXml implements SelfHandling
         return new ChannelData(
             trans('general.blog-rss-title'),
             trans('general.blog-description'),
-            url(),
+            url(''),
             Carbon::createFromFormat('Y-m-d H:i:s', $last_updated_blog['updated_at'])->toRfc2822String()
         );
     }

@@ -2,9 +2,8 @@
 namespace Barryvanveen\Jobs\Markdown;
 
 use cebe\markdown\GithubMarkdown;
-use Illuminate\Contracts\Bus\SelfHandling;
 
-class MarkdownToHtml implements SelfHandling
+class MarkdownToHtml
 {
     public $markdown;
 

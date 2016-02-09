@@ -5,11 +5,10 @@ use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
 use Barryvanveen\Pages\PageRepository;
 use Carbon\Carbon;
-use Illuminate\Contracts\Bus\SelfHandling;
 use Route;
 use View;
 
-class GetSitemapXml implements SelfHandling
+class GetSitemapXml
 {
     /** @var array  */
     protected $items = [];

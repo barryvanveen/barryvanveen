@@ -5,9 +5,8 @@ use Barryvanveen\Rss\ChannelData;
 use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
 use Feed;
-use Illuminate\Contracts\Bus\SelfHandling;
 
-class GetRssXml implements SelfHandling
+class GetRssXml
 {
     /** @var FeedData */
     public $feedData;

@@ -12,9 +12,10 @@ class ExceptionMailer extends Mailer
      */
     public function sendExceptionMail(Exception $exception, $context)
     {
-        $url = str_replace(['http://', 'https://'], '', url());
+        $url = str_replace(['http://', 'https://'], '', url(''));
 
-        $recipient = new Recipient(env('MAIL_EXCEPTION_TO_ADDRESS'), env('MAIL_EXCEPTION_TO_NAME'));
+        // todo: rewrite env() to config()
+        $recipient = new Recipient(config('custom.exception_to.address'), config('custom.exception_to.name'));
         $subject   = '['.$url.'] '.get_class($exception);
         $view      = 'emails.exception';
 

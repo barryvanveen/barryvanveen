@@ -3,9 +3,8 @@ namespace Barryvanveen\Jobs\Pages;
 
 use Barryvanveen\Pages\Page;
 use Barryvanveen\Pages\PageRepository;
-use Illuminate\Contracts\Bus\SelfHandling;
 
-class CreatePage implements SelfHandling
+class CreatePage
 {
     public $title;
     public $text;

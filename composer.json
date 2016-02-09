@@ -9,7 +9,7 @@
   "type": "project",
   "require": {
     "cebe/markdown": "1.1.*",
-    "cviebrock/eloquent-sluggable": "3.0.0-beta",
+    "cviebrock/eloquent-sluggable": "3.1.*",
     "doctrine/dbal": "2.*",
     "eusonlito/laravel-meta": "dev-master",
     "guzzlehttp/guzzle": "6.*",
@@ -33,7 +33,9 @@
     "fzaninotto/faker": "~1.4",
     "mockery/mockery": "0.9.*",
     "phpspec/phpspec": "~2.1",
-    "phpunit/phpunit": "~4.0"
+    "phpunit/phpunit": "~4.0",
+    "symfony/dom-crawler": "~3.0",
+    "symfony/css-selector": "~3.0"
   },
   "autoload": {
     "classmap": [
@@ -54,7 +56,7 @@
       "php artisan optimize"
     ],
     "pre-update-cmd": [
-      "php artisan clear-compiled"
+
     ],
     "post-update-cmd": [
       "php artisan optimize"

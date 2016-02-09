@@ -4,6 +4,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Environment
+    |--------------------------------------------------------------------------
+    |
+    | This value determines the "environment" your application is currently
+    | running in. This may determine how you prefer to configure various
+    | services your application utilizes. Set this in your ".env" file.
+    |
+    */
+
+    'env' => env('APP_ENV', 'production'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
     |
@@ -26,7 +39,7 @@ return [
     |
     */
 
-    'url' => 'http://barryvanveen.nl',
+    'url' => 'https://barryvanveen.nl',
 
     /*
     |--------------------------------------------------------------------------
@@ -38,8 +51,6 @@ return [
     */
 
     'version' => 'v2.9.1',
-
-    // todo: update composer packages
 
     /*
     |--------------------------------------------------------------------------
