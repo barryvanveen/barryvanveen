@@ -13,7 +13,6 @@ use Meta;
 use Redirect;
 use Response;
 use Session;
-use Symfony\Component\Debug\ExceptionHandler as SymfonyDisplayer;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use View;
@@ -64,7 +63,7 @@ class Handler extends ExceptionHandler
     {
         // render exception if debugging is enabled
         if (config('app.debug')) {
-            return $this->toIlluminateResponse((new SymfonyDisplayer(config('app.debug')))->createResponse($e), $e);
+            return $this->toIlluminateResponse($this->convertExceptionToResponse($e), $e);
         }
 
         // wrong csrf token

@@ -3,9 +3,8 @@ namespace Barryvanveen\Jobs\Blogs;
 
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
-use Illuminate\Contracts\Bus\SelfHandling;
 
-class CreateBlog implements SelfHandling
+class CreateBlog
 {
     public $title;
     public $summary;

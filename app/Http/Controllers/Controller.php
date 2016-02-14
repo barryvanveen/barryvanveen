@@ -20,7 +20,7 @@ abstract class Controller extends BaseController
 
         // default javascript variables
         $javascript_vars = [
-            'baseurl'  => url(),
+            'baseurl'  => url(''),
             'loggedin' => (Auth::user() ? true : false),
         ];
 

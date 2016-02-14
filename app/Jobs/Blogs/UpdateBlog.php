@@ -2,9 +2,8 @@
 namespace Barryvanveen\Jobs\Blogs;
 
 use Barryvanveen\Blogs\BlogRepository;
-use Illuminate\Contracts\Bus\SelfHandling;
 
-class UpdateBlog implements SelfHandling
+class UpdateBlog
 {
     public $id;
     public $title;

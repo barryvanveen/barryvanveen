@@ -23,8 +23,6 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
             return __DIR__.'/../public_html';
         });
 
-        Dotenv::load(dirname(__DIR__), '.env.testing');
-
         $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 
         return $app;
