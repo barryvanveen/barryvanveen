@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.9.3] - 2015-02-14
+### Fixed
+- Fixed typo in list of service providers
+
 ## [2.9.2] - 2015-02-14
 ### Changed
 - Updated Laravel Framework to version 5.2.15
