@@ -52,7 +52,7 @@ class SwitchBranchCommand extends Command
 
         $this->runTask('bower install');
 
-        $this->runTask('clearDatabase', getenv('DB_DATABASE'));
+        $this->runTask('clearDatabase', config('database.connections.mysql.database'));
         $this->runTask('php artisan migrate');
         $this->runTask('php artisan db:seed');
 
@@ -62,7 +62,7 @@ class SwitchBranchCommand extends Command
             return;
         }
 
-        $this->runTask('clearDatabase', getenv('DB_TESTING_DATABASE'));
+        $this->runTask('clearDatabase', config('database.connections.mysql_testing.database'));
         $this->runTask('php artisan migrate --database=mysql_testing');
     }
 

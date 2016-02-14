@@ -5,12 +5,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 ### Changed
-- Changed date format blog to English format
-- Redirect all traffic to https
 ### Deprecated
 ### Removed
-- Removed datetimepicker Javascript plugin
 ### Fixed
+
+## [2.9.2] - 2015-02-14
+### Changed
+- Updated Laravel Framework to version 5.2.15
+- Changed environment configuration to only use the config()-method
 
 ## [2.9.1] - 2015-02-08
 ### Changed

@@ -2,9 +2,8 @@
 namespace Barryvanveen\Jobs\Pages;
 
 use Barryvanveen\Pages\PageRepository;
-use Illuminate\Contracts\Bus\SelfHandling;
 
-class UpdatePage implements SelfHandling
+class UpdatePage
 {
     public $id;
     public $title;
