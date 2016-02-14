@@ -14,7 +14,6 @@ class ExceptionMailer extends Mailer
     {
         $url = str_replace(['http://', 'https://'], '', url(''));
 
-        // todo: rewrite env() to config()
         $recipient = new Recipient(config('custom.exception_to.address'), config('custom.exception_to.name'));
         $subject   = '['.$url.'] '.get_class($exception);
         $view      = 'emails.exception';

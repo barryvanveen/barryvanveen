@@ -31,7 +31,6 @@ class AssetComposer
 
     protected function getAssets()
     {
-        // todo: rewrite env() to config()
         if (config('app.env') != 'production') {
             $this->view->with('assets', $this->assets);
 

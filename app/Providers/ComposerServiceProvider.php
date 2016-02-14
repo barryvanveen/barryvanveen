@@ -35,7 +35,6 @@ class ComposerServiceProvider extends ServiceProvider
         // GA tracking code
         $view->composer('layouts.partials.analytics', function ($view) {
             /* @var View $view */
-            // todo: rewrite getenv() to config()
             $view->with('ga_code', config('custom.google_analytics_code'));
         });
     }

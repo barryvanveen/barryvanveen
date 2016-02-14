@@ -52,7 +52,6 @@ class SwitchBranchCommand extends Command
 
         $this->runTask('bower install');
 
-        // todo: rewrite getenv() to config()
         $this->runTask('clearDatabase', config('database.connections.mysql.database'));
         $this->runTask('php artisan migrate');
         $this->runTask('php artisan db:seed');
