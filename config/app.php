@@ -50,7 +50,7 @@ return [
     |
     */
 
-    'version' => 'v2.9.2',
+    'version' => 'v2.9.3',
 
     /*
     |--------------------------------------------------------------------------
@@ -178,7 +178,7 @@ return [
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         Eusonlito\LaravelMeta\MetaServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
-        Laracasts\Utilities\JavaScript\JavascriptServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider::class,
         McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
