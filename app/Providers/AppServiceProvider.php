@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         // register extra service providers on local environment
-        if ($this->app->environment('local')) {
+        if (config('app.env') == 'local') {
             $this->app->register('Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider');
             $this->app->register('Barryvdh\Debugbar\ServiceProvider');
 
