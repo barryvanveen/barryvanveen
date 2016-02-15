@@ -24,7 +24,8 @@
     "mccool/laravel-auto-presenter": "3.1.*",
     "php": ">=5.5.9",
     "rap2hpoutre/laravel-log-viewer": "0.3.*",
-    "roumen/feed": "2.9.*"
+    "roumen/feed": "2.9.*",
+    "symfony/dom-crawler": "~3.0"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "2.1.*",
@@ -34,7 +35,6 @@
     "mockery/mockery": "0.9.*",
     "phpspec/phpspec": "~2.1",
     "phpunit/phpunit": "~4.0",
-    "symfony/dom-crawler": "~3.0",
     "symfony/css-selector": "~3.0"
   },
   "autoload": {
