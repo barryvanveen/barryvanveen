@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.9.5] - 2015-02-15
+### Fixed
+- Required symfony/dom-crawler to fix LuckyTV RSS feed, again
+
 ## [2.9.4] - 2015-02-15
 ### Fixed
 - Required symfony/dom-crawler to fix LuckyTV RSS feed

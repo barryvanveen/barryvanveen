@@ -25,7 +25,7 @@
     "php": ">=5.5.9",
     "rap2hpoutre/laravel-log-viewer": "0.3.*",
     "roumen/feed": "2.9.*",
-    "symfony/dom-crawler": "~3.0"
+    "symfony/dom-crawler": "^3.0"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "2.1.*",
