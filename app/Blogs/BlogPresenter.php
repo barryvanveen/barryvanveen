@@ -85,7 +85,7 @@ class BlogPresenter extends BasePresenter
     }
 
     /**
-     * Get publication date in "Feb 6, 2016" format
+     * Get publication date in "Feb 6, 2016" format.
      *
      * @return string
      */

@@ -25,7 +25,7 @@ return [
 
     'exception_to' => [
         'address' => env('MAIL_EXCEPTION_TO_ADDRESS', null),
-        'name' => env('MAIL_EXCEPTION_TO_NAME', null),
+        'name'    => env('MAIL_EXCEPTION_TO_NAME', null),
     ],
 
 ];
