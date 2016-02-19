@@ -9,6 +9,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.9.7] - 2015-02-19
+### Changed
+- Changed .gitignore
+- Updated bower components
+### Fixed
+- Fixed multiple codestyle issues
+- Fixed environment configuration examples
+- Fixed gulpfile
+
 ## [2.9.6] - 2015-02-15
 ### Fixed
 - Required symfony/css-selector to fix LuckyTV RSS feed
