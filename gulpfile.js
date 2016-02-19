@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 
 var autoprefixer = require('gulp-autoprefixer');
-var buster = require('gulp-buster');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var cssnano = require('gulp-cssnano');
@@ -108,7 +107,7 @@ gulp.task('build-js', function () {
         }))
         .pipe(uglify())
         .pipe(concat('prism.custom.min.js'))
-        .pipe(gulp.dest('bower_components/prims'));
+        .pipe(gulp.dest('bower_components/prism'));
 
     gulp.src(config.scripts.main)
         .pipe(plumber({
@@ -142,10 +141,6 @@ gulp.task('move', function () {
     // move bootstrap font files to public_html
     gulp.src('bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*')
         .pipe(gulp.dest(config.outputDirs.fonts));
-
-    gulp.src('bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css')
-        .pipe(rename("bootstrap-datetimepicker.scss"))
-        .pipe(gulp.dest('resources/assets/scss/bower_components'));
 
     gulp.src('bower_components/prism/themes/prism-okaidia.css')
         .pipe(rename("prism-okaidia.scss"))
