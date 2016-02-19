@@ -7,9 +7,7 @@ return [
     | Google Analytics code
     |--------------------------------------------------------------------------
     |
-    | This value determines the "environment" your application is currently
-    | running in. This may determine how you prefer to configure various
-    | services your application utilizes. Set this in your ".env" file.
+    | This is the Google Analytics code that the website uses.
     |
     */
     'google_analytics_code' => env('GA_CODE'),
