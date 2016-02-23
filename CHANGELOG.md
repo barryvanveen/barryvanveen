@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.9.8] - 2015-02-23
+### Fixed
+- Sitemap now displays all published blogposts
+
 ## [2.9.7] - 2015-02-19
 ### Changed
 - Changed .gitignore
