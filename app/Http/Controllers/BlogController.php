@@ -31,7 +31,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs     = $this->blogRepository->published();
+        $blogs     = $this->blogRepository->paginatedPublished();
         $presenter = new SimplePaginatorPresenter($blogs);
 
         $this->setPageTitle(trans('meta.pagetitle-blog'));

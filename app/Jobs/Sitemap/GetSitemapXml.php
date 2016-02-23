@@ -107,7 +107,7 @@ class GetSitemapXml
      */
     protected function getDynamicRoutes()
     {
-        $blogs = $this->blogRepository->published();
+        $blogs = $this->blogRepository->allPublished();
 
         /** @var Blog $blog */
         foreach ($blogs as $blog) {
