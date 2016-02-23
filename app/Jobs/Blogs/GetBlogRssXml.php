@@ -74,7 +74,7 @@ class GetBlogRssXml
     {
         $items = [];
 
-        $blogs = $this->blogRepository->published();
+        $blogs = $this->blogRepository->paginatedPublished();
 
         $analytics_parameters = '?'.implode('&', [
             'utm_source=rss',

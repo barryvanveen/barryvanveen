@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
 
 class BlogRepositoryTest extends TestCase
 {
@@ -21,27 +22,27 @@ class BlogRepositoryTest extends TestCase
         $this->repository = App::make(BlogRepository::class);
     }
 
-    public function testPublishedReturnsPaginator()
+    public function testPaginatedPublishedReturnsPaginator()
     {
-        $blogs = $this->repository->published();
+        $blogs = $this->repository->paginatedPublished();
 
         $this->assertInstanceOf(Paginator::class, $blogs);
     }
 
-    public function testPublishedPaginatesResults()
+    public function testPaginatedPublishedPaginatesResults()
     {
         factory(Barryvanveen\Blogs\Blog::class, 20)->create([
             'publication_date' => '2015-01-01 12:00:00',
             'online'           => 1,
         ]);
 
-        $paginator = $this->repository->published(5);
+        $paginator = $this->repository->paginatedPublished(5);
 
         $this->assertCount(5, $paginator->items());
         $this->assertTrue($paginator->hasMorePages());
     }
 
-    public function testPublishedReturnsOnlyPublishedArticlesInTheRightOrder()
+    public function testPaginatedPublishedReturnsOnlyPublishedArticlesInTheRightOrder()
     {
         /** @var Blog $blog1 */
         $blog1 = factory(Barryvanveen\Blogs\Blog::class)->create([
@@ -61,12 +62,40 @@ class BlogRepositoryTest extends TestCase
             'online'           => 1,
         ]);
 
-        $blogs = $this->repository->published(5)->items();
+        $blogs = $this->repository->paginatedPublished(5)->items();
 
         $this->assertCount(2, $blogs);
         $this->assertEquals($blog3->title, $blogs[0]['title']);
         $this->assertEquals($blog2->title, $blogs[1]['title']);
         $this->assertNotContains($blog1, $blogs);
+    }
+
+    public function testAllPublishedReturnsCollection()
+    {
+        factory(Barryvanveen\Blogs\Blog::class, 20)->create();
+
+        $blogs = $this->repository->allPublished();
+
+        $this->assertInstanceOf(Collection::class, $blogs);
+    }
+
+    public function testAllPublishedReturnsAllPublishedArticlesInTheRightOrder()
+    {
+        factory(Barryvanveen\Blogs\Blog::class, 20)->create([
+            'publication_date' => '2015-01-02 12:00:00',
+            'online'           => 1,
+        ]);
+
+        /** @var Blog $unpublished_blog */
+        $unpublished_blog = factory(Barryvanveen\Blogs\Blog::class)->create([
+            'publication_date' => '2015-01-02 12:00:00',
+            'online'           => 0,
+        ]);
+
+        $blogs = $this->repository->allPublished();
+
+        $this->assertCount(20, $blogs);
+        $this->assertNotContains($unpublished_blog, $blogs);
     }
 
     public function testAllRetrievesAllBlogpostsInTheRightOrder()
@@ -163,15 +192,13 @@ class BlogRepositoryTest extends TestCase
             'online'           => 1,
         ]);
 
-        /** @var Blog $blog2 */
-        $blog2 = factory(Barryvanveen\Blogs\Blog::class)->create([
+        factory(Barryvanveen\Blogs\Blog::class)->create([
             'publication_date' => '2015-01-01 12:00:00',
             'updated_at'       => '2015-01-01 12:00:00',
             'online'           => 1,
         ]);
 
-        /** @var Blog $blog3 */
-        $blog3 = factory(Barryvanveen\Blogs\Blog::class)->create([
+        factory(Barryvanveen\Blogs\Blog::class)->create([
             'publication_date' => '2015-01-05 12:00:00',
             'online'           => 0,
         ]);

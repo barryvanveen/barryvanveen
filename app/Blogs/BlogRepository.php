@@ -9,15 +9,29 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class BlogRepository extends EloquentRepository
 {
     /**
-     * return all published blogposts.
+     * return a page of published blogposts.
+     *
+     * @param int $perPage
      *
      * @return Paginator
      */
-    public function published($perPage = 10)
+    public function paginatedPublished($perPage = 10)
     {
         return Blog ::published()
                     ->orderedNewToOld()
                     ->simplePaginate($perPage);
+    }
+
+    /**
+     * return all published blogposts.
+     *
+     * @return Collection
+     */
+    public function allPublished()
+    {
+        return Blog ::published()
+                    ->orderedNewToOld()
+                    ->get();
     }
 
     /**
