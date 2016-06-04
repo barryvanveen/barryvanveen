@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
+- Added ability to switch between log files in admin panel
 ### Changed
 - Switched to daily log files
 ### Deprecated
