@@ -6,6 +6,18 @@
         <h1 class="overview-heading">{{ trans('laravel-log-viewer.title') }}</h1>
     </div>
 
+    {!! Form::open(['route' => 'admin.logs', 'method' => 'get', 'class' => 'form-horizontal']) !!}
+        <legend>{{ trans('logs-admin.switch-logfile') }}</legend>
+        <div class="form-group">
+            <div class="col-xs-12 col-sm-10">
+                {{ Form::select('l', $files, $current_file, ['class' => 'form-control']) }}
+            </div>
+            <div class="col-xs-12 col-sm-2 ">
+                {!! Form::submit(trans('logs-admin.change'), ['class' => 'btn btn-primary']) !!}
+            </div>
+        </div>
+    {!! Form::close() !!}
+
     <div class="bs-component">
         <table class="table table-striped table-hover">
             <thead>
