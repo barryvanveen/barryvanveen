@@ -9,11 +9,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
-## [2.9.8] - 2015-02-23
+## [2.10.0] - 2016-06-04
+### Changed
+- Mail is now sent through Mailgun 
+### Fixed
+- Fixed dates in this changelog, many releases were wrongfully set to 2015 instead of 2016  
+
+## [2.9.8] - 2016-02-23
 ### Fixed
 - Sitemap now displays all published blogposts
 
-## [2.9.7] - 2015-02-19
+## [2.9.7] - 2016-02-19
 ### Changed
 - Changed .gitignore
 - Updated bower components
@@ -22,36 +28,36 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Fixed environment configuration examples
 - Fixed gulpfile
 
-## [2.9.6] - 2015-02-15
+## [2.9.6] - 2016-02-15
 ### Fixed
 - Required symfony/css-selector to fix LuckyTV RSS feed
 
-## [2.9.5] - 2015-02-15
+## [2.9.5] - 2016-02-15
 ### Fixed
 - Required symfony/dom-crawler to fix LuckyTV RSS feed, again
 
-## [2.9.4] - 2015-02-15
+## [2.9.4] - 2016-02-15
 ### Fixed
 - Required symfony/dom-crawler to fix LuckyTV RSS feed
 - Fixed last environment configuration using the config()-method
 
-## [2.9.3] - 2015-02-14
+## [2.9.3] - 2016-02-14
 ### Fixed
 - Fixed typo in list of service providers
 
-## [2.9.2] - 2015-02-14
+## [2.9.2] - 2016-02-14
 ### Changed
 - Updated Laravel Framework to version 5.2.15
 - Changed environment configuration to only use the config()-method
 
-## [2.9.1] - 2015-02-08
+## [2.9.1] - 2016-02-08
 ### Changed
 - Changed date format blog to English format
 - Redirect all traffic to https
 ### Removed
 - Removed datetimepicker Javascript plugin
 
-## [2.9.0] - 2015-02-05
+## [2.9.0] - 2016-02-05
 ### Added
 - Added fallback for loading CSS on browsers without Javascript support
 - Added gulp-clean to remove temporary files created by critical
@@ -60,13 +66,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Inlined lazyload.js in main template instead of loading it from the AssetComposer
 - Updated critical.css
 
-## [2.8.1] - 2015-02-01
+## [2.8.1] - 2016-02-01
 ### Added
 - Added Expire header for favicon
 ### Fixed
 - Fixed opening links with middle-clicks
 
-## [2.8.0] - 2015-01-26
+## [2.8.0] - 2016-01-26
 ### Added
 - Added inlined critical path CSS
 ### Changed
@@ -74,35 +80,35 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Fixed public_path() in tests
 
-## [2.7.6] - 2015-01-23
+## [2.7.6] - 2016-01-23
 ### Changed
 - Load jQuery from CDN
 
-## [2.7.5] - 2015-01-23
+## [2.7.5] - 2016-01-23
 ### Changed
 - Changed lazyloading for JS files
 - Changed RSS icon and moved it to the footer
 
-## [2.7.4] - 2015-01-22
+## [2.7.4] - 2016-01-22
 ### Added
 - Added cache control headers for fonts
 ### Changed
 - Changed font file names for cache busting
 
-## [2.7.3] - 2015-01-22
+## [2.7.3] - 2016-01-22
 ### Changed
 - Changed lazyloading to run after loading the page
 
-## [2.7.2] - 2015-01-19
+## [2.7.2] - 2016-01-19
 ### Changed
 - Include jQuery in main.js, do not load it from CDN
 
-## [2.7.1] - 2015-01-19
+## [2.7.1] - 2016-01-19
 ### Fixed
 - Fixed position of lazyload.js script 
 - Fixed Prism highlighting on blog
 
-## [2.7.0] - 2015-01-19
+## [2.7.0] - 2016-01-19
 ### Added
 - Added lazyloading for JS files
 ### Changed
@@ -113,18 +119,18 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Fixed bootstrap-datetimepicker problem with locale
 
-## [2.6.2] - 2015-01-12
+## [2.6.2] - 2016-01-12
 ### Fixed
 - Fixed references to js files in template
 
-## [2.6.1] - 2015-01-12
+## [2.6.1] - 2016-01-12
 ### Changed
 - Minified css with gulp-cssnano instead of gulp-sass
 ### Fixed
 - Fixed htaccess expire and cache-control headers
 - Fixed references to js files in AssetComposer
 
-## [2.6.0] - 2015-01-12
+## [2.6.0] - 2016-01-12
 ### Added
 - Added a Bing Webmaster Tools verification file
 - Added sourcemaps for css files
@@ -136,7 +142,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Minified css files
 - Moved all assets (css/js/fonts) to /public_html/dist directory
 
-## [2.5.1] - 2015-01-04
+## [2.5.1] - 2016-01-04
 ### Fixed
 - Fixed htaccess redirects from Dutch to English urls
 
