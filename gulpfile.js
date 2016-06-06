@@ -30,6 +30,9 @@ var config = {
             'bower_components/ajaxq/ajaxq.js',
             'resources/assets/js/admin.js'
         ],
+        gameoflife: [
+            'resources/assets/js/gameoflife.js'
+        ],
         prism: [
             // default
             'bower_components/prism/components/prism-core.js',
@@ -128,6 +131,16 @@ gulp.task('build-js', function () {
         .pipe(concat('admin.js'))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(config.outputDirs.js));
+
+    gulp.src(config.scripts.gameoflife)
+        .pipe(plumber({
+            errorHandler: onError
+        }))
+        .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(concat('gameoflife.js'))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.outputDirs.js));
 });
 
 /**
@@ -145,6 +158,10 @@ gulp.task('move', function () {
     gulp.src('bower_components/prism/themes/prism-okaidia.css')
         .pipe(rename("prism-okaidia.scss"))
         .pipe(gulp.dest('resources/assets/scss/bower_components'));
+
+    gulp.src('bower_components/gameoflife/dist/gameoflife.min.js')
+        .pipe(rename("gameoflife.js"))
+        .pipe(gulp.dest('resources/assets/js'));
 });
 
 /**
