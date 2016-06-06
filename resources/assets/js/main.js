@@ -4,6 +4,7 @@ window.Barryvanveen.main = function() {
 	window.Barryvanveen.smoothScrollToHash();
 	window.Barryvanveen.initScrollUp();
 	window.Barryvanveen.initOutgoingLinkListeners();
+	window.Barryvanveen.initGameoflife();
 
 	Prism.highlightAll();
 
@@ -82,6 +83,10 @@ window.Barryvanveen.initOutgoingLinkListeners = function() {
             return;
         }
 
+		if (typeof(ga) == "undefined") {
+			return;
+		}
+
         // track clicks to external websites
         ga('send', 'event', 'outbound', 'click', e.target.href, {'hitCallback':
             function () {
@@ -92,6 +97,32 @@ window.Barryvanveen.initOutgoingLinkListeners = function() {
             }
         });
     });
+
+};
+
+window.Barryvanveen.initGameoflife = function() {
+
+	if ($("#gameoflife_canvas").length == 0) {
+		return;
+	}
+
+	LazyLoad.js('dist/js/gameoflife.min.js', window.Barryvanveen.startGameoflife);
+
+};
+
+window.Barryvanveen.startGameoflife = function() {
+
+	window.Barryvanveen.gameoflife = new GameOfLife({
+		num_cols: 111,
+		num_rows: 51,
+		cell_size: 5,
+		color_cell_alive: '#4582ec'
+	});
+
+	$('.js-gameoflife-start').click(function() {window.Barryvanveen.gameoflife.start();});
+	$('.js-gameoflife-step').click(function() {window.Barryvanveen.gameoflife.step();});
+	$('.js-gameoflife-stop').click(function() {window.Barryvanveen.gameoflife.stop();});
+	$('.js-gameoflife-reset').click(function() {window.Barryvanveen.gameoflife.reset();});
 
 };
 

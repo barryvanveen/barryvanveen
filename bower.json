@@ -24,7 +24,8 @@
     "autosize": "~2.0.0",
     "ajaxq": "~0.0.2",
     "prism": "*",
-    "jquery": "1.11.2"
+    "jquery": "1.11.2",
+    "gameoflife": "^1.0.3"
   },
   "install": {
     "path": "resources/assets/bower",
