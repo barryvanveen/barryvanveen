@@ -4,12 +4,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
-- Added ability to switch between log files in admin panel
 ### Changed
-- Switched to daily log files
 ### Deprecated
 ### Removed
 ### Fixed
+
+## [2.10.1] - 2016-06-06
+### Added
+- Added ability to switch between log files in admin panel
+- Added gameoflife script
+### Changed
+- Switched to daily log files
 
 ## [2.10.0] - 2016-06-04
 ### Changed
