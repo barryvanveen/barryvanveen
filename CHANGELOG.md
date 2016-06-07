@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.10.2] - 2016-06-07
+### Fixed
+- Fixed problem with loading file /dist/js/gameoflife.js
+
 ## [2.10.1] - 2016-06-06
 ### Added
 - Added ability to switch between log files in admin panel
