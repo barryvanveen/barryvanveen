@@ -28,9 +28,11 @@
                             </li>
                         @endforeach
                     </ul>
-                    <p class="navbar-text navbar-right">
-                        {{ trans('nav.signed-in-as') }} {{ $current_user->full_name }}.
-                        <a href="{{ route('admin.logout') }}">{{ trans('nav.sign-out') }}</a>.</p>
+                    @if($current_user != null)
+                        <p class="navbar-text navbar-right">
+                            {{ trans('nav.signed-in-as') }} {{ $current_user->full_name }}.
+                            <a href="{{ route('admin.logout') }}">{{ trans('nav.sign-out') }}</a>.</p>
+                    @endif
                 @else
                     <ul class="nav navbar-nav">
                         @foreach($mainnav as $navitem)
