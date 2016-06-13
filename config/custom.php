@@ -4,13 +4,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Google Analytics code
+    | Google Tag Manager code
     |--------------------------------------------------------------------------
     |
-    | This is the Google Analytics code that the website uses.
+    | This is the Google Tag Manager code that the website uses.
     |
     */
-    'google_analytics_code' => env('GA_CODE'),
+    'gtm_code' => env('GTM_CODE'),
 
     /*
     |--------------------------------------------------------------------------
