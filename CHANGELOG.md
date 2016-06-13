@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.10.3] - 2016-06-13
+### Added
+- Added Google Tag Manager code and related configuration
+### Removed
+- Removed Google Analytics code and related configuration
+### Fixed
+- Fixed missing check for variable existence in header.blade.php
+
 ## [2.10.2] - 2016-06-07
 ### Fixed
 - Fixed problem with loading file /dist/js/gameoflife.js
