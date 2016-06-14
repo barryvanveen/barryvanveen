@@ -175,6 +175,7 @@ return [
         /*
          * Vendor Service Providers
          */
+        Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Collective\Remote\RemoteServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
@@ -238,6 +239,7 @@ return [
         /*
          * Vendor Aliases
          */
+        'Bugsnag'         => Bugsnag\BugsnagLaravel\BugsnagFacade::class,
         'DiffFormatter'   => Laravelrus\LocalizedCarbon\DiffFactoryFacade::class,
         'Feed'            => Roumen\Feed\Facades\Feed::class,
         'Flash'           => Laracasts\Flash\Flash::class,

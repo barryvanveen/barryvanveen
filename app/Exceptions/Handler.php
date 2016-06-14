@@ -1,14 +1,12 @@
 <?php
 namespace Barryvanveen\Exceptions;
 
-use App;
-use Barryvanveen\Mailers\ExceptionMailer;
+use Bugsnag;
+use Bugsnag\BugsnagLaravel\BugsnagExceptionHandler as ExceptionHandler;
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Session\TokenMismatchException;
 use Input;
-use Log;
 use Meta;
 use Redirect;
 use Response;
@@ -28,27 +26,15 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * Report or log an exception.
-     *
-     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
+     * Log exceptions to Bugsnag and write them to the log file.
      *
      * @param \Exception $e
      */
     public function report(Exception $e)
     {
-        $context = [
-            'referer' => \URL::previous(),
-            'url'     => \URL::current(),
-            'ip'      => \Request::ip(),
-        ];
+        Bugsnag::setAppVersion(config('app.version'));
 
-        Log::error($e, $context);
-
-        if (!config('app.debug')) {
-            /** @var ExceptionMailer $mailer */
-            $mailer = App::make('Barryvanveen\Mailers\ExceptionMailer');
-            $mailer->sendExceptionMail($e, $context);
-        }
+        parent::report($e);
     }
 
     /**
