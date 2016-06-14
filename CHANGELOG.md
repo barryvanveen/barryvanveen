@@ -9,6 +9,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.11.0] - 2016-06-14
+### Added
+- Added HTTP errorcodes to javascript variables available in DOM
+- Added integration with Bugsnag for exception tracking
+### Removed
+- Removed ExceptionMailer usage for tracking exceptions due to Bugsnag integration
+
 ## [2.10.3] - 2016-06-13
 ### Added
 - Added Google Tag Manager code and related configuration
