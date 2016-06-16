@@ -61,7 +61,6 @@ class BlogController extends Controller
             new MarkdownToHtml($blog->summary)
         );
 
-        $this->setPageTitle(trans('meta.pagetitle-blog'));
         $this->setPageTitle($blog->title);
         $this->setMetaDescription($summary_html);
 

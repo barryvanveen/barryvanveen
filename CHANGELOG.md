@@ -4,7 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
+- Added character counter for blog description field in admin panel
 ### Changed
+- Changed some translations for page titles and meta descriptions
+- Changed heading on homepage
 ### Deprecated
 ### Removed
 ### Fixed

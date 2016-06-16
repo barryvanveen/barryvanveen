@@ -46,6 +46,10 @@
         <div class="form-group @if($errors->has('summary')) has-error @endif">
             {!! Form::label('summary', trans('blog-admin.summary'), ['class' => 'control-label form__label']) !!}
             {!! Form::textarea('summary', $blog->summary, ['class' => 'form-control js-markdown-editor']) !!}
+            <span class="help-block">
+                <span class="js-character-counter" data-character-counter-name="summary"></span>
+                {{ trans('general.characters')}} ({{ trans('general.ideal-length-120-170') }})
+            </span>
         </div>
     </div>
     <div class="col-sm-12 col-md-6">

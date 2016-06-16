@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'pagetitle-403' => 'Access denied - Barry van Veen',
-    'pagetitle-404' => 'Page not found - Barry van Veen',
-    'pagetitle-500' => 'Unknown error - Barry van Veen',
+    'pagetitle-403' => 'Access denied',
+    'pagetitle-404' => 'Page not found',
+    'pagetitle-500' => 'Unknown error',
 
-    'pagetitle-default' => 'Barry van Veen',
+    'pagetitle-default' => 'A blog about Laravel Framework, web development and related stuff | Barry van Veen',
 
     'pagetitle-admin-blog'        => 'Blog -- overview',
     'pagetitle-admin-blog-create' => 'Blog -- add',
@@ -17,5 +17,5 @@ return [
     'pagetitle-admin-page-create' => 'Pagina\'s -- add',
     'pagetitle-admin-page-edit'   => 'Pagina\'s -- edit',
 
-    'pagetitle-blog' => 'Blog',
+    'pagetitle-blog' => 'All articles',
 ];
