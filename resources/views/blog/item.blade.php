@@ -7,7 +7,7 @@
             <header class="blog-item__heading">
                 <h1 itemprop="headline">{{$blog->title}}</h1>
                 <p class="blog-item__heading-meta" title="{{$blog->publication_date_formatted}}">
-                    <time itemprop="datePublished" content="{{$blog->publication_date_formatted_rfc3339}}">
+                    <time itemprop="datePublished" datetime="{{$blog->publication_date_formatted_rfc3339}}">
                         {{$blog->publication_date_for_humans}}
                     </time>
                 </p>

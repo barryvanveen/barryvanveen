@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Deprecated
 ### Removed
 ### Fixed
+- Fixed HTML that did not pass validation 
 
 ## [2.11.0] - 2016-06-14
 ### Added
