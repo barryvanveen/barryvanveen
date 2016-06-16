@@ -4,12 +4,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+
+## [2.11.1] - 2016-06-16
+### Added
 - Added character counter for blog description field in admin panel
 ### Changed
 - Changed some translations for page titles and meta descriptions
 - Changed heading on homepage
-### Deprecated
-### Removed
 ### Fixed
 - Fixed HTML that did not pass validation 
 
