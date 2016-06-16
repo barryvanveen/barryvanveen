@@ -8,6 +8,7 @@ window.Barryvanveen.admin = function() {
 	window.Barryvanveen.initClickableTableRows();
     window.Barryvanveen.initAutosizeTextareas();
 	window.Barryvanveen.initMarkdownEditors();
+    window.Barryvanveen.initCharacterCounters();
     window.Barryvanveen.initLogModal();
 
 };
@@ -110,6 +111,43 @@ window.Barryvanveen.initMarkdownEditors = function() {
     });
 
 };
+
+/**
+ * turn an element into a character counter
+ *
+ * @param element
+ */
+window.Barryvanveen.CharacterCounter = function(element) {
+
+    // store elements
+    var $counter = $(element);
+    var inputname = $counter.data('character-counter-name');
+    var $input = $('textarea[name="'+inputname+'"]');
+
+    // update the ounter
+    this.updateCounter = function () {
+        $counter.html($input.val().length);
+    };
+
+    // update the counter on keyUp
+    $input.keyup(this.updateCounter);
+
+    // start with filling the counter
+    this.updateCounter();
+
+};
+
+/**
+ * init character counters
+ */
+window.Barryvanveen.initCharacterCounters = function() {
+
+    $('.js-character-counter').each(function(index, element) {
+        window.Barryvanveen.counter = new window.Barryvanveen.CharacterCounter(element);
+    });
+
+};
+
 
 /**
  * init log table

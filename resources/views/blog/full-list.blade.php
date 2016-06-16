@@ -4,8 +4,7 @@
 
     <section class="previewContainer" itemscope itemtype="https://schema.org/Blog">
         <div class="page-header">
-            <h1>{{ trans('general.homepage-title') }}</h1>
-            <p class="lead" itemprop="about">{{ trans('general.homepage-subtitle') }}</p>
+            <h1 itemprop="about" class="lead">{{ trans('general.homepage-title') }}</h1>
         </div>
 
         @foreach($blogs as $blog)

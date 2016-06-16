@@ -9,6 +9,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.11.1] - 2016-06-16
+### Added
+- Added character counter for blog description field in admin panel
+### Changed
+- Changed some translations for page titles and meta descriptions
+- Changed heading on homepage
+### Fixed
+- Fixed HTML that did not pass validation 
+
 ## [2.11.0] - 2016-06-14
 ### Added
 - Added HTTP errorcodes to javascript variables available in DOM

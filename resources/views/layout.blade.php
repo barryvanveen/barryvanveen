@@ -22,6 +22,12 @@
         <style type="text/css" media="screen">{!! $critical_css !!}</style>
 
         <link media="print" type="text/css" rel="stylesheet" href="{!! url($assets['dist/css/print.css']) !!}">
+
+        <noscript>
+            <style type="text/css" media="all">@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");</style>
+            <link href="{!! url($assets['dist/css/screen.css']) !!}" rel="stylesheet" type="text/css" media="screen">
+        </noscript>
+
 	</head>
 	<body itemscope itemtype="http://schema.org/WebPage">
 
@@ -65,11 +71,6 @@
                 ]);
             });
         </script>
-
-        <noscript>
-            <style type="text/css" media="all">@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");</style>
-            <link href="{!! url($assets['dist/css/screen.css']) !!}" rel="stylesheet" type="text/css" media="screen">
-        </noscript>
 
     </body>
 </html>
