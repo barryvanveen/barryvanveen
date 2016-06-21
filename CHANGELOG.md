@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Deprecated
 ### Removed
 ### Fixed
+- Prevent duplicate page titles and meta descriptions
 
 ## [2.11.1] - 2016-06-16
 ### Added

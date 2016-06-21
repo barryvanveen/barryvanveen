@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'description-blog' => 'An overview of all articles. Topics include Laravel Framework, Gulp, Google Analytics, 
+    Google PageSpeed, and others.',
+
     'pagetitle-403' => 'Access denied',
     'pagetitle-404' => 'Page not found',
     'pagetitle-500' => 'Unknown error',
@@ -18,4 +21,5 @@ return [
     'pagetitle-admin-page-edit'   => 'Pagina\'s -- edit',
 
     'pagetitle-blog' => 'All articles',
+    'pagetitle-pagination' => 'Page :page',
 ];
