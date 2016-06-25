@@ -67,39 +67,6 @@ window.Barryvanveen.initScrollUp = function() {
 
 };
 
-/**
- * init listeners for outgoing links
- */
-window.Barryvanveen.initOutgoingLinkListeners = function() {
-
-    $(window).click(function(e) {
-        // ignore clicks on all elements excepts links
-        if (e.target.nodeName != 'A') {
-            return;
-        }
-
-        // ignore clicks on links to this website
-        if (e.target.href.indexOf(Barryvanveen.baseurl) == 0) {
-            return;
-        }
-
-		if (typeof(ga) == "undefined") {
-			return;
-		}
-
-        // track clicks to external websites
-        ga('send', 'event', 'outbound', 'click', e.target.href, {'hitCallback':
-            function () {
-                // redirect if it was a normal mouseclick
-                if (e.which == 1)  {
-                    document.location = e.target.href;
-                }
-            }
-        });
-    });
-
-};
-
 window.Barryvanveen.initGameoflife = function() {
 
 	if ($("#gameoflife_canvas").length == 0) {
