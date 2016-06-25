@@ -6,6 +6,7 @@ use Barryvanveen\Jobs\Blogs\GetBlogRssXml;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Barryvanveen\Pagination\SimplePaginatorPresenter;
 use Redirect;
+use Request;
 use Response;
 use View;
 
@@ -35,7 +36,13 @@ class BlogController extends Controller
         $presenter = new SimplePaginatorPresenter($blogs);
 
         $this->setPageTitle(trans('meta.pagetitle-blog'));
-        $this->setMetaDescription(trans('general.blog-description'));
+        $this->setMetaDescription(trans('meta.description-blog'));
+
+        if (Request::has('page') && Request::get('page') > 1) {
+            $this->setPageTitle(trans('meta.pagetitle-pagination', ['page' => Request::get('page')]));
+            $this->setMetaDescription(trans('meta.pagetitle-pagination', ['page' => Request::get('page')]) . '. '
+                . trans('meta.description-blog'));
+        }
 
         return View::make('blog.full-list', compact('blogs', 'presenter'));
     }
