@@ -3,7 +3,6 @@ window.Barryvanveen = window.Barryvanveen || {};
 window.Barryvanveen.main = function() {
 	window.Barryvanveen.smoothScrollToHash();
 	window.Barryvanveen.initScrollUp();
-	window.Barryvanveen.initOutgoingLinkListeners();
 	window.Barryvanveen.initGameoflife();
 
 	Prism.highlightAll();
