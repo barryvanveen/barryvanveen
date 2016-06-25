@@ -12,6 +12,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Prevent duplicate page titles and meta descriptions
 - Fixed link to sitemap
 
+## [2.11.2] - 2016-06-25
+### Changed
+- Updated eusonlito/laravel-meta for better meta tags
+### Fixed
+- Prevent duplicate page titles and meta descriptions
+- Fixed link to sitemap
+
 ## [2.11.1] - 2016-06-16
 ### Added
 - Added character counter for blog description field in admin panel
