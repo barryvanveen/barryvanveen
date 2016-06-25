@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.11.4] - 2016-06-25
+### Removed
+- Removed old references to initOutgoingLinkListeners 
+
 ## [2.11.3] - 2016-06-25
 ### Changed
 - Updated outdated npm packages
