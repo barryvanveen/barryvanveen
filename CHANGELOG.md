@@ -5,12 +5,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 ### Changed
-- Updated eusonlito/laravel-meta for better meta tags
 ### Deprecated
 ### Removed
 ### Fixed
-- Prevent duplicate page titles and meta descriptions
-- Fixed link to sitemap
+
+## [2.11.3] - 2016-06-25
+### Changed
+- Updated outdated npm packages
+- Updated outdated bower packages
+### Removed
+- Removed Javascript function to track outbound links, this is now done by Google Tag Manager 
 
 ## [2.11.2] - 2016-06-25
 ### Changed
