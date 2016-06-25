@@ -19,14 +19,13 @@ var config = {
         main: [
             'bower_components/html5shiv/dist/html5shiv.js',
             'bower_components/respond/dest/respond.matchmedia.addListener.src.js',
-            'bower_components/moment/moment.js',
             'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
             'bower_components/scrollup/dist/jquery.scrollUp.js',
             'bower_components/prism/prism.custom.min.js',
             'resources/assets/js/main.js'
         ],
         admin: [
-            'bower_components/autosize/dest/autosize.js',
+            'bower_components/autosize/dist/autosize.js',
             'bower_components/ajaxq/ajaxq.js',
             'resources/assets/js/admin.js'
         ],

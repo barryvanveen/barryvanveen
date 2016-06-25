@@ -19,13 +19,13 @@
   "dependencies": {
     "respond": "~1.4.2",
     "bootstrap-sass-official": "3.3.6",
-    "html5shiv": "~3.7.2",
-    "scrollup": "~2.4.0",
-    "autosize": "~2.0.0",
-    "ajaxq": "~0.0.2",
-    "prism": "*",
+    "html5shiv": "~3.7.3",
+    "scrollup": "~2.4.1",
+    "autosize": "~3.0.15",
+    "ajaxq": "~0.0.7",
+    "prism": "~1.5.1",
     "jquery": "1.11.2",
-    "gameoflife": "^1.0.3"
+    "gameoflife": "^1.1.0"
   },
   "install": {
     "path": "resources/assets/bower",
