@@ -7,13 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <title>{{ Meta::meta('title') }}</title>
         {!! Meta::tag('title') !!}
         {!! Meta::tag('description') !!}
 
-        {!! Meta::tagMetaProperty('site_name', 'Barry van Veen') !!}
-        {!! Meta::tagMetaProperty('url', Request::url()) !!}
-        {!! Meta::tagMetaProperty('locale', 'en_EN') !!}
+        {!! Meta::tag('site_name', 'Barry van Veen') !!}
+        {!! Meta::tag('url', Request::url()) !!}
+        {!! Meta::tag('locale', 'en_EN') !!}
 
         <link href="{{ route('blog-rss') }}" rel="alternate" type="application/rss+xml" title="{{ trans('general.blog-rss-title') }}" />
         <link rel="shortcut icon" type="image/ico" href="{{ url('favicon.ico') }}">

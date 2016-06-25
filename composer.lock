@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "37acb464b8653f7ad42121b22792a494",
-    "content-hash": "2817133798c390d58fe92485462086fb",
+    "hash": "5e20ca79e86a260c72b5c8b24bcabf48",
+    "content-hash": "e825e0c680fd2fd2483db142a50ab9ca",
     "packages": [
         {
             "name": "bugsnag/bugsnag",
@@ -872,16 +872,16 @@
         },
         {
             "name": "eusonlito/laravel-meta",
-            "version": "dev-master",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eusonlito/laravel-Meta.git",
-                "reference": "c3b69cd19b5b39070862aed348793bf0e79a0b79"
+                "reference": "dd43eaebbcbebc9fefb6e4622f611db2e0eb3f1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eusonlito/laravel-Meta/zipball/01f4e343bda3a5a638a1cc2b07ae7bc1f375c0eb",
-                "reference": "c3b69cd19b5b39070862aed348793bf0e79a0b79",
+                "url": "https://api.github.com/repos/eusonlito/laravel-Meta/zipball/dd43eaebbcbebc9fefb6e4622f611db2e0eb3f1a",
+                "reference": "dd43eaebbcbebc9fefb6e4622f611db2e0eb3f1a",
                 "shasum": ""
             },
             "require": {
@@ -913,7 +913,7 @@
                 "meta",
                 "tags"
             ],
-            "time": "2015-12-09 18:53:48"
+            "time": "2016-05-26 06:56:54"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -5123,7 +5123,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "eusonlito/laravel-meta": 20,
         "laravelrus/localized-carbon": 20
     },
     "prefer-stable": false,
