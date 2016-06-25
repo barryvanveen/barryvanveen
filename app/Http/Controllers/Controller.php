@@ -40,12 +40,12 @@ abstract class Controller extends BaseController
     protected function setPageTitle($title, $append = true)
     {
         if ($append) {
-            $old_title = Meta::title();
+            $old_title = Meta::get('title');
 
             $title = $title.' - '.$old_title;
         }
 
-        Meta::title($title);
+        Meta::set('title', $title);
     }
 
     /**
@@ -57,6 +57,6 @@ abstract class Controller extends BaseController
     {
         $description = strip_tags($description);
 
-        Meta::meta('description', $description);
+        Meta::set('description', $description);
     }
 }

@@ -81,7 +81,7 @@ class Handler extends ExceptionHandler
 
         // route not found
         if ($e instanceof NotFoundHttpException) {
-            Meta::title(trans('meta.pagetitle-404') . ' - ' . trans('meta.pagetitle-default'));
+            Meta::set('title', trans('meta.pagetitle-404') . ' - ' . trans('meta.pagetitle-default'));
 
             JavaScript::put(array(
                 'errorcode' => 404
@@ -92,7 +92,7 @@ class Handler extends ExceptionHandler
 
         // model not found
         if ($e instanceof ModelNotFoundException) {
-            Meta::title(trans('meta.pagetitle-404') . ' - ' . trans('meta.pagetitle-default'));
+            Meta::set('title', trans('meta.pagetitle-404') . ' - ' . trans('meta.pagetitle-default'));
 
             JavaScript::put(array(
                 'errorcode' => 404
@@ -103,7 +103,7 @@ class Handler extends ExceptionHandler
 
         // not authorized to see this route
         if ($e instanceof MethodNotAllowedHttpException) {
-            Meta::title(trans('meta.pagetitle-403') . ' - ' . trans('meta.pagetitle-default'));
+            Meta::set('title', trans('meta.pagetitle-403') . ' - ' . trans('meta.pagetitle-default'));
 
             JavaScript::put(array(
                 'errorcode' => 403
@@ -113,7 +113,7 @@ class Handler extends ExceptionHandler
         }
 
         // general error
-        Meta::title(trans('meta.pagetitle-500') . ' - ' . trans('meta.pagetitle-default'));
+        Meta::set('title', trans('meta.pagetitle-500') . ' - ' . trans('meta.pagetitle-default'));
 
         JavaScript::put(array(
             'errorcode' => 500
