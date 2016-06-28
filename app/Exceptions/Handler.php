@@ -7,11 +7,11 @@ use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Session\TokenMismatchException;
 use Input;
-use JavaScript;
 use Meta;
 use Redirect;
 use Response;
 use Session;
+use GoogleTagManager;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use View;
@@ -83,9 +83,7 @@ class Handler extends ExceptionHandler
         if ($e instanceof NotFoundHttpException) {
             Meta::set('title', trans('meta.pagetitle-404') . ' - ' . trans('meta.pagetitle-default'));
 
-            JavaScript::put(array(
-                'errorcode' => 404
-            ));
+            GoogleTagManager::set('errorcode', '404');
 
             return Response::make(View::make('templates.404'), 404);
         }
@@ -94,9 +92,7 @@ class Handler extends ExceptionHandler
         if ($e instanceof ModelNotFoundException) {
             Meta::set('title', trans('meta.pagetitle-404') . ' - ' . trans('meta.pagetitle-default'));
 
-            JavaScript::put(array(
-                'errorcode' => 404
-            ));
+            GoogleTagManager::set('errorcode', '404');
 
             return Response::make(View::make('templates.404'), 404);
         }
@@ -105,9 +101,7 @@ class Handler extends ExceptionHandler
         if ($e instanceof MethodNotAllowedHttpException) {
             Meta::set('title', trans('meta.pagetitle-403') . ' - ' . trans('meta.pagetitle-default'));
 
-            JavaScript::put(array(
-                'errorcode' => 403
-            ));
+            GoogleTagManager::set('errorcode', '403');
 
             return Response::make(View::make('templates.403'), 403);
         }
@@ -115,9 +109,7 @@ class Handler extends ExceptionHandler
         // general error
         Meta::set('title', trans('meta.pagetitle-500') . ' - ' . trans('meta.pagetitle-default'));
 
-        JavaScript::put(array(
-            'errorcode' => 500
-        ));
+        GoogleTagManager::set('errorcode', '500');
 
         return Response::make(View::make('templates.500'), 500);
     }
