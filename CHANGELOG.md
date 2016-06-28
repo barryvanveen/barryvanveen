@@ -9,6 +9,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.11.5] - 2016-06-28
+### Added
+- Added spatie/googletagmanager for managing GTM's DataLayer variables
+### Removed
+- Removed errorcode in Javascript variables
+
 ## [2.11.4] - 2016-06-25
 ### Removed
 - Removed old references to initOutgoingLinkListeners 

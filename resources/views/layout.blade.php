@@ -30,7 +30,7 @@
 	</head>
 	<body itemscope itemtype="http://schema.org/WebPage">
 
-		@include('layouts.partials.analytics')
+        @include('googletagmanager::script')
 
 		@include('layouts.partials.header')
 

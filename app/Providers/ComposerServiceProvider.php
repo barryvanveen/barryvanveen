@@ -31,11 +31,5 @@ class ComposerServiceProvider extends ServiceProvider
             $view->with('is_admin', (Request::segment(1) === 'admin' && Request::segment(2) !== 'inloggen'))
                  ->with('current_user', Auth::user());
         });
-
-        // GA tracking code
-        $view->composer('layouts.partials.analytics', function ($view) {
-            /* @var View $view */
-            $view->with('gtm_code', config('custom.gtm_code'));
-        });
     }
 }
