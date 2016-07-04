@@ -70,6 +70,16 @@ class Blog extends Model implements SluggableInterface, HasPresenter
     ];
 
     /**
+     * A blog can have many comments
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany(\Barryvanveen\Comments\Comment::class);
+    }
+
+    /**
      * select only blogs that are online and have a publication_date in the past.
      *
      * @param Builder $query
