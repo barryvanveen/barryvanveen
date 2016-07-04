@@ -39,6 +39,36 @@ $factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
     ];
 });
 
+    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'published', function($faker) use ($factory) {
+        /* @var Faker\Generator $faker */
+        $blog = $factory->raw(Barryvanveen\Blogs\Blog::class);
+
+        $blog['publication_date'] = $faker->dateTime;
+        $blog['online'] = 1;
+
+        return $blog;
+    });
+
+    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'unpublished-offline', function($faker) use ($factory) {
+        /* @var Faker\Generator $faker */
+        $blog = $factory->raw(Barryvanveen\Blogs\Blog::class);
+
+        $blog['publication_date'] = $faker->dateTime;
+        $blog['online'] = 0;
+
+        return $blog;
+    });
+
+    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'unpublished-future', function($faker) use ($factory) {
+        /* @var Faker\Generator $faker */
+        $blog = $factory->raw(Barryvanveen\Blogs\Blog::class);
+
+        $blog['publication_date'] = $faker->dateTimeBetween('+1 day', '+2 days');
+        $blog['online'] = 1;
+
+        return $blog;
+    });
+
 $factory->define(Barryvanveen\Pages\Page::class, function ($faker) {
     /* @var Faker\Generator $faker */
     $title = $faker->sentence;
