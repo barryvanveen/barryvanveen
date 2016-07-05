@@ -19,4 +19,8 @@
         </article>
     </main>
 
+    <section>
+        <h2>{{ trans('comments.title') }}</h2>
+        @each('comments.item', $blog->comments, 'comment', 'comments.no-items')
+    </section>
 @stop

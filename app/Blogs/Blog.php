@@ -70,6 +70,15 @@ class Blog extends Model implements SluggableInterface, HasPresenter
     ];
 
     /**
+     * A list of all relations that should be lazy-loaded
+     *
+     * @var array
+     */
+    protected $with = [
+        'comments'
+    ];
+
+    /**
      * A blog can have many comments
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

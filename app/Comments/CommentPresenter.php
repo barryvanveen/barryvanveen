@@ -5,16 +5,8 @@ use McCool\LaravelAutoPresenter\BasePresenter;
 
 class CommentPresenter extends BasePresenter
 {
-    /** Blog $resource */
-    protected $resource;
-
-    /**
-     * @param Comment $resource
-     */
-    public function __construct(Comment $resource)
-    {
-        $this->resource = $resource;
-    }
+    /** Comment $wrappedObject */
+    protected $wrappedObject;
 
     /**
      * Get route to edit blog in admin section.
@@ -23,7 +15,7 @@ class CommentPresenter extends BasePresenter
      */
     public function admin_edit_url()
     {
-        return route('admin.comment-edit', [$this->resource->id]);
+        return route('admin.comment-edit', [$this->wrappedObject->id]);
     }
 
     /**
@@ -31,7 +23,7 @@ class CommentPresenter extends BasePresenter
      */
     public function id()
     {
-        return $this->resource->id;
+        return $this->wrappedObject->id;
     }
 
     /**
@@ -39,6 +31,6 @@ class CommentPresenter extends BasePresenter
      */
     public function text()
     {
-        return $this->resource->text;
+        return $this->wrappedObject->text;
     }
 }

@@ -69,6 +69,13 @@ $factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
         return $blog;
     });
 
+$factory->define(Barryvanveen\Comments\Comment::class, function ($faker) {
+    /* @var Faker\Generator $faker */
+    return [
+        'text'  => $faker->paragraph,
+    ];
+});
+
 $factory->define(Barryvanveen\Pages\Page::class, function ($faker) {
     /* @var Faker\Generator $faker */
     $title = $faker->sentence;
