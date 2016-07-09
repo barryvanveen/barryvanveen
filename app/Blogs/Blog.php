@@ -1,6 +1,7 @@
 <?php
 namespace Barryvanveen\Blogs;
 
+use Barryvanveen\Comments\Comment;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -85,7 +86,7 @@ class Blog extends Model implements SluggableInterface, HasPresenter
      */
     public function comments()
     {
-        return $this->hasMany(\Barryvanveen\Comments\Comment::class);
+        return $this->hasMany(Comment::class)->orderBy('created_at');
     }
 
     /**

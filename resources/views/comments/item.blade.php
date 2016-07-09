@@ -1,4 +1,5 @@
 <div class="comment">
-    {{$comment->text}}
+    <a name="comment-{{$comment->id}}"></a>
+    {{$comment->created_at}} {{$comment->text}}
     <hr>
 </div>

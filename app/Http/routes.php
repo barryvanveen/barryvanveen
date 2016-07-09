@@ -24,6 +24,11 @@ Route::get('blog/{id}-{slug}', [
     'uses' => 'BlogController@show',
 ]);
 
+Route::post('blog/{id}-{slug}/create-comment', [
+    'as'   => 'blog-comment',
+    'uses' => 'BlogController@createComment',
+]);
+
 Route::get('rss', [
     'as'   => 'blog-rss',
     'uses' => 'BlogController@rss',

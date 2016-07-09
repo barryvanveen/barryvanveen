@@ -11,11 +11,13 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  *
  * @property int $id
  * @property int $blog_id
+ * @property string $email
  * @property string $text
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property-read Blog $blog
  * @method static Builder|Comment whereId($value)
+ * @method static Builder|Comment whereEmail($value)
  * @method static Builder|Comment whereText($value)
  * @method static Builder|Comment whereCreatedAt($value)
  * @method static Builder|Comment whereUpdatedAt($value)
@@ -36,6 +38,7 @@ class Comment extends Model implements HasPresenter
      * @var array
      */
     protected $fillable = [
+        'email',
         'text',
     ];
 
