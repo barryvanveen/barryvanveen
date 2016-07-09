@@ -6,10 +6,11 @@
         <article class="blog-item" itemscope itemtype="https://schema.org/BlogPosting">
             <header class="blog-item__heading">
                 <h1 itemprop="headline">{{$blog->title}}</h1>
-                <p class="blog-item__heading-meta" title="{{$blog->publication_date_formatted}}">
-                    <time itemprop="datePublished" datetime="{{$blog->publication_date_formatted_rfc3339}}">
-                        {{$blog->publication_date_for_humans}}
-                    </time>
+                <p class="blog-item__heading-meta">
+                    <time itemprop="datePublished"
+                          datetime="{{$blog->publication_date_formatted_rfc3339}}"
+                          title="{{$blog->publication_date_formatted}}">{{$blog->publication_date_for_humans}}</time>,
+                    {{trans_choice('comments.number-of-comments', $blog->comments->count(), ['count' => $blog->comments->count()])}}
                 </p>
             </header>
 

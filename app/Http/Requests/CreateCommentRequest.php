@@ -37,9 +37,9 @@ class CreateCommentRequest extends Request
     public function messages()
     {
         return [
-            'email.required' => trans('comments.validation-error-email'),
-            'email.email' => trans('comments.validation-error-email'),
-            'text.required' => trans('comments.validation-error-text'),
+            'email.required' => trans('validation.email-required'),
+            'email.email' => trans('validation.email-email'),
+            'text.required' => trans('validation.message-required'),
         ];
     }
 
