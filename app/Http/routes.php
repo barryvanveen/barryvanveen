@@ -118,6 +118,21 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'sitemap' => ['hidden
             'uses' => 'AdminBlogController@update',
         ]);
 
+        Route::get('comments', [
+            'as'   => 'admin.comments',
+            'uses' => 'AdminCommentsController@index',
+        ]);
+
+        Route::get('comments/{commentId}/edit', [
+            'as'   => 'admin.comments-edit',
+            'uses' => 'AdminCommentsController@edit',
+        ]);
+
+        Route::patch('comments/{commentId}', [
+            'as'   => 'admin.comments-update',
+            'uses' => 'AdminCommentsController@update',
+        ]);
+
         Route::get('pages', [
             'as'   => 'admin.page',
             'uses' => 'AdminPageController@index',

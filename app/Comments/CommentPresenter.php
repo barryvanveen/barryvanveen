@@ -15,7 +15,7 @@ class CommentPresenter extends BasePresenter
      */
     public function admin_edit_url()
     {
-        return route('admin.comment-edit', [$this->wrappedObject->id]);
+        return route('admin.comments-edit', [$this->wrappedObject->id]);
     }
 
     /**

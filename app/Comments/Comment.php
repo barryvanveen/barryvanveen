@@ -21,6 +21,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @method static Builder|Comment whereText($value)
  * @method static Builder|Comment whereCreatedAt($value)
  * @method static Builder|Comment whereUpdatedAt($value)
+ * @method static Builder|Comment orderedNewToOld()
  */
 class Comment extends Model implements HasPresenter
 {
@@ -50,6 +51,18 @@ class Comment extends Model implements HasPresenter
     public function blog()
     {
         return $this->belongsTo(Blog::class);
+    }
+
+    /**
+     * order the results by descending publication date.
+     *
+     * @param Builder $query
+     *
+     * @return mixed
+     */
+    public function scopeOrderedNewToOld($query)
+    {
+        return $query->orderBy('created_at', 'DESC');
     }
 
     /**

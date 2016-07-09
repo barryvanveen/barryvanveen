@@ -64,8 +64,8 @@ class CommentTest extends TestCase
             ->type('asdasd', 'email')
             ->press(trans('comments.submit'))
             ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
-            ->see(trans('comments.validation-error-email'))
-            ->see(trans('comments.validation-error-text'));
+            ->see(trans('validation.email-email'))
+            ->see(trans('validation.message-required'));
 
     }
 }
