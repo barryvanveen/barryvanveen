@@ -10,6 +10,7 @@ use Barryvanveen\Jobs\Comments\CreateComment;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Barryvanveen\Pagination\SimplePaginatorPresenter;
 use Flash;
+use GoogleTagManager;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\RedirectResponse;
 use Redirect;
@@ -106,6 +107,8 @@ class BlogController extends Controller
                 $request->get('text')
             )
         );
+
+        GoogleTagManager::flash('PhpTriggeredEvent', 'BlogCommentCreated');
 
         Flash::success(trans('flash.comment-created'));
 

@@ -17,6 +17,7 @@ class Kernel extends HttpKernel
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \Barryvanveen\Http\Middleware\VerifyCsrfToken::class,
+        \Spatie\GoogleTagManager\GoogleTagManagerMiddleware::class,
     ];
 
     /**
