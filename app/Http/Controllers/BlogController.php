@@ -102,6 +102,7 @@ class BlogController extends Controller
             new CreateComment(
                 $id,
                 $request->get('email'),
+                $request->get('name'),
                 $request->get('text')
             )
         );

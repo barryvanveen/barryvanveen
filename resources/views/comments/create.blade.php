@@ -5,7 +5,11 @@
 
         @include('form.partials.errors', ['title' => trans('comments.errors-title')])
 
-        {{ csrf_field() }}
+        {{-- honeypot, this should not be visible to users and so should not be filled --}}
+        {{ Form::text('youshouldnotfillthisfield', '',  ['class' => 'form-control form__invisible-field']) }}
+
+        {!! Form::label('name', trans('comments.label-name'), ['class' => 'control-label form__label']) !!}
+        {{ Form::text('name', '',  ['class' => 'form-control']) }}
 
         {!! Form::label('email', trans('comments.label-email'), ['class' => 'control-label form__label']) !!}
         {{ Form::text('email', '',  ['class' => 'form-control']) }}

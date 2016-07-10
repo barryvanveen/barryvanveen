@@ -24,8 +24,10 @@ class CreateCommentRequest extends Request
     public function rules()
     {
         return [
-            'email' => 'required|email',
-            'text' => 'required',
+            'email'                     => 'required|email',
+            'name'                      => 'required',
+            'text'                      => 'required',
+            'youshouldnotfillthisfield' => 'size:0',
         ];
     }
 
@@ -37,9 +39,11 @@ class CreateCommentRequest extends Request
     public function messages()
     {
         return [
-            'email.required' => trans('validation.email-required'),
-            'email.email' => trans('validation.email-email'),
-            'text.required' => trans('validation.message-required'),
+            'email.required'                 => trans('validation.email-required'),
+            'email.email'                    => trans('validation.email-email'),
+            'name.required'                  => trans('validation.name-required'),
+            'text.required'                  => trans('validation.message-required'),
+            'youshouldnotfillthisfield.size' => trans('validation.youshouldnotfillthisfield-size'),
         ];
     }
 

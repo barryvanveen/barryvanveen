@@ -12,6 +12,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @property int $id
  * @property int $blog_id
  * @property string $email
+ * @property string $name
  * @property string $text
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
