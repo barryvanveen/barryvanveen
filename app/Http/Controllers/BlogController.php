@@ -8,6 +8,7 @@ use Barryvanveen\Http\Requests\CreateCommentRequest;
 use Barryvanveen\Jobs\Blogs\GetBlogRssXml;
 use Barryvanveen\Jobs\Comments\CreateComment;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
+use Barryvanveen\Mailers\CommentMailer;
 use Barryvanveen\Pagination\SimplePaginatorPresenter;
 use Flash;
 use GoogleTagManager;
@@ -87,10 +88,11 @@ class BlogController extends Controller
      * @param int                  $id
      * @param string               $slug
      * @param CreateCommentRequest $request
+     * @param CommentMailer        $commentMailer
      *
      * @return Blog|RedirectResponse
      */
-    public function createComment($id, $slug, CreateCommentRequest $request)
+    public function createComment($id, $slug, CreateCommentRequest $request, CommentMailer $commentMailer)
     {
         $blog = $this->findBlogOrRedirect($id, $slug);
 
@@ -107,6 +109,8 @@ class BlogController extends Controller
                 $request->get('text')
             )
         );
+
+        $commentMailer->sendCommentMail($blog, $comment);
 
         GoogleTagManager::flash('PhpTriggeredEvent', 'BlogCommentCreated');
 
