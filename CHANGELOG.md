@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 ### Changed
+- Changed internal parameter in BlogPresenter from $resource to $wrappedObject
 ### Deprecated
 ### Removed
 ### Fixed
