@@ -4,7 +4,10 @@ namespace Barryvanveen\Exceptions;
 use Bugsnag;
 use Bugsnag\BugsnagLaravel\BugsnagExceptionHandler as ExceptionHandler;
 use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Http\Exception\HttpResponseException;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Session\TokenMismatchException;
 use Input;
 use Meta;
@@ -12,6 +15,7 @@ use Redirect;
 use Response;
 use Session;
 use GoogleTagManager;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use View;
@@ -24,6 +28,10 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
+        AuthorizationException::class,
+        HttpException::class,
+        ModelNotFoundException::class,
+        ValidationException::class,
     ];
 
     /**
@@ -44,13 +52,23 @@ class Handler extends ExceptionHandler
      * @param \Illuminate\Http\Request $request
      * @param \Exception               $e
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function render($request, Exception $e)
     {
         // render exception if debugging is enabled
         if (config('app.debug')) {
             return $this->toIlluminateResponse($this->convertExceptionToResponse($e), $e);
+        }
+
+        if ($e instanceof HttpResponseException) {
+            return $e->getResponse();
+        } elseif ($e instanceof ModelNotFoundException) {
+            $e = new NotFoundHttpException($e->getMessage(), $e);
+        } elseif ($e instanceof AuthorizationException) {
+            $e = new HttpException(403, $e->getMessage());
+        } elseif ($e instanceof ValidationException && $e->getResponse()) {
+            return $e->getResponse();
         }
 
         // wrong csrf token
@@ -81,15 +99,6 @@ class Handler extends ExceptionHandler
 
         // route not found
         if ($e instanceof NotFoundHttpException) {
-            Meta::set('title', trans('meta.pagetitle-404') . ' - ' . trans('meta.pagetitle-default'));
-
-            GoogleTagManager::set('errorcode', '404');
-
-            return Response::make(View::make('templates.404'), 404);
-        }
-
-        // model not found
-        if ($e instanceof ModelNotFoundException) {
             Meta::set('title', trans('meta.pagetitle-404') . ' - ' . trans('meta.pagetitle-default'));
 
             GoogleTagManager::set('errorcode', '404');

@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Deprecated
 ### Removed
 ### Fixed
+- Fixed problem with validating form input and displaying this to the user
 
 ## [2.11.5] - 2016-06-28
 ### Added
