@@ -12,14 +12,14 @@ class BlogPresenter extends BasePresenter
     use DispatchesJobs;
 
     /** Blog $resource */
-    protected $resource;
+    protected $wrappedObject = null;
 
     /**
      * @param Blog $resource
      */
     public function __construct(Blog $resource)
     {
-        $this->resource = $resource;
+        $this->wrappedObject = $resource;
     }
 
     /**
@@ -29,7 +29,7 @@ class BlogPresenter extends BasePresenter
      */
     public function admin_edit_url()
     {
-        return route('admin.blog-edit', [$this->resource->id]);
+        return route('admin.blog-edit', [$this->wrappedObject->id]);
     }
 
     /**
@@ -41,7 +41,7 @@ class BlogPresenter extends BasePresenter
     {
         return $this->dispatch(
             new MarkdownToHtml(
-                $this->resource->summary
+                $this->wrappedObject->summary
             )
         );
     }
@@ -55,7 +55,7 @@ class BlogPresenter extends BasePresenter
     {
         return $this->dispatch(
             new MarkdownToHtml(
-                $this->resource->text
+                $this->wrappedObject->text
             )
         );
     }
@@ -65,7 +65,7 @@ class BlogPresenter extends BasePresenter
      */
     public function id()
     {
-        return $this->resource->id;
+        return $this->wrappedObject->id;
     }
 
     /**
@@ -73,7 +73,7 @@ class BlogPresenter extends BasePresenter
      */
     public function online()
     {
-        return $this->resource->online;
+        return $this->wrappedObject->online;
     }
 
     /**
@@ -81,7 +81,7 @@ class BlogPresenter extends BasePresenter
      */
     public function publication_date()
     {
-        return $this->resource->publication_date;
+        return $this->wrappedObject->publication_date;
     }
 
     /**
@@ -91,7 +91,7 @@ class BlogPresenter extends BasePresenter
      */
     public function publication_date_formatted()
     {
-        $date = new Carbon($this->resource->publication_date);
+        $date = new Carbon($this->wrappedObject->publication_date);
 
         return $date->toFormattedDateString();
     }
@@ -103,7 +103,7 @@ class BlogPresenter extends BasePresenter
      */
     public function publication_date_formatted_rfc3339()
     {
-        $date = new Carbon($this->resource->publication_date);
+        $date = new Carbon($this->wrappedObject->publication_date);
 
         return $date->toRfc3339String();
     }
@@ -115,7 +115,7 @@ class BlogPresenter extends BasePresenter
      */
     public function publication_date_for_humans()
     {
-        $date = new LocalizedCarbon($this->resource->publication_date);
+        $date = new LocalizedCarbon($this->wrappedObject->publication_date);
 
         return $date->diffForHumans();
     }
@@ -127,7 +127,7 @@ class BlogPresenter extends BasePresenter
      */
     public function summary()
     {
-        return $this->resource->summary;
+        return $this->wrappedObject->summary;
     }
 
     /**
@@ -137,7 +137,7 @@ class BlogPresenter extends BasePresenter
      */
     public function text()
     {
-        return $this->resource->text;
+        return $this->wrappedObject->text;
     }
 
     /**
@@ -145,7 +145,7 @@ class BlogPresenter extends BasePresenter
      */
     public function title()
     {
-        return $this->resource->title;
+        return $this->wrappedObject->title;
     }
 
     /**
@@ -155,6 +155,6 @@ class BlogPresenter extends BasePresenter
      */
     public function url()
     {
-        return route('blog-item', ['id' => $this->resource->id, 'slug' => $this->resource->slug]);
+        return route('blog-item', ['id' => $this->wrappedObject->id, 'slug' => $this->wrappedObject->slug]);
     }
 }

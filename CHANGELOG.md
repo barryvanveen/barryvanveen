@@ -9,6 +9,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.11.6] - 2016-07-14
+### Added
+- Added configuration for LinkedIn and GitHub profile links
+### Changed
+- Changed internal parameter in BlogPresenter from $resource to $wrappedObject
+### Removed
+- Removed ExceptionMailer and related configuration
+### Fixed
+- Fixed problem with validating form input and displaying this to the user
+
 ## [2.11.5] - 2016-06-28
 ### Added
 - Added spatie/googletagmanager for managing GTM's DataLayer variables
