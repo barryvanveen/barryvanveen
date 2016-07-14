@@ -4,10 +4,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+
+## [2.11.6] - 2016-07-14
+### Added
 - Added configuration for LinkedIn and GitHub profile links
 ### Changed
 - Changed internal parameter in BlogPresenter from $resource to $wrappedObject
-### Deprecated
 ### Removed
 - Removed ExceptionMailer and related configuration
 ### Fixed
