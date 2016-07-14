@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Changed internal parameter in BlogPresenter from $resource to $wrappedObject
 ### Deprecated
 ### Removed
+- Removed ExceptionMailer and related configuration
 ### Fixed
 - Fixed problem with validating form input and displaying this to the user
 
