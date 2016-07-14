@@ -16,4 +16,8 @@ return [
         'name'    => env('MAIL_EXCEPTION_TO_NAME', null),
     ],
 
+    'linkedin_profile' => env('LINKEDIN_PROFILE', null),
+
+    'github_profile' => env('GITHUB_PROFILE', null),
+
 ];
