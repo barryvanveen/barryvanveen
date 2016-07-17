@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Deprecated
 ### Removed
 ### Fixed
+- Fixed problem with unreported exceptions
 
 ## [2.12.0] - 2016-07-14
 ### Added
