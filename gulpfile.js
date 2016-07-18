@@ -84,6 +84,7 @@ gulp.task('build-sass', function () {
 });
 
 gulp.task('critical', function() {
+    // todo: critical fixen
     critical.generate({
         src: 'http://barryvanveen.app',
         css: config.outputDirs.css+'/screen.css',

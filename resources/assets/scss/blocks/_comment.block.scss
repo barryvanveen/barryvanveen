@@ -1,0 +1,31 @@
+.comment {
+	display: block;
+	overflow: hidden;
+	margin-bottom: $grid-gutter-width;
+	padding-bottom: $grid-gutter-width;
+	border-bottom: 1px solid $page-header-border-color;
+
+	&:last-child {
+		border-bottom: 0;
+	}
+}
+
+	.comment__meta {
+		margin-bottom: $padding-base-vertical;
+	}
+		.comment__metaName {
+			font-weight: bold;
+		}
+		.comment__metaDate {
+			color: $text-muted;
+		}
+
+	.comment__message {
+		margin-bottom: $padding-base-vertical;
+	}
+
+@media(min-width: $screen-sm-min) {
+	.comment__metaName {
+		margin-right: $padding-large-horizontal;
+	}
+}

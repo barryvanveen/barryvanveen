@@ -3,14 +3,13 @@ namespace Barryvanveen\Comments;
 
 use Barryvanveen\Database\EloquentRepository;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Support\Collection;
 
 class CommentRepository extends EloquentRepository
 {
     /**
      * return all comments.
      *
-     * @return Collection
+     * @return array|static[]
      */
     public function all()
     {

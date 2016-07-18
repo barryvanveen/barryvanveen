@@ -52,10 +52,26 @@ class CommentTest extends TestCase
             ->press(trans('comments.submit'))
             ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
             ->see($new_comment);
+        //todo: waarom gaat het niet fout terwijl we geen naam invullen?
 
     }
 
     public function testPostNewCommentWithFalseInformation()
+    {
+        /** @var Blog $blog */
+        $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
+
+        $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+            ->type('asdasd', 'email')
+            ->press(trans('comments.submit'))
+            ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+            ->see(trans('validation.email-email'))
+            ->see(trans('validation.message-required'));
+
+    }
+
+    // todo: testen van de honeypot
+    public function testPostNewCommentWithHoneypot()
     {
         /** @var Blog $blog */
         $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();

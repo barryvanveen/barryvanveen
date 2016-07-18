@@ -1,6 +1,7 @@
 <?php
 namespace Barryvanveen\Comments;
 
+use Carbon\Carbon;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
 class CommentPresenter extends BasePresenter
@@ -33,4 +34,33 @@ class CommentPresenter extends BasePresenter
     {
         return $this->wrappedObject->text;
     }
+
+    /**
+     * @return string
+     */
+    public function name()
+    {
+        return $this->wrappedObject->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function created_at_formatted()
+    {
+        $date = new Carbon($this->wrappedObject->created_at);
+
+        return $date->format('Y-m-d H:i:s');
+    }
+
+    /**
+     * @return string
+     */
+    public function created_at_formatted_rfc3339()
+    {
+        $date = new Carbon($this->wrappedObject->created_at);
+
+        return $date->toRfc3339String();
+    }
+
 }
