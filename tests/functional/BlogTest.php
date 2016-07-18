@@ -45,9 +45,22 @@ class BlogTest extends TestCase
         /** @var Blog $blog */
         $blog = factory(Barryvanveen\Blogs\Blog::class, 'unpublished-offline')->create();
 
-        $this->call('GET', route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]));
+        try {
 
-        $this->assertResponseStatus(404);
+            $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+                 ->see($blog->title)
+                 ->see($blog->text);
+
+        } catch (Exception $e) {
+
+            $this->assertEquals(Illuminate\Foundation\Testing\HttpException::class, get_class($e));
+            return;
+
+        }
+
+        $this->assertTrue(false, 'You shouldn\'t reach this assertion, an exception should have been thrown on form 
+        validation');
+
     }
 
     public function test404BecauseFutureBlogItem()
@@ -55,9 +68,21 @@ class BlogTest extends TestCase
         /** @var Blog $blog */
         $blog = factory(Barryvanveen\Blogs\Blog::class, 'unpublished-future')->create();
 
-        $this->call('GET', route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]));
+        try {
 
-        $this->assertResponseStatus(404);
+            $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+                ->see($blog->title)
+                ->see($blog->text);
+
+        } catch (Exception $e) {
+
+            $this->assertEquals(Illuminate\Foundation\Testing\HttpException::class, get_class($e));
+            return;
+
+        }
+
+        $this->assertTrue(false, 'You shouldn\'t reach this assertion, an exception should have been thrown on form 
+        validation');
     }
 
     public function testBlogRssFeed()

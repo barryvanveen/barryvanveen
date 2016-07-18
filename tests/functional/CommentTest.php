@@ -47,12 +47,12 @@ class CommentTest extends TestCase
 
         $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
             ->see(trans('comments.add-your-comment'))
+            ->type('John Doe', 'name')
             ->type('john@example.com', 'email')
             ->type($new_comment, 'text')
             ->press(trans('comments.submit'))
             ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
             ->see($new_comment);
-        //todo: waarom gaat het niet fout terwijl we geen naam invullen?
 
     }
 
@@ -61,12 +61,22 @@ class CommentTest extends TestCase
         /** @var Blog $blog */
         $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
 
-        $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
-            ->type('asdasd', 'email')
-            ->press(trans('comments.submit'))
-            ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
-            ->see(trans('validation.email-email'))
-            ->see(trans('validation.message-required'));
+        try {
+
+            $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+                 ->type('asdasd', 'email')
+                 ->press(trans('comments.submit'))
+                 ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]));
+
+        } catch(Exception $e) {
+
+            $this->assertEquals(Illuminate\Foundation\Testing\HttpException::class, get_class($e));
+            return;
+
+        }
+
+        $this->assertTrue(false, 'You shouldn\'t reach this assertion, an exception should have been thrown on form 
+        validation');
 
     }
 
@@ -76,12 +86,29 @@ class CommentTest extends TestCase
         /** @var Blog $blog */
         $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
 
-        $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
-            ->type('asdasd', 'email')
-            ->press(trans('comments.submit'))
-            ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
-            ->see(trans('validation.email-email'))
-            ->see(trans('validation.message-required'));
+        $new_comment = 'my newest comment';
+
+        try {
+
+            $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+                ->see(trans('comments.add-your-comment'))
+                ->type('John Doe', 'name')
+                ->type('john@example.com', 'email')
+                ->type($new_comment, 'text')
+                ->type('ishouldnotfillthisfield', 'youshouldnotfillthisfield')
+                ->press(trans('comments.submit'))
+                ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+                ->see($new_comment);
+
+        } catch(Exception $e) {
+
+            $this->assertEquals(Illuminate\Foundation\Testing\HttpException::class, get_class($e));
+            return;
+
+        }
+
+        $this->assertTrue(false, 'You shouldn\'t reach this assertion, an exception should have been thrown on form 
+        validation');
 
     }
 }
