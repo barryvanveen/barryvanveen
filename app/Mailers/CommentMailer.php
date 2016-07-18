@@ -13,7 +13,7 @@ class CommentMailer extends Mailer
      */
     public function sendCommentMail(Blog $blog, Comment $comment)
     {
-        $recipient = new Recipient(config('custom.exception_to.address'), config('custom.exception_to.name'));
+        $recipient = new Recipient(config('mail.to.address'), config('mail.to.name'));
         $subject   = trans('email.new-comment', ['url' => url('')]);
         $view      = 'emails.new-comment';
 
