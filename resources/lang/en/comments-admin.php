@@ -7,5 +7,7 @@ return [
     'header-edit'     => 'Comments -- edit',
     'header-overview' => 'Comments',
     'id-short'        => '#',
+    'ip'              => 'IP',
+    'name'            => 'Name',
     'text'            => 'Text',
 ];

@@ -20,7 +20,8 @@ class AdminCommentsController extends Controller
 
     /** @var array */
     private $rules = [
-        'email'  => 'required',
+        'email'  => 'required|email',
+        'name'   => 'required',
         'text'   => 'required',
     ];
 
@@ -89,7 +90,9 @@ class AdminCommentsController extends Controller
             new UpdateComment(
                 $id,
                 $this->request->get('email'),
-                $this->request->get('text')
+                $this->request->get('name'),
+                $this->request->get('text'),
+                $this->request->get('ip')
             )
         );
 

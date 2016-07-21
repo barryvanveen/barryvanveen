@@ -10,19 +10,22 @@ class CreateComment
     public $email;
     public $name;
     public $text;
+    public $ip;
 
     /**
      * @param int    $blog_id
      * @param string $email
      * @param string $name
      * @param string $text
+     * @param string $ip
      */
-    public function __construct($blog_id, $email, $name, $text)
+    public function __construct($blog_id, $email, $name, $text, $ip)
     {
         $this->blog_id = $blog_id;
         $this->email   = $email;
         $this->name    = $name;
         $this->text    = $text;
+        $this->ip      = $ip;
     }
 
     /**
@@ -40,6 +43,7 @@ class CreateComment
         $comment->email   = $this->email;
         $comment->name    = $this->name;
         $comment->text    = $this->text;
+        $comment->ip      = $this->ip;
 
         return $commentRepository->save($comment);
     }

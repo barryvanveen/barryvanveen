@@ -11,10 +11,18 @@
 
 <div class="row">
     <div class="col-md-6">
-        <div class="form-group @if($errors->has('created_at')) has-error @endif">
-            {!! Form::label('created_at', trans('comments-admin.date'), ['class' => 'control-label form__label']) !!}
-            {!! Form::text('created_at', $comment->created_at, ['class' => 'form-control', 'placeholder' =>
-            'yyyy-mm-dd hh:mm:ss']) !!}
+        <div class="form-group @if($errors->has('name')) has-error @endif">
+            {!! Form::label('name', trans('comments-admin.name'), ['class' => 'control-label form__label']) !!}
+            {!! Form::text('name', $comment->name, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group @if($errors->has('ip')) has-error @endif">
+            {!! Form::label('ip', trans('comments-admin.ip'), ['class' => 'control-label form__label']) !!}
+            {!! Form::text('ip', $comment->ip, ['class' => 'form-control']) !!}
         </div>
     </div>
 </div>

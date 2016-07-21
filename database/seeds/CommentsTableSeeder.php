@@ -35,7 +35,10 @@ class CommentsTableSeeder extends Seeder
 
                 Comment::create([
                     'blog_id' => $blog->id,
+                    'email' => $faker->email(),
+                    'name' => $faker->name(),
                     'text' => $faker->paragraph(),
+                    'ip' => $faker->ipv4(),
                     'created_at' => $created_at,
                     'updated_at' => $created_at,
                 ]);

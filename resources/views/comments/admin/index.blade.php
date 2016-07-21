@@ -17,7 +17,9 @@
                     <th>{{ trans('comments-admin.id-short') }}</th>
                     <th>{{ trans('comments-admin.date') }}</th>
                     <th>{{ trans('comments-admin.email') }}</th>
+                    <th>{{ trans('comments-admin.name') }}</th>
                     <th>{{ trans('comments-admin.text') }}</th>
+                    <th>{{ trans('comments-admin.ip') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,7 +28,9 @@
                         <td>{{$comment->id}}</td>
                         <td>{{$comment->created_at}}</td>
                         <td>{{$comment->email}}</td>
+                        <td>{{$comment->name}}</td>
                         <td>{{$comment->text}}</td>
+                        <td>{{$comment->ip}}</td>
                     </tr>
                 @endforeach
             </tbody>
