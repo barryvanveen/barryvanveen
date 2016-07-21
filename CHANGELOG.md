@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.12.1] - 2016-07-21
+### Fixed
+- Fixed problem with unreported exceptions
+
 ## [2.12.0] - 2016-07-14
 ### Added
 - Added configuration for LinkedIn and GitHub profile links
