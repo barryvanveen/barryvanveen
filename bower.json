@@ -25,7 +25,8 @@
     "ajaxq": "~0.0.7",
     "prism": "~1.5.1",
     "jquery": "1.11.2",
-    "gameoflife": "^1.1.0"
+    "gameoflife": "^1.1.0",
+    "fingerprintjs2": "^1.4.1"
   },
   "install": {
     "path": "resources/assets/bower",

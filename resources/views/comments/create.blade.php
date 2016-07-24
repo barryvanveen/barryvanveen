@@ -10,6 +10,9 @@
             {{-- honeypot, this should not be visible to users and so should not be filled --}}
             {{ Form::text('youshouldnotfillthisfield', '',  ['class' => 'form-control form__invisible-field']) }}
 
+            {{-- fingerprint, this should not be visible to users and is filled by Javascript onSubmit --}}
+            {{ Form::hidden('_hash', '') }}
+
             <div class="form-group @if($errors->has('name')) has-error @endif">
                 {!! Form::label('name', trans('comments.label-name'), ['class' => 'control-label form__label']) !!}
                 {{ Form::text('name', '',  ['class' => 'form-control']) }}
@@ -25,7 +28,7 @@
                 {{ Form::textarea('text', '', ['class' => 'form-control']) }}
             </div>
 
-            {{ Form::submit(trans('comments.submit'), ['class' => 'btn btn-primary']) }}
+            {{ Form::submit(trans('comments.submit'), ['class' => 'btn btn-primary js-submit-comment']) }}
         </div>
     {{ Form::close() }}
 </div>
