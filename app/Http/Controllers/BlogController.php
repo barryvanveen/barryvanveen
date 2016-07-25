@@ -107,7 +107,8 @@ class BlogController extends Controller
                 $request->get('email'),
                 $request->get('name'),
                 $request->get('text'),
-                Request::getClientIp()
+                Request::getClientIp(),
+                $request->get('_hash')
             )
         );
 

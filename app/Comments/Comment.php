@@ -15,6 +15,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @property string $name
  * @property string $text
  * @property string $ip
+ * @property string $fingerprint
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property-read Blog $blog
@@ -22,6 +23,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @method static Builder|Comment whereEmail($value)
  * @method static Builder|Comment whereText($value)
  * @method static Builder|Comment whereIp($value)
+ * @method static Builder|Comment whereFingerprint($value)
  * @method static Builder|Comment whereCreatedAt($value)
  * @method static Builder|Comment whereUpdatedAt($value)
  * @method static Builder|Comment orderedNewToOld()
@@ -41,10 +43,7 @@ class Comment extends Model implements HasPresenter
      *
      * @var array
      */
-    protected $fillable = [
-        'email',
-        'text',
-    ];
+    protected $fillable = [];
 
     /**
      * A comment belongs to a blog

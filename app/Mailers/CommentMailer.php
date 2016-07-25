@@ -21,6 +21,7 @@ class CommentMailer extends Mailer
             'environment' => \App::environment(),
             'comment'     => $comment,
             'url'         => route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]),
+            'admin_url'   => route('admin.comments-edit', ['commentId' => $comment->id]),
         ]);
     }
 }

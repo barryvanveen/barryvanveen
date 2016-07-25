@@ -11,7 +11,7 @@
     </div>
     <div class="comment__message row">
         <div class="col-xs-12" itemprop="text">
-            {{ $comment->text }}
+            {!! nl2br(e($comment->text)) !!}
         </div>
     </div>
 </div>

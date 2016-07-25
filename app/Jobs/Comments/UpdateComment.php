@@ -10,6 +10,7 @@ class UpdateComment
     public $name;
     public $text;
     public $ip;
+    public $fingerprint;
 
     /**
      * @param $id
@@ -17,14 +18,16 @@ class UpdateComment
      * @param $name
      * @param $text
      * @param $ip
+     * @param $fingerprint
      */
-    public function __construct($id, $email, $name, $text, $ip)
+    public function __construct($id, $email, $name, $text, $ip, $fingerprint)
     {
-        $this->id    = $id;
-        $this->email = $email;
-        $this->name  = $name;
-        $this->text  = $text;
-        $this->ip    = $ip;
+        $this->id          = $id;
+        $this->email       = $email;
+        $this->name        = $name;
+        $this->text        = $text;
+        $this->ip          = $ip;
+        $this->fingerprint = $fingerprint;
     }
 
     /**
@@ -38,10 +41,11 @@ class UpdateComment
     {
         $comment = $commentRepository->findById($this->id);
 
-        $comment->email = $this->email;
-        $comment->name  = $this->name;
-        $comment->text  = $this->text;
-        $comment->ip    = $this->ip;
+        $comment->email       = $this->email;
+        $comment->name        = $this->name;
+        $comment->text        = $this->text;
+        $comment->ip          = $this->ip;
+        $comment->fingerprint = $this->fingerprint;
 
         $commentRepository->save($comment);
     }

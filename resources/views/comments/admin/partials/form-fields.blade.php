@@ -28,20 +28,26 @@
 </div>
 
 <div class="row">
+    <div class="col-md-6">
+        <div class="form-group @if($errors->has('fingerprint')) has-error @endif">
+            {!! Form::label('fingerprint', trans('comments-admin.fingerprint'), ['class' => 'control-label form__label']) !!}
+            {!! Form::text('fingerprint', $comment->fingerprint, ['class' => 'form-control']) !!}
+        </div>
+    </div>
+</div>
+
+<div class="row">
     <div class="col-sm-12">
         <hr>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-sm-12 col-md-6">
+    <div class="col-md-6">
         <div class="form-group @if($errors->has('text')) has-error @endif">
             {!! Form::label('text', trans('comments-admin.text'), ['class' => 'control-label form__label']) !!}
-            {!! Form::textarea('text', $comment->text, ['class' => 'form-control js-markdown-editor']) !!}
+            {!! Form::textarea('text', $comment->text, ['class' => 'form-control']) !!}
         </div>
-    </div>
-    <div class="col-sm-12 col-md-6">
-        <div class="js-markdown-preview form__preview" data-markdown-editor-name="text"></div>
     </div>
 </div>
 

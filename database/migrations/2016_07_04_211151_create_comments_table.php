@@ -19,6 +19,7 @@ class CreateCommentsTable extends Migration
             $table->text('name');
             $table->text('text');
             $table->text('ip');
+            $table->text('fingerprint');
             $table->timestamps();
         });
     }

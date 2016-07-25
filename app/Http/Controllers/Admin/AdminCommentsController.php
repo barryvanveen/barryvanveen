@@ -39,6 +39,7 @@ class AdminCommentsController extends Controller
 
         $this->messages = [
             'email.required'            => trans('validation.email-required'),
+            'name.required'             => trans('validation.name-required'),
             'text.required'             => trans('validation.text-required'),
         ];
 
@@ -68,7 +69,7 @@ class AdminCommentsController extends Controller
      */
     public function edit($id)
     {
-        $this->setPageTitle(trans('meta.pagetitle-admin-blog-edit'));
+        $this->setPageTitle(trans('meta.pagetitle-admin-comments-edit'));
 
         $comment = $this->commentRepository->findById($id);
 
@@ -92,7 +93,8 @@ class AdminCommentsController extends Controller
                 $this->request->get('email'),
                 $this->request->get('name'),
                 $this->request->get('text'),
-                $this->request->get('ip')
+                $this->request->get('ip'),
+                $this->request->get('fingerprint')
             )
         );
 

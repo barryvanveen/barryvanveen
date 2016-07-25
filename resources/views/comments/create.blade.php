@@ -4,7 +4,8 @@
 
     @include('form.partials.errors', ['title' => trans('comments.errors-title')])
 
-    {{ Form::open(['route' => ['blog-comment', $blog->id, $blog->slug], 'method' => 'POST']) }}
+    {{ Form::open(['route' => ['blog-comment', $blog->id, $blog->slug], 'method' => 'POST', 'class' =>
+    'js-create-comment-form']) }}
         <div class="well bs-component">
 
             {{-- honeypot, this should not be visible to users and so should not be filled --}}
@@ -28,7 +29,7 @@
                 {{ Form::textarea('text', '', ['class' => 'form-control']) }}
             </div>
 
-            {{ Form::submit(trans('comments.submit'), ['class' => 'btn btn-primary js-submit-comment']) }}
+            {{ Form::submit(trans('comments.submit'), ['class' => 'btn btn-primary']) }}
         </div>
     {{ Form::close() }}
 </div>

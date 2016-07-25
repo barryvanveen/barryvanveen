@@ -46,6 +46,30 @@ class CommentPresenter extends BasePresenter
     /**
      * @return string
      */
+    public function email()
+    {
+        return $this->wrappedObject->email;
+    }
+
+    /**
+     * @return string
+     */
+    public function ip()
+    {
+        return $this->wrappedObject->ip;
+    }
+
+    /**
+     * @return string
+     */
+    public function fingerprint()
+    {
+        return $this->wrappedObject->fingerprint;
+    }
+
+    /**
+     * @return string
+     */
     public function created_at_formatted()
     {
         $date = new Carbon($this->wrappedObject->created_at);

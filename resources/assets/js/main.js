@@ -3,7 +3,7 @@ window.Barryvanveen = window.Barryvanveen || {};
 window.Barryvanveen.main = function() {
 	window.Barryvanveen.smoothScrollToHash();
 	window.Barryvanveen.initScrollUp();
-	window.Barryvanveen.initSubmitCommentListener();
+	window.Barryvanveen.initFingerprint();
 	window.Barryvanveen.initGameoflife();
 
 	Prism.highlightAll();
@@ -67,15 +67,7 @@ window.Barryvanveen.initScrollUp = function() {
 
 };
 
-window.Barryvanveen.initSubmitCommentListener = function() {
-
-	$(".js-submit-comment").click(function() {
-		window.Barryvanveen.setHash();
-	});
-
-};
-
-window.Barryvanveen.setHash = function() {
+window.Barryvanveen.initFingerprint = function() {
 
 	var $hashField = $("input[name='_hash']");
 

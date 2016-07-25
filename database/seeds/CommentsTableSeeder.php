@@ -39,6 +39,7 @@ class CommentsTableSeeder extends Seeder
                     'name' => $faker->name(),
                     'text' => $faker->paragraph(),
                     'ip' => $faker->ipv4(),
+                    'fingerprint' => $faker->randomNumber(),
                     'created_at' => $created_at,
                     'updated_at' => $created_at,
                 ]);

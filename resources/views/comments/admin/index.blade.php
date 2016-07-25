@@ -20,6 +20,7 @@
                     <th>{{ trans('comments-admin.name') }}</th>
                     <th>{{ trans('comments-admin.text') }}</th>
                     <th>{{ trans('comments-admin.ip') }}</th>
+                    <th>{{ trans('comments-admin.fingerprint') }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +32,7 @@
                         <td>{{$comment->name}}</td>
                         <td>{{$comment->text}}</td>
                         <td>{{$comment->ip}}</td>
+                        <td>{{$comment->fingerprint}}</td>
                     </tr>
                 @endforeach
             </tbody>

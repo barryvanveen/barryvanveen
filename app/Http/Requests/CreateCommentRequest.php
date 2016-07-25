@@ -28,6 +28,7 @@ class CreateCommentRequest extends Request
             'name'                      => 'required',
             'text'                      => 'required',
             'youshouldnotfillthisfield' => 'size:0',
+            '_hash'                     => '',
         ];
     }
 
