@@ -58,6 +58,7 @@ class CreateCommentRequest extends Request
 
         if (array_key_exists('youshouldnotfillthisfield', $errors)) {
             GoogleTagManager::flash('PhpTriggeredEvent', 'HoneypotValidationError');
+
             Log::info("HoneypotValidationError");
         }
 
