@@ -12,6 +12,7 @@ use Barryvanveen\Mailers\CommentMailer;
 use Barryvanveen\Pagination\SimplePaginatorPresenter;
 use Flash;
 use GoogleTagManager;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\RedirectResponse;
 use Redirect;
@@ -91,9 +92,15 @@ class BlogController extends Controller
      * @param CommentMailer        $commentMailer
      *
      * @return Blog|RedirectResponse
+     *
+     * @throws AuthorizationException
      */
     public function createComment($id, $slug, CreateCommentRequest $request, CommentMailer $commentMailer)
     {
+        if (!config('custom.comments_enabled')) {
+            throw new AuthorizationException("Comments are disabled");
+        }
+
         $blog = $this->findBlogOrRedirect($id, $slug);
 
         if ($blog instanceof RedirectResponse) {

@@ -26,7 +26,11 @@
                 <h2>{{ trans('comments.title') }}</h2>
                 <span class="blog-item__comments-count" itemprop="commentCount">{{ $blog->comments->count() }}</span>
                 @each('comments.item', $blog->comments, 'comment', 'comments.no-items')
-                @include('comments.create')
+                @if (config('custom.comments_enabled'))
+                    @include('comments.create')
+                @else
+                    @include('comments.comments-closed')
+                @endif
             </section>
         </article>
     </main>

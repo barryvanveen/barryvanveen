@@ -13,7 +13,7 @@ class CommentTest extends TestCase
         /** @var Blog $blog */
         $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
 
-        $online_comments = factory(Barryvanveen\Comments\Comment::class, 3)->create(
+        $online_comments = factory(Barryvanveen\Comments\Comment::class, 'online', 3)->create(
             [
                 'blog_id' => $blog->id
             ]
@@ -78,15 +78,19 @@ class CommentTest extends TestCase
                  ->press(trans('comments.submit'))
                  ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]));
 
-        } catch(Exception $e) {
+        } catch (Exception $e) {
 
             $this->assertEquals(Illuminate\Foundation\Testing\HttpException::class, get_class($e));
+
             return;
 
         }
 
-        $this->assertTrue(false, 'You shouldn\'t reach this assertion, an exception should have been thrown on form 
-        validation');
+        $this->assertTrue(
+            false,
+            'You shouldn\'t reach this assertion, an exception should have been thrown on form 
+        validation'
+        );
 
     }
 
@@ -109,15 +113,32 @@ class CommentTest extends TestCase
                 ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
                 ->see($new_comment);
 
-        } catch(Exception $e) {
+        } catch (Exception $e) {
 
             $this->assertEquals(Illuminate\Foundation\Testing\HttpException::class, get_class($e));
+
             return;
 
         }
 
-        $this->assertTrue(false, 'You shouldn\'t reach this assertion, an exception should have been thrown on form 
-        validation');
+        $this->assertTrue(
+            false,
+            'You shouldn\'t reach this assertion, an exception should have been thrown on form 
+        validation'
+        );
+
+    }
+
+
+    public function testCommentsDisabled()
+    {
+        config(['custom.comments_enabled' => false]);
+
+        /** @var Blog $blog */
+        $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
+
+        $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+             ->see(trans('comments.comments-are-closed'));
 
     }
 }
