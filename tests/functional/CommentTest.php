@@ -8,12 +8,18 @@ class CommentTest extends TestCase
 {
     use DatabaseTransactions;
 
-    public function testViewAllCommentsWithBlog()
+    public function testViewOnlineCommentsWithBlog()
     {
         /** @var Blog $blog */
         $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
 
-        $comments = factory(Barryvanveen\Comments\Comment::class, 5)->create(
+        $online_comments = factory(Barryvanveen\Comments\Comment::class, 3)->create(
+            [
+                'blog_id' => $blog->id
+            ]
+        );
+
+        $offline_comments = factory(Barryvanveen\Comments\Comment::class, 'offline', 3)->create(
             [
                 'blog_id' => $blog->id
             ]
@@ -23,8 +29,12 @@ class CommentTest extends TestCase
             ->see(trans('comments.title'));
 
         /** @var Comment $comment */
-        foreach ($comments as $comment) {
+        foreach ($online_comments as $comment) {
             $this->see($comment->text);
+        }
+
+        foreach ($offline_comments as $comment) {
+            $this->dontSee($comment->text);
         }
     }
 
@@ -80,7 +90,6 @@ class CommentTest extends TestCase
 
     }
 
-    // todo: testen van de honeypot
     public function testPostNewCommentWithHoneypot()
     {
         /** @var Blog $blog */

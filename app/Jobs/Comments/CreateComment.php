@@ -48,6 +48,7 @@ class CreateComment
         $comment->text        = $this->text;
         $comment->ip          = $this->ip;
         $comment->fingerprint = $this->fingerprint;
+        $comment->online      = 1;
 
         return $commentRepository->save($comment);
     }

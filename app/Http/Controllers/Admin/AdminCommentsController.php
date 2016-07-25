@@ -94,7 +94,8 @@ class AdminCommentsController extends Controller
                 $this->request->get('name'),
                 $this->request->get('text'),
                 $this->request->get('ip'),
-                $this->request->get('fingerprint')
+                $this->request->get('fingerprint'),
+                $this->request->get('online')
             )
         );
 

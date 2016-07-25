@@ -18,19 +18,17 @@
                     <th>{{ trans('comments-admin.date') }}</th>
                     <th>{{ trans('comments-admin.email') }}</th>
                     <th>{{ trans('comments-admin.name') }}</th>
-                    <th>{{ trans('comments-admin.text') }}</th>
                     <th>{{ trans('comments-admin.ip') }}</th>
                     <th>{{ trans('comments-admin.fingerprint') }}</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($comments as $comment)
-                    <tr class="js-clickable-row overview-table__row" data-href="{{$comment->admin_edit_url}}">
+                    <tr class="js-clickable-row overview-table__row @if ($comment->online) overview-table__row--online @else overview-table__row--offline @endif" data-href="{{$comment->admin_edit_url}}">
                         <td>{{$comment->id}}</td>
                         <td>{{$comment->created_at}}</td>
                         <td>{{$comment->email}}</td>
                         <td>{{$comment->name}}</td>
-                        <td>{{$comment->text}}</td>
                         <td>{{$comment->ip}}</td>
                         <td>{{$comment->fingerprint}}</td>
                     </tr>

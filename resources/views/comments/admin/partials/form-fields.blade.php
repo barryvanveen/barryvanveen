@@ -36,6 +36,23 @@
     </div>
 </div>
 
+<div class="form-group @if($errors->has('online')) has-error @endif">
+    {!! Form::label('online', trans('comments-admin.status'), ['class' => 'control-label form__label']) !!}
+
+    <div class="radio">
+        <label>
+            {!! Form::radio('online', '0', ($comment->online == 0)) !!}
+            {{ trans('general.offline') }}
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            {!! Form::radio('online', '1', ($comment->online == 1)) !!}
+            {{ trans('general.online') }}
+        </label>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-sm-12">
         <hr>

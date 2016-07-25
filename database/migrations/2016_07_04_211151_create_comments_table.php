@@ -20,6 +20,7 @@ class CreateCommentsTable extends Migration
             $table->text('text');
             $table->text('ip');
             $table->text('fingerprint');
+            $table->tinyInteger('online');
             $table->timestamps();
         });
     }

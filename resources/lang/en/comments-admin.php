@@ -10,5 +10,6 @@ return [
     'id-short'        => '#',
     'ip'              => 'IP',
     'name'            => 'Name',
+    'status'          => 'Status',
     'text'            => 'Text',
 ];

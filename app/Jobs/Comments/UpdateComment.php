@@ -11,6 +11,7 @@ class UpdateComment
     public $text;
     public $ip;
     public $fingerprint;
+    public $online;
 
     /**
      * @param $id
@@ -19,8 +20,9 @@ class UpdateComment
      * @param $text
      * @param $ip
      * @param $fingerprint
+     * @param $online
      */
-    public function __construct($id, $email, $name, $text, $ip, $fingerprint)
+    public function __construct($id, $email, $name, $text, $ip, $fingerprint, $online)
     {
         $this->id          = $id;
         $this->email       = $email;
@@ -28,6 +30,7 @@ class UpdateComment
         $this->text        = $text;
         $this->ip          = $ip;
         $this->fingerprint = $fingerprint;
+        $this->online      = $online;
     }
 
     /**
@@ -46,6 +49,7 @@ class UpdateComment
         $comment->text        = $this->text;
         $comment->ip          = $this->ip;
         $comment->fingerprint = $this->fingerprint;
+        $comment->online      = $this->online;
 
         $commentRepository->save($comment);
     }

@@ -86,7 +86,7 @@ class Blog extends Model implements SluggableInterface, HasPresenter
      */
     public function comments()
     {
-        return $this->hasMany(Comment::class)->orderBy('created_at');
+        return $this->hasMany(Comment::class)->whereOnline(1)->orderBy('created_at');
     }
 
     /**

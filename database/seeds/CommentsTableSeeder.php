@@ -34,14 +34,15 @@ class CommentsTableSeeder extends Seeder
                 $created_at = $faker->dateTimeBetween('-1 year', 'now');
 
                 Comment::create([
-                    'blog_id' => $blog->id,
-                    'email' => $faker->email(),
-                    'name' => $faker->name(),
-                    'text' => $faker->paragraph(),
-                    'ip' => $faker->ipv4(),
+                    'blog_id'     => $blog->id,
+                    'email'       => $faker->email,
+                    'name'        => $faker->name,
+                    'text'        => $faker->paragraph,
+                    'ip'          => $faker->ipv4,
                     'fingerprint' => $faker->randomNumber(),
-                    'created_at' => $created_at,
-                    'updated_at' => $created_at,
+                    'online'      => (rand(0, 10) % 10) ? 1 : 0,
+                    'created_at'  => $created_at,
+                    'updated_at'  => $created_at,
                 ]);
             }
         }

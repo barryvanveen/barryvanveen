@@ -72,9 +72,32 @@ $factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
 $factory->define(Barryvanveen\Comments\Comment::class, function ($faker) {
     /* @var Faker\Generator $faker */
     return [
-        'text'  => $faker->paragraph,
+        'email'       => $faker->email,
+        'name'        => $faker->name,
+        'text'        => $faker->unique()->paragraph,
+        'ip'          => $faker->ipv4,
+        'fingerprint' => $faker->randomNumber(),
+        'online'      => (rand(0, 10) % 10) ? 1 : 0,
     ];
 });
+
+    $factory->defineAs(Barryvanveen\Comments\Comment::class, 'online', function($faker) use ($factory) {
+        /* @var Faker\Generator $faker */
+        $comment = $factory->raw(Barryvanveen\Comments\Comment::class);
+
+        $comment['online'] = 1;
+
+        return $comment;
+    });
+
+    $factory->defineAs(Barryvanveen\Comments\Comment::class, 'offline', function($faker) use ($factory) {
+        /* @var Faker\Generator $faker */
+        $comment = $factory->raw(Barryvanveen\Comments\Comment::class);
+
+        $comment['online'] = 0;
+
+        return $comment;
+    });
 
 $factory->define(Barryvanveen\Pages\Page::class, function ($faker) {
     /* @var Faker\Generator $faker */
