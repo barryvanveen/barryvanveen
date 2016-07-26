@@ -1,0 +1,1 @@
+{{ trans('comments.no-comments') }}

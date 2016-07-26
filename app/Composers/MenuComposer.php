@@ -59,6 +59,12 @@ class MenuComposer
                 'classnames' => '',
             ],
             [
+                'slug'       => route('admin.comments'),
+                'title'      => trans('routes.admin-comments'),
+                'routes'     => ['admin.comments', 'admin.comments-edit'],
+                'classnames' => '',
+            ],
+            [
                 'slug'       => route('admin.page'),
                 'title'      => trans('routes.admin-pages'),
                 'routes'     => ['admin.page', 'admin.page-new', 'admin.page-edit'],

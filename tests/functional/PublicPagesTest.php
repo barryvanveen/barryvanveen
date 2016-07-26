@@ -2,67 +2,11 @@
 
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Pages\Page;
-use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class PublicPagesTest extends TestCase
 {
     use DatabaseTransactions;
-
-    /**
-     * Test visiting the blog overview and an item page.
-     */
-    public function testBlogOverviewAndItem()
-    {
-
-        /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class)->create(
-            [
-                'publication_date' => Carbon::now()->subDay()->toDateTimeString(),
-                'online'           => 1,
-            ]
-        );
-
-        $this->visit(route('home'))
-            ->see(trans('general.homepage-title'))
-            ->see($blog->title)
-            ->see($blog->summary);
-
-        $this->click($blog->title);
-
-        $this->seePageIs(
-            route(
-                'blog-item',
-                [
-                    'id'   => $blog->id,
-                    'slug' => $blog->slug,
-                ]
-            )
-        );
-
-        $this->see($blog->title)
-            ->see($blog->text);
-    }
-
-    /**
-     * Test visiting the blogs RSS feed.
-     */
-    public function testBlogRssFeed()
-    {
-
-        /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class)->create(
-            [
-                'publication_date' => Carbon::now()->subDay()->toDateTimeString(),
-                'online'           => 1,
-            ]
-        );
-
-        $this->visit(route('blog-rss'));
-
-        $this->see('<rss version="2.0"')
-             ->see('<title>'.$blog->title.'</title>');
-    }
 
     /**
      * Test visiting the about-me page.
@@ -121,12 +65,7 @@ class PublicPagesTest extends TestCase
     {
 
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class)->create(
-            [
-                'publication_date' => Carbon::now()->subDay()->toDateTimeString(),
-                'online'           => 1,
-            ]
-        );
+        $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
 
         factory(Barryvanveen\Pages\Page::class)->create(
             [

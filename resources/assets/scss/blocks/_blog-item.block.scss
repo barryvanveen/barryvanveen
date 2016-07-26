@@ -13,3 +13,11 @@
 	.blog-item__content {
 		padding-bottom: $grid-gutter-width;
 	}
+
+	.blog-item__comments {
+		padding-bottom: $grid-gutter-width;
+	}
+
+    .blog-item__comments-count {
+        display: none;
+    }

@@ -1,6 +1,7 @@
 <?php
 namespace Barryvanveen\Blogs;
 
+use Barryvanveen\Comments\Comment;
 use Cviebrock\EloquentSluggable\SluggableInterface;
 use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -68,6 +69,25 @@ class Blog extends Model implements SluggableInterface, HasPresenter
         'save_to'    => 'slug',
         'on_update'  => true,
     ];
+
+    /**
+     * A list of all relations that should be lazy-loaded
+     *
+     * @var array
+     */
+    protected $with = [
+        'comments'
+    ];
+
+    /**
+     * A blog can have many comments
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->whereOnline(1)->orderBy('created_at');
+    }
 
     /**
      * select only blogs that are online and have a publication_date in the past.

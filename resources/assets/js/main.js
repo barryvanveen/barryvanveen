@@ -3,6 +3,7 @@ window.Barryvanveen = window.Barryvanveen || {};
 window.Barryvanveen.main = function() {
 	window.Barryvanveen.smoothScrollToHash();
 	window.Barryvanveen.initScrollUp();
+	window.Barryvanveen.initFingerprint();
 	window.Barryvanveen.initGameoflife();
 
 	Prism.highlightAll();
@@ -63,6 +64,20 @@ window.Barryvanveen.initScrollUp = function() {
 		 activeOverlay: false,      	// Set CSS color to display scrollUp active point, e.g '#00FFFF'
 		 zIndex: 2147483647           	// Z-Index for the overlay
 	 });
+
+};
+
+window.Barryvanveen.initFingerprint = function() {
+
+	var $hashField = $("input[name='_hash']");
+
+	try {
+		new Fingerprint2().get(function(result){
+			$hashField.val(result);
+		});
+	} catch(err) {
+		$hashField.val(err);
+	}
 
 };
 
