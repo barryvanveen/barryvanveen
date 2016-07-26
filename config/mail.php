@@ -58,6 +58,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Global "To" Address
+    |--------------------------------------------------------------------------
+    |
+    | Global variable for an address to which we want to send emails. At
+    | this moment this address is only used by the NewCommentMailer.
+    |
+    */
+
+    'to' => ['address' => env('MAIL_TO_ADDRESS', null), 'name' => env('MAIL_TO_NAME', null)],
+
+    /*
+    |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
     |--------------------------------------------------------------------------
     |

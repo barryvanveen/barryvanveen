@@ -33,7 +33,7 @@ class CreateBlog
      *
      * @param BlogRepository $blogRepository
      *
-     * @return mixed
+     * @return Blog
      */
     public function handle(BlogRepository $blogRepository)
     {
@@ -47,6 +47,6 @@ class CreateBlog
         $blog->publication_date = $publication_date;
         $blog->online           = $this->online;
 
-        $blogRepository->save($blog);
+        return $blogRepository->save($blog);
     }
 }

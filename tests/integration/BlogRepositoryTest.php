@@ -31,10 +31,7 @@ class BlogRepositoryTest extends TestCase
 
     public function testPaginatedPublishedPaginatesResults()
     {
-        factory(Barryvanveen\Blogs\Blog::class, 20)->create([
-            'publication_date' => '2015-01-01 12:00:00',
-            'online'           => 1,
-        ]);
+        factory(Barryvanveen\Blogs\Blog::class, 'published', 20)->create();
 
         $paginator = $this->repository->paginatedPublished(5);
 

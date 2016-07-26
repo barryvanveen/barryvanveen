@@ -24,6 +24,11 @@ Route::get('blog/{id}-{slug}', [
     'uses' => 'BlogController@show',
 ]);
 
+Route::post('blog/{id}-{slug}/create-comment', [
+    'as'   => 'blog-comment',
+    'uses' => 'BlogController@createComment',
+]);
+
 Route::get('rss', [
     'as'   => 'blog-rss',
     'uses' => 'BlogController@rss',
@@ -111,6 +116,21 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'sitemap' => ['hidden
         Route::patch('blog/{blogId}', [
             'as'   => 'admin.blog-update',
             'uses' => 'AdminBlogController@update',
+        ]);
+
+        Route::get('comments', [
+            'as'   => 'admin.comments',
+            'uses' => 'AdminCommentsController@index',
+        ]);
+
+        Route::get('comments/{commentId}/edit', [
+            'as'   => 'admin.comments-edit',
+            'uses' => 'AdminCommentsController@edit',
+        ]);
+
+        Route::patch('comments/{commentId}', [
+            'as'   => 'admin.comments-update',
+            'uses' => 'AdminCommentsController@update',
         ]);
 
         Route::get('pages', [

@@ -11,16 +11,8 @@ class BlogPresenter extends BasePresenter
 {
     use DispatchesJobs;
 
-    /** Blog $resource */
-    protected $wrappedObject = null;
-
-    /**
-     * @param Blog $resource
-     */
-    public function __construct(Blog $resource)
-    {
-        $this->wrappedObject = $resource;
-    }
+    /** Blog $wrappedObject */
+    protected $wrappedObject;
 
     /**
      * Get route to edit blog in admin section.
