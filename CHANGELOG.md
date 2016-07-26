@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.13.0] - 2016-07-26
+### Added
+- Added comments to blogs
+
 ## [2.12.1] - 2016-07-21
 ### Fixed
 - Fixed problem with unreported exceptions
