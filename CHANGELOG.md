@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.13.1] - 2016-07-26
+### Fixed
+- Fixed double usage of ValidatesRequests trait
+
 ## [2.13.0] - 2016-07-26
 ### Added
 - Added comments to blogs

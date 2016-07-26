@@ -13,7 +13,6 @@ use Barryvanveen\Pagination\SimplePaginatorPresenter;
 use Flash;
 use GoogleTagManager;
 use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\RedirectResponse;
 use Redirect;
 use Request;
@@ -22,8 +21,6 @@ use View;
 
 class BlogController extends Controller
 {
-    use ValidatesRequests;
-
     /** @var BlogRepository */
     private $blogRepository;
 
