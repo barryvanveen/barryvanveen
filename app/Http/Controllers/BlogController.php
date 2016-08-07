@@ -49,8 +49,8 @@ class BlogController extends Controller
 
         if (Request::has('page') && Request::get('page') > 1) {
             $this->setPageTitle(trans('meta.pagetitle-pagination', ['page' => Request::get('page')]));
-            $this->setMetaDescription(trans('meta.pagetitle-pagination', ['page' => Request::get('page')]) . '. '
-                . trans('meta.description-blog'));
+            $this->setMetaDescription(trans('meta.pagetitle-pagination', ['page' => Request::get('page')]).'. '
+                .trans('meta.description-blog'));
         }
 
         return View::make('blog.full-list', compact('blogs', 'presenter'));
@@ -95,7 +95,7 @@ class BlogController extends Controller
     public function createComment($id, $slug, CreateCommentRequest $request, CommentMailer $commentMailer)
     {
         if (!config('custom.comments_enabled')) {
-            throw new AuthorizationException("Comments are disabled");
+            throw new AuthorizationException('Comments are disabled');
         }
 
         $blog = $this->findBlogOrRedirect($id, $slug);

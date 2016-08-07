@@ -1,9 +1,8 @@
 <?php
-
 namespace Barryvanveen\Http\Requests;
 
-use Illuminate\Http\JsonResponse;
 use GoogleTagManager;
+use Illuminate\Http\JsonResponse;
 use Log;
 
 class CreateCommentRequest extends Request
@@ -59,7 +58,7 @@ class CreateCommentRequest extends Request
         if (array_key_exists('youshouldnotfillthisfield', $errors)) {
             GoogleTagManager::flash('PhpTriggeredEvent', 'HoneypotValidationError');
 
-            Log::info("HoneypotValidationError");
+            Log::info('HoneypotValidationError');
         }
 
         return $this->redirector->to($this->getRedirectUrl().'#add-your-comment')

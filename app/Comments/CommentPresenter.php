@@ -86,5 +86,4 @@ class CommentPresenter extends BasePresenter
 
         return $date->toRfc3339String();
     }
-
 }

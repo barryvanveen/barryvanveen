@@ -4,17 +4,17 @@ namespace Barryvanveen\Exceptions;
 use Bugsnag;
 use Bugsnag\BugsnagLaravel\BugsnagExceptionHandler as ExceptionHandler;
 use Exception;
+use GoogleTagManager;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Exception\HttpResponseException;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Session\TokenMismatchException;
+use Illuminate\Validation\ValidationException;
 use Input;
 use Meta;
 use Redirect;
 use Response;
 use Session;
-use GoogleTagManager;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -97,7 +97,7 @@ class Handler extends ExceptionHandler
 
         // route not found
         if ($e instanceof NotFoundHttpException) {
-            Meta::set('title', trans('meta.pagetitle-404') . ' - ' . trans('meta.pagetitle-default'));
+            Meta::set('title', trans('meta.pagetitle-404').' - '.trans('meta.pagetitle-default'));
 
             GoogleTagManager::set('errorcode', '404');
 
@@ -106,7 +106,7 @@ class Handler extends ExceptionHandler
 
         // not authorized to see this route
         if ($e instanceof MethodNotAllowedHttpException) {
-            Meta::set('title', trans('meta.pagetitle-403') . ' - ' . trans('meta.pagetitle-default'));
+            Meta::set('title', trans('meta.pagetitle-403').' - '.trans('meta.pagetitle-default'));
 
             GoogleTagManager::set('errorcode', '403');
 
@@ -114,7 +114,7 @@ class Handler extends ExceptionHandler
         }
 
         // general error
-        Meta::set('title', trans('meta.pagetitle-500') . ' - ' . trans('meta.pagetitle-default'));
+        Meta::set('title', trans('meta.pagetitle-500').' - '.trans('meta.pagetitle-default'));
 
         GoogleTagManager::set('errorcode', '500');
 
