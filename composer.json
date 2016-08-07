@@ -33,7 +33,7 @@
   "require-dev": {
     "barryvdh/laravel-debugbar": "2.1.*",
     "barryvdh/laravel-ide-helper": "2.1.*",
-    "fabpot/php-cs-fixer": "^1.10",
+    "friendsofphp/php-cs-fixer": "^1.11",
     "fzaninotto/faker": "~1.4",
     "mockery/mockery": "0.9.*",
     "phpspec/phpspec": "~2.1",
