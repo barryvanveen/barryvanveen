@@ -1,10 +1,10 @@
 <?php
 namespace Barryvanveen\Jobs\Rss;
 
+use App;
 use Barryvanveen\Rss\ChannelData;
 use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
-use Feed;
 
 class GetRssXml
 {
@@ -37,7 +37,7 @@ class GetRssXml
     public function handle()
     {
         // make a feed
-        $feed          = Feed::make();
+        $feed          = App::make('feed');
         $feed->charset = $this->feedData->encoding;
         $feed->ctype   = $this->feedData->ctype;
 

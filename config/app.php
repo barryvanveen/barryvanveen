@@ -242,7 +242,7 @@ return [
          */
         'Bugsnag'          => Bugsnag\BugsnagLaravel\Facades\Bugsnag::class,
         'DiffFormatter'    => Laravelrus\LocalizedCarbon\DiffFactoryFacade::class,
-        'Feed'             => Roumen\Feed\Facades\Feed::class,
+        'Feed'             => Roumen\Feed\Feed::class,
         'Flash'            => Laracasts\Flash\Flash::class,
         'Form'             => Collective\Html\FormFacade::class,
         'GoogleTagManager' => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
