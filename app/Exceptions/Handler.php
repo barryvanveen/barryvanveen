@@ -2,11 +2,11 @@
 namespace Barryvanveen\Exceptions;
 
 use Bugsnag;
-use Bugsnag\BugsnagLaravel\BugsnagExceptionHandler as ExceptionHandler;
 use Exception;
 use GoogleTagManager;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Exception\HttpResponseException;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Validation\ValidationException;
@@ -39,7 +39,9 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $e)
     {
-        Bugsnag::setAppVersion(config('app.version'));
+        if ($this->shouldReport($e)) {
+            Bugsnag::notifyException($e);
+        }
 
         parent::report($e);
     }

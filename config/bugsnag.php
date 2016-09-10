@@ -74,4 +74,7 @@ return [
     */
     'proxy' => env('BUGSNAG_PROXY', null),
 
+
+    'app_version' => config('app.version'),
+
 ];

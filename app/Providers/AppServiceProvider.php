@@ -1,7 +1,9 @@
 <?php
 namespace Barryvanveen\Providers;
 
+use Illuminate\Contracts\Logging\Log;
 use Illuminate\Support\ServiceProvider;
+use Psr\Log\LoggerInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,5 +27,8 @@ class AppServiceProvider extends ServiceProvider
 
             $this->app->alias('Debugbar', 'Barryvdh\Debugbar\Facade');
         }
+
+        $this->app->alias('bugsnag.multi', Log::class);
+        $this->app->alias('bugsnag.multi', LoggerInterface::class);
     }
 }
