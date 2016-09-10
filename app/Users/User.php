@@ -21,7 +21,6 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @property string $remember_token
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- *
  * @method static Builder|User whereId($value)
  * @method static Builder|User whereFirstname($value)
  * @method static Builder|User whereLastname($value)
@@ -30,6 +29,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @method static Builder|User whereRememberToken($value)
  * @method static Builder|User whereCreatedAt($value)
  * @method static Builder|User whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class User extends Model implements AuthenticatableContract, AuthorizableContract, HasPresenter
 {

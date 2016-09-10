@@ -3,6 +3,7 @@ namespace Barryvanveen\Blogs;
 
 use Barryvanveen\Comments\Comment;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
 use McCool\LaravelAutoPresenter\HasPresenter;
@@ -19,19 +20,21 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @property bool $online
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- *
+ * @property-read Collection|Comment[] $comments
+ * @method static Builder|Blog findSimilarSlugs($model, $attribute, $config, $slug)
+ * @method static Builder|Blog orderedNewToOld()
+ * @method static Builder|Blog orderedOldToNew()
+ * @method static Builder|Blog published()
+ * @method static Builder|Blog whereCreatedAt($value)
  * @method static Builder|Blog whereId($value)
- * @method static Builder|Blog whereTitle($value)
+ * @method static Builder|Blog whereOnline($value)
+ * @method static Builder|Blog wherePublicationDate($value)
  * @method static Builder|Blog whereSlug($value)
  * @method static Builder|Blog whereSummary($value)
  * @method static Builder|Blog whereText($value)
- * @method static Builder|Blog wherePublicationDate($value)
- * @method static Builder|Blog whereOnline($value)
- * @method static Builder|Blog whereCreatedAt($value)
+ * @method static Builder|Blog whereTitle($value)
  * @method static Builder|Blog whereUpdatedAt($value)
- * @method static Builder|Blog published()
- * @method static Builder|Blog orderedNewToOld()
- * @method static Builder|Blog orderedOldToNew()
+ * @mixin \Eloquent
  */
 class Blog extends Model implements HasPresenter
 {
