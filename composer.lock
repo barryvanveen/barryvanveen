@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d0b5ea626a6a7ed6b36a6c0d7c950b64",
-    "content-hash": "99bf4ced55062953d8031b28312ca0ec",
+    "hash": "566a399aa4877926a27022de2520fe06",
+    "content-hash": "de9e20199da14dacfda55fa506ed4e0a",
     "packages": [
         {
             "name": "bugsnag/bugsnag",
@@ -2570,16 +2570,16 @@
         },
         {
             "name": "rap2hpoutre/laravel-log-viewer",
-            "version": "v0.3.0",
+            "version": "v0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rap2hpoutre/laravel-log-viewer.git",
-                "reference": "a226072788f329d079b732f41a776a753b5d0669"
+                "reference": "3ff06fb16e9cf8bfb581d29bd7da3cd3c0baa5d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/a226072788f329d079b732f41a776a753b5d0669",
-                "reference": "a226072788f329d079b732f41a776a753b5d0669",
+                "url": "https://api.github.com/repos/rap2hpoutre/laravel-log-viewer/zipball/3ff06fb16e9cf8bfb581d29bd7da3cd3c0baa5d7",
+                "reference": "3ff06fb16e9cf8bfb581d29bd7da3cd3c0baa5d7",
                 "shasum": ""
             },
             "require": {
@@ -2602,7 +2602,7 @@
             "authors": [
                 {
                     "name": "rap2hpoutre",
-                    "email": "raphael@ornikar.com"
+                    "email": "raphaelht@gmail.com"
                 }
             ],
             "description": "A Laravel log reader",
@@ -2612,7 +2612,7 @@
                 "log-viewer",
                 "logging"
             ],
-            "time": "2015-06-05 06:27:08"
+            "time": "2016-06-23 14:07:52"
         },
         {
             "name": "roumen/feed",
