@@ -22,7 +22,7 @@
     "laravelrus/localized-carbon": "dev-master",
     "league/flysystem-dropbox": "1.0.4",
     "league/glide": "1.1.0",
-    "mccool/laravel-auto-presenter": "3.1.*",
+    "mccool/laravel-auto-presenter": "4.3.0",
     "php": ">=5.5.9",
     "rap2hpoutre/laravel-log-viewer": "0.3.*",
     "roumen/feed": "2.9.*",

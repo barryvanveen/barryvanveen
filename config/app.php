@@ -183,7 +183,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider::class,
-        McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider::class,
+        McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Roumen\Feed\FeedServiceProvider::class,
         Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
