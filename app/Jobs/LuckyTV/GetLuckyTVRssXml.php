@@ -7,6 +7,7 @@ use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
 use Cache;
 use Carbon\Carbon;
+use DateTime;
 use GuzzleHttp\Client;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Symfony\Component\DomCrawler\Crawler;
@@ -15,7 +16,7 @@ class GetLuckyTVRssXml
 {
     use DispatchesJobs;
 
-    const URL = 'http://www.luckymedia.nl/luckytv/category/dwdd/';
+    const URL = 'http://www.luckytv.nl/afleveringen/?order_by=date';
 
     /** @var string */
     protected $html;
@@ -55,17 +56,21 @@ class GetLuckyTVRssXml
     {
         $crawler = new Crawler($this->html);
 
-        $posts = $crawler->filter('div#content div.post')->each(function (Crawler $node) {
-            $title = $node->filter('div.meta h3.title a')->text();
-            $link = $node->filter('div.meta h3.title a')->attr('href');
-            $date = $node->filter('div.meta div.date')->text();
-            $image = $node->filter('a img')->attr('src');
+        $posts = $crawler->filter('div.archive__items article.video')->each(function (Crawler $node) {
+            $title = $node->filter('div.video__meta a.video__title')->text();
+            $link = $node->filter('div.video__meta a.video__title')->attr('href');
+            $date = $node->filter('div.video__meta time.video__date')->text();
+            $image = $node->filter('img.video__thumb')->attr('src');
 
-            // derive original image from thumbnail
-            $original_start = strpos($image, '?src=') + 5;
-            $original_end = strpos($image, '&w=');
-            $image = substr($image, $original_start, $original_end - $original_start);
+
+
+            $datetime = DateTime::createFromFormat("D j M Y", $date);
+            dd($datetime);
+            $timestamp = $datetime->format('d-m-Y');
+
             $image = '<img src="'.$image.'" alt="'.$title.'">';
+
+            dd([$timestamp, $image]);
 
             return compact('title', 'link', 'date', 'image');
         });
