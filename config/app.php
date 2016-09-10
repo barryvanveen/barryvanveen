@@ -178,7 +178,7 @@ return [
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Collective\Remote\RemoteServiceProvider::class,
-        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
         Eusonlito\LaravelMeta\MetaServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,

@@ -2,8 +2,7 @@
 namespace Barryvanveen\Blogs;
 
 use Barryvanveen\Comments\Comment;
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
 use McCool\LaravelAutoPresenter\HasPresenter;
@@ -34,9 +33,9 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @method static Builder|Blog orderedNewToOld()
  * @method static Builder|Blog orderedOldToNew()
  */
-class Blog extends Model implements SluggableInterface, HasPresenter
+class Blog extends Model implements HasPresenter
 {
-    use SluggableTrait;
+    use Sluggable;
 
     /**
      * Repository class name.
@@ -60,15 +59,14 @@ class Blog extends Model implements SluggableInterface, HasPresenter
     ];
 
     /**
-     * Config for automatically creating a unique slug.
-     *
-     * @var array
+     * Sluggable configuration.
      */
-    protected $sluggable = [
-        'build_from' => 'title',
-        'save_to'    => 'slug',
-        'on_update'  => true,
-    ];
+    public function sluggable() {
+        return [
+            'slug'
+        ];
+    }
+
 
     /**
      * A list of all relations that should be lazy-loaded.

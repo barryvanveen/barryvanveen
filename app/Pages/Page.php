@@ -1,8 +1,7 @@
 <?php
 namespace Barryvanveen\Pages;
 
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Query\Builder;
@@ -31,9 +30,9 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @method static ModelNotFoundException|Page firstOrFail()
  * @method static Page get()
  */
-class Page extends Model implements SluggableInterface, HasPresenter
+class Page extends Model implements HasPresenter
 {
-    use SluggableTrait;
+    use Sluggable;
 
     /**
      * Repository class name.
@@ -55,14 +54,13 @@ class Page extends Model implements SluggableInterface, HasPresenter
     ];
 
     /**
-     * Config for automatically creating a unique slug.
-     *
-     * @var array
+     * Sluggable configuration.
      */
-    protected $sluggable = [
-        'build_from' => 'title',
-        'save_to'    => 'slug',
-    ];
+    public function sluggable() {
+        return [
+            'slug'
+        ];
+    }
 
     /**
      * select only pages that are online.
