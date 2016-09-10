@@ -3,7 +3,7 @@
 @section('content')
 
     <main>
-        <article class="page__content">
+        <article class="page__content" itemprop="mainEntity">
             <header class="page-header">
                 <h1 itemprop="name">{{$page->title}}</h1>
             </header>
