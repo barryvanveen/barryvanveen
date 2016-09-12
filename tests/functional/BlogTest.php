@@ -85,7 +85,6 @@ class BlogTest extends TestCase
 
         $this->visit(route('blog-rss'));
 
-        $this->see('<rss version="2.0"')
-            ->see('<title>'.$blog->title.'</title>');
+        $this->see('<title>'.$blog->title.'</title>');
     }
 }
