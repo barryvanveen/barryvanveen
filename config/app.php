@@ -182,7 +182,6 @@ return [
         Eusonlito\LaravelMeta\MetaServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
-        Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider::class,
         McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Roumen\Feed\FeedServiceProvider::class,
@@ -241,13 +240,11 @@ return [
          * Vendor Aliases
          */
         'Bugsnag'          => Bugsnag\BugsnagLaravel\Facades\Bugsnag::class,
-        'DiffFormatter'    => Laravelrus\LocalizedCarbon\DiffFactoryFacade::class,
         'Feed'             => Roumen\Feed\Feed::class,
         'Flash'            => Laracasts\Flash\Flash::class,
         'Form'             => Collective\Html\FormFacade::class,
         'GoogleTagManager' => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
         'Html'             => Collective\Html\HtmlFacade::class,
-        'LocalizedCarbon'  => Laravelrus\LocalizedCarbon\LocalizedCarbon::class,
         'Meta'             => Eusonlito\LaravelMeta\Facade::class,
         'SSH'              => Collective\Remote\RemoteFacade::class,
 

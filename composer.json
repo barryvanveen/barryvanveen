@@ -19,7 +19,6 @@
     "laravel/framework": "5.2.*",
     "laravelcollective/html": "5.2.*",
     "laravelcollective/remote": "5.2.*",
-    "laravelrus/localized-carbon": "dev-master",
     "league/flysystem-dropbox": "1.0.4",
     "league/glide": "1.1.0",
     "mccool/laravel-auto-presenter": "4.3.0",

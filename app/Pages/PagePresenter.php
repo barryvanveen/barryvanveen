@@ -4,22 +4,21 @@ namespace Barryvanveen\Pages;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Carbon\Carbon;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Laravelrus\LocalizedCarbon\LocalizedCarbon;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
 class PagePresenter extends BasePresenter
 {
     use DispatchesJobs;
 
-    /** @var Page $resource */
-    protected $resource;
+    /** @var Page $wrappedObject */
+    protected $wrappedObject;
 
     /**
      * @param Page $resource
      */
     public function __construct(Page $resource)
     {
-        $this->resource = $resource;
+        $this->wrappedObject = $resource;
     }
 
     /**
@@ -29,7 +28,7 @@ class PagePresenter extends BasePresenter
      */
     public function admin_edit_url()
     {
-        return route('admin.page-edit', [$this->resource->id]);
+        return route('admin.page-edit', [$this->wrappedObject->id]);
     }
 
     /**
@@ -41,7 +40,7 @@ class PagePresenter extends BasePresenter
     {
         return $this->dispatch(
             new MarkdownToHtml(
-                $this->resource->text
+                $this->wrappedObject->text
             )
         );
     }
@@ -51,7 +50,7 @@ class PagePresenter extends BasePresenter
      */
     public function id()
     {
-        return $this->resource->id;
+        return $this->wrappedObject->id;
     }
 
     /**
@@ -59,7 +58,7 @@ class PagePresenter extends BasePresenter
      */
     public function online()
     {
-        return $this->resource->online;
+        return $this->wrappedObject->online;
     }
 
     /**
@@ -67,7 +66,7 @@ class PagePresenter extends BasePresenter
      */
     public function publication_date()
     {
-        return $this->resource->publication_date;
+        return $this->wrappedObject->publication_date;
     }
 
     /**
@@ -77,7 +76,7 @@ class PagePresenter extends BasePresenter
      */
     public function text()
     {
-        return $this->resource->text;
+        return $this->wrappedObject->text;
     }
 
     /**
@@ -85,7 +84,7 @@ class PagePresenter extends BasePresenter
      */
     public function title()
     {
-        return $this->resource->title;
+        return $this->wrappedObject->title;
     }
 
     /**
@@ -93,7 +92,7 @@ class PagePresenter extends BasePresenter
      */
     public function updated_at()
     {
-        return $this->resource->updated_at;
+        return $this->wrappedObject->updated_at;
     }
 
     /**
@@ -103,7 +102,7 @@ class PagePresenter extends BasePresenter
      */
     public function updated_at_formatted()
     {
-        $date = new Carbon($this->resource->updated_at);
+        $date = new Carbon($this->wrappedObject->updated_at);
 
         return $date->format('d-m-Y H:i');
     }
@@ -115,7 +114,7 @@ class PagePresenter extends BasePresenter
      */
     public function updated_at_formatted_rfc3339()
     {
-        $date = new Carbon($this->resource->updated_at);
+        $date = new Carbon($this->wrappedObject->updated_at);
 
         return $date->toRfc3339String();
     }
@@ -127,7 +126,7 @@ class PagePresenter extends BasePresenter
      */
     public function updated_at_for_humans()
     {
-        $date = new LocalizedCarbon($this->resource->updated_at);
+        $date = new Carbon($this->wrappedObject->updated_at);
 
         return $date->diffForHumans();
     }
@@ -139,6 +138,6 @@ class PagePresenter extends BasePresenter
      */
     public function url()
     {
-        return route('page-item', ['page' => $this->resource->slug]);
+        return route('page-item', ['page' => $this->wrappedObject->slug]);
     }
 }
