@@ -26,8 +26,6 @@ class GetLuckyTVRssXml
 
     /**
      * Handle a command.
-     *
-     * @return string
      */
     public function handle()
     {
