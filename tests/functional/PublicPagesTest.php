@@ -17,7 +17,7 @@ class PublicPagesTest extends TestCase
         /** @var Page $page */
         $page = factory(Barryvanveen\Pages\Page::class)->create(
             [
-                'slug'   => 'about-me',
+                'title'  => 'About me',
                 'online' => 1,
             ]
         );
@@ -37,7 +37,7 @@ class PublicPagesTest extends TestCase
         /** @var Page $page */
         $page = factory(Barryvanveen\Pages\Page::class)->create(
             [
-                'slug'   => 'books-that-i-have-read',
+                'title'  => 'Books that I have read',
                 'online' => 1,
             ]
         );
@@ -55,7 +55,7 @@ class PublicPagesTest extends TestCase
     {
         $this->visit(route('luckytv-rss'));
 
-        $this->see('<rss version="2.0"');
+        $this->see('<title>'.trans('general.luckytv-rss-title').'</title>');
     }
 
     /**
@@ -69,20 +69,19 @@ class PublicPagesTest extends TestCase
 
         factory(Barryvanveen\Pages\Page::class)->create(
             [
-                'slug'   => 'about-me',
+                'title'  => 'About me',
                 'online' => 1,
             ]
         );
 
         factory(Barryvanveen\Pages\Page::class)->create(
             [
-                'slug'   => 'books-that-i-have-read',
+                'title'  => 'Books that I have read',
                 'online' => 1,
             ]
         );
 
         $this->visit(route('sitemap'))
-             ->see('<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"')
              ->see(route('blog-item', [
                  'id'   => $blog->id,
                  'slug' => $blog->slug,

@@ -35,8 +35,7 @@
     "friendsofphp/php-cs-fixer": "^1.11",
     "fzaninotto/faker": "~1.4",
     "mockery/mockery": "0.9.*",
-    "phpspec/phpspec": "~2.1",
-    "phpunit/phpunit": "~4.0"
+    "phpunit/phpunit": "~5.0"
   },
   "autoload": {
     "classmap": [
