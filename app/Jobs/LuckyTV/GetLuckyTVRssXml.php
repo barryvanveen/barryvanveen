@@ -18,8 +18,6 @@ class GetLuckyTVRssXml
 
     const URL = 'http://www.luckytv.nl/afleveringen/?order_by=date';
 
-    const MAX_POSTS = 10;
-
     /** @var string */
     protected $html;
 
