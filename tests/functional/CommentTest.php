@@ -70,22 +70,12 @@ class CommentTest extends TestCase
         /** @var Blog $blog */
         $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
 
-        try {
-            $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
-                 ->type('asdasd', 'email')
-                 ->press(trans('comments.submit'))
-                 ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]));
-        } catch (Exception $e) {
-            $this->assertEquals(Illuminate\Foundation\Testing\HttpException::class, get_class($e));
+        $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+             ->type('asdasd', 'email')
+             ->press(trans('comments.submit'))
+             ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+             ->see(trans('validation.email-email'));
 
-            return;
-        }
-
-        $this->assertTrue(
-            false,
-            'You shouldn\'t reach this assertion, an exception should have been thrown on form 
-        validation'
-        );
     }
 
     public function testPostNewCommentWithHoneypot()
@@ -95,7 +85,6 @@ class CommentTest extends TestCase
 
         $new_comment = 'my newest comment';
 
-        try {
             $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
                 ->see(trans('comments.add-your-comment'))
                 ->type('John Doe', 'name')
@@ -104,18 +93,8 @@ class CommentTest extends TestCase
                 ->type('ishouldnotfillthisfield', 'youshouldnotfillthisfield')
                 ->press(trans('comments.submit'))
                 ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
-                ->see($new_comment);
-        } catch (Exception $e) {
-            $this->assertEquals(Illuminate\Foundation\Testing\HttpException::class, get_class($e));
+                ->see(trans('validation.youshouldnotfillthisfield-size'));
 
-            return;
-        }
-
-        $this->assertTrue(
-            false,
-            'You shouldn\'t reach this assertion, an exception should have been thrown on form 
-        validation'
-        );
     }
 
     public function testCommentsDisabled()

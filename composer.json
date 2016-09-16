@@ -16,9 +16,9 @@
     "guzzlehttp/guzzle": "6.*",
     "laracasts/flash": "2.0.1",
     "laracasts/utilities": "2.*",
-    "laravel/framework": "5.2.*",
-    "laravelcollective/html": "5.2.*",
-    "laravelcollective/remote": "5.2.*",
+    "laravel/framework": "5.3.9",
+    "laravelcollective/html": "5.3.*",
+    "laravelcollective/remote": "5.3.*",
     "league/flysystem-dropbox": "1.0.4",
     "league/glide": "1.1.0",
     "mccool/laravel-auto-presenter": "4.3.0",
@@ -30,7 +30,7 @@
     "symfony/dom-crawler": "^3.0"
   },
   "require-dev": {
-    "barryvdh/laravel-debugbar": "2.2.2",
+    "barryvdh/laravel-debugbar": "2.2.*",
     "barryvdh/laravel-ide-helper": "2.2.1",
     "friendsofphp/php-cs-fixer": "^1.11",
     "fzaninotto/faker": "~1.4",

@@ -9,7 +9,6 @@ use Barryvanveen\Jobs\Blogs\GetBlogRssXml;
 use Barryvanveen\Jobs\Comments\CreateComment;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Barryvanveen\Mailers\CommentMailer;
-use Barryvanveen\Pagination\SimplePaginatorPresenter;
 use Flash;
 use GoogleTagManager;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -42,7 +41,6 @@ class BlogController extends Controller
     public function index()
     {
         $blogs     = $this->blogRepository->paginatedPublished();
-        $presenter = new SimplePaginatorPresenter($blogs);
 
         $this->setPageTitle(trans('meta.pagetitle-blog'));
         $this->setMetaDescription(trans('meta.description-blog'));
@@ -53,7 +51,7 @@ class BlogController extends Controller
                 .trans('meta.description-blog'));
         }
 
-        return View::make('blog.full-list', compact('blogs', 'presenter'));
+        return View::make('blog.full-list', compact('blogs'));
     }
 
     /**
@@ -62,7 +60,7 @@ class BlogController extends Controller
      * @param int    $id
      * @param string $slug
      *
-     * @return View
+     * @return View|RedirectResponse
      */
     public function show($id, $slug)
     {

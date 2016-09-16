@@ -11,7 +11,7 @@
             @include('blog.partials.preview')
         @endforeach
 
-        {!! $presenter->render() !!}
+        {{ $blogs->links() }}
     </section>
 
 @stop
