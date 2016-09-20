@@ -4,7 +4,6 @@ namespace Barryvanveen\Blogs;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Carbon\Carbon;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Laravelrus\LocalizedCarbon\LocalizedCarbon;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
 class BlogPresenter extends BasePresenter
@@ -107,7 +106,7 @@ class BlogPresenter extends BasePresenter
      */
     public function publication_date_for_humans()
     {
-        $date = new LocalizedCarbon($this->wrappedObject->publication_date);
+        $date = new Carbon($this->wrappedObject->publication_date);
 
         return $date->diffForHumans();
     }

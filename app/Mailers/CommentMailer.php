@@ -8,7 +8,7 @@ use Barryvanveen\Recipients\Recipient;
 class CommentMailer extends Mailer
 {
     /**
-     * @param Blog $blog
+     * @param Blog    $blog
      * @param Comment $comment
      */
     public function sendCommentMail(Blog $blog, Comment $comment)

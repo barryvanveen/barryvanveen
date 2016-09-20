@@ -20,9 +20,9 @@ class AdminLogController extends Controller
 
         $logs = LaravelLogViewer::all();
 
-        $files = LaravelLogViewer::getFiles(true);
-        $options = array();
-        foreach($files as $file) {
+        $files   = LaravelLogViewer::getFiles(true);
+        $options = [];
+        foreach ($files as $file) {
             $options[base64_encode($file)] = $file;
         }
 

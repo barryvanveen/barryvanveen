@@ -61,7 +61,7 @@ class PagesController extends Controller
     {
         if (!Cache::has('luckytv-rss')) {
             Artisan::call('update-luckytv-rss-feed');
-        };
+        }
 
         $xml = Cache::get('luckytv-rss');
 

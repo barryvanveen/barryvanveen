@@ -6,10 +6,10 @@ use Illuminate\View\View;
 
 class AssetComposer
 {
-    /** @var  View */
+    /** @var View */
     protected $view;
 
-    /** @var  array */
+    /** @var array */
     protected $assets = [
         'dist/css/print.css'  => 'dist/css/print.css',
         'dist/css/screen.css' => 'dist/css/screen.css',

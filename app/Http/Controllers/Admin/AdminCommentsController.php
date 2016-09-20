@@ -20,9 +20,9 @@ class AdminCommentsController extends Controller
 
     /** @var array */
     private $rules = [
-        'email'  => 'required|email',
-        'name'   => 'required',
-        'text'   => 'required',
+        'email' => 'required|email',
+        'name'  => 'required',
+        'text'  => 'required',
     ];
 
     /** @var array */
@@ -38,9 +38,9 @@ class AdminCommentsController extends Controller
         $this->request           = $request;
 
         $this->messages = [
-            'email.required'            => trans('validation.email-required'),
-            'name.required'             => trans('validation.name-required'),
-            'text.required'             => trans('validation.text-required'),
+            'email.required' => trans('validation.email-required'),
+            'name.required'  => trans('validation.name-required'),
+            'text.required'  => trans('validation.text-required'),
         ];
 
         parent::__construct();

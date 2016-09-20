@@ -7,6 +7,7 @@ use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
 use Cache;
 use Carbon\Carbon;
+use DateTime;
 use GuzzleHttp\Client;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Symfony\Component\DomCrawler\Crawler;
@@ -15,7 +16,7 @@ class GetLuckyTVRssXml
 {
     use DispatchesJobs;
 
-    const URL = 'http://www.luckymedia.nl/luckytv/category/dwdd/';
+    const URL = 'http://www.luckytv.nl/afleveringen/?order_by=date';
 
     /** @var string */
     protected $html;
@@ -25,8 +26,6 @@ class GetLuckyTVRssXml
 
     /**
      * Handle a command.
-     *
-     * @return string
      */
     public function handle()
     {
@@ -55,22 +54,88 @@ class GetLuckyTVRssXml
     {
         $crawler = new Crawler($this->html);
 
-        $posts = $crawler->filter('div#content div.post')->each(function (Crawler $node) {
-            $title = $node->filter('div.meta h3.title a')->text();
-            $link = $node->filter('div.meta h3.title a')->attr('href');
-            $date = $node->filter('div.meta div.date')->text();
-            $image = $node->filter('a img')->attr('src');
+        $posts = $crawler->filter('div.archive__items article.video')->each(function (Crawler $node) {
+            $title = $node->filter('div.video__meta a.video__title')->text();
+            $link = $node->filter('div.video__meta a.video__title')->attr('href');
+            $date = $node->filter('div.video__meta time.video__date')->text();
+            $image = $node->filter('img.video__thumb')->attr('src');
 
-            // derive original image from thumbnail
-            $original_start = strpos($image, '?src=') + 5;
-            $original_end = strpos($image, '&w=');
-            $image = substr($image, $original_start, $original_end - $original_start);
+            $date = GetLuckyTVRssXml::getFormattedDate($date);
             $image = '<img src="'.$image.'" alt="'.$title.'">';
 
             return compact('title', 'link', 'date', 'image');
         });
 
+        $posts = $this->fillMissingDates($posts);
+
         return $posts;
+    }
+
+    /**
+     * Format the given Dutch date into a proper English date.
+     *
+     * @param $date
+     *
+     * @return DateTime|string
+     */
+    public static function getFormattedDate($date)
+    {
+        $datetime = DateTime::createFromFormat('D j M Y', self::translateDateFromDutchToEnglish($date));
+
+        return ($datetime !== false) ? $datetime->format('d-m-Y') : $datetime;
+    }
+
+    public static function translateDateFromDutchToEnglish($date)
+    {
+        $replacements = [
+            // weekdays
+            'Ma' => 'Mon',
+            'Di' => 'Tue',
+            'Wo' => 'Wed',
+            'Do' => 'Thu',
+            'Vr' => 'Fri',
+            'Za' => 'Sat',
+            'Zo' => 'Sun',
+            // months
+            'jan' => 'Jan',
+            'feb' => 'Feb',
+            'mrt' => 'Mar',
+            'apr' => 'Apr',
+            'mei' => 'May',
+            'jun' => 'Jun',
+            'jul' => 'Jul',
+            'aug' => 'Aug',
+            'sep' => 'Sep',
+            'okt' => 'Oct',
+            'nov' => 'Nov',
+            'dec' => 'Dec',
+        ];
+
+        return str_replace(array_keys($replacements), array_values($replacements), $date);
+    }
+
+    /**
+     * @param $posts
+     *
+     * @return array
+     */
+    protected function fillMissingDates($posts)
+    {
+        $posts = array_reverse($posts);
+
+        $lastdate = $posts[0]['date'];
+
+        for ($i = 1; $i < count($posts); ++$i) {
+            if ($posts[$i]['date'] !== false) {
+                $lastdate = $posts[$i]['date'];
+                continue;
+            }
+
+            $posts[$i]['date'] = $lastdate;
+            continue;
+        }
+
+        return array_reverse($posts);
     }
 
     protected function createRssFeedFromPosts()

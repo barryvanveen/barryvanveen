@@ -15,7 +15,7 @@ class GetBlogRssXml
 {
     use DispatchesJobs;
 
-    /** @var  BlogRepository */
+    /** @var BlogRepository */
     private $blogRepository;
 
     /**

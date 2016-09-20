@@ -6,7 +6,7 @@ use Route;
 
 class MenuComposer
 {
-    /** @var  View */
+    /** @var View */
     protected $view;
 
     /**

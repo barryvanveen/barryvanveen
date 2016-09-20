@@ -9,7 +9,6 @@ use Barryvanveen\Jobs\Blogs\GetBlogRssXml;
 use Barryvanveen\Jobs\Comments\CreateComment;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Barryvanveen\Mailers\CommentMailer;
-use Barryvanveen\Pagination\SimplePaginatorPresenter;
 use Flash;
 use GoogleTagManager;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -41,19 +40,18 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs     = $this->blogRepository->paginatedPublished();
-        $presenter = new SimplePaginatorPresenter($blogs);
+        $blogs = $this->blogRepository->paginatedPublished();
 
         $this->setPageTitle(trans('meta.pagetitle-blog'));
         $this->setMetaDescription(trans('meta.description-blog'));
 
         if (Request::has('page') && Request::get('page') > 1) {
             $this->setPageTitle(trans('meta.pagetitle-pagination', ['page' => Request::get('page')]));
-            $this->setMetaDescription(trans('meta.pagetitle-pagination', ['page' => Request::get('page')]) . '. '
-                . trans('meta.description-blog'));
+            $this->setMetaDescription(trans('meta.pagetitle-pagination', ['page' => Request::get('page')]).'. '
+                .trans('meta.description-blog'));
         }
 
-        return View::make('blog.full-list', compact('blogs', 'presenter'));
+        return View::make('blog.full-list', compact('blogs'));
     }
 
     /**
@@ -62,7 +60,7 @@ class BlogController extends Controller
      * @param int    $id
      * @param string $slug
      *
-     * @return View
+     * @return View|RedirectResponse
      */
     public function show($id, $slug)
     {
@@ -95,7 +93,7 @@ class BlogController extends Controller
     public function createComment($id, $slug, CreateCommentRequest $request, CommentMailer $commentMailer)
     {
         if (!config('custom.comments_enabled')) {
-            throw new AuthorizationException("Comments are disabled");
+            throw new AuthorizationException('Comments are disabled');
         }
 
         $blog = $this->findBlogOrRedirect($id, $slug);

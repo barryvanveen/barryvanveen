@@ -1,10 +1,8 @@
 <?php
 namespace Barryvanveen\Pages;
 
-use Cviebrock\EloquentSluggable\SluggableInterface;
-use Cviebrock\EloquentSluggable\SluggableTrait;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Query\Builder;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
@@ -19,21 +17,21 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *
+ * @method static Builder|Page findSimilarSlugs($model, $attribute, $config, $slug)
+ * @method static Builder|Page online()
+ * @method static Builder|Page orderedByTitleASC()
+ * @method static Builder|Page whereCreatedAt($value)
  * @method static Builder|Page whereId($value)
- * @method static Builder|Page whereTitle($value)
+ * @method static Builder|Page whereOnline($value)
  * @method static Builder|Page whereSlug($value)
  * @method static Builder|Page whereText($value)
- * @method static Builder|Page whereOnline($value)
- * @method static Builder|Page whereCreatedAt($value)
+ * @method static Builder|Page whereTitle($value)
  * @method static Builder|Page whereUpdatedAt($value)
- * @method static Page online()
- * @method static Page orderedByTitleASC()
- * @method static ModelNotFoundException|Page firstOrFail()
- * @method static Page get()
+ * @mixin \Eloquent
  */
-class Page extends Model implements SluggableInterface, HasPresenter
+class Page extends Model implements HasPresenter
 {
-    use SluggableTrait;
+    use Sluggable;
 
     /**
      * Repository class name.
@@ -55,14 +53,14 @@ class Page extends Model implements SluggableInterface, HasPresenter
     ];
 
     /**
-     * Config for automatically creating a unique slug.
-     *
-     * @var array
+     * Sluggable configuration.
      */
-    protected $sluggable = [
-        'build_from' => 'title',
-        'save_to'    => 'slug',
-    ];
+    public function sluggable()
+    {
+        return [
+            'slug',
+        ];
+    }
 
     /**
      * select only pages that are online.

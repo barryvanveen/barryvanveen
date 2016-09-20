@@ -3,7 +3,7 @@
 @section('content')
 
     <main>
-        <article class="blog-item" itemscope itemtype="https://schema.org/BlogPosting">
+        <article class="blog-item" itemprop="mainEntity" itemscope itemtype="https://schema.org/BlogPosting">
             <header class="blog-item__heading">
                 <h1 itemprop="headline">{{$blog->title}}</h1>
                 <p class="blog-item__heading-meta">

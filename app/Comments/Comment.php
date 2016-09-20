@@ -20,19 +20,22 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property-read Blog $blog
- * @method static Builder|Comment whereId($value)
- * @method static Builder|Comment whereEmail($value)
- * @method static Builder|Comment whereText($value)
- * @method static Builder|Comment whereIp($value)
- * @method static Builder|Comment whereFingerprint($value)
- * @method static Builder|Comment whereOnline($value)
- * @method static Builder|Comment whereCreatedAt($value)
- * @method static Builder|Comment whereUpdatedAt($value)
+ *
  * @method static Builder|Comment orderedNewToOld()
+ * @method static Builder|Comment whereBlogId($value)
+ * @method static Builder|Comment whereCreatedAt($value)
+ * @method static Builder|Comment whereEmail($value)
+ * @method static Builder|Comment whereFingerprint($value)
+ * @method static Builder|Comment whereId($value)
+ * @method static Builder|Comment whereIp($value)
+ * @method static Builder|Comment whereName($value)
+ * @method static Builder|Comment whereOnline($value)
+ * @method static Builder|Comment whereText($value)
+ * @method static Builder|Comment whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class Comment extends Model implements HasPresenter
 {
-
     /**
      * Repository class name.
      *
@@ -48,7 +51,7 @@ class Comment extends Model implements HasPresenter
     protected $fillable = [];
 
     /**
-     * A comment belongs to a blog
+     * A comment belongs to a blog.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

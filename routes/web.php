@@ -2,12 +2,12 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
+| This file is where you may define all of the routes that are handled
+| by your application. Just tell Laravel the URIs it should respond
+| to using a Closure or controller method. Build something great!
 |
 */
 
@@ -63,18 +63,17 @@ Route::get('sitemap.xml', [
  * Admin routes
  */
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'sitemap' => ['hidden' => true]], function () {
-
-    Route::get('inloggen', [
+    Route::get('login', [
         'as'   => 'admin.login',
         'uses' => 'AdminLoginController@index',
     ]);
 
-    Route::post('inloggen', [
+    Route::post('login', [
         'as'   => 'admin.login',
         'uses' => 'AdminLoginController@store',
     ]);
 
-    Route::get('uitloggen', [
+    Route::get('logout', [
         'as'   => 'admin.logout',
         'uses' => 'AdminLoginController@destroy',
     ]);
@@ -87,7 +86,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'sitemap' => ['hidden
      * - the \Barryvanveen\Http\Controllers\Admin namespace
      */
     Route::group(['middleware' => 'auth'], function () {
-
         Route::get('/', [
             'as'   => 'admin.dashboard',
             'uses' => 'AdminDashboardController@index',
@@ -168,7 +166,5 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'sitemap' => ['hidden
             'as'   => 'admin.logs',
             'uses' => 'AdminLogController@index',
         ]);
-
     });
-
 });

@@ -29,6 +29,5 @@ class GlideServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 }

@@ -30,6 +30,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @method static Builder|User whereRememberToken($value)
  * @method static Builder|User whereCreatedAt($value)
  * @method static Builder|User whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class User extends Model implements AuthenticatableContract, AuthorizableContract, HasPresenter
 {

@@ -2,20 +2,18 @@
 namespace Barryvanveen\Exceptions;
 
 use Bugsnag;
-use Bugsnag\BugsnagLaravel\BugsnagExceptionHandler as ExceptionHandler;
 use Exception;
-use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
+use GoogleTagManager;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Exception\HttpResponseException;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Session\TokenMismatchException;
+use Illuminate\Validation\ValidationException;
 use Input;
 use Meta;
 use Redirect;
 use Response;
 use Session;
-use GoogleTagManager;
-use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use View;
@@ -28,18 +26,24 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        AuthorizationException::class,
-        ValidationException::class,
+        \Illuminate\Auth\AuthenticationException::class,
+        \Illuminate\Auth\Access\AuthorizationException::class,
+        \Illuminate\Session\TokenMismatchException::class,
+        \Illuminate\Validation\ValidationException::class,
     ];
 
     /**
-     * Log exceptions to Bugsnag and write them to the log file.
+     * Report or log an exception.
+     *
+     * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
      *
      * @param \Exception $e
      */
     public function report(Exception $e)
     {
-        Bugsnag::setAppVersion(config('app.version'));
+        if ($this->shouldReport($e)) {
+            Bugsnag::notifyException($e);
+        }
 
         parent::report($e);
     }
@@ -54,70 +58,107 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
-        // render exception if debugging is enabled
-        if (config('app.debug')) {
-            return $this->toIlluminateResponse($this->convertExceptionToResponse($e), $e);
-        }
+        $e = $this->prepareException($e);
 
-        if ($e instanceof HttpResponseException) {
-            return $e->getResponse();
-        } elseif ($e instanceof ModelNotFoundException) {
-            $e = new NotFoundHttpException($e->getMessage(), $e);
-        } elseif ($e instanceof AuthorizationException) {
-            $e = new HttpException(403, $e->getMessage());
-        } elseif ($e instanceof ValidationException && $e->getResponse()) {
-            return $e->getResponse();
-        }
-
-        // wrong csrf token
         if ($e instanceof TokenMismatchException) {
-            Session::regenerateToken();
-
-            $errors = [
-                '_token' => [
-                    trans('validation.token-mismatch'),
-                ],
-            ];
-
-            return Redirect::back()->withInput(Input::except('_token'))->withErrors($errors);
+            return $this->tokenMismatchResponse();
+        } elseif ($e instanceof InvalidLoginException) {
+            return $this->invalidLoginResponse();
+        } elseif ($e instanceof HttpResponseException) {
+            return $e->getResponse();
+        } elseif ($e instanceof AuthenticationException) {
+            return $this->unauthenticated($request, $e);
+        } elseif ($e instanceof ValidationException) {
+            return $this->convertValidationExceptionToResponse($e, $request);
         }
 
-        // wrong login credentions
-        if ($e instanceof InvalidLoginException) {
-            sleep(3);
-
-            $errors = [
-                'password' => [
-                    trans('validation.invalid-login'),
-                ],
-            ];
-
-            return Redirect::back()->withInput(['email' => Input::get('email')])->withErrors($errors);
+        if (config('app.debug') && !($e instanceof ValidationException) && !($e instanceof HttpResponseException)) {
+            return $this->renderWhoopsResponse($e);
         }
 
-        // route not found
         if ($e instanceof NotFoundHttpException) {
-            Meta::set('title', trans('meta.pagetitle-404') . ' - ' . trans('meta.pagetitle-default'));
-
-            GoogleTagManager::set('errorcode', '404');
-
-            return Response::make(View::make('templates.404'), 404);
+            return $this->renderErrorPageResponse(404);
         }
 
-        // not authorized to see this route
         if ($e instanceof MethodNotAllowedHttpException) {
-            Meta::set('title', trans('meta.pagetitle-403') . ' - ' . trans('meta.pagetitle-default'));
-
-            GoogleTagManager::set('errorcode', '403');
-
-            return Response::make(View::make('templates.403'), 403);
+            return $this->renderErrorPageResponse(403);
         }
 
-        // general error
-        Meta::set('title', trans('meta.pagetitle-500') . ' - ' . trans('meta.pagetitle-default'));
+        return $this->renderErrorPageResponse(500);
+    }
 
-        GoogleTagManager::set('errorcode', '500');
+    /**
+     * @param Exception $e
+     *
+     * @return \Illuminate\Http\Response
+     */
+    protected function renderWhoopsResponse(Exception $e)
+    {
+        return $this->toIlluminateResponse($this->convertExceptionToResponse($e), $e);
+    }
 
-        return Response::make(View::make('templates.500'), 500);
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    protected function tokenMismatchResponse()
+    {
+        Session::regenerateToken();
+
+        $errors = [
+            '_token' => [
+                trans('validation.token-mismatch'),
+            ],
+        ];
+
+        return Redirect::back()->withInput(Input::except('_token'))->withErrors($errors);
+    }
+
+    /**
+     * Display.
+     *
+     * @param $status_code
+     *
+     * @return \Illuminate\Http\Response
+     */
+    protected function renderErrorPageResponse($status_code)
+    {
+        Meta::set('title', trans('meta.pagetitle-'.$status_code).' - '.trans('meta.pagetitle-default'));
+
+        GoogleTagManager::set('errorcode', $status_code);
+
+        return Response::make(View::make('errors.'.$status_code), $status_code);
+    }
+
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function invalidLoginResponse()
+    {
+        sleep(3);
+
+        $errors = [
+            'password' => [
+                trans('validation.invalid-login'),
+            ],
+        ];
+
+        return Redirect::back()->withInput(['email' => Input::get('email')])->withErrors($errors);
+    }
+
+    /**
+     * Convert an authentication exception into an unauthenticated response.
+     *
+     * @param \Illuminate\Http\Request                 $request
+     * @param \Illuminate\Auth\AuthenticationException $e
+     *
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     */
+    protected function unauthenticated($request, AuthenticationException $e)
+    {
+        if ($request->expectsJson()) {
+            return response()->json(['error' => 'Unauthenticated.'], 401);
+        }
+
+        return redirect()->guest(route('admin.login'));
     }
 }

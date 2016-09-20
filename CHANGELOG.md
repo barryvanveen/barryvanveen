@@ -9,6 +9,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.14.0] - 2016-09-20
+### Changed
+- Updated laravel/framework to 5.3.9
+- Updated various other packages
+### Fixed
+- Fixed LuckyTV Rss feed to work with new LuckyTV website
+- Fixed tests and exception handling after updating dependencies
+### Removed
+- Removed laravelrus/localized-carbon
+
 ## [2.13.1] - 2016-07-26
 ### Fixed
 - Fixed double usage of ValidatesRequests trait

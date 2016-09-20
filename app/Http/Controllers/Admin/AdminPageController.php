@@ -27,7 +27,7 @@ class AdminPageController extends Controller
         'online' => 'required',
     ];
 
-    /** @var  array */
+    /** @var array */
     protected $messages;
 
     /**

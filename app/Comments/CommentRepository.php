@@ -29,5 +29,4 @@ class CommentRepository extends EloquentRepository
     {
         return Comment::findOrFail($id);
     }
-
 }

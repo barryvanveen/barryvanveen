@@ -1,5 +1,7 @@
 <?php
 
+use Barryvanveen\Blogs\Blog;
+use Barryvanveen\Users\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class PrivatePagesTest extends TestCase
@@ -11,7 +13,10 @@ class PrivatePagesTest extends TestCase
      */
     public function testAuthorizationNeeded()
     {
+        /** @var User $user */
         $user = factory(Barryvanveen\Users\User::class)->create();
+
+        /** @var Blog $blog */
         $blog = factory(Barryvanveen\Blogs\Blog::class)->create();
 
         $this->visit(route('admin.blog'))

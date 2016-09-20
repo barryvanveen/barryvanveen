@@ -1,7 +1,6 @@
 <?php
 namespace Barryvanveen\Http\Controllers;
 
-use Auth;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -15,20 +14,11 @@ abstract class Controller extends BaseController
 
     public function __construct()
     {
-        // default page title
         $this->setPageTitle(trans('meta.pagetitle-default'), false);
 
-        // default javascript variables
-        $javascript_vars = [
-            'baseurl'  => url(''),
-            'loggedin' => (Auth::user() ? true : false),
-        ];
-
-        if (Auth::check()) {
-            $javascript_vars['markdownToHtmlRoute'] = route('admin.markdown-to-html');
-        }
-
-        JavaScript::put($javascript_vars);
+        JavaScript::put([
+            'markdownToHtmlRoute' => route('admin.markdown-to-html'),
+        ]);
     }
 
     /**

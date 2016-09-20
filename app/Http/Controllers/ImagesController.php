@@ -6,7 +6,7 @@ use League\Glide\Server;
 
 class ImagesController extends Controller
 {
-    /** @var  Server */
+    /** @var Server */
     protected $server;
 
     /** @var array */

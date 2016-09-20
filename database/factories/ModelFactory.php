@@ -39,7 +39,7 @@ $factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
     ];
 });
 
-    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'published', function($faker) use ($factory) {
+    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'published', function ($faker) use ($factory) {
         /* @var Faker\Generator $faker */
         $blog = $factory->raw(Barryvanveen\Blogs\Blog::class);
 
@@ -49,7 +49,7 @@ $factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
         return $blog;
     });
 
-    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'unpublished-offline', function($faker) use ($factory) {
+    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'unpublished-offline', function ($faker) use ($factory) {
         /* @var Faker\Generator $faker */
         $blog = $factory->raw(Barryvanveen\Blogs\Blog::class);
 
@@ -59,7 +59,7 @@ $factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
         return $blog;
     });
 
-    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'unpublished-future', function($faker) use ($factory) {
+    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'unpublished-future', function ($faker) use ($factory) {
         /* @var Faker\Generator $faker */
         $blog = $factory->raw(Barryvanveen\Blogs\Blog::class);
 
@@ -81,7 +81,7 @@ $factory->define(Barryvanveen\Comments\Comment::class, function ($faker) {
     ];
 });
 
-    $factory->defineAs(Barryvanveen\Comments\Comment::class, 'online', function($faker) use ($factory) {
+    $factory->defineAs(Barryvanveen\Comments\Comment::class, 'online', function ($faker) use ($factory) {
         /* @var Faker\Generator $faker */
         $comment = $factory->raw(Barryvanveen\Comments\Comment::class);
 
@@ -90,7 +90,7 @@ $factory->define(Barryvanveen\Comments\Comment::class, function ($faker) {
         return $comment;
     });
 
-    $factory->defineAs(Barryvanveen\Comments\Comment::class, 'offline', function($faker) use ($factory) {
+    $factory->defineAs(Barryvanveen\Comments\Comment::class, 'offline', function ($faker) use ($factory) {
         /* @var Faker\Generator $faker */
         $comment = $factory->raw(Barryvanveen\Comments\Comment::class);
 

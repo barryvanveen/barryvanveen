@@ -15,13 +15,13 @@ class CommentTest extends TestCase
 
         $online_comments = factory(Barryvanveen\Comments\Comment::class, 'online', 3)->create(
             [
-                'blog_id' => $blog->id
+                'blog_id' => $blog->id,
             ]
         );
 
         $offline_comments = factory(Barryvanveen\Comments\Comment::class, 'offline', 3)->create(
             [
-                'blog_id' => $blog->id
+                'blog_id' => $blog->id,
             ]
         );
 
@@ -63,7 +63,6 @@ class CommentTest extends TestCase
             ->press(trans('comments.submit'))
             ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
             ->see($new_comment);
-
     }
 
     public function testPostNewCommentWithFalseInformation()
@@ -71,27 +70,11 @@ class CommentTest extends TestCase
         /** @var Blog $blog */
         $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
 
-        try {
-
-            $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
-                 ->type('asdasd', 'email')
-                 ->press(trans('comments.submit'))
-                 ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]));
-
-        } catch (Exception $e) {
-
-            $this->assertEquals(Illuminate\Foundation\Testing\HttpException::class, get_class($e));
-
-            return;
-
-        }
-
-        $this->assertTrue(
-            false,
-            'You shouldn\'t reach this assertion, an exception should have been thrown on form 
-        validation'
-        );
-
+        $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+             ->type('asdasd', 'email')
+             ->press(trans('comments.submit'))
+             ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+             ->see(trans('validation.email-email'));
     }
 
     public function testPostNewCommentWithHoneypot()
@@ -101,9 +84,7 @@ class CommentTest extends TestCase
 
         $new_comment = 'my newest comment';
 
-        try {
-
-            $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+        $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
                 ->see(trans('comments.add-your-comment'))
                 ->type('John Doe', 'name')
                 ->type('john@example.com', 'email')
@@ -111,24 +92,8 @@ class CommentTest extends TestCase
                 ->type('ishouldnotfillthisfield', 'youshouldnotfillthisfield')
                 ->press(trans('comments.submit'))
                 ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
-                ->see($new_comment);
-
-        } catch (Exception $e) {
-
-            $this->assertEquals(Illuminate\Foundation\Testing\HttpException::class, get_class($e));
-
-            return;
-
-        }
-
-        $this->assertTrue(
-            false,
-            'You shouldn\'t reach this assertion, an exception should have been thrown on form 
-        validation'
-        );
-
+                ->see(trans('validation.youshouldnotfillthisfield-size'));
     }
-
 
     public function testCommentsDisabled()
     {
@@ -139,6 +104,5 @@ class CommentTest extends TestCase
 
         $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
              ->see(trans('comments.comments-are-closed'));
-
     }
 }
