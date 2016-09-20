@@ -15,12 +15,12 @@ class ChannelData
     /** @var string */
     public $lastBuildDate;
 
-    /** @var string  */
+    /** @var string */
     public $language;
 
     /**
      * @param string $title         the name of the feed, if the feed corresponds  directly to a web site, the name
-     *                              should match the name of the site.
+     *                              should match the name of the site
      * @param string $description   a human-readable characterization or summary of the feed
      * @param string $link          identifies the URL of the web site associated with the feed
      * @param string $lastBuildDate the last date and time the content of the feed was updated in RFC-2822 format

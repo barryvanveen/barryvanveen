@@ -10,10 +10,10 @@ use View;
 
 class GetSitemapXml
 {
-    /** @var array  */
+    /** @var array */
     protected $items = [];
 
-    /** @var array  */
+    /** @var array */
     protected $lastmod = [];
 
     /** @var BlogRepository */

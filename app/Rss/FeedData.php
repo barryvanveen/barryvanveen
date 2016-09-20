@@ -3,10 +3,10 @@ namespace Barryvanveen\Rss;
 
 class FeedData
 {
-    /** @var  string */
+    /** @var string */
     public $encoding;
 
-    /** @var string  */
+    /** @var string */
     public $ctype;
 
     /**

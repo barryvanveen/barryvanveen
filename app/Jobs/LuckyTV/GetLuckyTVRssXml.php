@@ -72,14 +72,15 @@ class GetLuckyTVRssXml
     }
 
     /**
-     * Format the given Dutch date into a proper English date
+     * Format the given Dutch date into a proper English date.
      *
      * @param $date
+     *
      * @return DateTime|string
      */
     public static function getFormattedDate($date)
     {
-        $datetime = DateTime::createFromFormat('D j M Y', GetLuckyTVRssXml::translateDateFromDutchToEnglish($date));
+        $datetime = DateTime::createFromFormat('D j M Y', self::translateDateFromDutchToEnglish($date));
 
         return ($datetime !== false) ? $datetime->format('d-m-Y') : $datetime;
     }
@@ -115,6 +116,7 @@ class GetLuckyTVRssXml
 
     /**
      * @param $posts
+     *
      * @return array
      */
     protected function fillMissingDates($posts)
@@ -123,7 +125,7 @@ class GetLuckyTVRssXml
 
         $lastdate = $posts[0]['date'];
 
-        for ($i = 1; $i < count($posts); $i++) {
+        for ($i = 1; $i < count($posts); ++$i) {
             if ($posts[$i]['date'] !== false) {
                 $lastdate = $posts[$i]['date'];
                 continue;

@@ -63,7 +63,6 @@ Route::get('sitemap.xml', [
  * Admin routes
  */
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'sitemap' => ['hidden' => true]], function () {
-
     Route::get('login', [
         'as'   => 'admin.login',
         'uses' => 'AdminLoginController@index',
@@ -87,7 +86,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'sitemap' => ['hidden
      * - the \Barryvanveen\Http\Controllers\Admin namespace
      */
     Route::group(['middleware' => 'auth'], function () {
-
         Route::get('/', [
             'as'   => 'admin.dashboard',
             'uses' => 'AdminDashboardController@index',
@@ -168,7 +166,5 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'sitemap' => ['hidden
             'as'   => 'admin.logs',
             'uses' => 'AdminLogController@index',
         ]);
-
     });
-
 });

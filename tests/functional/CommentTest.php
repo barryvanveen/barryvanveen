@@ -75,7 +75,6 @@ class CommentTest extends TestCase
              ->press(trans('comments.submit'))
              ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
              ->see(trans('validation.email-email'));
-
     }
 
     public function testPostNewCommentWithHoneypot()
@@ -85,7 +84,7 @@ class CommentTest extends TestCase
 
         $new_comment = 'my newest comment';
 
-            $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
+        $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
                 ->see(trans('comments.add-your-comment'))
                 ->type('John Doe', 'name')
                 ->type('john@example.com', 'email')
@@ -94,7 +93,6 @@ class CommentTest extends TestCase
                 ->press(trans('comments.submit'))
                 ->seePageIs(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
                 ->see(trans('validation.youshouldnotfillthisfield-size'));
-
     }
 
     public function testCommentsDisabled()

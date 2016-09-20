@@ -1,5 +1,4 @@
 <?php
-
 namespace Barryvanveen\Exceptions;
 
 use Bugsnag;
@@ -38,8 +37,7 @@ class Handler extends ExceptionHandler
      *
      * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
      *
-     * @param  \Exception  $e
-     * @return void
+     * @param \Exception $e
      */
     public function report(Exception $e)
     {
@@ -53,8 +51,9 @@ class Handler extends ExceptionHandler
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $e
+     * @param \Illuminate\Http\Request $request
+     * @param \Exception               $e
+     *
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     public function render($request, Exception $e)
@@ -86,7 +85,6 @@ class Handler extends ExceptionHandler
         }
 
         return $this->renderErrorPageResponse(500);
-
     }
 
     /**
@@ -98,7 +96,6 @@ class Handler extends ExceptionHandler
     {
         return $this->toIlluminateResponse($this->convertExceptionToResponse($e), $e);
     }
-
 
     /**
      * @return \Illuminate\Http\RedirectResponse
@@ -117,7 +114,7 @@ class Handler extends ExceptionHandler
     }
 
     /**
-     * Display
+     * Display.
      *
      * @param $status_code
      *
@@ -133,8 +130,6 @@ class Handler extends ExceptionHandler
     }
 
     /**
-     *
-     *
      * @return \Illuminate\Http\RedirectResponse
      */
     public function invalidLoginResponse()
@@ -153,8 +148,9 @@ class Handler extends ExceptionHandler
     /**
      * Convert an authentication exception into an unauthenticated response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Auth\AuthenticationException  $e
+     * @param \Illuminate\Http\Request                 $request
+     * @param \Illuminate\Auth\AuthenticationException $e
+     *
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
     protected function unauthenticated($request, AuthenticationException $e)

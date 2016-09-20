@@ -16,6 +16,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @property bool $online
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
+ *
  * @method static Builder|Page findSimilarSlugs($model, $attribute, $config, $slug)
  * @method static Builder|Page online()
  * @method static Builder|Page orderedByTitleASC()
@@ -54,9 +55,10 @@ class Page extends Model implements HasPresenter
     /**
      * Sluggable configuration.
      */
-    public function sluggable() {
+    public function sluggable()
+    {
         return [
-            'slug'
+            'slug',
         ];
     }
 
