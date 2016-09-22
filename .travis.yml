@@ -24,6 +24,8 @@ env:
     - GITHUB_PROFILE="https://www.github.com/barryvanveen"
     - COMMENTS_ENABLED=1
     - MAIL_DRIVER=log
+    - MAIL_TO_ADDRESS=barryvanveen@gmail.com
+    - MAIL_TO_NAME="Barry van Veen"
 
 sudo: false
 
