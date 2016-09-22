@@ -23,6 +23,7 @@ env:
     - LINKEDIN_PROFILE="https://www.linkedin.com/in/barryvanveen"
     - GITHUB_PROFILE="https://www.github.com/barryvanveen"
     - COMMENTS_ENABLED=1
+    - MAIL_DRIVER=log
 
 sudo: false
 
