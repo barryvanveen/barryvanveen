@@ -86,7 +86,7 @@ class AdminCommentsController extends Controller
      */
     public function update($id)
     {
-        $this->validate($this->request,  $this->rules, $this->messages);
+        $this->validate($this->request, $this->rules, $this->messages);
 
         $this->dispatch(
             new UpdateComment(
