@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Providers;
 
 use Illuminate\Support\ServiceProvider;

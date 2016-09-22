@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Jobs\Comments;
 
 use Barryvanveen\Comments\CommentRepository;
@@ -24,13 +25,13 @@ class UpdateComment
      */
     public function __construct($id, $email, $name, $text, $ip, $fingerprint, $online)
     {
-        $this->id          = $id;
-        $this->email       = $email;
-        $this->name        = $name;
-        $this->text        = $text;
-        $this->ip          = $ip;
+        $this->id = $id;
+        $this->email = $email;
+        $this->name = $name;
+        $this->text = $text;
+        $this->ip = $ip;
         $this->fingerprint = $fingerprint;
-        $this->online      = $online;
+        $this->online = $online;
     }
 
     /**
@@ -38,18 +39,18 @@ class UpdateComment
      *
      * @param CommentRepository $commentRepository
      *
-     * @return mixed
+     * @return void
      */
     public function handle(CommentRepository $commentRepository)
     {
         $comment = $commentRepository->findById($this->id);
 
-        $comment->email       = $this->email;
-        $comment->name        = $this->name;
-        $comment->text        = $this->text;
-        $comment->ip          = $this->ip;
+        $comment->email = $this->email;
+        $comment->name = $this->name;
+        $comment->text = $this->text;
+        $comment->ip = $this->ip;
         $comment->fingerprint = $this->fingerprint;
-        $comment->online      = $this->online;
+        $comment->online = $this->online;
 
         $commentRepository->save($comment);
     }

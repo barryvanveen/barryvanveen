@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Http\Controllers;
 
 use Artisan;
@@ -59,7 +60,7 @@ class PagesController extends Controller
 
     public function luckytv()
     {
-        if (!Cache::has('luckytv-rss')) {
+        if (! Cache::has('luckytv-rss')) {
             Artisan::call('update-luckytv-rss-feed');
         }
 

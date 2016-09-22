@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -38,11 +39,11 @@ class DeployCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
     public function handle()
     {
-        if (!$this->confirm('Do you really want to deploy?', false)) {
+        if (! $this->confirm('Do you really want to deploy?', false)) {
             $this->info('Deploy cancelled.');
 
             return;
@@ -62,7 +63,7 @@ class DeployCommand extends Command
      */
     protected function deploy()
     {
-        $logfile        = 'storage/logs/'.date('YmdHis').'.log';
+        $logfile = 'storage/logs/'.date('YmdHis').'.log';
         $redirecttofile = ' | tee -a '.$logfile.' 2>&1';
 
         SSH::into('production')->run(

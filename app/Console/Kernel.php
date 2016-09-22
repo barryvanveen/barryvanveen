@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Console;
 
 use Illuminate\Console\Scheduling\Schedule;

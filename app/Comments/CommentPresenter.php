@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Comments;
 
 use Carbon\Carbon;

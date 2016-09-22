@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Http\Controllers\Admin;
 
 use Auth;
@@ -35,7 +36,7 @@ class AdminLoginController extends Controller
     public function __construct(UserRepository $userRepository, Request $request)
     {
         $this->userRepository = $userRepository;
-        $this->request        = $request;
+        $this->request = $request;
 
         $this->messages = [
             'email.required'    => trans('validation.email-required'),

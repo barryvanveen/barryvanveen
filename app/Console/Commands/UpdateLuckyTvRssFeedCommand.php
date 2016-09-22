@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Console\Commands;
 
 use Barryvanveen\Jobs\LuckyTV\GetLuckyTVRssXml;
@@ -39,7 +40,7 @@ class UpdateLuckyTvRssFeedCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
     public function handle()
     {

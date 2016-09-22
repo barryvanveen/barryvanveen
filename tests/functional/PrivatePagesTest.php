@@ -34,7 +34,7 @@ class PrivatePagesTest extends TestCase
      */
     public function testLoginForm()
     {
-        $email    = 'mymail@example.org';
+        $email = 'mymail@example.org';
         $password = 'secret';
 
         /** @var Barryvanveen\Users\User $user */

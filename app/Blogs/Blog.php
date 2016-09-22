@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Blogs;
 
 use Barryvanveen\Comments\Comment;
