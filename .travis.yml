@@ -8,19 +8,15 @@ php:
 env:
   global:
     - setup=basic
-
-matrix:
-  include:
-    - php: 5.6
-      env: setup=lowest
-    - php: 5.6
-      env: setup=stable
+    - APP_ENV=staging
+    - APP_DEBUG=false
+    - APP_KEY=xxxx
+    - DB_CONNECTION=mysql
+    - CACHE_DRIVER=file
+    - SESSION_DRIVER=file
+    - QUEUE_DRIVER=sync
 
 sudo: false
-
-services:
-  - memcached
-  - redis-server
 
 before_install:
   - if [[ $TRAVIS_PHP_VERSION != 7.1 ]] ; then phpenv config-rm xdebug.ini; fi
@@ -29,12 +25,9 @@ before_install:
 
 install:
   - if [[ $setup = 'basic' ]]; then travis_retry composer install --no-interaction --prefer-dist --no-suggest; fi
-  - if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-stable --no-suggest; fi
-  - if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-lowest --prefer-stable --no-suggest; fi
 
 script: vendor/bin/phpunit
 
 matrix:
   allow_failures:
     - php: 7.1
-fast_finish: true
