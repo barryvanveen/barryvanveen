@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/barryvanveen/barryvanveen.svg?branch=master)](https://travis-ci
-.org/barryvanveen/barryvanveen)
+[![Build Status](https://travis-ci.org/barryvanveen/barryvanveen.svg?branch=master)](https://travis-ci.org/barryvanveen/barryvanveen) [![StyleCI](https://styleci.io/repos/52092980/shield?branch=feature/codestyle-fixers)](https://styleci.io/repos/52092980)
 
 # Barry van Veen
 This is the source code of my personal blog, which can be found at [barryvanveen.nl](http://barryvanveen.nl). If you 
