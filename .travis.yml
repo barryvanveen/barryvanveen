@@ -19,6 +19,10 @@ env:
     - CACHE_DRIVER=file
     - SESSION_DRIVER=file
     - QUEUE_DRIVER=sync
+    - GTM_CODE=
+    - LINKEDIN_PROFILE="https://www.linkedin.com/in/barryvanveen"
+    - GITHUB_PROFILE="https://www.github.com/barryvanveen"
+    - COMMENTS_ENABLED=1
 
 sudo: false
 
