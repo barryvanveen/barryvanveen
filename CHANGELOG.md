@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
+- Added Travis CI integration 
 ### Changed
 ### Deprecated
 ### Removed
