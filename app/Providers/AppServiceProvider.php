@@ -27,10 +27,6 @@ class AppServiceProvider extends ServiceProvider
             $this->app->alias('Debugbar', 'Barryvdh\Debugbar\Facade');
         }
 
-        if (config('app.env') != 'staging') {
-            $this->app->register('Bugsnag\BugsnagLaravel\BugsnagServiceProvider');
-        }
-
         $this->app->alias('bugsnag.multi', Log::class);
         $this->app->alias('bugsnag.multi', LoggerInterface::class);
     }
