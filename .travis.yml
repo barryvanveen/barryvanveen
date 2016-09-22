@@ -1,0 +1,47 @@
+language: php
+
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+
+env:
+  global:
+    - setup=basic
+    - APP_ENV=staging
+    - APP_DEBUG=false
+    - APP_KEY=01234567890123456789012346579012
+    - DB_CONNECTION=mysql
+    - DB_HOST=localhost
+    - DB_DATABASE=barryvanveen
+    - DB_USERNAME=root
+    - DB_PASSWORD=
+    - CACHE_DRIVER=file
+    - SESSION_DRIVER=file
+    - QUEUE_DRIVER=sync
+    - GTM_CODE=
+    - LINKEDIN_PROFILE="https://www.linkedin.com/in/barryvanveen"
+    - GITHUB_PROFILE="https://www.github.com/barryvanveen"
+    - COMMENTS_ENABLED=1
+    - MAIL_DRIVER=log
+    - MAIL_TO_ADDRESS=barryvanveen@gmail.com
+    - MAIL_TO_NAME="Barry van Veen"
+
+sudo: false
+
+before_install:
+  - if [[ $TRAVIS_PHP_VERSION != 7.1 ]] ; then phpenv config-rm xdebug.ini; fi
+  - travis_retry composer self-update
+
+install:
+  - if [[ $setup = 'basic' ]]; then travis_retry composer install --no-interaction --prefer-dist --no-suggest; fi
+
+before_script:
+  - mysql -e 'create database barryvanveen;'
+  - php artisan migrate
+
+script: vendor/bin/phpunit
+
+matrix:
+  allow_failures:
+    - php: 7.1
