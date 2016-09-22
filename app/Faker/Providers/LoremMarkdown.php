@@ -138,7 +138,7 @@ class LoremMarkdown extends Lorem
      */
     public static function markdownHeading($headingSize = 2)
     {
-        if (! is_integer($headingSize) || $headingSize < 1 || $headingSize > 6) {
+        if (! is_int($headingSize) || $headingSize < 1 || $headingSize > 6) {
             return '';
         }
 
