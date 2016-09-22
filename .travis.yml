@@ -12,6 +12,10 @@ env:
     - APP_DEBUG=false
     - APP_KEY=xxxx
     - DB_CONNECTION=mysql
+    - DB_HOST=localhost
+    - DB_DATABASE=barryvanveen
+    - DB_USERNAME=root
+    - DB_PASSWORD=
     - CACHE_DRIVER=file
     - SESSION_DRIVER=file
     - QUEUE_DRIVER=sync
@@ -24,6 +28,9 @@ before_install:
 
 install:
   - if [[ $setup = 'basic' ]]; then travis_retry composer install --no-interaction --prefer-dist --no-suggest; fi
+
+before_script:
+  - mysql -e 'create database barryvanveen;'
 
 script: vendor/bin/phpunit
 
