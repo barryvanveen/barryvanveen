@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Jobs\Pages;
 
 use Barryvanveen\Pages\Page;
@@ -17,8 +18,8 @@ class CreatePage
      */
     public function __construct($title, $text, $online)
     {
-        $this->title  = $title;
-        $this->text   = $text;
+        $this->title = $title;
+        $this->text = $text;
         $this->online = $online;
     }
 
@@ -27,14 +28,14 @@ class CreatePage
      *
      * @param PageRepository $pageRepository
      *
-     * @return mixed
+     * @return void
      */
     public function handle(PageRepository $pageRepository)
     {
         $page = new Page();
 
-        $page->title  = $this->title;
-        $page->text   = $this->text;
+        $page->title = $this->title;
+        $page->text = $this->text;
         $page->online = $this->online;
 
         $pageRepository->save($page);

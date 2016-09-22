@@ -10,9 +10,9 @@ class UsersTableSeeder extends Seeder
         $user = new User();
 
         $user->firstname = 'Your';
-        $user->lastname  = 'Name';
-        $user->email     = 'admin@example.com';
-        $user->password  = 'secret';
+        $user->lastname = 'Name';
+        $user->email = 'admin@example.com';
+        $user->password = 'secret';
 
         $user->save();
     }

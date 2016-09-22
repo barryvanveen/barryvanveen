@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Mailers;
 
 use Barryvanveen\Recipients\Recipient;
@@ -26,7 +27,7 @@ class Mailer
     {
         // make sure the recipient is assigned to the email template
         $data['mailable'] = $to;
-        $data['subject']  = $subject;
+        $data['subject'] = $subject;
 
         $this->mail->send($view, $data, function ($message) use ($to, $subject) {
 

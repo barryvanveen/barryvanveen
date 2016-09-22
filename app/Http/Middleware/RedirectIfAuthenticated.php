@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Http\Middleware;
 
 use Closure;

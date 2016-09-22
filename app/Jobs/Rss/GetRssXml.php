@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Jobs\Rss;
 
 use App;
@@ -24,8 +25,8 @@ class GetRssXml
      */
     public function __construct(FeedData $feedData, ChannelData $channelData, array $itemDataArray)
     {
-        $this->feedData      = $feedData;
-        $this->channelData   = $channelData;
+        $this->feedData = $feedData;
+        $this->channelData = $channelData;
         $this->itemDataArray = $itemDataArray;
     }
 
@@ -37,16 +38,16 @@ class GetRssXml
     public function handle()
     {
         // make a feed
-        $feed          = App::make('feed');
+        $feed = App::make('feed');
         $feed->charset = $this->feedData->encoding;
-        $feed->ctype   = $this->feedData->ctype;
+        $feed->ctype = $this->feedData->ctype;
 
         // configure channel
         $feed->description = $this->channelData->description;
-        $feed->lang        = $this->channelData->language;
-        $feed->link        = $this->channelData->link;
-        $feed->pubdate     = $this->channelData->lastBuildDate;
-        $feed->title       = $this->channelData->title;
+        $feed->lang = $this->channelData->language;
+        $feed->link = $this->channelData->link;
+        $feed->pubdate = $this->channelData->lastBuildDate;
+        $feed->title = $this->channelData->title;
 
         // add items
         foreach ($this->itemDataArray as $itemData) {

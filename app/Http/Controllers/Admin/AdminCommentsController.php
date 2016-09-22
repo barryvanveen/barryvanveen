@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Http\Controllers\Admin;
 
 use Barryvanveen\Comments\CommentRepository;
@@ -35,7 +36,7 @@ class AdminCommentsController extends Controller
     public function __construct(CommentRepository $commentRepository, Request $request)
     {
         $this->commentRepository = $commentRepository;
-        $this->request           = $request;
+        $this->request = $request;
 
         $this->messages = [
             'email.required' => trans('validation.email-required'),

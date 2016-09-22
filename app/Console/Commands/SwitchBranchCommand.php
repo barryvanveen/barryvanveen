@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Console\Commands;
 
 use DB;
@@ -40,7 +41,7 @@ class SwitchBranchCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
     public function handle()
     {
@@ -56,7 +57,7 @@ class SwitchBranchCommand extends Command
         $this->runTask('php artisan migrate');
         $this->runTask('php artisan db:seed');
 
-        if (!getenv('DB_TESTING_DATABASE')) {
+        if (! getenv('DB_TESTING_DATABASE')) {
             $this->error('Put a variable DB_TESTING_DATABASE in .env to automatically migrate the testing database.');
 
             return;
@@ -92,7 +93,7 @@ class SwitchBranchCommand extends Command
     protected function startOutput($line = null)
     {
         $this->info('=========================================');
-        if (!empty($line)) {
+        if (! empty($line)) {
             $this->info('Starting: '.$line);
         }
     }

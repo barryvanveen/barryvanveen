@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Pages;
 
 use Barryvanveen\Database\EloquentRepository;

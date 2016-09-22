@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Faker\Providers;
 
 use Faker\Provider\Lorem;
@@ -136,7 +137,7 @@ class LoremHtml extends Lorem
      */
     public static function htmlHeading($headingSize = 2)
     {
-        if (!is_integer($headingSize) || $headingSize < 1 || $headingSize > 6) {
+        if (! is_integer($headingSize) || $headingSize < 1 || $headingSize > 6) {
             return '';
         }
 

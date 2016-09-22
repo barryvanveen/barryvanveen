@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Composers;
 
 use Cache;
@@ -57,12 +58,12 @@ class AssetComposer
         foreach ($assets as $key => $asset) {
             $path = public_path().'/'.$key;
 
-            if (!file_exists($path)) {
+            if (! file_exists($path)) {
                 continue;
             }
 
             $hash = hash_file('crc32', $path);
-            $dot  = strripos($asset, '.');
+            $dot = strripos($asset, '.');
 
             $assets[$key] = substr($asset, 0, $dot + 1).$hash.substr($asset, $dot);
         }

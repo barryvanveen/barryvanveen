@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Http\Controllers\Admin;
 
 use Barryvanveen\Http\Controllers\Controller;
@@ -37,7 +38,7 @@ class AdminPageController extends Controller
     public function __construct(PageRepository $pagesRepository, Request $request)
     {
         $this->pagesRepository = $pagesRepository;
-        $this->request         = $request;
+        $this->request = $request;
 
         $this->messages = [
             'title.required'  => trans('validation.title-required'),

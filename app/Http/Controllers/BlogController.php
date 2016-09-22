@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Http\Controllers;
 
 use Barryvanveen\Blogs\Blog;
@@ -92,7 +93,7 @@ class BlogController extends Controller
      */
     public function createComment($id, $slug, CreateCommentRequest $request, CommentMailer $commentMailer)
     {
-        if (!config('custom.comments_enabled')) {
+        if (! config('custom.comments_enabled')) {
             throw new AuthorizationException('Comments are disabled');
         }
 

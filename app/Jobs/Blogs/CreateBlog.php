@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Jobs\Blogs;
 
 use Barryvanveen\Blogs\Blog;
@@ -21,11 +22,11 @@ class CreateBlog
      */
     public function __construct($title, $summary, $text, $publication_date, $online)
     {
-        $this->title            = $title;
-        $this->summary          = $summary;
-        $this->text             = $text;
+        $this->title = $title;
+        $this->summary = $summary;
+        $this->text = $text;
         $this->publication_date = $publication_date;
-        $this->online           = $online;
+        $this->online = $online;
     }
 
     /**
@@ -41,11 +42,11 @@ class CreateBlog
 
         $publication_date = date('Y-m-d H:i:s', strtotime($this->publication_date));
 
-        $blog->title            = $this->title;
-        $blog->summary          = $this->summary;
-        $blog->text             = $this->text;
+        $blog->title = $this->title;
+        $blog->summary = $this->summary;
+        $blog->text = $this->text;
         $blog->publication_date = $publication_date;
-        $blog->online           = $this->online;
+        $blog->online = $this->online;
 
         return $blogRepository->save($blog);
     }

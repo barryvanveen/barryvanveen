@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -24,7 +25,7 @@ class VersionCommand extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
     public function fire()
     {

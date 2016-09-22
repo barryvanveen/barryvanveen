@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Http\Controllers\Admin;
 
 use Barryvanveen\Http\Controllers\Controller;
@@ -20,7 +21,7 @@ class AdminLogController extends Controller
 
         $logs = LaravelLogViewer::all();
 
-        $files   = LaravelLogViewer::getFiles(true);
+        $files = LaravelLogViewer::getFiles(true);
         $options = [];
         foreach ($files as $file) {
             $options[base64_encode($file)] = $file;

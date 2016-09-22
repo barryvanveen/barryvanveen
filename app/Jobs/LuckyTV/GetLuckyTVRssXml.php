@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Jobs\LuckyTV;
 
 use Barryvanveen\Jobs\Rss\GetRssXml;

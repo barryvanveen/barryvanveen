@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Rss;
 
 class ChannelData
@@ -28,10 +29,10 @@ class ChannelData
      */
     public function __construct($title, $description, $link, $lastBuildDate, $language = 'dut')
     {
-        $this->title         = $title;
-        $this->description   = $description;
-        $this->link          = $link;
+        $this->title = $title;
+        $this->description = $description;
+        $this->link = $link;
         $this->lastBuildDate = $lastBuildDate;
-        $this->language      = $language;
+        $this->language = $language;
     }
 }

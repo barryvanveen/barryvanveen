@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Rss;
 
 class ItemData
@@ -27,10 +28,10 @@ class ItemData
      */
     public function __construct($title, $link, $guid, $pubDate, $description = false)
     {
-        $this->title       = $title;
-        $this->link        = $link;
-        $this->guid        = $guid;
-        $this->pubDate     = $pubDate;
+        $this->title = $title;
+        $this->link = $link;
+        $this->guid = $guid;
+        $this->pubDate = $pubDate;
         $this->description = $description;
     }
 }

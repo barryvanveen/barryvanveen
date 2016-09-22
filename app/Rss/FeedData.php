@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Rss;
 
 class FeedData
@@ -16,6 +17,6 @@ class FeedData
     public function __construct($encoding = 'UTF-8', $ctype = 'application/rss+xml')
     {
         $this->encoding = $encoding;
-        $this->ctype    = $ctype;
+        $this->ctype = $ctype;
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;

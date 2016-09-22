@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Jobs\Markdown;
 
 use cebe\markdown\GithubMarkdown;
@@ -24,9 +25,9 @@ class MarkdownToHtml
      */
     public function handle(GithubMarkdown $parser)
     {
-        $parser->html5               = true;
+        $parser->html5 = true;
         $parser->keepListStartNumber = true;
-        $parser->enableNewlines      = true; // only available for GithubMarkdown
+        $parser->enableNewlines = true; // only available for GithubMarkdown
         return $parser->parse($this->markdown);
     }
 }

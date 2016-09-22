@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Composers;
 
 use Illuminate\View\View;
