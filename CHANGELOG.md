@@ -4,12 +4,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
-- Added Travis CI integration 
-- Added StyleCI integration
 ### Changed
 ### Deprecated
 ### Removed
 ### Fixed
+
+## [2.14.1] - 2016-09-23
+### Added
+- Added Travis CI integration 
+- Added StyleCI integration
 
 ## [2.14.0] - 2016-09-20
 ### Changed
