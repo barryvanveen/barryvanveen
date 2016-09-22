@@ -10,7 +10,7 @@ return [
     /*
      * Enable or disable script rendering. Useful for local development.
      */
-    'enabled' => app()->environment() === 'staging',
+    'enabled' => env('APP_ENV') === 'staging',
 
     /*
      * If you want to use some macro's you 'll probably store them
