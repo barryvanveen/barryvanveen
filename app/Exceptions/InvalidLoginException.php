@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Exceptions;
 
 use Exception;

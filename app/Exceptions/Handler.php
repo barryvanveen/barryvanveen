@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Exceptions;
 
 use Bugsnag;
@@ -72,7 +73,7 @@ class Handler extends ExceptionHandler
             return $this->convertValidationExceptionToResponse($e, $request);
         }
 
-        if (config('app.debug') && !($e instanceof ValidationException) && !($e instanceof HttpResponseException)) {
+        if (config('app.debug') && ! ($e instanceof ValidationException) && ! ($e instanceof HttpResponseException)) {
             return $this->renderWhoopsResponse($e);
         }
 

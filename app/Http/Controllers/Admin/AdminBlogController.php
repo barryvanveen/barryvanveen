@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Http\Controllers\Admin;
 
 use Barryvanveen\Blogs\Blog;
@@ -39,7 +40,7 @@ class AdminBlogController extends Controller
     public function __construct(BlogRepository $blogRepository, Request $request)
     {
         $this->blogRepository = $blogRepository;
-        $this->request        = $request;
+        $this->request = $request;
 
         $this->messages = [
             'title.required'            => trans('validation.title-required'),
@@ -88,7 +89,7 @@ class AdminBlogController extends Controller
      */
     public function store()
     {
-        $this->validate($this->request,  $this->rules, $this->messages);
+        $this->validate($this->request, $this->rules, $this->messages);
 
         $this->dispatch(
             new CreateBlog(
@@ -130,7 +131,7 @@ class AdminBlogController extends Controller
      */
     public function update($id)
     {
-        $this->validate($this->request,  $this->rules, $this->messages);
+        $this->validate($this->request, $this->rules, $this->messages);
 
         $this->dispatch(
             new UpdateBlog(

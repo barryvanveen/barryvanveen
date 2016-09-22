@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Mailers;
 
 use Barryvanveen\Blogs\Blog;
@@ -14,8 +15,8 @@ class CommentMailer extends Mailer
     public function sendCommentMail(Blog $blog, Comment $comment)
     {
         $recipient = new Recipient(config('mail.to.address'), config('mail.to.name'));
-        $subject   = trans('email.new-comment', ['url' => url('')]);
-        $view      = 'emails.new-comment';
+        $subject = trans('email.new-comment', ['url' => url('')]);
+        $view = 'emails.new-comment';
 
         $this->send($recipient, $subject, $view, [
             'environment' => \App::environment(),

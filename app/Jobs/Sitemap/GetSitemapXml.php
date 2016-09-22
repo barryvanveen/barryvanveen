@@ -1,4 +1,5 @@
 <?php
+
 namespace Barryvanveen\Jobs\Sitemap;
 
 use Barryvanveen\Blogs\Blog;
@@ -50,15 +51,15 @@ class GetSitemapXml
     protected function getLastmodData()
     {
         // home
-        $blog                  = $this->blogRepository->lastUpdatedAt();
+        $blog = $this->blogRepository->lastUpdatedAt();
         $this->lastmod['home'] = $this->getFormattedDatetime($blog->updated_at);
 
         // about-me
-        $page                      = $this->pageRepository->findPublishedBySlug('about-me');
+        $page = $this->pageRepository->findPublishedBySlug('about-me');
         $this->lastmod['about-me'] = $this->getFormattedDatetime($page->updated_at);
 
         // books
-        $page                   = $this->pageRepository->findPublishedBySlug('books-that-i-have-read');
+        $page = $this->pageRepository->findPublishedBySlug('books-that-i-have-read');
         $this->lastmod['books'] = $this->getFormattedDatetime($page->updated_at);
     }
 
@@ -74,7 +75,7 @@ class GetSitemapXml
             $action = $route->getAction();
 
             // if this is not a GET-route
-            if (!in_array('GET', $route->getMethods())) {
+            if (! in_array('GET', $route->getMethods())) {
                 continue;
             }
 
