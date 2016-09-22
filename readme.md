@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/barryvanveen/barryvanveen.svg?branch=feature%2Ftravic-ci)](https://travis-ci.org/barryvanveen/barryvanveen)
+
 # Barry van Veen
 This is the source code of my personal blog, which can be found at [barryvanveen.nl](http://barryvanveen.nl). If you 
 are interested, below are some directions that get you (and me) started after cloning this repository.
