@@ -6,7 +6,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-//  GameOfLife JavaScript Plugin v1.0.3
+//  GameOfLife JavaScript Plugin v1.1.0
 //  https://github.com/barryvanveen/gameoflife
 //
 //  Released under the MIT license
@@ -127,8 +127,8 @@ var GameOfLife = function () {
                             this.changes.push({ col: col, row: row });
                             // come to life if exactly 3 neighbors
                         } else if (count == 3 && !this.cells[col][row]) {
-                                this.changes.push({ col: col, row: row });
-                            }
+                            this.changes.push({ col: col, row: row });
+                        }
                     }
                 }
 
