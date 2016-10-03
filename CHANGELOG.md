@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.14.3] - 2016-10-03
+### Fixed
+- Fixed conflicting styles of comments and syntax highlighted code
+
 ## [2.14.2] - 2016-10-03
 ### Changed
 - Updated Composer dependencies, Bower dependencies and NPM packages
