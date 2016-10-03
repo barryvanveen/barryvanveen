@@ -16,7 +16,7 @@
     "guzzlehttp/guzzle": "6.*",
     "laracasts/flash": "2.0.*",
     "laracasts/utilities": "2.*",
-    "laravel/framework": "5.3.11",
+    "laravel/framework": "5.3.*",
     "laravelcollective/html": "5.3.*",
     "laravelcollective/remote": "5.3.*",
     "league/flysystem-dropbox": "1.0.*",
