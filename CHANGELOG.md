@@ -9,6 +9,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.14.2] - 2016-10-03
+### Changed
+- Updated Composer dependencies, Bower dependencies and NPM packages
+- Recompiled CSS and JS
+
 ## [2.14.1] - 2016-09-23
 ### Added
 - Added Travis CI integration 
