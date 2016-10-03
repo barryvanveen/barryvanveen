@@ -18,13 +18,13 @@
   ],
   "dependencies": {
     "respond": "~1.4.2",
-    "bootstrap-sass-official": "3.3.6",
+    "bootstrap-sass-official": "3.3.7",
     "html5shiv": "~3.7.3",
     "scrollup": "~2.4.1",
     "autosize": "~3.0.15",
     "ajaxq": "~0.0.7",
     "prism": "~1.5.1",
-    "jquery": "1.11.2",
+    "jquery": "~1.11.2",
     "gameoflife": "^1.1.0",
     "fingerprintjs2": "^1.4.1"
   },
