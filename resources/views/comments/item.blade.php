@@ -1,4 +1,4 @@
-<div class="comment" itemprop="comment" itemscope itemtype="https://schema.org/Comment">
+<div class="comment__container" itemprop="comment" itemscope itemtype="https://schema.org/Comment">
     <a name="comment-{{ $comment->id }}"></a>
     <div class="comment__meta">
         <span class="comment__metaName" itemprop="author">{{ $comment->name }}</span>
