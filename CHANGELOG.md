@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.14.4] - 2016-10-05
+### Fixed
+- Fixed problem with Google Tag Manager not working on production environment
+
 ## [2.14.3] - 2016-10-03
 ### Fixed
 - Fixed conflicting styles of comments and syntax highlighted code
