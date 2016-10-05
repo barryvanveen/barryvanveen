@@ -10,7 +10,7 @@ return [
     /*
      * Enable or disable script rendering. Useful for local development.
      */
-    'enabled' => env('APP_ENV') !== 'staging',
+    'enabled' => env('GTM_CODE', false) !== false,
 
     /*
      * If you want to use some macro's you 'll probably store them
