@@ -11,8 +11,7 @@ a try and then use the following steps to set everything up for further developm
 * checkout `master`
 * create a file called `.env` and substitute all placeholders with real values 
 * run `composer install` to download all PHP packages to /vendor
-* run `bower install` to download all CSS and Javascript components to /bower_components
-* run `npm install` (in my case on Windows because in the Homestead VM this will cause trouble)
+* run `npm install [--no-bin-links]`
 * run `gulp` to build all CSS and Javascript files
 
 ## Staying up to date
@@ -21,7 +20,7 @@ Use `php artisan switch-branch` to update your project. This is mostly needed wh
 This command performs the following actions:
 
 * run `composer install`, use the `--composer-update` option to perform `composer update`
-* run `bower install`
+* run `npm install --no-bin-links`
 * remove all tables from the database and run `php artisan migrate` and `php artisan db:seed`
 * remove all tables from the testing database and run `php artisan migrate --env=testing`
 

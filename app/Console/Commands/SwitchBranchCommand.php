@@ -51,7 +51,7 @@ class SwitchBranchCommand extends Command
             $this->runTask('composer install');
         }
 
-        $this->runTask('bower install');
+        $this->runTask('npm install --no-bin-links');
 
         $this->runTask('clearDatabase', config('database.connections.mysql.database'));
         $this->runTask('php artisan migrate');

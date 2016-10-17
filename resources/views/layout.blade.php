@@ -36,6 +36,8 @@
 
 		@yield('body')
 
+        @include('layouts.partials.backtotop')
+
 		@include('layouts.partials.footer')
 
         @include('layouts.partials.javascript')

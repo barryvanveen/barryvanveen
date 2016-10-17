@@ -1,13 +1,9 @@
 window.Barryvanveen = window.Barryvanveen || {};
 
-window.Barryvanveen.admin = function() {
+window.Barryvanveen.admin = function () {
 
-    // timers to keep track of ajax-calls that are scheduled
-    window.Barryvanveen.callTimer = [];
-
-	window.Barryvanveen.initClickableTableRows();
-    window.Barryvanveen.initAutosizeTextareas();
-	window.Barryvanveen.initMarkdownEditors();
+    window.Barryvanveen.initClickableTableRows();
+    window.Barryvanveen.initMarkdownEditors();
     window.Barryvanveen.initCharacterCounters();
     window.Barryvanveen.initLogModal();
 
@@ -16,9 +12,9 @@ window.Barryvanveen.admin = function() {
 /**
  * init clickable table rows
  */
-window.Barryvanveen.initClickableTableRows = function() {
+window.Barryvanveen.initClickableTableRows = function () {
 
-    $('.js-clickable-row').mousedown(function(e) {
+    $('.js-clickable-row').mousedown(function (e) {
         e.preventDefault();
 
         // middle mouseclick, open in new window
@@ -29,26 +25,9 @@ window.Barryvanveen.initClickableTableRows = function() {
             }
             return;
         }
+
         window.document.location = $(this).data("href");
     });
-
-};
-
-/**
- * init autosize on textareas
- */
-window.Barryvanveen.initAutosizeTextareas = function() {
-
-    autosize($('textarea'));
-
-};
-
-/**
- * cancel all posts to a named queue
- */
-window.Barryvanveen.abortPostQueue = function(queue) {
-
-    $.ajaxq.abort(queue);
 
 };
 
@@ -57,46 +36,24 @@ window.Barryvanveen.abortPostQueue = function(queue) {
  *
  * @param element
  */
-window.Barryvanveen.MarkdownEditor = function(element) {
+window.Barryvanveen.MarkdownEditor = function (element) {
 
-    // store elements
     var $input = $(element);
     var $preview = $('div[data-markdown-editor-name=' + element.name + ']');
-    var inputname = $input.attr('name');
 
-    // update the html-preview
-    this.updateMarkdownEditor = function () {
+    this.updateMarkdownEditor = window.Barryvanveen.debounce(function () {
 
-        // clear any timers for this inputname
-        if (typeof(window.Barryvanveen.callTimer[inputname]) !== "undefined") {
-            clearTimeout(window.Barryvanveen.callTimer[inputname]);
-        }
+        $.post(Barryvanveen.markdownToHtmlRoute, {markdown: $input.val()}, function (data) {
 
-        // start a timer for this particular input, once the timer runs out
-        // the html will be requested from the server
-        window.Barryvanveen.callTimer[inputname] = setTimeout(function() {
+            $preview.html(data.html);
+            Prism.highlightAll();
 
-            // abort all pending requests for this input field
-            Barryvanveen.abortPostQueue($input.attr('name'));
+        }, 'json');
 
-            // make a new ajax post to retrieve html for this markdown
-            $.postq(inputname, Barryvanveen.markdownToHtmlRoute, {markdown: $input.val()}, function(data) {
+    }, 500);
 
-                // update the preview with retrieved html
-                $preview.html(data.html);
-                // use Prism for syntax highlighting in preview
-                Prism.highlightAll();
-
-            }, 'json');
-
-        }, 1000);
-
-    };
-
-    // update the html preview on keyUp
     $input.keyup(this.updateMarkdownEditor);
 
-    // start with filling the preview
     this.updateMarkdownEditor();
 
 };
@@ -104,9 +61,9 @@ window.Barryvanveen.MarkdownEditor = function(element) {
 /**
  * init markdown editors
  */
-window.Barryvanveen.initMarkdownEditors = function() {
+window.Barryvanveen.initMarkdownEditors = function () {
 
-    $('textarea.js-markdown-editor').each(function(index, element) {
+    $('textarea.js-markdown-editor').each(function (index, element) {
         window.Barryvanveen.editor = new window.Barryvanveen.MarkdownEditor(element);
     });
 
@@ -117,22 +74,18 @@ window.Barryvanveen.initMarkdownEditors = function() {
  *
  * @param element
  */
-window.Barryvanveen.CharacterCounter = function(element) {
+window.Barryvanveen.CharacterCounter = function (element) {
 
-    // store elements
     var $counter = $(element);
     var inputname = $counter.data('character-counter-name');
-    var $input = $('textarea[name="'+inputname+'"]');
+    var $input = $('textarea[name="' + inputname + '"]');
 
-    // update the ounter
     this.updateCounter = function () {
         $counter.html($input.val().length);
     };
 
-    // update the counter on keyUp
     $input.keyup(this.updateCounter);
 
-    // start with filling the counter
     this.updateCounter();
 
 };
@@ -140,9 +93,9 @@ window.Barryvanveen.CharacterCounter = function(element) {
 /**
  * init character counters
  */
-window.Barryvanveen.initCharacterCounters = function() {
+window.Barryvanveen.initCharacterCounters = function () {
 
-    $('.js-character-counter').each(function(index, element) {
+    $('.js-character-counter').each(function (index, element) {
         window.Barryvanveen.counter = new window.Barryvanveen.CharacterCounter(element);
     });
 
@@ -152,7 +105,7 @@ window.Barryvanveen.initCharacterCounters = function() {
 /**
  * init log table
  */
-window.Barryvanveen.initLogModal = function() {
+window.Barryvanveen.initLogModal = function () {
 
     // handle clicks to open a bootstrap modal with full exception stack
     $('#logModal').on('show.bs.modal', function (event) {

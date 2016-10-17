@@ -3,6 +3,7 @@
 return [
     'add'              => 'Add',
     'author'           => 'Barry van Veen',
+    'back-to-top'      => 'Go back to top of page',
     'blog-description' => 'A blog about Laravel Framework, web development and related 
     stuff. Written by Barry van Veen. Also some personal information and a link to my Github account.',
     'blog-rss-title'           => 'Barry\'s blog',

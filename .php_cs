@@ -5,7 +5,6 @@ use Symfony\CS\FixerInterface;
 use Symfony\CS\Finder\DefaultFinder;
 
 $excluded_folders = [
-    'bower_components',
     'node_modules',
     'storage',
     'vendor'
