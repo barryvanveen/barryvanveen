@@ -1,69 +1,63 @@
 window.Barryvanveen = window.Barryvanveen || {};
 
 window.Barryvanveen.main = function() {
-	window.Barryvanveen.smoothScrollToHash();
-	window.Barryvanveen.initScrollUp();
+	window.Barryvanveen.initScrollToTop();
+	window.Barryvanveen.initAutosizeTextareas();
 	window.Barryvanveen.initFingerprint();
 	window.Barryvanveen.initGameoflife();
 
 	Prism.highlightAll();
-
 };
 
 /**
- * set event listeners for smooth scrolling to an anchor link
+ * limit the amount of function calls
+ *
+ * copied from https://davidwalsh.name/javascript-debounce-function
  */
-window.Barryvanveen.smoothScrollToHash = function() {
-
-	// listen to clicks that go to an anchor
-	$('a[href*=#]:not([href=#]):not([noscroll])').click(function() {
-
-		// if this is not an outgoing link
-		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-
-			var target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-
-			if (target.length) {
-				$('html,body').animate({
-					scrollTop: target.offset().top
-				}, 500);
-				return false;
-			}
-		}
-	});
-
-	// do not animate when we use the noscroll directive
-	$('a[href*=#][noscroll]').click(function(e){
-		location.hash = $(this).attr('href');
-		window.scrollTo(0, 0);
-
-		e.preventDefault();
-	});
-
+window.Barryvanveen.debounce = function debounce(func, wait, immediate) {
+	var timeout;
+	return function () {
+		var context = this, args = arguments;
+		var later = function () {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
 };
 
 /**
  * init scroll-to-top button with scrollup-plugin
  */
-window.Barryvanveen.initScrollUp = function() {
+window.Barryvanveen.initScrollToTop = function() {
 
-     $.scrollUp({
-		 scrollName: 'scrollUp',      	// Element ID
-		 scrollDistance: 300,         	// Distance from top/bottom before showing element (px)
-		 scrollFrom: 'top',           	// 'top' or 'bottom'
-		 scrollSpeed: 300,            	// Speed back to top (ms)
-		 easingType: 'linear',        	// Scroll to top easing (see http://easings.net/)
-		 animation: 'fade',           	// Fade, slide, none
-		 animationSpeed: 200,         	// Animation speed (ms)
-		 scrollTrigger: false,        	// Set a custom triggering element. Can be an HTML string or jQuery object
-		 scrollTarget: false,         	// Set a custom target element for scrolling to. Can be element or number
-		 scrollText: 'Back to top',     // Text for element, can contain HTML
-		 scrollTitle: false,          	// Set a custom <a> title if required.
-		 scrollImg: false,            	// Set true to use image
-		 activeOverlay: false,      	// Set CSS color to display scrollUp active point, e.g '#00FFFF'
-		 zIndex: 2147483647           	// Z-Index for the overlay
-	 });
+	$('a[href*=#top]').click(function() {
+		$('html,body').animate({
+			scrollTop: 0
+		}, 400);
+	});
+
+	this.showBackToTopElement = window.Barryvanveen.debounce(function() {
+		if ($(document).scrollTop() > 300) {
+			$('.js-backtotop').addClass('backtotop--visible');
+			return;
+		}
+		$('.js-backtotop').removeClass('backtotop--visible');
+	}, 100);
+
+	$(window).scroll(this.showBackToTopElement);
+
+};
+
+/**
+ * init autosize on textareas
+ */
+window.Barryvanveen.initAutosizeTextareas = function() {
+
+	autosize($('textarea'));
 
 };
 

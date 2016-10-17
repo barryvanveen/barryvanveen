@@ -3,7 +3,6 @@ preset: laravel
 finder:
   exclude:
     - "tests"
-    - "bower_components"
     - "node_modules"
     - "storage"
     - "vendor"

@@ -17,17 +17,15 @@ var config = {
             'resources/assets/js/lazyload.js'
         ],
         main: [
-            'bower_components/html5shiv/dist/html5shiv.js',
-            'bower_components/respond/dest/respond.matchmedia.addListener.src.js',
-            'bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js',
-            'bower_components/scrollup/dist/jquery.scrollUp.js',
-            'bower_components/prism/prism.custom.min.js',
-            'bower_components/fingerprintjs2/dist/fingerprint2.min.js',
+            'node_modules/html5shiv/dist/html5shiv.js',
+            'node_modules/respond.js/dest/respond.matchmedia.addListener.src.js',
+            'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
+            'node_modules/autosize/dist/autosize.js',
+            'node_modules/fingerprintjs2/dist/fingerprint2.min.js',
+            'resources/assets/js/prism.custom.js',
             'resources/assets/js/main.js'
         ],
         admin: [
-            'bower_components/autosize/dist/autosize.js',
-            'bower_components/ajaxq/ajaxq.js',
             'resources/assets/js/admin.js'
         ],
         gameoflife: [
@@ -35,23 +33,23 @@ var config = {
         ],
         prism: [
             // default
-            'bower_components/prism/components/prism-core.js',
-            'bower_components/prism/components/prism-markup.js',
-            'bower_components/prism/components/prism-css.js',
-            'bower_components/prism/components/prism-css-extras.js',
-            'bower_components/prism/components/prism-clike.js',
-            'bower_components/prism/components/prism-javascript.js',
+            'node_modules/prismjs/components/prism-core.js',
+            'node_modules/prismjs/components/prism-markup.js',
+            'node_modules/prismjs/components/prism-css.js',
+            'node_modules/prismjs/components/prism-css-extras.js',
+            'node_modules/prismjs/components/prism-clike.js',
+            'node_modules/prismjs/components/prism-javascript.js',
             // custom
-            'bower_components/prism/components/prism-bash.js',
-            'bower_components/prism/components/prism-git.js',
-            'bower_components/prism/components/prism-markdown.js',
-            'bower_components/prism/components/prism-php.js',
-            'bower_components/prism/components/prism-php-extras.js',
-            'bower_components/prism/components/prism-scss.js',
-            'bower_components/prism/components/prism-sql.js',
+            'node_modules/prismjs/components/prism-bash.js',
+            'node_modules/prismjs/components/prism-git.js',
+            'node_modules/prismjs/components/prism-markdown.js',
+            'node_modules/prismjs/components/prism-php.js',
+            'node_modules/prismjs/components/prism-php-extras.js',
+            'node_modules/prismjs/components/prism-scss.js',
+            'node_modules/prismjs/components/prism-sql.js',
             // plugins
-            'bower_components/prism/plugins/autolinker/prism-autolinker.js',
-            'bower_components/prism/plugins/line-numbers/prism-line-numbers.js'
+            'node_modules/prismjs/plugins/autolinker/prism-autolinker.js',
+            'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js'
         ]
     },
     outputDirs: {
@@ -108,9 +106,8 @@ gulp.task('build-js', function () {
         .pipe(plumber({
             errorHandler: onError
         }))
-        .pipe(uglify())
-        .pipe(concat('prism.custom.min.js'))
-        .pipe(gulp.dest('bower_components/prism'));
+        .pipe(concat('prism.custom.js'))
+        .pipe(gulp.dest('resources/assets/js'));
 
     gulp.src(config.scripts.main)
         .pipe(plumber({
@@ -152,14 +149,14 @@ gulp.task('move', function () {
         .pipe(gulp.dest(config.outputDirs.fonts));
 
     // move bootstrap font files to public_html
-    gulp.src('bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*')
+    gulp.src('node_modules/bootstrap-sass/assets/fonts/bootstrap/*')
         .pipe(gulp.dest(config.outputDirs.fonts));
 
-    gulp.src('bower_components/prism/themes/prism-okaidia.css')
+    gulp.src('node_modules/prismjs/themes/prism-okaidia.css')
         .pipe(rename("prism-okaidia.scss"))
-        .pipe(gulp.dest('resources/assets/scss/bower_components'));
+        .pipe(gulp.dest('resources/assets/scss/vendor'));
 
-    gulp.src('bower_components/gameoflife/dist/gameoflife.min.js')
+    gulp.src('node_modules/gameoflife-es6/dist/gameoflife.min.js')
         .pipe(rename("gameoflife.js"))
         .pipe(gulp.dest('resources/assets/js'));
 });

@@ -13,7 +13,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "autosize": "^3.0.17",
+    "bootstrap-sass": "^3.3.7",
     "critical": "^0.8.*",
+    "fingerprintjs2": "^1.4.1",
+    "gameoflife-es6": "^1.1.0",
     "gulp": "3.9.*",
     "gulp-autoprefixer": "3.1.*",
     "gulp-clean": "^0.3.1",
@@ -22,7 +26,11 @@
     "gulp-plumber": "1.1.*",
     "gulp-rename": "1.2.*",
     "gulp-sass": "2.3.*",
-    "gulp-sourcemaps": "1.6.*",
-    "gulp-uglify": "2.0.0"
+    "gulp-sourcemaps": "2.1.*",
+    "gulp-uglify": "2.0.0",
+    "html5shiv": "^3.7.3",
+    "jquery": "^3.1.1",
+    "prismjs": "^1.5.1",
+    "respond.js": "^1.4.2"
   }
 }
