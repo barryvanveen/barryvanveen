@@ -5,14 +5,20 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 ### Changed
+### Deprecated
+### Removed
+### Fixed
+
+## [2.15.0] - 2016-10-17
+### Added
+- Added a npm shrinkwrap file
+### Changed
 - Updated composer dependencies
 - Migrated dependencies from bower to npm
 - Applied autosize javascript functionality to all textareas, instead of only those in the admin section
 - Updated npm dependencies
-### Deprecated
 ### Removed
 - Removed bower.json and bower dependencies after switch to npm
-### Fixed
 
 ## [2.14.4] - 2016-10-05
 ### Fixed
