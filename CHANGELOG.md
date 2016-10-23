@@ -9,6 +9,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.16.1] - 2016-10-23
+### Changed
+- The hash/fingerprint field is now required for new comments
+- Reduced size of h2 headings
+
 ## [2.16.0] - 2016-10-23
 ### Changed
 - Updated dependencies

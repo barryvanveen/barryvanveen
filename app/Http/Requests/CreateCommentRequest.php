@@ -27,10 +27,10 @@ class CreateCommentRequest extends Request
     {
         return [
             'email'                     => 'required|email',
+            'hash'                      => 'required',
             'name'                      => 'required',
             'text'                      => 'required',
             'youshouldnotfillthisfield' => 'size:0',
-            '_hash'                     => '',
         ];
     }
 
@@ -44,6 +44,7 @@ class CreateCommentRequest extends Request
         return [
             'email.required'                 => trans('validation.email-required'),
             'email.email'                    => trans('validation.email-email'),
+            'hash.required'                  => trans('validation.hash-required'),
             'name.required'                  => trans('validation.name-required'),
             'text.required'                  => trans('validation.message-required'),
             'youshouldnotfillthisfield.size' => trans('validation.youshouldnotfillthisfield-size'),
