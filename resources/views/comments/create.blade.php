@@ -12,7 +12,7 @@
             {{ Form::text('youshouldnotfillthisfield', '',  ['class' => 'form-control form__invisible-field']) }}
 
             {{-- fingerprint, this should not be visible to users and is filled by Javascript onSubmit --}}
-            {{ Form::hidden('_hash', '') }}
+            {{ Form::hidden('hash', '') }}
 
             <div class="form-group @if($errors->has('name')) has-error @endif">
                 {!! Form::label('name', trans('comments.label-name'), ['class' => 'control-label form__label']) !!}

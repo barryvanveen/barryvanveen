@@ -3,6 +3,7 @@
 return [
     'email-email'                    => 'That is not a valid email address',
     'email-required'                 => 'You forgot to supply your email address',
+    'hash-required'                  => 'Please enable Javascript and reload the page to submit your comment',
     'invalid-login'                  => 'Sorry, that\'s not the correct password for that email address. Please try again.',
     'message-required'               => 'You forgot to fill in your message',
     'name-required'                  => 'You forgot to supply your name',

@@ -63,7 +63,7 @@ window.Barryvanveen.initAutosizeTextareas = function() {
 
 window.Barryvanveen.initFingerprint = function() {
 
-	var $hashField = $("input[name='_hash']");
+	var $hashField = $("input[name='hash']");
 
 	try {
 		new Fingerprint2().get(function(result){
