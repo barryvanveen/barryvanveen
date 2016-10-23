@@ -9,6 +9,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.16.0] - 2016-10-23
+### Changed
+- Updated dependencies
+- Added readme badges
+
 ## [2.15.0] - 2016-10-17
 ### Added
 - Added a npm shrinkwrap file
