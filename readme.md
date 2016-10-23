@@ -1,5 +1,8 @@
-[![Build Status](https://travis-ci.org/barryvanveen/barryvanveen.svg?branch=master)](https://travis-ci.org/barryvanveen/barryvanveen) [![StyleCI](https://styleci.io/repos/52092980/shield?branch=master)](https://styleci.io/repos/52092980)
-
+![GitHub tag](https://img.shields.io/github/tag/barryvanveen/barryvanveen.svg?style=flat-square)
+[![Build Status](https://img.shields.io/travis/barryvanveen/barryvanveen/master.svg?style=flat-square)](https://travis-ci.org/barryvanveen/barryvanveen)
+[![Gemnasium](https://img.shields.io/gemnasium/mathiasbynens/he.svg?style=flat-square)](https://gemnasium.com/github.com/barryvanveen/barryvanveen)
+[![StyleCI](https://styleci.io/repos/52092980/shield?branch=master)](https://styleci.io/repos/52092980)
+ 
 # Barry van Veen
 This is the source code of my personal blog, which can be found at [barryvanveen.nl](http://barryvanveen.nl). If you 
 are interested, below are some directions that get you (and me) started after cloning this repository.
