@@ -50,15 +50,15 @@ $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !def
 $font-family-base:        $font-family-serif !default;
 
 $font-size-base:          16px !default;
-$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~20px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~14px
 
 $font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
-$font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
-$font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
-$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h2:            floor(($font-size-base * 1.9)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.5)) !default;  // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~20px
 $font-size-h5:            $font-size-base !default;
-$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~14px
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.428571429 !default; // 20/14
