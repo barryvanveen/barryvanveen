@@ -3,7 +3,6 @@
 namespace Barryvanveen\Http\Controllers;
 
 use Artisan;
-use Barryvanveen\Blogs\BlogRepository;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Barryvanveen\Pages\PageRepository;
 use Cache;
@@ -15,17 +14,12 @@ class PagesController extends Controller
     /** @var PageRepository */
     protected $pageRepository;
 
-    /** @var BlogRepository */
-    private $blogRepository;
-
     /**
      * @param PageRepository $pageRepository
-     * @param BlogRepository $blogRepository
      */
-    public function __construct(PageRepository $pageRepository, BlogRepository $blogRepository)
+    public function __construct(PageRepository $pageRepository)
     {
         $this->pageRepository = $pageRepository;
-        $this->blogRepository = $blogRepository;
 
         parent::__construct();
     }

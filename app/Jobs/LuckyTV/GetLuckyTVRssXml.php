@@ -126,7 +126,9 @@ class GetLuckyTVRssXml
 
         $lastdate = $posts[0]['date'];
 
-        for ($i = 1; $i < count($posts); ++$i) {
+        $number_of_posts = count($posts);
+
+        for ($i = 1; $i < $number_of_posts; ++$i) {
             if ($posts[$i]['date'] !== false) {
                 $lastdate = $posts[$i]['date'];
                 continue;

@@ -2,6 +2,7 @@
 
 namespace Barryvanveen\Providers;
 
+use App;
 use Illuminate\Support\ServiceProvider;
 use League\Glide\ServerFactory;
 
@@ -12,8 +13,7 @@ class GlideServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->singleton('League\Glide\Server', function ($app) {
-            /* @var \App $app */
+        $this->app->singleton('League\Glide\Server', function (App $app) {
             /** @var \Illuminate\Contracts\Filesystem\Filesystem $filesystem */
             $filesystem = $app->make('Illuminate\Contracts\Filesystem\Filesystem');
 

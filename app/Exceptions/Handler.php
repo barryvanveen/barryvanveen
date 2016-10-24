@@ -135,8 +135,6 @@ class Handler extends ExceptionHandler
      */
     public function invalidLoginResponse()
     {
-        sleep(3);
-
         $errors = [
             'password' => [
                 trans('validation.invalid-login'),
@@ -152,7 +150,7 @@ class Handler extends ExceptionHandler
      * @param \Illuminate\Http\Request                 $request
      * @param \Illuminate\Auth\AuthenticationException $e
      *
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
      */
     protected function unauthenticated($request, AuthenticationException $e)
     {

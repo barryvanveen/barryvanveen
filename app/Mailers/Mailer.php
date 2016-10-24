@@ -4,6 +4,7 @@ namespace Barryvanveen\Mailers;
 
 use Barryvanveen\Recipients\Recipient;
 use Illuminate\Mail\Mailer as Mail;
+use Illuminate\Mail\Message;
 
 class Mailer
 {
@@ -29,10 +30,7 @@ class Mailer
         $data['mailable'] = $to;
         $data['subject'] = $subject;
 
-        $this->mail->send($view, $data, function ($message) use ($to, $subject) {
-
-            /* @var \Illuminate\Mail\Message $message */
-
+        $this->mail->send($view, $data, function (Message $message) use ($to, $subject) {
             $message->subject($subject);
 
             $message->to($to->email, $to->name);
