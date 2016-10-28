@@ -2,6 +2,6 @@
 
 namespace Barryvanveen\LastfmApiClient\Exceptions;
 
-class InvalidPeriodException extends \Exception {
-
+class InvalidPeriodException extends \Exception
+{
 }

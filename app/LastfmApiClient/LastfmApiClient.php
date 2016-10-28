@@ -8,10 +8,9 @@ use Barryvanveen\LastfmApiClient\Exceptions\InvalidPeriodException;
 
 class LastfmApiClient
 {
+    const API_ROOT_URL = 'http://ws.audioscrobbler.com';
 
-    CONST API_ROOT_URL = 'http://ws.audioscrobbler.com';
-
-    CONST API_VERSION = '2.0';
+    const API_VERSION = '2.0';
 
     const FORMAT = 'json';
 
@@ -77,7 +76,7 @@ class LastfmApiClient
      */
     public function period($period)
     {
-        if ( ! self::isValidPeriod($period)) {
+        if (! self::isValidPeriod($period)) {
             throw new InvalidPeriodException();
         }
 
@@ -120,7 +119,7 @@ class LastfmApiClient
     }
 
     /**
-     * Check if the value is number
+     * Check if the value is number.
      *
      * @param $value
      *
@@ -150,12 +149,11 @@ class LastfmApiClient
         // is limit set?
         // is page set?
 
-        return self::API_ROOT_URL . '/' . self::API_VERSION . '/?method=' . $this->method .
-                                                              '&user=' . $this->username .
-                                                              '&period=' . $this->period .
-                                                              '&limit=' . $this->limit .
-                                                              '&api_key=' . $this->api_key .
-                                                              '&format=' . self::FORMAT;
+        return self::API_ROOT_URL.'/'.self::API_VERSION.'/?method='.$this->method.
+                                                              '&user='.$this->username.
+                                                              '&period='.$this->period.
+                                                              '&limit='.$this->limit.
+                                                              '&api_key='.$this->api_key.
+                                                              '&format='.self::FORMAT;
     }
-
 }
