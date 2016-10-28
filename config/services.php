@@ -35,4 +35,9 @@ return [
         'secret' => '',
     ],
 
+    'lastfm' => [
+        'key'    => env('LASTFM_KEY'),
+        'secret' => env('LASTFM_SECRET'),
+    ],
+
 ];

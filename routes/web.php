@@ -44,6 +44,11 @@ Route::get('about-me/books-that-i-have-read', [
     'uses' => 'PagesController@books',
 ]);
 
+Route::get('about-me/music', [
+    'as'   => 'music',
+    'uses' => 'PagesController@music',
+]);
+
 Route::get('luckytv-rss', [
     'as'   => 'luckytv-rss',
     'uses' => 'PagesController@luckytv',

@@ -4,6 +4,7 @@ namespace Barryvanveen\Http\Controllers;
 
 use Artisan;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
+use Barryvanveen\LastfmApiClient\LastfmApiClient;
 use Barryvanveen\Pages\PageRepository;
 use Cache;
 use Response;
@@ -51,6 +52,28 @@ class PagesController extends Controller
 
         return View::make('pages.item', compact('page'));
     }
+
+    public function music()
+    {
+        $lastfmApiClient = new LastfmApiClient();
+        $lastfmApiClient->userTopAlbums('barryvanveen')
+                        ->period('7day')
+                        ->limit(10)
+                        ->get();
+                        //->page(1);
+
+        /*$lastfmApiClient->user('username')
+                        ->topArtists();
+
+        $lastfmApiClient->user('username')
+                        ->info();
+
+        $lastfmApiClient->user('username')
+                        ->recentTracks()
+                        ->limit(10);*/
+
+    }
+
 
     public function luckytv()
     {
