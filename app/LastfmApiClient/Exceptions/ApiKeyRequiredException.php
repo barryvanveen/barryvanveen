@@ -2,6 +2,6 @@
 
 namespace Barryvanveen\LastfmApiClient\Exceptions;
 
-class ApiKeyRequiredException extends \Exception {
-
+class ApiKeyRequiredException extends \Exception
+{
 }

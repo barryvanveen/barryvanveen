@@ -2,6 +2,6 @@
 
 namespace Barryvanveen\LastfmApiClient\Exceptions;
 
-class InvalidLimitException extends \Exception {
-
+class InvalidLimitException extends \Exception
+{
 }
