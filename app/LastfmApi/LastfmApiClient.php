@@ -13,6 +13,8 @@ class LastfmApiClient
     {
         $this->urlBuilder = new UrlBuilder();
 
+        $this->dataFetcher = new DataFetcher();
+
         return $this;
     }
 
@@ -75,6 +77,8 @@ class LastfmApiClient
     {
         $url = $this->urlBuilder->buildUrl();
 
-        dd($url);
+        $response = $this->dataFetcher->get($url);
+
+        dd($response->getBody());
     }
 }

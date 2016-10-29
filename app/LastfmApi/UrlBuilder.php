@@ -13,8 +13,6 @@ class UrlBuilder
 
     const FORMAT = 'json';
 
-    protected $api_key;
-
     protected $blocks = [
         'format' => self::FORMAT,
     ];
@@ -25,7 +23,19 @@ class UrlBuilder
             throw new ApiKeyRequiredException();
         }
 
-        $this->api_key = config('services.lastfm.key');
+        $this->setApiKey(config('services.lastfm.key'));
+
+        return $this;
+    }
+
+    /**
+     * @param string $api_key
+     *
+     * @return $this
+     */
+    public function setApiKey($api_key)
+    {
+        $this->blocks['api_key'] = $api_key;
 
         return $this;
     }
