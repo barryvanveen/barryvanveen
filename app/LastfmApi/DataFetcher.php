@@ -5,12 +5,12 @@ namespace Barryvanveen\LastfmApi;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 
-class DataFetcher {
-
+class DataFetcher
+{
     /** @var Client */
     protected $client;
 
-    /** @var  ResponseInterface */
+    /** @var ResponseInterface */
     protected $response;
 
     public function __construct()
@@ -37,5 +37,4 @@ class DataFetcher {
 
         // todo: throw exceptions when there was an error
     }
-
 }
