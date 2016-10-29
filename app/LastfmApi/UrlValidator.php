@@ -46,7 +46,7 @@ class UrlValidator
     }
 
     /**
-     * Check if the value is number
+     * Check if the value is number.
      *
      * @param $value
      *
@@ -60,15 +60,4 @@ class UrlValidator
 
         return true;
     }
-
-    /**
-     * @param array $blocks
-     */
-    public static function validateBlocks($blocks)
-    {
-        if (!isset($blocks['method'])) {
-
-        }
-    }
-
 }

@@ -71,9 +71,7 @@ class PagesController extends Controller
         $lastfmApiClient->user('username')
                         ->recentTracks()
                         ->limit(10);*/
-
     }
-
 
     public function luckytv()
     {

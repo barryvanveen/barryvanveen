@@ -7,10 +7,9 @@ use Barryvanveen\LastfmApi\Exceptions\InvalidArgumentException;
 
 class UrlBuilder
 {
+    const API_ROOT_URL = 'http://ws.audioscrobbler.com';
 
-    CONST API_ROOT_URL = 'http://ws.audioscrobbler.com';
-
-    CONST API_VERSION = '2.0';
+    const API_VERSION = '2.0';
 
     const FORMAT = 'json';
 
@@ -40,8 +39,8 @@ class UrlBuilder
      */
     public function setMethod($method)
     {
-        if (!UrlValidator::isValidMethod($method)) {
-            throw new InvalidArgumentException("Invalid method specified");
+        if (! UrlValidator::isValidMethod($method)) {
+            throw new InvalidArgumentException('Invalid method specified');
         }
 
         $this->blocks['method'] = $method;
@@ -70,8 +69,8 @@ class UrlBuilder
      */
     public function setPeriod($period)
     {
-        if (!UrlValidator::isValidPeriod($period)) {
-            throw new InvalidArgumentException("Invalid period specified");
+        if (! UrlValidator::isValidPeriod($period)) {
+            throw new InvalidArgumentException('Invalid period specified');
         }
 
         $this->blocks['period'] = $period;
@@ -88,8 +87,8 @@ class UrlBuilder
      */
     public function setLimit($limit)
     {
-        if (!UrlValidator::isPositiveInteger($limit)) {
-            throw new InvalidArgumentException("Invalid limit specified");
+        if (! UrlValidator::isPositiveInteger($limit)) {
+            throw new InvalidArgumentException('Invalid limit specified');
         }
 
         $this->blocks['limit'] = $limit;
@@ -106,8 +105,8 @@ class UrlBuilder
      */
     public function setPage($page)
     {
-        if (!UrlValidator::isPositiveInteger($page)) {
-            throw new InvalidArgumentException("Invalid page specified");
+        if (! UrlValidator::isPositiveInteger($page)) {
+            throw new InvalidArgumentException('Invalid page specified');
         }
 
         $this->blocks['page'] = $page;
@@ -119,17 +118,9 @@ class UrlBuilder
     {
         $blocks = $this->getBlocks();
 
-        //UrlValidator::validateBlocks($blocks);
+        // todo: validate blocks
 
-        return $this->getRootUrl() . $this->buildParameters($blocks);
-
-        /*return self::API_ROOT_URL . '/' . self::API_VERSION . '/?method=' . $this->method .
-        '&user=' . $this->username .
-        '&period=' . $this->period .
-        '&limit=' . $this->limit .
-        '&page=' . $this->page .
-        '&api_key=' . $this->api_key .
-        '&format=' . self::FORMAT;*/
+        return $this->getRootUrl().$this->buildParameters($blocks);
     }
 
     protected function getBlocks()
@@ -139,12 +130,11 @@ class UrlBuilder
 
     protected function getRootUrl()
     {
-        return self::API_ROOT_URL .'/'. self::API_VERSION;
+        return self::API_ROOT_URL.'/'.self::API_VERSION;
     }
 
     protected function buildParameters($blocks)
     {
-        return '?' . http_build_query($blocks);
+        return '?'.http_build_query($blocks);
     }
-
 }

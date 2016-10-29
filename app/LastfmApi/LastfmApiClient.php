@@ -8,7 +8,6 @@ class LastfmApiClient
 
     /**
      * LastfmApi constructor.
-     *
      */
     public function __construct()
     {
@@ -26,7 +25,7 @@ class LastfmApiClient
     {
         $this->urlBuilder->setMethod('user.gettopalbums');
 
-        if (!empty($username)) {
+        if (! empty($username)) {
             $this->urlBuilder->setUsername($username);
         }
 
@@ -78,5 +77,4 @@ class LastfmApiClient
 
         dd($url);
     }
-
 }
