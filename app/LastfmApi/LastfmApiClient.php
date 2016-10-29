@@ -70,9 +70,7 @@ class LastfmApiClient
         return $this;
     }
 
-    /**
-     *
-     */
+
     public function get()
     {
         $url = $this->urlBuilder->buildUrl();
