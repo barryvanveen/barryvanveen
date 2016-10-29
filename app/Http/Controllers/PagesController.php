@@ -4,7 +4,7 @@ namespace Barryvanveen\Http\Controllers;
 
 use Artisan;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
-use Barryvanveen\LastfmApiClient\LastfmApiClient;
+use Barryvanveen\LastfmApi\LastfmApiClient;
 use Barryvanveen\Pages\PageRepository;
 use Cache;
 use Response;
@@ -59,8 +59,8 @@ class PagesController extends Controller
         $lastfmApiClient->userTopAlbums('barryvanveen')
                         ->period('7day')
                         ->limit(10)
+                        //->page(1)
                         ->get();
-                        //->page(1);
 
         /*$lastfmApiClient->user('username')
                         ->topArtists();

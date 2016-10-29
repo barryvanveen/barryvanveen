@@ -1,6 +1,6 @@
 <?php
 
-namespace Barryvanveen\LastfmApiClient\Exceptions;
+namespace Barryvanveen\LastfmApi\Exceptions;
 
 class ApiKeyRequiredException extends \Exception {
 
