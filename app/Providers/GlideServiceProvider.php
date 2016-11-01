@@ -2,18 +2,21 @@
 
 namespace Barryvanveen\Providers;
 
-use App;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use League\Glide\ServerFactory;
+use League\Glide\Server;
 
 class GlideServiceProvider extends ServiceProvider
 {
+    protected $defer = true;
+
     /**
-     * Perform post-registration booting of services.
+     * Register bindings in the container.
      */
-    public function boot()
+    public function register()
     {
-        $this->app->singleton('League\Glide\Server', function (App $app) {
+        $this->app->singleton(Server::class, function (Application $app) {
             /** @var \Illuminate\Contracts\Filesystem\Filesystem $filesystem */
             $filesystem = $app->make('Illuminate\Contracts\Filesystem\Filesystem');
 
@@ -26,9 +29,13 @@ class GlideServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register bindings in the container.
+     * Get the services provided by the provider.
+     *
+     * @return array
      */
-    public function register()
+    public function provides()
     {
+        return [Server::class];
     }
+
 }
