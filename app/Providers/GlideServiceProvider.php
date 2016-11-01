@@ -37,5 +37,4 @@ class GlideServiceProvider extends ServiceProvider
     {
         return [Server::class];
     }
-
 }
