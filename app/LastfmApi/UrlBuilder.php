@@ -7,7 +7,6 @@ use Barryvanveen\LastfmApi\Exceptions\InvalidArgumentException;
 
 class UrlBuilder
 {
-
     protected $blocks = [];
 
     public function __construct()

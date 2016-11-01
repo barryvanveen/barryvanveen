@@ -60,11 +60,11 @@ class DataFetcher
      */
     protected function validateResponse()
     {
-        if ($this->response->getStatusCode() == 200 && !isset($this->responseData['error'])) {
+        if ($this->response->getStatusCode() == 200 && ! isset($this->responseData['error'])) {
             return;
         }
 
-        $errorMessage = "Lastfm API error " . $this->responseData['error'] . ": " . $this->responseData['message'];
+        $errorMessage = 'Lastfm API error '.$this->responseData['error'].': '.$this->responseData['message'];
 
         throw new ResponseException($errorMessage);
     }

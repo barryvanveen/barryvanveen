@@ -4,7 +4,6 @@ namespace Barryvanveen\LastfmApi;
 
 class UrlValidator
 {
-
     /**
      * @param string $method
      *
