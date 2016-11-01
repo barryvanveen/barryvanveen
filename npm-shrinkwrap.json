@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "dependencies": {
     "autosize": {
-      "version": "3.0.17",
-      "from": "autosize@>=3.0.17 <4.0.0",
-      "resolved": "https://registry.npmjs.org/autosize/-/autosize-3.0.17.tgz"
+      "version": "3.0.18",
+      "from": "autosize@3.0.18",
+      "resolved": "https://registry.npmjs.org/autosize/-/autosize-3.0.18.tgz"
     },
     "bootstrap-sass": {
       "version": "3.3.7",
@@ -12568,9 +12568,9 @@
       }
     },
     "gulp-sourcemaps": {
-      "version": "2.1.1",
-      "from": "gulp-sourcemaps@>=2.1.0 <2.2.0",
-      "resolved": "https://registry.npmjs.org/gulp-sourcemaps/-/gulp-sourcemaps-2.1.1.tgz",
+      "version": "2.2.0",
+      "from": "gulp-sourcemaps@2.2.0",
+      "resolved": "https://registry.npmjs.org/gulp-sourcemaps/-/gulp-sourcemaps-2.2.0.tgz",
       "dependencies": {
         "acorn": {
           "version": "4.0.3",

@@ -5,7 +5,6 @@ namespace Barryvanveen\Http\Controllers\Admin;
 use Auth;
 use Barryvanveen\Exceptions\InvalidLoginException;
 use Barryvanveen\Http\Controllers\Controller;
-use Barryvanveen\Users\UserRepository;
 use Flash;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -15,9 +14,6 @@ use View;
 
 class AdminLoginController extends Controller
 {
-    /** @var UserRepository */
-    private $userRepository;
-
     /** @var Request */
     private $request;
 
@@ -31,11 +27,10 @@ class AdminLoginController extends Controller
     private $messages;
 
     /**
-     * @param UserRepository $userRepository
+     * @param Request $request
      */
-    public function __construct(UserRepository $userRepository, Request $request)
+    public function __construct(Request $request)
     {
-        $this->userRepository = $userRepository;
         $this->request = $request;
 
         $this->messages = [
@@ -60,7 +55,7 @@ class AdminLoginController extends Controller
     /**
      * Handle a login request for the admin pages.
      *
-     * @return $this|RedirectResponse
+     * @return RedirectResponse
      *
      * @throws InvalidLoginException
      */
@@ -68,7 +63,7 @@ class AdminLoginController extends Controller
     {
         $this->validate($this->request, $this->rules, $this->messages);
 
-        $formData = Input::only('email', 'password');
+        $formData = Input::only(['email', 'password']);
 
         if (Auth::attempt($formData, (bool) Input::only('remember_me'))) {
             Flash::success(trans('flash.login-successful'));

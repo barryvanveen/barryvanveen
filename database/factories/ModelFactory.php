@@ -12,10 +12,10 @@
 */
 
 /** @var Illuminate\Database\Eloquent\Factory $factory */
+use Faker\Generator;
 use Illuminate\Support\Str;
 
-$factory->define(Barryvanveen\Users\User::class, function ($faker) {
-    /* @var Faker\Generator $faker */
+$factory->define(Barryvanveen\Users\User::class, function (Generator $faker) {
     return [
         'firstname'      => $faker->firstName,
         'lastname'       => $faker->lastName,
@@ -25,8 +25,7 @@ $factory->define(Barryvanveen\Users\User::class, function ($faker) {
     ];
 });
 
-$factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
-    /* @var Faker\Generator $faker */
+$factory->define(Barryvanveen\Blogs\Blog::class, function (Generator $faker) {
     $title = $faker->sentence;
 
     return [
@@ -39,8 +38,7 @@ $factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
     ];
 });
 
-    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'published', function ($faker) use ($factory) {
-        /* @var Faker\Generator $faker */
+    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'published', function (Generator $faker) use ($factory) {
         $blog = $factory->raw(Barryvanveen\Blogs\Blog::class);
 
         $blog['publication_date'] = $faker->dateTime;
@@ -49,8 +47,7 @@ $factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
         return $blog;
     });
 
-    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'unpublished-offline', function ($faker) use ($factory) {
-        /* @var Faker\Generator $faker */
+    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'unpublished-offline', function (Generator $faker) use ($factory) {
         $blog = $factory->raw(Barryvanveen\Blogs\Blog::class);
 
         $blog['publication_date'] = $faker->dateTime;
@@ -59,8 +56,7 @@ $factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
         return $blog;
     });
 
-    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'unpublished-future', function ($faker) use ($factory) {
-        /* @var Faker\Generator $faker */
+    $factory->defineAs(Barryvanveen\Blogs\Blog::class, 'unpublished-future', function (Generator $faker) use ($factory) {
         $blog = $factory->raw(Barryvanveen\Blogs\Blog::class);
 
         $blog['publication_date'] = $faker->dateTimeBetween('+1 day', '+2 days');
@@ -69,8 +65,7 @@ $factory->define(Barryvanveen\Blogs\Blog::class, function ($faker) {
         return $blog;
     });
 
-$factory->define(Barryvanveen\Comments\Comment::class, function ($faker) {
-    /* @var Faker\Generator $faker */
+$factory->define(Barryvanveen\Comments\Comment::class, function (Generator $faker) {
     return [
         'email'       => $faker->email,
         'name'        => $faker->name,
@@ -81,8 +76,7 @@ $factory->define(Barryvanveen\Comments\Comment::class, function ($faker) {
     ];
 });
 
-    $factory->defineAs(Barryvanveen\Comments\Comment::class, 'online', function ($faker) use ($factory) {
-        /* @var Faker\Generator $faker */
+    $factory->defineAs(Barryvanveen\Comments\Comment::class, 'online', function () use ($factory) {
         $comment = $factory->raw(Barryvanveen\Comments\Comment::class);
 
         $comment['online'] = 1;
@@ -90,8 +84,7 @@ $factory->define(Barryvanveen\Comments\Comment::class, function ($faker) {
         return $comment;
     });
 
-    $factory->defineAs(Barryvanveen\Comments\Comment::class, 'offline', function ($faker) use ($factory) {
-        /* @var Faker\Generator $faker */
+    $factory->defineAs(Barryvanveen\Comments\Comment::class, 'offline', function () use ($factory) {
         $comment = $factory->raw(Barryvanveen\Comments\Comment::class);
 
         $comment['online'] = 0;
@@ -99,8 +92,7 @@ $factory->define(Barryvanveen\Comments\Comment::class, function ($faker) {
         return $comment;
     });
 
-$factory->define(Barryvanveen\Pages\Page::class, function ($faker) {
-    /* @var Faker\Generator $faker */
+$factory->define(Barryvanveen\Pages\Page::class, function (Generator $faker) {
     $title = $faker->sentence;
 
     return [

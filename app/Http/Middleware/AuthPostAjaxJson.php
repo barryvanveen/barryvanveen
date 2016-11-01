@@ -19,7 +19,7 @@ class AuthPostAjaxJson
      *
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
         if (! $request->isMethod('post') || ! $request->ajax() || ! $request->wantsJson()) {
             throw new MethodNotAllowedException([]);
