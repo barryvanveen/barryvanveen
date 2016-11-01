@@ -9,6 +9,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.16.2] - 2016-11-01
+### Changed
+- Defer loading of the Glide server
+### Fixed
+- Fixed type hinting in GlideServiceProvider
+- Updated composer and npm dependencies
+
 ## [2.16.1] - 2016-10-23
 ### Changed
 - The hash/fingerprint field is now required for new comments
