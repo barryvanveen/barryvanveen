@@ -7,15 +7,8 @@ use Barryvanveen\LastfmApi\Exceptions\InvalidArgumentException;
 
 class UrlBuilder
 {
-    const API_ROOT_URL = 'http://ws.audioscrobbler.com';
 
-    const API_VERSION = '2.0';
-
-    const FORMAT = 'json';
-
-    protected $blocks = [
-        'format' => self::FORMAT,
-    ];
+    protected $blocks = [];
 
     public function __construct()
     {
@@ -23,9 +16,16 @@ class UrlBuilder
             throw new ApiKeyRequiredException();
         }
 
-        $this->setApiKey(config('services.lastfm.key'));
+        $this->setDefaultValues();
 
         return $this;
+    }
+
+    public function setDefaultValues()
+    {
+        $this->setApiKey(config('services.lastfm.key'));
+
+        $this->setFormat(Constants::FORMAT);
     }
 
     /**
@@ -35,7 +35,19 @@ class UrlBuilder
      */
     public function setApiKey($api_key)
     {
-        $this->blocks['api_key'] = $api_key;
+        $this->blocks[Constants::BLOCK_API_KEY] = $api_key;
+
+        return $this;
+    }
+
+    /**
+     * @param $format
+     *
+     * @return $this
+     */
+    public function setFormat($format)
+    {
+        $this->blocks[Constants::BLOCK_FORMAT] = $format;
 
         return $this;
     }
@@ -53,7 +65,7 @@ class UrlBuilder
             throw new InvalidArgumentException('Invalid method specified');
         }
 
-        $this->blocks['method'] = $method;
+        $this->blocks[Constants::BLOCK_METHOD] = $method;
 
         return $this;
     }
@@ -65,7 +77,7 @@ class UrlBuilder
      */
     public function setUsername($username)
     {
-        $this->blocks['username'] = $username;
+        $this->blocks[Constants::BLOCK_USERNAME] = $username;
 
         return $this;
     }
@@ -83,7 +95,7 @@ class UrlBuilder
             throw new InvalidArgumentException('Invalid period specified');
         }
 
-        $this->blocks['period'] = $period;
+        $this->blocks[Constants::BLOCK_PERIOD] = $period;
 
         return $this;
     }
@@ -101,7 +113,7 @@ class UrlBuilder
             throw new InvalidArgumentException('Invalid limit specified');
         }
 
-        $this->blocks['limit'] = $limit;
+        $this->blocks[Constants::BLOCK_LIMIT] = $limit;
 
         return $this;
     }
@@ -119,16 +131,43 @@ class UrlBuilder
             throw new InvalidArgumentException('Invalid page specified');
         }
 
-        $this->blocks['page'] = $page;
+        $this->blocks[Constants::BLOCK_PAGE] = $page;
 
         return $this;
+    }
+
+    /**
+     * Reset specified given blocks or all blocks if none are specified.
+     *
+     * @param string $blocks
+     *
+     * @return $this
+     */
+    public function reset($blocks)
+    {
+        if ($blocks === false) {
+            $this->resetAll();
+
+            return $this;
+        }
+
+        if (isset($this->blocks[$blocks])) {
+            unset($this->blocks[$blocks]);
+        }
+
+        return $this;
+    }
+
+    public function resetAll()
+    {
+        $this->blocks = [];
+
+        $this->setDefaultValues();
     }
 
     public function buildUrl()
     {
         $blocks = $this->getBlocks();
-
-        // todo: validate blocks
 
         return $this->getRootUrl().$this->buildParameters($blocks);
     }
@@ -140,7 +179,7 @@ class UrlBuilder
 
     protected function getRootUrl()
     {
-        return self::API_ROOT_URL.'/'.self::API_VERSION;
+        return Constants::API_ROOT_URL.'/'.Constants::API_VERSION;
     }
 
     protected function buildParameters($blocks)

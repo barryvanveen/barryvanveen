@@ -4,18 +4,6 @@ namespace Barryvanveen\LastfmApi;
 
 class UrlValidator
 {
-    const VALID_PERIODS = [
-        '7day',
-        '1month',
-        '3month',
-        '6month',
-        '12month',
-        'overall',
-    ];
-
-    const VALID_METHODS = [
-        'user.gettopalbums',
-    ];
 
     /**
      * @param string $method
@@ -24,7 +12,7 @@ class UrlValidator
      */
     public static function isValidMethod($method)
     {
-        if (in_array($method, self::VALID_METHODS)) {
+        if (in_array($method, Constants::VALID_METHODS)) {
             return true;
         }
 
@@ -38,7 +26,7 @@ class UrlValidator
      */
     public static function isValidPeriod($period)
     {
-        if (in_array($period, self::VALID_PERIODS)) {
+        if (in_array($period, Constants::VALID_PERIODS)) {
             return true;
         }
 

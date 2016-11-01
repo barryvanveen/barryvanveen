@@ -23,13 +23,48 @@ class LastfmApiClient
      *
      * @return $this
      */
-    public function userTopAlbums($username = '')
+    public function userTopAlbums($username)
     {
-        $this->urlBuilder->setMethod('user.gettopalbums');
+        $this->urlBuilder->setMethod(Constants::METHOD_USER_TOP_ALBUMS);
 
-        if (! empty($username)) {
-            $this->urlBuilder->setUsername($username);
-        }
+        $this->urlBuilder->setUsername($username);
+
+        return $this;
+    }
+
+    /**
+     * @param string $username
+     *
+     * @return $this
+     */
+    public function userTopArtists($username)
+    {
+        $this->urlBuilder->setMethod(Constants::METHOD_USER_TOP_ARTISTS);
+
+        $this->urlBuilder->setUsername($username);
+
+        return $this;
+    }
+
+    public function userRecentTracks($username)
+    {
+        $this->urlBuilder->setMethod(Constants::METHOD_USER_RECENT_TRACKS);
+
+        $this->urlBuilder->setUsername($username);
+
+        return $this;
+    }
+
+    /**
+     * @param string $username
+     *
+     * @return $this
+     */
+    public function userInfo($username)
+    {
+        $this->urlBuilder->setMethod(Constants::METHOD_USER_INFO);
+
+        $this->urlBuilder->setUsername($username);
 
         return $this;
     }
@@ -70,12 +105,26 @@ class LastfmApiClient
         return $this;
     }
 
+    /**
+     * Reset specified given blocks or all blocks if none are specified.
+     *
+     * @param mixed $blocks
+     *
+     * @return $this
+     */
+    public function reset($blocks = false)
+    {
+        $this->urlBuilder->reset($blocks);
+
+        return $this;
+    }
+
     public function get()
     {
         $url = $this->urlBuilder->buildUrl();
 
         $response = $this->dataFetcher->get($url);
 
-        dd($response->getBody());
+        dd($response);
     }
 }

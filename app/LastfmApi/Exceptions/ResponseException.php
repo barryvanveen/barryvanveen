@@ -2,6 +2,6 @@
 
 namespace Barryvanveen\LastfmApi\Exceptions;
 
-class RequestException extends \Exception
+class ResponseException extends \Exception
 {
 }

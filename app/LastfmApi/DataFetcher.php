@@ -2,6 +2,7 @@
 
 namespace Barryvanveen\LastfmApi;
 
+use Barryvanveen\LastfmApi\Exceptions\ResponseException;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 
@@ -13,6 +14,12 @@ class DataFetcher
     /** @var ResponseInterface */
     protected $response;
 
+    /** @var  array */
+    protected $responseData;
+
+    /**
+     * DataFetcher constructor.
+     */
     public function __construct()
     {
         $this->client = new Client([
@@ -20,21 +27,45 @@ class DataFetcher
         ]);
     }
 
+    /**
+     * Get, parse and validate a response from the given url.
+     *
+     * @param $url
+     *
+     * @return mixed
+     */
     public function get($url)
     {
         $this->response = $this->client->get($url);
 
+        $this->parseResponse();
+
         $this->validateResponse();
 
-        return $this->response;
+        return $this->responseData;
     }
 
-    public function validateResponse()
+    /**
+     * Parse JSON response into an associative array.
+     */
+    protected function parseResponse()
     {
-        if ($this->response->getStatusCode() == 200) {
+        $this->responseData = json_decode($this->response->getBody(), true);
+    }
+
+    /**
+     * Throw an exception of the status code of the response is not 200 OK.
+     *
+     * @throws ResponseException
+     */
+    protected function validateResponse()
+    {
+        if ($this->response->getStatusCode() == 200 && !isset($this->responseData['error'])) {
             return;
         }
 
-        // todo: throw exceptions when there was an error
+        $errorMessage = "Lastfm API error " . $this->responseData['error'] . ": " . $this->responseData['message'];
+
+        throw new ResponseException($errorMessage);
     }
 }

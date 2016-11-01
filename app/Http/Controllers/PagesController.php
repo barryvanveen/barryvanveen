@@ -4,6 +4,7 @@ namespace Barryvanveen\Http\Controllers;
 
 use Artisan;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
+use Barryvanveen\LastfmApi\Constants;
 use Barryvanveen\LastfmApi\LastfmApiClient;
 use Barryvanveen\Pages\PageRepository;
 use Cache;
@@ -57,20 +58,22 @@ class PagesController extends Controller
     {
         $lastfmApiClient = new LastfmApiClient();
         $lastfmApiClient->userTopAlbums('barryvanveen')
-                        ->period('7day')
+                        ->period(Constants::PERIOD_WEEK)
                         ->limit(10)
-                        //->page(1)
+                        ->reset(Constants::BLOCK_LIMIT)
+                        ->page(1)
                         ->get();
 
-        /*$lastfmApiClient->user('username')
-                        ->topArtists();
+        /*$lastfmApiClient->userTopArtists('barryvanveen')
+                        ->period(Constants::PERIOD_YEAR)
+                        ->limit(5)
+                        ->get();*/
 
-        $lastfmApiClient->user('username')
-                        ->info();
+        /*$lastfmApiClient->userRecentTracks('barryvanveen')
+                        ->get();*/
 
-        $lastfmApiClient->user('username')
-                        ->recentTracks()
-                        ->limit(10);*/
+        /*$lastfmApiClient->userInfo('barryvanveen')
+                        ->get();*/
     }
 
     public function luckytv()
