@@ -14,7 +14,7 @@ class DataFetcher
     /** @var ResponseInterface */
     protected $response;
 
-    /** @var  array */
+    /** @var array */
     protected $responseData;
 
     /**
