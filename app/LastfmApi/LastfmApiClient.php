@@ -6,6 +6,14 @@ class LastfmApiClient
 {
     protected $urlBuilder;
 
+    protected $dataFetcher;
+
+    protected $dataFilter;
+
+    protected $method;
+
+    protected $nowListening = false;
+
     /**
      * LastfmApi constructor.
      */
@@ -14,6 +22,8 @@ class LastfmApiClient
         $this->urlBuilder = new UrlBuilder();
 
         $this->dataFetcher = new DataFetcher();
+
+        $this->dataFilter = new DataFilter();
 
         return $this;
     }
@@ -25,7 +35,7 @@ class LastfmApiClient
      */
     public function userTopAlbums($username)
     {
-        $this->urlBuilder->setMethod(Constants::METHOD_USER_TOP_ALBUMS);
+        $this->setMethod(Constants::METHOD_USER_TOP_ALBUMS);
 
         $this->urlBuilder->setUsername($username);
 
@@ -39,7 +49,7 @@ class LastfmApiClient
      */
     public function userTopArtists($username)
     {
-        $this->urlBuilder->setMethod(Constants::METHOD_USER_TOP_ARTISTS);
+        $this->setMethod(Constants::METHOD_USER_TOP_ARTISTS);
 
         $this->urlBuilder->setUsername($username);
 
@@ -48,7 +58,7 @@ class LastfmApiClient
 
     public function userRecentTracks($username)
     {
-        $this->urlBuilder->setMethod(Constants::METHOD_USER_RECENT_TRACKS);
+        $this->setMethod(Constants::METHOD_USER_RECENT_TRACKS);
 
         $this->urlBuilder->setUsername($username);
 
@@ -62,11 +72,35 @@ class LastfmApiClient
      */
     public function userInfo($username)
     {
-        $this->urlBuilder->setMethod(Constants::METHOD_USER_INFO);
+        $this->setMethod(Constants::METHOD_USER_INFO);
 
         $this->urlBuilder->setUsername($username);
 
         return $this;
+    }
+
+    /**
+     * @param string $username
+     *
+     * @return $this
+     */
+    public function nowListening($username)
+    {
+        $this->setMethod(Constants::METHOD_USER_NOW_LISTENING);
+
+        $this->urlBuilder->setUsername($username);
+
+        return $this;
+    }
+
+    /**
+     * @param string $method
+     */
+    protected function setMethod($method)
+    {
+        $this->method = $method;
+
+        $this->urlBuilder->setMethod($method);
     }
 
     /**
@@ -123,8 +157,9 @@ class LastfmApiClient
     {
         $url = $this->urlBuilder->buildUrl();
 
-        $response = $this->dataFetcher->get($url);
+        $data = $this->dataFetcher->get($url);
 
-        dd($response);
+        return $this->dataFilter->filter($this->method, $data);
     }
+
 }

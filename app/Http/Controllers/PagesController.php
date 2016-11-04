@@ -57,23 +57,27 @@ class PagesController extends Controller
     public function music()
     {
         $lastfmApiClient = new LastfmApiClient();
-        $lastfmApiClient->userTopAlbums('barryvanveen')
-                        ->period(Constants::PERIOD_WEEK)
-                        ->limit(10)
-                        ->reset(Constants::BLOCK_LIMIT)
-                        ->page(1)
-                        ->get();
 
-        /*$lastfmApiClient->userTopArtists('barryvanveen')
-                        ->period(Constants::PERIOD_YEAR)
-                        ->limit(5)
-                        ->get();*/
+        $albums = $lastfmApiClient  ->userTopAlbums('barryvanveen')
+                                    ->period(Constants::PERIOD_WEEK)
+                                    ->limit(5)
+                                    ->get();
 
-        /*$lastfmApiClient->userRecentTracks('barryvanveen')
-                        ->get();*/
+        $artists = $lastfmApiClient ->userTopArtists('barryvanveen')
+                                    ->period(Constants::PERIOD_YEAR)
+                                    ->get();
 
-        /*$lastfmApiClient->userInfo('barryvanveen')
-                        ->get();*/
+        $tracks = $lastfmApiClient  ->userRecentTracks('barryvanveen')
+                                    ->period(Constants::PERIOD_MONTH)
+                                    ->get();
+
+        $user = $lastfmApiClient    ->userInfo('barryvanveen')
+                                    ->get();
+
+        $nowListening = $lastfmApiClient    ->nowListening('barryvanveen')
+                                            ->get();
+
+        dd(compact('albums', 'artists', 'tracks', 'user', 'nowListening'));
     }
 
     public function luckytv()

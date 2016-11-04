@@ -33,12 +33,14 @@ class Constants
     ];
 
     const METHOD_USER_INFO = 'user.getinfo';
+    const METHOD_USER_NOW_LISTENING = 'user.getrecenttracks';
     const METHOD_USER_RECENT_TRACKS = 'user.getrecenttracks';
     const METHOD_USER_TOP_ALBUMS = 'user.gettopalbums';
     const METHOD_USER_TOP_ARTISTS = 'user.gettopartists';
 
     const VALID_METHODS = [
         self::METHOD_USER_INFO,
+        self::METHOD_USER_NOW_LISTENING,
         self::METHOD_USER_RECENT_TRACKS,
         self::METHOD_USER_TOP_ALBUMS,
         self::METHOD_USER_TOP_ARTISTS,
