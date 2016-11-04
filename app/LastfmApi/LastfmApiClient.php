@@ -161,5 +161,4 @@ class LastfmApiClient
 
         return $this->dataFilter->filter($this->method, $data);
     }
-
 }
