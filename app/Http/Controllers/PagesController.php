@@ -58,23 +58,23 @@ class PagesController extends Controller
     {
         $lastfmApiClient = new LastfmApiClient();
 
-        $albums = $lastfmApiClient  ->userTopAlbums('barryvanveen')
+        $albums = $lastfmApiClient->userTopAlbums('barryvanveen')
                                     ->period(Constants::PERIOD_WEEK)
                                     ->limit(5)
                                     ->get();
 
-        $artists = $lastfmApiClient ->userTopArtists('barryvanveen')
+        $artists = $lastfmApiClient->userTopArtists('barryvanveen')
                                     ->period(Constants::PERIOD_YEAR)
                                     ->get();
 
-        $tracks = $lastfmApiClient  ->userRecentTracks('barryvanveen')
+        $tracks = $lastfmApiClient->userRecentTracks('barryvanveen')
                                     ->period(Constants::PERIOD_MONTH)
                                     ->get();
 
-        $user = $lastfmApiClient    ->userInfo('barryvanveen')
+        $user = $lastfmApiClient->userInfo('barryvanveen')
                                     ->get();
 
-        $nowListening = $lastfmApiClient    ->nowListening('barryvanveen')
+        $nowListening = $lastfmApiClient->nowListening('barryvanveen')
                                             ->get();
 
         dd(compact('albums', 'artists', 'tracks', 'user', 'nowListening'));

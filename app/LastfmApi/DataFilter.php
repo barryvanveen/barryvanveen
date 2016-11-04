@@ -8,10 +8,10 @@ use Exception;
 
 class DataFilter
 {
-    /** @var  string */
+    /** @var string */
     protected $method;
 
-    /** @var  array */
+    /** @var array */
     protected $data;
 
     /**
@@ -30,7 +30,7 @@ class DataFilter
         try {
             return $this->returnFilteredData();
         } catch (Exception $e) {
-            throw new ResponseException("Response could not be filtered.");
+            throw new ResponseException('Response could not be filtered.');
         }
     }
 
@@ -54,7 +54,7 @@ class DataFilter
                 return $this->data['topartists']['artist'];
         }
 
-        throw new InvalidArgumentException("Method not set or unknown.");
+        throw new InvalidArgumentException('Method not set or unknown.');
     }
 
     /**
@@ -64,16 +64,14 @@ class DataFilter
     {
         $lastTrack = $this->data['recenttracks']['track'][0];
 
-        if (!isset($lastTrack['@attr']['nowplaying'])) {
+        if (! isset($lastTrack['@attr']['nowplaying'])) {
             return false;
         }
 
-        if (!$lastTrack['@attr']['nowplaying']) {
+        if (! $lastTrack['@attr']['nowplaying']) {
             return false;
         }
 
         return $lastTrack;
     }
-
-
 }
