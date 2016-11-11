@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.16.3] - 2016-11-11
+### Fixed
+- Updated composer dependencies
+
 ## [2.16.2] - 2016-11-01
 ### Changed
 - Defer loading of the Glide server
