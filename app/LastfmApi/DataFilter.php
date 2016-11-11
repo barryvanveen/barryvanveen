@@ -54,5 +54,4 @@ class DataFilter
 
         throw new InvalidArgumentException('Method not set or unknown.');
     }
-
 }

@@ -6,16 +6,16 @@ use Barryvanveen\LastfmApi\Exceptions\InvalidArgumentException;
 
 class LastfmApiClient
 {
-    /** @var UrlBuilder  */
+    /** @var UrlBuilder */
     protected $urlBuilder;
 
-    /** @var DataFetcher  */
+    /** @var DataFetcher */
     protected $dataFetcher;
 
-    /** @var DataFilter  */
+    /** @var DataFilter */
     protected $dataFilter;
 
-    /** @var  string */
+    /** @var string */
     protected $method;
 
     /**
@@ -162,7 +162,7 @@ class LastfmApiClient
     public function getNowListening()
     {
         if ($this->method != Constants::METHOD_USER_RECENT_TRACKS) {
-            throw new InvalidArgumentException("Can not retrieve nowListening. Set the userRecentTracks method first");
+            throw new InvalidArgumentException('Can not retrieve nowListening. Set the userRecentTracks method first');
         }
 
         $recentTracks = $this->get();
