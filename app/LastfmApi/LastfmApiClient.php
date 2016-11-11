@@ -2,17 +2,21 @@
 
 namespace Barryvanveen\LastfmApi;
 
+use Barryvanveen\LastfmApi\Exceptions\InvalidArgumentException;
+
 class LastfmApiClient
 {
+    /** @var UrlBuilder  */
     protected $urlBuilder;
 
+    /** @var DataFetcher  */
     protected $dataFetcher;
 
+    /** @var DataFilter  */
     protected $dataFilter;
 
+    /** @var  string */
     protected $method;
-
-    protected $nowListening = false;
 
     /**
      * LastfmApi constructor.
@@ -80,20 +84,6 @@ class LastfmApiClient
     }
 
     /**
-     * @param string $username
-     *
-     * @return $this
-     */
-    public function nowListening($username)
-    {
-        $this->setMethod(Constants::METHOD_USER_NOW_LISTENING);
-
-        $this->urlBuilder->setUsername($username);
-
-        return $this;
-    }
-
-    /**
      * @param string $method
      */
     protected function setMethod($method)
@@ -153,6 +143,9 @@ class LastfmApiClient
         return $this;
     }
 
+    /**
+     * @return array
+     */
     public function get()
     {
         $url = $this->urlBuilder->buildUrl();
@@ -160,5 +153,30 @@ class LastfmApiClient
         $data = $this->dataFetcher->get($url);
 
         return $this->dataFilter->filter($this->method, $data);
+    }
+
+    /**
+     * @return bool|array
+     * @throws InvalidArgumentException
+     */
+    public function getNowListening()
+    {
+        if ($this->method != Constants::METHOD_USER_RECENT_TRACKS) {
+            throw new InvalidArgumentException("Can not retrieve nowListening. Set the userRecentTracks method first");
+        }
+
+        $recentTracks = $this->get();
+
+        $lastTrack = $recentTracks[0];
+
+        if (! isset($lastTrack['@attr']['nowplaying'])) {
+            return false;
+        }
+
+        if (! $lastTrack['@attr']['nowplaying']) {
+            return false;
+        }
+
+        return $lastTrack;
     }
 }

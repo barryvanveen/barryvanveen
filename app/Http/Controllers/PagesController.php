@@ -74,8 +74,8 @@ class PagesController extends Controller
         $user = $lastfmApiClient->userInfo('barryvanveen')
                                     ->get();
 
-        $nowListening = $lastfmApiClient->nowListening('barryvanveen')
-                                            ->get();
+        $nowListening = $lastfmApiClient->userRecentTracks('barryvanveen')
+                                            ->getNowListening();
 
         dd(compact('albums', 'artists', 'tracks', 'user', 'nowListening'));
     }

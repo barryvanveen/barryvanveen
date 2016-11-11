@@ -18,7 +18,7 @@ class DataFilter
      * @param $method
      * @param $data
      *
-     * @return mixed
+     * @return array
      * @throws ResponseException
      */
     public function filter($method, $data)
@@ -46,8 +46,6 @@ class DataFilter
                 return $this->data['user'];
             case Constants::METHOD_USER_RECENT_TRACKS:
                 return $this->data['recenttracks']['track'];
-            case Constants::METHOD_USER_NOW_LISTENING:
-                return $this->filterNowListeningTrack();
             case Constants::METHOD_USER_TOP_ALBUMS:
                 return $this->data['topalbums']['album'];
             case Constants::METHOD_USER_TOP_ARTISTS:
@@ -57,21 +55,4 @@ class DataFilter
         throw new InvalidArgumentException('Method not set or unknown.');
     }
 
-    /**
-     * @return mixed
-     */
-    protected function filterNowListeningTrack()
-    {
-        $lastTrack = $this->data['recenttracks']['track'][0];
-
-        if (! isset($lastTrack['@attr']['nowplaying'])) {
-            return false;
-        }
-
-        if (! $lastTrack['@attr']['nowplaying']) {
-            return false;
-        }
-
-        return $lastTrack;
-    }
 }
