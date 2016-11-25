@@ -37,7 +37,7 @@ return [
                 $protocol.'ajax.googleapis.com',
                 $protocol.'code.jquery.com',
                 $protocol.'www.googletagmanager.com',
-                //$protocol.'www.google-analytics.com',
+                $protocol.'www.google-analytics.com',
             ],
             'self' => true,
             'unsafe-inline' => true,
