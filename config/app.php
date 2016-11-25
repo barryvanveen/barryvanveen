@@ -177,6 +177,7 @@ return [
         /*
          * Vendor Service Providers
          */
+        Bepsvpt\LaravelSecurityHeader\SecurityHeaderServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Collective\Remote\RemoteServiceProvider::class,
