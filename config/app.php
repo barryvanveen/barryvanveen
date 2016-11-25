@@ -50,7 +50,7 @@ return [
     |
     */
 
-    'version' => 'v2.16.3',
+    'version' => 'v2.17.0',
 
     /*
     |--------------------------------------------------------------------------
@@ -177,6 +177,7 @@ return [
         /*
          * Vendor Service Providers
          */
+        Bepsvpt\LaravelSecurityHeader\SecurityHeaderServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Collective\Remote\RemoteServiceProvider::class,

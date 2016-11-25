@@ -8,6 +8,7 @@
   "license": "MIT",
   "type": "project",
   "require": {
+    "bepsvpt/laravel-security-header": "2.2.*",
     "bugsnag/bugsnag-laravel": "2.4.*",
     "cebe/markdown": "1.1.*",
     "cviebrock/eloquent-sluggable": "4.1.*",
@@ -20,7 +21,7 @@
     "laravelcollective/html": "5.3.*",
     "laravelcollective/remote": "5.3.*",
     "league/flysystem-dropbox": "1.0.*",
-    "league/glide": "1.1.*",
+    "league/glide": "1.2.*",
     "mccool/laravel-auto-presenter": "4.3.*",
     "php": ">=5.5.9",
     "rap2hpoutre/laravel-log-viewer": "0.7.*",

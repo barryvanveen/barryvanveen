@@ -9,6 +9,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.17.0] - 2016-11-25
+### Added
+- Added security headers
+### Fixed
+- Updated composer dependencies
+- Fixed 404 errors from critical CSS
+### Removed
+- Removed PHP 5.6 checks from Travis CI configuration
+
 ## [2.16.3] - 2016-11-11
 ### Fixed
 - Updated composer dependencies
