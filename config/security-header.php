@@ -1,7 +1,7 @@
 <?php
 
 $protocol = 'https://';
-if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == 'off') {
+if (! isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == 'off') {
     $protocol = 'http://';
 }
 
@@ -60,7 +60,7 @@ return [
         ],
         'font-src' => [
             'allow' => [
-                $protocol.'fonts.gstatic.com'
+                $protocol.'fonts.gstatic.com',
             ],
             'self' => true,
             'data' => true,
