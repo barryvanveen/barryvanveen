@@ -89,8 +89,14 @@ gulp.task('critical', function() {
         css: config.outputDirs.css+'/screen.css',
         width: 1280,
         height: 600,
-        dest: 'public_html/dist/css/critical.css',
+        dest: 'critical.css',
         minify: true
+    }).then(function() {
+        gulp.src('public_html/critical.css')
+            .pipe(gulp.dest(config.outputDirs.css));
+
+        gulp.src('public_html/critical.css', {read: false})
+         .pipe(clean());
     });
 });
 
