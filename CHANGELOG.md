@@ -9,7 +9,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
-## [2.17.0] - 2016-11-25
+## [2.17.0] - 2016-11-25	
+### Changed
+- Updated composer dependencies
+- Updated npm dependencies
+- Changed generating the critical path CSS after update of gulp plugin
+### Fixed
+- Fixed error on missing dates in LuckyTV RSS feed
+
+## [2.17.0] - 2016-11-25	
 ### Added
 - Added security headers
 ### Fixed
