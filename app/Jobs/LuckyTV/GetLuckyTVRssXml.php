@@ -122,23 +122,35 @@ class GetLuckyTVRssXml
      */
     protected function fillMissingDates($posts)
     {
-        $posts = array_reverse($posts);
-
-        $lastdate = $posts[0]['date'];
-
         $number_of_posts = count($posts);
 
-        for ($i = 1; $i < $number_of_posts; ++$i) {
+        for($i=0; $i<$number_of_posts; $i++) {
             if ($posts[$i]['date'] !== false) {
-                $lastdate = $posts[$i]['date'];
+                 continue;
+            }
+
+            // forward lookup for date
+            for($j=$i+1; $j<$number_of_posts; $j++) {
+                if ($posts[$j]['date'] !== false) {
+                    $posts[$i]['date'] = $posts[$j]['date'];
+                    break;
+                }
+            }
+
+            if ($posts[$i]['date'] !== false) {
                 continue;
             }
 
-            $posts[$i]['date'] = $lastdate;
-            continue;
+            // backward lookup for date
+            for($j=$i-1; $j>=0; $j--) {
+                if ($posts[$j]['date'] !== false) {
+                    $posts[$i]['date'] = $posts[$j]['date'];
+                    break;
+                }
+            }
         }
 
-        return array_reverse($posts);
+        return $posts;
     }
 
     protected function createRssFeedFromPosts()
