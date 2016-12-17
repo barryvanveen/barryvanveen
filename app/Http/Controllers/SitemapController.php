@@ -2,9 +2,9 @@
 
 namespace Barryvanveen\Http\Controllers;
 
-use Response;
 use Barryvanveen\Jobs\Sitemap\GetSitemapXml;
 use Illuminate\Foundation\Bus\DispatchesJobs;
+use Response;
 
 class SitemapController extends Controller
 {

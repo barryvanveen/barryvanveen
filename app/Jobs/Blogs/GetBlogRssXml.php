@@ -2,15 +2,15 @@
 
 namespace Barryvanveen\Jobs\Blogs;
 
-use Carbon\Carbon;
 use Barryvanveen\Blogs\Blog;
+use Barryvanveen\Blogs\BlogRepository;
+use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
+use Barryvanveen\Jobs\Rss\GetRssXml;
+use Barryvanveen\Rss\ChannelData;
 use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
-use Barryvanveen\Rss\ChannelData;
-use Barryvanveen\Jobs\Rss\GetRssXml;
-use Barryvanveen\Blogs\BlogRepository;
+use Carbon\Carbon;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 
 class GetBlogRssXml
 {

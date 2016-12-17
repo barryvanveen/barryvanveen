@@ -2,16 +2,16 @@
 
 namespace Barryvanveen\Http\Controllers\Admin;
 
-use View;
-use Flash;
-use Redirect;
-use Barryvanveen\Pages\Page;
-use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
-use Barryvanveen\Pages\PageRepository;
+use Barryvanveen\Http\Controllers\Controller;
 use Barryvanveen\Jobs\Pages\CreatePage;
 use Barryvanveen\Jobs\Pages\UpdatePage;
-use Barryvanveen\Http\Controllers\Controller;
+use Barryvanveen\Pages\Page;
+use Barryvanveen\Pages\PageRepository;
+use Flash;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Redirect;
+use View;
 
 class AdminPageController extends Controller
 {

@@ -2,12 +2,12 @@
 
 namespace Barryvanveen\Jobs\Sitemap;
 
-use View;
-use Route;
-use Carbon\Carbon;
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
 use Barryvanveen\Pages\PageRepository;
+use Carbon\Carbon;
+use Route;
+use View;
 
 class GetSitemapXml
 {

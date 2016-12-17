@@ -3,10 +3,10 @@
 namespace Barryvanveen\Blogs;
 
 use Barryvanveen\Comments\Comment;
-use Illuminate\Database\Query\Builder;
-use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Query\Builder;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**

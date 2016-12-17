@@ -2,22 +2,22 @@
 
 namespace Barryvanveen\Http\Controllers;
 
-use View;
-use Flash;
-use Request;
-use Redirect;
-use Response;
-use GoogleTagManager;
 use Barryvanveen\Blogs\Blog;
-use Barryvanveen\Comments\Comment;
-use Illuminate\Http\RedirectResponse;
 use Barryvanveen\Blogs\BlogRepository;
-use Barryvanveen\Mailers\CommentMailer;
+use Barryvanveen\Comments\Comment;
+use Barryvanveen\Http\Requests\CreateCommentRequest;
 use Barryvanveen\Jobs\Blogs\GetBlogRssXml;
 use Barryvanveen\Jobs\Comments\CreateComment;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
+use Barryvanveen\Mailers\CommentMailer;
+use Flash;
+use GoogleTagManager;
 use Illuminate\Auth\Access\AuthorizationException;
-use Barryvanveen\Http\Requests\CreateCommentRequest;
+use Illuminate\Http\RedirectResponse;
+use Redirect;
+use Request;
+use Response;
+use View;
 
 class BlogController extends Controller
 {

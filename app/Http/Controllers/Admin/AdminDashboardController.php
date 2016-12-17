@@ -2,8 +2,8 @@
 
 namespace Barryvanveen\Http\Controllers\Admin;
 
-use View;
 use Barryvanveen\Http\Controllers\Controller;
+use View;
 
 class AdminDashboardController extends Controller
 {

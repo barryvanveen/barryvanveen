@@ -2,10 +2,10 @@
 
 namespace Barryvanveen\Providers;
 
-use League\Glide\Server;
-use League\Glide\ServerFactory;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
+use League\Glide\Server;
+use League\Glide\ServerFactory;
 
 class GlideServiceProvider extends ServiceProvider
 {

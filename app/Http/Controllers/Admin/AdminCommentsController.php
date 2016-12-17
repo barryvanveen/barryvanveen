@@ -2,14 +2,14 @@
 
 namespace Barryvanveen\Http\Controllers\Admin;
 
-use View;
-use Flash;
-use Redirect;
-use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
 use Barryvanveen\Comments\CommentRepository;
 use Barryvanveen\Http\Controllers\Controller;
 use Barryvanveen\Jobs\Comments\UpdateComment;
+use Flash;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Redirect;
+use View;
 
 class AdminCommentsController extends Controller
 {

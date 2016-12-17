@@ -3,11 +3,11 @@
 namespace Barryvanveen\Providers;
 
 use Auth;
-use Request;
-use Illuminate\View\View;
-use Illuminate\Support\ServiceProvider;
-use Barryvanveen\Composers\MenuComposer;
 use Barryvanveen\Composers\AssetComposer;
+use Barryvanveen\Composers\MenuComposer;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\View\View;
+use Request;
 
 class ComposerServiceProvider extends ServiceProvider
 {

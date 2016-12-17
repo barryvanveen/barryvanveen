@@ -2,9 +2,9 @@
 
 namespace Barryvanveen\Http\Requests;
 
-use Log;
 use GoogleTagManager;
 use Illuminate\Http\JsonResponse;
+use Log;
 
 class CreateCommentRequest extends Request
 {

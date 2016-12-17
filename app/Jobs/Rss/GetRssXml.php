@@ -3,9 +3,9 @@
 namespace Barryvanveen\Jobs\Rss;
 
 use App;
+use Barryvanveen\Rss\ChannelData;
 use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
-use Barryvanveen\Rss\ChannelData;
 
 class GetRssXml
 {

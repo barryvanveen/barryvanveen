@@ -2,12 +2,12 @@
 
 namespace Barryvanveen\Http\Controllers;
 
-use View;
-use Cache;
 use Artisan;
-use Response;
-use Barryvanveen\Pages\PageRepository;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
+use Barryvanveen\Pages\PageRepository;
+use Cache;
+use Response;
+use View;
 
 class PagesController extends Controller
 {

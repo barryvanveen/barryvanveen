@@ -2,9 +2,9 @@
 
 namespace Barryvanveen\Mailers;
 
-use Illuminate\Mail\Message;
-use Illuminate\Mail\Mailer as Mail;
 use Barryvanveen\Recipients\Recipient;
+use Illuminate\Mail\Mailer as Mail;
+use Illuminate\Mail\Message;
 
 class Mailer
 {

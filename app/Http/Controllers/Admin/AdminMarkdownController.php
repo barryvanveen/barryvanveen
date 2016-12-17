@@ -2,10 +2,10 @@
 
 namespace Barryvanveen\Http\Controllers\Admin;
 
-use Input;
-use Response;
 use Barryvanveen\Http\Controllers\Controller;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
+use Input;
+use Response;
 
 class AdminMarkdownController extends Controller
 {

@@ -2,16 +2,16 @@
 
 namespace Barryvanveen\Http\Controllers\Admin;
 
-use View;
-use Flash;
-use Redirect;
 use Barryvanveen\Blogs\Blog;
-use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
 use Barryvanveen\Blogs\BlogRepository;
+use Barryvanveen\Http\Controllers\Controller;
 use Barryvanveen\Jobs\Blogs\CreateBlog;
 use Barryvanveen\Jobs\Blogs\UpdateBlog;
-use Barryvanveen\Http\Controllers\Controller;
+use Flash;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Redirect;
+use View;
 
 class AdminBlogController extends Controller
 {

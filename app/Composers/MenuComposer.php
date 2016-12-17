@@ -2,8 +2,8 @@
 
 namespace Barryvanveen\Composers;
 
-use Route;
 use Illuminate\View\View;
+use Route;
 
 class MenuComposer
 {

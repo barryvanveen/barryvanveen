@@ -2,8 +2,8 @@
 
 namespace Barryvanveen\Console\Commands;
 
-use SSH;
 use Illuminate\Console\Command;
+use SSH;
 use Symfony\Component\Console\Input\InputArgument;
 
 class DeployCommand extends Command

@@ -2,22 +2,22 @@
 
 namespace Barryvanveen\Exceptions;
 
-use Meta;
-use View;
-use Input;
 use Bugsnag;
-use Session;
-use Redirect;
-use Response;
 use Exception;
 use GoogleTagManager;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Exception\HttpResponseException;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Validation\ValidationException;
-use Illuminate\Http\Exception\HttpResponseException;
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Input;
+use Meta;
+use Redirect;
+use Response;
+use Session;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use View;
 
 class Handler extends ExceptionHandler
 {
