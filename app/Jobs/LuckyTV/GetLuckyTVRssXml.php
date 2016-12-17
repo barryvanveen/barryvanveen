@@ -2,16 +2,16 @@
 
 namespace Barryvanveen\Jobs\LuckyTV;
 
-use Barryvanveen\Jobs\Rss\GetRssXml;
-use Barryvanveen\Rss\ChannelData;
+use Cache;
+use DateTime;
+use Carbon\Carbon;
+use GuzzleHttp\Client;
 use Barryvanveen\Rss\FeedData;
 use Barryvanveen\Rss\ItemData;
-use Cache;
-use Carbon\Carbon;
-use DateTime;
-use GuzzleHttp\Client;
-use Illuminate\Foundation\Bus\DispatchesJobs;
+use Barryvanveen\Rss\ChannelData;
+use Barryvanveen\Jobs\Rss\GetRssXml;
 use Symfony\Component\DomCrawler\Crawler;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 
 class GetLuckyTVRssXml
 {

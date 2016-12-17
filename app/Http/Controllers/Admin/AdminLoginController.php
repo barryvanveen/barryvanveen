@@ -3,14 +3,14 @@
 namespace Barryvanveen\Http\Controllers\Admin;
 
 use Auth;
-use Barryvanveen\Exceptions\InvalidLoginException;
-use Barryvanveen\Http\Controllers\Controller;
+use View;
 use Flash;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Input;
 use Redirect;
-use View;
+use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use Barryvanveen\Http\Controllers\Controller;
+use Barryvanveen\Exceptions\InvalidLoginException;
 
 class AdminLoginController extends Controller
 {

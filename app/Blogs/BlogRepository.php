@@ -2,9 +2,9 @@
 
 namespace Barryvanveen\Blogs;
 
+use Illuminate\Database\Eloquent\Collection;
 use Barryvanveen\Database\EloquentRepository;
 use Illuminate\Contracts\Pagination\Paginator;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class BlogRepository extends EloquentRepository

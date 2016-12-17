@@ -1,9 +1,9 @@
 <?php
 
-use Barryvanveen\Blogs\Blog;
-use Barryvanveen\Faker\Providers\LoremMarkdown;
 use Faker\Factory as Faker;
+use Barryvanveen\Blogs\Blog;
 use Illuminate\Database\Seeder;
+use Barryvanveen\Faker\Providers\LoremMarkdown;
 
 class BlogsTableSeeder extends Seeder
 {

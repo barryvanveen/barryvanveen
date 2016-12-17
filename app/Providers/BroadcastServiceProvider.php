@@ -3,8 +3,8 @@
 namespace Barryvanveen\Providers;
 
 use Barryvanveen\Users\User;
-use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Broadcast;
 
 class BroadcastServiceProvider extends ServiceProvider
 {

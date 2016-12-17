@@ -3,8 +3,8 @@
 namespace Barryvanveen\Comments;
 
 use Barryvanveen\Blogs\Blog;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 /**

@@ -2,9 +2,9 @@
 
 namespace Barryvanveen\Http\Controllers\Admin;
 
+use View;
 use Barryvanveen\Http\Controllers\Controller;
 use Rap2hpoutre\LaravelLogViewer\LaravelLogViewer;
-use View;
 
 class AdminLogController extends Controller
 {
