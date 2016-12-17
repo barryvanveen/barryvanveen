@@ -2,9 +2,9 @@
 
 namespace Barryvanveen\Providers;
 
+use Psr\Log\LoggerInterface;
 use Illuminate\Contracts\Logging\Log;
 use Illuminate\Support\ServiceProvider;
-use Psr\Log\LoggerInterface;
 
 class AppServiceProvider extends ServiceProvider
 {

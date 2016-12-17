@@ -2,9 +2,9 @@
 
 namespace Barryvanveen\Blogs;
 
-use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Carbon\Carbon;
 use Illuminate\Foundation\Bus\DispatchesJobs;
+use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
 class BlogPresenter extends BasePresenter

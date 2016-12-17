@@ -2,9 +2,9 @@
 
 namespace Barryvanveen\Console\Commands;
 
-use Barryvanveen\Jobs\LuckyTV\GetLuckyTVRssXml;
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Bus\Dispatcher;
+use Barryvanveen\Jobs\LuckyTV\GetLuckyTVRssXml;
 
 class UpdateLuckyTvRssFeedCommand extends Command
 {

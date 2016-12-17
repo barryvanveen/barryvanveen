@@ -4,12 +4,12 @@ namespace Barryvanveen\Users;
 
 use Hash;
 use Illuminate\Auth\Authenticatable;
-use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
-use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Database\Eloquent\Model;
 use McCool\LaravelAutoPresenter\HasPresenter;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
 /**
  * Barryvanveen\Users\User.

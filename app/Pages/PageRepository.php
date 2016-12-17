@@ -2,8 +2,8 @@
 
 namespace Barryvanveen\Pages;
 
-use Barryvanveen\Database\EloquentRepository;
 use Illuminate\Database\Eloquent\Collection;
+use Barryvanveen\Database\EloquentRepository;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PageRepository extends EloquentRepository

@@ -1,9 +1,9 @@
 <?php
 
-use Barryvanveen\Blogs\BlogRepository;
-use Barryvanveen\Comments\Comment;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
+use Barryvanveen\Comments\Comment;
+use Barryvanveen\Blogs\BlogRepository;
 
 class CommentsTableSeeder extends Seeder
 {
