@@ -9,7 +9,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
-## [2.17.0] - 2016-11-25	
+## [2.18.0] - 2016-12-17	
+### Added
+- Added configuration to enable secure session cookies
+### Changed
+- Changed php-cs-fixer and styleci for ordering use statements alphabetically
+- Updated composer dependencies
+- Updated npm dependencies
+- Added Yarn lock file, removed npm shrinkwrap lock file
+- Updated assets
+
+## [2.17.1] - 2016-11-25	
 ### Changed
 - Updated composer dependencies
 - Updated npm dependencies
