@@ -9,6 +9,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.19.0] - 2017-01-02
+### Added
+- Removed bepsvpt/secure-headers 
+### Changed
+- Updated composer dependencies
+- Ran php-cs-fixer after update
+### Removed
+- Removed bepsvpt/laravel-security-header
+
 ## [2.18.0] - 2016-12-17	
 ### Added
 - Added configuration to enable secure session cookies
