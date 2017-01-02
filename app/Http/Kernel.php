@@ -31,7 +31,7 @@ class Kernel extends HttpKernel
             \Barryvanveen\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Spatie\GoogleTagManager\GoogleTagManagerMiddleware::class,
-            \Bepsvpt\LaravelSecurityHeader\SecurityHeaderMiddleware::class,
+            \Bepsvpt\SecureHeaders\SecureHeadersMiddleware::class,
         ],
 
         'api' => [

@@ -32,16 +32,12 @@ class SwitchBranchCommand extends Command
     protected function getOptions()
     {
         return [
-
             ['composer-update', null, InputOption::VALUE_NONE, 'Run composer update instead of composer install.'],
-
         ];
     }
 
     /**
      * Execute the console command.
-     *
-     * @return void
      */
     public function handle()
     {

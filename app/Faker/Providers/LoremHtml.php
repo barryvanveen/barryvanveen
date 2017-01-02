@@ -98,7 +98,7 @@ class LoremHtml extends Lorem
 
         $paragraphs = [];
         for ($i = 0; $i < $nbParagraphs; ++$i) {
-            $paragraphs [] = static::htmlParagraph();
+            $paragraphs[] = static::htmlParagraph();
         }
 
         return $asText ? implode("\n\n", $paragraphs) : $paragraphs;

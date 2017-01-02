@@ -38,8 +38,6 @@ class UpdateComment
      * Handle a command.
      *
      * @param CommentRepository $commentRepository
-     *
-     * @return void
      */
     public function handle(CommentRepository $commentRepository)
     {

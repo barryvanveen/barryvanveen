@@ -99,7 +99,7 @@ class LoremMarkdown extends Lorem
 
         $paragraphs = [];
         for ($i = 0; $i < $nbParagraphs; ++$i) {
-            $paragraphs [] = static::markdownParagraph();
+            $paragraphs[] = static::markdownParagraph();
         }
 
         return $asText ? implode("\n\n", $paragraphs) : $paragraphs;

@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Queue Driver
@@ -30,7 +29,6 @@ return [
     */
 
     'connections' => [
-
         'sync' => [
             'driver' => 'sync',
         ],
@@ -72,7 +70,6 @@ return [
             'queue'      => 'default',
             'expire'     => 60,
         ],
-
     ],
 
     /*
@@ -89,5 +86,4 @@ return [
     'failed' => [
         'database' => 'mysql', 'table' => 'failed_jobs',
     ],
-
 ];

@@ -13,7 +13,6 @@ class PublicPagesTest extends TestCase
      */
     public function testAboutMe()
     {
-
         /** @var Page $page */
         $page = factory(Barryvanveen\Pages\Page::class)->create(
             [
@@ -33,7 +32,6 @@ class PublicPagesTest extends TestCase
      */
     public function testAboutMeBooks()
     {
-
         /** @var Page $page */
         $page = factory(Barryvanveen\Pages\Page::class)->create(
             [
@@ -63,7 +61,6 @@ class PublicPagesTest extends TestCase
      */
     public function testSitemap()
     {
-
         /** @var Blog $blog */
         $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
 

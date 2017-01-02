@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -50,7 +49,7 @@ return [
     |
     */
 
-    'version' => 'v2.18.0',
+    'version' => 'v2.19.0',
 
     /*
     |--------------------------------------------------------------------------
@@ -135,7 +134,6 @@ return [
     */
 
     'providers' => [
-
         /*
          * Laravel Framework Service Providers...
          */
@@ -177,7 +175,7 @@ return [
         /*
          * Vendor Service Providers
          */
-        Bepsvpt\LaravelSecurityHeader\SecurityHeaderServiceProvider::class,
+        Bepsvpt\SecureHeaders\SecureHeadersServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Collective\Remote\RemoteServiceProvider::class,
@@ -189,7 +187,6 @@ return [
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Roumen\Feed\FeedServiceProvider::class,
         Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
-
     ],
 
     /*
@@ -204,7 +201,6 @@ return [
     */
 
     'aliases' => [
-
         'App'          => Illuminate\Support\Facades\App::class,
         'Artisan'      => Illuminate\Support\Facades\Artisan::class,
         'Auth'         => Illuminate\Support\Facades\Auth::class,
@@ -251,7 +247,5 @@ return [
         'Html'             => Collective\Html\HtmlFacade::class,
         'Meta'             => Eusonlito\LaravelMeta\Facade::class,
         'SSH'              => Collective\Remote\RemoteFacade::class,
-
     ],
-
 ];

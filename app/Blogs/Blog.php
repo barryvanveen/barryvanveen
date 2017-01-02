@@ -21,7 +21,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @property bool $online
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property-read Collection|Comment[] $comments
+ * @property Collection|Comment[] $comments
  *
  * @method static Builder|Blog findSimilarSlugs($model, $attribute, $config, $slug)
  * @method static Builder|Blog orderedNewToOld()

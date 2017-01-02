@@ -87,9 +87,9 @@ class BlogController extends Controller
      * @param CreateCommentRequest $request
      * @param CommentMailer        $commentMailer
      *
-     * @return Blog|RedirectResponse
-     *
      * @throws AuthorizationException
+     *
+     * @return Blog|RedirectResponse
      */
     public function createComment($id, $slug, CreateCommentRequest $request, CommentMailer $commentMailer)
     {

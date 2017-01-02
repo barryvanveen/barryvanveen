@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | View to Bind JavaScript Vars To
@@ -24,5 +23,4 @@ return [
     |
     */
     'js_namespace' => 'Barryvanveen',
-
 ];

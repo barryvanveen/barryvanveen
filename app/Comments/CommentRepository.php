@@ -3,6 +3,8 @@
 namespace Barryvanveen\Comments;
 
 use Barryvanveen\Database\EloquentRepository;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class CommentRepository extends EloquentRepository
@@ -22,9 +24,9 @@ class CommentRepository extends EloquentRepository
      *
      * @param int $id
      *
-     * @return Comment
-     *
      * @throws ModelNotFoundException
+     *
+     * @return Comment|Collection|Model
      */
     public function findById($id)
     {
