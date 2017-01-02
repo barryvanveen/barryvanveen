@@ -55,9 +55,9 @@ class AdminLoginController extends Controller
     /**
      * Handle a login request for the admin pages.
      *
-     * @return RedirectResponse
-     *
      * @throws InvalidLoginException
+     *
+     * @return RedirectResponse
      */
     public function store()
     {

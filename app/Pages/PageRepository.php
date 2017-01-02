@@ -4,6 +4,7 @@ namespace Barryvanveen\Pages;
 
 use Barryvanveen\Database\EloquentRepository;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PageRepository extends EloquentRepository
@@ -24,9 +25,9 @@ class PageRepository extends EloquentRepository
      *
      * @param $slug
      *
-     * @return Page
-     *
      * @throws ModelNotFoundException
+     *
+     * @return Page
      */
     public function findPublishedBySlug($slug)
     {
@@ -40,9 +41,9 @@ class PageRepository extends EloquentRepository
      *
      * @param $id
      *
-     * @return Page
-     *
      * @throws ModelNotFoundException
+     *
+     * @return Page|Collection|Model
      */
     public function findAnyById($id)
     {

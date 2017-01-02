@@ -27,8 +27,6 @@ class CreatePage
      * Handle a command.
      *
      * @param PageRepository $pageRepository
-     *
-     * @return void
      */
     public function handle(PageRepository $pageRepository)
     {

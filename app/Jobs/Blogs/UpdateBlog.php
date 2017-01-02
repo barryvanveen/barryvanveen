@@ -35,8 +35,6 @@ class UpdateBlog
      * Handle a command.
      *
      * @param BlogRepository $blogRepository
-     *
-     * @return void
      */
     public function handle(BlogRepository $blogRepository)
     {

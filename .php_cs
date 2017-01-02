@@ -1,90 +1,28 @@
 <?php
 
-use Symfony\CS\Config\Config;
-use Symfony\CS\FixerInterface;
-use Symfony\CS\Finder\DefaultFinder;
-
 $excluded_folders = [
     'node_modules',
     'storage',
     'vendor'
 ];
 
-$fixers = [
-    'blankline_after_open_tag',
-    'braces',
-    'concat_without_spaces',
-    'double_arrow_multiline_whitespaces',
-    'duplicate_semicolon',
-    'elseif',
-    'empty_return',
-    'encoding',
-    'eof_ending',
-    'extra_empty_lines',
-    'function_call_space',
-    'function_declaration',
-    'include',
-    'indentation',
-    'join_function',
-    'line_after_namespace',
-    'linefeed',
-    'list_commas',
-    'logical_not_operators_with_successor_space',
-    'lowercase_constants',
-    'lowercase_keywords',
-    'method_argument_space',
-    'multiline_array_trailing_comma',
-    'multiline_spaces_before_semicolon',
-    'multiple_use',
-    'namespace_no_leading_whitespace',
-    'no_blank_lines_after_class_opening',
-    'no_empty_lines_after_phpdocs',
-    'object_operator',
-    'operators_spaces',
-    'ordered_use',
-    'parenthesis',
-    'phpdoc_indent',
-    'phpdoc_inline_tag',
-    'phpdoc_no_access',
-    'phpdoc_no_package',
-    'phpdoc_scalar',
-    'phpdoc_short_description',
-    'phpdoc_to_comment',
-    'phpdoc_trim',
-    'phpdoc_type_to_var',
-    'phpdoc_var_without_name',
-    'remove_leading_slash_use',
-    'remove_lines_between_uses',
-    'return',
-    'self_accessor',
-    'short_array_syntax',
-    'short_echo_tag',
-    'short_tag',
-    'single_array_no_trailing_comma',
-    'single_blank_line_before_namespace',
-    'single_line_after_imports',
-    'single_quote',
-    'spaces_before_semicolon',
-    'spaces_cast',
-    'standardize_not_equal',
-    'ternary_spaces',
-    'trailing_spaces',
-    'trim_array_spaces',
-    'unalign_equals',
-    'unary_operators_spaces',
-    'unused_use',
-    'visibility',
-    'whitespacy_lines',
-];
+$finder = PhpCsFixer\Finder::create()
+    ->exclude($excluded_folders)
+    ->notName('AcceptanceTester.php')
+    ->notName('FunctionalTester.php')
+    ->notName('UnitTester.php')
+    ->in(__DIR__);
+;
 
-$finder = DefaultFinder::create()->exclude($excluded_folders)
-                       ->notName('AcceptanceTester.php')
-                       ->notName('FunctionalTester.php')
-                       ->notName('UnitTester.php')
-                       ->in(__DIR__);
-
-return Symfony\CS\Config\Config::create()
-                               ->level(FixerInterface::NONE_LEVEL)
-                               ->fixers($fixers)
-                               ->finder($finder)
-                               ->setUsingCache(true);
+return PhpCsFixer\Config::create()
+    ->setRules(array(
+        '@Symfony' => true,
+        'binary_operator_spaces' => ['align_double_arrow' => true],
+        'array_syntax' => ['syntax' => 'short'],
+        'linebreak_after_opening_tag' => true,
+        'not_operator_with_successor_space' => true,
+        'ordered_imports' => true,
+        'phpdoc_order' => true,
+    ))
+    ->setFinder($finder)
+;

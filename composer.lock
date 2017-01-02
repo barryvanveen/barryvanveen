@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3294964a4385cbbcc89919fce45f8930",
+    "content-hash": "d46cff9fce187537570ed469cc41a880",
     "packages": [
         {
             "name": "bepsvpt/secure-headers",

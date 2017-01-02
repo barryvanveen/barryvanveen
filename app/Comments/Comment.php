@@ -20,7 +20,7 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @property string $online
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property-read Blog $blog
+ * @property Blog $blog
  *
  * @method static Builder|Comment orderedNewToOld()
  * @method static Builder|Comment whereBlogId($value)

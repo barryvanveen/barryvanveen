@@ -5,6 +5,7 @@ namespace Barryvanveen\Blogs;
 use Barryvanveen\Database\EloquentRepository;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class BlogRepository extends EloquentRepository
@@ -51,9 +52,9 @@ class BlogRepository extends EloquentRepository
      *
      * @param int $id
      *
-     * @return Blog
-     *
      * @throws ModelNotFoundException
+     *
+     * @return Blog|Collection|Model
      */
     public function findPublishedById($id)
     {
@@ -66,9 +67,9 @@ class BlogRepository extends EloquentRepository
      *
      * @param int $id
      *
-     * @return Blog
-     *
      * @throws ModelNotFoundException
+     *
+     * @return Blog|Collection|Model
      */
     public function findAnyById($id)
     {

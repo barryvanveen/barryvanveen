@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
      * The Google Tag Manager id, should be a code that looks something like "gtm-xxxx".
      */
@@ -23,5 +22,4 @@ return [
      * The key under which data is saved to the session with flash.
      */
     'sessionKey' => '_googleTagManager',
-
 ];
