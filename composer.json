@@ -8,7 +8,7 @@
   "license": "MIT",
   "type": "project",
   "require": {
-    "bepsvpt/laravel-security-header": "2.2.*",
+    "bepsvpt/secure-headers": "^3.0",
     "bugsnag/bugsnag-laravel": "2.4.*",
     "cebe/markdown": "1.1.*",
     "cviebrock/eloquent-sluggable": "4.1.*",
