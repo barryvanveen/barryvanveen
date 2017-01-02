@@ -24,7 +24,7 @@
     "league/glide": "1.2.*",
     "mccool/laravel-auto-presenter": "4.3.*",
     "php": ">=5.5.9",
-    "rap2hpoutre/laravel-log-viewer": "0.7.*",
+    "rap2hpoutre/laravel-log-viewer": "0.8.*",
     "roumen/feed": "2.10.*",
     "spatie/laravel-googletagmanager": "2.2.*",
     "symfony/css-selector": "^3.0",
