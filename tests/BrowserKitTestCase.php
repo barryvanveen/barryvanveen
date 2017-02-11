@@ -3,8 +3,9 @@
 namespace Tests;
 
 use Illuminate\Contracts\Console\Kernel;
+use Laravel\BrowserKitTesting\TestCase;
 
-class TestCase extends \Illuminate\Foundation\Testing\TestCase
+class BrowserKitTestCase extends TestCase
 {
     /**
      * The base URL to use while testing the application.

@@ -1,9 +1,12 @@
 <?php
 
+namespace Tests\Unit\Users;
+
 use Barryvanveen\Users\User;
 use Barryvanveen\Users\UserPresenter;
+use Tests\BrowserKitTestCase;
 
-class UserPresenterTest extends TestCase
+class UserPresenterTest extends BrowserKitTestCase
 {
     public function testGetFullName()
     {

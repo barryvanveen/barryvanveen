@@ -1,10 +1,13 @@
 <?php
 
+namespace Tests\Functional;
+
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Pages\Page;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\BrowserKitTestCase;
 
-class PublicPagesTest extends TestCase
+class PublicPagesTest extends BrowserKitTestCase
 {
     use DatabaseTransactions;
 
@@ -14,7 +17,7 @@ class PublicPagesTest extends TestCase
     public function testAboutMe()
     {
         /** @var Page $page */
-        $page = factory(Barryvanveen\Pages\Page::class)->create(
+        $page = factory(Page::class)->create(
             [
                 'title'  => 'About me',
                 'online' => 1,
@@ -33,7 +36,7 @@ class PublicPagesTest extends TestCase
     public function testAboutMeBooks()
     {
         /** @var Page $page */
-        $page = factory(Barryvanveen\Pages\Page::class)->create(
+        $page = factory(Page::class)->create(
             [
                 'title'  => 'Books that I have read',
                 'online' => 1,
@@ -62,16 +65,16 @@ class PublicPagesTest extends TestCase
     public function testSitemap()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
+        $blog = factory(Blog::class, 'published')->create();
 
-        factory(Barryvanveen\Pages\Page::class)->create(
+        factory(Page::class)->create(
             [
                 'title'  => 'About me',
                 'online' => 1,
             ]
         );
 
-        factory(Barryvanveen\Pages\Page::class)->create(
+        factory(Page::class)->create(
             [
                 'title'  => 'Books that I have read',
                 'online' => 1,

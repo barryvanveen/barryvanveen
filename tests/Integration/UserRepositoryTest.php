@@ -1,10 +1,13 @@
 <?php
 
+namespace Tests\Integration;
+
 use Barryvanveen\Users\User;
 use Barryvanveen\Users\UserRepository;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\BrowserKitTestCase;
 
-class UserRepositoryTest extends TestCase
+class UserRepositoryTest extends BrowserKitTestCase
 {
     use DatabaseTransactions;
 

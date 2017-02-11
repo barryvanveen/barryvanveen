@@ -11,18 +11,18 @@
     "bepsvpt/secure-headers": "^3.0",
     "bugsnag/bugsnag-laravel": "2.4.*",
     "cebe/markdown": "1.1.*",
-    "cviebrock/eloquent-sluggable": "4.1.*",
+    "cviebrock/eloquent-sluggable": "4.2.*",
     "doctrine/dbal": "2.*",
     "eusonlito/laravel-meta": "3.0.*",
     "guzzlehttp/guzzle": "6.*",
     "laracasts/flash": "2.0.*",
     "laracasts/utilities": "2.*",
-    "laravel/framework": "5.3.*",
-    "laravelcollective/html": "5.3.*",
-    "laravelcollective/remote": "5.3.*",
+    "laravel/framework": "5.4.*",
+    "laravelcollective/html": "5.4.*",
+    "laravelcollective/remote": "5.4.*",
     "league/flysystem-dropbox": "1.0.*",
     "league/glide": "1.2.*",
-    "mccool/laravel-auto-presenter": "4.3.*",
+    "mccool/laravel-auto-presenter": "5.0.*",
     "php": ">=5.5.9",
     "rap2hpoutre/laravel-log-viewer": "0.8.*",
     "roumen/feed": "2.10.*",
@@ -33,22 +33,26 @@
   "require-dev": {
     "barryvdh/laravel-debugbar": "2.3.*",
     "barryvdh/laravel-ide-helper": "2.2.*",
-    "friendsofphp/php-cs-fixer": "1.12.*",
+    "friendsofphp/php-cs-fixer": "2.1.*",
     "fzaninotto/faker": "1.6.*",
     "mockery/mockery": "0.9.*",
-    "phpunit/phpunit": "5.*"
+    "phpunit/phpunit": "~5.0",
+    "laravel/browser-kit-testing": "^1.0",
+    "laravel/dusk": "^1.0"
   },
   "autoload": {
     "classmap": [
       "database"
     ],
     "psr-4": {
-      "Barryvanveen\\": "app/"
+      "Barryvanveen\\": "app/",
+      "Tests\\": "tests/"
     }
   },
   "autoload-dev": {
     "classmap": [
-      "tests/TestCase.php"
+      "tests/TestCase.php",
+      "tests/BrowserKitTestCase.php"
     ]
   },
   "scripts": {

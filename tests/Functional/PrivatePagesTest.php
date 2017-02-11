@@ -1,10 +1,14 @@
 <?php
 
+namespace Tests\Functional;
+
+use Auth;
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Users\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\BrowserKitTestCase;
 
-class PrivatePagesTest extends TestCase
+class PrivatePagesTest extends BrowserKitTestCase
 {
     use DatabaseTransactions;
 
@@ -14,10 +18,10 @@ class PrivatePagesTest extends TestCase
     public function testAuthorizationNeeded()
     {
         /** @var User $user */
-        $user = factory(Barryvanveen\Users\User::class)->create();
+        $user = factory(User::class)->create();
 
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class)->create();
+        $blog = factory(Blog::class)->create();
 
         $this->visit(route('admin.blog'))
             ->seePageIs(route('admin.login'));
@@ -37,8 +41,8 @@ class PrivatePagesTest extends TestCase
         $email = 'mymail@example.org';
         $password = 'secret';
 
-        /** @var Barryvanveen\Users\User $user */
-        $user = factory(Barryvanveen\Users\User::class)->create([
+        /** @var User $user */
+        $user = factory(User::class)->create([
             'email'    => $email,
             'password' => $password,
         ]);
@@ -61,7 +65,7 @@ class PrivatePagesTest extends TestCase
      */
     public function testLogoutAction()
     {
-        $user = factory(Barryvanveen\Users\User::class)->create();
+        $user = factory(User::class)->create();
 
         $this->actingAs($user);
 

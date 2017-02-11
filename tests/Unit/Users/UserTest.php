@@ -1,9 +1,12 @@
 <?php
 
+namespace Tests\Unit\Users;
+
 use Barryvanveen\Users\User;
 use Barryvanveen\Users\UserPresenter;
+use Tests\BrowserKitTestCase;
 
-class UserTest extends TestCase
+class UserTest extends BrowserKitTestCase
 {
     public function testPasswordIsHashed()
     {

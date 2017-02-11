@@ -30,7 +30,7 @@
                     </ul>
                     @if($current_user != null)
                         <p class="navbar-text navbar-right">
-                            {{ trans('nav.signed-in-as') }} {{ $current_user->full_name }}.
+                            {{ trans('nav.signed-in-as') }} {{ $current_user->firstname }} {{ $current_user->lastname }}.
                             <a href="{{ route('admin.logout') }}">{{ trans('nav.sign-out') }}</a>.</p>
                     @endif
                 @else

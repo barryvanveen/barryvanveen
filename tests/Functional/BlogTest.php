@@ -1,16 +1,21 @@
 <?php
 
-use Barryvanveen\Blogs\Blog;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
+namespace Tests\Functional;
 
-class BlogTest extends TestCase
+use Barryvanveen\Blogs\Blog;
+use Exception;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Laravel\BrowserKitTesting\HttpException;
+use Tests\BrowserKitTestCase;
+
+class BlogTest extends BrowserKitTestCase
 {
     use DatabaseTransactions;
 
     public function testBlogOverview()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
+        $blog = factory(Blog::class, 'published')->create();
 
         $this->visit(route('home'))
             ->see(trans('general.homepage-title'))
@@ -33,7 +38,7 @@ class BlogTest extends TestCase
     public function testOnlineBlogItem()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
+        $blog = factory(Blog::class, 'published')->create();
 
         $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
                 ->see($blog->title)
@@ -43,14 +48,14 @@ class BlogTest extends TestCase
     public function test404BecauseOfflineBlogItem()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class, 'unpublished-offline')->create();
+        $blog = factory(Blog::class, 'unpublished-offline')->create();
 
         try {
             $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
                  ->see($blog->title)
                  ->see($blog->text);
         } catch (Exception $e) {
-            $this->assertEquals(Illuminate\Foundation\Testing\HttpException::class, get_class($e));
+            $this->assertEquals(HttpException::class, get_class($e));
 
             return;
         }
@@ -62,14 +67,14 @@ class BlogTest extends TestCase
     public function test404BecauseFutureBlogItem()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class, 'unpublished-future')->create();
+        $blog = factory(Blog::class, 'unpublished-future')->create();
 
         try {
             $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
                 ->see($blog->title)
                 ->see($blog->text);
         } catch (Exception $e) {
-            $this->assertEquals(Illuminate\Foundation\Testing\HttpException::class, get_class($e));
+            $this->assertEquals(HttpException::class, get_class($e));
 
             return;
         }
@@ -81,7 +86,7 @@ class BlogTest extends TestCase
     public function testBlogRssFeed()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
+        $blog = factory(Blog::class, 'published')->create();
 
         $this->visit(route('blog-rss'));
 

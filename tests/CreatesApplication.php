@@ -4,15 +4,8 @@ namespace Tests;
 
 use Illuminate\Contracts\Console\Kernel;
 
-class TestCase extends \Illuminate\Foundation\Testing\TestCase
+trait CreatesApplication
 {
-    /**
-     * The base URL to use while testing the application.
-     *
-     * @var string
-     */
-    protected $baseUrl = 'http://barryvanveen.app';
-
     /**
      * Creates the application.
      *
