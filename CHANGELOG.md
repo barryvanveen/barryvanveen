@@ -9,6 +9,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.20.0] - 2017-02-11
+### Added
+- Added yaml and json syntax highlighting to prismjs
+### Changed
+- Updated to Laravel 5.4
+- Updated other composer and npm packages
+
 ## [2.19.0] - 2017-01-02
 ### Added
 - Removed bepsvpt/secure-headers 
