@@ -148,7 +148,7 @@ class BlogRepositoryTest extends BrowserKitTestCase
             'online'           => 0,
         ]);
 
-        $this->setExpectedException(ModelNotFoundException::class);
+        $this->expectException(ModelNotFoundException::class);
 
         $this->repository->findPublishedById($blog->id);
     }
@@ -161,7 +161,7 @@ class BlogRepositoryTest extends BrowserKitTestCase
             'online'           => 1,
         ]);
 
-        $this->setExpectedException(ModelNotFoundException::class);
+        $this->expectException(ModelNotFoundException::class);
 
         $this->repository->findPublishedById($blog->id);
     }
