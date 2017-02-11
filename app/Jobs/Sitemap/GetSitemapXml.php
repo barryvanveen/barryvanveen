@@ -75,12 +75,12 @@ class GetSitemapXml
             $action = $route->getAction();
 
             // if this is not a GET-route
-            if (! in_array('GET', $route->getMethods())) {
+            if (! in_array('GET', $route->methods())) {
                 continue;
             }
 
             // if this is a route containing url parameters
-            if (strpos($route->getUri(), '{') !== false) {
+            if (strpos($route->uri(), '{') !== false) {
                 continue;
             }
 
@@ -97,7 +97,7 @@ class GetSitemapXml
 
             // otherwise, add this route to the sitemap
             $this->items[] = [
-                'loc'     => url($route->getUri()),
+                'loc'     => url($route->uri()),
                 'lastmod' => in_array($route->getName(), $this->lastmod) ? $this->lastmod[$route->getName()] : false,
             ];
         }

@@ -7,7 +7,7 @@ use Exception;
 use GoogleTagManager;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Illuminate\Http\Exception\HttpResponseException;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Session\TokenMismatchException;
 use Illuminate\Validation\ValidationException;
 use Input;

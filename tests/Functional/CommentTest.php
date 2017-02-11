@@ -1,25 +1,28 @@
 <?php
 
+namespace Tests\Functional;
+
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Comments\Comment;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\BrowserKitTestCase;
 
-class CommentTest extends TestCase
+class CommentTest extends BrowserKitTestCase
 {
     use DatabaseTransactions;
 
     public function testViewOnlineCommentsWithBlog()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
+        $blog = factory(Blog::class, 'published')->create();
 
-        $online_comments = factory(Barryvanveen\Comments\Comment::class, 'online', 3)->create(
+        $online_comments = factory(Comment::class, 'online', 3)->create(
             [
                 'blog_id' => $blog->id,
             ]
         );
 
-        $offline_comments = factory(Barryvanveen\Comments\Comment::class, 'offline', 3)->create(
+        $offline_comments = factory(Comment::class, 'offline', 3)->create(
             [
                 'blog_id' => $blog->id,
             ]
@@ -41,7 +44,7 @@ class CommentTest extends TestCase
     public function testViewBlogWithoutComments()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
+        $blog = factory(Blog::class, 'published')->create();
 
         $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
             ->see(trans('comments.title'))
@@ -51,7 +54,7 @@ class CommentTest extends TestCase
     public function testPostNewComment()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
+        $blog = factory(Blog::class, 'published')->create();
 
         $new_comment = 'my newest comment';
 
@@ -68,7 +71,7 @@ class CommentTest extends TestCase
     public function testPostNewCommentWithFalseInformation()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
+        $blog = factory(Blog::class, 'published')->create();
 
         $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
              ->type('asdasd', 'email')
@@ -80,7 +83,7 @@ class CommentTest extends TestCase
     public function testPostNewCommentWithHoneypot()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
+        $blog = factory(Blog::class, 'published')->create();
 
         $new_comment = 'my newest comment';
 
@@ -100,7 +103,7 @@ class CommentTest extends TestCase
         config(['custom.comments_enabled' => false]);
 
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class, 'published')->create();
+        $blog = factory(Blog::class, 'published')->create();
 
         $this->visit(route('blog-item', ['id' => $blog->id, 'slug' => $blog->slug]))
              ->see(trans('comments.comments-are-closed'));

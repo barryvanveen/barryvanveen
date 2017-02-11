@@ -1,5 +1,8 @@
 <?php
 
+namespace Tests\Integration;
+
+use App;
 use Barryvanveen\Blogs\Blog;
 use Barryvanveen\Blogs\BlogRepository;
 use Carbon\Carbon;
@@ -7,8 +10,9 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
+use Tests\BrowserKitTestCase;
 
-class BlogRepositoryTest extends TestCase
+class BlogRepositoryTest extends BrowserKitTestCase
 {
     use DatabaseTransactions;
 
@@ -31,7 +35,7 @@ class BlogRepositoryTest extends TestCase
 
     public function testPaginatedPublishedPaginatesResults()
     {
-        factory(Barryvanveen\Blogs\Blog::class, 'published', 20)->create();
+        factory(Blog::class, 'published', 20)->create();
 
         $paginator = $this->repository->paginatedPublished(5);
 
@@ -42,19 +46,19 @@ class BlogRepositoryTest extends TestCase
     public function testPaginatedPublishedReturnsOnlyPublishedArticlesInTheRightOrder()
     {
         /** @var Blog $blog1 */
-        $blog1 = factory(Barryvanveen\Blogs\Blog::class)->create([
+        $blog1 = factory(Blog::class)->create([
             'publication_date' => '2015-01-01 12:00:00',
             'online'           => 0,
         ]);
 
         /** @var Blog $blog2 */
-        $blog2 = factory(Barryvanveen\Blogs\Blog::class)->create([
+        $blog2 = factory(Blog::class)->create([
             'publication_date' => '2015-01-02 12:00:00',
             'online'           => 1,
         ]);
 
         /** @var Blog $blog3 */
-        $blog3 = factory(Barryvanveen\Blogs\Blog::class)->create([
+        $blog3 = factory(Blog::class)->create([
             'publication_date' => '2015-01-03 12:00:00',
             'online'           => 1,
         ]);
@@ -69,7 +73,7 @@ class BlogRepositoryTest extends TestCase
 
     public function testAllPublishedReturnsCollection()
     {
-        factory(Barryvanveen\Blogs\Blog::class, 20)->create();
+        factory(Blog::class, 20)->create();
 
         $blogs = $this->repository->allPublished();
 
@@ -78,13 +82,13 @@ class BlogRepositoryTest extends TestCase
 
     public function testAllPublishedReturnsAllPublishedArticlesInTheRightOrder()
     {
-        factory(Barryvanveen\Blogs\Blog::class, 20)->create([
+        factory(Blog::class, 20)->create([
             'publication_date' => '2015-01-02 12:00:00',
             'online'           => 1,
         ]);
 
         /** @var Blog $unpublished_blog */
-        $unpublished_blog = factory(Barryvanveen\Blogs\Blog::class)->create([
+        $unpublished_blog = factory(Blog::class)->create([
             'publication_date' => '2015-01-02 12:00:00',
             'online'           => 0,
         ]);
@@ -98,19 +102,19 @@ class BlogRepositoryTest extends TestCase
     public function testAllRetrievesAllBlogpostsInTheRightOrder()
     {
         /** @var Blog $blog1 */
-        $blog1 = factory(Barryvanveen\Blogs\Blog::class)->create([
+        $blog1 = factory(Blog::class)->create([
             'publication_date' => Carbon::now()->addYear()->toDateTimeString(),
             'online'           => 1,
         ]);
 
         /** @var Blog $blog2 */
-        $blog2 = factory(Barryvanveen\Blogs\Blog::class)->create([
+        $blog2 = factory(Blog::class)->create([
             'publication_date' => '2015-01-03 12:00:00',
             'online'           => 0,
         ]);
 
         /** @var Blog $blog3 */
-        $blog3 = factory(Barryvanveen\Blogs\Blog::class)->create([
+        $blog3 = factory(Blog::class)->create([
             'publication_date' => '2015-01-01 12:00:00',
             'online'           => 1,
         ]);
@@ -126,7 +130,7 @@ class BlogRepositoryTest extends TestCase
     public function testFindPublishedByIdFindsPublishedBlogpost()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class)->create([
+        $blog = factory(Blog::class)->create([
             'publication_date' => '2015-01-01 12:00:00',
             'online'           => 1,
         ]);
@@ -139,7 +143,7 @@ class BlogRepositoryTest extends TestCase
     public function testFindPublishedByIdThrowsErrorForOfflineBlogpost()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class)->create([
+        $blog = factory(Blog::class)->create([
             'publication_date' => '2015-01-01 12:00:00',
             'online'           => 0,
         ]);
@@ -152,7 +156,7 @@ class BlogRepositoryTest extends TestCase
     public function testFindPublishedByIdThrowsErrorForUnpublishedBlogpost()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class)->create([
+        $blog = factory(Blog::class)->create([
             'publication_date' => Carbon::now()->addYear()->toDateTimeString(),
             'online'           => 1,
         ]);
@@ -165,7 +169,7 @@ class BlogRepositoryTest extends TestCase
     public function testFindAnyByIdFindsUnpublishedBlogpost()
     {
         /** @var Blog $blog */
-        $blog = factory(Barryvanveen\Blogs\Blog::class)->create([
+        $blog = factory(Blog::class)->create([
             'publication_date' => Carbon::now()->addYear()->toDateTimeString(),
             'online'           => 0,
         ]);
@@ -175,27 +179,22 @@ class BlogRepositoryTest extends TestCase
         $this->assertEquals($blog->id, $blogFromRepository->id);
     }
 
-    /**
-     * retrieve the most recently updated blogpost.
-     *
-     * @return Blog
-     */
     public function testLastUpdatedAtReturnsPublishedBlogpostWithLatestUpdatedAt()
     {
         /** @var Blog $blog1 */
-        $blog1 = factory(Barryvanveen\Blogs\Blog::class)->create([
+        $blog1 = factory(Blog::class)->create([
             'publication_date' => '2015-01-01 12:00:00',
             'updated_at'       => '2015-01-02 12:00:00',
             'online'           => 1,
         ]);
 
-        factory(Barryvanveen\Blogs\Blog::class)->create([
+        factory(Blog::class)->create([
             'publication_date' => '2015-01-01 12:00:00',
             'updated_at'       => '2015-01-01 12:00:00',
             'online'           => 1,
         ]);
 
-        factory(Barryvanveen\Blogs\Blog::class)->create([
+        factory(Blog::class)->create([
             'publication_date' => '2015-01-05 12:00:00',
             'online'           => 0,
         ]);
