@@ -42,11 +42,13 @@ var config = {
             // custom
             'node_modules/prismjs/components/prism-bash.js',
             'node_modules/prismjs/components/prism-git.js',
+            'node_modules/prismjs/components/prism-json.js',
             'node_modules/prismjs/components/prism-markdown.js',
             'node_modules/prismjs/components/prism-php.js',
             'node_modules/prismjs/components/prism-php-extras.js',
             'node_modules/prismjs/components/prism-scss.js',
             'node_modules/prismjs/components/prism-sql.js',
+            'node_modules/prismjs/components/prism-yaml.js',
             // plugins
             'node_modules/prismjs/plugins/autolinker/prism-autolinker.js',
             'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js'
