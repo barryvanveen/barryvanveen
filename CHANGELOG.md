@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.20.1] - 2017-02-11
+### Added
+- Add missing critical CSS
+
 ## [2.20.0] - 2017-02-11
 ### Added
 - Added yaml and json syntax highlighting to prismjs
