@@ -8,7 +8,6 @@ use Barryvanveen\Lastfm\Constants;
 use Barryvanveen\Lastfm\Lastfm;
 use Barryvanveen\Pages\PageRepository;
 use Cache;
-use GuzzleHttp\Client;
 use Response;
 use View;
 
@@ -55,24 +54,27 @@ class PagesController extends Controller
         return View::make('pages.item', compact('page'));
     }
 
-    public function music()
+    /**
+     * @param Lastfm $lastfm
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function music(Lastfm $lastfm)
     {
-        $lastfm = new Lastfm(new Client(), env('LASTFM_KEY'));
-
         $nowListening = $lastfm->nowListening('barryvanveen');
 
         if (Cache::has('lastfm-artists')) {
             $artists = Cache::get('lastfm-artists');
         } else {
             $artists = $lastfm->userTopArtists('barryvanveen')->limit(5)->period(Constants::PERIOD_MONTH)->get();
-            Cache::put('lastfm-artists', $artists, 24*60);
+            Cache::put('lastfm-artists', $artists, 24 * 60);
         }
 
         if (Cache::has('lastfm-albums')) {
             $albums = Cache::get('lastfm-albums');
         } else {
             $albums = $lastfm->userTopAlbums('barryvanveen')->limit(5)->period(Constants::PERIOD_MONTH)->get();
-            Cache::put('lastfm-albums', $albums, 24*60);
+            Cache::put('lastfm-albums', $albums, 24 * 60);
         }
 
         $this->setPageTitle(trans('music.page-title'));

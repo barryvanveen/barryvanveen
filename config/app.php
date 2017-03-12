@@ -175,6 +175,7 @@ return [
         /*
          * Vendor Service Providers
          */
+        Barryvanveen\Lastfm\LastfmServiceProvider::class,
         Bepsvpt\SecureHeaders\SecureHeadersServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,

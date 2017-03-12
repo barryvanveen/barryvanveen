@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvanveen/lastfm.git",
-                "reference": "5f21f01ed3d212c76f5d870d614548047033adfb"
+                "reference": "629b912b8d2ad7cdca244f0c9656971ce2efbb82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvanveen/lastfm/zipball/5f21f01ed3d212c76f5d870d614548047033adfb",
-                "reference": "5f21f01ed3d212c76f5d870d614548047033adfb",
+                "url": "https://api.github.com/repos/barryvanveen/lastfm/zipball/629b912b8d2ad7cdca244f0c9656971ce2efbb82",
+                "reference": "629b912b8d2ad7cdca244f0c9656971ce2efbb82",
                 "shasum": ""
             },
             "require": {
@@ -77,7 +77,7 @@
                 "source": "https://github.com/barryvanveen/lastfm/tree/master",
                 "issues": "https://github.com/barryvanveen/lastfm/issues"
             },
-            "time": "2017-03-12T17:13:06+00:00"
+            "time": "2017-03-12T21:09:19+00:00"
         },
         {
             "name": "bepsvpt/secure-headers",
