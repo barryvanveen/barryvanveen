@@ -54,6 +54,7 @@ return [
         'img-src' => [
             'allow' => [
                 $protocol.'www.google-analytics.com',
+                'https://lastfm-img2.akamaized.net',
             ],
             'self' => true,
             'data' => true,

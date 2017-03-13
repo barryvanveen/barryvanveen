@@ -4,8 +4,61 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f2c742ac230f1556b1c5bfb853b3309",
+    "content-hash": "dbbd3f1bc7e3282f7769e523cb017522",
     "packages": [
+        {
+            "name": "barryvanveen/lastfm",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvanveen/lastfm.git",
+                "reference": "e6950f98b334c5bc7e1e2a951c386a2fe23fc4bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvanveen/lastfm/zipball/e6950f98b334c5bc7e1e2a951c386a2fe23fc4bb",
+                "reference": "e6950f98b334c5bc7e1e2a951c386a2fe23fc4bb",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "6.*",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "phpunit/phpunit": "~5.0||~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvanveen\\Lastfm\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry van Veen",
+                    "email": "barryvanveen@gmail.com",
+                    "homepage": "https://barryvanveen.nl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Last.fm API client for PHP 7+",
+            "homepage": "https://github.com/barryvanveen/lastfm",
+            "keywords": [
+                "Barryvanveen",
+                "lastfm"
+            ],
+            "time": "2017-03-13T20:26:56+00:00"
+        },
         {
             "name": "bepsvpt/secure-headers",
             "version": "3.0.3",
