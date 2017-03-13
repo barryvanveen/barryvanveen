@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Page with last.fm statistics using [barryvanveen/lastfm](https://github.com/barryvanveen/lastfm)
 ### Changed
+- Updated Composer dependencies
 ### Deprecated
 ### Removed
 ### Fixed

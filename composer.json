@@ -27,13 +27,13 @@
     "php": ">=5.5.9",
     "rap2hpoutre/laravel-log-viewer": "0.8.*",
     "roumen/feed": "2.10.*",
-    "spatie/laravel-googletagmanager": "2.2.*",
+    "spatie/laravel-googletagmanager": "2.3.*",
     "symfony/css-selector": "^3.0",
     "symfony/dom-crawler": "^3.0"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "2.3.*",
-    "barryvdh/laravel-ide-helper": "2.2.*",
+    "barryvdh/laravel-ide-helper": "2.3.*",
     "friendsofphp/php-cs-fixer": "2.1.*",
     "fzaninotto/faker": "1.6.*",
     "mockery/mockery": "0.9.*",
