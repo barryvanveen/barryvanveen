@@ -9,6 +9,12 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.21.0] - 2017-03-13
+### Added
+- Added page with last.fm statistics using [barryvanveen/lastfm](https://github.com/barryvanveen/lastfm)
+### Changed
+- Updated Composer dependencies
+
 ## [2.20.1] - 2017-02-11
 ### Added
 - Add missing critical CSS

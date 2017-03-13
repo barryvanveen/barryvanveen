@@ -49,7 +49,7 @@ return [
     |
     */
 
-    'version' => 'v2.20.1',
+    'version' => 'v2.21.0',
 
     /*
     |--------------------------------------------------------------------------
@@ -175,6 +175,7 @@ return [
         /*
          * Vendor Service Providers
          */
+        Barryvanveen\Lastfm\LastfmServiceProvider::class,
         Bepsvpt\SecureHeaders\SecureHeadersServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
