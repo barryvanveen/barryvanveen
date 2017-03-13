@@ -8,7 +8,7 @@
   "license": "MIT",
   "type": "project",
   "require": {
-    "barryvanveen/lastfm": "dev-master@dev",
+    "barryvanveen/lastfm": "1.*",
     "bepsvpt/secure-headers": "^3.0",
     "bugsnag/bugsnag-laravel": "2.4.*",
     "cebe/markdown": "1.1.*",
@@ -41,12 +41,6 @@
     "laravel/browser-kit-testing": "^1.0",
     "laravel/dusk": "^1.0"
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/barryvanveen/lastfm"
-    }
-  ],
   "autoload": {
     "classmap": [
       "database"

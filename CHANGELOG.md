@@ -4,6 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
 ### Added
+- Page with last.fm statistics using [barryvanveen/lastfm](https://github.com/barryvanveen/lastfm)
 ### Changed
 ### Deprecated
 ### Removed
