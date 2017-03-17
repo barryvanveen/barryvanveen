@@ -11,6 +11,22 @@
             <div itemprop="text">
                 <p>{!! trans('music.page-intro') !!}</p>
 
+                <h2>{{ trans('music.title-user') }}</h2>
+                <div class="media">
+                    <div class="media-left">
+                        <a href="{{ $user['url'] }}" target="_blank">
+                            <img class="media-object" src="{{ $user['image'][1]['#text'] }}"
+                                 alt="{{ trans('music.alt-user-avatar', ['user' => $user['name']]) }}">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            <a href="{{ $user['url'] }}" target="_blank" class="music__link">{{ $user['name'] }}</a>
+                        </h4>
+                        <p>{{ trans('music.scrobbled-since', ['scrobbled' => number_format($user['playcount'], 0, ',', '.')]) }}</p>
+                    </div>
+                </div>
+
                 <h2>{{ trans('music.title-now-listening') }}</h2>
                 @if ($nowListening !== false)
                     <div class="media">
@@ -22,9 +38,7 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">
-                                <a href="{{ $nowListening['url'] }}" target="_blank">
-                                    {{ $nowListening['name'] }}, {{ $nowListening['artist']['#text'] }}
-                                </a>
+                                <a href="{{ $nowListening['url'] }}" target="_blank" class="music__link">{{ $nowListening['name'] }}, {{ $nowListening['artist']['#text'] }}</a>
                             </h4>
                         </div>
                     </div>
@@ -43,11 +57,8 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">
-                                <a href="{{ $artist['url'] }}" target="_blank">
-                                    {{ $artist['name'] }}
-                                </a>
+                                <a href="{{ $artist['url'] }}" target="_blank" class="music__link">{{ $artist['name'] }}</a>
                             </h4>
-                            {{ trans('music.played-x-times', ['playcount' => $artist['playcount']]) }}
                         </div>
                     </div>
                 @endforeach
@@ -63,11 +74,8 @@
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">
-                                <a href="{{ $album['url'] }}" target="_blank">
-                                    {{ $album['name'] }}, {{ $album['artist']['name'] }}
-                                </a>
+                                <a href="{{ $album['url'] }}" target="_blank" class="music__link">{{ $album['name'] }} - {{ $album['artist']['name'] }}</a>
                             </h4>
-                            {{ trans('music.played-x-times', ['playcount' => $album['playcount']]) }}
                         </div>
                     </div>
                 @endforeach
