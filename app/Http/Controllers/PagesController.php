@@ -63,6 +63,13 @@ class PagesController extends Controller
     {
         $nowListening = $lastfm->nowListening('barryvanveen');
 
+        if (Cache::has('lastfm-user')) {
+            $user = Cache::get('lastfm-user');
+        } else {
+            $user = $lastfm->userInfo('barryvanveen')->get();
+            Cache::put('lastfm-user', $user, 4 * 60);
+        }
+
         if (Cache::has('lastfm-artists')) {
             $artists = Cache::get('lastfm-artists');
         } else {
@@ -80,7 +87,7 @@ class PagesController extends Controller
         $this->setPageTitle(trans('music.page-title'));
         $this->setMetaDescription(trans('music.page-description'));
 
-        return View::make('pages.music', compact('nowListening', 'artists', 'albums'));
+        return View::make('pages.music', compact('nowListening', 'user', 'artists', 'albums'));
     }
 
     public function luckytv()
