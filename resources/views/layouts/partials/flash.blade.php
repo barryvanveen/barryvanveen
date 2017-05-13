@@ -1,7 +1,9 @@
-@if (Session::has('flash_notification.message'))
-    <div class="alert alert-{{ Session::get('flash_notification.level') }} alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+@foreach ((array) session('flash_notification') as $message)
+   <div class="alert alert-{{ $message['level'] }} alert-dismissible" role="alert">
+       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 
-        {{ Session::get('flash_notification.message') }}
+        {!! $message['message'] !!}
     </div>
-@endif
+@endforeach
+
+{{ session()->forget('flash_notification') }}
