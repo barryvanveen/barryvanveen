@@ -47,8 +47,9 @@ class BlogController extends Controller
         $this->setMetaDescription(trans('meta.description-blog'));
 
         if (Request::has('page') && Request::get('page') > 1) {
-            $this->setPageTitle(trans('meta.pagetitle-pagination', ['page' => Request::get('page')]));
-            $this->setMetaDescription(trans('meta.pagetitle-pagination', ['page' => Request::get('page')]).'. '
+            $page = e(Request::get('page'));
+            $this->setPageTitle(trans('meta.pagetitle-pagination', ['page' => $page]));
+            $this->setMetaDescription(trans('meta.pagetitle-pagination', ['page' => $page]).'. '
                 .trans('meta.description-blog'));
         }
 
