@@ -21,12 +21,12 @@
     "laravel/framework": "5.4.*",
     "laravelcollective/html": "5.4.*",
     "laravelcollective/remote": "5.4.*",
-    "league/flysystem-dropbox": "1.0.*",
     "league/glide": "1.2.*",
     "mccool/laravel-auto-presenter": "5.0.*",
     "php": ">=5.5.9",
     "rap2hpoutre/laravel-log-viewer": "0.10.*",
     "roumen/feed": "2.10.*",
+    "spatie/flysystem-dropbox": "^1.0",
     "spatie/laravel-googletagmanager": "2.3.*",
     "symfony/css-selector": "^3.0",
     "symfony/dom-crawler": "^3.0"

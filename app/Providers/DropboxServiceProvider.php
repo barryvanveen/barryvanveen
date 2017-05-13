@@ -2,10 +2,10 @@
 
 namespace Barryvanveen\Providers;
 
-use Dropbox\Client as DropboxClient;
 use Illuminate\Support\ServiceProvider;
-use League\Flysystem\Dropbox\DropboxAdapter;
 use League\Flysystem\Filesystem;
+use Spatie\Dropbox\Client as DropboxClient;
+use Spatie\FlysystemDropbox\DropboxAdapter;
 use Storage;
 
 class DropboxServiceProvider extends ServiceProvider
@@ -17,7 +17,7 @@ class DropboxServiceProvider extends ServiceProvider
     {
         Storage::extend('dropbox', function ($app, $config) {
             $client = new DropboxClient(
-                $config['token'], $config['app']
+                $config['authorizationToken']
             );
 
             return new Filesystem(new DropboxAdapter($client));
