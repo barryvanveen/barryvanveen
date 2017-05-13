@@ -15,7 +15,7 @@
                 <div class="media">
                     <div class="media-left">
                         <a href="{{ $user['url'] }}" target="_blank">
-                            <img class="media-object" src="{{ $user['image'][1]['#text'] }}"
+                            <img class="media-object" src="{{ lastfmMediumThumb($user) }}"
                                  alt="{{ trans('music.alt-user-avatar', ['user' => $user['name']]) }}">
                         </a>
                     </div>
@@ -31,10 +31,12 @@
                 @if ($nowListening !== false)
                     <div class="media">
                         <div class="media-left">
-                            <a href="{{ $nowListening['url'] }}" target="_blank">
-                                <img class="media-object" src="{{ $nowListening['image'][1]['#text'] }}"
-                                     alt="{{ trans('music.alt-track-cover', ['track' => $nowListening['name'], 'artist' => $nowListening['artist']['#text']]) }}">
-                            </a>
+                            @notempty(lastfmMediumThumb($nowListening))
+                                <a href="{{ $nowListening['url'] }}" target="_blank">
+                                    <img class="media-object" src="{{ lastfmMediumThumb($nowListening) }}"
+                                         alt="{{ trans('music.alt-track-cover', ['track' => $nowListening['name'], 'artist' => $nowListening['artist']['#text']]) }}">
+                                </a>
+                            @endnotempty
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">
@@ -50,10 +52,12 @@
                 @foreach($artists as $artist)
                     <div class="media">
                         <div class="media-left">
-                            <a href="{{ $artist['url'] }}" target="_blank">
-                                <img class="media-object" src="{{ $artist['image'][1]['#text'] }}"
-                                     alt="{{ trans('music.alt-artist', ['artist' => $artist['name']]) }}">
-                            </a>
+                            @notempty(lastfmMediumThumb($artist))
+                                <a href="{{ $artist['url'] }}" target="_blank">
+                                    <img class="media-object" src="{{ lastfmMediumThumb($artist) }}"
+                                         alt="{{ trans('music.alt-artist', ['artist' => $artist['name']]) }}">
+                                </a>
+                            @endnotempty
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">
@@ -67,10 +71,12 @@
                 @foreach($albums as $album)
                     <div class="media">
                         <div class="media-left">
-                            <a href="{{ $album['url'] }}" target="_blank">
-                                <img class="media-object" src="{{ $album['image'][1]['#text'] }}"
-                                     alt="{{ trans('music.alt-album', ['album' => $album['name'], 'artist' => $album['artist']['name']]) }}">
-                            </a>
+                            @notempty(lastfmMediumThumb($album))
+                                <a href="{{ $album['url'] }}" target="_blank">
+                                    <img class="media-object" src="{{ lastfmMediumThumb($album) }}"
+                                         alt="{{ trans('music.alt-album', ['album' => $album['name'], 'artist' => $album['artist']['name']]) }}">
+                                </a>
+                            @endnotempty
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">

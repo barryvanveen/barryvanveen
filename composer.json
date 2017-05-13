@@ -45,6 +45,9 @@
     "classmap": [
       "database"
     ],
+    "files": [
+      "resources/helpers.php"
+    ],
     "psr-4": {
       "Barryvanveen\\": "app/",
       "Tests\\": "tests/"
