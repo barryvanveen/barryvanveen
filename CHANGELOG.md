@@ -9,6 +9,17 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.22.0] - 2017-05-13
+### Added
+- Added BladeServiceProvider for custom Blade directives
+- Added custom helpers file in /resources/helpers.php
+### Changed
+- Update Flysystem's Dropbox adapter, now using Dropbox API v2
+- Updated Composer dependencies
+### Fixed
+- Escape request input to prevent XSS
+- Check if a last.fm image exists before displaying it
+
 ## [2.21.1] - 2017-03-17
 ### Changed
 - Improved page with last.fm statistics
