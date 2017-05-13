@@ -10,23 +10,23 @@
   "require": {
     "barryvanveen/lastfm": "1.*",
     "bepsvpt/secure-headers": "^3.0",
-    "bugsnag/bugsnag-laravel": "2.4.*",
+    "bugsnag/bugsnag-laravel": "2.5.*",
     "cebe/markdown": "1.1.*",
     "cviebrock/eloquent-sluggable": "4.2.*",
     "doctrine/dbal": "2.*",
-    "eusonlito/laravel-meta": "3.0.*",
+    "eusonlito/laravel-meta": "3.1.*",
     "guzzlehttp/guzzle": "6.*",
-    "laracasts/flash": "2.0.*",
+    "laracasts/flash": "3.0.*",
     "laracasts/utilities": "2.*",
     "laravel/framework": "5.4.*",
     "laravelcollective/html": "5.4.*",
     "laravelcollective/remote": "5.4.*",
-    "league/flysystem-dropbox": "1.0.*",
     "league/glide": "1.2.*",
     "mccool/laravel-auto-presenter": "5.0.*",
     "php": ">=5.5.9",
-    "rap2hpoutre/laravel-log-viewer": "0.8.*",
+    "rap2hpoutre/laravel-log-viewer": "0.10.*",
     "roumen/feed": "2.10.*",
+    "spatie/flysystem-dropbox": "^1.0",
     "spatie/laravel-googletagmanager": "2.3.*",
     "symfony/css-selector": "^3.0",
     "symfony/dom-crawler": "^3.0"
@@ -34,7 +34,7 @@
   "require-dev": {
     "barryvdh/laravel-debugbar": "2.3.*",
     "barryvdh/laravel-ide-helper": "2.3.*",
-    "friendsofphp/php-cs-fixer": "2.1.*",
+    "friendsofphp/php-cs-fixer": "2.3.*",
     "fzaninotto/faker": "1.6.*",
     "mockery/mockery": "0.9.*",
     "phpunit/phpunit": "~5.0",
@@ -44,6 +44,9 @@
   "autoload": {
     "classmap": [
       "database"
+    ],
+    "files": [
+      "resources/helpers.php"
     ],
     "psr-4": {
       "Barryvanveen\\": "app/",

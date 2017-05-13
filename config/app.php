@@ -49,7 +49,7 @@ return [
     |
     */
 
-    'version' => 'v2.21.1',
+    'version' => 'v2.22.0',
 
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +165,7 @@ return [
          */
         Barryvanveen\Providers\AppServiceProvider::class,
         Barryvanveen\Providers\AuthServiceProvider::class,
+        Barryvanveen\Providers\BladeServiceProvider::class,
         Barryvanveen\Providers\BroadcastServiceProvider::class,
         Barryvanveen\Providers\ComposerServiceProvider::class,
         Barryvanveen\Providers\DropboxServiceProvider::class,

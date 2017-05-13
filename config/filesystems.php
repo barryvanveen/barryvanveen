@@ -47,10 +47,9 @@ return [
         ],
 
         'dropbox' => [
-            'driver' => 'dropbox',
-            'token'  => env('DROPBOX_TOKEN'),
-            'app'    => env('DROPBOX_APP'),
-            'prefix' => '',
+            'driver'             => 'dropbox',
+            'authorizationToken' => env('DROPBOX_AUTHORIZATION_TOKEN'),
+            'prefix'             => '',
         ],
     ],
 ];
