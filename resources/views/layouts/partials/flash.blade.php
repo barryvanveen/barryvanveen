@@ -1,4 +1,4 @@
-@foreach ((array) session('flash_notification') as $message)
+@foreach (session('flash_notification', collect())->toArray() as $message)
    <div class="alert alert-{{ $message['level'] }} alert-dismissible" role="alert">
        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 

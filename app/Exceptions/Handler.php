@@ -22,7 +22,7 @@ use View;
 class Handler extends ExceptionHandler
 {
     /**
-     * A list of the exception types that should not be reported.
+     * A list of the exception types that are not reported.
      *
      * @var array
      */
@@ -34,54 +34,64 @@ class Handler extends ExceptionHandler
     ];
 
     /**
+     * A list of the inputs that are never flashed for validation exceptions.
+     *
+     * @var array
+     */
+    protected $dontFlash = [
+        'password',
+        'password_confirmation',
+    ];
+
+    /**
      * Report or log an exception.
      *
      * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
      *
-     * @param \Exception $e
+     * @param \Exception $exception
      */
-    public function report(Exception $e)
+    public function report(Exception $exception)
     {
-        if ($this->shouldReport($e)) {
-            Bugsnag::notifyException($e);
+        if ($this->shouldReport($exception)) {
+            Bugsnag::notifyException($exception);
         }
 
-        parent::report($e);
+        parent::report($exception);
     }
 
     /**
      * Render an exception into an HTTP response.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \Exception               $e
+     * @param \Exception               $exception
      *
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
-    public function render($request, Exception $e)
+    public function render($request, Exception $exception)
     {
-        $e = $this->prepareException($e);
+        $exception = $this->prepareException($exception);
 
-        if ($e instanceof TokenMismatchException) {
+        if ($exception instanceof TokenMismatchException) {
             return $this->tokenMismatchResponse();
-        } elseif ($e instanceof InvalidLoginException) {
+        } elseif ($exception instanceof InvalidLoginException) {
             return $this->invalidLoginResponse();
-        } elseif ($e instanceof HttpResponseException) {
-            return $e->getResponse();
-        } elseif ($e instanceof AuthenticationException) {
-            return $this->unauthenticated($request, $e);
-        } elseif ($e instanceof ValidationException) {
-            return $this->convertValidationExceptionToResponse($e, $request);
+        } elseif ($exception instanceof HttpResponseException) {
+            return $exception->getResponse();
+        } elseif ($exception instanceof AuthenticationException) {
+            return $this->unauthenticated($request, $exception);
+        } elseif ($exception instanceof ValidationException) {
+            return $this->convertValidationExceptionToResponse($exception, $request);
         }
 
-        if (config('app.debug') && ! ($e instanceof ValidationException) && ! ($e instanceof HttpResponseException)) {
-            return $this->renderWhoopsResponse($e);
+        if (config('app.debug') && ! ($exception instanceof ValidationException) && ! ($exception instanceof HttpResponseException)) {
+            return $this->renderWhoopsResponse($exception);
         }
 
-        if ($e instanceof NotFoundHttpException) {
+        if ($exception instanceof NotFoundHttpException) {
             return $this->renderErrorPageResponse(404);
         }
 
-        if ($e instanceof MethodNotAllowedHttpException) {
+        if ($exception instanceof MethodNotAllowedHttpException) {
             return $this->renderErrorPageResponse(403);
         }
 
@@ -89,13 +99,13 @@ class Handler extends ExceptionHandler
     }
 
     /**
-     * @param Exception $e
+     * @param Exception $exception
      *
      * @return \Illuminate\Http\Response
      */
-    protected function renderWhoopsResponse(Exception $e)
+    protected function renderWhoopsResponse(Exception $exception)
     {
-        return $this->toIlluminateResponse($this->convertExceptionToResponse($e), $e);
+        return $this->toIlluminateResponse($this->convertExceptionToResponse($exception), $exception);
     }
 
     /**
@@ -148,11 +158,11 @@ class Handler extends ExceptionHandler
      * Convert an authentication exception into an unauthenticated response.
      *
      * @param \Illuminate\Http\Request                 $request
-     * @param \Illuminate\Auth\AuthenticationException $e
+     * @param \Illuminate\Auth\AuthenticationException $exception
      *
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
      */
-    protected function unauthenticated($request, AuthenticationException $e)
+    protected function unauthenticated($request, AuthenticationException $exception)
     {
         if ($request->expectsJson()) {
             return response()->json(['error' => 'Unauthenticated.'], 401);
