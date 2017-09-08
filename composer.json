@@ -34,7 +34,7 @@
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "3.0.*",
-    "barryvdh/laravel-ide-helper": "2.4.*",
+    "barryvdh/laravel-ide-helper": "^2.4.1",
     "friendsofphp/php-cs-fixer": "2.5.*",
     "filp/whoops": "~2.0",
     "fzaninotto/faker": "~1.4",
