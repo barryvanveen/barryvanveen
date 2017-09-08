@@ -1,12 +1,8 @@
 language: php
 
-php:
-  - 7.0
-  - 7.1
-
 env:
   global:
-    - setup=basic
+    - setup=stable
     - APP_ENV=staging
     - APP_DEBUG=false
     - APP_KEY=01234567890123456789012346579012
@@ -26,21 +22,33 @@ env:
     - MAIL_TO_ADDRESS=barryvanveen@gmail.com
     - MAIL_TO_NAME="Barry van Veen"
 
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.0.21
+    - php: 7.0.21
+      env: setup=lowest
+    - php: 7.1
+    - php: 7.1
+      env: setup=lowest
+    - php: 7.2
+    - php: 7.2
+      env: setup=lowest
+
 sudo: false
 
+cache:
+  directories:
+    - $HOME/.composer/cache
+
 before_install:
-  - if [[ $TRAVIS_PHP_VERSION != 7.1 ]] ; then phpenv config-rm xdebug.ini; fi
+  - phpenv config-rm xdebug.ini || true
   - travis_retry composer self-update
-
-install:
-  - if [[ $setup = 'basic' ]]; then travis_retry composer install --no-interaction --prefer-dist --no-suggest; fi
-
-before_script:
   - mysql -e 'create database barryvanveen;'
   - php artisan migrate
 
-script: vendor/bin/phpunit
+install:
+  - if [[ $setup = 'stable' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-stable --no-suggest; fi
+  - if [[ $setup = 'lowest' ]]; then travis_retry composer update --prefer-dist --no-interaction --prefer-lowest --prefer-stable --no-suggest; fi
 
-matrix:
-  allow_failures:
-    - php: 7.1
+script: vendor/bin/phpunit
