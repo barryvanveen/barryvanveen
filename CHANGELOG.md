@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.23.0] - 2017-09-08
+### Added
+- Added a manifest.json file for PWA features
+### Changed
+- Updated to Laravel 5.5
+- Updated other Composer dependencies where possible
+- Travis CI now tests PHP 7.1 and 7.2
+
 ## [2.22.0] - 2017-05-13
 ### Added
 - Added BladeServiceProvider for custom Blade directives

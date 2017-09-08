@@ -49,7 +49,7 @@ return [
     |
     */
 
-    'version' => 'v2.22.0',
+    'version' => 'v2.23.0',
 
     /*
     |--------------------------------------------------------------------------
@@ -163,6 +163,8 @@ return [
         /*
          * Application Service Providers...
          */
+        Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
+
         Barryvanveen\Providers\AppServiceProvider::class,
         Barryvanveen\Providers\AuthServiceProvider::class,
         Barryvanveen\Providers\BladeServiceProvider::class,
@@ -176,17 +178,7 @@ return [
         /*
          * Vendor Service Providers
          */
-        Barryvanveen\Lastfm\LastfmServiceProvider::class,
-        Bepsvpt\SecureHeaders\SecureHeadersServiceProvider::class,
-        Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
-        Collective\Remote\RemoteServiceProvider::class,
-        Cviebrock\EloquentSluggable\ServiceProvider::class,
         Eusonlito\LaravelMeta\MetaServiceProvider::class,
-        Laracasts\Flash\FlashServiceProvider::class,
-        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
-        McCool\LaravelAutoPresenter\AutoPresenterServiceProvider::class,
-        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Roumen\Feed\FeedServiceProvider::class,
         Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
     ],
