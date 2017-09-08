@@ -1,0 +1,16 @@
+{
+  "short_name": "Barry van Veen",
+  "name": "Barry van Veen",
+  "description": "A blog about Laravel, PHP, web development and related technologies.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/ico",
+      "sizes": "16x16"
+    }
+  ],
+  "start_url": "/?utm_source=web_app_manifest",
+  "background_color": "#FFFFFF",
+  "theme_color": "#4582ec",
+  "display": "browser"
+}
