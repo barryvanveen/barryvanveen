@@ -63,7 +63,7 @@ class AdminLoginController extends Controller
     {
         $this->validate($this->request, $this->rules, $this->messages);
 
-        $formData = Input::only(['email', 'password']);
+        $formData = Input::all(['email', 'password']);
 
         if (Auth::attempt($formData, (bool) Input::only('remember_me'))) {
             Flash::success(trans('flash.login-successful'));

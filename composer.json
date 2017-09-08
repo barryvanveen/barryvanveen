@@ -8,21 +8,22 @@
   "license": "MIT",
   "type": "project",
   "require": {
-    "barryvanveen/lastfm": "1.*",
-    "bepsvpt/secure-headers": "^3.0",
-    "bugsnag/bugsnag-laravel": "2.5.*",
+    "barryvanveen/lastfm": "^1.1.2",
+    "bepsvpt/secure-headers": "^4.0",
+    "bugsnag/bugsnag-laravel": "2.7.*",
     "cebe/markdown": "1.1.*",
-    "cviebrock/eloquent-sluggable": "4.2.*",
+    "cviebrock/eloquent-sluggable": "4.3.*",
     "doctrine/dbal": "2.*",
     "eusonlito/laravel-meta": "3.1.*",
+    "fideloper/proxy": "~3.3",
     "guzzlehttp/guzzle": "6.*",
-    "laracasts/flash": "3.0.*",
-    "laracasts/utilities": "2.*",
-    "laravel/framework": "5.4.*",
-    "laravelcollective/html": "5.4.*",
-    "laravelcollective/remote": "5.4.*",
+    "laracasts/flash": "^3.0.2",
+    "laracasts/utilities": "3.*",
+    "laravel/framework": "5.5.*",
+    "laravelcollective/html": "5.5.*",
+    "laravelcollective/remote": "5.5.*",
     "league/glide": "1.2.*",
-    "mccool/laravel-auto-presenter": "5.0.*",
+    "mccool/laravel-auto-presenter": "6.2.*",
     "php": ">=5.5.9",
     "rap2hpoutre/laravel-log-viewer": "0.10.*",
     "roumen/feed": "2.10.*",
@@ -32,18 +33,20 @@
     "symfony/dom-crawler": "^3.0"
   },
   "require-dev": {
-    "barryvdh/laravel-debugbar": "2.3.*",
-    "barryvdh/laravel-ide-helper": "2.3.*",
-    "friendsofphp/php-cs-fixer": "2.3.*",
-    "fzaninotto/faker": "1.6.*",
+    "barryvdh/laravel-debugbar": "3.0.*",
+    "barryvdh/laravel-ide-helper": "^2.4.1",
+    "friendsofphp/php-cs-fixer": "2.5.*",
+    "filp/whoops": "~2.0",
+    "fzaninotto/faker": "~1.4",
+    "laravel/browser-kit-testing": "^2.0",
+    "laravel/dusk": "^2.0",
     "mockery/mockery": "0.9.*",
-    "phpunit/phpunit": "~5.0",
-    "laravel/browser-kit-testing": "^1.0",
-    "laravel/dusk": "^1.0"
+    "phpunit/phpunit": "~6.0"
   },
   "autoload": {
     "classmap": [
-      "database"
+      "database/seeds",
+      "database/factories"
     ],
     "files": [
       "resources/helpers.php"
@@ -59,27 +62,31 @@
       "tests/BrowserKitTestCase.php"
     ]
   },
+  "extra": {
+    "laravel": {
+      "dont-discover": [
+      ]
+    }
+  },
   "scripts": {
-    "post-install-cmd": [
-      "php artisan clear-compiled",
-      "php artisan optimize"
-    ],
-    "pre-update-cmd": [
-      "php artisan clear-compiled"
-    ],
-    "post-update-cmd": [
-      "php artisan optimize",
-      "php artisan ide-helper:generate",
-      "php artisan ide-helper:meta"
-    ],
     "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\""
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
     ],
     "post-create-project-cmd": [
-      "php artisan key:generate"
+      "@php artisan key:generate"
+    ],
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover"
+    ],
+    "post-update-cmd": [
+      "php artisan ide-helper:generate",
+      "php artisan ide-helper:meta"
     ]
   },
   "config": {
-    "preferred-install": "dist"
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
   }
 }

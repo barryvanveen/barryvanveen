@@ -54,9 +54,11 @@ class PublicPagesTest extends BrowserKitTestCase
      */
     public function testLuckyTvRssFeed()
     {
-        $this->visit(route('luckytv-rss'));
+        $response = $this->visitRoute('luckytv-rss');
 
-        $this->see('<title>'.trans('general.luckytv-rss-title').'</title>');
+        $response->seeStatusCode(200);
+
+        $response->seeHeader('Content-Type', 'text/xml; charset=UTF-8');
     }
 
     /**
