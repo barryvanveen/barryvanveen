@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7385a046b3ad0d478783774c834ad221",
+    "content-hash": "65c195685d9661776a4ca1c872cc3d22",
     "packages": [
         {
             "name": "barryvanveen/lastfm",
-            "version": "1.0.0",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvanveen/lastfm.git",
-                "reference": "e6950f98b334c5bc7e1e2a951c386a2fe23fc4bb"
+                "reference": "79c0634b13b896025f1baa5d5fd460d290518752"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvanveen/lastfm/zipball/e6950f98b334c5bc7e1e2a951c386a2fe23fc4bb",
-                "reference": "e6950f98b334c5bc7e1e2a951c386a2fe23fc4bb",
+                "url": "https://api.github.com/repos/barryvanveen/lastfm/zipball/79c0634b13b896025f1baa5d5fd460d290518752",
+                "reference": "79c0634b13b896025f1baa5d5fd460d290518752",
                 "shasum": ""
             },
             "require": {
@@ -32,6 +32,11 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Barryvanveen\\Lastfm\\LastfmServiceProvider"
+                    ]
                 }
             },
             "autoload": {
@@ -51,13 +56,19 @@
                     "role": "Developer"
                 }
             ],
-            "description": "A Last.fm API client for PHP 7+",
+            "description": "Last.fm API client for PHP 7+",
             "homepage": "https://github.com/barryvanveen/lastfm",
             "keywords": [
-                "Barryvanveen",
-                "lastfm"
+                "PHP7",
+                "api",
+                "client",
+                "laravel",
+                "laravel5",
+                "last.fm",
+                "lastfm",
+                "service provider"
             ],
-            "time": "2017-03-13T20:26:56+00:00"
+            "time": "2017-09-04T20:41:03+00:00"
         },
         {
             "name": "bepsvpt/csp-builder",
@@ -1299,16 +1310,16 @@
         },
         {
             "name": "laracasts/flash",
-            "version": "3.0.0",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laracasts/flash.git",
-                "reference": "1c7658652e10791d934a37bc0f6f0bd5ce5ac73f"
+                "reference": "10cd420ab63fd0796bf5e1e5b99f87636d2f4333"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laracasts/flash/zipball/1c7658652e10791d934a37bc0f6f0bd5ce5ac73f",
-                "reference": "1c7658652e10791d934a37bc0f6f0bd5ce5ac73f",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/10cd420ab63fd0796bf5e1e5b99f87636d2f4333",
+                "reference": "10cd420ab63fd0796bf5e1e5b99f87636d2f4333",
                 "shasum": ""
             },
             "require": {
@@ -1320,6 +1331,16 @@
                 "phpunit/phpunit": "^6.1"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laracasts\\Flash\\FlashServiceProvider"
+                    ],
+                    "aliases": {
+                        "Flash": "Laracasts\\Flash\\Flash"
+                    }
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Laracasts\\Flash": "src/"
@@ -1339,7 +1360,7 @@
                 }
             ],
             "description": "Easy flash notifications",
-            "time": "2017-04-26T16:55:22+00:00"
+            "time": "2017-06-22T19:01:19+00:00"
         },
         {
             "name": "laracasts/utilities",
