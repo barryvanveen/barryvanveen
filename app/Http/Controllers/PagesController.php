@@ -92,7 +92,7 @@ class PagesController extends Controller
 
     public function luckytv()
     {
-        if (! Cache::has('luckytv-rss') || config('app.env') === "testing") {
+        if (! Cache::has('luckytv-rss') || config('app.env') === 'testing') {
             Artisan::call('update-luckytv-rss-feed');
         }
 
