@@ -32,7 +32,7 @@ class AssetComposer
 
     protected function getAssets()
     {
-        if (config('app.env') != 'production') {
+        if ('production' != config('app.env')) {
             $this->view->with('assets', $this->assets);
 
             return;

@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.24.0] - 2017-10-02
+### Changed
+- Updated all Composer dependencies
+- Updated all Yarn dependencies
+- Compiled new assets
+### Fixed
+- Extended readme on compiling assets and running tests
+
 ## [2.23.0] - 2017-09-08
 ### Added
 - Added a manifest.json file for PWA features

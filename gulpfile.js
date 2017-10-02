@@ -103,7 +103,7 @@ gulp.task('critical', function() {
 });
 
 gulp.task('clean', function() {
-    gulp.src('tmp-*.html', {read: false})
+    gulp.src('public_html/tmp-*.html', {read: false})
         .pipe(clean());
 });
 

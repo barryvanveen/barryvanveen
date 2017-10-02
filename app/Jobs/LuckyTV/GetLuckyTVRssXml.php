@@ -83,7 +83,7 @@ class GetLuckyTVRssXml
     {
         $datetime = DateTime::createFromFormat('D j M Y', self::translateDateFromDutchToEnglish($date));
 
-        return ($datetime !== false) ? $datetime->format('d-m-Y') : $datetime;
+        return (false !== $datetime) ? $datetime->format('d-m-Y') : $datetime;
     }
 
     public static function translateDateFromDutchToEnglish($date)
