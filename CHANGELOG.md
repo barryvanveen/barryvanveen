@@ -9,6 +9,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.24.1] - 2017-10-02
+### Fixed
+- Fixed tests on TravisCI
+- Fixed lowest allowable Composer dependencies
+
 ## [2.24.0] - 2017-10-02
 ### Changed
 - Updated all Composer dependencies
