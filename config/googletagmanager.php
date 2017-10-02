@@ -9,7 +9,7 @@ return [
     /*
      * Enable or disable script rendering. Useful for local development.
      */
-    'enabled' => env('GTM_CODE', false) !== false,
+    'enabled' => false !== env('GTM_CODE', false),
 
     /*
      * If you want to use some macro's you 'll probably store them

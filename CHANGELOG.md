@@ -5,9 +5,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 ### Changed
+- Updated all Composer dependencies
+- Updated all Yarn dependencies
+- Compiled new assets
 ### Deprecated
 ### Removed
 ### Fixed
+- Extended readme on compiling assets and running tests
 
 ## [2.23.0] - 2017-09-08
 ### Added

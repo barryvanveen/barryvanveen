@@ -80,7 +80,7 @@ class GetSitemapXml
             }
 
             // if this is a route containing url parameters
-            if (strpos($route->uri(), '{') !== false) {
+            if (false !== strpos($route->uri(), '{')) {
                 continue;
             }
 

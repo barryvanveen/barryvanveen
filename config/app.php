@@ -178,8 +178,6 @@ return [
         /*
          * Vendor Service Providers
          */
-        Eusonlito\LaravelMeta\MetaServiceProvider::class,
-        Roumen\Feed\FeedServiceProvider::class,
         Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
     ],
 

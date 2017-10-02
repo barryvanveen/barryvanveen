@@ -1,7 +1,7 @@
 <?php
 
 $protocol = 'https://';
-if (! isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == 'off') {
+if (! isset($_SERVER['HTTPS']) || 'off' == $_SERVER['HTTPS']) {
     $protocol = 'http://';
 }
 
