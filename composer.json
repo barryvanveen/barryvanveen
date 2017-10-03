@@ -10,7 +10,7 @@
   "require": {
     "barryvanveen/lastfm": "^1.1.2",
     "bepsvpt/secure-headers": "^4.0",
-    "bugsnag/bugsnag-laravel": "2.7.*",
+    "bugsnag/bugsnag-laravel": "2.9.*",
     "cebe/markdown": "1.1.*",
     "cviebrock/eloquent-sluggable": "4.3.*",
     "doctrine/dbal": "2.*",
