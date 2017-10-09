@@ -68,7 +68,8 @@ class DeployCommand extends Command
             [
                 'php artisan version'.$redirecttofile,
                 'php artisan down'.$redirecttofile,
-                'git pull origin master '.$this->argument('version').$redirecttofile,
+                'git fetch --tags'.$redirecttofile,
+                'git pull origin '.$this->argument('version').$redirecttofile,
             ]
         );
 
