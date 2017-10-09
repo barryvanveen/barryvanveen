@@ -9,6 +9,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.24.3] - 2017-10-09
+### Changed
+- Updated all Composer dependencies
+- Updated all Yarn dependencies
+### Fixed
+- TravisCI should never run "composer update", just install them
+- Require PHP >7.0 and <7.1 because of server requirements
+
 ## [2.24.2] - 2017-10-03
 ### Changed
 - Updated all Composer dependencies
