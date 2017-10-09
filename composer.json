@@ -8,7 +8,7 @@
   "license": "MIT",
   "type": "project",
   "require": {
-    "barryvanveen/lastfm": "^1.1.2",
+    "barryvanveen/lastfm": "^1.2.0",
     "bepsvpt/secure-headers": "^4.0",
     "bugsnag/bugsnag-laravel": "2.9.*",
     "cebe/markdown": "1.1.*",
@@ -24,7 +24,6 @@
     "laravelcollective/remote": "5.5.*",
     "league/glide": "1.2.*",
     "mccool/laravel-auto-presenter": "6.2.*",
-    "php": ">=7.0 <7.1",
     "rap2hpoutre/laravel-log-viewer": "0.10.*",
     "roumen/feed": "2.11.*",
     "spatie/flysystem-dropbox": "^1.0",

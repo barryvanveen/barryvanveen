@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "47312b265777c75192258dc5cd654018",
+    "content-hash": "2ff7c8a0837e8a8a1ba54b74b5d6b63c",
     "packages": [
         {
             "name": "barryvanveen/lastfm",
-            "version": "1.1.2",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvanveen/lastfm.git",
-                "reference": "79c0634b13b896025f1baa5d5fd460d290518752"
+                "reference": "11a8243401827a3e44604a5a54bcc5e870623ba9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvanveen/lastfm/zipball/79c0634b13b896025f1baa5d5fd460d290518752",
-                "reference": "79c0634b13b896025f1baa5d5fd460d290518752",
+                "url": "https://api.github.com/repos/barryvanveen/lastfm/zipball/11a8243401827a3e44604a5a54bcc5e870623ba9",
+                "reference": "11a8243401827a3e44604a5a54bcc5e870623ba9",
                 "shasum": ""
             },
             "require": {
@@ -68,7 +68,7 @@
                 "lastfm",
                 "service provider"
             ],
-            "time": "2017-09-04T20:41:03+00:00"
+            "time": "2017-10-09T19:56:21+00:00"
         },
         {
             "name": "bepsvpt/csp-builder",
@@ -6639,8 +6639,6 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "php": ">=7.0 <7.1"
-    },
+    "platform": [],
     "platform-dev": []
 }
