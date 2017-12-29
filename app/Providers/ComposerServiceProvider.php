@@ -27,7 +27,7 @@ class ComposerServiceProvider extends ServiceProvider
         // Build menus
         $view->composer('layouts.partials.header', MenuComposer::class);
 
-        $view->composer(['layout'], function(View $view) {
+        $view->composer(['layout'], function (View $view) {
             $view->with('nonce', SecureHeaders::nonce());
         });
 
