@@ -40,16 +40,15 @@ return [
                 $protocol.'www.google-analytics.com',
             ],
             'self'          => true,
-            'unsafe-inline' => true,
-            'unsafe-eval'   => true,
             'data'          => true,
+            'add-generated-nonce' => true,
         ],
         'style-src' => [
             'allow' => [
                 $protocol.'fonts.googleapis.com',
             ],
             'self'          => true,
-            'unsafe-inline' => true,
+            'add-generated-nonce' => true,
         ],
         'img-src' => [
             'allow' => [

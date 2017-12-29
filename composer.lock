@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ff7c8a0837e8a8a1ba54b74b5d6b63c",
+    "content-hash": "eab17308c1763e5f126aaaf6ae7ede22",
     "packages": [
         {
             "name": "barryvanveen/lastfm",
@@ -185,17 +185,12 @@
         },
         {
             "name": "bepsvpt/secure-headers",
-            "version": "4.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/BePsvPT/secure-headers.git",
-                "reference": "76965664f1727a053734ac4fe7297905c6af18c8"
-            },
+            "version": "dev-feature-nonce",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/BePsvPT/secure-headers/zipball/76965664f1727a053734ac4fe7297905c6af18c8",
+                "type": "path",
+                "url": "/home/vagrant/Code/secure-headers",
                 "reference": "76965664f1727a053734ac4fe7297905c6af18c8",
-                "shasum": ""
+                "shasum": null
             },
             "require": {
                 "bepsvpt/csp-builder": "1.0.*",
@@ -222,7 +217,6 @@
                     "Bepsvpt\\SecureHeaders\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -241,8 +235,7 @@
                 "hsts",
                 "https",
                 "laravel"
-            ],
-            "time": "2017-09-01T12:27:38+00:00"
+            ]
         },
         {
             "name": "bugsnag/bugsnag",
@@ -6636,7 +6629,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "bepsvpt/secure-headers": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

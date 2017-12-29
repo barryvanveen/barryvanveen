@@ -9,7 +9,7 @@
   "type": "project",
   "require": {
     "barryvanveen/lastfm": "^1.2.0",
-    "bepsvpt/secure-headers": "^4.0",
+    "bepsvpt/secure-headers": "dev-feature-nonce",
     "bugsnag/bugsnag-laravel": "2.9.*",
     "cebe/markdown": "1.1.*",
     "cviebrock/eloquent-sluggable": "4.3.*",
@@ -87,5 +87,11 @@
     "preferred-install": "dist",
     "sort-packages": true,
     "optimize-autoloader": true
-  }
+  },
+  "repositories":[
+    {
+      "type": "path",
+      "url": "/home/vagrant/Code/secure-headers"
+    }
+  ]
 }
