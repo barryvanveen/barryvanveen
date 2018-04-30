@@ -12,7 +12,7 @@ class BrowserKitTestCase extends TestCase
      *
      * @var string
      */
-    protected $baseUrl = 'http://barryvanveen.app';
+    protected $baseUrl = 'http://barryvanveen.test';
 
     /**
      * Creates the application.

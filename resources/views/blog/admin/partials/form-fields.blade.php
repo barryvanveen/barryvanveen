@@ -45,7 +45,7 @@
     <div class="col-sm-12 col-md-6">
         <div class="form-group @if($errors->has('summary')) has-error @endif">
             {!! Form::label('summary', trans('blog-admin.summary'), ['class' => 'control-label form__label']) !!}
-            {!! Form::textarea('summary', $blog->summary, ['class' => 'form-control js-markdown-editor']) !!}
+            {!! Form::textarea('summary', $blog->summary, ['class' => 'form-control js-markdown-editor', 'data-markdown-route' => route('admin.markdown-to-html')]) !!}
             <span class="help-block">
                 <span class="js-character-counter" data-character-counter-name="summary"></span>
                 {{ trans('general.characters')}} ({{ trans('general.ideal-length-120-170') }})
@@ -67,7 +67,7 @@
     <div class="col-sm-12 col-md-6">
         <div class="form-group @if($errors->has('text')) has-error @endif">
             {!! Form::label('text', trans('blog-admin.text'), ['class' => 'control-label form__label']) !!}
-            {!! Form::textarea('text', $blog->text, ['class' => 'form-control js-markdown-editor']) !!}
+            {!! Form::textarea('text', $blog->text, ['class' => 'form-control js-markdown-editor', 'data-markdown-route' => route('admin.markdown-to-html')]) !!}
         </div>
     </div>
     <div class="col-sm-12 col-md-6">

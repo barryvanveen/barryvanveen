@@ -34,7 +34,7 @@ window.Barryvanveen.debounce = function debounce(func, wait, immediate) {
  */
 window.Barryvanveen.initScrollToTop = function() {
 
-	$('a[href*=#top]').click(function() {
+	$('a.js-backtotop').click(function() {
 		$('html,body').animate({
 			scrollTop: 0
 		}, 400);

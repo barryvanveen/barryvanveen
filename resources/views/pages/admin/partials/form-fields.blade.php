@@ -36,7 +36,7 @@
     <div class="col-sm-12 col-md-6">
         <div class="form-group @if($errors->has('text')) has-error @endif">
             {!! Form::label('text', trans('page-admin.text'), ['class' => 'control-label form__label']) !!}
-            {!! Form::textarea('text', $page->text, ['class' => 'form-control js-markdown-editor']) !!}
+            {!! Form::textarea('text', $page->text, ['class' => 'form-control js-markdown-editor', 'data-markdown-route' => route('admin.markdown-to-html')]) !!}
         </div>
     </div>
     <div class="col-sm-12 col-md-6">

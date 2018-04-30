@@ -44,7 +44,6 @@
         @include('layouts.partials.javascript')
 
         <script type="text/javascript" nonce="{{$nonce}}">
-
             // load webfont asynchronously
             WebFontConfig = {
                 google: { families: [ 'Raleway:400,700:latin' ] }
@@ -65,7 +64,7 @@
             window.addEventListener('load', function() {
                 LazyLoad.css('{!! url($assets['dist/css/screen.css']) !!}');
                 LazyLoad.js([
-                    '//code.jquery.com/jquery-1.11.2.min.js',
+                    '//code.jquery.com/jquery-3.3.1.min.js',
                     '{!! url($assets['dist/js/main.js']) !!}'
                     @if($is_admin)
                     ,'{!! url($assets['dist/js/admin.js']) !!}'

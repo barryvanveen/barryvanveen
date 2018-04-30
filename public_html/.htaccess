@@ -21,7 +21,7 @@
     RewriteEngine On
 
     # Redirect to preferred domain
-    RewriteCond %{HTTP_HOST} !(^barryvanveen\.app|^barryvanveen\.nl)$ [NC]
+    RewriteCond %{HTTP_HOST} !(^barryvanveen\.test|^barryvanveen\.nl)$ [NC]
     RewriteRule ^(.*)$ https://barryvanveen.nl/$1 [R=301,L]
 
     # Redirect old Dutch urls to English urls
