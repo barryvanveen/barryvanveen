@@ -47,7 +47,7 @@ return [
             'data' => true,
             'unsafe-inline' => config('app.debug'),
             'unsafe-eval'   => config('app.debug'),
-            'add-generated-nonce' => !config('app.debug'),
+            'add-generated-nonce' => ! config('app.debug'),
         ],
         'style-src' => [
             'self' => true,
@@ -59,7 +59,7 @@ return [
                 ],
             ],
             'unsafe-inline' => config('app.debug'),
-            'add-generated-nonce' => !config('app.debug'),
+            'add-generated-nonce' => ! config('app.debug'),
         ],
         'img-src' => [
             'allow' => [
