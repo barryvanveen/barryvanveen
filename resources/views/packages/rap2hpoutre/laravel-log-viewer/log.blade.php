@@ -63,7 +63,7 @@
                     </button>
                     <h5 class="modal-title"></h5>
                 </div>
-                <div class="modal-body" style="white-space: pre; overflow-x: scroll"></div>
+                <div class="modal-body logs__content"></div>
             </div>
         </div>
     </div>
