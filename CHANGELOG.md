@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.25.0] - 2018-05-18
+### Changed
+- Removed or changed inline styles and scripts in order to disable 'unsafe-inline' and 'unsafe-eval' in the CSP header.
+
 ## [2.24.3] - 2017-10-09
 ### Changed
 - Updated all Composer dependencies
