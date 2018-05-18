@@ -33,23 +33,33 @@ return [
             'self' => true,
         ],
         'script-src' => [
+            'self' => true,
             'allow' => [
                 $protocol.'ajax.googleapis.com',
                 $protocol.'code.jquery.com',
                 $protocol.'www.googletagmanager.com',
                 $protocol.'www.google-analytics.com',
             ],
-            'self'          => true,
-            'unsafe-inline' => true,
-            'unsafe-eval'   => true,
-            'data'          => true,
+            'hashes' => [
+                'sha256' => [
+                ],
+            ],
+            'data' => true,
+            'unsafe-inline' => config('app.debug'),
+            'unsafe-eval'   => config('app.debug'),
+            'add-generated-nonce' => ! config('app.debug'),
         ],
         'style-src' => [
+            'self' => true,
             'allow' => [
                 $protocol.'fonts.googleapis.com',
             ],
-            'self'          => true,
-            'unsafe-inline' => true,
+            'hashes' => [
+                'sha256' => [
+                ],
+            ],
+            'unsafe-inline' => config('app.debug'),
+            'add-generated-nonce' => ! config('app.debug'),
         ],
         'img-src' => [
             'allow' => [

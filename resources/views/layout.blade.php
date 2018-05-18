@@ -19,12 +19,12 @@
         <link rel="shortcut icon" type="image/ico" href="{{ url('favicon.ico') }}">
         <link rel="author" href="{{ url(route('about-me')) }}">
 
-        <style type="text/css" media="screen">{!! $critical_css !!}</style>
+        <style type="text/css" media="screen" nonce="{{$nonce}}">{!! $critical_css !!}</style>
 
         <link media="print" type="text/css" rel="stylesheet" href="{!! url($assets['dist/css/print.css']) !!}">
 
         <noscript>
-            <style type="text/css" media="all">@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");</style>
+            <style type="text/css" media="all" nonce="{{$nonce}}">@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");</style>
             <link href="{!! url($assets['dist/css/screen.css']) !!}" rel="stylesheet" type="text/css" media="screen">
         </noscript>
 
@@ -43,8 +43,7 @@
 
         @include('layouts.partials.javascript')
 
-        <script type="text/javascript">
-
+        <script type="text/javascript" nonce="{{$nonce}}">
             // load webfont asynchronously
             WebFontConfig = {
                 google: { families: [ 'Raleway:400,700:latin' ] }
@@ -65,7 +64,7 @@
             window.addEventListener('load', function() {
                 LazyLoad.css('{!! url($assets['dist/css/screen.css']) !!}');
                 LazyLoad.js([
-                    '//code.jquery.com/jquery-1.11.2.min.js',
+                    '//code.jquery.com/jquery-3.3.1.min.js',
                     '{!! url($assets['dist/js/main.js']) !!}'
                     @if($is_admin)
                     ,'{!! url($assets['dist/js/admin.js']) !!}'

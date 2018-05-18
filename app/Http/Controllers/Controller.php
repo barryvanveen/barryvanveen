@@ -6,7 +6,6 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
-use JavaScript;
 use Meta;
 
 abstract class Controller extends BaseController
@@ -16,10 +15,6 @@ abstract class Controller extends BaseController
     public function __construct()
     {
         $this->setPageTitle(trans('meta.pagetitle-default'), false);
-
-        JavaScript::put([
-            'markdownToHtmlRoute' => route('admin.markdown-to-html'),
-        ]);
     }
 
     /**

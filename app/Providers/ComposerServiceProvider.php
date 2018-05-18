@@ -5,6 +5,7 @@ namespace Barryvanveen\Providers;
 use Auth;
 use Barryvanveen\Composers\AssetComposer;
 use Barryvanveen\Composers\MenuComposer;
+use Bepsvpt\SecureHeaders\SecureHeaders;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\View;
 use Request;
@@ -25,6 +26,10 @@ class ComposerServiceProvider extends ServiceProvider
 
         // Build menus
         $view->composer('layouts.partials.header', MenuComposer::class);
+
+        $view->composer(['layout'], function (View $view) {
+            $view->with('nonce', SecureHeaders::nonce());
+        });
 
         // Header must know if this route is within the admin section
         $view->composer(['layout', 'layouts.partials.header'], function (View $view) {

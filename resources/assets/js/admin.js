@@ -39,11 +39,12 @@ window.Barryvanveen.initClickableTableRows = function () {
 window.Barryvanveen.MarkdownEditor = function (element) {
 
     var $input = $(element);
+    var route = $input.data('markdown-route');
     var $preview = $('div[data-markdown-editor-name=' + element.name + ']');
 
     this.updateMarkdownEditor = window.Barryvanveen.debounce(function () {
 
-        $.post(Barryvanveen.markdownToHtmlRoute, {markdown: $input.val()}, function (data) {
+        $.post(route, {markdown: $input.val()}, function (data) {
 
             $preview.html(data.html);
             Prism.highlightAll();
