@@ -87,7 +87,7 @@ gulp.task('build-sass', function () {
 gulp.task('critical', function() {
     critical.generate({
         base: 'public_html/',
-        src: 'http://barryvanveen.app',
+        src: 'http://barryvanveen.test',
         css: config.outputDirs.css+'/screen.css',
         width: 1280,
         height: 600,
