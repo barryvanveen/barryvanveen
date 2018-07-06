@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.25.1] - 2018-0706
+### Changed
+- Re-enabled 'unsafe-inline' and 'unsafe-eval' after problems with blocked content.
+
 ## [2.25.0] - 2018-05-18
 ### Changed
 - Removed or changed inline styles and scripts in order to disable 'unsafe-inline' and 'unsafe-eval' in the CSP header.
