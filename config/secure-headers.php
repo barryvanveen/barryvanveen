@@ -44,7 +44,9 @@ return [
                 'sha256' => [
                 ],
             ],
-            'data' => true,
+            'schemes' => [
+                'data:',
+            ],
             'unsafe-inline' => config('app.debug'),
             'unsafe-eval'   => config('app.debug'),
             'add-generated-nonce' => ! config('app.debug'),
@@ -66,15 +68,19 @@ return [
                 $protocol.'www.google-analytics.com',
                 'https://lastfm-img2.akamaized.net',
             ],
+            'schemes' => [
+                'data:',
+            ],
             'self' => true,
-            'data' => true,
         ],
         'font-src' => [
             'allow' => [
                 $protocol.'fonts.gstatic.com',
             ],
+            'schemes' => [
+                'data:',
+            ],
             'self' => true,
-            'data' => true,
         ],
         'object-src' => [
             'allow' => [],
