@@ -19,12 +19,12 @@
         <link rel="shortcut icon" type="image/ico" href="{{ url('favicon.ico') }}">
         <link rel="author" href="{{ url(route('about-me')) }}">
 
-        <style type="text/css" media="screen" nonce="{{$nonce}}">{!! $critical_css !!}</style>
+        <style type="text/css" media="screen">{!! $critical_css !!}</style>
 
         <link media="print" type="text/css" rel="stylesheet" href="{!! url($assets['dist/css/print.css']) !!}">
 
         <noscript>
-            <style type="text/css" media="all" nonce="{{$nonce}}">@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");</style>
+            <style type="text/css" media="all">@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");</style>
             <link href="{!! url($assets['dist/css/screen.css']) !!}" rel="stylesheet" type="text/css" media="screen">
         </noscript>
 
@@ -43,7 +43,7 @@
 
         @include('layouts.partials.javascript')
 
-        <script type="text/javascript" nonce="{{$nonce}}">
+        <script type="text/javascript">
             // load webfont asynchronously
             WebFontConfig = {
                 google: { families: [ 'Raleway:400,700:latin' ] }
