@@ -30,7 +30,7 @@ class CommentsTableSeeder extends Seeder
 
             $number_of_comments = $faker->numberBetween(0, 10);
 
-            for ($i = 0; $i < $number_of_comments; $i++) {
+            for ($i = 0; $i < $number_of_comments; ++$i) {
                 $created_at = $faker->dateTimeBetween('-1 year', 'now');
 
                 Comment::create([

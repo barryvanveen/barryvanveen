@@ -59,7 +59,7 @@ class LoremHtml extends Lorem
         $paragraphs = self::htmlParagraphs($nbParagraphs);
 
         // add $nbParagraphs other html elements
-        for ($i = 0; $i < $nbInsertions; $i++) {
+        for ($i = 0; $i < $nbInsertions; ++$i) {
             $rand = $this->randomFloat(null, 0, 1);
 
             // add a html-element using Roulette Wheel Selection
@@ -97,7 +97,7 @@ class LoremHtml extends Lorem
         }
 
         $paragraphs = [];
-        for ($i = 0; $i < $nbParagraphs; $i++) {
+        for ($i = 0; $i < $nbParagraphs; ++$i) {
             $paragraphs[] = static::htmlParagraph();
         }
 
@@ -164,7 +164,7 @@ class LoremHtml extends Lorem
         }
 
         $items = '';
-        for ($i = 0; $i < $nbItems; $i++) {
+        for ($i = 0; $i < $nbItems; ++$i) {
             $items .= '<li>'.static::sentence().'</li>';
         }
 
