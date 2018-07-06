@@ -9,7 +9,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
-## [2.25.1] - 2018-0706
+## [2.25.2] - 2018-07-06
+### Fixed
+- Code style fixes
+
+## [2.25.1] - 2018-07-06
 ### Changed
 - Re-enabled 'unsafe-inline' and 'unsafe-eval' after problems with blocked content.
 
