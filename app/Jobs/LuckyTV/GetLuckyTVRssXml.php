@@ -124,13 +124,13 @@ class GetLuckyTVRssXml
     {
         $number_of_posts = count($posts);
 
-        for ($i = 0; $i < $number_of_posts; ++$i) {
+        for ($i = 0; $i < $number_of_posts; $i++) {
             if ($posts[$i]['date'] !== false) {
                 continue;
             }
 
             // forward lookup for date
-            for ($j = $i + 1; $j < $number_of_posts; ++$j) {
+            for ($j = $i + 1; $j < $number_of_posts; $j++) {
                 if ($posts[$j]['date'] !== false) {
                     $posts[$i]['date'] = $posts[$j]['date'];
                     break;
@@ -142,7 +142,7 @@ class GetLuckyTVRssXml
             }
 
             // backward lookup for date
-            for ($j = $i - 1; $j >= 0; --$j) {
+            for ($j = $i - 1; $j >= 0; $j--) {
                 if ($posts[$j]['date'] !== false) {
                     $posts[$i]['date'] = $posts[$j]['date'];
                     break;
