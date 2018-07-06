@@ -33,7 +33,7 @@ return [
             'self' => true,
         ],
         'script-src' => [
-            'self' => true,
+            'self'  => true,
             'allow' => [
                 $protocol.'ajax.googleapis.com',
                 $protocol.'code.jquery.com',
@@ -44,13 +44,15 @@ return [
                 'sha256' => [
                 ],
             ],
-            'data' => true,
-            'unsafe-inline' => config('app.debug'),
-            'unsafe-eval'   => config('app.debug'),
-            'add-generated-nonce' => ! config('app.debug'),
+            'schemes' => [
+                'data:',
+            ],
+            'unsafe-inline'       => true,
+            'unsafe-eval'         => true,
+            'add-generated-nonce' => false,
         ],
         'style-src' => [
-            'self' => true,
+            'self'  => true,
             'allow' => [
                 $protocol.'fonts.googleapis.com',
             ],
@@ -58,27 +60,36 @@ return [
                 'sha256' => [
                 ],
             ],
-            'unsafe-inline' => config('app.debug'),
-            'add-generated-nonce' => ! config('app.debug'),
+            'unsafe-inline'       => true,
+            'add-generated-nonce' => false,
         ],
         'img-src' => [
             'allow' => [
                 $protocol.'www.google-analytics.com',
                 'https://lastfm-img2.akamaized.net',
             ],
+            'schemes' => [
+                'data:',
+            ],
             'self' => true,
-            'data' => true,
         ],
         'font-src' => [
             'allow' => [
                 $protocol.'fonts.gstatic.com',
             ],
+            'schemes' => [
+                'data:',
+            ],
             'self' => true,
-            'data' => true,
         ],
         'object-src' => [
             'allow' => [],
             'self'  => false,
+        ],
+        'frame-src' => [
+            'allow' => [
+                $protocol.'www.googletagmanager.com',
+            ],
         ],
     ],
 ];
