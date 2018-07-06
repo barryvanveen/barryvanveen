@@ -60,7 +60,7 @@ class LoremMarkdown extends Lorem
         $paragraphs = self::markdownParagraphs($nbParagraphs);
 
         // add $nbParagraphs styled elements
-        for ($i = 0; $i < $nbInsertions; ++$i) {
+        for ($i = 0; $i < $nbInsertions; $i++) {
             $rand = $this->randomFloat(null, 0, 1);
 
             // add a markdown-element using Roulette Wheel Selection
@@ -98,7 +98,7 @@ class LoremMarkdown extends Lorem
         }
 
         $paragraphs = [];
-        for ($i = 0; $i < $nbParagraphs; ++$i) {
+        for ($i = 0; $i < $nbParagraphs; $i++) {
             $paragraphs[] = static::markdownParagraph();
         }
 
@@ -172,7 +172,7 @@ class LoremMarkdown extends Lorem
         }
 
         $items = [];
-        for ($i = 0; $i < $nbItems; ++$i) {
+        for ($i = 0; $i < $nbItems; $i++) {
             $items[] = $listItemPrefix.static::sentence();
         }
 
