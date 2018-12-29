@@ -15,7 +15,6 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         \Barryvanveen\Console\Commands\DeployCommand::class,
         \Barryvanveen\Console\Commands\SwitchBranchCommand::class,
-        \Barryvanveen\Console\Commands\UpdateLuckyTvRssFeedCommand::class,
         \Barryvanveen\Console\Commands\VersionCommand::class,
     ];
 

@@ -2,13 +2,11 @@
 
 namespace Barryvanveen\Http\Controllers;
 
-use Artisan;
 use Barryvanveen\Jobs\Markdown\MarkdownToHtml;
 use Barryvanveen\Lastfm\Constants;
 use Barryvanveen\Lastfm\Lastfm;
 use Barryvanveen\Pages\PageRepository;
 use Cache;
-use Response;
 use View;
 
 class PagesController extends Controller
@@ -88,16 +86,5 @@ class PagesController extends Controller
         $this->setMetaDescription(trans('music.page-description'));
 
         return View::make('pages.music', compact('nowListening', 'user', 'artists', 'albums'));
-    }
-
-    public function luckytv()
-    {
-        if (! Cache::has('luckytv-rss') || 'testing' === config('app.env')) {
-            Artisan::call('update-luckytv-rss-feed');
-        }
-
-        $xml = Cache::get('luckytv-rss');
-
-        return Response::make($xml, 200, ['Content-Type' => 'text/xml']);
     }
 }

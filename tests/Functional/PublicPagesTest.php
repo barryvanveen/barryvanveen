@@ -50,18 +50,6 @@ class PublicPagesTest extends BrowserKitTestCase
     }
 
     /**
-     * Test visiting the blogs RSS feed.
-     */
-    public function testLuckyTvRssFeed()
-    {
-        $response = $this->visitRoute('luckytv-rss');
-
-        $response->seeStatusCode(200);
-
-        $response->seeHeader('Content-Type', 'text/xml; charset=UTF-8');
-    }
-
-    /**
      * Test visiting the sitemap.
      */
     public function testSitemap()
