@@ -14,8 +14,6 @@ return [
     'ideal-length-120-170'     => 'ideal length is between 120 and 170',
     'last-update'              => 'Last update:',
     'login-failed'             => 'Login failed',
-    'luckytv-rss-description'  => 'All recent episodes of LuckyTV in a single RSS feed',
-    'luckytv-rss-title'        => 'LuckyTV RSS feed',
     'offline'                  => 'Offline',
     'online'                   => 'Online',
     'paginator-next'           => 'older &raquo;',
