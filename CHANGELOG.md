@@ -9,6 +9,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 ### Fixed
 
+## [2.26.0] - 2018-12-29
+### Removed
+- Removed the LuckyTV RSS feed
+- Removed .htaccess file before switch to nginx server
+
 ## [2.25.2] - 2018-07-06
 ### Fixed
 - Code style fixes
