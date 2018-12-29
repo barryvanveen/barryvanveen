@@ -49,11 +49,6 @@ Route::get('about-me/music-that-i-listen-to', [
     'uses' => 'PagesController@music',
 ]);
 
-Route::get('luckytv-rss', [
-    'as'   => 'luckytv-rss',
-    'uses' => 'PagesController@luckytv',
-]);
-
 Route::get('images/{filename}', [
     'as'   => 'images',
     'uses' => 'ImagesController@show',
