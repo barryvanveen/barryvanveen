@@ -39,3 +39,9 @@ called .php_cs and documentation can be found at [https://github
  
 ## Licence
 See the [LICENSE](LICENSE.txt) file for license rights and limitations (MIT).
+
+## Supported by
+
+I couldn't have made this website by these awesome services providing free plans for Open Source projects:
+* [Bugsnag](https://www.bugsnag.com/open-source) gives me insight into exceptions.
+* [DeployHQ](https://www.deployhq.com/pricing) lets me easily deploy new code.
