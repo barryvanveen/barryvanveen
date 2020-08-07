@@ -30,7 +30,7 @@
     "gulp-uglify": "3.0.*",
     "html5shiv": "3.7.*",
     "jquery": "3.2.*",
-    "prismjs": "1.8.*",
+    "prismjs": "1.21.*",
     "respond.js": "1.4.*"
   }
 }
