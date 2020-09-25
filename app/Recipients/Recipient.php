@@ -4,10 +4,10 @@ namespace Barryvanveen\Recipients;
 
 class Recipient
 {
-    /** @var string $email */
+    /** @var string */
     public $email;
 
-    /** @var string $name */
+    /** @var string */
     public $name;
 
     /**

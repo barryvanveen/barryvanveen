@@ -12,15 +12,15 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 /**
  * Barryvanveen\Blogs\Blog.
  *
- * @property int $id
- * @property string $title
- * @property string $slug
- * @property string $summary
- * @property string $text
- * @property string $publication_date
- * @property bool $online
- * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
+ * @property int                  $id
+ * @property string               $title
+ * @property string               $slug
+ * @property string               $summary
+ * @property string               $text
+ * @property string               $publication_date
+ * @property bool                 $online
+ * @property \Carbon\Carbon       $created_at
+ * @property \Carbon\Carbon       $updated_at
  * @property Collection|Comment[] $comments
  *
  * @method static Builder|Blog findSimilarSlugs($model, $attribute, $config, $slug)

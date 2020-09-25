@@ -14,12 +14,12 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 /**
  * Barryvanveen\Users\User.
  *
- * @property int $id
- * @property string $firstname
- * @property string $lastname
- * @property string $email
- * @property string $password
- * @property string $remember_token
+ * @property int            $id
+ * @property string         $firstname
+ * @property string         $lastname
+ * @property string         $email
+ * @property string         $password
+ * @property string         $remember_token
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  *
@@ -35,7 +35,8 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  */
 class User extends Model implements AuthenticatableContract, AuthorizableContract, HasPresenter
 {
-    use Authenticatable, Authorizable;
+    use Authenticatable;
+    use Authorizable;
 
     /**
      * The database table used by the model.
