@@ -66,7 +66,7 @@ return [
         'img-src' => [
             'allow' => [
                 $protocol.'www.google-analytics.com',
-                'https://lastfm-img2.akamaized.net',
+                'https://lastfm.freetls.fastly.net',
             ],
             'schemes' => [
                 'data:',
@@ -90,6 +90,11 @@ return [
             'allow' => [
                 $protocol.'www.googletagmanager.com',
             ],
+        ],
+        'connect-src' => [
+            'allow' => [
+                $protocol.'www.google-analytics.com',
+            ]
         ],
     ],
 ];
