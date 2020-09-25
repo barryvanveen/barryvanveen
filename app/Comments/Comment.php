@@ -10,17 +10,17 @@ use McCool\LaravelAutoPresenter\HasPresenter;
 /**
  * Barryvanveen\Comments\Comment.
  *
- * @property int $id
- * @property int $blog_id
- * @property string $email
- * @property string $name
- * @property string $text
- * @property string $ip
- * @property string $fingerprint
- * @property string $online
+ * @property int            $id
+ * @property int            $blog_id
+ * @property string         $email
+ * @property string         $name
+ * @property string         $text
+ * @property string         $ip
+ * @property string         $fingerprint
+ * @property string         $online
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property Blog $blog
+ * @property Blog           $blog
  *
  * @method static Builder|Comment orderedNewToOld()
  * @method static Builder|Comment whereBlogId($value)

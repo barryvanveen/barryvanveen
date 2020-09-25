@@ -75,7 +75,7 @@ class GetSitemapXml
             $action = $route->getAction();
 
             // if this is not a GET-route
-            if (! in_array('GET', $route->methods())) {
+            if (!in_array('GET', $route->methods())) {
                 continue;
             }
 

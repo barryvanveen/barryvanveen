@@ -41,7 +41,7 @@ class DeployCommand extends Command
      */
     public function handle()
     {
-        if (! $this->confirm('Do you really want to deploy?', false)) {
+        if (!$this->confirm('Do you really want to deploy?', false)) {
             $this->info('Deploy cancelled.');
 
             return;

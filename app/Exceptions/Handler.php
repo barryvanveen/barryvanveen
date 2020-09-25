@@ -83,7 +83,7 @@ class Handler extends ExceptionHandler
             return $this->convertValidationExceptionToResponse($exception, $request);
         }
 
-        if (config('app.debug') && ! ($exception instanceof ValidationException) && ! ($exception instanceof HttpResponseException)) {
+        if (config('app.debug') && !($exception instanceof ValidationException) && !($exception instanceof HttpResponseException)) {
             return $this->renderWhoopsResponse($exception);
         }
 

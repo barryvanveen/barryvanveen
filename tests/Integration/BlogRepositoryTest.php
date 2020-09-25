@@ -16,7 +16,7 @@ class BlogRepositoryTest extends BrowserKitTestCase
 {
     use DatabaseTransactions;
 
-    /** @var BlogRepository $repository */
+    /** @var BlogRepository */
     private $repository;
 
     public function setUp()
