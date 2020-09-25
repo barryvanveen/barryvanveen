@@ -24,7 +24,7 @@ class CommentsTableSeeder extends Seeder
         foreach ($blogs as $blog) {
             $has_comments = $faker->numberBetween(0, 1);
 
-            if (! $has_comments) {
+            if (!$has_comments) {
                 continue;
             }
 

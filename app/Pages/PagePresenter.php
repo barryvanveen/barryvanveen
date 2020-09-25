@@ -11,7 +11,7 @@ class PagePresenter extends BasePresenter
 {
     use DispatchesJobs;
 
-    /** @var Page $wrappedObject */
+    /** @var Page */
     protected $wrappedObject;
 
     /**

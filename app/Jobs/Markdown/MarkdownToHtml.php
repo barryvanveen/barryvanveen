@@ -28,6 +28,7 @@ class MarkdownToHtml
         $parser->html5 = true;
         $parser->keepListStartNumber = true;
         $parser->enableNewlines = true; // only available for GithubMarkdown
+
         return $parser->parse($this->markdown);
     }
 }

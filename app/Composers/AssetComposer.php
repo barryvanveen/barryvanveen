@@ -58,7 +58,7 @@ class AssetComposer
         foreach ($assets as $key => $asset) {
             $path = public_path().'/'.$key;
 
-            if (! file_exists($path)) {
+            if (!file_exists($path)) {
                 continue;
             }
 

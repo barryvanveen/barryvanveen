@@ -1,7 +1,7 @@
 <?php
 
 $protocol = 'https://';
-if (! isset($_SERVER['HTTPS']) || 'off' == $_SERVER['HTTPS']) {
+if (!isset($_SERVER['HTTPS']) || 'off' == $_SERVER['HTTPS']) {
     $protocol = 'http://';
 }
 
@@ -94,7 +94,7 @@ return [
         'connect-src' => [
             'allow' => [
                 $protocol.'www.google-analytics.com',
-            ]
+            ],
         ],
     ],
 ];
